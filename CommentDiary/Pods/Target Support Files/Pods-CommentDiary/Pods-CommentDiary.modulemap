@@ -1,0 +1,6 @@
+framework module Pods_CommentDiary {
+  umbrella header "Pods-CommentDiary-umbrella.h"
+
+  export *
+  module * { export * }
+}

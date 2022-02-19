@@ -15,9 +15,11 @@ class SplashVieController : ViewController {
         didSet {
             pageControl.currentPage = currentPage
             if currentPage == slides.count - 1 {
-                nextBtn.setTitle("Get Started", for: .normal)
+                self.nextBtn.setTitle("시작하기", for: .normal)
+                self.nextBtn.backgroundColor = UIColor.mainOrange
             } else {
-                nextBtn.setTitle("Next", for: .normal)
+                self.nextBtn.setTitle("넘어가기", for: .normal)
+                self.nextBtn.backgroundColor = UIColor(hex: 0xF7F3D5)
             }
         }
     }
@@ -55,14 +57,17 @@ class SplashVieController : ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //버튼
-//        self.pageTapButton.setTitle("넘어가기", for: .normal)
-//        self.pageTapButton.backgroundColor = UIColor(hex: 0xF7F3D5)
-//        self.pageTapButton.setTitleColor(UIColor(hex: 0x878379), for: .normal)
-//        //버튼 그림자
-//        self.pageTapButton.layer.shadowColor = UIColor.black.cgColor
-//        self.pageTapButton.layer.shadowOpacity = 0.2
-//        self.pageTapButton.layer.shadowRadius = 10
+        self.nextBtn.setTitle("넘어가기", for: .normal)
+        self.nextBtn.backgroundColor = UIColor(hex: 0xF7F3D5)
+        self.nextBtn.setTitleColor(UIColor(hex: 0x878379), for: .normal)
+        self.nextBtn.layer.shadowColor = UIColor.black.cgColor
+        self.nextBtn.layer.shadowOpacity = 0.2
+        self.nextBtn.layer.shadowRadius = 10
+        self.nextBtn.layer.cornerRadius = 15 //수정하기
         
+        //pageControl
+        self.pageControl.currentPageIndicatorTintColor = UIColor(hex: 0xF7BC86)
+        self.pageControl.pageIndicatorTintColor = UIColor(hex: 0xF5CDA9)
         slides = [OnboardingSlide(image: UIImage(named: "1.png")!),
         OnboardingSlide(image: UIImage(named: "2.png")!),
         OnboardingSlide(image: UIImage(named: "3.png")!)]
@@ -82,7 +87,10 @@ class SplashVieController : ViewController {
         if currentPage == slides.count - 1 {
             print("Go to the next page")
             let vc = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
-            navigationController?.pushViewController(vc, animated: true)
+//            navigationController?.pushViewController(vc, animated: true)
+            vc.modalTransitionStyle = .crossDissolve
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
         } else {
             currentPage += 1
             let indexPath = IndexPath(item: currentPage, section: 0)

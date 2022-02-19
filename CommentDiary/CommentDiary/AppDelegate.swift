@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // StatusBar에 Alamofire 시도 중 Indicator 띄워주기 위한 옵션 설정
         NetworkActivityIndicatorManager.shared.isEnabled = true
         
+//        UIApplication.shared.windows.first?.overrideUserInterfaceStyle = .unspecified
+        
         return true
     }
 

@@ -95,3 +95,24 @@ extension String {
         return self
     }
 }
+
+extension String {
+    //이메일 정규식
+    var isValidEmail: Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        return NSPredicate(format: "SELF MATCHES %@", emailRegEx).evaluate(with: self)    }
+}
+
+extension String {
+    //패스워드 정규식
+    var isValidPassword: Bool {
+        let passwordRegEx = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,16}"
+//영어 숫자 특수문자
+        return NSPredicate(format: "SELF MATCHES %@", passwordRegEx).evaluate(with: self)
+    }
+}
+
+
+//숫자+문자 포함해서 8~20글자 사이의 text 체크하는 정규표현식 let passwordreg = ("(?=.*[A-Za-z])(?=.*[0-9]).{8,20}")
+
+

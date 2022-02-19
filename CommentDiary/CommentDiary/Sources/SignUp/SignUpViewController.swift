@@ -10,6 +10,8 @@ import UIKit
 import Combine
 
 class SignUpViewController: UIViewController {
+    //alert
+    let authNumberAlertService = AuthNumberAlertService()
     var viewModel: SignUpPasswordViewModel!
     //메모리 관리
     private var passwordSubscription = Set<AnyCancellable>()
@@ -21,7 +23,14 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordConfirmTextField: UITextField!
     @IBOutlet weak var signupButton: UIButton!
     
+    @IBOutlet weak var emailValidLabel: UILabel!
+    @IBOutlet weak var passwordValidLabel: UILabel!
+    
     //MARK: - LifeCycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        passwordCheckLabel.text = ""
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,16 +41,35 @@ class SignUpViewController: UIViewController {
         signupButton.isEnabled = false
         textFieldSetting()
         passwordCheck()
+        buttonSetting()
+        
+        [emailTextField, passwordTextField, passwordConfirmTextField].forEach({ $0?.addTarget(self, action: #selector(editingChanged), for: .editingChanged)})
+        
+        
+        passwordValidLabel.text = "대소문자, 숫자, 특수문자를 포함해 8~16자를 작성해주세요"
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    @objc func editingChanged(_ textField: UITextField) {
+        if textField.text?.count == 1 {
+            if textField.text?.first == " " {
+                textField.text = ""
+                return
+            }
+        }
+        guard
+            let emailText = emailTextField.text, !emailText.isEmpty,
+            let passwordText = passwordTextField.text, !passwordText.isEmpty,
+            let passwordCheckText = passwordConfirmTextField.text, !passwordCheckText.isEmpty
+        else {
+            self.signupButton.isEnabled = false
+            self.signupButton.layer.borderColor = UIColor(hex: 0xF7BC86).cgColor
+            return
+        }
+        self.signupButton.isEnabled = true
+        self.signupButton.backgroundColor = UIColor(hex: 0xF5CDA9)
+        self.signupButton.layer.borderColor = UIColor(hex: 0xF5CDA9).cgColor
+    }
 
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        passwordCheckLabel.text = ""
-    }
     
     func textFieldSetting() {
         emailTextField.placeholder = "coda@coda.com"
@@ -61,15 +89,66 @@ class SignUpViewController: UIViewController {
         passwordConfirmTextField.backgroundColor = UIColor(hex: 0xE5E5E5)
     }
     
+    func buttonSetting() {
+        self.signupButton.layer.borderWidth = 4
+        self.signupButton.layer.borderColor = UIColor(hex: 0xF7BC86).cgColor
+        self.signupButton.layer.cornerRadius = 15 //수정 필요
+    }
+    
     //MARK: - Actions
     
     @IBAction func signUpTapButton(_ sender: Any) {
+        let signupCompletionVC = UIStoryboard(name: "SignUpCompletion", bundle: nil).instantiateViewController(withIdentifier: "SignUpCompletionViewController")
+        signupCompletionVC.modalTransitionStyle = .crossDissolve
+        signupCompletionVC.modalPresentationStyle = .fullScreen
+        self.present(signupCompletionVC, animated: true, completion: nil)
     }
     
     @IBAction func backButton(_ sender: Any) {
 //        navigationController?.popViewController(animated: true)
         dismiss(animated: true)
     }
+    
+    @IBAction func AuthNumberButton(_ sender: Any) {
+        let alertVC = authNumberAlertService.alert()
+        present(alertVC, animated: true)
+    }
+    
+//    @IBAction func changingEmailText(_ sender: UITextField) {
+//        if let emailInput = sender.text
+//    }
+    @IBAction func changingEmailText(_ sender: UITextField) {
+        if let emailInput = sender.text {
+            if emailInput.count == 0 {
+                return
+            }
+            
+            if emailInput.isValidEmail == true {
+                emailValidLabel.text = "이메일 양식입니다."
+                
+            } else {
+                emailValidLabel.text = "이메일 양식이 아닙니다."
+
+            }
+        }
+    }
+    
+    
+    @IBAction func changingPasswordText(_ sender: UITextField) {
+        if let passwordInput = sender.text {
+            if passwordInput.count == 0 {
+                return
+            }
+            if passwordInput.isValidPassword == true {
+                passwordValidLabel.text = "비밀번호 양식입니다."
+            } else {
+                passwordValidLabel.text = "비밀번호 양식이 아닙니다."
+                passwordValidLabel.textColor = .red
+            }
+        }
+    }
+    
+    
     
     
     
@@ -99,21 +178,6 @@ class SignUpViewController: UIViewController {
 
     //MARK: - Extentions
 extension SignUpViewController: UITextFieldDelegate {
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-////        if emailrange.location == 0 && range.length != 0 {
-////            self.signupButton.isEnabled = false
-////        } else {
-////            self.signupButton.isEnabled = true
-////        }
-////        if emailTextField.text != "" && passwordTextField.text != "" && passwordConfirmTextField.text != "" {
-////            self.signupButton.isEnabled = true
-////        } else {
-////            self.signupButton.isEnabled = false
-////        }
-//        emailTextField.text?.range.location
-//        return true
-//    }
-    
 
 }
 

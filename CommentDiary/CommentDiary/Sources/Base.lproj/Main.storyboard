@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JpM-Du-h0b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0n1-ej-vjk">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--WritingDiaryNavigationController-->
+        <!--WritingDiaryViewController-->
         <scene sceneID="0k9-CB-e3h">
             <objects>
-                <viewControllerPlaceholder storyboardName="WritingDiary" referencedIdentifier="WritingDiaryNavigationController" id="RqZ-fi-DOv" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="WritingDiary" referencedIdentifier="WritingDiaryViewController" id="RqZ-fi-DOv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="2kQ-W2-5qi"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVy-mM-t9z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="258" y="-292"/>
         </scene>
-        <!--ArrivedDiaryNavigationController-->
+        <!--ArrivedDiaryViewController-->
         <scene sceneID="LKx-Mu-CRR">
             <objects>
-                <viewControllerPlaceholder storyboardName="ArrivedDiary" referencedIdentifier="ArrivedDiaryNavigationController" id="6ff-bh-tYG" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="ArrivedDiary" referencedIdentifier="ArrivedDiaryViewController" id="6ff-bh-tYG" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Ljb-q3-B09"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PwV-z5-If7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -39,7 +39,8 @@
         <!--Tab Bar Controller-->
         <scene sceneID="s7f-sW-4pq">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JpM-Du-h0b" sceneMemberID="viewController">
+                <tabBarController useStoryboardIdentifierAsRestorationIdentifier="YES" id="JpM-Du-h0b" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="pod-xT-OLu"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aKF-DV-EHp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -65,6 +66,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHL-Pk-xgN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="262" y="193"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mj9-PJ-AML">
+            <objects>
+                <navigationController storyboardIdentifier="MainTabBarController" navigationBarHidden="YES" id="0n1-ej-vjk" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J5Z-B5-hB1">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="JpM-Du-h0b" kind="relationship" relationship="rootViewController" id="E9y-Oj-Yl5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ygO-My-Zzu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1284" y="-75"/>
         </scene>
     </scenes>
 </document>

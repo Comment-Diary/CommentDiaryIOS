@@ -55,6 +55,9 @@
 		A56FF78F27C0C21F00C740F7 /* WritingDiaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A56FF78D27C0C21F00C740F7 /* WritingDiaryTableViewCell.xib */; };
 		A56FF79427C0E88000C740F7 /* TodayDiaryBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56FF79327C0E88000C740F7 /* TodayDiaryBottomViewController.swift */; };
 		A56FF79627C0E89400C740F7 /* TodayDiaryBottom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56FF79527C0E89400C740F7 /* TodayDiaryBottom.storyboard */; };
+		A56FF79927C16AB200C740F7 /* EmailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56FF79827C16AB200C740F7 /* EmailRequest.swift */; };
+		A56FF79B27C16AC100C740F7 /* EmailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56FF79A27C16AC100C740F7 /* EmailResponse.swift */; };
+		A56FF79D27C16ACC00C740F7 /* EmailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56FF79C27C16ACC00C740F7 /* EmailDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +111,9 @@
 		A56FF78D27C0C21F00C740F7 /* WritingDiaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WritingDiaryTableViewCell.xib; sourceTree = "<group>"; };
 		A56FF79327C0E88000C740F7 /* TodayDiaryBottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDiaryBottomViewController.swift; sourceTree = "<group>"; };
 		A56FF79527C0E89400C740F7 /* TodayDiaryBottom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TodayDiaryBottom.storyboard; sourceTree = "<group>"; };
+		A56FF79827C16AB200C740F7 /* EmailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRequest.swift; sourceTree = "<group>"; };
+		A56FF79A27C16AC100C740F7 /* EmailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailResponse.swift; sourceTree = "<group>"; };
+		A56FF79C27C16ACC00C740F7 /* EmailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailDataManager.swift; sourceTree = "<group>"; };
 		E3C33BD30605D7DB387967A7 /* Pods-CommentDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommentDiary.release.xcconfig"; path = "Target Support Files/Pods-CommentDiary/Pods-CommentDiary.release.xcconfig"; sourceTree = "<group>"; };
 		F7CFBFB7F6DD1F7AD2C2DF30 /* Pods-CommentDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommentDiary.debug.xcconfig"; path = "Target Support Files/Pods-CommentDiary/Pods-CommentDiary.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -366,6 +372,7 @@
 		A567623427BD0553006FDA7F /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A56FF79727C16A6C00C740F7 /* email */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -388,6 +395,16 @@
 				A56FF79527C0E89400C740F7 /* TodayDiaryBottom.storyboard */,
 			);
 			path = TodayDiaryBottomSheet;
+			sourceTree = "<group>";
+		};
+		A56FF79727C16A6C00C740F7 /* email */ = {
+			isa = PBXGroup;
+			children = (
+				A56FF79827C16AB200C740F7 /* EmailRequest.swift */,
+				A56FF79A27C16AC100C740F7 /* EmailResponse.swift */,
+				A56FF79C27C16ACC00C740F7 /* EmailDataManager.swift */,
+			);
+			path = email;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -524,6 +541,7 @@
 				A567614D27B7E452006FDA7F /* ViewController.swift in Sources */,
 				A56FF78A27C0119D00C740F7 /* CalendarTableViewCell.swift in Sources */,
 				A567614927B7E452006FDA7F /* AppDelegate.swift in Sources */,
+				A56FF79B27C16AC100C740F7 /* EmailResponse.swift in Sources */,
 				A567616C27B7E890006FDA7F /* UINavigaionBar.swift in Sources */,
 				A567616A27B7E83C006FDA7F /* UIViewController.swift in Sources */,
 				A5567C9F27BE9452001A4B98 /* SignUpCompletionViewController.swift in Sources */,
@@ -537,12 +555,14 @@
 				A567622A27BBC7D3006FDA7F /* SignUpViewController.swift in Sources */,
 				A5567CA627BEA350001A4B98 /* TodayDiaryViewController.swift in Sources */,
 				A5567C9C27BD5A3C001A4B98 /* AuthNumberAlertService.swift in Sources */,
+				A56FF79927C16AB200C740F7 /* EmailRequest.swift in Sources */,
 				A567616627B7E809006FDA7F /* UIFont.swift in Sources */,
 				A5567C9427BD4D7D001A4B98 /* MyPageViewController.swift in Sources */,
 				A5567C8627BD4C98001A4B98 /* ArrivedDiaryViewController.swift in Sources */,
 				A567614B27B7E452006FDA7F /* SceneDelegate.swift in Sources */,
 				A567616027B7E7B0006FDA7F /* Date.swift in Sources */,
 				A567622E27BBFBBC006FDA7F /* SignUpPasswordViewModel.swift in Sources */,
+				A56FF79D27C16ACC00C740F7 /* EmailDataManager.swift in Sources */,
 				A567623127BC2E33006FDA7F /* OnboardingSlide.swift in Sources */,
 				A567617427B7EA56006FDA7F /* IndicatorView.swift in Sources */,
 				A567616427B7E7E2006FDA7F /* Color.swift in Sources */,

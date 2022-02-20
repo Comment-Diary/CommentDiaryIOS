@@ -20,14 +20,17 @@
                                 <rect key="frame" x="17" y="44" width="380" height="747"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WOz-mL-lq8">
-                                        <rect key="frame" x="0.0" y="0.0" width="380" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="380" height="1002"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E3Q-64-00h">
-                                                <rect key="frame" x="0.0" y="0.0" width="380" height="117"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="380" height="119"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="나는 오늘도 너무너무 서툴다." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eHS-WI-myK">
-                                                        <rect key="frame" x="17" y="19" width="346" height="98"/>
+                                                        <rect key="frame" x="17" y="19" width="346" height="100"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Ygj-cF-eqo"/>
+                                                        </constraints>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -42,7 +45,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CxI-rd-YX4">
-                                                <rect key="frame" x="0.0" y="117" width="380" height="2"/>
+                                                <rect key="frame" x="0.0" y="119" width="380" height="2"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oXi-qU-AWd">
                                                         <rect key="frame" x="17" y="0.0" width="346" height="2"/>
@@ -59,12 +62,14 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DkD-Oz-39Z">
-                                                <rect key="frame" x="0.0" y="119" width="380" height="881"/>
+                                                <rect key="frame" x="0.0" y="121" width="380" height="881"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dqO-ZP-9RZ">
                                                         <rect key="frame" x="17" y="12" width="346" height="660.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <string key="text">내가 서툴고 불안해보였나요. 그건 내가 진심이었단 증거입니다. 소중하지 않았다면 왜 그토록 마음을 기울였겠어요. 망실이고 비틀거리고 안절부절 못하면서  황경신의 밤 열한시내가 서툴고 불안해보였나요. 그건 내가 진심이었단 증거입니다. 소중하지 않았다면 왜 그토록 마음을 기울였겠어요. 망실이고 비틀거리고 안절부절 못하면서  황경신의 밤 열한시내가 서툴고 불안해보였나요. 그건 내가 진심이었단 증거입니다. 소중하지 않았다면 왜 그토록 마음을 기울였겠어요. 망실이고 비틀거리고 안절부절 못하면서  황경신의 밤 열한시내가 서툴고 불안해보였나요. 그건 내가 진심이었단 증거입니다. 소중하지 않았다면 왜 그토록 마음을 기울였겠어요. 망실이고 비틀거리고 안절부절 못하면서  황경신의 밤 열한시내가 서툴고 불안해보였나요. 그건 내가 진심이었단 증거입니다. 소중하지 않았다면 왜 그토록 마음을 기울였겠어요. 망실이고 비틀거리고 안절부절 못하면서  황경신의 밤 열한시</string>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="q4L-vc-33D"/>
+                                                        </constraints>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

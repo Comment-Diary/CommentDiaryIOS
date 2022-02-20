@@ -46,7 +46,7 @@ class SignUpViewController: UIViewController {
         [emailTextField, passwordTextField, passwordConfirmTextField].forEach({ $0?.addTarget(self, action: #selector(editingChanged), for: .editingChanged)})
         
         
-        passwordValidLabel.text = "대소문자, 숫자, 특수문자를 포함해 8~16자를 작성해주세요"
+//        passwordValidLabel.text = "대소문자, 숫자, 특수문자를 포함해 8~16자를 작성해주세요"
     }
     
     @objc func editingChanged(_ textField: UITextField) {

@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		72348980A73ACA4D0557B56A /* Pods_CommentDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257620E5E0C6E68F06987348 /* Pods_CommentDiary.framework */; };
-		A5567C7E27BD46DD001A4B98 /* RecordStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5567C7D27BD46DD001A4B98 /* RecordStartViewController.swift */; };
-		A5567C8027BD46EB001A4B98 /* RecordStart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5567C7F27BD46EB001A4B98 /* RecordStart.storyboard */; };
 		A5567C8627BD4C98001A4B98 /* ArrivedDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5567C8527BD4C98001A4B98 /* ArrivedDiaryViewController.swift */; };
 		A5567C8827BD4CC0001A4B98 /* ArrivedDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5567C8727BD4CC0001A4B98 /* ArrivedDiary.storyboard */; };
 		A5567C8A27BD4CD9001A4B98 /* MyDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5567C8927BD4CD9001A4B98 /* MyDiary.storyboard */; };
@@ -58,12 +56,13 @@
 		A56FF79927C16AB200C740F7 /* EmailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56FF79827C16AB200C740F7 /* EmailRequest.swift */; };
 		A56FF79B27C16AC100C740F7 /* EmailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56FF79A27C16AC100C740F7 /* EmailResponse.swift */; };
 		A56FF79D27C16ACC00C740F7 /* EmailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56FF79C27C16ACC00C740F7 /* EmailDataManager.swift */; };
+		A5C1D5B527C271E80046095A /* CheckEmailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1D5B427C271E80046095A /* CheckEmailDataManager.swift */; };
+		A5C1D5B727C271F40046095A /* CheckEmailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1D5B627C271F30046095A /* CheckEmailResponse.swift */; };
+		A5C1D5B927C271FE0046095A /* CheckEmailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1D5B827C271FE0046095A /* CheckEmailRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		257620E5E0C6E68F06987348 /* Pods_CommentDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommentDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5567C7D27BD46DD001A4B98 /* RecordStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordStartViewController.swift; sourceTree = "<group>"; };
-		A5567C7F27BD46EB001A4B98 /* RecordStart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecordStart.storyboard; sourceTree = "<group>"; };
 		A5567C8527BD4C98001A4B98 /* ArrivedDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivedDiaryViewController.swift; sourceTree = "<group>"; };
 		A5567C8727BD4CC0001A4B98 /* ArrivedDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArrivedDiary.storyboard; sourceTree = "<group>"; };
 		A5567C8927BD4CD9001A4B98 /* MyDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyDiary.storyboard; sourceTree = "<group>"; };
@@ -114,6 +113,9 @@
 		A56FF79827C16AB200C740F7 /* EmailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRequest.swift; sourceTree = "<group>"; };
 		A56FF79A27C16AC100C740F7 /* EmailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailResponse.swift; sourceTree = "<group>"; };
 		A56FF79C27C16ACC00C740F7 /* EmailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailDataManager.swift; sourceTree = "<group>"; };
+		A5C1D5B427C271E80046095A /* CheckEmailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailDataManager.swift; sourceTree = "<group>"; };
+		A5C1D5B627C271F30046095A /* CheckEmailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailResponse.swift; sourceTree = "<group>"; };
+		A5C1D5B827C271FE0046095A /* CheckEmailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailRequest.swift; sourceTree = "<group>"; };
 		E3C33BD30605D7DB387967A7 /* Pods-CommentDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommentDiary.release.xcconfig"; path = "Target Support Files/Pods-CommentDiary/Pods-CommentDiary.release.xcconfig"; sourceTree = "<group>"; };
 		F7CFBFB7F6DD1F7AD2C2DF30 /* Pods-CommentDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommentDiary.debug.xcconfig"; path = "Target Support Files/Pods-CommentDiary/Pods-CommentDiary.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,15 +147,6 @@
 				E3C33BD30605D7DB387967A7 /* Pods-CommentDiary.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		A5567C7C27BD4668001A4B98 /* RecordStart */ = {
-			isa = PBXGroup;
-			children = (
-				A5567C7D27BD46DD001A4B98 /* RecordStartViewController.swift */,
-				A5567C7F27BD46EB001A4B98 /* RecordStart.storyboard */,
-			);
-			path = RecordStart;
 			sourceTree = "<group>";
 		};
 		A5567C8127BD4C0C001A4B98 /* MyPageTab */ = {
@@ -313,7 +306,6 @@
 				A5567C8427BD4C16001A4B98 /* ArrivedDiaryTab */,
 				A5567C8327BD4C13001A4B98 /* MyDiaryTab */,
 				A5567C8127BD4C0C001A4B98 /* MyPageTab */,
-				A5567C7C27BD4668001A4B98 /* RecordStart */,
 				A567622827BBC7B6006FDA7F /* SignUp */,
 				A5567C9D27BE9432001A4B98 /* SignUpCompletion */,
 				A567622327BBB8AE006FDA7F /* LogIn */,
@@ -372,7 +364,8 @@
 		A567623427BD0553006FDA7F /* API */ = {
 			isa = PBXGroup;
 			children = (
-				A56FF79727C16A6C00C740F7 /* email */,
+				A5C1D5B327C271A80046095A /* CheckEmail */,
+				A56FF79727C16A6C00C740F7 /* RequestEmailAuth */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -397,14 +390,24 @@
 			path = TodayDiaryBottomSheet;
 			sourceTree = "<group>";
 		};
-		A56FF79727C16A6C00C740F7 /* email */ = {
+		A56FF79727C16A6C00C740F7 /* RequestEmailAuth */ = {
 			isa = PBXGroup;
 			children = (
-				A56FF79827C16AB200C740F7 /* EmailRequest.swift */,
 				A56FF79A27C16AC100C740F7 /* EmailResponse.swift */,
 				A56FF79C27C16ACC00C740F7 /* EmailDataManager.swift */,
+				A56FF79827C16AB200C740F7 /* EmailRequest.swift */,
 			);
-			path = email;
+			path = RequestEmailAuth;
+			sourceTree = "<group>";
+		};
+		A5C1D5B327C271A80046095A /* CheckEmail */ = {
+			isa = PBXGroup;
+			children = (
+				A5C1D5B427C271E80046095A /* CheckEmailDataManager.swift */,
+				A5C1D5B627C271F30046095A /* CheckEmailResponse.swift */,
+				A5C1D5B827C271FE0046095A /* CheckEmailRequest.swift */,
+			);
+			path = CheckEmail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -477,7 +480,6 @@
 				A56FF78B27C0119D00C740F7 /* CalendarTableViewCell.xib in Resources */,
 				A5567C8827BD4CC0001A4B98 /* ArrivedDiary.storyboard in Resources */,
 				A5567C9227BD4D71001A4B98 /* MyPage.storyboard in Resources */,
-				A5567C8027BD46EB001A4B98 /* RecordStart.storyboard in Resources */,
 				A567622C27BBC7DC006FDA7F /* SignUp.storyboard in Resources */,
 				A5567C8A27BD4CD9001A4B98 /* MyDiary.storyboard in Resources */,
 				A567617D27B7F640006FDA7F /* Splash.storyboard in Resources */,
@@ -546,8 +548,9 @@
 				A567616A27B7E83C006FDA7F /* UIViewController.swift in Sources */,
 				A5567C9F27BE9452001A4B98 /* SignUpCompletionViewController.swift in Sources */,
 				A567616227B7E7CE006FDA7F /* String.swift in Sources */,
-				A5567C7E27BD46DD001A4B98 /* RecordStartViewController.swift in Sources */,
 				A567616827B7E820006FDA7F /* UIButton.swift in Sources */,
+				A5C1D5B927C271FE0046095A /* CheckEmailRequest.swift in Sources */,
+				A5C1D5B527C271E80046095A /* CheckEmailDataManager.swift in Sources */,
 				A56FF78E27C0C21F00C740F7 /* WritingDiaryTableViewCell.swift in Sources */,
 				A5567C9827BD5353001A4B98 /* AuthNumberViewController.swift in Sources */,
 				A567617B27B7F627006FDA7F /* SplashViewController.swift in Sources */,
@@ -566,6 +569,7 @@
 				A567623127BC2E33006FDA7F /* OnboardingSlide.swift in Sources */,
 				A567617427B7EA56006FDA7F /* IndicatorView.swift in Sources */,
 				A567616427B7E7E2006FDA7F /* Color.swift in Sources */,
+				A5C1D5B727C271F40046095A /* CheckEmailResponse.swift in Sources */,
 				A5567C8E27BD4D1A001A4B98 /* WritingDiaryViewController.swift in Sources */,
 				A567623327BC2F10006FDA7F /* OnboardingCollectionViewCell.swift in Sources */,
 				A56FF79427C0E88000C740F7 /* TodayDiaryBottomViewController.swift in Sources */,

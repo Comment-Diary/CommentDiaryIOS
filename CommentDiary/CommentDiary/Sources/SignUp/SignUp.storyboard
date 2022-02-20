@@ -173,6 +173,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="authNumberButton" destination="kEk-25-Pog" id="6IB-f8-oP8"/>
                         <outlet property="emailTextField" destination="azo-eb-zHY" id="XKb-Uu-vHb"/>
                         <outlet property="emailValidLabel" destination="Qby-Lm-B8M" id="2uo-RU-qlN"/>
                         <outlet property="passwordCheckLabel" destination="Kof-Kl-ILI" id="o29-W9-gMp"/>

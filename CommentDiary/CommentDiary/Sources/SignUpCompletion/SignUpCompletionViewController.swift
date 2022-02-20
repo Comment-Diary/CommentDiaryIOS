@@ -22,13 +22,25 @@ class SignUpCompletionViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction func recordStartTapButton(_ sender: Any) {
-        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
-        loginVC.modalTransitionStyle = .crossDissolve
-        loginVC.modalPresentationStyle = .fullScreen
-        self.present(loginVC, animated: true, completion: nil)
+//        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+//        loginVC.modalTransitionStyle = .crossDissolve
+//        loginVC.modalPresentationStyle = .fullScreen
+//        self.present(loginVC, animated: true, completion: nil)
+        let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
+        mainTabBarController.modalPresentationStyle = .fullScreen
+        mainTabBarController.modalTransitionStyle = .crossDissolve
+        self.present(mainTabBarController, animated: true, completion: nil)
     }
     
 }
 
 
     //MARK: - Extentions
+
+
+//UserDefaults.standard.set(emailTextField.text, forKey: "email")
+//
+////        var myJWToken : String = ""
+////        myJWToken = UserDefaults.standard.value(forKey: "myJWT") as? String ?? ""
+
+//이메일 비밀번호 userdefaults로 저장한거 불러와서 API 연동 후 홈 화면으로 이동 시키기

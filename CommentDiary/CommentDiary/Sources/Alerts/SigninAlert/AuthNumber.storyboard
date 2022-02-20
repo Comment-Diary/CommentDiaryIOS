@@ -37,11 +37,19 @@
                                             <action selector="okTapButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gbE-MJ-rQ4"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWY-jh-Exn">
+                                        <rect key="frame" x="30" y="133" width="180" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="BWY-jh-Exn" firstAttribute="centerX" secondItem="Avw-Bm-d3p" secondAttribute="centerX" id="6ft-c7-799"/>
+                                    <constraint firstItem="BWY-jh-Exn" firstAttribute="centerY" secondItem="Avw-Bm-d3p" secondAttribute="centerY" id="8zX-S8-RVs"/>
                                     <constraint firstAttribute="width" constant="240" id="Gap-bL-85H"/>
                                     <constraint firstAttribute="height" constant="300" id="W7x-4F-oES"/>
+                                    <constraint firstItem="BWY-jh-Exn" firstAttribute="leading" secondItem="Avw-Bm-d3p" secondAttribute="leading" constant="30" id="gEa-NN-kYp"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -52,6 +60,11 @@
                             <constraint firstItem="Avw-Bm-d3p" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="q7J-Rg-vRI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="authTextField" destination="BWY-jh-Exn" id="LGT-26-7Yq"/>
+                        <outlet property="cancelButton" destination="Ha7-qF-Y8T" id="TPY-3G-lGL"/>
+                        <outlet property="okayButton" destination="VT2-cA-vt0" id="Z93-Hy-axW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

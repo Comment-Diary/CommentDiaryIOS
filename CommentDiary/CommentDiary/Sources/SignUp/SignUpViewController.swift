@@ -26,6 +26,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailValidLabel: UILabel!
     @IBOutlet weak var passwordValidLabel: UILabel!
     
+    @IBOutlet weak var authNumberButton: UIButton!
+    
     //MARK: - LifeCycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -90,6 +92,8 @@ class SignUpViewController: UIViewController {
     }
     
     func buttonSetting() {
+        //인증 번호 전송 버튼 초기 비활성화
+        self.authNumberButton.isEnabled = false
         self.signupButton.layer.borderWidth = 4
         self.signupButton.layer.borderColor = UIColor(hex: 0xF7BC86).cgColor
         self.signupButton.layer.cornerRadius = 15 //수정 필요
@@ -98,6 +102,8 @@ class SignUpViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction func signUpTapButton(_ sender: Any) {
+        //비밀번호 텍스트 저장
+        UserDefaults.standard.set(passwordTextField.text, forKey: "password")
         let signupCompletionVC = UIStoryboard(name: "SignUpCompletion", bundle: nil).instantiateViewController(withIdentifier: "SignUpCompletionViewController")
         signupCompletionVC.modalTransitionStyle = .crossDissolve
         signupCompletionVC.modalPresentationStyle = .fullScreen
@@ -110,6 +116,14 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func AuthNumberButton(_ sender: Any) {
+        EmailRequest.email = emailTextField.text ?? ""
+        EmailDataManager().emailPostData()
+        //이메일 텍스트 저장
+        UserDefaults.standard.set(emailTextField.text, forKey: "email")
+        
+//        var myJWToken : String = ""
+//        myJWToken = UserDefaults.standard.value(forKey: "myJWT") as? String ?? ""
+        
         let alertVC = authNumberAlertService.alert()
         present(alertVC, animated: true)
     }
@@ -125,9 +139,12 @@ class SignUpViewController: UIViewController {
             
             if emailInput.isValidEmail == true {
                 emailValidLabel.text = "이메일 양식입니다."
+                authNumberButton.isEnabled = true
                 
             } else {
                 emailValidLabel.text = "이메일 양식이 아닙니다."
+                authNumberButton.isEnabled = false
+                
 
             }
         }

@@ -10,8 +10,7 @@
 #endif
 #endif
 
-#import "FSPagerViewObjcCompat.h"
 
-FOUNDATION_EXPORT double FSPagerViewVersionNumber;
-FOUNDATION_EXPORT const unsigned char FSPagerViewVersionString[];
+FOUNDATION_EXPORT double IQKeyboardManagerSwiftVersionNumber;
+FOUNDATION_EXPORT const unsigned char IQKeyboardManagerSwiftVersionString[];
 

@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--내 일기-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="WritingDiaryViewController" id="Y6W-OH-hqX" customClass="WritingDiaryViewController" customModule="CommentDiary" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,7 +31,7 @@
                             <constraint firstItem="Z7W-Hz-jgn" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="pqI-Ga-bnm"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="CXV-tV-2gH"/>
+                    <tabBarItem key="tabBarItem" title="내 일기" id="CXV-tV-2gH"/>
                     <navigationItem key="navigationItem" id="FVQ-38-lvk"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

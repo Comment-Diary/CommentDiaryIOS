@@ -59,6 +59,10 @@
 		A5C1D5B527C271E80046095A /* CheckEmailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1D5B427C271E80046095A /* CheckEmailDataManager.swift */; };
 		A5C1D5B727C271F40046095A /* CheckEmailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1D5B627C271F30046095A /* CheckEmailResponse.swift */; };
 		A5C1D5B927C271FE0046095A /* CheckEmailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1D5B827C271FE0046095A /* CheckEmailRequest.swift */; };
+		A5CCD18427C34BA30096281F /* LoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCD18327C34BA30096281F /* LoginDataManager.swift */; };
+		A5CCD18627C34BAE0096281F /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCD18527C34BAE0096281F /* LoginResponse.swift */; };
+		A5CCD18827C34BB70096281F /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCD18727C34BB70096281F /* LoginRequest.swift */; };
+		A5CCD18A27C3DC4F0096281F /* CalendarTimeZoneCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCD18927C3DC4F0096281F /* CalendarTimeZoneCustom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +120,10 @@
 		A5C1D5B427C271E80046095A /* CheckEmailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailDataManager.swift; sourceTree = "<group>"; };
 		A5C1D5B627C271F30046095A /* CheckEmailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailResponse.swift; sourceTree = "<group>"; };
 		A5C1D5B827C271FE0046095A /* CheckEmailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailRequest.swift; sourceTree = "<group>"; };
+		A5CCD18327C34BA30096281F /* LoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManager.swift; sourceTree = "<group>"; };
+		A5CCD18527C34BAE0096281F /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		A5CCD18727C34BB70096281F /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		A5CCD18927C3DC4F0096281F /* CalendarTimeZoneCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTimeZoneCustom.swift; sourceTree = "<group>"; };
 		E3C33BD30605D7DB387967A7 /* Pods-CommentDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommentDiary.release.xcconfig"; path = "Target Support Files/Pods-CommentDiary/Pods-CommentDiary.release.xcconfig"; sourceTree = "<group>"; };
 		F7CFBFB7F6DD1F7AD2C2DF30 /* Pods-CommentDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommentDiary.debug.xcconfig"; path = "Target Support Files/Pods-CommentDiary/Pods-CommentDiary.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -364,8 +372,9 @@
 		A567623427BD0553006FDA7F /* API */ = {
 			isa = PBXGroup;
 			children = (
-				A5C1D5B327C271A80046095A /* CheckEmail */,
-				A56FF79727C16A6C00C740F7 /* RequestEmailAuth */,
+				A5CCD18227C34B7F0096281F /* LoginAPI */,
+				A5C1D5B327C271A80046095A /* CheckEmailAPI */,
+				A56FF79727C16A6C00C740F7 /* RequestEmailAuthAPI */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -373,6 +382,7 @@
 		A56FF78327C00F7700C740F7 /* WritingDiaryCell */ = {
 			isa = PBXGroup;
 			children = (
+				A5CCD18927C3DC4F0096281F /* CalendarTimeZoneCustom.swift */,
 				A56FF78827C0119D00C740F7 /* CalendarTableViewCell.swift */,
 				A56FF78927C0119D00C740F7 /* CalendarTableViewCell.xib */,
 				A56FF78C27C0C21F00C740F7 /* WritingDiaryTableViewCell.swift */,
@@ -390,24 +400,34 @@
 			path = TodayDiaryBottomSheet;
 			sourceTree = "<group>";
 		};
-		A56FF79727C16A6C00C740F7 /* RequestEmailAuth */ = {
+		A56FF79727C16A6C00C740F7 /* RequestEmailAuthAPI */ = {
 			isa = PBXGroup;
 			children = (
 				A56FF79A27C16AC100C740F7 /* EmailResponse.swift */,
 				A56FF79C27C16ACC00C740F7 /* EmailDataManager.swift */,
 				A56FF79827C16AB200C740F7 /* EmailRequest.swift */,
 			);
-			path = RequestEmailAuth;
+			path = RequestEmailAuthAPI;
 			sourceTree = "<group>";
 		};
-		A5C1D5B327C271A80046095A /* CheckEmail */ = {
+		A5C1D5B327C271A80046095A /* CheckEmailAPI */ = {
 			isa = PBXGroup;
 			children = (
 				A5C1D5B427C271E80046095A /* CheckEmailDataManager.swift */,
 				A5C1D5B627C271F30046095A /* CheckEmailResponse.swift */,
 				A5C1D5B827C271FE0046095A /* CheckEmailRequest.swift */,
 			);
-			path = CheckEmail;
+			path = CheckEmailAPI;
+			sourceTree = "<group>";
+		};
+		A5CCD18227C34B7F0096281F /* LoginAPI */ = {
+			isa = PBXGroup;
+			children = (
+				A5CCD18327C34BA30096281F /* LoginDataManager.swift */,
+				A5CCD18527C34BAE0096281F /* LoginResponse.swift */,
+				A5CCD18727C34BB70096281F /* LoginRequest.swift */,
+			);
+			path = LoginAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -539,6 +559,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5567C8C27BD4CF5001A4B98 /* MyDiaryViewController.swift in Sources */,
+				A5CCD18627C34BAE0096281F /* LoginResponse.swift in Sources */,
 				A567622727BBB8D5006FDA7F /* LoginViewController.swift in Sources */,
 				A567614D27B7E452006FDA7F /* ViewController.swift in Sources */,
 				A56FF78A27C0119D00C740F7 /* CalendarTableViewCell.swift in Sources */,
@@ -557,6 +578,8 @@
 				A567617027B7E8EA006FDA7F /* KobisKey.swift in Sources */,
 				A567622A27BBC7D3006FDA7F /* SignUpViewController.swift in Sources */,
 				A5567CA627BEA350001A4B98 /* TodayDiaryViewController.swift in Sources */,
+				A5CCD18427C34BA30096281F /* LoginDataManager.swift in Sources */,
+				A5CCD18827C34BB70096281F /* LoginRequest.swift in Sources */,
 				A5567C9C27BD5A3C001A4B98 /* AuthNumberAlertService.swift in Sources */,
 				A56FF79927C16AB200C740F7 /* EmailRequest.swift in Sources */,
 				A567616627B7E809006FDA7F /* UIFont.swift in Sources */,
@@ -564,6 +587,7 @@
 				A5567C8627BD4C98001A4B98 /* ArrivedDiaryViewController.swift in Sources */,
 				A567614B27B7E452006FDA7F /* SceneDelegate.swift in Sources */,
 				A567616027B7E7B0006FDA7F /* Date.swift in Sources */,
+				A5CCD18A27C3DC4F0096281F /* CalendarTimeZoneCustom.swift in Sources */,
 				A567622E27BBFBBC006FDA7F /* SignUpPasswordViewModel.swift in Sources */,
 				A56FF79D27C16ACC00C740F7 /* EmailDataManager.swift in Sources */,
 				A567623127BC2E33006FDA7F /* OnboardingSlide.swift in Sources */,
@@ -722,6 +746,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JB8T59WMFR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CommentDiary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -729,6 +754,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Splash;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Lignt;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -750,6 +776,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JB8T59WMFR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CommentDiary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -757,6 +784,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Splash;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Lignt;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

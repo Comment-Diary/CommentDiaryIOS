@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2D-mZ-25E">
-                                <rect key="frame" x="17" y="44" width="380" height="747"/>
+                                <rect key="frame" x="17" y="144" width="380" height="647"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WOz-mL-lq8">
                                         <rect key="frame" x="0.0" y="0.0" width="380" height="1002"/>
@@ -122,24 +122,75 @@
                                     <action selector="saveTapButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="kfp-wh-Vz3"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JdS-Kk-ZCw">
+                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Mn-f0-apB">
+                                        <rect key="frame" x="21" y="21" width="67" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="backButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Tog-R3-0PB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpt-dq-79a">
+                                        <rect key="frame" x="268" y="15" width="67" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="trashButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Ycm-wz-MFp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJo-hY-P3p">
+                                        <rect key="frame" x="347" y="14" width="67" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="fixingButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fvR-RD-F5e"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="오늘의 일기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGy-bt-Lv4">
+                                        <rect key="frame" x="119" y="8" width="78" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="olC-k9-SyM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JdS-Kk-ZCw" secondAttribute="trailing" id="3yf-VX-9DF"/>
                             <constraint firstItem="ZC1-Ee-aUX" firstAttribute="top" secondItem="L2D-mZ-25E" secondAttribute="bottom" constant="20" id="44d-JX-vp8"/>
+                            <constraint firstItem="L2D-mZ-25E" firstAttribute="top" secondItem="JdS-Kk-ZCw" secondAttribute="bottom" constant="40" id="6bP-jz-fNE"/>
+                            <constraint firstItem="JdS-Kk-ZCw" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Ogp-xc-ZGm"/>
                             <constraint firstItem="ZC1-Ee-aUX" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="PT3-EP-7zH"/>
-                            <constraint firstItem="L2D-mZ-25E" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Zlw-Qx-3JX"/>
+                            <constraint firstItem="JdS-Kk-ZCw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="egp-sU-IHA"/>
                             <constraint firstItem="L2D-mZ-25E" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="17" id="eyE-Bc-osA"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="L2D-mZ-25E" secondAttribute="trailing" constant="17" id="fG0-j5-x4m"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ZC1-Ee-aUX" secondAttribute="bottom" constant="20" id="sTk-Gw-F9v"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="1Mn-f0-apB" id="FaN-nt-qny"/>
                         <outlet property="commentView" destination="Vzm-gH-Y4P" id="YkO-0m-j2N"/>
                         <outlet property="contentTextView" destination="dqO-ZP-9RZ" id="b0Q-k5-dUx"/>
+                        <outlet property="diaryScrollView" destination="L2D-mZ-25E" id="j6B-CD-0V1"/>
+                        <outlet property="fixingButton" destination="hJo-hY-P3p" id="drK-Wt-Yfi"/>
                         <outlet property="saveButton" destination="ZC1-Ee-aUX" id="n6p-h0-Iju"/>
                         <outlet property="textCountLabel" destination="1qn-3w-nav" id="zU0-Q0-wbf"/>
                         <outlet property="titleTextView" destination="eHS-WI-myK" id="Tzs-8Z-DKq"/>
+                        <outlet property="todayDiaryLabel" destination="DGy-bt-Lv4" id="TbL-ia-nFf"/>
+                        <outlet property="trashButton" destination="cpt-dq-79a" id="Fd5-lB-AuC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -153,6 +204,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

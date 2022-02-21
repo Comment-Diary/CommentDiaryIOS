@@ -26,7 +26,9 @@ class WritingDiaryTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 13, left: 0, bottom: 0, right: 0))
+//        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 13, left: 0, bottom: 0, right: 0))
+//        contentView = contentView.frame.contentInset
+        contentView.frame = contentView.frame.offsetBy(dx: 0, dy: 30) //위의 셀과 얼마나 띄울지
     }
     
 }

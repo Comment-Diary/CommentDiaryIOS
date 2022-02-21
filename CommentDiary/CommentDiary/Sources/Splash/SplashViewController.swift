@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import FSPagerView
 
 class SplashVieController : ViewController {
     var slides: [OnboardingSlide] = []

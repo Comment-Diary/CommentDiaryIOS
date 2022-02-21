@@ -24,11 +24,11 @@
             </objects>
             <point key="canvasLocation" x="-16" y="98"/>
         </scene>
-        <!--Item-->
+        <!--모아보기-->
         <scene sceneID="i03-VO-Qzg">
             <objects>
                 <navigationController storyboardIdentifier="MyDiaryNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QNB-AN-Iy9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Eh1-2M-a0U"/>
+                    <tabBarItem key="tabBarItem" title="모아보기" id="Eh1-2M-a0U"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q0m-ns-pd4">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

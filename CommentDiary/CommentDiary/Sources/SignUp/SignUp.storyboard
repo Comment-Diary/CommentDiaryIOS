@@ -94,7 +94,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="곧 회원가입이 완료돼요!">
+                                <state key="normal" title="회원가입하기">
                                     <color key="titleColor" red="0.52941176470588236" green="0.51372549019607838" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -108,8 +108,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작성 양식을 다시 한번 확인해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iH0-fo-udR">
-                                <rect key="frame" x="119" y="368" width="243" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="119" y="369" width="229" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -129,8 +129,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일치하지 않아요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kof-Kl-ILI">
-                                <rect key="frame" x="153" y="467" width="108" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="153" y="468" width="101.5" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -144,7 +144,6 @@
                             <constraint firstItem="Qby-Lm-B8M" firstAttribute="firstBaseline" secondItem="NfJ-ZY-heP" secondAttribute="firstBaseline" id="8IP-Gz-YZd"/>
                             <constraint firstItem="COv-EF-RJ0" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="9bG-mw-IoD"/>
                             <constraint firstItem="yWH-aa-sJ4" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="120" id="CoI-66-6qo"/>
-                            <constraint firstItem="WDq-rE-FzQ" firstAttribute="top" secondItem="iH0-fo-udR" secondAttribute="bottom" constant="4" id="DSi-0O-e5c"/>
                             <constraint firstItem="yWH-aa-sJ4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="52" id="HGL-sK-R8V"/>
                             <constraint firstItem="09f-SW-nYb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="52" id="HMV-eq-jqQ"/>
                             <constraint firstItem="COv-EF-RJ0" firstAttribute="top" secondItem="WDq-rE-FzQ" secondAttribute="bottom" constant="3" id="IWk-Et-FfR"/>
@@ -155,6 +154,7 @@
                             <constraint firstItem="azo-eb-zHY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="52" id="Yfy-B8-KxH"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="gqF-CM-zom" secondAttribute="bottom" constant="61" id="Z7h-ud-VNg"/>
                             <constraint firstItem="iH0-fo-udR" firstAttribute="centerY" secondItem="nah-y8-v3v" secondAttribute="centerY" id="bUq-sP-N1H"/>
+                            <constraint firstItem="WDq-rE-FzQ" firstAttribute="top" secondItem="nah-y8-v3v" secondAttribute="bottom" constant="4" id="bZB-pT-jAF"/>
                             <constraint firstItem="NfJ-ZY-heP" firstAttribute="top" secondItem="yWH-aa-sJ4" secondAttribute="bottom" constant="32" id="cDq-Zf-4r0"/>
                             <constraint firstItem="3NR-GV-IN4" firstAttribute="top" secondItem="09f-SW-nYb" secondAttribute="bottom" constant="4" id="cFU-E0-R1X"/>
                             <constraint firstItem="3NR-GV-IN4" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="dZh-9F-02y"/>

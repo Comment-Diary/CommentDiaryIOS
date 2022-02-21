@@ -5,6 +5,9 @@
 //  Created by 류창휘 on 2022/02/15.
 //
 
+//해야할일 2/22 레이아웃 처음부터 다시 확인하기
+
+
 import Foundation
 import UIKit
 import Combine
@@ -32,6 +35,8 @@ class SignUpViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         passwordCheckLabel.text = ""
+        emailValidLabel.text = ""
+        passwordValidLabel.text = ""
     }
     
     override func viewDidLoad() {
@@ -40,7 +45,6 @@ class SignUpViewController: UIViewController {
         passwordTextField.delegate = self
         passwordConfirmTextField.delegate = self
         viewModel = SignUpPasswordViewModel()
-        signupButton.isEnabled = false
         textFieldSetting()
         passwordCheck()
         buttonSetting()
@@ -50,6 +54,13 @@ class SignUpViewController: UIViewController {
         
 //        passwordValidLabel.text = "대소문자, 숫자, 특수문자를 포함해 8~16자를 작성해주세요"
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.emailTextField.resignFirstResponder()
+        self.passwordTextField.resignFirstResponder()
+        self.passwordConfirmTextField.resignFirstResponder()
+    }
+    
     
     @objc func editingChanged(_ textField: UITextField) {
         if textField.text?.count == 1 {
@@ -61,16 +72,21 @@ class SignUpViewController: UIViewController {
         guard
             let emailText = emailTextField.text, !emailText.isEmpty,
             let passwordText = passwordTextField.text, !passwordText.isEmpty,
-            let passwordCheckText = passwordConfirmTextField.text, !passwordCheckText.isEmpty
+            let passwordCheckText = passwordConfirmTextField.text, !passwordCheckText.isEmpty, passwordCheckText == passwordText
+                
         else {
+            self.signupButton.layer.opacity = 0.3
             self.signupButton.isEnabled = false
-            self.signupButton.layer.borderColor = UIColor(hex: 0xF7BC86).cgColor
+            self.signupButton.setTitleColor(UIColor(hex: 0xFDFDF9), for: .normal)
+            self.signupButton.layer.borderColor = UIColor(hex: 0x73BF90).cgColor
             return
         }
+        self.signupButton.layer.opacity = 1
         self.signupButton.isEnabled = true
-        self.signupButton.backgroundColor = UIColor(hex: 0xF5CDA9)
-        self.signupButton.layer.borderColor = UIColor(hex: 0xF5CDA9).cgColor
+        self.signupButton.backgroundColor = UIColor(hex: 0x73BF90)
+        self.signupButton.layer.borderColor = UIColor(hex: 0x73BF90).cgColor
     }
+    
 
     
     func textFieldSetting() {
@@ -94,16 +110,23 @@ class SignUpViewController: UIViewController {
     func buttonSetting() {
         //인증 번호 전송 버튼 초기 비활성화
         self.authNumberButton.isEnabled = false
+        
+        signupButton.isEnabled = false
+        self.signupButton.setTitleColor(UIColor(hex: 0xFDFDF9), for: .normal)
+        self.signupButton.layer.opacity = 0.3
+        self.signupButton.backgroundColor = UIColor(hex: 0x73BF90)
         self.signupButton.layer.borderWidth = 4
-        self.signupButton.layer.borderColor = UIColor(hex: 0xF7BC86).cgColor
+        self.signupButton.layer.borderColor = UIColor(hex: 0x73BF90).cgColor
         self.signupButton.layer.cornerRadius = 15 //수정 필요
     }
     
     //MARK: - Actions
     
     @IBAction func signUpTapButton(_ sender: Any) {
-        //비밀번호 텍스트 저장
+        // 이메일, 비밀번호 텍스트 저장
+        UserDefaults.standard.set(emailTextField.text, forKey: "email")
         UserDefaults.standard.set(passwordTextField.text, forKey: "password")
+
         let signupCompletionVC = UIStoryboard(name: "SignUpCompletion", bundle: nil).instantiateViewController(withIdentifier: "SignUpCompletionViewController")
         signupCompletionVC.modalTransitionStyle = .crossDissolve
         signupCompletionVC.modalPresentationStyle = .fullScreen
@@ -119,7 +142,7 @@ class SignUpViewController: UIViewController {
         EmailRequest.email = emailTextField.text ?? ""
         EmailDataManager().emailPostData()
         //이메일 텍스트 저장
-        UserDefaults.standard.set(emailTextField.text, forKey: "email")
+
         
 //        var myJWToken : String = ""
 //        myJWToken = UserDefaults.standard.value(forKey: "myJWT") as? String ?? ""
@@ -128,9 +151,7 @@ class SignUpViewController: UIViewController {
         present(alertVC, animated: true)
     }
     
-//    @IBAction func changingEmailText(_ sender: UITextField) {
-//        if let emailInput = sender.text
-//    }
+
     @IBAction func changingEmailText(_ sender: UITextField) {
         if let emailInput = sender.text {
             if emailInput.count == 0 {
@@ -138,11 +159,12 @@ class SignUpViewController: UIViewController {
             }
             
             if emailInput.isValidEmail == true {
-                emailValidLabel.text = "이메일 양식입니다."
+                emailValidLabel.text = ""
                 authNumberButton.isEnabled = true
                 
             } else {
-                emailValidLabel.text = "이메일 양식이 아닙니다."
+                emailValidLabel.text = "이메일 양식에 맞춰주세요."
+                emailValidLabel.textColor = UIColor(hex: 0xE46962)
                 authNumberButton.isEnabled = false
                 
 
@@ -157,10 +179,10 @@ class SignUpViewController: UIViewController {
                 return
             }
             if passwordInput.isValidPassword == true {
-                passwordValidLabel.text = "비밀번호 양식입니다."
+                passwordValidLabel.text = ""
             } else {
-                passwordValidLabel.text = "비밀번호 양식이 아닙니다."
-                passwordValidLabel.textColor = .red
+                passwordValidLabel.text = "작성 양식을 다시 한번 확인해주세요."
+                passwordValidLabel.textColor = UIColor(hex: 0xE46962)
             }
         }
     }
@@ -195,7 +217,18 @@ class SignUpViewController: UIViewController {
 
     //MARK: - Extentions
 extension SignUpViewController: UITextFieldDelegate {
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailTextField {
+            emailTextField.resignFirstResponder()
+        }
+        else if textField == passwordTextField {
+            passwordConfirmTextField.becomeFirstResponder()
+        }
+        else if textField == passwordConfirmTextField {
+            passwordConfirmTextField.resignFirstResponder()
+        }
+        return true
+    }
 }
 
 extension UITextField {
@@ -219,7 +252,7 @@ extension UILabel {
         }
         set {
             textColor = newValue ? .blue : .red
-            text = newValue ? "일치합니다" : "일치하지 않아요."
+            text = newValue ? "" : "일치하지 않아요."
 
 
         }

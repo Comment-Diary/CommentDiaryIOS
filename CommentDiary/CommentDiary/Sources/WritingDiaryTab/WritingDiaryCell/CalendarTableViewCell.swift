@@ -33,6 +33,8 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDataSource, FSCalendarDe
     
     @IBOutlet weak var calendarDateLabel: UILabel!
     override func awakeFromNib() {
+        
+        
         super.awakeFromNib()
         // Initialization code
         calendarView.delegate = self
@@ -131,3 +133,5 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDataSource, FSCalendarDe
     
     
 }
+
+

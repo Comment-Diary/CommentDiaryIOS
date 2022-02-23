@@ -12,9 +12,21 @@ import Foundation
 import UIKit
 import Combine
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, authButtonChangeDelegate {
+    //AuthNumberVC Delegate
+    func onEmailTextFieldChange(data: Bool) {
+        emailTextField.isUserInteractionEnabled = data
+    }
+
+    func onAuthButtonChange(data: Bool) {
+        authNumberButton.isEnabled = data
+    }
+    
+    //API
+    lazy var emailDataManager: EmailDataManager = EmailDataManager()
     //alert
     let authNumberAlertService = AuthNumberAlertService()
+    
     var viewModel: SignUpPasswordViewModel!
     //메모리 관리
     private var passwordSubscription = Set<AnyCancellable>()
@@ -37,6 +49,8 @@ class SignUpViewController: UIViewController {
         passwordCheckLabel.text = ""
         emailValidLabel.text = ""
         passwordValidLabel.text = ""
+        emailTextFieldEnabled()
+        authNumberSetting()
     }
     
     override func viewDidLoad() {
@@ -49,13 +63,19 @@ class SignUpViewController: UIViewController {
         textFieldSetting()
         passwordCheck()
         buttonSetting()
-        emailTextFieldEnabled()
+        
+        authNumberDelegate()
+        
+
+        
+//        emailTextField.isUserInteractionEnabled = false
         
         [emailTextField, passwordTextField, passwordConfirmTextField].forEach({ $0?.addTarget(self, action: #selector(editingChanged), for: .editingChanged)})
         
         
-//        passwordValidLabel.text = "대소문자, 숫자, 특수문자를 포함해 8~16자를 작성해주세요"
+
     }
+
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.emailTextField.resignFirstResponder()
@@ -89,13 +109,21 @@ class SignUpViewController: UIViewController {
         self.signupButton.layer.borderColor = UIColor(hex: 0x73BF90).cgColor
     }
     
+    func authNumberDelegate() {
+        let authNumberVC = UIStoryboard(name: "AuthNumber", bundle: nil).instantiateViewController(withIdentifier: "AuthNumberViewController") as! AuthNumberViewController
+        authNumberVC.authButtonDelegate = self
+        authNumberVC.emailTextFieldDelegate = self
+    }
+    
     
     //이메일 인증 완료하면 이메일 textfield 비활성화
     func emailTextFieldEnabled() {
         if CheckEmailSuccessReponse.ResponseState == true {
             emailTextField.isUserInteractionEnabled = false
+            authNumberButton.isEnabled = false
         } else {
             emailTextField.isUserInteractionEnabled = true
+            authNumberButton.isEnabled = true
         }
     }
 
@@ -120,8 +148,6 @@ class SignUpViewController: UIViewController {
     
     func buttonSetting() {
         //인증 번호 전송 버튼 초기 비활성화
-        self.authNumberButton.isEnabled = false
-        
         signupButton.isEnabled = false
         self.signupButton.setTitleColor(UIColor(hex: 0xFDFDF9), for: .normal)
         self.signupButton.layer.opacity = 0.3
@@ -131,12 +157,16 @@ class SignUpViewController: UIViewController {
         self.signupButton.layer.cornerRadius = 15 //수정 필요
     }
     
+    func authNumberSetting() {
+        authNumberButton.isEnabled = false
+    }
+    
     //MARK: - Actions
     
     @IBAction func signUpTapButton(_ sender: Any) {
         // 이메일, 비밀번호 텍스트 저장
-        UserDefaults.standard.set(emailTextField.text, forKey: "email")
-        UserDefaults.standard.set(passwordTextField.text, forKey: "password")
+//        UserDefaults.standard.set(emailTextField.text, forKey: "email")
+//        UserDefaults.standard.set(passwordTextField.text, forKey: "password")
 
         let signupCompletionVC = UIStoryboard(name: "SignUpCompletion", bundle: nil).instantiateViewController(withIdentifier: "SignUpCompletionViewController")
         signupCompletionVC.modalTransitionStyle = .crossDissolve
@@ -150,16 +180,30 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func AuthNumberButton(_ sender: Any) {
-        EmailRequest.email = emailTextField.text ?? ""
-        EmailDataManager().emailPostData()
+        //텍스트 필드 저장
+        UserDefaults.standard.set(emailTextField.text!, forKey: "email")
+
+        //API
+        let emailQueryValue: String = emailTextField.text!
+        emailDataManager.getEmailData(emailValue: emailQueryValue, self)
+        
+        
         //이메일 텍스트 저장
 
+        self.showIndicator()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
+            self.dismissIndicator()
+            
+            if EmailSuccessResponse.responseState == true {
+                let alertVC = self.authNumberAlertService.alert()
+                self.present(alertVC, animated: true)
+            }
+            else if EmailSuccessResponse.responseState == false {
+                //필요하면 실패 메세지 alert 넣기
+            }
+
+        }
         
-//        var myJWToken : String = ""
-//        myJWToken = UserDefaults.standard.value(forKey: "myJWT") as? String ?? ""
-        
-        let alertVC = authNumberAlertService.alert()
-        present(alertVC, animated: true)
     }
     
 

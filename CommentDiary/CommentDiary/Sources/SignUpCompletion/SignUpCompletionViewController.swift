@@ -9,6 +9,12 @@ import Foundation
 import UIKit
 
 class SignUpCompletionViewController: UIViewController {
+
+
+    
+
+    
+    
     //로그인을 위한 이메일, 비밀번호
     var loginEmail = UserDefaults.standard.value(forKey: "email") as? String ?? ""
     
@@ -20,6 +26,9 @@ class SignUpCompletionViewController: UIViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+  
+        
     }
     
     

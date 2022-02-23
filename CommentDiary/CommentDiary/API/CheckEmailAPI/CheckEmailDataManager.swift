@@ -12,7 +12,7 @@ class CheckEmailDataManager {
     func checkEmailPostData() {
         let url = "http://jwyang.shop:8080/api/v1/email/confirm"
         let params = ["email" : CheckEmailRequest.email,
-                      "code" : CheckEmailRequest.code ]
+                      "code" : CheckEmailRequest.code]
         
         AF.request(url,
                    method: .post,
@@ -24,10 +24,13 @@ class CheckEmailDataManager {
                 switch response.result {
                 case .success(let response):
                     print("DEBUG >> Success \(response)")
-                    CheckEmailSuccessReponse.ResponseState = true
+                    if response.code == 1000 {
+                        CheckEmailSuccessReponse.ResponseState = true
+                        print(CheckEmailSuccessReponse.ResponseState)
+                    }
+
                 case .failure(let error):
                     print(error.localizedDescription)
-                    CheckEmailSuccessReponse.ResponseState = false
                 }
             }
     }

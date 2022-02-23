@@ -74,13 +74,11 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
     }
     
     func bottomsheetSetting() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0, execute:  {
             let todayDiaryBottomVC = UIStoryboard(name: "TodayDiaryBottom", bundle: nil).instantiateViewController(withIdentifier: "TodayDiaryBottomViewController") as! TodayDiaryBottomViewController
             todayDiaryBottomVC.countLabelChangeDelegate = self
             todayDiaryBottomVC.buttonChangeDelegate = self
             todayDiaryBottomVC.commentViewDelegate = self
             self.presentPanModal(todayDiaryBottomVC)
-        })
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

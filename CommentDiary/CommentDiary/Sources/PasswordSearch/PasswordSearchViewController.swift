@@ -9,6 +9,11 @@ import Foundation
 import UIKit
 
 class PasswordSearchViewController : UIViewController {
+    //alert
+    let passwordSentAlertService = PasswordSentAlertService()
+    
+    
+    
     //MARK: - Properties
     
     @IBOutlet weak var backButton: UIButton!
@@ -28,6 +33,9 @@ class PasswordSearchViewController : UIViewController {
     
     //MARK: - Actions
     @IBAction func sendPasswordTapButton(_ sender: Any) {
+
+        let passwordSentAlertVC = passwordSentAlertService.alert()
+        present(passwordSentAlertVC, animated: true)
     }
     @IBAction func backButtonTap(_ sender: Any) {
         dismiss(animated: true)

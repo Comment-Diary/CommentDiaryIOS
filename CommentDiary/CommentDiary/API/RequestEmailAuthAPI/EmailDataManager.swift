@@ -11,27 +11,32 @@ import Foundation
 import Alamofire
 
 class EmailDataManager {
-    func emailPostData() {
+    func getEmailData(emailValue: String, _ viewController: SignUpViewController) {
         let url = "http://jwyang.shop:8080/api/v1/email"
-        let params = ["email" : EmailRequest.email]
+        let params: Parameters = [
+            "email" : "\(emailValue)"
+        ]
         
         
         AF.request(url,
-                   method: .post,
+                   method: .get,
                    parameters: params,
-                   encoder: JSONParameterEncoder(),
+                   encoding: URLEncoding.default,
                    headers: nil)
             .validate()
             .responseDecodable(of: EmailResponse.self) { response in
                 switch response.result {
                 case .success(let response):
                     print("DEBUG >> Success \(response)")
- 
+                    EmailSuccessResponse.responseState = true
+                    if response.code == 1000 {
+                        EmailSuccessResponse.responseState = true
+                    } 
                 case .failure(let error):
                     print(error.localizedDescription)
+
+                    
                 }
             }
     }
 }
-
-

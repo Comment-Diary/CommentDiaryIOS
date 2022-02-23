@@ -11,3 +11,7 @@ struct CheckEmailResponse: Decodable {
     var code: Int
     var message: String
 }
+
+struct CheckEmailSuccessReponse {
+    static var ResponseState = false
+}

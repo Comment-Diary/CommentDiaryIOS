@@ -26,6 +26,7 @@ class EmailDataManager {
                 switch response.result {
                 case .success(let response):
                     print("DEBUG >> Success \(response)")
+ 
                 case .failure(let error):
                     print(error.localizedDescription)
                 }

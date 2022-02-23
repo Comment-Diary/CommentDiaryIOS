@@ -28,6 +28,8 @@ extension UIColor {
     
     class var greenColor : UIColor { UIColor(hex: 0x98C2A8)}
     
+    class var mainGreenColor : UIColor { UIColor(hex: 0x73BF90)}
+    
     class var mainBackgroundColor : UIColor { UIColor(hex: 0xE5E5E5)}
   
 }

@@ -15,10 +15,14 @@ class SplashVieController : ViewController {
             pageControl.currentPage = currentPage
             if currentPage == slides.count - 1 {
                 self.nextBtn.setTitle("시작하기", for: .normal)
-                self.nextBtn.backgroundColor = UIColor.mainOrange
+                self.nextBtn.backgroundColor = UIColor(hex: 0x73BF90)
+                self.nextBtn.setTitleColor(UIColor(hex: 0xFDFCF9), for: .normal)
             } else {
                 self.nextBtn.setTitle("넘어가기", for: .normal)
-                self.nextBtn.backgroundColor = UIColor(hex: 0xF7F3D5)
+                self.nextBtn.backgroundColor = UIColor(hex: 0xF4EDE3)
+                self.nextBtn.setTitleColor(UIColor(hex: 0x878379), for: .normal)
+
+
             }
         }
     }
@@ -57,12 +61,16 @@ class SplashVieController : ViewController {
         super.viewDidLoad()
         //버튼
         self.nextBtn.setTitle("넘어가기", for: .normal)
-        self.nextBtn.backgroundColor = UIColor(hex: 0xF7F3D5)
+        self.nextBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeoEB00-Regular", size: 18)
         self.nextBtn.setTitleColor(UIColor(hex: 0x878379), for: .normal)
+
+        
+        
+        self.nextBtn.backgroundColor = UIColor(hex: 0xF4EDE3)
         self.nextBtn.layer.shadowColor = UIColor.black.cgColor
-        self.nextBtn.layer.shadowOpacity = 0.2
+        self.nextBtn.layer.shadowOpacity = 0.3
         self.nextBtn.layer.shadowRadius = 10
-        self.nextBtn.layer.cornerRadius = 15 //수정하기
+        self.nextBtn.layer.cornerRadius = nextBtn.frame.height / 2
         
         //pageControl
         self.pageControl.currentPageIndicatorTintColor = UIColor(hex: 0xF7BC86)

@@ -24,8 +24,10 @@ class CheckEmailDataManager {
                 switch response.result {
                 case .success(let response):
                     print("DEBUG >> Success \(response)")
+                    CheckEmailSuccessReponse.ResponseState = true
                 case .failure(let error):
                     print(error.localizedDescription)
+                    CheckEmailSuccessReponse.ResponseState = false
                 }
             }
     }

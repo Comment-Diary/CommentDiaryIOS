@@ -41,6 +41,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        emailTextField.isUserInteractionEnabled = false 텍스트 필드 비활성화
         emailTextField.delegate = self
         passwordTextField.delegate = self
         passwordConfirmTextField.delegate = self
@@ -48,6 +49,7 @@ class SignUpViewController: UIViewController {
         textFieldSetting()
         passwordCheck()
         buttonSetting()
+        emailTextFieldEnabled()
         
         [emailTextField, passwordTextField, passwordConfirmTextField].forEach({ $0?.addTarget(self, action: #selector(editingChanged), for: .editingChanged)})
         
@@ -87,6 +89,15 @@ class SignUpViewController: UIViewController {
         self.signupButton.layer.borderColor = UIColor(hex: 0x73BF90).cgColor
     }
     
+    
+    //이메일 인증 완료하면 이메일 textfield 비활성화
+    func emailTextFieldEnabled() {
+        if CheckEmailSuccessReponse.ResponseState == true {
+            emailTextField.isUserInteractionEnabled = false
+        } else {
+            emailTextField.isUserInteractionEnabled = true
+        }
+    }
 
     
     func textFieldSetting() {

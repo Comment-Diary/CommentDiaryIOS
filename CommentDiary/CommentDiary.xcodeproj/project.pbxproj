@@ -63,6 +63,11 @@
 		A5CCD18627C34BAE0096281F /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCD18527C34BAE0096281F /* LoginResponse.swift */; };
 		A5CCD18827C34BB70096281F /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCD18727C34BB70096281F /* LoginRequest.swift */; };
 		A5CCD18A27C3DC4F0096281F /* CalendarTimeZoneCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCD18927C3DC4F0096281F /* CalendarTimeZoneCustom.swift */; };
+		A5CCD18D27C4CD660096281F /* PasswordSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCD18C27C4CD660096281F /* PasswordSearchViewController.swift */; };
+		A5CCD19127C4CDF00096281F /* PasswordSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CCD19027C4CDF00096281F /* PasswordSearch.storyboard */; };
+		A5CCD19427C4E4060096281F /* SearchPasswordDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCD19327C4E4060096281F /* SearchPasswordDataManager.swift */; };
+		A5CCD19627C4E4110096281F /* SearchPasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCD19527C4E4110096281F /* SearchPasswordResponse.swift */; };
+		A5CCD19827C4E41E0096281F /* SearchPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCD19727C4E41E0096281F /* SearchPasswordRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +129,11 @@
 		A5CCD18527C34BAE0096281F /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		A5CCD18727C34BB70096281F /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		A5CCD18927C3DC4F0096281F /* CalendarTimeZoneCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTimeZoneCustom.swift; sourceTree = "<group>"; };
+		A5CCD18C27C4CD660096281F /* PasswordSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSearchViewController.swift; sourceTree = "<group>"; };
+		A5CCD19027C4CDF00096281F /* PasswordSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordSearch.storyboard; sourceTree = "<group>"; };
+		A5CCD19327C4E4060096281F /* SearchPasswordDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPasswordDataManager.swift; sourceTree = "<group>"; };
+		A5CCD19527C4E4110096281F /* SearchPasswordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPasswordResponse.swift; sourceTree = "<group>"; };
+		A5CCD19727C4E41E0096281F /* SearchPasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPasswordRequest.swift; sourceTree = "<group>"; };
 		E3C33BD30605D7DB387967A7 /* Pods-CommentDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommentDiary.release.xcconfig"; path = "Target Support Files/Pods-CommentDiary/Pods-CommentDiary.release.xcconfig"; sourceTree = "<group>"; };
 		F7CFBFB7F6DD1F7AD2C2DF30 /* Pods-CommentDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommentDiary.debug.xcconfig"; path = "Target Support Files/Pods-CommentDiary/Pods-CommentDiary.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -316,6 +326,7 @@
 				A5567C8127BD4C0C001A4B98 /* MyPageTab */,
 				A567622827BBC7B6006FDA7F /* SignUp */,
 				A5567C9D27BE9432001A4B98 /* SignUpCompletion */,
+				A5CCD18B27C4CD1C0096281F /* PasswordSearch */,
 				A567622327BBB8AE006FDA7F /* LogIn */,
 				A567617927B7F605006FDA7F /* Splash */,
 				A5567C9527BD52F0001A4B98 /* Alerts */,
@@ -372,6 +383,7 @@
 		A567623427BD0553006FDA7F /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A5CCD19227C4E3F20096281F /* SearchPasswordAPI */,
 				A5CCD18227C34B7F0096281F /* LoginAPI */,
 				A5C1D5B327C271A80046095A /* CheckEmailAPI */,
 				A56FF79727C16A6C00C740F7 /* RequestEmailAuthAPI */,
@@ -428,6 +440,25 @@
 				A5CCD18727C34BB70096281F /* LoginRequest.swift */,
 			);
 			path = LoginAPI;
+			sourceTree = "<group>";
+		};
+		A5CCD18B27C4CD1C0096281F /* PasswordSearch */ = {
+			isa = PBXGroup;
+			children = (
+				A5CCD18C27C4CD660096281F /* PasswordSearchViewController.swift */,
+				A5CCD19027C4CDF00096281F /* PasswordSearch.storyboard */,
+			);
+			path = PasswordSearch;
+			sourceTree = "<group>";
+		};
+		A5CCD19227C4E3F20096281F /* SearchPasswordAPI */ = {
+			isa = PBXGroup;
+			children = (
+				A5CCD19327C4E4060096281F /* SearchPasswordDataManager.swift */,
+				A5CCD19527C4E4110096281F /* SearchPasswordResponse.swift */,
+				A5CCD19727C4E41E0096281F /* SearchPasswordRequest.swift */,
+			);
+			path = SearchPasswordAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -500,6 +531,7 @@
 				A56FF78B27C0119D00C740F7 /* CalendarTableViewCell.xib in Resources */,
 				A5567C8827BD4CC0001A4B98 /* ArrivedDiary.storyboard in Resources */,
 				A5567C9227BD4D71001A4B98 /* MyPage.storyboard in Resources */,
+				A5CCD19127C4CDF00096281F /* PasswordSearch.storyboard in Resources */,
 				A567622C27BBC7DC006FDA7F /* SignUp.storyboard in Resources */,
 				A5567C8A27BD4CD9001A4B98 /* MyDiary.storyboard in Resources */,
 				A567617D27B7F640006FDA7F /* Splash.storyboard in Resources */,
@@ -558,6 +590,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5CCD19827C4E41E0096281F /* SearchPasswordRequest.swift in Sources */,
 				A5567C8C27BD4CF5001A4B98 /* MyDiaryViewController.swift in Sources */,
 				A5CCD18627C34BAE0096281F /* LoginResponse.swift in Sources */,
 				A567622727BBB8D5006FDA7F /* LoginViewController.swift in Sources */,
@@ -567,11 +600,13 @@
 				A56FF79B27C16AC100C740F7 /* EmailResponse.swift in Sources */,
 				A567616C27B7E890006FDA7F /* UINavigaionBar.swift in Sources */,
 				A567616A27B7E83C006FDA7F /* UIViewController.swift in Sources */,
+				A5CCD18D27C4CD660096281F /* PasswordSearchViewController.swift in Sources */,
 				A5567C9F27BE9452001A4B98 /* SignUpCompletionViewController.swift in Sources */,
 				A567616227B7E7CE006FDA7F /* String.swift in Sources */,
 				A567616827B7E820006FDA7F /* UIButton.swift in Sources */,
 				A5C1D5B927C271FE0046095A /* CheckEmailRequest.swift in Sources */,
 				A5C1D5B527C271E80046095A /* CheckEmailDataManager.swift in Sources */,
+				A5CCD19427C4E4060096281F /* SearchPasswordDataManager.swift in Sources */,
 				A56FF78E27C0C21F00C740F7 /* WritingDiaryTableViewCell.swift in Sources */,
 				A5567C9827BD5353001A4B98 /* AuthNumberViewController.swift in Sources */,
 				A567617B27B7F627006FDA7F /* SplashViewController.swift in Sources */,
@@ -595,6 +630,7 @@
 				A567616427B7E7E2006FDA7F /* Color.swift in Sources */,
 				A5C1D5B727C271F40046095A /* CheckEmailResponse.swift in Sources */,
 				A5567C8E27BD4D1A001A4B98 /* WritingDiaryViewController.swift in Sources */,
+				A5CCD19627C4E4110096281F /* SearchPasswordResponse.swift in Sources */,
 				A567623327BC2F10006FDA7F /* OnboardingCollectionViewCell.swift in Sources */,
 				A56FF79427C0E88000C740F7 /* TodayDiaryBottomViewController.swift in Sources */,
 			);

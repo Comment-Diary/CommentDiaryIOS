@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -120,7 +120,6 @@
                                     <constraint firstItem="huH-oQ-q90" firstAttribute="top" secondItem="8bH-Pd-ZCl" secondAttribute="bottom" id="guh-oj-01h"/>
                                     <constraint firstItem="HLt-ZZ-ma5" firstAttribute="leading" secondItem="g1o-fW-6uO" secondAttribute="leading" id="iok-Ae-eKG"/>
                                     <constraint firstItem="vpl-pK-JNn" firstAttribute="top" secondItem="UOy-ar-VQT" secondAttribute="bottom" id="nV0-j5-QjP"/>
-                                    <constraint firstAttribute="height" constant="375" id="og8-fl-2za"/>
                                     <constraint firstItem="UOy-ar-VQT" firstAttribute="leading" secondItem="g1o-fW-6uO" secondAttribute="leading" id="qg1-bM-y7D"/>
                                     <constraint firstItem="HLt-ZZ-ma5" firstAttribute="top" secondItem="HMp-iS-5n0" secondAttribute="bottom" id="rYc-eD-TQm"/>
                                     <constraint firstAttribute="trailing" secondItem="8bH-Pd-ZCl" secondAttribute="trailing" id="rh0-5j-fW0"/>
@@ -133,6 +132,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="g1o-fW-6uO" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.418527" id="JBd-6B-QmU"/>
                             <constraint firstItem="g1o-fW-6uO" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="NOC-UR-oMr"/>
                             <constraint firstItem="g1o-fW-6uO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="S5h-yx-o9M"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="g1o-fW-6uO" secondAttribute="trailing" id="yUY-vh-Scg"/>

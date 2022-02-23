@@ -45,9 +45,11 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEm-ZR-WTH">
-                                <rect key="frame" x="144" y="790" width="101" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEm-ZR-WTH">
+                                <rect key="frame" x="16" y="743.5" width="382" height="62.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pEm-ZR-WTH" secondAttribute="height" multiplier="343:56" id="BYm-xd-t1W"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="기록 시작하기"/>
                                 <connections>
@@ -59,7 +61,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="oh3-zw-VHV" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="7wS-YQ-0Pf"/>
+                            <constraint firstItem="pEm-ZR-WTH" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="HX2-7i-ILT"/>
                             <constraint firstItem="oh3-zw-VHV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="dlS-OH-CMq"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="pEm-ZR-WTH" secondAttribute="bottom" constant="56" id="jij-sV-ovk"/>
+                            <constraint firstItem="pEm-ZR-WTH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="wus-LB-dFF"/>
                         </constraints>
                     </view>
                     <connections>

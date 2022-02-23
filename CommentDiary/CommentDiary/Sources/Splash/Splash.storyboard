@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sha-b5-irM">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -14,15 +14,16 @@
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="SplashVieController" customModule="CommentDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J08-aq-2hh">
-                                <rect key="frame" x="30" y="755" width="354" height="57"/>
+                                <rect key="frame" x="16" y="805.33333333333337" width="396" height="64.666666666666629"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="fF2-Ec-3fi"/>
+                                    <constraint firstAttribute="width" secondItem="J08-aq-2hh" secondAttribute="height" multiplier="343:56" id="ItG-za-lPJ"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="넘어가기">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -32,7 +33,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hk5-l8-lkk">
-                                <rect key="frame" x="0.0" y="44" width="414" height="665"/>
+                                <rect key="frame" x="0.0" y="44" width="428" height="716.33333333333337"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="HAL-2J-COa">
                                     <size key="itemSize" width="407" height="669"/>
@@ -42,7 +43,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OnboardingCollectionViewCell" id="cLK-8d-unj" customClass="OnboardingCollectionViewCell" customModule="CommentDiary" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-2" width="407" height="669"/>
+                                        <rect key="frame" x="0.0" y="23.666666666666668" width="407" height="669"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vCD-u2-mq0">
                                             <rect key="frame" x="0.0" y="0.0" width="407" height="669"/>
@@ -67,7 +68,7 @@
                                 </cells>
                             </collectionView>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="rRS-b6-peX">
-                                <rect key="frame" x="149" y="709" width="116" height="26"/>
+                                <rect key="frame" x="157.66666666666666" y="760.33333333333337" width="112.66666666666666" height="25"/>
                                 <color key="tintColor" systemColor="systemPinkColor"/>
                                 <color key="pageIndicatorTintColor" systemColor="systemPurpleColor"/>
                             </pageControl>
@@ -75,7 +76,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="J08-aq-2hh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="Vd5-4k-MKt"/>
+                            <constraint firstItem="J08-aq-2hh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Vd5-4k-MKt"/>
                             <constraint firstItem="Hk5-l8-lkk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="XSU-jc-RNx"/>
                             <constraint firstItem="J08-aq-2hh" firstAttribute="top" secondItem="rRS-b6-peX" secondAttribute="bottom" constant="20" id="bzS-aW-yOA"/>
                             <constraint firstItem="rRS-b6-peX" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="hB5-qv-Laj"/>
@@ -83,7 +84,7 @@
                             <constraint firstItem="J08-aq-2hh" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="tao-h0-oqV"/>
                             <constraint firstItem="Hk5-l8-lkk" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="uAh-Rk-hH3"/>
                             <constraint firstItem="Hk5-l8-lkk" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="vbb-ge-CqZ"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="J08-aq-2hh" secondAttribute="bottom" constant="50" id="zSW-DQ-zZf"/>
+                            <constraint firstAttribute="bottom" secondItem="J08-aq-2hh" secondAttribute="bottom" constant="56" id="zSW-DQ-zZf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Hzw-BW-bQb"/>

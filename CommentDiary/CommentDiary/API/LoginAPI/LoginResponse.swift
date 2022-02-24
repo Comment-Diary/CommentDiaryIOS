@@ -14,5 +14,12 @@ struct LoginResponse: Decodable {
 }
 
 struct result: Decodable {
-    var jwt: String
+    var grantType: String
+    var accessToken: String
+    var refreshToken: String
+    var accessTokenExpiresIn : Int
+}
+
+struct LoginSuccessReponse {
+    static var ResponseState = false
 }

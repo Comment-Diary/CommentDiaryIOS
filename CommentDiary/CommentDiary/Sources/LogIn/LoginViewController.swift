@@ -48,13 +48,13 @@ class LoginViewController: UIViewController {
     
     func textFieldSetting() {
         emailTextField.placeholder = "coda@coda.com"
-        emailTextField.layer.borderWidth = 4
+        emailTextField.layer.borderWidth = 2
         emailTextField.layer.borderColor = UIColor.mainGreenColor.cgColor
         emailTextField.layer.cornerRadius = 4
         emailTextField.backgroundColor = UIColor.mainBackgroundColor
         passwordTextField.placeholder = "********"
         passwordTextField.layer.borderColor = UIColor.mainGreenColor.cgColor
-        passwordTextField.layer.borderWidth = 4
+        passwordTextField.layer.borderWidth = 2
         passwordTextField.layer.cornerRadius = 4
         passwordTextField.backgroundColor = UIColor.mainBackgroundColor
     }

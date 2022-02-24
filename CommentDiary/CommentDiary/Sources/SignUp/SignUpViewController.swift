@@ -70,6 +70,8 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
         
 //        emailTextField.isUserInteractionEnabled = false
         
+        
+        //회원가입 버튼 활성화
         [emailTextField, passwordTextField, passwordConfirmTextField].forEach({ $0?.addTarget(self, action: #selector(editingChanged), for: .editingChanged)})
         
         
@@ -164,14 +166,31 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
     //MARK: - Actions
     
     @IBAction func signUpTapButton(_ sender: Any) {
-        // 이메일, 비밀번호 텍스트 저장
-//        UserDefaults.standard.set(emailTextField.text, forKey: "email")
-//        UserDefaults.standard.set(passwordTextField.text, forKey: "password")
+        //SignUpAPI
+        SignUpRequest.email = emailTextField.text!
+        SignUpRequest.password = passwordTextField.text!
+        SignUpDataManager().signUpPostData()
+        
+        self.showIndicator()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+            self.dismissIndicator()
+            
+            //API 성공시
+            if SignUpSuccessReponse.ResponseState == true {
+                // 이메일, 비밀번호 텍스트 저장
+                UserDefaults.standard.set(self.passwordTextField.text!, forKey: "password")
 
-        let signupCompletionVC = UIStoryboard(name: "SignUpCompletion", bundle: nil).instantiateViewController(withIdentifier: "SignUpCompletionViewController")
-        signupCompletionVC.modalTransitionStyle = .crossDissolve
-        signupCompletionVC.modalPresentationStyle = .fullScreen
-        self.present(signupCompletionVC, animated: true, completion: nil)
+                let signupCompletionVC = UIStoryboard(name: "SignUpCompletion", bundle: nil).instantiateViewController(withIdentifier: "SignUpCompletionViewController")
+                signupCompletionVC.modalTransitionStyle = .crossDissolve
+                signupCompletionVC.modalPresentationStyle = .fullScreen
+                self.present(signupCompletionVC, animated: true, completion: nil)
+            } else { //API 실패시
+                //실패 알람띄우기
+                
+            }
+        })
+        
+
     }
     
     @IBAction func backButton(_ sender: Any) {

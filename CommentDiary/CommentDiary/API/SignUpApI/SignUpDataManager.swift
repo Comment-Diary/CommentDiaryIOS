@@ -1,31 +1,31 @@
 //
-//  LoginDataManager.swift
+//  SignUpDataManager.swift
 //  CommentDiary
 //
-//  Created by 류창휘 on 2022/02/21.
+//  Created by 류창휘 on 2022/02/24.
 //
 
 import Foundation
 import Alamofire
 
-class LoginDataManager {
-    func loginPostData() {
-        let url = "" //채우기
-        let params = ["email" : LoginRequest.email,
-                      "password" : LoginRequest.password]
-        
+class SignUpDataManager {
+    func signUpPostData() {
+        let url = ""
+        let params = ["email" : SignUpRequest.email,
+                      "password" : SignUpRequest.password,
+                      "checkPassword" : SignUpRequest.checkPassword]
         AF.request(url,
                    method: .post,
                    parameters: params,
                    encoder: JSONParameterEncoder(),
                    headers: nil)
             .validate()
-            .responseDecodable(of: LoginResponse.self) { response in
+            .responseDecodable(of: SignUpResponse.self) { response in
                 switch response.result {
                 case .success(let response):
                     print("DEBUG >> Success \(response)")
                     if response.code == 1000 {
-                        LoginSuccessReponse.ResponseState = true
+                        SignUpSuccessReponse.ResponseState = true
                     }
                 case .failure(let error):
                     print(error.localizedDescription)

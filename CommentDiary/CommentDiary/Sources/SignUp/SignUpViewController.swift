@@ -171,24 +171,28 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
         SignUpRequest.password = passwordTextField.text!
         SignUpDataManager().signUpPostData()
         
-        self.showIndicator()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-            self.dismissIndicator()
-            
-            //API 성공시
-            if SignUpSuccessReponse.ResponseState == true {
-                // 이메일, 비밀번호 텍스트 저장
-                UserDefaults.standard.set(self.passwordTextField.text!, forKey: "password")
-
-                let signupCompletionVC = UIStoryboard(name: "SignUpCompletion", bundle: nil).instantiateViewController(withIdentifier: "SignUpCompletionViewController")
-                signupCompletionVC.modalTransitionStyle = .crossDissolve
-                signupCompletionVC.modalPresentationStyle = .fullScreen
-                self.present(signupCompletionVC, animated: true, completion: nil)
-            } else { //API 실패시
-                //실패 알람띄우기
-                
-            }
-        })
+//        self.showIndicator()
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+//            self.dismissIndicator()
+//
+//            //API 성공시
+//            if SignUpSuccessReponse.ResponseState == true {
+//                // 이메일, 비밀번호 텍스트 저장
+//                UserDefaults.standard.set(self.passwordTextField.text!, forKey: "password")
+//
+//                let signupCompletionVC = UIStoryboard(name: "SignUpCompletion", bundle: nil).instantiateViewController(withIdentifier: "SignUpCompletionViewController")
+//                signupCompletionVC.modalTransitionStyle = .crossDissolve
+//                signupCompletionVC.modalPresentationStyle = .fullScreen
+//                self.present(signupCompletionVC, animated: true, completion: nil)
+//            } else { //API 실패시
+//                //실패 알람띄우기
+//
+//            }
+//        })
+//        self.showIndicator()
+//        DispatchQueue.global().sync {
+//            <#code#>
+//        }
         
 
     }
@@ -208,11 +212,22 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
         
         
         //이메일 텍스트 저장
+        //싱크 시도해보기
+//        self.showIndicator()
+//        DispatchQueue.global().sync {
+//            if EmailSuccessResponse.responseState == true {
+//                let alertVC = self.authNumberAlertService.alert()
+//                self.present(alertVC, animated: true)
+//            } else if EmailSuccessResponse.responseState == false {
+//                //필요시 실패 메세지
+//            }
+//        }
+//        self.dismissIndicator()
 
         self.showIndicator()
         DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
             self.dismissIndicator()
-            
+
             if EmailSuccessResponse.responseState == true {
                 let alertVC = self.authNumberAlertService.alert()
                 self.present(alertVC, animated: true)

@@ -6,3 +6,11 @@
 //
 
 import Foundation
+struct SearchPasswordResponse : Decodable {
+    var code: Int
+    var message: String
+}
+
+struct SearchPasswordSuccessResponse {
+    static var responseState = false
+}

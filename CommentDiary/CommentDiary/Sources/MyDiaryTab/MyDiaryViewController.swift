@@ -64,6 +64,12 @@ extension MyDiaryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let NDetailDiaryStoryboard = UIStoryboard(name: "NDetailDiary", bundle: nil)
+        let NDetailDiaryVC = NDetailDiaryStoryboard.instantiateViewController(withIdentifier: "NDetailDiaryViewController")
+        self.navigationController?.pushViewController(NDetailDiaryVC, animated: true)
+    }
 
     
 }

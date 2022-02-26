@@ -8,16 +8,10 @@
 import Foundation
 import UIKit
 
-class PasswordSentAlertViewController : UIViewController {
+class FailFindPasswordViewController : UIViewController {
     //MARK: - Properties
     
-    @IBOutlet weak var sentCompleteView: UIView!
-    @IBOutlet weak var sentCompleteLabel: UILabel!
-    @IBOutlet weak var checkEmailLabel: UILabel!
-    
-    @IBOutlet weak var okButton: UIButton!
-    
-    
+
     @IBOutlet weak var noEmailView: UIView!
     
     @IBOutlet weak var noEmailFirstLabel: UILabel!
@@ -31,11 +25,10 @@ class PasswordSentAlertViewController : UIViewController {
     }
     
     //MARK: - Actions
-    
-    @IBAction func okTapButton(_ sender: Any) {
-    }
+
     
     @IBAction func cancelTapButton(_ sender: Any) {
+        dismiss(animated: true)
     }
     
 }

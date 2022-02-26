@@ -24,9 +24,7 @@ class LoginDataManager {
                 switch response.result {
                 case .success(let response):
                     print("DEBUG >> Success \(response)")
-                    if response.code == 1000 {
-                        LoginSuccessReponse.ResponseState = true
-                    }
+
                 case .failure(let error):
                     print(error.localizedDescription)
                 }

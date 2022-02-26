@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 class CheckEmailDataManager {
-    func checkEmailPostData() {
+    func checkEmailPostData(_ viewController: AuthNumberViewController) {
         let url = "http://jwyang.shop:8080/api/v1/email/confirm"
         let params = ["email" : CheckEmailRequest.email,
                       "code" : CheckEmailRequest.code]
@@ -24,13 +24,11 @@ class CheckEmailDataManager {
                 switch response.result {
                 case .success(let response):
                     print("DEBUG >> Success \(response)")
-                    if response.code == 1000 {
-                        CheckEmailSuccessReponse.ResponseState = true
-                        print(CheckEmailSuccessReponse.ResponseState)
-                    }
+                    viewController.authEmailResponse()
 
                 case .failure(let error):
                     print(error.localizedDescription)
+                    viewController.authEmailFailResponse()
                 }
             }
     }

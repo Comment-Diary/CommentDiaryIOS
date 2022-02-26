@@ -20,6 +20,3 @@ struct result: Decodable {
     var accessTokenExpiresIn : Int
 }
 
-struct LoginSuccessReponse {
-    static var ResponseState = false
-}

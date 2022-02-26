@@ -112,9 +112,9 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
     }
     
     func authNumberDelegate() {
-        let authNumberVC = UIStoryboard(name: "AuthNumber", bundle: nil).instantiateViewController(withIdentifier: "AuthNumberViewController") as! AuthNumberViewController
-        authNumberVC.authButtonDelegate = self
-        authNumberVC.emailTextFieldDelegate = self
+//        let authNumberVC = UIStoryboard(name: "AuthNumber", bundle: nil).instantiateViewController(withIdentifier: "AuthNumberViewController") as! AuthNumberViewController
+//        authNumberVC.authButtonDelegate = self
+//        authNumberVC.emailTextFieldDelegate = self
     }
     
     
@@ -167,76 +167,30 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
     
     @IBAction func signUpTapButton(_ sender: Any) {
         //SignUpAPI
+        self.showIndicator()
         SignUpRequest.email = emailTextField.text!
         SignUpRequest.password = passwordTextField.text!
-        SignUpDataManager().signUpPostData()
+        SignUpRequest.checkPassword = passwordConfirmTextField.text!
+        SignUpDataManager().signUpPostData(self)
         
-//        self.showIndicator()
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-//            self.dismissIndicator()
-//
-//            //API 성공시
-//            if SignUpSuccessReponse.ResponseState == true {
-//                // 이메일, 비밀번호 텍스트 저장
-//                UserDefaults.standard.set(self.passwordTextField.text!, forKey: "password")
-//
-//                let signupCompletionVC = UIStoryboard(name: "SignUpCompletion", bundle: nil).instantiateViewController(withIdentifier: "SignUpCompletionViewController")
-//                signupCompletionVC.modalTransitionStyle = .crossDissolve
-//                signupCompletionVC.modalPresentationStyle = .fullScreen
-//                self.present(signupCompletionVC, animated: true, completion: nil)
-//            } else { //API 실패시
-//                //실패 알람띄우기
-//
-//            }
-//        })
-//        self.showIndicator()
-//        DispatchQueue.global().sync {
-//            <#code#>
-//        }
-        
+
 
     }
     
     @IBAction func backButton(_ sender: Any) {
-//        navigationController?.popViewController(animated: true)
+
         dismiss(animated: true)
     }
     
     @IBAction func AuthNumberButton(_ sender: Any) {
-        //텍스트 필드 저장
+        //이메일 텍스트 필드 저장
         UserDefaults.standard.set(emailTextField.text!, forKey: "email")
 
-        //API
+        //API 인증번호 발급
         let emailQueryValue: String = emailTextField.text!
         emailDataManager.getEmailData(emailValue: emailQueryValue, self)
-        
-        
-        //이메일 텍스트 저장
-        //싱크 시도해보기
-//        self.showIndicator()
-//        DispatchQueue.global().sync {
-//            if EmailSuccessResponse.responseState == true {
-//                let alertVC = self.authNumberAlertService.alert()
-//                self.present(alertVC, animated: true)
-//            } else if EmailSuccessResponse.responseState == false {
-//                //필요시 실패 메세지
-//            }
-//        }
-//        self.dismissIndicator()
-
         self.showIndicator()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
-            self.dismissIndicator()
 
-            if EmailSuccessResponse.responseState == true {
-                let alertVC = self.authNumberAlertService.alert()
-                self.present(alertVC, animated: true)
-            }
-            else if EmailSuccessResponse.responseState == false {
-                //필요하면 실패 메세지 alert 넣기
-            }
-
-        }
         
     }
     
@@ -347,3 +301,49 @@ extension UILabel {
         }
     }
 }
+
+
+//API 이메일 인증
+extension SignUpViewController {
+    func authEmailResponse() {
+        self.dismissIndicator()
+
+        let authNumberVC = UIStoryboard(name: "AuthNumber", bundle: nil).instantiateViewController(withIdentifier: "AuthNumberViewController") as! AuthNumberViewController
+        authNumberVC.authButtonDelegate = self
+        authNumberVC.emailTextFieldDelegate = self
+        self.present(authNumberVC, animated: true)
+        
+    }
+}
+
+//API 회원가입 성공
+extension SignUpViewController {
+    func signUpResponse() {
+        self.dismissIndicator()
+        //이메일, 비밀번호 저장
+        UserDefaults.standard.set(self.passwordTextField.text!, forKey: "password")
+        //화면 이동
+        let signUpCompletionVC = UIStoryboard(name: "SignUpCompletion", bundle: nil).instantiateViewController(withIdentifier: "SignUpCompletionViewController")
+        signUpCompletionVC.modalTransitionStyle = .crossDissolve
+        signUpCompletionVC.modalPresentationStyle = .fullScreen
+        self.present(signUpCompletionVC, animated: true)
+    }
+}
+
+//API 회원가입 실패
+//필요하면 만들기
+
+
+
+
+//                self.present(signupCompletionVC, animated: true, completion: nil)
+//            } else { //API 실패시
+//                //실패 알람띄우기
+//
+//            }
+//        })
+//        self.showIndicator()
+//        DispatchQueue.global().sync {
+//            <#code#>
+//        }
+        

@@ -10,8 +10,10 @@ import UIKit
 
 class PasswordSearchViewController : UIViewController {
     //alert
-    let passwordSentAlertService = PasswordSentAlertService()
-    
+    let successFindPasswordAlertService = SuccessFindPasswordSentAlertService()
+    let failFindPasswordAlertService = FailFindPasswordAlertService()
+    //API
+    lazy var searchPasswordDataManager: SearchPasswordDataManager = SearchPasswordDataManager()
     
     
     //MARK: - Properties
@@ -85,9 +87,11 @@ class PasswordSearchViewController : UIViewController {
     
     //MARK: - Actions
     @IBAction func sendPasswordTapButton(_ sender: Any) {
+        //API 비밀번호 찾기
+        let emailInputValue: String = emailInputTextField.text!
+        searchPasswordDataManager.getPasswordData(emailValue: emailInputValue, self)
+        self.showIndicator()
 
-        let passwordSentAlertVC = passwordSentAlertService.alert()
-        present(passwordSentAlertVC, animated: true)
     }
     @IBAction func backButtonTap(_ sender: Any) {
         dismiss(animated: true)
@@ -124,5 +128,33 @@ extension PasswordSearchViewController : UITextFieldDelegate {
             emailInputTextField.resignFirstResponder()
         }
         return true
+    }
+}
+
+extension PasswordSearchViewController {
+    func findPasswordResponse() {
+        self.dismissIndicator()
+//        let successFindPasswordVC = successFindPasswordAlertService.alert()
+//        present(successFindPasswordVC, animated: true)
+        
+        
+//        let successFindPasswordVC = UIStoryboard(name: "SignUpCompletion", bundle: nil).instantiateViewController(withIdentifier: "SignUpCompletionViewController")
+//        successFindPasswordVC.modalTransitionStyle = .crossDissolve
+//        successFindPasswordVC.modalPresentationStyle = .fullScreen
+//        self.present(successFindPasswordVC, animated: true)
+//
+//
+//        let successFindPasswordVC = UIStoryboard(name: "SuccessFindPassword", bundle: nil).instantiateViewController(withIdentifier: "AuthNumberViewController") as! AuthNumberViewController
+        
+        let successFindPasswordVC = UIStoryboard(name: "SuccessFindPassword", bundle: nil).instantiateViewController(withIdentifier: "SuccessFindPasswordViewController") as! SuccessFindPasswordViewController
+        self.present(successFindPasswordVC, animated: true)
+    }
+}
+
+extension PasswordSearchViewController {
+    func failFindPasswordResponse() {
+        self.dismissIndicator()
+        let failFindPasswordVC = UIStoryboard(name: "FailFIndPassword", bundle: nil).instantiateViewController(withIdentifier: "FailFindPasswordViewController") as! FailFindPasswordViewController
+        self.present(failFindPasswordVC, animated: true)
     }
 }

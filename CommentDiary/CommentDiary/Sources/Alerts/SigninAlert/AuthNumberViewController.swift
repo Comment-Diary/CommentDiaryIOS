@@ -52,31 +52,29 @@ class AuthNumberViewController: UIViewController {
     @IBAction func okTapButton(_ sender: Any) {
         CheckEmailRequest.email = UserDefaults.standard.value(forKey: "email") as? String ?? ""
         CheckEmailRequest.code = authTextField.text!
-        CheckEmailDataManager().checkEmailPostData()
+        CheckEmailDataManager().checkEmailPostData(self)
         print(UserDefaults.standard.value(forKey: "email") as? String ?? "")
 
         
         
         self.showIndicator()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-            self.dismissIndicator()
-            
 
-            if CheckEmailSuccessReponse.ResponseState == true {
-                //회원가입 페이지 인증 번호 비활성화, textfield 비활성화로 바꾸기
-                self.emailTextFieldDelegate?.onEmailTextFieldChange(data: false) //텍스트필드 비활성화
-                self.authButtonDelegate?.onAuthButtonChange(data: false) //버튼 비활성화
-
-
-                self.dismiss(animated: true, completion: nil)
-
-            } else {
-                //툴렸다는 라벨 표시
-                self.authNumberNotMatchLabel.isHidden = false
-            }
-            
-        })
         
     }
     
+}
+extension AuthNumberViewController {
+    func authEmailResponse() {
+        self.dismissIndicator()
+        self.dismiss(animated: true, completion: nil)
+        self.emailTextFieldDelegate?.onEmailTextFieldChange(data: false) //텍스트필드 비활
+        self.authButtonDelegate?.onAuthButtonChange(data: false) //버튼 비활성화
+    }
+}
+
+extension AuthNumberViewController {
+    func authEmailFailResponse() {
+        self.dismissIndicator()
+        self.authNumberNotMatchLabel.isHidden = false
+    }
 }

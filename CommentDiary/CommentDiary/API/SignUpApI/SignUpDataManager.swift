@@ -9,8 +9,8 @@ import Foundation
 import Alamofire
 
 class SignUpDataManager {
-    func signUpPostData() {
-        let url = ""
+    func signUpPostData(_ viewController: SignUpViewController) {
+        let url = "http://jwyang.shop:8080/api/v1/members"
         let params = ["email" : SignUpRequest.email,
                       "password" : SignUpRequest.password,
                       "checkPassword" : SignUpRequest.checkPassword]
@@ -24,9 +24,7 @@ class SignUpDataManager {
                 switch response.result {
                 case .success(let response):
                     print("DEBUG >> Success \(response)")
-                    if response.code == 1000 {
-                        SignUpSuccessReponse.ResponseState = true
-                    }
+                    viewController.signUpResponse()
                 case .failure(let error):
                     print(error.localizedDescription)
                 }

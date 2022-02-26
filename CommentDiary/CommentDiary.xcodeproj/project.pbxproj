@@ -70,12 +70,15 @@
 		A5C1D5B527C271E80046095A /* CheckEmailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1D5B427C271E80046095A /* CheckEmailDataManager.swift */; };
 		A5C1D5B727C271F40046095A /* CheckEmailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1D5B627C271F30046095A /* CheckEmailResponse.swift */; };
 		A5C1D5B927C271FE0046095A /* CheckEmailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1D5B827C271FE0046095A /* CheckEmailRequest.swift */; };
-		A5C9FB7427C60EE500445012 /* PasswordSentAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C9FB7327C60EE500445012 /* PasswordSentAlertViewController.swift */; };
-		A5C9FB7627C60EF600445012 /* PasswordSentAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5C9FB7527C60EF600445012 /* PasswordSentAlert.storyboard */; };
+		A5C9FB7427C60EE500445012 /* FailFindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C9FB7327C60EE500445012 /* FailFindPasswordViewController.swift */; };
+		A5C9FB7627C60EF600445012 /* FailFIndPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5C9FB7527C60EF600445012 /* FailFIndPassword.storyboard */; };
 		A5C9FB7827C60F3900445012 /* PasswordSentAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C9FB7727C60F3900445012 /* PasswordSentAlertService.swift */; };
 		A5C9FB7B27C6205400445012 /* CommentReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C9FB7A27C6205400445012 /* CommentReportViewController.swift */; };
 		A5C9FB7D27C625DD00445012 /* CommentReportAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C9FB7C27C625DD00445012 /* CommentReportAlertService.swift */; };
 		A5C9FB7F27C6263500445012 /* CommentReportAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5C9FB7E27C6263500445012 /* CommentReportAlert.storyboard */; };
+		A5CBCBFC27CA96AA00BE857D /* SuccessFindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CBCBFB27CA96AA00BE857D /* SuccessFindPasswordViewController.swift */; };
+		A5CBCBFE27CA996D00BE857D /* SuccessPasswordSentAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CBCBFD27CA996D00BE857D /* SuccessPasswordSentAlertService.swift */; };
+		A5CBCC0027CA99FF00BE857D /* SuccessFindPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CBCBFF27CA99FF00BE857D /* SuccessFindPassword.storyboard */; };
 		A5CCD18427C34BA30096281F /* LoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCD18327C34BA30096281F /* LoginDataManager.swift */; };
 		A5CCD18627C34BAE0096281F /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCD18527C34BAE0096281F /* LoginResponse.swift */; };
 		A5CCD18827C34BB70096281F /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCD18727C34BB70096281F /* LoginRequest.swift */; };
@@ -152,12 +155,15 @@
 		A5C1D5B427C271E80046095A /* CheckEmailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailDataManager.swift; sourceTree = "<group>"; };
 		A5C1D5B627C271F30046095A /* CheckEmailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailResponse.swift; sourceTree = "<group>"; };
 		A5C1D5B827C271FE0046095A /* CheckEmailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailRequest.swift; sourceTree = "<group>"; };
-		A5C9FB7327C60EE500445012 /* PasswordSentAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSentAlertViewController.swift; sourceTree = "<group>"; };
-		A5C9FB7527C60EF600445012 /* PasswordSentAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordSentAlert.storyboard; sourceTree = "<group>"; };
+		A5C9FB7327C60EE500445012 /* FailFindPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailFindPasswordViewController.swift; sourceTree = "<group>"; };
+		A5C9FB7527C60EF600445012 /* FailFIndPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FailFIndPassword.storyboard; sourceTree = "<group>"; };
 		A5C9FB7727C60F3900445012 /* PasswordSentAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSentAlertService.swift; sourceTree = "<group>"; };
 		A5C9FB7A27C6205400445012 /* CommentReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentReportViewController.swift; sourceTree = "<group>"; };
 		A5C9FB7C27C625DD00445012 /* CommentReportAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentReportAlertService.swift; sourceTree = "<group>"; };
 		A5C9FB7E27C6263500445012 /* CommentReportAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommentReportAlert.storyboard; sourceTree = "<group>"; };
+		A5CBCBFB27CA96AA00BE857D /* SuccessFindPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessFindPasswordViewController.swift; sourceTree = "<group>"; };
+		A5CBCBFD27CA996D00BE857D /* SuccessPasswordSentAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPasswordSentAlertService.swift; sourceTree = "<group>"; };
+		A5CBCBFF27CA99FF00BE857D /* SuccessFindPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SuccessFindPassword.storyboard; sourceTree = "<group>"; };
 		A5CCD18327C34BA30096281F /* LoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManager.swift; sourceTree = "<group>"; };
 		A5CCD18527C34BAE0096281F /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		A5CCD18727C34BB70096281F /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
@@ -512,9 +518,8 @@
 		A5C9FB7227C60EC100445012 /* PasswordSent */ = {
 			isa = PBXGroup;
 			children = (
-				A5C9FB7327C60EE500445012 /* PasswordSentAlertViewController.swift */,
-				A5C9FB7527C60EF600445012 /* PasswordSentAlert.storyboard */,
-				A5C9FB7727C60F3900445012 /* PasswordSentAlertService.swift */,
+				A5CBCBFA27CA965D00BE857D /* success */,
+				A5CBCBF927CA965000BE857D /* fail */,
 			);
 			path = PasswordSent;
 			sourceTree = "<group>";
@@ -527,6 +532,26 @@
 				A5C9FB7E27C6263500445012 /* CommentReportAlert.storyboard */,
 			);
 			path = CommentReport;
+			sourceTree = "<group>";
+		};
+		A5CBCBF927CA965000BE857D /* fail */ = {
+			isa = PBXGroup;
+			children = (
+				A5C9FB7327C60EE500445012 /* FailFindPasswordViewController.swift */,
+				A5C9FB7527C60EF600445012 /* FailFIndPassword.storyboard */,
+				A5C9FB7727C60F3900445012 /* PasswordSentAlertService.swift */,
+			);
+			path = fail;
+			sourceTree = "<group>";
+		};
+		A5CBCBFA27CA965D00BE857D /* success */ = {
+			isa = PBXGroup;
+			children = (
+				A5CBCBFB27CA96AA00BE857D /* SuccessFindPasswordViewController.swift */,
+				A5CBCBFD27CA996D00BE857D /* SuccessPasswordSentAlertService.swift */,
+				A5CBCBFF27CA99FF00BE857D /* SuccessFindPassword.storyboard */,
+			);
+			path = success;
 			sourceTree = "<group>";
 		};
 		A5CCD18227C34B7F0096281F /* LoginAPI */ = {
@@ -619,6 +644,7 @@
 			files = (
 				A5567CA427BEA342001A4B98 /* TodayDiary.storyboard in Resources */,
 				A567615527B7E454006FDA7F /* LaunchScreen.storyboard in Resources */,
+				A5CBCC0027CA99FF00BE857D /* SuccessFindPassword.storyboard in Resources */,
 				A5567C9027BD4D5B001A4B98 /* WritingDiary.storyboard in Resources */,
 				A5BF9CE727C7FA800093B900 /* MyDiaryTableViewCell.xib in Resources */,
 				A567615227B7E454006FDA7F /* Assets.xcassets in Resources */,
@@ -633,7 +659,7 @@
 				A5CCD19127C4CDF00096281F /* PasswordSearch.storyboard in Resources */,
 				A567622C27BBC7DC006FDA7F /* SignUp.storyboard in Resources */,
 				A5567C8A27BD4CD9001A4B98 /* MyDiary.storyboard in Resources */,
-				A5C9FB7627C60EF600445012 /* PasswordSentAlert.storyboard in Resources */,
+				A5C9FB7627C60EF600445012 /* FailFIndPassword.storyboard in Resources */,
 				A5BF9CEC27C8C64C0093B900 /* SendDiaryAlert.storyboard in Resources */,
 				A567617D27B7F640006FDA7F /* Splash.storyboard in Resources */,
 				A56FF79627C0E89400C740F7 /* TodayDiaryBottom.storyboard in Resources */,
@@ -693,6 +719,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5BF9CDE27C743A70093B900 /* SignUpRequest.swift in Sources */,
+				A5CBCBFE27CA996D00BE857D /* SuccessPasswordSentAlertService.swift in Sources */,
 				A5567C8C27BD4CF5001A4B98 /* MyDiaryViewController.swift in Sources */,
 				A5CCD18627C34BAE0096281F /* LoginResponse.swift in Sources */,
 				A5BF9CE027C743B10093B900 /* SignUpResponse.swift in Sources */,
@@ -738,7 +765,8 @@
 				A567623127BC2E33006FDA7F /* OnboardingSlide.swift in Sources */,
 				A567617427B7EA56006FDA7F /* IndicatorView.swift in Sources */,
 				A567616427B7E7E2006FDA7F /* Color.swift in Sources */,
-				A5C9FB7427C60EE500445012 /* PasswordSentAlertViewController.swift in Sources */,
+				A5CBCBFC27CA96AA00BE857D /* SuccessFindPasswordViewController.swift in Sources */,
+				A5C9FB7427C60EE500445012 /* FailFindPasswordViewController.swift in Sources */,
 				A5C1D5B727C271F40046095A /* CheckEmailResponse.swift in Sources */,
 				A5567C8E27BD4D1A001A4B98 /* WritingDiaryViewController.swift in Sources */,
 				A5BF9CF127C8FF830093B900 /* NDetailDiaryViewController.swift in Sources */,

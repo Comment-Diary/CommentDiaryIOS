@@ -11,6 +11,3 @@ struct SignUpResponse: Decodable {
     var message: String
 }
 
-struct SignUpSuccessReponse {
-    static var ResponseState = false
-}

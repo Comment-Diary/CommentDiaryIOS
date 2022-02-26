@@ -25,12 +25,11 @@ class SearchPasswordDataManager {
                 switch response.result {
                 case .success(let response):
                     print("DEBUG >> Success \(response)")
-                    
-                    if response.code == 1000 {
-                        SearchPasswordSuccessResponse.responseState = true
-                    }
+                    viewController.findPasswordResponse()
+
                 case .failure(let error):
                     print(error.localizedDescription)
+                    viewController.failFindPasswordResponse()
                 }
             }
     }

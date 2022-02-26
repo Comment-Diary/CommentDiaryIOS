@@ -28,10 +28,8 @@ class EmailDataManager {
                 switch response.result {
                 case .success(let response):
                     print("DEBUG >> Success \(response)")
-                    EmailSuccessResponse.responseState = true
-                    if response.code == 1000 {
-                        EmailSuccessResponse.responseState = true
-                    } 
+
+                    viewController.authEmailResponse()
                 case .failure(let error):
                     print(error.localizedDescription)
 

@@ -9,6 +9,10 @@ import Foundation
 import UIKit
 
 class LoginViewController: UIViewController {
+    //로그인을 위한 이메일, 비밀번호
+    var loginEmail = UserDefaults.standard.value(forKey: "email") as? String ?? ""
+    
+    var loginPassword = UserDefaults.standard.value(forKey: "password") as? String ?? ""
     //MARK: - Properties
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -24,6 +28,9 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var signinButton: UIButton!
+    
+    @IBOutlet weak var loginFailLabel: UILabel!
+    
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -88,12 +95,15 @@ class LoginViewController: UIViewController {
         self.questionLabel.text = "코다 계정이 없으신가요?"
         self.questionLabel.font = UIFont(name: "Roboto-Medium", size: 14)
         self.questionLabel.textColor = UIColor(hex: 0x5F5D59)
+        
+        self.loginFailLabel.isHidden = true
     }
 
     
     //MARK: - Actions
     
     @IBAction func findPasswordTapButton(_ sender: Any) {
+        self.showIndicator()
         let passwordSearchStoryboard = UIStoryboard(name: "PasswordSearch", bundle: nil).instantiateViewController(withIdentifier: "PasswordSearchViewController")
         passwordSearchStoryboard.modalTransitionStyle = .crossDissolve
         passwordSearchStoryboard.modalPresentationStyle = .fullScreen
@@ -102,13 +112,16 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func loginTapButton(_ sender: Any) {
-//        let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
-//        changeRootViewController(mainTabBarController)
+
+        self.showIndicator()
+        LoginRequest.email = emailTextField.text!
+        LoginRequest.password = passwordTextField.text!
+        LoginDataManager().loginPostData(self)
         
-        let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
-        mainTabBarController.modalPresentationStyle = .fullScreen
-        mainTabBarController.modalTransitionStyle = .crossDissolve
-        self.present(mainTabBarController, animated: true, completion: nil)
+        
+
+        
+
     }
     @IBAction func signupTapButton(_ sender: Any) {
         let signupVC = UIStoryboard(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "SignUpViewController")
@@ -125,6 +138,39 @@ class LoginViewController: UIViewController {
 
 
 //    //MARK: - Extensions
+
+//API 로그인 Login
+//MARK: - Extentions
+//API 로그인 성공
+extension LoginViewController {
+func loginSuccessResponse() {
+    self.dismissIndicator()
+    //이메일, 비밀번호 userdefault 객체 삭제하기
+    UserDefaults.standard.removeObject(forKey: "email")
+    UserDefaults.standard.removeObject(forKey: "password")
+    
+    //자동로그인
+    UserDefaults.standard.set(true, forKey: "login_save")
+    
+    //화면전환
+    let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
+    mainTabBarController.modalPresentationStyle = .fullScreen
+    mainTabBarController.modalTransitionStyle = .crossDissolve
+    self.present(mainTabBarController, animated: true, completion: nil)
+    
+}
+}
+extension LoginViewController {
+func loginFailResponse() {
+    self.dismissIndicator()
+    self.loginFailLabel.isHidden = false
+
+}
+}
+
+
+
+
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailTextField {

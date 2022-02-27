@@ -89,6 +89,15 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
     //MARK: - Actions
     
     @IBAction func saveTapButton(_ sender: Any) {
+        //API 일기 작성
+        self.showIndicator()
+        
+        WritingDiaryRequest.title = titleTextView.text!
+        WritingDiaryRequest.content = contentTextView.text!
+        WritingDiaryRequest.date = "2022.02.25" //수정하기
+        WritingDiaryRequest.deliveryYn = "N" //수정하기
+        WritingDiaryDataManager().writingDiaryPostData(self)
+        
     }
     
     @IBAction func backButtonTap(_ sender: Any) {
@@ -159,3 +168,12 @@ extension TodayDiaryViewController: UITextViewDelegate {
         }
     }
 }
+
+//API
+extension TodayDiaryViewController {
+    func writingDiarySucessResponse() {
+        self.dismissIndicator()
+        self.navigationController?.popViewController(animated: true)
+    }
+}
+

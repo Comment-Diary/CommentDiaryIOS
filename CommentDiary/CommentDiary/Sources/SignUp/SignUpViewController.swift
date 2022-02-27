@@ -183,8 +183,6 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
     }
     
     @IBAction func AuthNumberButton(_ sender: Any) {
-        //이메일 텍스트 필드 저장
-        UserDefaults.standard.set(emailTextField.text!, forKey: "email")
 
         //API 인증번호 발급
         let emailQueryValue: String = emailTextField.text!
@@ -307,11 +305,17 @@ extension UILabel {
 extension SignUpViewController {
     func authEmailResponse() {
         self.dismissIndicator()
-
         let authNumberVC = UIStoryboard(name: "AuthNumber", bundle: nil).instantiateViewController(withIdentifier: "AuthNumberViewController") as! AuthNumberViewController
         authNumberVC.authButtonDelegate = self
         authNumberVC.emailTextFieldDelegate = self
         self.present(authNumberVC, animated: true)
+        
+    }
+}
+extension SignUpViewController {
+    func authEmailFailResponse() {
+        self.dismissIndicator()
+        self.presentBottomAlert(message: "이미 가입되어 있는 이메일입니다.")
         
     }
 }
@@ -321,6 +325,7 @@ extension SignUpViewController {
     func signUpResponse() {
         self.dismissIndicator()
         //이메일, 비밀번호 저장
+        UserDefaults.standard.set(emailTextField.text!, forKey: "email")
         UserDefaults.standard.set(self.passwordTextField.text!, forKey: "password")
         //화면 이동
         let signUpCompletionVC = UIStoryboard(name: "SignUpCompletion", bundle: nil).instantiateViewController(withIdentifier: "SignUpCompletionViewController")

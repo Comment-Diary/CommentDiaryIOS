@@ -115,16 +115,24 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 혹은 비밀번호가 올바르지 않습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="to1-0z-4F9">
+                                <rect key="frame" x="41.5" y="466" width="237.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="to1-0z-4F9" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="4Rc-AX-kNX"/>
                             <constraint firstItem="TFd-gg-Orm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="52" id="4g9-J1-r13"/>
                             <constraint firstItem="4lm-Uf-iji" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="7Ny-yp-a1z"/>
                             <constraint firstItem="TFd-gg-Orm" firstAttribute="top" secondItem="77Y-ui-TjL" secondAttribute="bottom" constant="32" id="F1g-v6-FgB"/>
                             <constraint firstItem="sRm-Yj-m8U" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="KPS-vo-vBB"/>
                             <constraint firstItem="Y2t-1z-cjX" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="OEj-8M-Dd9"/>
                             <constraint firstItem="wh4-qb-nOu" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="PnD-pk-M3m"/>
+                            <constraint firstItem="Y2t-1z-cjX" firstAttribute="top" secondItem="to1-0z-4F9" secondAttribute="bottom" constant="16" id="TIc-Wh-XTH"/>
                             <constraint firstItem="Y2t-1z-cjX" firstAttribute="top" relation="greaterThanOrEqual" secondItem="wh4-qb-nOu" secondAttribute="bottom" constant="170" id="Urd-8w-azd"/>
                             <constraint firstItem="Y2t-1z-cjX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Zzt-t6-cNv"/>
                             <constraint firstItem="4lm-Uf-iji" firstAttribute="top" secondItem="TFd-gg-Orm" secondAttribute="bottom" constant="16" id="aVI-2j-Xae"/>
@@ -144,6 +152,7 @@
                         <outlet property="findPasswordButton" destination="wh4-qb-nOu" id="Eoo-oP-h18"/>
                         <outlet property="idEmailLabel" destination="GOF-51-3eS" id="7zK-mb-tcT"/>
                         <outlet property="loginButton" destination="Y2t-1z-cjX" id="3MW-UM-OkB"/>
+                        <outlet property="loginFailLabel" destination="to1-0z-4F9" id="PsN-UG-2SZ"/>
                         <outlet property="loginLabel" destination="77Y-ui-TjL" id="vc4-2P-XgQ"/>
                         <outlet property="passwordLabel" destination="LqM-0k-ovV" id="hkM-9T-bek"/>
                         <outlet property="passwordTextField" destination="apI-vt-0Of" id="F4j-hA-MK4"/>

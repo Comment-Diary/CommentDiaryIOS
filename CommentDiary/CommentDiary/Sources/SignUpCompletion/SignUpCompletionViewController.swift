@@ -9,16 +9,11 @@ import Foundation
 import UIKit
 
 class SignUpCompletionViewController: UIViewController {
-
-
-    
-
-    
-    
+ 
     //로그인을 위한 이메일, 비밀번호
-    var loginEmail = UserDefaults.standard.value(forKey: "email") as? String ?? ""
+    var loginEmail = UserDefaults.standard.value(forKey: "email")
     
-    var loginPassword = UserDefaults.standard.value(forKey: "password") as? String ?? ""
+    var loginPassword = UserDefaults.standard.value(forKey: "password")
     //MARK: - Properties
     
     @IBOutlet weak var recordStartButton: UIButton!
@@ -35,30 +30,46 @@ class SignUpCompletionViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction func recordStartTapButton(_ sender: Any) {
-        LoginRequest.email = loginEmail
-        LoginRequest.password = loginPassword
-        LoginDataManager().loginPostData()
+        //LoginAPI
+        self.showIndicator()
+        LoginRequest.email = loginEmail as! String
+        LoginRequest.password = loginPassword as! String
+        LoginAPIDataManager().loginPostData(self)
+        print(loginEmail!, "이메일")
+        print(loginPassword!, "비밀번호")
         
 
-        
-        
-        
-        //이메일, 비밀번호 userdefault 객체 삭제하기
-        UserDefaults.standard.removeObject(forKey: "email")
-        UserDefaults.standard.removeObject(forKey: "password")
-        
-        
-        let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
-        mainTabBarController.modalPresentationStyle = .fullScreen
-        mainTabBarController.modalTransitionStyle = .crossDissolve
-        self.present(mainTabBarController, animated: true, completion: nil)
     }
     
 }
 
 
     //MARK: - Extentions
+//API 로그인 성공
+extension SignUpCompletionViewController {
+    func loginSuccessResponse() {
+        self.dismissIndicator()
+        //이메일, 비밀번호 userdefault 객체 삭제하기
+        UserDefaults.standard.removeObject(forKey: "email")
+        UserDefaults.standard.removeObject(forKey: "password")
+        
+        //자동 로그인
+//        UserDefaults.standard.set(true, forKey: "login_save")
+        
+        //화면전환
+        let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
+        mainTabBarController.modalPresentationStyle = .fullScreen
+        mainTabBarController.modalTransitionStyle = .crossDissolve
+        self.present(mainTabBarController, animated: true, completion: nil)
+        
+    }
+}
+extension SignUpCompletionViewController {
+    func loginFailResponse() {
+        self.dismissIndicator()
 
+    }
+}
 
 //UserDefaults.standard.set(emailTextField.text, forKey: "email")
 //

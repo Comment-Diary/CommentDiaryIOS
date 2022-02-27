@@ -32,6 +32,7 @@ class EmailDataManager {
                     viewController.authEmailResponse()
                 case .failure(let error):
                     print(error.localizedDescription)
+                    viewController.authEmailFailResponse()
 
                     
                 }

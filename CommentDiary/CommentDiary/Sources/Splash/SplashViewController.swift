@@ -59,6 +59,9 @@ class SplashVieController : ViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        //자동 로그인
+//        self.autoLogin()
+        
         //버튼
         self.nextBtn.setTitle("넘어가기", for: .normal)
         self.nextBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeoEB00-Regular", size: 18)
@@ -84,6 +87,15 @@ class SplashVieController : ViewController {
         
 
     }
+    //자동 로그인
+//    func autoLogin() {
+//        if UserDefaults.standard.bool(forKey: "login_save") == true {
+//            let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
+//            mainTabBarController.modalPresentationStyle = .fullScreen
+//            mainTabBarController.modalTransitionStyle = .crossDissolve
+//            self.present(mainTabBarController, animated: true, completion: nil)
+//        }
+//    }
     
     
     

@@ -21,8 +21,19 @@ class SuccessFindPasswordViewController: UIViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewSetting()
+        buttonSetting()
     }
     
+    func viewSetting() {
+        self.sentCompleteView.layer.cornerRadius = 10
+        self.sentCompleteView.backgroundColor = UIColor(hex: 0xFDFCF9)
+    }
+    
+    func buttonSetting() {
+        self.okButton.backgroundColor = UIColor(hex: 0xFDFCF9)
+        self.okButton.layer.cornerRadius = okButton.frame.height / 2
+    }
     //MARK: - Actions
     @IBAction func okTapButton(_ sender: Any) {
         dismiss(animated: true)

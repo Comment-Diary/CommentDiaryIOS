@@ -22,6 +22,12 @@ class FailFindPasswordViewController : UIViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewSetting()
+    }
+    
+    func viewSetting() {
+        self.noEmailView.layer.cornerRadius = 10
+        self.noEmailView.backgroundColor = UIColor(hex: 0xFDFCF9)
     }
     
     //MARK: - Actions

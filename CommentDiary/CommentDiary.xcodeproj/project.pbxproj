@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		72348980A73ACA4D0557B56A /* Pods_CommentDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257620E5E0C6E68F06987348 /* Pods_CommentDiary.framework */; };
+		A54645D027CCF958008BA823 /* WritingCommentAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54645CF27CCF958008BA823 /* WritingCommentAlertViewController.swift */; };
+		A54645D227CCF9FD008BA823 /* WritingComment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54645D127CCF9FD008BA823 /* WritingComment.storyboard */; };
 		A5567C8627BD4C98001A4B98 /* ArrivedDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5567C8527BD4C98001A4B98 /* ArrivedDiaryViewController.swift */; };
 		A5567C8827BD4CC0001A4B98 /* ArrivedDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5567C8727BD4CC0001A4B98 /* ArrivedDiary.storyboard */; };
 		A5567C8A27BD4CD9001A4B98 /* MyDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5567C8927BD4CD9001A4B98 /* MyDiary.storyboard */; };
@@ -97,6 +99,8 @@
 
 /* Begin PBXFileReference section */
 		257620E5E0C6E68F06987348 /* Pods_CommentDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommentDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A54645CF27CCF958008BA823 /* WritingCommentAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingCommentAlertViewController.swift; sourceTree = "<group>"; };
+		A54645D127CCF9FD008BA823 /* WritingComment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WritingComment.storyboard; sourceTree = "<group>"; };
 		A5567C8527BD4C98001A4B98 /* ArrivedDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivedDiaryViewController.swift; sourceTree = "<group>"; };
 		A5567C8727BD4CC0001A4B98 /* ArrivedDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArrivedDiary.storyboard; sourceTree = "<group>"; };
 		A5567C8927BD4CD9001A4B98 /* MyDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyDiary.storyboard; sourceTree = "<group>"; };
@@ -217,6 +221,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A54645CE27CCF922008BA823 /* WritingCommentAlert */ = {
+			isa = PBXGroup;
+			children = (
+				A54645CF27CCF958008BA823 /* WritingCommentAlertViewController.swift */,
+				A54645D127CCF9FD008BA823 /* WritingComment.storyboard */,
+			);
+			path = WritingCommentAlert;
+			sourceTree = "<group>";
+		};
 		A5567C8127BD4C0C001A4B98 /* MyPageTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +272,7 @@
 		A5567C9527BD52F0001A4B98 /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
+				A54645CE27CCF922008BA823 /* WritingCommentAlert */,
 				A5BF9CE827C8C56C0093B900 /* SendDiaryAlert */,
 				A5C9FB7927C6201000445012 /* CommentReport */,
 				A5C9FB7227C60EC100445012 /* PasswordSent */,
@@ -689,6 +703,7 @@
 				A567622527BBB8C9006FDA7F /* Login.storyboard in Resources */,
 				A56FF78B27C0119D00C740F7 /* CalendarTableViewCell.xib in Resources */,
 				A5567C8827BD4CC0001A4B98 /* ArrivedDiary.storyboard in Resources */,
+				A54645D227CCF9FD008BA823 /* WritingComment.storyboard in Resources */,
 				A5567C9227BD4D71001A4B98 /* MyPage.storyboard in Resources */,
 				A5CCD19127C4CDF00096281F /* PasswordSearch.storyboard in Resources */,
 				A567622C27BBC7DC006FDA7F /* SignUp.storyboard in Resources */,
@@ -783,6 +798,7 @@
 				A5567C9827BD5353001A4B98 /* AuthNumberViewController.swift in Sources */,
 				A567617B27B7F627006FDA7F /* SplashViewController.swift in Sources */,
 				A567617027B7E8EA006FDA7F /* KobisKey.swift in Sources */,
+				A54645D027CCF958008BA823 /* WritingCommentAlertViewController.swift in Sources */,
 				A567622A27BBC7D3006FDA7F /* SignUpViewController.swift in Sources */,
 				A5567CA627BEA350001A4B98 /* TodayDiaryViewController.swift in Sources */,
 				A5CCD18427C34BA30096281F /* LoginDataManager.swift in Sources */,
@@ -971,6 +987,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Lignt;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1001,6 +1018,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Lignt;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

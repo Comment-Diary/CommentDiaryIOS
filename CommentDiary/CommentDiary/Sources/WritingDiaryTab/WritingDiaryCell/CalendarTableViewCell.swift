@@ -8,7 +8,19 @@
 import UIKit
 import FSCalendar
 
+protocol selectDateDelegate : AnyObject {
+    func dateString(TapDate: String)
+}
+
+
 class CalendarTableViewCell: UITableViewCell, FSCalendarDataSource, FSCalendarDelegate {
+    //Delegate
+    var delegate: selectDateDelegate?
+    var selectedDate = ""
+    var formatter = DateFormatter()
+
+    
+    
     private var currentPage: Date?
     lazy var today: Date = {
         return Date()
@@ -41,7 +53,8 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDataSource, FSCalendarDe
         calendarView.dataSource = self
         calendarSetting()
         setCalendar()
-    
+        
+
         
         
         prevButton.addTarget(self, action: #selector(didPrevTap(_:)), for: .touchUpInside)
@@ -50,11 +63,9 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDataSource, FSCalendarDe
     
     @objc func didPrevTap(_ sender: UIButton) {
         scrollCurrentPage(isPrev: true)
-        print("클릭")
     }
     @objc func didNextTap(_ sender: UIButton) {
         scrollCurrentPage(isPrev: false)
-        print("클릭")
     }
     
     func scrollCurrentPage(isPrev: Bool) {
@@ -118,9 +129,7 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDataSource, FSCalendarDe
         calendarView.placeholderType = .none
     }
     
-//    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-//        calendarView.removeFromSuperview()
-//    }
+
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -131,7 +140,22 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDataSource, FSCalendarDe
 
     
     
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        formatter.dateFormat = "yyyy.MM.dd"
+        selectedDate = formatter.string(from: date)        
+        delegate?.dateString(TapDate: selectedDate)
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SelectedDate"), object: formatter.string(from: date))
+        
+    }
+    
+    func maximumDate(for calendar: FSCalendar) -> Date { 
+        return Date()
+        
+    }
+
+    
+    
     
 }
-
 

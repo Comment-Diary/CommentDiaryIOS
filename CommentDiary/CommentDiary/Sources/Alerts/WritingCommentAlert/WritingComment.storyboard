@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Writing Comment Alert View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="WritingCommentAlertViewController" modalTransitionStyle="flipHorizontal" modalPresentationStyle="overFullScreen" id="Y6W-OH-hqX" customClass="WritingCommentAlertViewController" customModule="CommentDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XNO-3F-5pl">
+                                <rect key="frame" x="40" y="220" width="240" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCm-dy-ahq">
+                                        <rect key="frame" x="84" y="76.5" width="72.5" height="23.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="xCm-dy-ahq" secondAttribute="height" multiplier="124:40" id="ZzH-Yl-ITf"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="작성하기"/>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="eic-cE-CDk">
+                                        <rect key="frame" x="51.5" y="10" width="137" height="50.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코멘트를 보기 위해서는" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6L1-cE-Qfo">
+                                                <rect key="frame" x="0.0" y="0.0" width="137" height="15.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="'도착한 일기'의 코멘트를" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6f-4r-MA7">
+                                                <rect key="frame" x="0.0" y="17.5" width="137" height="15.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작성해야해요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QH6-wH-gei">
+                                                <rect key="frame" x="0.0" y="35" width="137" height="15.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="xCm-dy-ahq" secondAttribute="bottom" constant="28" id="AXq-3L-OIj"/>
+                                    <constraint firstItem="eic-cE-CDk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="XNO-3F-5pl" secondAttribute="top" constant="10" id="E7g-Lx-Hi3"/>
+                                    <constraint firstItem="xCm-dy-ahq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XNO-3F-5pl" secondAttribute="leading" priority="250" constant="86" id="IY9-KO-sl5"/>
+                                    <constraint firstItem="eic-cE-CDk" firstAttribute="centerX" secondItem="XNO-3F-5pl" secondAttribute="centerX" id="dbH-2G-cKv"/>
+                                    <constraint firstItem="xCm-dy-ahq" firstAttribute="centerX" secondItem="XNO-3F-5pl" secondAttribute="centerX" id="iYb-aW-YaB"/>
+                                    <constraint firstItem="eic-cE-CDk" firstAttribute="top" secondItem="XNO-3F-5pl" secondAttribute="top" priority="250" constant="20" id="rFg-f4-bKw"/>
+                                    <constraint firstItem="xCm-dy-ahq" firstAttribute="top" secondItem="eic-cE-CDk" secondAttribute="bottom" constant="16" id="uie-ri-rIk"/>
+                                    <constraint firstAttribute="width" secondItem="XNO-3F-5pl" secondAttribute="height" multiplier="15:8" id="yfL-xg-qgb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="XNO-3F-5pl" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="0Go-DP-HSG"/>
+                            <constraint firstItem="XNO-3F-5pl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="Kbk-dp-y5i"/>
+                            <constraint firstItem="XNO-3F-5pl" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="RRn-MW-5Bk"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57" y="60"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

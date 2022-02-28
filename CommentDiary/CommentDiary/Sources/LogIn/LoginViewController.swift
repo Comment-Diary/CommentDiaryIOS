@@ -103,7 +103,7 @@ class LoginViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction func findPasswordTapButton(_ sender: Any) {
-        self.showIndicator()
+//        self.showIndicator()
         let passwordSearchStoryboard = UIStoryboard(name: "PasswordSearch", bundle: nil).instantiateViewController(withIdentifier: "PasswordSearchViewController")
         passwordSearchStoryboard.modalTransitionStyle = .crossDissolve
         passwordSearchStoryboard.modalPresentationStyle = .fullScreen
@@ -113,11 +113,14 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginTapButton(_ sender: Any) {
 
-        self.showIndicator()
-        LoginRequest.email = emailTextField.text!
-        LoginRequest.password = passwordTextField.text!
-        LoginDataManager().loginPostData(self)
-        
+//        self.showIndicator()
+//        LoginRequest.email = emailTextField.text!
+//        LoginRequest.password = passwordTextField.text!
+//        LoginDataManager().loginPostData(self)
+        let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
+        mainTabBarController.modalPresentationStyle = .fullScreen
+        mainTabBarController.modalTransitionStyle = .crossDissolve
+        self.present(mainTabBarController, animated: true, completion: nil)
         
 
         

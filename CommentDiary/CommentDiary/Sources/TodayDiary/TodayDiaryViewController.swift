@@ -10,21 +10,43 @@ import UIKit
 import PanModal
 
 class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, buttonChangeDelegate, countLabelChangeDelegate {
+
+    
+    //일기쓰기API
+    var dateText: String = ""
+    var deliveryToggle : String = ""
+    
+    func onToggleChange(data: String) {
+        deliveryToggle = data
+        print(deliveryToggle, "???")
+    }
     func onCountLabelChange(data: Bool) {
         textCountLabel.isHidden = data
+        print(textCountLabel.isHidden, "??")
+        
+        //일기 혼자쓰기 or 코멘트받기
+        if textCountLabel.isHidden == true {
+            deliveryToggle = "N"
+        } else {
+            deliveryToggle = "Y"
+        }
     }
     
     func onCommentViewChange(data: Bool) {
         saveButton.isEnabled = data
         //true 혼자보기
         //false 코멘트쓰기
+        print(saveButton.isEnabled, "???")
     }
     
     func onButtonChange(data: Bool) {
         commentView.isHidden = data
     }
-    
+
     //MARK: - Properties
+    
+    @IBOutlet weak var diaryDate: UILabel!
+    
     @IBOutlet weak var titleTextView: UITextView!
     @IBOutlet weak var diaryScrollView: UIScrollView!
     @IBOutlet weak var contentTextView: UITextView!
@@ -55,8 +77,23 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
         bottomsheetSetting()
         textViewPlaceholderSetting()
         countLabelSetting()
+        toggleSetting()
+        
+        
+        //오늘 날짜
+        self.diaryDate.text = dateText
+        if self.diaryDate.text == "" {
+            let dateformatter = DateFormatter()
+            dateformatter.dateFormat = "yyyy.MM.dd"
+            diaryDate.text = dateformatter.string(from: Date())
+        }
 
     }
+    
+    func toggleSetting() {
+        deliveryToggle = "N"
+    }
+    
     
     func countLabelSetting() {
         textCountLabel.text = "0/100"
@@ -71,9 +108,13 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
     
     func viewSetting() {
         view.backgroundColor = UIColor.red
+        //초기 비활성화
+        commentView.isHidden = true
+        textCountLabel.isHidden = true
     }
     
     func bottomsheetSetting() {
+        //조건달기
             let todayDiaryBottomVC = UIStoryboard(name: "TodayDiaryBottom", bundle: nil).instantiateViewController(withIdentifier: "TodayDiaryBottomViewController") as! TodayDiaryBottomViewController
             todayDiaryBottomVC.countLabelChangeDelegate = self
             todayDiaryBottomVC.buttonChangeDelegate = self
@@ -94,8 +135,8 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
         
         WritingDiaryRequest.title = titleTextView.text!
         WritingDiaryRequest.content = contentTextView.text!
-        WritingDiaryRequest.date = "2022.02.25" //수정하기
-        WritingDiaryRequest.deliveryYn = "N" //수정하기
+        WritingDiaryRequest.date = dateText
+        WritingDiaryRequest.deliveryYn = deliveryToggle
         WritingDiaryDataManager().writingDiaryPostData(self)
         
     }

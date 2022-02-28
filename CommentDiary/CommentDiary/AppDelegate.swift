@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import AlamofireNetworkActivityIndicator
+//import AlamofireNetworkActivityIndicator
 import IQKeyboardManagerSwift
 
 @main
@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        time()
         
         // StatusBar에 Alamofire 시도 중 Indicator 띄워주기 위한 옵션 설정
-        NetworkActivityIndicatorManager.shared.isEnabled = true
+//        NetworkActivityIndicatorManager.shared.isEnabled = true
         
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false

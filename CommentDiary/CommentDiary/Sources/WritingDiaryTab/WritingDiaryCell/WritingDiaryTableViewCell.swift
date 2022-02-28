@@ -9,12 +9,19 @@ import UIKit
 
 class WritingDiaryTableViewCell: UITableViewCell {
     @IBOutlet weak var diaryWriteButton: UIButton!
+    @IBOutlet weak var diaryDateLabel: UILabel!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        NotificationCenter.default.addObserver(self, selector: #selector(loadData(_:)), name: NSNotification.Name(rawValue: "SelectedDate"), object: nil)
     }
+
     
+    @objc func loadData(_ notification : NSNotification) {
+        diaryDateLabel.text = notification.object as? String ?? ""
+        
+    }
 
 
     override func setSelected(_ selected: Bool, animated: Bool) {

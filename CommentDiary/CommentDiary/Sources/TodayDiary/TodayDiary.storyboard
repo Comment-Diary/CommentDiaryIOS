@@ -25,7 +25,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E3Q-64-00h">
                                                 <rect key="frame" x="0.0" y="0.0" width="380" height="119"/>
                                                 <subviews>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="나는 오늘도 너무너무 서툴다." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eHS-WI-myK">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eHS-WI-myK">
                                                         <rect key="frame" x="17" y="19" width="346" height="100"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
@@ -35,13 +35,21 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅣㅣㅣㅣ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjl-7p-oyd">
+                                                        <rect key="frame" x="17" y="0.0" width="59" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="eHS-WI-myK" secondAttribute="trailing" constant="17" id="BoY-9B-Nco"/>
                                                     <constraint firstItem="eHS-WI-myK" firstAttribute="leading" secondItem="E3Q-64-00h" secondAttribute="leading" constant="17" id="Gtw-ec-976"/>
                                                     <constraint firstAttribute="bottom" secondItem="eHS-WI-myK" secondAttribute="bottom" id="T85-Un-qeW"/>
-                                                    <constraint firstItem="eHS-WI-myK" firstAttribute="top" secondItem="E3Q-64-00h" secondAttribute="top" constant="19" id="jcq-DZ-jak"/>
+                                                    <constraint firstItem="Wjl-7p-oyd" firstAttribute="leading" secondItem="E3Q-64-00h" secondAttribute="leading" constant="17" id="lVs-Dp-Abq"/>
+                                                    <constraint firstItem="Wjl-7p-oyd" firstAttribute="top" secondItem="E3Q-64-00h" secondAttribute="top" id="pqY-2x-VBa"/>
+                                                    <constraint firstItem="eHS-WI-myK" firstAttribute="top" secondItem="E3Q-64-00h" secondAttribute="top" constant="19" id="qgC-Sx-QrC"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CxI-rd-YX4">
@@ -196,6 +204,7 @@
                         <outlet property="commentPickedLabel" destination="N1e-or-men" id="qV6-ke-3hE"/>
                         <outlet property="commentView" destination="Vzm-gH-Y4P" id="sza-DZ-ql8"/>
                         <outlet property="contentTextView" destination="dqO-ZP-9RZ" id="b0Q-k5-dUx"/>
+                        <outlet property="diaryDate" destination="Wjl-7p-oyd" id="uLu-gr-mtA"/>
                         <outlet property="diaryScrollView" destination="L2D-mZ-25E" id="j6B-CD-0V1"/>
                         <outlet property="fixingButton" destination="hJo-hY-P3p" id="drK-Wt-Yfi"/>
                         <outlet property="saveButton" destination="ZC1-Ee-aUX" id="n6p-h0-Iju"/>

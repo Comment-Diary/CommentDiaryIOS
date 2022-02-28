@@ -8,7 +8,13 @@
 import Foundation
 import UIKit
 
+
+
+
 class WritingDiaryViewController: UIViewController {
+
+    var selectedTapDate: String = ""   //선택된 날짜
+    
     //MARK: - Properties
     @IBOutlet weak var writingDiaryTableView: UITableView!
     
@@ -16,29 +22,26 @@ class WritingDiaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.mainBackgroundColor
-        
-        
         writingDiaryTableView.delegate = self
         writingDiaryTableView.dataSource = self
-        
         cellsRegister()
-        
         
     }
     
     func cellsRegister() {
         let calendarCell = UINib(nibName: "CalendarTableViewCell", bundle: nil)
-        writingDiaryTableView.register(calendarCell, forCellReuseIdentifier: "CalendarTableViewCell")
+        writingDiaryTableView.register(calendarCell.self, forCellReuseIdentifier: "CalendarTableViewCell")
         let writingDiaryCell = UINib(nibName: "WritingDiaryTableViewCell", bundle: nil)
-        writingDiaryTableView.register(writingDiaryCell, forCellReuseIdentifier: "WritingDiaryTableViewCell")
+        writingDiaryTableView.register(writingDiaryCell.self, forCellReuseIdentifier: "WritingDiaryTableViewCell")
     }
     
     //일기 쓰기 화면 전환
     @objc func TapWritingTableViewCell(_ sender: UIButton) {
         let todayDiaryStoryBoard = UIStoryboard(name: "TodayDiary", bundle: nil)
-        if let todayDiaryVC = todayDiaryStoryBoard.instantiateViewController(withIdentifier: "TodayDiaryViewController") as? TodayDiaryViewController {
+        guard let todayDiaryVC = todayDiaryStoryBoard.instantiateViewController(withIdentifier: "TodayDiaryViewController") as? TodayDiaryViewController else { return }
+        todayDiaryVC.dateText = selectedTapDate
             self.navigationController?.pushViewController(todayDiaryVC, animated: true)
-        }
+        
     }
 
     
@@ -57,23 +60,28 @@ extension WritingDiaryViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = UITableViewCell()
-        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
         if indexPath.section == 0 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "CalendarTableViewCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarTableViewCell", for: indexPath) as! CalendarTableViewCell
+            cell.delegate = self
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
             
-            
-            
+            return cell
         }
         
         if indexPath.section == 1 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "WritingDiaryTableViewCell", for: indexPath)
-            let writingTableViewCell = cell as! WritingDiaryTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "WritingDiaryTableViewCell", for: indexPath) as! WritingDiaryTableViewCell
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
+            let writingTableViewCell = cell
             writingTableViewCell.diaryWriteButton.addTarget(self, action: #selector(TapWritingTableViewCell(_:)), for: .touchUpInside)
+            let dateformatter = DateFormatter()
+            dateformatter.dateFormat = "yyyy.MM.dd"
+            selectedTapDate = dateformatter.string(from: Date())
+            writingTableViewCell.diaryDateLabel.text = dateformatter.string(from: Date())
+            return cell
         }
-        
-        return cell
+        return UITableViewCell()
+
     }
     
     
@@ -81,14 +89,15 @@ extension WritingDiaryViewController: UITableViewDelegate, UITableViewDataSource
         return UITableView.automaticDimension
     }
     
-    
-//    func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
-//        return 100
-//    }
-    
-//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        return 100
-//    }
+}
+
+//Delegate
+extension WritingDiaryViewController: selectDateDelegate {
+    func dateString(TapDate: String) {
+        selectedTapDate = TapDate
+    }
     
     
 }
+
+

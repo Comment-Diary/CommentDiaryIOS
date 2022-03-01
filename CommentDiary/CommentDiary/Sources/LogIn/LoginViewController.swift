@@ -113,14 +113,14 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginTapButton(_ sender: Any) {
 
-//        self.showIndicator()
-//        LoginRequest.email = emailTextField.text!
-//        LoginRequest.password = passwordTextField.text!
-//        LoginDataManager().loginPostData(self)
-        let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
-        mainTabBarController.modalPresentationStyle = .fullScreen
-        mainTabBarController.modalTransitionStyle = .crossDissolve
-        self.present(mainTabBarController, animated: true, completion: nil)
+        self.showIndicator()
+        LoginRequest.email = emailTextField.text!
+        LoginRequest.password = passwordTextField.text!
+        LoginDataManager().loginPostData(self)
+//        let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
+//        mainTabBarController.modalPresentationStyle = .fullScreen
+//        mainTabBarController.modalTransitionStyle = .crossDissolve
+//        self.present(mainTabBarController, animated: true, completion: nil)
         
 
         

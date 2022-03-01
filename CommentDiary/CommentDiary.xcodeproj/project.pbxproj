@@ -63,6 +63,8 @@
 		A56FF79627C0E89400C740F7 /* TodayDiaryBottom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56FF79527C0E89400C740F7 /* TodayDiaryBottom.storyboard */; };
 		A56FF79B27C16AC100C740F7 /* EmailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56FF79A27C16AC100C740F7 /* EmailResponse.swift */; };
 		A56FF79D27C16ACC00C740F7 /* EmailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56FF79C27C16ACC00C740F7 /* EmailDataManager.swift */; };
+		A5B6B39C27CE405A0065DDF8 /* DeleteCheckAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B6B39B27CE405A0065DDF8 /* DeleteCheckAlertViewController.swift */; };
+		A5B6B39E27CE40710065DDF8 /* DeleteCheck.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B6B39D27CE40710065DDF8 /* DeleteCheck.storyboard */; };
 		A5BF9CDE27C743A70093B900 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BF9CDD27C743A70093B900 /* SignUpRequest.swift */; };
 		A5BF9CE027C743B10093B900 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BF9CDF27C743B10093B900 /* SignUpResponse.swift */; };
 		A5BF9CE227C743BC0093B900 /* SignUpDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BF9CE127C743BC0093B900 /* SignUpDataManager.swift */; };
@@ -156,6 +158,8 @@
 		A56FF79527C0E89400C740F7 /* TodayDiaryBottom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TodayDiaryBottom.storyboard; sourceTree = "<group>"; };
 		A56FF79A27C16AC100C740F7 /* EmailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailResponse.swift; sourceTree = "<group>"; };
 		A56FF79C27C16ACC00C740F7 /* EmailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailDataManager.swift; sourceTree = "<group>"; };
+		A5B6B39B27CE405A0065DDF8 /* DeleteCheckAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCheckAlertViewController.swift; sourceTree = "<group>"; };
+		A5B6B39D27CE40710065DDF8 /* DeleteCheck.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeleteCheck.storyboard; sourceTree = "<group>"; };
 		A5BF9CDD27C743A70093B900 /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		A5BF9CDF27C743B10093B900 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		A5BF9CE127C743BC0093B900 /* SignUpDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDataManager.swift; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 		A5567C9527BD52F0001A4B98 /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
+				A5B6B39A27CE3F6C0065DDF8 /* DeleteCheckAlert */,
 				A54645CE27CCF922008BA823 /* WritingCommentAlert */,
 				A5BF9CE827C8C56C0093B900 /* SendDiaryAlert */,
 				A5C9FB7927C6201000445012 /* CommentReport */,
@@ -513,6 +518,15 @@
 			path = RequestEmailAuthAPI;
 			sourceTree = "<group>";
 		};
+		A5B6B39A27CE3F6C0065DDF8 /* DeleteCheckAlert */ = {
+			isa = PBXGroup;
+			children = (
+				A5B6B39B27CE405A0065DDF8 /* DeleteCheckAlertViewController.swift */,
+				A5B6B39D27CE40710065DDF8 /* DeleteCheck.storyboard */,
+			);
+			path = DeleteCheckAlert;
+			sourceTree = "<group>";
+		};
 		A5BF9CDC27C7438C0093B900 /* SignUpApI */ = {
 			isa = PBXGroup;
 			children = (
@@ -699,6 +713,7 @@
 				A567615027B7E452006FDA7F /* Main.storyboard in Resources */,
 				A5567CA127BE945E001A4B98 /* SignUpCompletion.storyboard in Resources */,
 				A5BF9CF727C8FFA00093B900 /* NDetailDiary.storyboard in Resources */,
+				A5B6B39E27CE40710065DDF8 /* DeleteCheck.storyboard in Resources */,
 				A5BF9CF527C8FF980093B900 /* YDetailDiary.storyboard in Resources */,
 				A567622527BBB8C9006FDA7F /* Login.storyboard in Resources */,
 				A56FF78B27C0119D00C740F7 /* CalendarTableViewCell.xib in Resources */,
@@ -768,6 +783,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5BF9CDE27C743A70093B900 /* SignUpRequest.swift in Sources */,
+				A5B6B39C27CE405A0065DDF8 /* DeleteCheckAlertViewController.swift in Sources */,
 				A5CBCBFE27CA996D00BE857D /* SuccessPasswordSentAlertService.swift in Sources */,
 				A5567C8C27BD4CF5001A4B98 /* MyDiaryViewController.swift in Sources */,
 				A5CCD18627C34BAE0096281F /* LoginResponse.swift in Sources */,
@@ -978,7 +994,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JB8T59WMFR;
+				DEVELOPMENT_TEAM = 69F5355JYF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CommentDiary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -993,7 +1009,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = project.CommentDiary;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CMC.CommentDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1009,7 +1025,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JB8T59WMFR;
+				DEVELOPMENT_TEAM = 69F5355JYF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CommentDiary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1024,7 +1040,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = project.CommentDiary;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CMC.CommentDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

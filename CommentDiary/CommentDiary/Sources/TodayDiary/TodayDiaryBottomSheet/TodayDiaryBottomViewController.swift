@@ -9,7 +9,9 @@ import Foundation
 import UIKit
 import PanModal
 
-
+protocol preSaveButtonChangeDelegate {
+    func onPreSaveButtonChange(data: Bool)
+}
 
 protocol commentViewChangeDelegate {
     func onCommentViewChange(data: Bool)
@@ -24,6 +26,7 @@ protocol countLabelChangeDelegate {
 
 class TodayDiaryBottomViewController: UIViewController {
   
+    var preSaveButtonDelegate : preSaveButtonChangeDelegate?
     var commentViewDelegate: commentViewChangeDelegate?
     var buttonChangeDelegate: buttonChangeDelegate?
     var countLabelChangeDelegate: countLabelChangeDelegate?
@@ -59,7 +62,8 @@ class TodayDiaryBottomViewController: UIViewController {
         if sender.tag == 1 { //혼자보기
             selfButton.backgroundColor = UIColor(hex: 0xABD4BB)
             comemtButton.backgroundColor = UIColor(hex: 0xFDFCF9)
-            
+
+            preSaveButtonDelegate?.onPreSaveButtonChange(data: true) //임시저장 숨기기
             commentViewDelegate?.onCommentViewChange(data: true) //뷰 숨기기
             buttonChangeDelegate?.onButtonChange(data: true) //버튼 초기에 활성화 가능
             countLabelChangeDelegate?.onCountLabelChange(data: true) //카운트 라벨 숨기기
@@ -68,6 +72,7 @@ class TodayDiaryBottomViewController: UIViewController {
             selfButton.backgroundColor = UIColor(hex: 0xFDFCF9)
             comemtButton.backgroundColor = UIColor(hex: 0xABD4BB)
 
+            preSaveButtonDelegate?.onPreSaveButtonChange(data: false) //임시저장 보이기
             commentViewDelegate?.onCommentViewChange(data: false) //뷰 보이게하기
             buttonChangeDelegate?.onButtonChange(data: false) //버튼 초기에 비활성화
             countLabelChangeDelegate?.onCountLabelChange(data: false) //카운트 라벨 보이기

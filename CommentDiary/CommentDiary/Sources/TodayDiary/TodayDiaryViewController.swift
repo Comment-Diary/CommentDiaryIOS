@@ -9,26 +9,33 @@ import Foundation
 import UIKit
 import PanModal
 
-class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, buttonChangeDelegate, countLabelChangeDelegate {
+class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, buttonChangeDelegate, countLabelChangeDelegate, preSaveButtonChangeDelegate {
+
+    
 
     
     //일기쓰기API
     var dateText: String = ""
     var deliveryToggle : String = ""
     
-    func onToggleChange(data: String) {
-        deliveryToggle = data
-        print(deliveryToggle, "???")
+    
+    func onPreSaveButtonChange(data: Bool) {
+        preSaveButton.isHidden = data
     }
+
+
     func onCountLabelChange(data: Bool) {
         textCountLabel.isHidden = data
-        print(textCountLabel.isHidden, "??")
+
         
         //일기 혼자쓰기 or 코멘트받기
         if textCountLabel.isHidden == true {
+            //혼자보기
             deliveryToggle = "N"
         } else {
+            //코멘트 받기
             deliveryToggle = "Y"
+            print(deliveryToggle, "????")
         }
     }
     
@@ -36,7 +43,6 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
         saveButton.isEnabled = data
         //true 혼자보기
         //false 코멘트쓰기
-        print(saveButton.isEnabled, "???")
     }
     
     func onButtonChange(data: Bool) {
@@ -44,6 +50,10 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
     }
 
     //MARK: - Properties
+    
+    
+    @IBOutlet weak var preSaveButton: UIButton!
+    
     
     @IBOutlet weak var diaryDate: UILabel!
     
@@ -58,11 +68,6 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
     
     @IBOutlet weak var backButton: UIButton!
     
-    @IBOutlet weak var todayDiaryLabel: UILabel!
-    
-    @IBOutlet weak var trashButton: UIButton!
-    
-    @IBOutlet weak var fixingButton: UIButton!
     
     @IBOutlet weak var commentPickedLabel: UILabel!
     
@@ -70,6 +75,8 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         titleTextView.delegate = self
         contentTextView.delegate = self
         diaryScrollView.delegate = self
@@ -78,8 +85,9 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
         textViewPlaceholderSetting()
         countLabelSetting()
         toggleSetting()
+        preSaveButtonSetting()
         
-        
+
         //오늘 날짜
         self.diaryDate.text = dateText
         if self.diaryDate.text == "" {
@@ -92,6 +100,10 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
     
     func toggleSetting() {
         deliveryToggle = "N"
+    }
+    
+    func preSaveButtonSetting() {
+        preSaveButton.isHidden = true
     }
     
     
@@ -116,6 +128,8 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
     func bottomsheetSetting() {
         //조건달기
             let todayDiaryBottomVC = UIStoryboard(name: "TodayDiaryBottom", bundle: nil).instantiateViewController(withIdentifier: "TodayDiaryBottomViewController") as! TodayDiaryBottomViewController
+        
+            todayDiaryBottomVC.preSaveButtonDelegate = self
             todayDiaryBottomVC.countLabelChangeDelegate = self
             todayDiaryBottomVC.buttonChangeDelegate = self
             todayDiaryBottomVC.commentViewDelegate = self
@@ -145,11 +159,11 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func trashButtonTap(_ sender: Any) {
+    
+    @IBAction func preSaveButtonTap(_ sender: Any) {
     }
     
-    @IBAction func fixingButtonTap(_ sender: Any) {
-    }
+
     
 }
 

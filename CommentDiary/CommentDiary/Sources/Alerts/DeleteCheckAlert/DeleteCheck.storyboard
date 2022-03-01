@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Delete Check Alert View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="DeleteCheckAlertViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="Y6W-OH-hqX" customClass="DeleteCheckAlertViewController" customModule="CommentDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5S-it-Vp2">
+                                <rect key="frame" x="46" y="352" width="336" height="222"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Guf-kY-U07">
+                                        <rect key="frame" x="28" y="152" width="280" height="47"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woJ-xo-4wd">
+                                                <rect key="frame" x="0.0" y="0.0" width="134" height="47"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="woJ-xo-4wd" secondAttribute="height" multiplier="114:40" id="Zxo-Fm-pFc"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="취소"/>
+                                                <connections>
+                                                    <action selector="cancelButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vrg-jA-7m9"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQh-qt-Hvu">
+                                                <rect key="frame" x="146" y="0.0" width="134" height="47"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="KQh-qt-Hvu" secondAttribute="height" multiplier="114:40" id="2Xj-Oq-SbE"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="확인"/>
+                                                <connections>
+                                                    <action selector="okButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NC9-aY-hyY"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3M-A2-FQY">
+                                        <rect key="frame" x="0.0" y="0.0" width="336" height="152"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="KVJ-zQ-dMG">
+                                                <rect key="frame" x="79.666666666666671" y="57" width="176.66666666666663" height="38"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정말 삭제하시나요?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUw-Kp-3Dh">
+                                                        <rect key="frame" x="0.0" y="0.0" width="176.66666666666666" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="삭제된 일기는 복구할 수 없어요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3R-XC-P95">
+                                                        <rect key="frame" x="0.0" y="21" width="176.66666666666666" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="KVJ-zQ-dMG" firstAttribute="centerY" secondItem="w3M-A2-FQY" secondAttribute="centerY" id="eQ7-Xt-RXE"/>
+                                            <constraint firstItem="KVJ-zQ-dMG" firstAttribute="centerX" secondItem="w3M-A2-FQY" secondAttribute="centerX" id="sqU-vV-zfv"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Guf-kY-U07" secondAttribute="bottom" constant="23" id="2jF-hZ-gCg"/>
+                                    <constraint firstItem="Guf-kY-U07" firstAttribute="top" secondItem="w3M-A2-FQY" secondAttribute="bottom" id="E5W-2D-khq"/>
+                                    <constraint firstItem="w3M-A2-FQY" firstAttribute="top" secondItem="f5S-it-Vp2" secondAttribute="top" id="FU8-uh-vir"/>
+                                    <constraint firstAttribute="trailing" secondItem="w3M-A2-FQY" secondAttribute="trailing" id="Xvy-qC-Fwd"/>
+                                    <constraint firstAttribute="width" secondItem="f5S-it-Vp2" secondAttribute="height" multiplier="297:196" id="fcd-k8-aoJ"/>
+                                    <constraint firstItem="w3M-A2-FQY" firstAttribute="leading" secondItem="f5S-it-Vp2" secondAttribute="leading" id="kss-Q3-Bo6"/>
+                                    <constraint firstItem="Guf-kY-U07" firstAttribute="leading" secondItem="f5S-it-Vp2" secondAttribute="leading" constant="28" id="vRy-Vd-78W"/>
+                                    <constraint firstItem="Guf-kY-U07" firstAttribute="centerX" secondItem="f5S-it-Vp2" secondAttribute="centerX" id="yzQ-Vc-brY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.50478580298013243" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="f5S-it-Vp2" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Mp1-9c-wd4"/>
+                            <constraint firstItem="f5S-it-Vp2" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="gBm-kI-aYY"/>
+                            <constraint firstItem="f5S-it-Vp2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="46" id="vkx-tT-EMz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomTextLabel" destination="b3R-XC-P95" id="ro7-DD-Uzb"/>
+                        <outlet property="labelBackVIew" destination="w3M-A2-FQY" id="On5-WT-0zW"/>
+                        <outlet property="topTextLabel" destination="dUw-Kp-3Dh" id="aVZ-k2-RFc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.5" y="43.309859154929576"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

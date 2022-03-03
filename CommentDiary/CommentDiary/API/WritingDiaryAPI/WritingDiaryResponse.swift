@@ -9,4 +9,9 @@ import Foundation
 struct WritingDiaryResponse: Decodable {
     var code: Int
     var message: String
+    var result: result
+}
+
+struct result : Decodable {
+    var id: Int
 }

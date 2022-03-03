@@ -70,9 +70,9 @@ class SplashVieController : ViewController {
         
         
         self.nextBtn.backgroundColor = UIColor(hex: 0xF4EDE3)
-        self.nextBtn.layer.shadowColor = UIColor.black.cgColor
-        self.nextBtn.layer.shadowOpacity = 0.3
-        self.nextBtn.layer.shadowRadius = 10
+//        self.nextBtn.layer.shadowColor = UIColor.black.cgColor
+//        self.nextBtn.layer.shadowOpacity = 0.3
+//        self.nextBtn.layer.shadowRadius = 10
         self.nextBtn.layer.cornerRadius = nextBtn.frame.height / 2
         
         //pageControl

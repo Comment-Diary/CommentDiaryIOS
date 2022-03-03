@@ -24,10 +24,12 @@ class LoginDataManager {
                 switch response.result {
                 case .success(let response):
                     print("DEBUG >> Success \(response)")
-                    //AccessToken 저장
+//                    //AccessToken 저장
                     UserDefaults.standard.set(response.result.accessToken, forKey: "AccessToken")
-                    //RefreshToken 저장
-                    UserDefaults.standard.set(response.result.refreshToken, forKey: "RefreshToken")
+//                    //RefreshToken 저장
+//                    UserDefaults.standard.set(response.result.refreshToken, forKey: "RefreshToken")
+//                    UserDefaultManager.shared.setTokens(accessToken: response.result.accessToken, refreshToken: response.result.refreshToken) //access refresh
+
                     
                     viewController.loginSuccessResponse()
 

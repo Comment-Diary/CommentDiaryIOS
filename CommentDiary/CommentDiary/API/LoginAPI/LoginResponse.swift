@@ -7,16 +7,16 @@
 
 import Foundation
 
-struct LoginResponse: Decodable {
-    var code: Int
-    var message: String
-    var result: result
+struct LoginResponse: Codable {
+    var code: Int = 0
+    var message: String = ""
+    var result: TokenData
 }
 
-struct result: Decodable {
-    var grantType: String
-    var accessToken: String
-    var refreshToken: String
-    var accessTokenExpiresIn : Int
-}
+//struct TokenData: Codable {
+//    var grantType: String = ""
+//    var accessToken: String
+//    var refreshToken: String
+//    var accessTokenExpiresIn : Int = 0
+//}
 

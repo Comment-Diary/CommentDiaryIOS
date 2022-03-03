@@ -58,9 +58,10 @@ extension SignUpCompletionViewController {
         
         //화면전환
         let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
-        mainTabBarController.modalPresentationStyle = .fullScreen
-        mainTabBarController.modalTransitionStyle = .crossDissolve
-        self.present(mainTabBarController, animated: true, completion: nil)
+//        mainTabBarController.modalPresentationStyle = .fullScreen
+//        mainTabBarController.modalTransitionStyle = .crossDissolve
+        self.changeRootViewController(mainTabBarController)
+        
         
     }
 }

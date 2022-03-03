@@ -147,9 +147,9 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
         //API 일기 작성
         self.showIndicator()
         
-        WritingDiaryRequest.title = titleTextView.text!
-        WritingDiaryRequest.content = contentTextView.text!
-        WritingDiaryRequest.date = dateText
+        WritingDiaryRequest.title = titleTextView.text ?? ""
+        WritingDiaryRequest.content = contentTextView.text ?? ""
+        WritingDiaryRequest.date = dateText // or diaryText
         WritingDiaryRequest.deliveryYn = deliveryToggle
         WritingDiaryDataManager().writingDiaryPostData(self)
         
@@ -161,6 +161,15 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
     
     
     @IBAction func preSaveButtonTap(_ sender: Any) {
+        //제목 임시저장
+        UserDefaults.standard.set(titleTextView.text!, forKey: "diaryTitle")
+        //내용 임시저장
+        UserDefaults.standard.set(contentTextView.text!, forKey: "diaryContent")
+        //날짜 임시저장
+        UserDefaults.standard.set(diaryDate.text!, forKey: "diaryDate")
+        let vc = UIStoryboard(name: "YPreSave", bundle: nil).instantiateViewController(withIdentifier: "YPreSaveViewController") as! YPreSaveViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
 
@@ -176,6 +185,8 @@ extension TodayDiaryViewController: UITextViewDelegate {
             let currentText = contentTextView.text ?? ""
             guard let stringRange = Range(range, in: currentText) else { return false }
             let chagnedText = currentText.replacingCharacters(in: stringRange, with: text)
+            //일기카운트 임시저장
+            UserDefaults.standard.set(chagnedText.count, forKey: "contentCount")
             textCountLabel.text = "\(chagnedText.count)/100"
             
             
@@ -228,7 +239,52 @@ extension TodayDiaryViewController: UITextViewDelegate {
 extension TodayDiaryViewController {
     func writingDiarySucessResponse() {
         self.dismissIndicator()
-        self.navigationController?.popViewController(animated: true)
+//조건 만들기 혼자 쓰는 일기 or 코멘트 일기에 따라 화면 전환이 다름
+        if deliveryToggle == "Y" { //보여주기
+            let yPreSaveVC = UIStoryboard(name: "YPreSave", bundle: nil).instantiateViewController(withIdentifier: "YPreSaveViewController") as! YPreSaveViewController
+            self.navigationController?.pushViewController(yPreSaveVC, animated: true)
+        } else if deliveryToggle == "N" { //혼자쓰기
+            let nSaveVC = UIStoryboard(name: "NSave", bundle: nil).instantiateViewController(withIdentifier: "NSaveViewController") as! NSaveViewController
+            self.navigationController?.pushViewController(nSaveVC, animated: true)
+        }
+        
+//        let yPreSaveVC = UIStoryboard(name: "YPreSave", bundle: nil).instantiateViewController(withIdentifier: "YPreSaveViewController") as! YPreSaveViewController
+//        self.navigationController?.pushViewController(yPreSaveVC, animated: true)
+        
+//        let nSaveVC = UIStoryboard(name: "NSave", bundle: nil).instantiateViewController(withIdentifier: "NSaveViewController") as! NSaveViewController
+//        self.navigationController?.pushViewController(nSaveVC, animated: true)
+//        guard let vc = self.presentingViewController else { return }
+//        self.navigationController?.popViewControllerWithHandler(animated: true, completion: {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+//                guard let vc = self.presentingViewController else { return }
+//                vc.presentBottomAlert(message: "일기 저장")
+//            })
+//        })
+
+//            vc.presentBottomAlert(message: "일기가 저장되었습니다.")
+        
+//        self.navigationController?.popViewController(animated: true)
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+//            let vc = UIStoryboard(name: "WritingDiary", bundle: nil).instantiateViewController(withIdentifier: "WritingDiaryViewController") as! WritingDiaryViewController
+//            vc.presentBottomAlert(message: "일기가 저장되었습니다.")
+//        })
+
+        
     }
 }
 
+extension UINavigationController {
+    func popViewControllerWithHandler(animated:Bool = true, completion: @escaping ()->()) {
+        CATransaction.begin()
+        CATransaction.setCompletionBlock(completion)
+        self.popViewController(animated: animated)
+        CATransaction.commit()
+    }
+
+    func pushViewController(viewController: UIViewController, animated:Bool = true,  completion: @escaping ()->()) {
+        CATransaction.begin()
+        CATransaction.setCompletionBlock(completion)
+        self.pushViewController(viewController, animated: animated)
+        CATransaction.commit()
+    }
+}

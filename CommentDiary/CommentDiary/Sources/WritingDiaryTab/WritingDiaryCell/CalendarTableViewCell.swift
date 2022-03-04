@@ -18,7 +18,14 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDataSource, FSCalendarDe
     var delegate: selectDateDelegate?
     var selectedDate = ""
     var formatter = DateFormatter()
-
+    //캘린더 표시 이벤트
+    var mainPageResult : diaryMainPageResult = []
+    var events = [Date()]
+    lazy var diaryMainResult: [String] = []
+    //일기 메인 페이지 조회 API
+    var apiDateString = ""
+    
+  
     
     
     private var currentPage: Date?
@@ -32,41 +39,54 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDataSource, FSCalendarDe
         return df
     }()
     
+    lazy var apiDateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.locale = Locale(identifier: "ko_KR")
+        df.dateFormat = "yyyy.MM"
+        return df
+    }()
     
     
+
     //MARK: - Properties
     @IBOutlet weak var calendarView: FSCalendar!
     @IBOutlet weak var calendarBackView: UIView!
-    
     @IBOutlet weak var prevButton: UIButton!
-    
     @IBOutlet weak var nextButton: UIButton!
-    
-    
     @IBOutlet weak var calendarDateLabel: UILabel!
     override func awakeFromNib() {
-        
-        
         super.awakeFromNib()
+        //API
+        DiaryMainPageDataManager().diaryMainData(self)
         // Initialization code
         calendarView.delegate = self
         calendarView.dataSource = self
         calendarSetting()
         setCalendar()
+        apiSetCalendar()
         
+        setEvents()
 
         
         
         prevButton.addTarget(self, action: #selector(didPrevTap(_:)), for: .touchUpInside)
         nextButton.addTarget(self, action: #selector(didNextTap(_:)), for: .touchUpInside)
+        
     }
+    
+
     
     @objc func didPrevTap(_ sender: UIButton) {
         scrollCurrentPage(isPrev: true)
+        DiaryMainPageDataManager().diaryMainData(self)
+
     }
     @objc func didNextTap(_ sender: UIButton) {
         scrollCurrentPage(isPrev: false)
+        DiaryMainPageDataManager().diaryMainData(self)
+
     }
+
     
     func scrollCurrentPage(isPrev: Bool) {
         let calendarCurrent = Calendar.current
@@ -78,10 +98,18 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDataSource, FSCalendarDe
     
     func setCalendar() {
         calendarDateLabel.text = self.dateFormatter.string(from: calendarView.currentPage)
+
+    }
+    
+    func apiSetCalendar() {
+        apiDateString = self.apiDateFormatter.string(from: calendarView.currentPage)
+
     }
     
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         self.calendarDateLabel.text = self.dateFormatter.string(from: calendar.currentPage)
+        self.apiDateString = self.apiDateFormatter.string(from: calendar.currentPage)
+        
     }
     
     
@@ -119,9 +147,7 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDataSource, FSCalendarDe
         calendarView.appearance.headerDateFormat = ""
         //헤더의 폰트 색상 설정
         calendarView.appearance.headerTitleColor = UIColor(hex: 0x4E4C49)
-        //헤더 높이 설정
-//        calendarView.headerHeight = 60
-//        calendarView.contentMode = .bottom
+
         calendarView.appearance.headerTitleFont = UIFont.systemFont(ofSize: 20, weight: .bold)
         calendarView.appearance.weekdayFont = UIFont.systemFont(ofSize: 14, weight: .medium)
         calendarView.appearance.weekdayTextColor = UIColor(hex: 0x4E4C49)
@@ -155,7 +181,38 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDataSource, FSCalendarDe
     }
 
     
+    func setEvents() {
+        let dfMatter = DateFormatter()
+        dfMatter.locale = Locale(identifier: "ko_KR")
+        dfMatter.dateFormat = "yyyy-MM-dd"
+        
+        // events
+        let myFirstEvent = dfMatter.date(from: "2022-03-04")
+        let mySecondEvent = dfMatter.date(from: "2022-03-03")
+        let writedDate = dfMatter.date(from: diaryMainResult[IndexPath])
+        
+        events = dfMatter.date(from: diaryMainPageResult.)
+
+    }
+    
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        if self.events.contains(date) {
+            return 1
+        } else {
+            return 0
+        }
+    }
+    
+    
+    func diaryMainPageSuccess(_ response: diaryMainPageResult) {
+        if response.deliveryYn == "Y" {
+            calendarView.appearance.eventSelectionColor = UIColor.blue
+        } else if response.deliveryYn == "N" {
+            calendarView.appearance.eventSelectionColor = UIColor.red
+            
+        }
     
     
 }
+
 

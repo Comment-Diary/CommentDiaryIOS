@@ -27,7 +27,7 @@ class LoginDataManager {
 //                    //AccessToken 저장
                     UserDefaults.standard.set(response.result.accessToken, forKey: "AccessToken")
 //                    //RefreshToken 저장
-//                    UserDefaults.standard.set(response.result.refreshToken, forKey: "RefreshToken")
+                    UserDefaults.standard.set(response.result.refreshToken, forKey: "RefreshToken")
 //                    UserDefaultManager.shared.setTokens(accessToken: response.result.accessToken, refreshToken: response.result.refreshToken) //access refresh
 
                     

@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--WritingDiaryViewController-->
+        <!--WritingDiaryVC-->
         <scene sceneID="0k9-CB-e3h">
             <objects>
-                <viewControllerPlaceholder storyboardName="WritingDiary" referencedIdentifier="WritingDiaryViewController" id="RqZ-fi-DOv" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="WritingDiary" referencedIdentifier="WritingDiaryVC" id="RqZ-fi-DOv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="2kQ-W2-5qi"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVy-mM-t9z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -30,6 +30,7 @@
 		A5242C6A27D31EA400E24A76 /* NEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5242C6927D31EA400E24A76 /* NEdit.storyboard */; };
 		A5242C6D27D3443900E24A76 /* NWritedDiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5242C6B27D3443900E24A76 /* NWritedDiaryTableViewCell.swift */; };
 		A5242C6E27D3443900E24A76 /* NWritedDiaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5242C6C27D3443900E24A76 /* NWritedDiaryTableViewCell.xib */; };
+		A5242C9027D3840A00E24A76 /* WritingDiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5242C8F27D3840A00E24A76 /* WritingDiaryVC.swift */; };
 		A54645D027CCF958008BA823 /* WritingCommentAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54645CF27CCF958008BA823 /* WritingCommentAlertViewController.swift */; };
 		A54645D227CCF9FD008BA823 /* WritingComment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54645D127CCF9FD008BA823 /* WritingComment.storyboard */; };
 		A5567C8627BD4C98001A4B98 /* ArrivedDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5567C8527BD4C98001A4B98 /* ArrivedDiaryViewController.swift */; };
@@ -145,6 +146,7 @@
 		A5242C6927D31EA400E24A76 /* NEdit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NEdit.storyboard; sourceTree = "<group>"; };
 		A5242C6B27D3443900E24A76 /* NWritedDiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWritedDiaryTableViewCell.swift; sourceTree = "<group>"; };
 		A5242C6C27D3443900E24A76 /* NWritedDiaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NWritedDiaryTableViewCell.xib; sourceTree = "<group>"; };
+		A5242C8F27D3840A00E24A76 /* WritingDiaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingDiaryVC.swift; sourceTree = "<group>"; };
 		A54645CF27CCF958008BA823 /* WritingCommentAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingCommentAlertViewController.swift; sourceTree = "<group>"; };
 		A54645D127CCF9FD008BA823 /* WritingComment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WritingComment.storyboard; sourceTree = "<group>"; };
 		A5567C8527BD4C98001A4B98 /* ArrivedDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivedDiaryViewController.swift; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 				A56FF78327C00F7700C740F7 /* WritingDiaryCell */,
 				A5567C8D27BD4D1A001A4B98 /* WritingDiaryViewController.swift */,
 				A5567C8F27BD4D5B001A4B98 /* WritingDiary.storyboard */,
+				A5242C8F27D3840A00E24A76 /* WritingDiaryVC.swift */,
 			);
 			path = WritingDiaryTab;
 			sourceTree = "<group>";
@@ -991,6 +994,7 @@
 				A56FF78E27C0C21F00C740F7 /* WritingDiaryTableViewCell.swift in Sources */,
 				A5567C9827BD5353001A4B98 /* AuthNumberViewController.swift in Sources */,
 				A567617B27B7F627006FDA7F /* SplashViewController.swift in Sources */,
+				A5242C9027D3840A00E24A76 /* WritingDiaryVC.swift in Sources */,
 				A567617027B7E8EA006FDA7F /* KobisKey.swift in Sources */,
 				A54645D027CCF958008BA823 /* WritingCommentAlertViewController.swift in Sources */,
 				A567622A27BBC7D3006FDA7F /* SignUpViewController.swift in Sources */,

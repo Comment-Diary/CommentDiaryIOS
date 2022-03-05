@@ -14,7 +14,10 @@ import UIKit
 class WritingDiaryViewController: UIViewController {
 
     var selectedTapDate: String = ""   //선택된 날짜
+    var selectedMonDate: String = ""
     
+    //캘린더 표시 이벤트
+    var mainPageResult : [diaryMainPageResult] = []
     //MARK: - Properties
     @IBOutlet weak var writingDiaryTableView: UITableView!
     
@@ -26,11 +29,19 @@ class WritingDiaryViewController: UIViewController {
         writingDiaryTableView.dataSource = self
         cellsRegister()
         
+        
+        //일기 메인 페이지 조회
+        let manager = DiaryMainPageDataManager()
+        manager.delegate = self
+        manager.diaryMainData(self)
+        
+        
     }
     
     func cellsRegister() {
         let calendarCell = UINib(nibName: "CalendarTableViewCell", bundle: nil)
         writingDiaryTableView.register(calendarCell.self, forCellReuseIdentifier: "CalendarTableViewCell")
+
         let writingDiaryCell = UINib(nibName: "WritingDiaryTableViewCell", bundle: nil)
         writingDiaryTableView.register(writingDiaryCell.self, forCellReuseIdentifier: "WritingDiaryTableViewCell")
     }
@@ -65,6 +76,31 @@ extension WritingDiaryViewController: UITableViewDelegate, UITableViewDataSource
             let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarTableViewCell", for: indexPath) as! CalendarTableViewCell
             cell.delegate = self
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
+            selectedMonDate = cell.apiDateString
+            
+            
+
+            
+//            func diaryMainPageSuccess(_ response: DiaryMainPageResponse) {
+//                print("실행")
+//                for selectedDiary in mainPageResult {
+//                    if selectedDiary.deliveryYn == "Y" {
+//                        cell.nDiary.append(selectedDiary.date)
+//                        cell.calendarView.appearance.eventDefaultColor = UIColor.red
+//                        print(cell.nDiary, "혼자쓰기 배열")
+//                    } else if selectedDiary.deliveryYn == "N" {
+//                        cell.yDiary.append(selectedDiary.date)
+//                        cell.calendarView.appearance.eventDefaultColor = UIColor.blue
+//                    }
+//                }
+//                tableView.reloadData()
+////                NotificationCenter.default.post(name: Notification.Name("reloadCalendar"), object: nil)
+//            }
+            
+            
+            
+            
+            
             
             return cell
         }
@@ -101,3 +137,19 @@ extension WritingDiaryViewController: selectDateDelegate {
 }
 
 
+extension WritingDiaryViewController: delegatable {
+    func diaryMainPageSuccess(_ response: DiaryMainPageResponse) {
+        let cell = self.writingDiaryTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! CalendarTableViewCell
+        for selectedDiary in mainPageResult {
+            if selectedDiary.deliveryYn == "Y" {
+                cell.update(date: selectedDiary.date, type: "Y")
+                cell.calendarView.appearance.eventDefaultColor = UIColor.red
+                print(cell.nDiary, "혼자쓰기 배열")
+            } else if selectedDiary.deliveryYn == "N" {
+                cell.update(date: selectedDiary.date, type: "N")
+                cell.calendarView.appearance.eventDefaultColor = UIColor.blue
+            }
+        }
+        self.writingDiaryTableView.reloadData()
+    }
+}

@@ -8,17 +8,21 @@
 import Foundation
 import Alamofire
 
+protocol delegatable: AnyObject {
+    func diaryMainPageSuccess(_ response: DiaryMainPageResponse)
+}
 class DiaryMainPageDataManager {
-    func diaryMainData(_ cell: CalendarTableViewCell) {
+    weak var delegate: delegatable?
+    func diaryMainData(_ viewController: WritingDiaryViewController) {
         
         let url = "http://jwyang.shop:8080/api/v1/diary/main"
         let params: Parameters = [
-            "date" : "\(cell.apiDateString)"
+            "date" : "\(viewController.selectedMonDate)"
         ]
         let token = UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         
-        print(cell.apiDateString, "??????????")
+//        print(cell.apiDateString, "??????????")
         AF.request(url,
                    method: .get,
                    parameters: params,
@@ -29,6 +33,10 @@ class DiaryMainPageDataManager {
                 switch response.result {
                 case .success(let response):
                     print("DEBUG >> Success \(response)")
+//                    cell.diaryMainPagesu
+//                    cell.diaryMainPageSuccess(response)
+                    viewController.writingDiaryTableView.reloadData()
+                    self.delegate?.diaryMainPageSuccess(response)
 
                     
                 case .failure(let error):

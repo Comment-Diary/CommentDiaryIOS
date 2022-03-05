@@ -18,11 +18,30 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDataSource, FSCalendarDe
     var delegate: selectDateDelegate?
     var selectedDate = ""
     var formatter = DateFormatter()
+    
+    
+    
+    
     //캘린더 표시 이벤트
-    var mainPageResult : diaryMainPageResult = []
+    var mainPageResult : [diaryMainPageResult] = []
     var events = [Date()]
     lazy var diaryMainResult: [String] = []
+    
+    //혼자 쓴 일기 동그라미 배열
+    var nDiary = [String]()
+    var nDiaryDate = [Date]() {
+        didSet {
+            print("nDiaryDate !!!\(nDiaryDate)")
+        }
+    }
+    //코멘트 일기 동그라미 배열
+    var yDiary = [String]()
+    var yDiaryDate = [Date]()
+    
+    
     //일기 메인 페이지 조회 API
+//    let nowDate = Date()
+//    var nowFormatter = DateFormatter()
     var apiDateString = ""
     
   
@@ -46,6 +65,13 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDataSource, FSCalendarDe
         return df
     }()
     
+    private lazy var dfMatter : DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_KR")
+        formatter.dateFormat = "yyyy.MM.dd"
+        return formatter
+    }()
+    
     
 
     //MARK: - Properties
@@ -57,16 +83,19 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDataSource, FSCalendarDe
     override func awakeFromNib() {
         super.awakeFromNib()
         //API
-        DiaryMainPageDataManager().diaryMainData(self)
         // Initialization code
         calendarView.delegate = self
         calendarView.dataSource = self
         calendarSetting()
         setCalendar()
         apiSetCalendar()
-        
         setEvents()
-
+        
+        
+        
+//        nowFormatter.dateFormat = "yyyy.MM"
+//        apiDateString = nowFormatter.string(from: nowDate)
+//        NotificationCenter.default.addObserver(self, selector: #selector(reloadCalendar), name: Notification.Name("reloadCalendar"), object: nil)
         
         
         prevButton.addTarget(self, action: #selector(didPrevTap(_:)), for: .touchUpInside)
@@ -74,16 +103,18 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDataSource, FSCalendarDe
         
     }
     
-
+//    @objc func reloadCalendar() {
+//        calendarView.reloadData()
+//    }
     
     @objc func didPrevTap(_ sender: UIButton) {
         scrollCurrentPage(isPrev: true)
-        DiaryMainPageDataManager().diaryMainData(self)
+//        DiaryMainPageDataManager().diaryMainData(self)
 
     }
     @objc func didNextTap(_ sender: UIButton) {
         scrollCurrentPage(isPrev: false)
-        DiaryMainPageDataManager().diaryMainData(self)
+//        DiaryMainPageDataManager().diaryMainData(self)
 
     }
 
@@ -134,7 +165,8 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDataSource, FSCalendarDe
 //        calendarView.backgroundColor = UIColor(hex: 0xFDFDF9)
 //        calendarView.appearance.headerMinimumDissolvedAlpha = 0.0
 //        calendarView.appearance.separators = .interRows.self
-        calendarView.appearance.headerSeparatorColor = .red
+
+        calendarView.appearance.eventDefaultColor = .red
         
 //        calendarView.appearance.headerSeparatorColor  = .green
         calendarView.appearance.titleFont = UIFont(name: "NotoSansKR-Medium", size: 15)
@@ -184,19 +216,49 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDataSource, FSCalendarDe
     func setEvents() {
         let dfMatter = DateFormatter()
         dfMatter.locale = Locale(identifier: "ko_KR")
-        dfMatter.dateFormat = "yyyy-MM-dd"
+        dfMatter.dateFormat = "yyyy.MM.dd"
         
         // events
-        let myFirstEvent = dfMatter.date(from: "2022-03-04")
-        let mySecondEvent = dfMatter.date(from: "2022-03-03")
-        let writedDate = dfMatter.date(from: diaryMainResult[IndexPath])
+//        let myFirstEvent = dfMatter.date(from: "2022-03-04")
+//        let mySecondEvent = dfMatter.date(from: "2022-03-03")
+//        let writedDate = dfMatter.date(from: diaryMainResult[IndexPath])
+//
+//        events = dfMatter.date(from: diaryMainPageResult.)
+//        let myFirstEvent = dfMatter.date(from: "2022-02-01")
+//        let mySecondEvent = dfMatter.date(from: "2022-02-31")
+          
+//          events = [myFirstEvent!]
         
-        events = dfMatter.date(from: diaryMainPageResult.)
+        for nDate in nDiary {
+            let nDateObject = dfMatter.date(from: nDate)
+            nDiaryDate.append(nDateObject!)
+            
+        }
+        
+        for yDate in yDiary {
+            let yDateObject = dfMatter.date(from: yDate)
+            yDiaryDate.append(yDateObject!)
+        }
 
     }
     
+    func update(date: String, type: String) {
+        if type == "Y" {
+            let formattedDate = self.dfMatter.date(from: date)
+            print("formattedDate !!! \(formattedDate)")
+            self.yDiaryDate.append(formattedDate ?? Date())
+        } else if type == "N"{
+            let formattedDate = self.dfMatter.date(from: date)
+            self.nDiaryDate.append(formattedDate ?? Date())
+        }
+        
+    }
+    
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-        if self.events.contains(date) {
+        if self.nDiaryDate.contains(date) {
+//            calendarView.appearance.eventSelectionColor = .red
+            return 1
+        } else if self.yDiaryDate.contains(date) {
             return 1
         } else {
             return 0
@@ -204,14 +266,7 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDataSource, FSCalendarDe
     }
     
     
-    func diaryMainPageSuccess(_ response: diaryMainPageResult) {
-        if response.deliveryYn == "Y" {
-            calendarView.appearance.eventSelectionColor = UIColor.blue
-        } else if response.deliveryYn == "N" {
-            calendarView.appearance.eventSelectionColor = UIColor.red
-            
-        }
-    
+
     
 }
 

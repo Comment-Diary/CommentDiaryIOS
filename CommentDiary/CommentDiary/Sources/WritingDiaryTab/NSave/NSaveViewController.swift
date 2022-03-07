@@ -9,7 +9,13 @@ import Foundation
 import UIKit
 
 class NSaveViewController: UIViewController {
+    var dateString = ""
+    var titleString = ""
+    var contentString = ""
+    
+    
     //MARK: - Properties
+    
     @IBOutlet weak var buttonBackView: UIView!
     
     @IBOutlet weak var backButton: UIButton!
@@ -37,6 +43,10 @@ class NSaveViewController: UIViewController {
         labelSetting()
     }
     
+    func detailSetting() {
+        
+    }
+    
     func viewSetting() {
         
     }
@@ -46,13 +56,16 @@ class NSaveViewController: UIViewController {
     }
     
     func labelSetting() {
-        
+        dateLabel.text = dateString
+        titleLabel.text = titleString
+        contentLabel.text = contentString
     }
     
     
     
     //MARK: - Actions
     @IBAction func backButtonTap(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func deleteButtonTap(_ sender: Any) {
@@ -63,6 +76,11 @@ class NSaveViewController: UIViewController {
     }
     
     @IBAction func editButtonTap(_ sender: Any) {
+        let nEditVC = UIStoryboard(name: "NSave", bundle: nil).instantiateViewController(withIdentifier: "NSaveViewController") as! NSaveViewController
+        nEditVC.dateString = dateLabel.text ?? ""
+        nEditVC.titleString = titleLabel.text ?? ""
+        nEditVC.contentString = contentLabel.text ?? ""
+        self.navigationController?.pushViewController(nEditVC, animated: true)
 
     }
     

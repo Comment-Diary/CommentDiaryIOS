@@ -15,12 +15,13 @@ class WritingDiaryTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         NotificationCenter.default.addObserver(self, selector: #selector(loadData(_:)), name: NSNotification.Name(rawValue: "SelectedDate"), object: nil)
+
     }
 
     
     @objc func loadData(_ notification : NSNotification) {
         diaryDateLabel.text = notification.object as? String ?? ""
-        
+        print(diaryDateLabel.text, "diaryDateLabel")
     }
 
 
@@ -35,7 +36,7 @@ class WritingDiaryTableViewCell: UITableViewCell {
         super.layoutSubviews()
 //        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 13, left: 0, bottom: 0, right: 0))
 //        contentView = contentView.frame.contentInset
-        contentView.frame = contentView.frame.offsetBy(dx: 0, dy: 30) //위의 셀과 얼마나 띄울지
+        contentView.frame = contentView.frame.offsetBy(dx: 0, dy:0) //위의 셀과 얼마나 띄울지
     }
     
 }

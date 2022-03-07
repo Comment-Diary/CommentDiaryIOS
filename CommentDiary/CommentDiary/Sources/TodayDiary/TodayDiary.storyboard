@@ -142,8 +142,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ZC1-Ee-aUX" secondAttribute="height" multiplier="343:57" id="3gF-tR-hqf"/>
                                 </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
                                     <action selector="saveTapButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="kfp-wh-Vz3"/>
                                 </connections>
@@ -154,8 +154,8 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Mn-f0-apB">
                                         <rect key="frame" x="21" y="21" width="67" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                         <connections>
                                             <action selector="backButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Tog-R3-0PB"/>
                                         </connections>
@@ -163,8 +163,8 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJo-hY-P3p">
                                         <rect key="frame" x="318" y="25" width="73" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="임시저장"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="임시저장"/>
                                         <connections>
                                             <action selector="preSaveButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uJm-er-HaG"/>
                                         </connections>

@@ -24,11 +24,7 @@ class WritingDiaryDataManager {
                       "content" : WritingDiaryRequest.content,
                       "date" : WritingDiaryRequest.date,
                       "deliveryYn" : WritingDiaryRequest.deliveryYn]
-        let token = UserDefaults.standard.value(forKey: "AccessToken") ?? ""
-//        let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultManager as! String)]
-        
-        
-        
+        let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         AF.request(url,
                    method: .post,
@@ -59,7 +55,8 @@ class WritingDiaryEditDataManager {
                       "content" : WritingDiaryRequest.content,
                       "date" : WritingDiaryRequest.date,
                       "deliveryYn" : WritingDiaryRequest.deliveryYn]
-        let headers: HTTPHeaders = [.authorization(bearerToken: UserDefaultManager.shared.getTokens().accessToken)]
+        let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
+        let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         AF.request(url,
                    method: .post,
                    parameters: params,

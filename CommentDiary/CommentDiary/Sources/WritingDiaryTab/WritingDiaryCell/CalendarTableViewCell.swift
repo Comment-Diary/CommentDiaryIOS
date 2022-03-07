@@ -199,11 +199,11 @@ class CalendarTableViewCell: UITableViewCell, FSCalendarDataSource, FSCalendarDe
     
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        formatter.dateFormat = "yyyy.MM.dd"
-        selectedDate = formatter.string(from: date)        
-        delegate?.dateString(TapDate: selectedDate)
-        
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SelectedDate"), object: formatter.string(from: date))
+//        formatter.dateFormat = "yyyy.MM.dd"
+//        selectedDate = formatter.string(from: date)
+//        delegate?.dateString(TapDate: selectedDate)
+//
+//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SelectedDate"), object: formatter.string(from: date))
         
     }
     

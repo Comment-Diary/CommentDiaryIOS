@@ -10,7 +10,13 @@ import UIKit
 import PanModal
 
 class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, buttonChangeDelegate, countLabelChangeDelegate, preSaveButtonChangeDelegate {
-
+    
+    var dateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.locale = Locale(identifier: "ko_KR")
+        df.dateFormat = "yyyy.MM.dd"
+        return df
+    }()
     
 
     
@@ -87,15 +93,22 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
         toggleSetting()
         preSaveButtonSetting()
         
+        
+        dateLabelSetting()
+        
+        self.diaryDate.text = self.dateFormatter.string(from: Date())
+        NotificationCenter.default.addObserver(self, selector: #selector(loadData(_:)), name: NSNotification.Name(rawValue: "SelectedDayDate"), object: nil)
 
-        //오늘 날짜
-        self.diaryDate.text = dateText
-        if self.diaryDate.text == "" {
-            let dateformatter = DateFormatter()
-            dateformatter.dateFormat = "yyyy.MM.dd"
-            diaryDate.text = dateformatter.string(from: Date())
-        }
 
+    }
+
+    
+    func dateLabelSetting() {
+
+        
+    }
+    @objc func loadData(_ notification : NSNotification) {
+        diaryDate.text = notification.object as? String ?? ""
     }
     
     func toggleSetting() {
@@ -128,6 +141,7 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
     func bottomsheetSetting() {
         //조건달기
             let todayDiaryBottomVC = UIStoryboard(name: "TodayDiaryBottom", bundle: nil).instantiateViewController(withIdentifier: "TodayDiaryBottomViewController") as! TodayDiaryBottomViewController
+        
         
             todayDiaryBottomVC.preSaveButtonDelegate = self
             todayDiaryBottomVC.countLabelChangeDelegate = self
@@ -245,29 +259,12 @@ extension TodayDiaryViewController {
             self.navigationController?.pushViewController(yPreSaveVC, animated: true)
         } else if deliveryToggle == "N" { //혼자쓰기
             let nSaveVC = UIStoryboard(name: "NSave", bundle: nil).instantiateViewController(withIdentifier: "NSaveViewController") as! NSaveViewController
+            nSaveVC.dateString = diaryDate.text ?? ""
+            nSaveVC.titleString = titleTextView.text
+            nSaveVC.contentString = contentTextView.text
             self.navigationController?.pushViewController(nSaveVC, animated: true)
         }
         
-//        let yPreSaveVC = UIStoryboard(name: "YPreSave", bundle: nil).instantiateViewController(withIdentifier: "YPreSaveViewController") as! YPreSaveViewController
-//        self.navigationController?.pushViewController(yPreSaveVC, animated: true)
-        
-//        let nSaveVC = UIStoryboard(name: "NSave", bundle: nil).instantiateViewController(withIdentifier: "NSaveViewController") as! NSaveViewController
-//        self.navigationController?.pushViewController(nSaveVC, animated: true)
-//        guard let vc = self.presentingViewController else { return }
-//        self.navigationController?.popViewControllerWithHandler(animated: true, completion: {
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-//                guard let vc = self.presentingViewController else { return }
-//                vc.presentBottomAlert(message: "일기 저장")
-//            })
-//        })
-
-//            vc.presentBottomAlert(message: "일기가 저장되었습니다.")
-        
-//        self.navigationController?.popViewController(animated: true)
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-//            let vc = UIStoryboard(name: "WritingDiary", bundle: nil).instantiateViewController(withIdentifier: "WritingDiaryViewController") as! WritingDiaryViewController
-//            vc.presentBottomAlert(message: "일기가 저장되었습니다.")
-//        })
 
         
     }

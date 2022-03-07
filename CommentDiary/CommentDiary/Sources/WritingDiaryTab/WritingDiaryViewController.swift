@@ -81,21 +81,21 @@ import UIKit
 //
 //
 //
-////            func diaryMainPageSuccess(_ response: DiaryMainPageResponse) {
-////                print("실행")
-////                for selectedDiary in mainPageResult {
-////                    if selectedDiary.deliveryYn == "Y" {
-////                        cell.nDiary.append(selectedDiary.date)
-////                        cell.calendarView.appearance.eventDefaultColor = UIColor.red
-////                        print(cell.nDiary, "혼자쓰기 배열")
-////                    } else if selectedDiary.deliveryYn == "N" {
-////                        cell.yDiary.append(selectedDiary.date)
-////                        cell.calendarView.appearance.eventDefaultColor = UIColor.blue
-////                    }
-////                }
-////                tableView.reloadData()
-//////                NotificationCenter.default.post(name: Notification.Name("reloadCalendar"), object: nil)
-////            }
+//            func diaryMainPageSuccess(_ response: DiaryMainPageResponse) {
+//                print("실행")
+//                for selectedDiary in mainPageResult {
+//                    if selectedDiary.deliveryYn == "Y" {
+//                        cell.nDiary.append(selectedDiary.date)
+//                        cell.calendarView.appearance.eventDefaultColor = UIColor.red
+//                        print(cell.nDiary, "혼자쓰기 배열")
+//                    } else if selectedDiary.deliveryYn == "N" {
+//                        cell.yDiary.append(selectedDiary.date)
+//                        cell.calendarView.appearance.eventDefaultColor = UIColor.blue
+//                    }
+//                }
+//                tableView.reloadData()
+//                NotificationCenter.default.post(name: Notification.Name("reloadCalendar"), object: nil)
+//            }
 //
 //
 //
@@ -104,7 +104,7 @@ import UIKit
 //
 //            return cell
 //        }
-//
+////
 //        if indexPath.section == 1 {
 //            let cell = tableView.dequeueReusableCell(withIdentifier: "WritingDiaryTableViewCell", for: indexPath) as! WritingDiaryTableViewCell
 //            cell.selectionStyle = UITableViewCell.SelectionStyle.none

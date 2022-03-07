@@ -9,6 +9,9 @@ import Foundation
 import UIKit
 
 class NEidtViewController: UIViewController {
+    var dateString = ""
+    var titleString = ""
+    var contentString = ""
     //MARK: - Properties
     
     @IBOutlet weak var backButton: UIButton!
@@ -16,6 +19,10 @@ class NEidtViewController: UIViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func labelSetting() {
+        
     }
     
     //MARK: - Actions

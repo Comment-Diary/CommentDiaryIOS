@@ -116,6 +116,9 @@ class LoginViewController: UIViewController {
         self.showIndicator()
         LoginRequest.email = emailTextField.text!
         LoginRequest.password = passwordTextField.text!
+        //토큰tokenuserdefault 기존 삭제
+        UserDefaults.standard.removeObject(forKey: "AccessToken")
+        UserDefaults.standard.removeObject(forKey: "RefreshToken")
         LoginDataManager().loginPostData(self)
 //        let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
 //        mainTabBarController.modalPresentationStyle = .fullScreen

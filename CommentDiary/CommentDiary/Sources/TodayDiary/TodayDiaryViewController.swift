@@ -11,7 +11,7 @@ import PanModal
 
 class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, buttonChangeDelegate, countLabelChangeDelegate, preSaveButtonChangeDelegate {
     
-    var dateFormatter: DateFormatter = {
+    private lazy var dateFormatter: DateFormatter = {
         let df = DateFormatter()
         df.locale = Locale(identifier: "ko_KR")
         df.dateFormat = "yyyy.MM.dd"
@@ -23,6 +23,7 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
     //일기쓰기API
     var dateText: String = ""
     var deliveryToggle : String = ""
+
     
     
     func onPreSaveButtonChange(data: Bool) {
@@ -74,9 +75,12 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
     
     @IBOutlet weak var backButton: UIButton!
     
+    @IBOutlet weak var separateBarView: UIView!
     
     @IBOutlet weak var commentPickedLabel: UILabel!
+    @IBOutlet weak var commentNBackView: UIView!
     
+    @IBOutlet weak var topBackView: UIView!
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -92,24 +96,24 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
         countLabelSetting()
         toggleSetting()
         preSaveButtonSetting()
+        buttonSetting()
+        labelSetting()
         
         
         dateLabelSetting()
         
-        self.diaryDate.text = self.dateFormatter.string(from: Date())
-        NotificationCenter.default.addObserver(self, selector: #selector(loadData(_:)), name: NSNotification.Name(rawValue: "SelectedDayDate"), object: nil)
+
 
 
     }
 
     
     func dateLabelSetting() {
-
+        self.diaryDate.text = self.dateFormatter.string(from: Date())
+        self.diaryDate.text = dateText
         
     }
-    @objc func loadData(_ notification : NSNotification) {
-        diaryDate.text = notification.object as? String ?? ""
-    }
+  
     
     func toggleSetting() {
         deliveryToggle = "N"
@@ -131,8 +135,24 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
         contentTextView.textColor = UIColor.lightGray
     }
     
+    func labelSetting() {
+        
+    }
+    
+    func buttonSetting() {
+        saveButton.layer.cornerRadius = saveButton.frame.height / 2
+    }
+    
     func viewSetting() {
-        view.backgroundColor = UIColor.red
+        view.backgroundColor = UIColor(hex: 0xF4EDE3)
+        topBackView.backgroundColor = UIColor(hex: 0xF4EDE3)
+        diaryScrollView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        diaryScrollView.layer.cornerRadius = 10
+        separateBarView.backgroundColor = UIColor(hex: 0xE2DFD7)
+        commentNBackView.backgroundColor = UIColor(hex: 0xE2DFD7)
+        commentNBackView.layer.cornerRadius = commentNBackView.frame.height / 2
+        
+        
         //초기 비활성화
         commentView.isHidden = true
         textCountLabel.isHidden = true
@@ -153,19 +173,28 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.view.endEditing(true)
     }
+
     
     
     //MARK: - Actions
     
     @IBAction func saveTapButton(_ sender: Any) {
-        //API 일기 작성
+
+        if titleTextView.text.count == 0 || titleTextView.text == "제목을 입력해주세요." {
+            self.presentBottomAlert(message: "제목과 내용을 입력해주세요")
+        } else {
+            //        API 일기 작성
         self.showIndicator()
-        
+
         WritingDiaryRequest.title = titleTextView.text ?? ""
         WritingDiaryRequest.content = contentTextView.text ?? ""
         WritingDiaryRequest.date = dateText // or diaryText
         WritingDiaryRequest.deliveryYn = deliveryToggle
         WritingDiaryDataManager().writingDiaryPostData(self)
+        }
+        
+        
+
         
     }
     
@@ -203,8 +232,6 @@ extension TodayDiaryViewController: UITextViewDelegate {
             UserDefaults.standard.set(chagnedText.count, forKey: "contentCount")
             textCountLabel.text = "\(chagnedText.count)/100"
             
-            
-            
             // 혼자 쓰기일떄는 카운트 필요없음
             // 코멘트 받기 쓰기는 초기 button false
             if saveButton.isEnabled == false {
@@ -214,11 +241,10 @@ extension TodayDiaryViewController: UITextViewDelegate {
                     saveButton.isEnabled = true
                 }
             }
-            
-
-
             return true
         }
+        
+
         
         
         
@@ -257,7 +283,10 @@ extension TodayDiaryViewController {
         if deliveryToggle == "Y" { //보여주기
             let yPreSaveVC = UIStoryboard(name: "YPreSave", bundle: nil).instantiateViewController(withIdentifier: "YPreSaveViewController") as! YPreSaveViewController
             self.navigationController?.pushViewController(yPreSaveVC, animated: true)
-        } else if deliveryToggle == "N" { //혼자쓰기
+        } else if deliveryToggle == "N" {
+            
+            
+            //혼자쓰기
             let nSaveVC = UIStoryboard(name: "NSave", bundle: nil).instantiateViewController(withIdentifier: "NSaveViewController") as! NSaveViewController
             nSaveVC.dateString = diaryDate.text ?? ""
             nSaveVC.titleString = titleTextView.text

@@ -30,10 +30,14 @@ class NSaveViewController: UIViewController {
     
     @IBOutlet weak var barView: UIView!
     
-    @IBOutlet weak var titleBackView: UILabel!
     
     @IBOutlet weak var contentLabel: UILabel!
     
+    @IBOutlet weak var diaryScrollView: UIScrollView!
+    
+    @IBOutlet weak var titleBackView: UIView!
+    
+    @IBOutlet weak var contentBackView: UIView!
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -48,7 +52,13 @@ class NSaveViewController: UIViewController {
     }
     
     func viewSetting() {
-        
+        buttonBackView.backgroundColor = UIColor(hex: 0xF4EDE3)
+        view.backgroundColor = UIColor(hex: 0xF4EDE3)
+        diaryScrollView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        diaryScrollView.layer.cornerRadius = 10
+        titleBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        contentBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        barView.backgroundColor = UIColor(hex: 0xE2DFD7)
     }
     
     func buttonSetting() {

@@ -86,10 +86,11 @@ class NSaveViewController: UIViewController {
     }
     
     @IBAction func editButtonTap(_ sender: Any) {
-        let nEditVC = UIStoryboard(name: "NSave", bundle: nil).instantiateViewController(withIdentifier: "NSaveViewController") as! NSaveViewController
+        let nEditVC = UIStoryboard(name: "NEdit", bundle: nil).instantiateViewController(withIdentifier: "NEidtViewController") as! NEidtViewController
         nEditVC.dateString = dateLabel.text ?? ""
         nEditVC.titleString = titleLabel.text ?? ""
         nEditVC.contentString = contentLabel.text ?? ""
+
         self.navigationController?.pushViewController(nEditVC, animated: true)
 
     }

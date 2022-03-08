@@ -130,9 +130,9 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
     
     func textViewPlaceholderSetting() {
         titleTextView.text = "제목을 입력해주세요."
-        titleTextView.textColor = UIColor.lightGray
+        titleTextView.textColor = UIColor(hex: 0xE2DFD7)
         contentTextView.text = "내용을 입력해주세요."
-        contentTextView.textColor = UIColor.lightGray
+        contentTextView.textColor = UIColor(hex: 0xE2DFD7)
     }
     
     func labelSetting() {
@@ -180,7 +180,7 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
     
     @IBAction func saveTapButton(_ sender: Any) {
 
-        if titleTextView.text.count == 0 || titleTextView.text == "제목을 입력해주세요." {
+        if titleTextView.text.count == 0 || titleTextView.text == "제목을 입력해주세요." || contentTextView.text.count == 0 || contentTextView.text == "내용을 입력해주세요." {
             self.presentBottomAlert(message: "제목과 내용을 입력해주세요")
         } else {
             //        API 일기 작성
@@ -253,22 +253,24 @@ extension TodayDiaryViewController: UITextViewDelegate {
     
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        if titleTextView.text.isEmpty {
+        if titleTextView.text.isEmpty && contentTextView.text.isEmpty {
             titleTextView.text = "제목을 입력해주세요."
-            titleTextView.textColor = UIColor.lightGray
-        }
-        if contentTextView.text.isEmpty {
+            titleTextView.textColor = UIColor(hex: 0xE2DFD7)
             contentTextView.text = "내용을 입력해주세요."
-            contentTextView.textColor = UIColor.lightGray
+            contentTextView.textColor = UIColor(hex: 0xE2DFD7)
         }
+//        if contentTextView.text.isEmpty {
+//            contentTextView.text = "내용을 입력해주세요."
+//            contentTextView.textColor = UIColor(hex: 0xE2DFD7)
+//        }
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if titleTextView.textColor == UIColor.lightGray {
+        if titleTextView.textColor == UIColor(hex: 0xE2DFD7) {
             titleTextView.text = nil
             titleTextView.textColor = UIColor.black
         }
-        if contentTextView.textColor == UIColor.lightGray {
+        if contentTextView.textColor == UIColor(hex: 0xE2DFD7) {
             contentTextView.text = nil
             contentTextView.textColor = UIColor.black
         }

@@ -50,10 +50,12 @@ class DeleteCheckAlertViewController :UIViewController {
 extension DeleteCheckAlertViewController {
     func deleteSuccessResponse() {
         self.dismissIndicator()
-        self.presentBottomAlert(message: "일기가 삭제되었습니다.")
+        self.presentBottomAlert(message: "일기가 삭제되었어요.")
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
             let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
             self.changeRootViewController(mainTabBarController)
+            UserDefaults.standard.removeObject(forKey: "DiaryID")
+            
         })
     }
 }

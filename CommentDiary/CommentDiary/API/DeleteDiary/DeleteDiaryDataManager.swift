@@ -15,9 +15,10 @@ class DeleteDiaryDataManater {
         
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         
+        let diaryID: Int = UserDefaults.standard.value(forKey: "DiaryID") as! Int
         
         
-        AF.request("http://jwyang.shop:8080/api/v1/diary/:\(UserDefaults.standard.value(forKey: "DiaryID") ?? 0)",
+        AF.request("http://jwyang.shop:8080/api/v1/diary/\(diaryID)",
                    method: .delete,
                    parameters: nil,
                    headers: headers)

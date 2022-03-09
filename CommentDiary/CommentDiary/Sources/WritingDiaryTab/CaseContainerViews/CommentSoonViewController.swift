@@ -43,6 +43,10 @@ class CommentSoonViewController:UIViewController {
         dateLabelSetting()
         labelSetting()
         viewSetting()
+        NotificationCenter.default.addObserver(self, selector: #selector(loadDate(_:)), name: NSNotification.Name(rawValue: "SelectedDate"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadTitle(_:)), name: NSNotification.Name(rawValue: "SelectedTitle"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadContent(_:)), name: NSNotification.Name(rawValue: "SelectedContent"), object: nil)
     }
     func dateLabelSetting() {
         
@@ -54,7 +58,20 @@ class CommentSoonViewController:UIViewController {
     func viewSetting() {
         self.backView.backgroundColor = UIColor(hex: 0xFDFCF9)
         self.topBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        self.bottomBackView.backgroundColor = UIColor(hex: 0x73BF90)
     }
+    @objc func loadDate(_ notification: NSNotification) {
+        dateLabel.text = notification.object as? String ?? ""
+    }
+    
+    @objc func loadTitle(_ notification: NSNotification) {
+        titleLabel.text = notification.object as? String ?? ""
+    }
+    @objc func loadContent(_ notification: NSNotification) {
+        contentLabel.text = notification.object as? String ?? ""
+    }
+    
+    
     
     
     //MARK: - Actions

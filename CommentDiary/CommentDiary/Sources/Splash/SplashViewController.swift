@@ -78,9 +78,12 @@ class SplashVieController : ViewController {
         //pageControl
         self.pageControl.currentPageIndicatorTintColor = UIColor(hex: 0xF7BC86)
         self.pageControl.pageIndicatorTintColor = UIColor(hex: 0xF5CDA9)
-        slides = [OnboardingSlide(image: UIImage(named: "1.png")!),
-        OnboardingSlide(image: UIImage(named: "2.png")!),
-        OnboardingSlide(image: UIImage(named: "3.png")!)]
+        slides = [OnboardingSlide(image: UIImage(named: "onboard1.png")!),
+        OnboardingSlide(image: UIImage(named: "onboard2.png")!),
+        OnboardingSlide(image: UIImage(named: "onboard3.png")!)]
+        
+        
+        view.backgroundColor = UIColor(hex: 0xFDFCF9)
         
         collectionView.delegate = self
         collectionView.dataSource = self

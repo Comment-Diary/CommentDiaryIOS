@@ -62,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="-467" y="-75"/>
         </scene>
-        <!--MyPageNavigationController-->
+        <!--MyPageViewController-->
         <scene sceneID="2uM-K2-xsx">
             <objects>
-                <viewControllerPlaceholder storyboardName="MyPage" referencedIdentifier="MyPageNavigationController" id="HwY-RW-dr3" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="MyPage" referencedIdentifier="MyPageViewController" id="HwY-RW-dr3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="X5y-1X-c3P"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHL-Pk-xgN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

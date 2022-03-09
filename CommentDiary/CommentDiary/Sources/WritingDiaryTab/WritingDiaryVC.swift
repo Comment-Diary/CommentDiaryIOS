@@ -168,14 +168,7 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
 //        }
     }
     
-//    func cellsRegister() {
-//        let writingDiaryCell = UINib(nibName: "WritingDiaryTableViewCell", bundle: nil)
-//        caseTableView.register(writingDiaryCell.self, forCellReuseIdentifier: "WritingDiaryTableViewCell")
-////        NWritedDiaryTableViewCell
-//        let NWritedDiaryCell = UINib(nibName: "NWritedDiaryTableViewCell", bundle: nil)
-//        caseTableView.register(NWritedDiaryCell.self, forCellReuseIdentifier: "NWritedDiaryTableViewCell")
-//
-//    }
+
     func viewSetting() {
         view.backgroundColor = UIColor(hex: 0xF4EDE3)
         calendarBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
@@ -303,8 +296,16 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         }
         
 
+        for i in mainPageResult {
+            if i.date == String(formatter.string(from: date)) {
+                print(i.title, "일기 제목")
+                NotificationCenter.default.post(name: Notification.Name("SelectedTitle"), object: i.title)
+                print(i.content, "일기 내용")
+                NotificationCenter.default.post(name: Notification.Name("SelectedContent"), object: i.content)
+            }
+        }
         
-        //tableviewReload
+        //calendarview reload
         calendarView.reloadData()
         
         
@@ -447,6 +448,8 @@ extension WritingDiaryVC {
         mainPageResult = response.result
         
         calendarView.reloadData()
+        
+
         
 
         for i in mainPageResult {

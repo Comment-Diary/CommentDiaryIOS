@@ -14,18 +14,40 @@ import UIKit
 //키보드 높이만큼 올리고 내리기
 //https://icksw.tistory.com/87
 
-class ArrivedDiaryViewController: UIViewController {
+class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
     //MARK: - Properties
+    
+    @IBOutlet weak var separateView: UIView!
+    
+    @IBOutlet weak var topBackView: UIView!
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var arrivalDiaryLabel: UILabel!
+    
+    @IBOutlet weak var arrivalBackView: UIView!
     
     @IBOutlet weak var commentScrollView: UIScrollView!
     @IBOutlet weak var diaryTitleLabel: UILabel!
-    @IBOutlet weak var diaryContentLabel: UILabel!
+
+    @IBOutlet weak var diaryContentTextView: UITextView!
     
-    @IBOutlet weak var myCommentCountLabel: UILabel!
     
     @IBOutlet weak var sendCommentButton: UIButton!
     
     @IBOutlet weak var myCommentTextView: UITextView!
+    
+    
+    @IBOutlet weak var mySendCommentLabel: UILabel!
+    
+    
+    @IBOutlet weak var commentBackView: UIView!
+    
+    @IBOutlet weak var commentCountLabel: UILabel!
+    
+    @IBOutlet weak var entireView: UIView!
+    
+    
+    @IBOutlet weak var reportButton: UIButton!
     
     
     //MARK: - LifeCycle
@@ -34,7 +56,36 @@ class ArrivedDiaryViewController: UIViewController {
         myCommentTextView.delegate = self
         commentScrollView.delegate = self
         textLineSpacing()
+        viewSetting()
+        labelSetting()
+        buttonSetting()
+        textViewPlaceholdeerSetting()
 //        scrollViewDismissKeyboard()
+    }
+    
+    func viewSetting() {
+        topBackView.backgroundColor = UIColor(hex: 0xF4EDE3)
+        view.backgroundColor = UIColor(hex: 0xF4EDE3)
+        commentBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        arrivalBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        diaryContentTextView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        separateView.backgroundColor = UIColor(hex: 0xE2DFD7)
+        entireView.backgroundColor = UIColor(hex: 0xF4EDE3)
+        
+        
+    }
+    func labelSetting() {
+        commentCountLabel.text = "0/50"
+        commentCountLabel.isHidden = false
+    }
+    func buttonSetting() {
+        self.sendCommentButton.isEnabled = false
+        self.sendCommentButton.backgroundColor = UIColor(hex: 0x73BF90)
+    }
+    
+    func textViewPlaceholdeerSetting() {
+        myCommentTextView.text = "일기를 읽고 따뜻한 코멘트를 달아주세요."
+        myCommentTextView.textColor = UIColor(hex: 0xD2D2D2)
     }
 //    override func viewWillAppear(_ animated: Bool) {
 //        self.addKeyboardNotification()
@@ -71,6 +122,41 @@ class ArrivedDiaryViewController: UIViewController {
         paragraphStyle.lineSpacing = 10
         attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
         diaryTitleLabel.attributedText = attrString
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if myCommentTextView.text.isEmpty {
+            myCommentTextView.text = "일기를 읽고 따뜻한 코멘트를 달아주세요."
+            myCommentTextView.textColor = UIColor(hex: 0xD2D2D2)
+        }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if myCommentTextView.textColor == UIColor(hex: 0xD2D2D2) {
+            myCommentTextView.text = nil
+            myCommentTextView.textColor = UIColor(hex: 0x4E4C49)
+        }
+    }
+    
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if textView == myCommentTextView {
+            let currentText = myCommentTextView.text ?? ""
+            guard let stringRange = Range(range, in: currentText) else { return false }
+            let changedText = currentText.replacingCharacters(in: stringRange, with: text)
+            commentCountLabel.text = "\(changedText.count)/50"
+            if changedText.count >= 1 {
+                commentCountLabel.isHidden = false
+            }
+            
+            if changedText.count < 10 {
+                sendCommentButton.isEnabled = false
+            } else if changedText.count >= 10 {
+                sendCommentButton.isEnabled = true
+            }
+            return true
+        }
+        return true
     }
     
     
@@ -111,12 +197,22 @@ class ArrivedDiaryViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func sendCommentButtonTap(_ sender: UIButton) {
+        self.showIndicator()
+        
+//        CommentWritingRequest.diaryId
+//        CommentWritingRequest.content
+//        CommentWritingRequest.date
+        
+        CommentWritingDataManager().commentWritingPostData(self)
+        
     }
+    
+    @IBAction func reportButtonTap(_ sender: Any) {
+        //알람 띄우기
+    }
+    
     
 }
 
 
     //MARK: - Extensions
-extension ArrivedDiaryViewController: UITextViewDelegate {
-
-}

@@ -47,6 +47,10 @@ class TodayWritingDiaryViewController : UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(loadData(_:)), name: NSNotification.Name(rawValue: "SelectedDate"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateData(_:)), name: NSNotification.Name(rawValue: "presentDate"), object: nil)
+        
+        
+        
+
     }
     
     
@@ -67,6 +71,7 @@ class TodayWritingDiaryViewController : UIViewController {
         presentDateString = notification.object as? String ?? ""
         print(presentDateString, "좀 가랏")
     }
+
     
     @IBAction func writeDiaryButtonTap(_ sender: Any) {
         let todayDiaryVC = UIStoryboard(name: "TodayDiary", bundle: nil).instantiateViewController(identifier: "TodayDiaryViewController") as! TodayDiaryViewController

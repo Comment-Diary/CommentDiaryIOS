@@ -234,13 +234,11 @@ extension TodayDiaryViewController: UITextViewDelegate {
             
             // 혼자 쓰기일떄는 카운트 필요없음
             // 코멘트 받기 쓰기는 초기 button false
-            if saveButton.isEnabled == false {
                 if chagnedText.count < 10 {
                     saveButton.isEnabled = false
                 } else {
                     saveButton.isEnabled = true
                 }
-            }
             return true
         }
         
@@ -268,11 +266,11 @@ extension TodayDiaryViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if titleTextView.textColor == UIColor(hex: 0xE2DFD7) {
             titleTextView.text = nil
-            titleTextView.textColor = UIColor.black
+            titleTextView.textColor = UIColor(hex: 0x4E4C49)
         }
         if contentTextView.textColor == UIColor(hex: 0xE2DFD7) {
             contentTextView.text = nil
-            contentTextView.textColor = UIColor.black
+            contentTextView.textColor = UIColor(hex: 0x4E4C49)
         }
     }
 }

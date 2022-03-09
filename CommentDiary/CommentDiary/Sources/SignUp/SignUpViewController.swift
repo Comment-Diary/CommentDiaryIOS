@@ -156,7 +156,9 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
         self.signupButton.backgroundColor = UIColor(hex: 0x73BF90)
         self.signupButton.layer.borderWidth = 4
         self.signupButton.layer.borderColor = UIColor(hex: 0x73BF90).cgColor
-        self.signupButton.layer.cornerRadius = 15 //수정 필요
+        
+        
+        self.signupButton.layer.cornerRadius = signupButton.frame.height / 2
     }
     
     func authNumberSetting() {

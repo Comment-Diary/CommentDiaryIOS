@@ -33,7 +33,10 @@ class YPreSaveViewController: UIViewController {
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var diaryScrollView: UIScrollView!
     
-    @IBOutlet weak var contentCountLabel: UILabel!
+    
+    @IBOutlet weak var separateView: UIView!
+    
+    @IBOutlet weak var topBackView: UIView!
     
     
     //MARK: - LifeCycle
@@ -53,18 +56,27 @@ class YPreSaveViewController: UIViewController {
         titleLabel.text = titleText as? String
         contentLabel.text = contentText as? String
         dateLabel.text = dateText as? String
-        contentCountLabel.text = "\(contentTextCount)/100" //기준점 넘으면 버튼 활성화 비활성화
+//        contentCountLabel.text = "\(contentTextCount)/100" //기준점 넘으면 버튼 활성화 비활성화
     }
     
     
     func viewSetting() {
+        diaryScrollView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        diaryScrollView.layer.cornerRadius = 10
+        titleBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        contentBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        separateView.backgroundColor = UIColor(hex: 0xE2DFD7)
+        topBackView.backgroundColor = UIColor(hex: 0xF4EDE3)
+        view.backgroundColor = UIColor(hex: 0xF4EDE3)
+        
         
     }
     func labelSetting() {
         
     }
     func buttonSetting() {
-        
+        sendButton.backgroundColor = UIColor(hex: 0x73BF90)
+        sendButton.layer.cornerRadius = sendButton.frame.height / 2
     }
     
     //MARK: - Actions

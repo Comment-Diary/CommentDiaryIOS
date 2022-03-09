@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "commentCount.png",
+      "filename" : "onboard2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "commentCount-1.png",
+      "filename" : "img_onboarding2@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "commentCount-2.png",
+      "filename" : "img_onboarding2@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

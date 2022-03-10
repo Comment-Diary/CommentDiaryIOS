@@ -13,10 +13,10 @@ struct LoginResponse: Codable {
     var result: TokenData
 }
 
-//struct TokenData: Codable {
-//    var grantType: String = ""
-//    var accessToken: String
-//    var refreshToken: String
-//    var accessTokenExpiresIn : Int = 0
-//}
+struct TokenData: Codable {
+    var grantType: String = ""
+    var accessToken: String
+    var refreshToken: String
+    var accessTokenExpiresIn : Int = 0
+}
 

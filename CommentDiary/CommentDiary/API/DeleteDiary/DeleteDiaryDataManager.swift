@@ -9,16 +9,16 @@ import Foundation
 import Alamofire
 
 class DeleteDiaryDataManater {
-    func deleteDiaryDeleteData(_ viewController: DeleteCheckAlertViewController) {
+    func deleteDiaryDeleteData(diaryInt: Int, _ viewController: DeleteCheckAlertViewController) {
 
         let token = UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         
-        let diaryID: Int = UserDefaults.standard.value(forKey: "DiaryID") as! Int
+//        let diaryID: Int = UserDefaults.standard.value(forKey: "DiaryID") ?? 0
         
         
-        AF.request("http://jwyang.shop:8080/api/v1/diary/\(diaryID)",
+        AF.request("http://jwyang.shop:8080/api/v1/diary/\(diaryInt)",
                    method: .delete,
                    parameters: nil,
                    headers: headers)

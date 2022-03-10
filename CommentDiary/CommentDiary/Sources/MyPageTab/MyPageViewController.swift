@@ -74,17 +74,25 @@ class MyPageViewController :UIViewController {
     
     
     @IBAction func myAccountButtonTap(_ sender: Any) {
+        let myAccountVC = UIStoryboard(name: "MyAccount", bundle: nil).instantiateViewController(withIdentifier: "MyAccountViewController") as! MyAccountViewController
+        self.navigationController?.pushViewController(myAccountVC, animated: true)
     }
     
     
     @IBAction func sendCommentButtonTap(_ sender: Any) {
+        let sendCommentVC = UIStoryboard(name: "SendComment", bundle: nil).instantiateViewController(withIdentifier: "SendCommentViewController") as! SendCommentViewController
+        self.navigationController?.pushViewController(sendCommentVC, animated: true)
     }
     
     @IBAction func pushAlertButtonTap(_ sender: Any) {
     }
     
     @IBAction func termsButtonTap(_ sender: Any) {
+        let termsvc = UIStoryboard(name: "Terms", bundle: nil).instantiateViewController(withIdentifier: "TermsViewController") as! TermsViewController
+        self.navigationController?.pushViewController(termsvc, animated: true)
     }
     
     
 }
+//        let selfPayVC = UIStoryboard(name: "payment", bundle: nil).instantiateViewController(identifier: "SelfPaymentViewController") as! SelfPaymentViewController
+//        self.navigationController?.pushViewController(selfPayVC, animated: true)

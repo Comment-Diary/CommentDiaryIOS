@@ -16,6 +16,8 @@ class AloneDiaryViewController: UIViewController {
         return df
     }()
     
+    var diaryIDValue: Int = 0
+    
     //MARK: - Properties
     
     @IBOutlet weak var dateLabel: UILabel!
@@ -25,6 +27,9 @@ class AloneDiaryViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var contentLabel: UILabel!
+    
+    @IBOutlet weak var entireDiaryButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +43,7 @@ class AloneDiaryViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(loadTitle(_:)), name: NSNotification.Name(rawValue: "SelectedTitle"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(loadContent(_:)), name: NSNotification.Name(rawValue: "SelectedContent"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadID(_:)), name: NSNotification.Name(rawValue: "SelectedID"), object: nil)
     }
     
     @objc func loadData(_ notification : NSNotification) {
@@ -50,4 +56,17 @@ class AloneDiaryViewController: UIViewController {
     @objc func loadContent(_ notification: NSNotification) {
         contentLabel.text = notification.object as? String ?? ""
     }
+    @objc func loadID(_ notification: NSNotification) {
+        diaryIDValue = notification.object as? Int ?? 0
+    }
+    
+    
+    @IBAction func entireDiaryButtonTap(_ sender: Any) {
+        let nSaveVC = UIStoryboard(name: "NSave", bundle: nil).instantiateViewController(withIdentifier: "NSaveViewController") as! NSaveViewController
+        self.navigationController?.pushViewController(nSaveVC, animated: true)
+        nSaveVC.diaryCheckToggle = true
+        nSaveVC.diaryidInt = diaryIDValue
+        print(diaryIDValue, "보낸 아이디 값")
+    }
+    
 }

@@ -10,8 +10,8 @@ import Alamofire
 
 class WritingDiaryDataManager {
     func writingDiaryPostData(_ viewController: TodayDiaryViewController) {
-        let storedTokenData = UserDefaultManager.shared.getTokens()
-        let credential = OAuthCredential(accessToken: storedTokenData.accessToken , refreshToken: storedTokenData.refreshToken, expiration: Date(timeIntervalSinceNow: 60 * 5))
+//        let storedTokenData = UserDefaultManager.shared.getTokens()
+//        let credential = OAuthCredential(accessToken: storedTokenData.accessToken , refreshToken: storedTokenData.refreshToken, expiration: Date(timeIntervalSinceNow: 60 * 5))
 //        let authenticator = OAuthAuthenticator()
 //        let authInterceptor = AuthenticationInterceptor(authenticator: authenticator,
 //                                                    credential: credential)
@@ -30,13 +30,14 @@ class WritingDiaryDataManager {
                    method: .post,
                    parameters: params,
                    encoder: JSONParameterEncoder(),
-                   headers: headers)
+                   headers: headers,
+        interceptor: MyRequestInterceptor())
             .validate()
             .responseDecodable(of: WritingDiaryResponse.self) { response in
                 switch response.result {
                 case .success(let response):
                     print("DEBUG >> Success \(response)")
-                    viewController.writingDiarySucessResponse()
+                    viewController.writingDiarySucessResponse(response)
 
                     UserDefaults.standard.set(response.result.id, forKey: "DiaryID")
                     

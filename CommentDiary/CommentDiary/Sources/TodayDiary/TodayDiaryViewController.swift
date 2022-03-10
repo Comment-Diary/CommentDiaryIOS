@@ -234,12 +234,15 @@ extension TodayDiaryViewController: UITextViewDelegate {
             
             // 혼자 쓰기일떄는 카운트 필요없음
             // 코멘트 받기 쓰기는 초기 button false
+            if deliveryToggle == "Y" {
                 if chagnedText.count < 10 {
                     saveButton.isEnabled = false
                 } else {
                     saveButton.isEnabled = true
                 }
             return true
+                
+            }
         }
         
 
@@ -277,7 +280,7 @@ extension TodayDiaryViewController: UITextViewDelegate {
 
 //API
 extension TodayDiaryViewController {
-    func writingDiarySucessResponse() {
+    func writingDiarySucessResponse(_ response: WritingDiaryResponse) {
         self.dismissIndicator()
 //조건 만들기 혼자 쓰는 일기 or 코멘트 일기에 따라 화면 전환이 다름
         if deliveryToggle == "Y" { //보여주기
@@ -288,6 +291,8 @@ extension TodayDiaryViewController {
             
             //혼자쓰기
             let nSaveVC = UIStoryboard(name: "NSave", bundle: nil).instantiateViewController(withIdentifier: "NSaveViewController") as! NSaveViewController
+            nSaveVC.diaryidInt = response.result.id
+            nSaveVC.diaryCheckToggle = false
             nSaveVC.dateString = diaryDate.text ?? ""
             nSaveVC.titleString = titleTextView.text
             nSaveVC.contentString = contentTextView.text

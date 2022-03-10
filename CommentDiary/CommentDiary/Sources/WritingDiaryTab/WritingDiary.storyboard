@@ -57,6 +57,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1H-rS-9Lu" customClass="FSCalendar">
                                         <rect key="frame" x="15" y="116.66666666666667" width="366" height="229.66666666666663"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lW4-pV-J3F">
                                         <rect key="frame" x="15" y="10" width="366" height="106.66666666666667"/>
@@ -498,6 +499,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="entireDiaryButtonTap:" destination="5ZF-IT-f5G" eventType="touchUpInside" id="IVh-RE-GNq"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
@@ -539,6 +543,7 @@
                     <connections>
                         <outlet property="contentLabel" destination="2rl-WG-NMf" id="ah4-T2-Noh"/>
                         <outlet property="dateLabel" destination="gsy-Hn-0Bd" id="LO7-3K-OON"/>
+                        <outlet property="entireDiaryButton" destination="6Og-rU-bcW" id="CSz-3o-6ch"/>
                         <outlet property="myDiaryLabel" destination="U9Z-rS-eKC" id="bXM-sQ-e8O"/>
                         <outlet property="titleLabel" destination="6Rd-Ar-Ymx" id="3fk-vh-fyA"/>
                     </connections>

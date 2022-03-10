@@ -21,7 +21,6 @@ class WritingDiaryTableViewCell: UITableViewCell {
     
     @objc func loadData(_ notification : NSNotification) {
         diaryDateLabel.text = notification.object as? String ?? ""
-        print(diaryDateLabel.text, "diaryDateLabel")
     }
 
 

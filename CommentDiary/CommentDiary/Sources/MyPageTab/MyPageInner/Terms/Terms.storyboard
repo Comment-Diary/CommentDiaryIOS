@@ -29,8 +29,11 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUt-iI-olX">
                                         <rect key="frame" x="15" y="17" width="67" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="backButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Z40-Ig-p3L"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -56,10 +59,21 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PuI-fD-9Oy">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="62"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="usageButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zos-E0-tiJ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="vUH-kO-UTP" firstAttribute="centerY" secondItem="dlZ-1E-gW3" secondAttribute="centerY" id="Igx-jG-TDi"/>
+                                    <constraint firstItem="PuI-fD-9Oy" firstAttribute="top" secondItem="dlZ-1E-gW3" secondAttribute="top" id="TMj-Mn-6mn"/>
+                                    <constraint firstItem="PuI-fD-9Oy" firstAttribute="leading" secondItem="dlZ-1E-gW3" secondAttribute="leading" id="jVM-4E-z95"/>
+                                    <constraint firstAttribute="trailing" secondItem="PuI-fD-9Oy" secondAttribute="trailing" id="lYf-cu-KiZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="PuI-fD-9Oy" secondAttribute="bottom" id="qmC-Ce-i1q"/>
                                     <constraint firstItem="vUH-kO-UTP" firstAttribute="leading" secondItem="dlZ-1E-gW3" secondAttribute="leading" constant="24" id="tTe-EN-xym"/>
                                 </constraints>
                             </view>
@@ -79,12 +93,23 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JhW-cs-X1Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="61.5"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="infoButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6tz-Jz-RaJ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jJU-te-XBD" secondAttribute="height" multiplier="375:56" id="3g2-BC-3Jr"/>
+                                    <constraint firstItem="JhW-cs-X1Z" firstAttribute="leading" secondItem="jJU-te-XBD" secondAttribute="leading" id="7B0-XN-T2e"/>
+                                    <constraint firstItem="JhW-cs-X1Z" firstAttribute="top" secondItem="jJU-te-XBD" secondAttribute="top" id="7fs-rK-i5c"/>
                                     <constraint firstItem="l49-zh-K5P" firstAttribute="leading" secondItem="jJU-te-XBD" secondAttribute="leading" constant="24" id="IVz-dH-gh3"/>
                                     <constraint firstItem="l49-zh-K5P" firstAttribute="centerY" secondItem="jJU-te-XBD" secondAttribute="centerY" id="d2a-we-NlX"/>
+                                    <constraint firstAttribute="bottom" secondItem="JhW-cs-X1Z" secondAttribute="bottom" id="dBg-xi-ZeT"/>
+                                    <constraint firstAttribute="trailing" secondItem="JhW-cs-X1Z" secondAttribute="trailing" id="sSZ-tN-dy4"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QAc-fJ-6vr">
@@ -119,10 +144,22 @@
                             <constraint firstItem="QAc-fJ-6vr" firstAttribute="top" secondItem="jJU-te-XBD" secondAttribute="bottom" id="zEC-Cn-y4V"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="uUt-iI-olX" id="pt2-N4-tmb"/>
+                        <outlet property="firstSeparateView" destination="3iq-DL-B1R" id="DA8-uX-RsH"/>
+                        <outlet property="infoLabel" destination="l49-zh-K5P" id="G4N-sa-zrg"/>
+                        <outlet property="infoView" destination="jJU-te-XBD" id="qYK-NF-MFU"/>
+                        <outlet property="secondSeparateView" destination="ExY-ev-IkE" id="ziK-qG-71j"/>
+                        <outlet property="termsBackView" destination="ptl-g2-FYp" id="MJf-ab-rJ9"/>
+                        <outlet property="termsLabel" destination="ual-de-Zu2" id="TbU-b0-sv0"/>
+                        <outlet property="thirdSeparateView" destination="QAc-fJ-6vr" id="ys1-Ny-fPp"/>
+                        <outlet property="usageLabel" destination="vUH-kO-UTP" id="DPB-zW-8AJ"/>
+                        <outlet property="usageView" destination="dlZ-1E-gW3" id="MSi-Fq-rFM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133" y="92"/>
+            <point key="canvasLocation" x="131.8840579710145" y="91.741071428571431"/>
         </scene>
     </scenes>
     <resources>

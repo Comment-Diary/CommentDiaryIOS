@@ -65,6 +65,8 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     //일기에 코멘트 여부
     var commentResponse : [CommentResponseList] = []
     
+    //전체 배열
+    var allDiaryList = [String]()
     
     //혼자쓰기 일기 배열
     var nDiaryList = [String]()
@@ -129,6 +131,13 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        calendarView.formatter.timeZone = NSTimeZone(abbreviation: "GMT")! as TimeZone
+        
+        print(calendarView.today ?? Date(), "캘린더 날짜")
+
+//        2022-03-10 12:13:06 +0000 캘린더 날짜 -24
+//        2022-03-10 12:13:47 +0000 캘린더 날짜 - 7
+//        2022-03-10 12:14:24 +0000 캘린더 날짜 Date()
         
         calendarViewSetting()
         setCalendar()
@@ -147,6 +156,14 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let date = Date()
+                var dateComponent = Calendar.current.dateComponents([.hour,.month,.year], from: date)
+                dateComponent.hour! -= 24
+
+     
+        
+        
+        
         DiaryMainPageDataManager().diaryMainDate(self)
         calendarView.reloadData()
         
@@ -250,7 +267,6 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "presentDate"), object: formatter.string(from: date)) 
         
-        
 
 
         for i in nDiaryList {
@@ -264,9 +280,9 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
                 self.notDiaryDayView.isHidden = true
                 self.preSaveView.isHidden = true
             }
-            else {
-                nDiaryBool = false
-            }
+//            else {
+//                nDiaryBool = false
+//            }
         }
         
         for i in yDiaryList {
@@ -280,24 +296,40 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
                 self.notDiaryDayView.isHidden = true
                 self.preSaveView.isHidden = true
             }
-            else {
-                yDiaryBool = false
+//            else {
+//                yDiaryBool = false
+//            }
+        }
+        
+        for i in allDiaryList {
+            if i != String(formatter.string(from: date)) {
+                self.notDiaryDayView.isHidden = true
+                self.todayWritingDiaryView.isHidden = false
+                self.aloneDiaryView.isHidden = true
+                self.commentSoonView.isHidden = true
+                self.readCommentView.isHidden = true
+                self.notDiaryDayView.isHidden = true
+                self.preSaveView.isHidden = true
             }
         }
         
-        if yDiaryBool == false && nDiaryBool == false {
-            self.notDiaryDayView.isHidden = true
-            self.todayWritingDiaryView.isHidden = false
-            self.aloneDiaryView.isHidden = true
-            self.commentSoonView.isHidden = true
-            self.readCommentView.isHidden = true
-            self.notDiaryDayView.isHidden = true
-            self.preSaveView.isHidden = true
-        }
+
         
+//        if yDiaryBool == false && nDiaryBool == false {
+//            self.notDiaryDayView.isHidden = true
+//            self.todayWritingDiaryView.isHidden = false
+//            self.aloneDiaryView.isHidden = true
+//            self.commentSoonView.isHidden = true
+//            self.readCommentView.isHidden = true
+//            self.notDiaryDayView.isHidden = true
+//            self.preSaveView.isHidden = true
+//        }
+//
 
         for i in mainPageResult {
             if i.date == String(formatter.string(from: date)) {
+                print(i.id, "일기 ID")
+                NotificationCenter.default.post(name: Notification.Name("SelectedID"), object: i.id)
                 print(i.title, "일기 제목")
                 NotificationCenter.default.post(name: Notification.Name("SelectedTitle"), object: i.title)
                 print(i.content, "일기 내용")
@@ -357,6 +389,15 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         return nil
 
     }
+    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventSelectionColorsFor date: Date) -> [UIColor]? {
+        if self.nDiaryList.contains(formatter.string(from: date)) {
+            return [UIColor.red]
+        }
+        if self.yDiaryList.contains(formatter.string(from: date)) {
+            return [UIColor.blue]
+        }
+        return nil
+    }
     
 
 
@@ -380,15 +421,7 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
 }
 
 
-    //MARK: - Extensions
-//extension WritingDiaryVC: UITableViewDelegate, UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 1
-//    }
-//
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
+
 //
 //    @objc func loadData(_ notification : NSNotification) {
 //       selectedTapDate = notification.object as? String ?? ""
@@ -431,16 +464,7 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
 //
 //
 //        }
-//        tableView.reloadData()
-//        return UITableViewCell()
-//    }
-//
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableView.automaticDimension
-//    }
-//
-//
-//}
+
 
 extension WritingDiaryVC {
     func diaryMainDateSuccessResponse(_ response: DiaryMainPageResponse) {
@@ -450,19 +474,35 @@ extension WritingDiaryVC {
         calendarView.reloadData()
         
 
+        //전체 배열
+        for i in mainPageResult {
+            allDiaryList.append(i.date)
+        }
+        
         
 
         for i in mainPageResult {
             if i.deliveryYn == "N" {
                 nDiaryList.append(i.date)
             }
-        }
-        
-        for i in mainPageResult {
-            if i.deliveryYn == "Y" {
+            else if i.deliveryYn == "Y" {
                 yDiaryList.append(i.date)
             }
         }
+        
+//        for i in mainPageResult {
+//            if i.deliveryYn == "Y" {
+//                yDiaryList.append(i.date)
+//            }
+//        }
+        
+        
+        
+        
+        
+        
+        
+        
         
         for i in mainPageResult {
             if (i.commentResponseList.count != 0) && i.deliveryYn == "Y" {

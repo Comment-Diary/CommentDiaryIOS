@@ -12,6 +12,10 @@ class NSaveViewController: UIViewController {
     var dateString = ""
     var titleString = ""
     var contentString = ""
+    var diaryidInt = 0
+    
+    //일기 작성 후 넘어오면 false 캘린더에서 넘어오면 true
+    var diaryCheckToggle: Bool = true
     
     
     //MARK: - Properties
@@ -44,7 +48,17 @@ class NSaveViewController: UIViewController {
         super.viewDidLoad()
         viewSetting()
         buttonSetting()
-        labelSetting()
+        
+        if diaryCheckToggle == false {
+            //일기 작성후 넘어온 경우
+            labelSetting()
+        } else if diaryCheckToggle == true {
+            //캘린더에서 조회할 경우
+            DiaryCheckDataManager().diaryCheckData(diaryID: diaryidInt, self)
+            
+            print(diaryidInt, "일기 값")
+        }
+
     }
     
     func detailSetting() {
@@ -80,6 +94,7 @@ class NSaveViewController: UIViewController {
     
     @IBAction func deleteButtonTap(_ sender: Any) {
         let deleteCheckVC = UIStoryboard(name: "DeleteCheck", bundle: nil).instantiateViewController(withIdentifier: "DeleteCheckAlertViewController") as! DeleteCheckAlertViewController
+        deleteCheckVC.diaryId = self.diaryidInt
         self.present(deleteCheckVC, animated: true)
         
 
@@ -101,3 +116,15 @@ class NSaveViewController: UIViewController {
 //    if aViewController is GoodsRegisterViewController {
 //        self.navigationController!.popToViewController(aViewController, animated: true)
 //    }
+
+extension NSaveViewController {
+    func diaryCheckSuccessResopnse(_ response: DiaryCheckResopnse) {
+        titleLabel.text = response.result.title
+        contentLabel.text = response.result.content
+        dateLabel.text = response.result.date
+        print(titleLabel.text , "API 조회 일기 제목")
+        print(contentLabel.text, "APi 조회 일기 내용")
+        print(dateLabel.text, "API 조회 일기 날짜")
+        
+    }
+}

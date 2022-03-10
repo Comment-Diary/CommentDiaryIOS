@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class DeleteCheckAlertViewController :UIViewController {
+    var diaryId : Int = 0
     //MARK: - Properties
     
     @IBOutlet weak var labelBackVIew: UIView!
@@ -26,7 +27,9 @@ class DeleteCheckAlertViewController :UIViewController {
     
     @IBAction func okButtonTap(_ sender: Any) {
         self.showIndicator()
-        DeleteDiaryDataManater().deleteDiaryDeleteData(self)
+        DeleteDiaryDataManater().deleteDiaryDeleteData(diaryInt: diaryId, self)
+        
+        print(diaryId, "삭제할 id 값")
 
 //        self.dismiss(animated: true) {
 //            let viewController: [UIViewController] = self.navigationController!.viewControllers
@@ -50,6 +53,7 @@ class DeleteCheckAlertViewController :UIViewController {
 extension DeleteCheckAlertViewController {
     func deleteSuccessResponse() {
         self.dismissIndicator()
+        
         self.presentBottomAlert(message: "일기가 삭제되었어요.")
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
             let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")

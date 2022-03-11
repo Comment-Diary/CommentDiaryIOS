@@ -197,7 +197,7 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
     
     //MARK: - Actions
     @IBAction func sendCommentButtonTap(_ sender: UIButton) {
-        self.showIndicator()
+        
         
 //        CommentWritingRequest.diaryId
 //        CommentWritingRequest.content
@@ -209,6 +209,8 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func reportButtonTap(_ sender: Any) {
         //알람 띄우기
+//        DiaryReportRequest.diaryId
+//        DiaryReportRequest.content
     }
     
     

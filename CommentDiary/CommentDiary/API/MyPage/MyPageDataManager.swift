@@ -9,7 +9,28 @@ import Foundation
 import Alamofire
 
 class MyPageDataManager {
-    func myPageData(_ viewController: UIViewController) {
-        let url = ""
+    func myPageData(_ viewController: MyPageViewController) {
+        let url = "http://jwyang.shop:8080/api/v1/members"
+        let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
+        let headers : HTTPHeaders = [.authorization(bearerToken: token as! String)]
+        
+        AF.request(url,
+                   method: .get,
+                   parameters: nil,
+                   encoding: URLEncoding.default,
+                   headers: headers)
+            .validate()
+            .responseDecodable(of: MyPageResponse.self) { response in
+                switch  response.result {
+                case .success(let response):
+                    
+                    print("DEBUG >> Success \(response)")
+                    viewController.myPageSuccessResponse(response)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    
+                }
+            }
+        
     }
 }

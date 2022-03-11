@@ -50,6 +50,8 @@ class MyPageViewController :UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSetting()
+        
+        MyPageDataManager().myPageData(self)
     }
     
     func viewSetting() {
@@ -96,3 +98,10 @@ class MyPageViewController :UIViewController {
 }
 //        let selfPayVC = UIStoryboard(name: "payment", bundle: nil).instantiateViewController(identifier: "SelfPaymentViewController") as! SelfPaymentViewController
 //        self.navigationController?.pushViewController(selfPayVC, animated: true)
+
+    //Extensions
+extension MyPageViewController {
+    func myPageSuccessResponse(_ response: MyPageResponse) {
+        self.emailLabel.text = response.result.email
+    }
+}

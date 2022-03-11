@@ -28,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="241" y="-157"/>
         </scene>
-        <!--MyDiaryViewController-->
+        <!--GatherLookViewController-->
         <scene sceneID="bnQ-v1-rgJ">
             <objects>
-                <viewControllerPlaceholder storyboardName="MyDiary" referencedIdentifier="MyDiaryViewController" id="ABX-5t-M7r" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="GatherLook" referencedIdentifier="GatherLookViewController" id="ABX-5t-M7r" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Ari-jd-14o"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k9P-uq-KnU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

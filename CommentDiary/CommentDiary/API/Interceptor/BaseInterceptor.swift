@@ -39,28 +39,32 @@ final class MyRequestInterceptor: RequestInterceptor {
               completion(.doNotRetryWithError(error))
               return
           }
-
-        func refreshToken(completion: @escaping (_ isSuccess: Bool) -> Void) {
-            let url = "http://jwyang.shop:8080/api/v1/members/reissue"
-            let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
-            let refreshToken = UserDefaults.standard.value(forKey: "RefreshToken") ?? ""
-            let headers: HTTPHeaders = ["X-AUTH-TOKEN" : "\(token)", "REFRESH-TOKEN" : "\(refreshToken)"]
-
-            AF.request(url, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers)
-                .validate()
-                .responseDecodable(of: TokenRefreshResponse.self) { response in
-                    switch response.result {
-                    case .success(let response):
-                        print("DEBUG >> Success \(response)")
-                        UserDefaults.standard.set(response.result.accessToken, forKey: "AccessToken")
-                        
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                    }
-                    
-                
-            }
-        }
+        
+ 
+        TokenRefreshDataManager().tokenRefreshPostData()
+        
+        
+//        func refreshToken(completion: @escaping (_ isSuccess: Bool) -> Void) {
+//            let url = "http://jwyang.shop:8080/api/v1/members/reissue"
+//            let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
+//            let refreshToken = UserDefaults.standard.value(forKey: "RefreshToken") ?? ""
+//            let headers: HTTPHeaders = ["X-AUTH-TOKEN" : "\(token)", "REFRESH-TOKEN" : "\(refreshToken)"]
+//
+//            AF.request(url, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers)
+//                .validate()
+//                .responseDecodable(of: TokenRefreshResponse.self) { response in
+//                    switch response.result {
+//                    case .success(let response):
+//                        print("DEBUG >> Success \(response)")
+//                        UserDefaults.standard.set(response.result.accessToken, forKey: "AccessToken")
+//
+//                    case .failure(let error):
+//                        print(error.localizedDescription)
+//                    }
+//
+//
+//            }
+//        }
     }
 }
 //import Foundation

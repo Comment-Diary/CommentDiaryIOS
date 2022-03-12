@@ -50,7 +50,7 @@ import Alamofire
 class DiaryMainPageDataManager {
     func diaryMainDate(_ viewcontroller: WritingDiaryVC) {
         let url = "http://jwyang.shop:8080/api/v1/diary/main"
-                let params: Parameters = [
+        let params: Parameters = [
                     "date" : "\(viewcontroller.monthDateString)"
                 ]
 
@@ -61,7 +61,8 @@ class DiaryMainPageDataManager {
                    method: .get,
                    parameters: params,
                    encoding: URLEncoding.default,
-                   headers: headers)
+                   headers: headers,
+        interceptor: MyRequestInterceptor())
             .validate()
             .responseDecodable(of: DiaryMainPageResponse.self) { response in
                 switch response.result {

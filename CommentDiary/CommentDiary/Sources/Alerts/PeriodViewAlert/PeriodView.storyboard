@@ -130,21 +130,6 @@
             </objects>
             <point key="canvasLocation" x="51.86915887850467" y="40.820734341252702"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="hdo-Jp-0Bf">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="04P-hR-mA9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="qsF-pd-iyv" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aEr-Rf-dhk">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="hAV-tm-exC"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="733" y="78"/>
-        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

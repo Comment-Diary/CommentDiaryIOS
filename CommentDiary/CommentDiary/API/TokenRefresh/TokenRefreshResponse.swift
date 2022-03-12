@@ -6,13 +6,13 @@
 //
 
 import Foundation
-struct TokenRefreshResponse: Decodable {
+struct TokenRefreshResponse: Codable {
     var code: Int
     var message: String
     var result: tokenRefreshResult
 }
 
-struct tokenRefreshResult : Decodable {
+struct tokenRefreshResult : Codable {
     var grantType : String
     var accessToken : String
     var refreshToken : String

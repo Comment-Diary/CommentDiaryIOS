@@ -1,24 +1,24 @@
 //
-//  PeriodViewAlertViewController.swift
+//  PeriodCommentViewController.swift
 //  CommentDiary
 //
-//  Created by 류창휘 on 2022/03/11.
+//  Created by 류창휘 on 2022/03/13.
 //
 
 import Foundation
 import UIKit
 
-protocol LabelChangeDelegate {
+protocol CommentLabelChangeDelegate {
     func onChange(data: String)
 }
-protocol DateChangeDelegate {
+protocol CommentDateChangeDelegate {
     func onDateChange(data: String)
 }
-class PeriodViewAlertViewController : UIViewController {
+
+class PeriodCommentViewController : UIViewController {
     //delegate
-    var delegate: LabelChangeDelegate?
-    var dateDelegate: DateChangeDelegate?
-    
+    var delegate: CommentLabelChangeDelegate?
+    var dateDelegate: CommentDateChangeDelegate?
     
     var yearString = "2020"
     var monthString = "1"
@@ -26,39 +26,47 @@ class PeriodViewAlertViewController : UIViewController {
     var dateCaseString: String = ""
     var dateChangeString = ""
     
+    var yearArray: [Int] = []
+    var monthArray = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
     
     var todayYear = "0"
     let todayMonth = "0"
     
-    var yearArray: [Int] = []
-    var monthArray = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
-    //MARK: - Properties
+    //MARK: - Preperties
+    
+    @IBOutlet weak var mainView: UIView!
+    
+    @IBOutlet weak var periodLabel: UILabel!
+    
+    @IBOutlet weak var pickerBackView: UIView!
+    
+    @IBOutlet weak var pickerStackView: UIStackView!
+    
     @IBOutlet weak var yearPickerView: UIPickerView!
     
-    @IBOutlet weak var monthPickerView: UIPickerView!
-    
-    @IBOutlet weak var mainVIew: UIView!
-    
-    @IBOutlet weak var bottomBackView: UIView!
-    
-    @IBOutlet weak var dateView: UIView!
+    @IBOutlet weak var monthPIckerView: UIPickerView!
     
     @IBOutlet weak var allButton: UIButton!
     
     @IBOutlet weak var saveButton: UIButton!
+    
+    @IBOutlet weak var bottomBackView: UIView!
+    
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        monthPickerView.delegate = self
         yearPickerView.delegate = self
-        setAvailableDate()
+        monthPIckerView.delegate = self
         
         viewSetting()
+        
         buttonSetting()
+        setAvailableDate()
     }
+    
     override func viewWillLayoutSubviews() {
         yearPickerView.subviews[1].backgroundColor = .clear
-        monthPickerView.subviews[1].backgroundColor = .clear
+        monthPIckerView.subviews[1].backgroundColor = .clear
 //        yearPickerView.subviews[1].s
     }
     
@@ -73,13 +81,13 @@ class PeriodViewAlertViewController : UIViewController {
     }
     
     func viewSetting() {
-        mainVIew.backgroundColor = UIColor(hex: 0xFDF8E9)
-        dateView.backgroundColor = UIColor(hex: 0xFDF8E9)
+        mainView.backgroundColor = UIColor(hex: 0xFDF8E9)
+        pickerBackView.backgroundColor = UIColor(hex: 0xFDF8E9)
         yearPickerView.backgroundColor = UIColor(hex: 0xFDFCF9)
-        monthPickerView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        monthPIckerView.backgroundColor = UIColor(hex: 0xFDFCF9)
         yearPickerView.layer.cornerRadius = 4
-        monthPickerView.layer.cornerRadius = 4
-        mainVIew.layer.cornerRadius = 10
+        monthPIckerView.layer.cornerRadius = 4
+        mainView.layer.cornerRadius = 10
         
     }
     
@@ -99,40 +107,30 @@ class PeriodViewAlertViewController : UIViewController {
         bottomBackView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
     }
     
-    
     //MARK: - Actions
+    
     @IBAction func allButtonTap(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-        dateCaseString = "전체보기"
-        dateChangeString = "전체보기"
-        delegate?.onChange(data: dateCaseString)
-        dateDelegate?.onDateChange(data: dateChangeString)
-        print(dateCaseString)
     }
     
     @IBAction func saveButtonTap(_ sender: Any) {
-
-        dateCaseString = "\(yearString)년 \(monthString)월"
-        dateChangeString = "\(yearString).\(monthString)"
-        delegate?.onChange(data: dateCaseString)
-        dateDelegate?.onDateChange(data: dateChangeString)
         dismiss(animated: true, completion: nil)
-        print(dateCaseString)
     }
+    
     
 }
 
-
-    //MARK: - Extensions
-extension PeriodViewAlertViewController : UIPickerViewDelegate, UIPickerViewDataSource {
+    //MARK: - extensions
+extension PeriodCommentViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch pickerView {
         case yearPickerView:
             return yearArray.count
-        case monthPickerView:
+        case monthPIckerView:
             return monthArray.count
         default:
             return 0
@@ -142,7 +140,7 @@ extension PeriodViewAlertViewController : UIPickerViewDelegate, UIPickerViewData
         switch pickerView {
         case yearPickerView:
             return "\(yearArray[row])년"
-        case monthPickerView:
+        case monthPIckerView:
             return "\(monthArray[row])월"
         default:
             return ""
@@ -153,7 +151,7 @@ extension PeriodViewAlertViewController : UIPickerViewDelegate, UIPickerViewData
         case yearPickerView:
             yearString = "\(yearArray[row])"
             print(yearString)
-        case monthPickerView:
+        case monthPIckerView:
             monthString = "\(monthArray[row])"
             print(monthString)
         default:
@@ -164,7 +162,7 @@ extension PeriodViewAlertViewController : UIPickerViewDelegate, UIPickerViewData
         switch pickerView {
         case yearPickerView:
             return NSAttributedString(string: "\(self.yearArray[row])년", attributes: [.foregroundColor:UIColor(hex: 0x4E4C49)])
-        case monthPickerView:
+        case monthPIckerView:
             return NSAttributedString(string: "\(self.monthArray[row])월", attributes: [.foregroundColor:UIColor(hex: 0x4E4C49)])
         default:
             return NSAttributedString(string: "\(self.yearArray[row])", attributes: [.foregroundColor:UIColor(hex: 0x4E4C49)])
@@ -173,17 +171,4 @@ extension PeriodViewAlertViewController : UIPickerViewDelegate, UIPickerViewData
         
     }
     
-//    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-//
-//           let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 60))
-//
-//           let gugunLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 60))
-//           gugunLabel.text = gugunList[row]
-//           gugunLabel.textAlignment = .center
-//           gugunLabel.font = UIFont.systemFont(ofSize: 28, weight: .light)
-//
-//           view.addSubview(gugunLabel)
-//
-//           return view
-//       }
 }

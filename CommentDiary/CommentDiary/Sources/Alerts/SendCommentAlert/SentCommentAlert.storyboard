@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sent Comment AlertVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SentCommentAlertVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="Y6W-OH-hqX" customClass="SentCommentAlertVC" customModule="CommentDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yWV-2B-Edh">
+                                <rect key="frame" x="40" y="204.5" width="240" height="159"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Z5j-X8-Exf">
+                                        <rect key="frame" x="28" y="106" width="184" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4IY-j0-JC0">
+                                                <rect key="frame" x="0.0" y="0.0" width="86" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="4IY-j0-JC0" secondAttribute="height" multiplier="114:40" id="PKH-bK-kBZ"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="취소"/>
+                                                <connections>
+                                                    <action selector="cancelButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ybD-DO-FcS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqp-2N-HXe">
+                                                <rect key="frame" x="98" y="0.0" width="86" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Fqp-2N-HXe" secondAttribute="height" multiplier="114:40" id="zEq-5h-TTO"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="확인"/>
+                                                <connections>
+                                                    <action selector="okButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Zcx-hD-Lft"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eM9-Nq-8mF">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="106"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="14U-Wd-xoB">
+                                                <rect key="frame" x="13.5" y="19.5" width="213" height="67"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코멘트를 전송합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0n7-dB-pka">
+                                                        <rect key="frame" x="48" y="0.0" width="117" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전송 후에는 수정과 삭제가 어렵습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBD-tB-lO1">
+                                                        <rect key="frame" x="0.0" y="25" width="213" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전송하시겠어요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qp1-Ny-NGa">
+                                                        <rect key="frame" x="60.5" y="50" width="92" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <constraints>
+                                            <constraint firstItem="14U-Wd-xoB" firstAttribute="centerX" secondItem="eM9-Nq-8mF" secondAttribute="centerX" id="ITS-Qv-WKn"/>
+                                            <constraint firstItem="14U-Wd-xoB" firstAttribute="centerY" secondItem="eM9-Nq-8mF" secondAttribute="centerY" id="iD2-8e-5kx"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Z5j-X8-Exf" firstAttribute="leading" secondItem="yWV-2B-Edh" secondAttribute="leading" constant="28" id="80U-wL-a2K"/>
+                                    <constraint firstItem="Z5j-X8-Exf" firstAttribute="centerX" secondItem="yWV-2B-Edh" secondAttribute="centerX" id="ESZ-uq-FQL"/>
+                                    <constraint firstItem="eM9-Nq-8mF" firstAttribute="leading" secondItem="yWV-2B-Edh" secondAttribute="leading" id="JJZ-b9-Pbh"/>
+                                    <constraint firstAttribute="trailing" secondItem="eM9-Nq-8mF" secondAttribute="trailing" id="SR5-10-pQW"/>
+                                    <constraint firstAttribute="bottom" secondItem="Z5j-X8-Exf" secondAttribute="bottom" constant="23" id="ShJ-hX-eJz"/>
+                                    <constraint firstItem="eM9-Nq-8mF" firstAttribute="top" secondItem="yWV-2B-Edh" secondAttribute="top" id="Yda-ms-XBO"/>
+                                    <constraint firstItem="Z5j-X8-Exf" firstAttribute="top" secondItem="eM9-Nq-8mF" secondAttribute="bottom" id="gYg-cG-439"/>
+                                    <constraint firstAttribute="width" secondItem="yWV-2B-Edh" secondAttribute="height" multiplier="295:196" id="ynI-ZT-E3p"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.50395798841059603" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yWV-2B-Edh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="9LB-eT-2B2"/>
+                            <constraint firstItem="yWV-2B-Edh" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="J8h-5Y-scB"/>
+                            <constraint firstItem="yWV-2B-Edh" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Wzs-qE-DhZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alertView" destination="yWV-2B-Edh" id="y2N-Qm-CZh"/>
+                        <outlet property="cancelButton" destination="4IY-j0-JC0" id="TjZ-SD-U0w"/>
+                        <outlet property="labelView" destination="eM9-Nq-8mF" id="cji-Cw-raw"/>
+                        <outlet property="okButton" destination="Fqp-2N-HXe" id="Ffy-dX-B9W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-16" y="98"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

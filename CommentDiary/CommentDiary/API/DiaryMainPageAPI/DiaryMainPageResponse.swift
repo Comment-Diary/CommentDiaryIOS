@@ -20,6 +20,8 @@ struct diaryMainPageResult: Decodable {
     var content: String
     var date: String
     var deliveryYn: String
+    var tempYn : String
+    var commentCnt: Int
     var commentResponseList: [CommentResponseList]
 }
 
@@ -28,4 +30,5 @@ struct CommentResponseList: Decodable {
     var id: Int
     var content: String
     var like: Bool
+    var date: String
 }

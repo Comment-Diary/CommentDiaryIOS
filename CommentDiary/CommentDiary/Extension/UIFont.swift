@@ -33,4 +33,16 @@ extension UIFont {
    static func NotoSans(_ type: NotoSansType, size: CGFloat) -> UIFont {
        return UIFont(name: "NotoSansCJKkr-\(type.rawValue)", size: size)!
    }
+    
+}
+extension UIFont {
+    public enum AppleSDGothicNeo: String {
+        case bold = "B00"
+        case extraBold = "EB00"
+        case medium = "M00"
+    }
+    
+    static func AppleSDGothic(_ type: AppleSDGothicNeo, size: CGFloat) -> UIFont {
+        return UIFont(name: "AppleSDGothicNeo\(type.rawValue)", size: size)!
+    }
 }

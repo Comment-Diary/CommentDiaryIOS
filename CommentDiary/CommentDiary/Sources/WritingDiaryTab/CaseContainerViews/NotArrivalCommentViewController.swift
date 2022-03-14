@@ -13,4 +13,9 @@ class NotArrivalCommentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    
+    func viewSetting() {
+        view.backgroundColor = UIColor(hex: 0xF4EDE3)
+    }
 }

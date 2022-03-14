@@ -44,21 +44,28 @@ class PasswordSearchViewController : UIViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.sendPasswordButton.layer.cornerRadius = sendPasswordButton.frame.height / 2
+        
+    }
+    
 
     
     
     func backgroundSetting() {
-        view.backgroundColor = UIColor.mainBackgroundColor
+        view.backgroundColor = UIColor(hex: 0xFDFCF9)
     }
     func labelSetting() {
         self.searchPasswordLabel.text = "비밀번호 찾기"
-//        self.searchPasswordLabel.font = UIFont(name: "AppleSDGothicNeoEB00", size: 30)
+        self.searchPasswordLabel.font = UIFont.AppleSDGothic(.extraBold, size: 30)
         self.searchPasswordLabel.textColor = UIColor(hex: 0x5F5D59)
+        
         self.topStackLabel.text = "코다 가입시 사용했던"
-        self.topStackLabel.font = UIFont(name: "AppleSDGothicNeoB00", size: 14)
+        self.topStackLabel.font = UIFont.AppleSDGothic(.bold, size: 14)
         self.topStackLabel.textColor = UIColor(hex: 0x5F5D59)
         self.bottomStackLabel.text = "아이디(이메일)을 입력해주세요"
-        self.bottomStackLabel.font = UIFont(name: "AppleSDGothicNeoB00", size: 14)
+        self.bottomStackLabel.font = UIFont.AppleSDGothic(.bold, size: 14)
         self.bottomStackLabel.textColor = UIColor(hex: 0x5F5D59)
     }
     func buttonSetting() {
@@ -66,14 +73,9 @@ class PasswordSearchViewController : UIViewController {
         self.sendPasswordButton.layer.opacity = 0.3
         self.sendPasswordButton.setTitle("비밀번호 전송하기", for: .normal)
         self.sendPasswordButton.setTitleColor(UIColor(hex: 0xFDFDF9), for: .normal)
-        self.sendPasswordButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeoEB00", size: 18)
-        self.sendPasswordButton.backgroundColor = UIColor.mainGreenColor
-        self.sendPasswordButton.layer.cornerRadius = self.sendPasswordButton.frame.height / 2
-        //수정 필요
-        self.sendPasswordButton.layer.shadowColor = UIColor.black.cgColor
-        self.sendPasswordButton.layer.shadowOpacity = 0.2
-        self.sendPasswordButton.layer.shadowRadius = 10
-
+        self.sendPasswordButton.titleLabel?.font = UIFont.AppleSDGothic(.bold, size: 18)
+        self.sendPasswordButton.backgroundColor = UIColor(hex: 0x73BF90)
+        
         
     }
     
@@ -82,7 +84,7 @@ class PasswordSearchViewController : UIViewController {
         self.emailInputTextField.layer.borderWidth = 2
         self.emailInputTextField.layer.cornerRadius = 4
         self.emailInputTextField.layer.borderColor = UIColor.mainGreenColor.cgColor
-        self.emailInputTextField.backgroundColor = UIColor.mainBackgroundColor
+        self.emailInputTextField.backgroundColor = UIColor(hex: 0xFDFCF9)
     }
     
     //MARK: - Actions

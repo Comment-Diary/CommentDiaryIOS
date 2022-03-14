@@ -46,12 +46,30 @@ class MyPageViewController :UIViewController {
     
     @IBOutlet weak var emailBackView: UIView!
     
+    @IBOutlet weak var myTemp: UILabel!
+    
+    @IBOutlet weak var tempBackView: UIView!
+    
+    @IBOutlet weak var progressBackView: UIView!
+    
+    @IBOutlet weak var tempProgressView: UIProgressView!
+    
+    @IBOutlet weak var myTempInfoLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSetting()
+        labelSetting()
         
         MyPageDataManager().myPageData(self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        emailBackView.layer.cornerRadius = emailBackView.frame.height / 2
+        progressBackView.layer.cornerRadius = progressBackView.frame.height / 2
+        
     }
     
     func viewSetting() {
@@ -69,9 +87,31 @@ class MyPageViewController :UIViewController {
         pushAlertView.backgroundColor = UIColor(hex: 0xFDFCF9)
         termsView.backgroundColor = UIColor(hex: 0xFDFCF9)
         emailBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
-        emailBackView.layer.cornerRadius = emailBackView.frame.height / 2
         emailBackView.layer.borderWidth = 1
         emailBackView.layer.borderColor = UIColor(hex: 0x4E4C49).cgColor
+        
+        tempBackView.layer.cornerRadius = 10
+        tempBackView.backgroundColor = UIColor(hex: 0xF4F1EB)
+    }
+    
+    func labelSetting() {
+        myTemp.textColor = UIColor(hex: 0x878379)
+        myTemp.font = UIFont.AppleSDGothic(.bold, size: 14)
+        myTempInfoLabel.text = "보낸 코멘트가 '좋아요'를 받을 때 온도가 채워집니다."
+        myTempInfoLabel.font = UIFont.AppleSDGothic(.medium, size: 11)
+        myTempInfoLabel.textColor = UIColor(hex: 0x878379)
+        myPageLabel.textColor = UIColor(hex: 0x4E4C49)
+        myPageLabel.font = UIFont.AppleSDGothic(.bold, size: 21)
+        emailLabel.textColor = UIColor(hex: 0x4E4C49)
+        emailLabel.font = UIFont.AppleSDGothic(.bold, size: 13)
+        myAccountLabel.textColor = UIColor(hex: 0x4E4C49)
+        myAccountLabel.font = UIFont.AppleSDGothic(.medium, size: 15)
+        sendCommentLabel.textColor = UIColor(hex: 0x4E4C49)
+        sendCommentLabel.font = UIFont.AppleSDGothic(.medium, size: 15)
+        pushAlertLabel.textColor = UIColor(hex: 0x4E4C49)
+        pushAlertLabel.font = UIFont.AppleSDGothic(.medium, size: 15)
+        termsLabel.textColor = UIColor(hex: 0x4E4C49)
+        termsLabel.font = UIFont.AppleSDGothic(.medium, size: 15)
     }
     
     

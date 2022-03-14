@@ -79,12 +79,17 @@ extension Date {
         switch result {
         case .orderedAscending:
             strDateMessage = "Future"
+            print("미래")
+            NotificationCenter.default.post(name: NSNotification.Name("compareDate"), object: "미래")
+            
             break
         case .orderedDescending:
             strDateMessage = "Past"
+            NotificationCenter.default.post(name: NSNotification.Name("compareDate"), object: "과거")
             break
         case .orderedSame:
             strDateMessage = "Same"
+            NotificationCenter.default.post(name: NSNotification.Name("compareDate"), object: "미래")
             break
         default:
             strDateMessage = "Error"
@@ -93,3 +98,9 @@ extension Date {
         return strDateMessage
     }
 }
+
+
+//NotificationCenter.default.addObserver(self, selector: #selector(updateData(_:)), name: NSNotification.Name(rawValue: "presentDate"), object: nil)
+//@objc func loadData(_ notification : NSNotification) {
+//    dateLabel.text = notification.object as? String ?? ""
+//}

@@ -41,15 +41,19 @@ class LoginViewController: UIViewController {
         buttonSetting()
         labelSetting()
 
+        viewSetting()
     }
     //키보드 제어
     override func viewWillAppear(_ animated: Bool) {
-//        self.emailTextField.becomeFirstResponder()
-//        self.passwordTextField.becomeFirstResponder()
+        self.loginButton.layer.cornerRadius = loginButton.frame.height / 2
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.emailTextField.resignFirstResponder()
         self.passwordTextField.resignFirstResponder()
+    }
+    
+    func viewSetting() {
+        view.backgroundColor = UIColor(hex: 0xFDFCF9)
     }
     
     
@@ -58,45 +62,49 @@ class LoginViewController: UIViewController {
         emailTextField.layer.borderWidth = 2
         emailTextField.layer.borderColor = UIColor.mainGreenColor.cgColor
         emailTextField.layer.cornerRadius = 4
-        emailTextField.backgroundColor = UIColor.mainBackgroundColor
+        emailTextField.backgroundColor = UIColor(hex: 0xFDFCF9)
         passwordTextField.placeholder = "********"
         passwordTextField.layer.borderColor = UIColor.mainGreenColor.cgColor
         passwordTextField.layer.borderWidth = 2
         passwordTextField.layer.cornerRadius = 4
-        passwordTextField.backgroundColor = UIColor.mainBackgroundColor
+        passwordTextField.backgroundColor = UIColor(hex: 0xFDFCF9)
     }
     
     func buttonSetting() {
         self.signinButton.setTitle("회원가입", for: .normal)
         self.signinButton.setTitleColor(UIColor(hex: 0x5F5D59), for: .normal)
-        self.signinButton.titleLabel?.font = UIFont(name: "Roboto-Bold", size: 14)
+        self.signinButton.titleLabel?.font = UIFont.AppleSDGothic(.bold, size: 14)
         self.findPasswordButton.setTitle("비밀번호 찾기", for: .normal)
         self.findPasswordButton.setTitleColor(UIColor(hex: 0x5F5D59), for: .normal)
-        self.findPasswordButton.titleLabel?.font = UIFont(name: "Roboto-Bold", size: 14)
+        self.findPasswordButton.titleLabel?.font = UIFont.AppleSDGothic(.bold, size: 14)
         
-        self.loginButton.backgroundColor = UIColor.mainGreenColor
+        self.loginButton.backgroundColor = UIColor(hex: 0x73BF90)
         self.loginButton.setTitle("로그인", for: .normal)
         self.loginButton.setTitleColor(UIColor(hex: 0xFDFCF9), for: .normal)
-        self.loginButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeoEB00", size: 18)
-        self.loginButton.layer.cornerRadius = self.loginButton.frame.height / 2 // 수정필요
-        self.loginButton.layer.shadowColor = UIColor.black.cgColor
-        self.loginButton.layer.shadowOpacity = 0.2
-        self.loginButton.layer.shadowRadius = 10
+        self.loginButton.titleLabel?.font = UIFont.AppleSDGothic(.bold, size: 18)
+
+
         
     }
     
     func labelSetting() {
+        self.loginLabel.textColor = UIColor(hex: 0x5F5D59)
+        self.loginLabel.font = UIFont.AppleSDGothic(.extraBold, size: 30)
         self.idEmailLabel.text = "아이디(이메일)"
-        self.idEmailLabel.font = UIFont(name: "Roboto-Medium", size: 14)
+        self.idEmailLabel.font = UIFont.AppleSDGothic(.bold, size: 14)
         self.idEmailLabel.textColor = UIColor(hex: 0x5F5D59)
+        
         self.passwordLabel.text = "비밀번호"
-        self.passwordLabel.font = UIFont(name: "Roboto-Medium", size: 14)
+        self.passwordLabel.font = UIFont.AppleSDGothic(.bold, size: 14)
         self.passwordLabel.textColor = UIColor(hex: 0x5F5D59)
         self.questionLabel.text = "코다 계정이 없으신가요?"
-        self.questionLabel.font = UIFont(name: "Roboto-Medium", size: 14)
+        self.questionLabel.font = UIFont.AppleSDGothic(.medium, size: 14)
         self.questionLabel.textColor = UIColor(hex: 0x5F5D59)
+        self.questionLabel.font = UIFont.AppleSDGothic(.medium, size: 14)
         
         self.loginFailLabel.isHidden = true
+        self.loginFailLabel.textColor = UIColor(hex: 0xE46962)
+        self.loginFailLabel.font = UIFont.AppleSDGothic(.medium, size: 14)
     }
 
     

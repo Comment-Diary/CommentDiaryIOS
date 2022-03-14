@@ -18,19 +18,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v5W-oz-MLl">
-                                <rect key="frame" x="0.0" y="44" width="414" height="65"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="72"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 계정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J64-ob-TrD">
-                                        <rect key="frame" x="182.5" y="22" width="49" height="21"/>
+                                        <rect key="frame" x="182.5" y="25.5" width="49" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSv-Jb-UyB">
-                                        <rect key="frame" x="15" y="17" width="67" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSv-Jb-UyB">
+                                        <rect key="frame" x="16" y="14" width="44" height="44"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" image="arrowLeft"/>
                                         <connections>
                                             <action selector="backButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="t1r-bO-NbO"/>
                                         </connections>
@@ -38,29 +37,31 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="fSv-Jb-UyB" firstAttribute="leading" secondItem="v5W-oz-MLl" secondAttribute="leading" constant="16" id="X8B-kZ-jDm"/>
+                                    <constraint firstItem="fSv-Jb-UyB" firstAttribute="centerY" secondItem="v5W-oz-MLl" secondAttribute="centerY" id="a1d-gB-4Nc"/>
                                     <constraint firstItem="J64-ob-TrD" firstAttribute="centerX" secondItem="v5W-oz-MLl" secondAttribute="centerX" id="gii-jQ-bHl"/>
-                                    <constraint firstAttribute="height" constant="65" id="jNN-TU-R4m"/>
                                     <constraint firstItem="J64-ob-TrD" firstAttribute="centerY" secondItem="v5W-oz-MLl" secondAttribute="centerY" id="l2Q-Fl-bsX"/>
+                                    <constraint firstAttribute="width" secondItem="v5W-oz-MLl" secondAttribute="height" multiplier="375:65" id="l5I-KF-wog"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emu-h8-DbP">
-                                <rect key="frame" x="0.0" y="109" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="116" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="3uY-ft-k4a"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UNN-tP-few">
-                                <rect key="frame" x="0.0" y="110" width="414" height="62"/>
+                                <rect key="frame" x="0.0" y="117" width="414" height="61.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그아웃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzr-9E-Mvv">
-                                        <rect key="frame" x="24" y="20.5" width="59" height="21"/>
+                                        <rect key="frame" x="24" y="20" width="59" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZg-Kk-vva">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="62"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="61.5"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <connections>
                                             <action selector="logOutTapButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="62C-zi-wf0"/>
@@ -79,23 +80,23 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P1e-Ws-ymy">
-                                <rect key="frame" x="0.0" y="172" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="178.5" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="cif-Nc-6Cm"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ymq-SW-5aQ">
-                                <rect key="frame" x="0.0" y="173" width="414" height="61.5"/>
+                                <rect key="frame" x="0.0" y="179.5" width="414" height="62"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원탈퇴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZyB-kh-vdw">
-                                        <rect key="frame" x="24" y="20" width="59" height="21"/>
+                                        <rect key="frame" x="24" y="20.5" width="59" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TzJ-cP-f8a">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="61.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="62"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <connections>
                                             <action selector="memberOutButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sbb-nF-1Vx"/>
@@ -114,7 +115,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6cU-TD-5Yg">
-                                <rect key="frame" x="0.0" y="234.5" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="241.5" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="d64-Vn-5QW"/>
@@ -163,6 +164,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowLeft" width="44" height="44"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

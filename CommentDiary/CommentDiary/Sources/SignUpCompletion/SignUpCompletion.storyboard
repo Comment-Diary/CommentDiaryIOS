@@ -18,18 +18,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEm-ZR-WTH">
-                                <rect key="frame" x="16" y="805.33333333333337" width="396" height="64.666666666666629"/>
+                                <rect key="frame" x="16" y="817.33333333333337" width="396" height="64.666666666666629"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pEm-ZR-WTH" secondAttribute="height" multiplier="343:56" id="BYm-xd-t1W"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="기록 시작하기"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="기록 시작하기"/>
                                 <connections>
                                     <action selector="recordStartTapButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4KW-1a-G3I"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboard4" translatesAutoresizingMaskIntoConstraints="NO" id="QDH-ow-7jI">
-                                <rect key="frame" x="0.0" y="44" width="428" height="714.33333333333337"/>
+                                <rect key="frame" x="0.0" y="44" width="428" height="726.33333333333337"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -37,8 +37,10 @@
                         <constraints>
                             <constraint firstItem="pEm-ZR-WTH" firstAttribute="top" secondItem="QDH-ow-7jI" secondAttribute="bottom" constant="47" id="1aP-p8-HT9"/>
                             <constraint firstItem="QDH-ow-7jI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Dnc-Nu-UcN"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="pEm-ZR-WTH" secondAttribute="bottom" constant="22" id="EEL-dn-9bQ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="pEm-ZR-WTH" secondAttribute="bottom" priority="250" constant="22" id="EEL-dn-9bQ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="pEm-ZR-WTH" secondAttribute="bottom" constant="10" id="HBM-PZ-O15"/>
                             <constraint firstItem="pEm-ZR-WTH" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="HX2-7i-ILT"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pEm-ZR-WTH" secondAttribute="trailing" constant="16" id="fDR-Ty-MCm"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="QDH-ow-7jI" secondAttribute="trailing" id="k0W-Dg-WvS"/>
                             <constraint firstItem="pEm-ZR-WTH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="wus-LB-dFF"/>
                             <constraint firstItem="QDH-ow-7jI" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="y9X-Nb-to6"/>

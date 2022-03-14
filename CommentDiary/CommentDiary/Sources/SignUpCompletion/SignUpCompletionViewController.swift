@@ -21,9 +21,20 @@ class SignUpCompletionViewController: UIViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        buttonSetting()
   
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        recordStartButton.layer.cornerRadius = recordStartButton.frame.height / 2
+    }
+    
+    func buttonSetting() {
+        recordStartButton.backgroundColor = UIColor(hex: 0x73BF90)
+        recordStartButton.setTitle("기록 시작하기", for: .normal)
+        recordStartButton.setTitleColor(UIColor(hex: 0xFDFCF9), for: .normal)
+        recordStartButton.titleLabel?.font = UIFont.AppleSDGothic(.bold, size: 18)
     }
     
     

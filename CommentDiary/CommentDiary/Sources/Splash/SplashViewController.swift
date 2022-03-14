@@ -17,10 +17,12 @@ class SplashVieController : ViewController {
                 self.nextBtn.setTitle("시작하기", for: .normal)
                 self.nextBtn.backgroundColor = UIColor(hex: 0x73BF90)
                 self.nextBtn.setTitleColor(UIColor(hex: 0xFDFCF9), for: .normal)
+                self.nextBtn.titleLabel?.font = .AppleSDGothic(.bold, size: 18)
             } else {
                 self.nextBtn.setTitle("넘어가기", for: .normal)
                 self.nextBtn.backgroundColor = UIColor(hex: 0xF4EDE3)
                 self.nextBtn.setTitleColor(UIColor(hex: 0x878379), for: .normal)
+                self.nextBtn.titleLabel?.font = .AppleSDGothic(.bold, size: 18)
 
 
             }
@@ -36,20 +38,7 @@ class SplashVieController : ViewController {
     @IBOutlet var pageControl: UIPageControl!
     
     
-//    @IBOutlet weak var splashPageControl: FSPageControl! {
-//        didSet {
-//            self.splashPageControl.numberOfPages = self.imageNames.count
-//            self.splashPageControl.contentHorizontalAlignment = .center
-//            self.splashPageControl.setStrokeColor(UIColor(hex: 0xF5CDA9), for: .normal)
-//            self.splashPageControl.setStrokeColor(UIColor(hex: 0xF7BC86), for: .selected)
-//
-//            self.splashPageControl.setFillColor(UIColor(hex: 0xF5CDA9), for: .normal)
-//            self.splashPageControl.setFillColor(UIColor(hex: 0xF7BC86), for: .selected)
-//            self.splashPageControl.itemSpacing = 15
-//            self.splashPageControl.interitemSpacing = 15
-//        }
-//    }
-    
+
     
 
     
@@ -64,16 +53,12 @@ class SplashVieController : ViewController {
         
         //버튼
         self.nextBtn.setTitle("넘어가기", for: .normal)
-        self.nextBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeoEB00-Regular", size: 18)
+        self.nextBtn.titleLabel?.font = .AppleSDGothic(.bold, size: 18)
         self.nextBtn.setTitleColor(UIColor(hex: 0x878379), for: .normal)
-
-        
-        
         self.nextBtn.backgroundColor = UIColor(hex: 0xF4EDE3)
-//        self.nextBtn.layer.shadowColor = UIColor.black.cgColor
-//        self.nextBtn.layer.shadowOpacity = 0.3
-//        self.nextBtn.layer.shadowRadius = 10
-        self.nextBtn.layer.cornerRadius = nextBtn.frame.height / 2
+        
+        
+        
         
         //pageControl
         self.pageControl.currentPageIndicatorTintColor = UIColor(hex: 0xF7BC86)
@@ -90,6 +75,15 @@ class SplashVieController : ViewController {
         
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.nextBtn.layer.cornerRadius = nextBtn.bounds.height / 2
+    }
+    
+    
+    
+    
     //자동 로그인
 //    func autoLogin() {
 //        if UserDefaults.standard.bool(forKey: "login_save") == true {

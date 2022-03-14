@@ -32,6 +32,19 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
     private var passwordSubscription = Set<AnyCancellable>()
     
     //MARK: - Properties
+    
+    @IBOutlet weak var signUpLabel: UILabel!
+    
+    @IBOutlet weak var emailLabel: UILabel!
+    
+    @IBOutlet weak var passwordLabel: UILabel!
+    
+    @IBOutlet weak var passwordRuleLabel: UILabel!
+    
+    @IBOutlet weak var termsLabel: UILabel!
+    
+    @IBOutlet weak var passwordokeyLabel: UILabel!
+    
     @IBOutlet weak var passwordCheckLabel: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -51,6 +64,9 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
         passwordValidLabel.text = ""
         emailTextFieldEnabled()
         authNumberSetting()
+        
+        self.signupButton.layer.cornerRadius = signupButton.frame.height / 2
+        self.authNumberButton.layer.cornerRadius = authNumberButton.frame.height / 2
     }
     
     override func viewDidLoad() {
@@ -63,13 +79,9 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
         textFieldSetting()
         passwordCheck()
         buttonSetting()
-        
+        viewSetting()
         authNumberDelegate()
-        
-
-        
-//        emailTextField.isUserInteractionEnabled = false
-        
+        labelSetting()
         
         //회원가입 버튼 활성화
         [emailTextField, passwordTextField, passwordConfirmTextField].forEach({ $0?.addTarget(self, action: #selector(editingChanged), for: .editingChanged)})
@@ -77,6 +89,8 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
         
 
     }
+    
+    
 
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -102,13 +116,11 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
             self.signupButton.layer.opacity = 0.3
             self.signupButton.isEnabled = false
             self.signupButton.setTitleColor(UIColor(hex: 0xFDFDF9), for: .normal)
-            self.signupButton.layer.borderColor = UIColor(hex: 0x73BF90).cgColor
             return
         }
         self.signupButton.layer.opacity = 1
         self.signupButton.isEnabled = true
         self.signupButton.backgroundColor = UIColor(hex: 0x73BF90)
-        self.signupButton.layer.borderColor = UIColor(hex: 0x73BF90).cgColor
     }
     
     func authNumberDelegate() {
@@ -128,24 +140,46 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
             authNumberButton.isEnabled = true
         }
     }
+    
+    func labelSetting() {
+        signUpLabel.font = UIFont.AppleSDGothic(.extraBold, size: 30)
+        signUpLabel.textColor = UIColor(hex: 0x5F5D59)
+        emailLabel.font = UIFont.AppleSDGothic(.bold, size: 14)
+        emailLabel.textColor = UIColor(hex: 0x5F5D59)
+        passwordLabel.font = UIFont.AppleSDGothic(.bold, size: 14)
+        passwordLabel.textColor = UIColor(hex: 0x5F5D59)
+        passwordRuleLabel.font = UIFont.AppleSDGothic(.medium, size: 12)
+        passwordRuleLabel.textColor = UIColor(hex: 0x878379)
+        passwordokeyLabel.font = UIFont.AppleSDGothic(.bold, size: 14)
+        passwordokeyLabel.textColor = UIColor(hex: 0x5F5D59)
+
+        termsLabel.font = UIFont.AppleSDGothic(.medium, size: 12)
+        
+        
+        emailValidLabel.textColor = UIColor(hex: 0xE46962)
+        emailValidLabel.font = UIFont.AppleSDGothic(.medium, size: 12)
+        
+        passwordValidLabel.textColor = UIColor(hex: 0xE46962)
+        passwordValidLabel.font = UIFont.AppleSDGothic(.medium, size: 12)
+    }
 
     
     func textFieldSetting() {
         emailTextField.placeholder = "coda@coda.com"
-        emailTextField.layer.borderWidth = 4
+        emailTextField.layer.borderWidth = 2
         emailTextField.layer.borderColor = UIColor(hex: 0x98C2A8).cgColor
         emailTextField.layer.cornerRadius = 4
-        emailTextField.backgroundColor = UIColor(hex: 0xE5E5E5)
+        emailTextField.backgroundColor = UIColor(hex: 0xFDFCF9)
         passwordTextField.placeholder = "********"
         passwordTextField.layer.borderColor = UIColor(hex: 0x98C2A8).cgColor
-        passwordTextField.layer.borderWidth = 4
+        passwordTextField.layer.borderWidth = 2
         passwordTextField.layer.cornerRadius = 4
-        passwordTextField.backgroundColor = UIColor(hex: 0xE5E5E5)
+        passwordTextField.backgroundColor = UIColor(hex: 0xFDFCF9)
         passwordConfirmTextField.placeholder = "********"
         passwordConfirmTextField.layer.borderColor = UIColor(hex: 0x98C2A8).cgColor
-        passwordConfirmTextField.layer.borderWidth = 4
+        passwordConfirmTextField.layer.borderWidth = 2
         passwordConfirmTextField.layer.cornerRadius = 4
-        passwordConfirmTextField.backgroundColor = UIColor(hex: 0xE5E5E5)
+        passwordConfirmTextField.backgroundColor = UIColor(hex: 0xFDFCF9)
     }
     
     func buttonSetting() {
@@ -154,11 +188,17 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
         self.signupButton.setTitleColor(UIColor(hex: 0xFDFDF9), for: .normal)
         self.signupButton.layer.opacity = 0.3
         self.signupButton.backgroundColor = UIColor(hex: 0x73BF90)
-        self.signupButton.layer.borderWidth = 4
-        self.signupButton.layer.borderColor = UIColor(hex: 0x73BF90).cgColor
+        
+        self.authNumberButton.setTitleColor(UIColor(hex: 0xFDFDF9), for: .normal)
+        self.authNumberButton.backgroundColor = UIColor(hex: 0x73BF90)
+        self.authNumberButton.setTitle("인증번호 보내기", for: .normal)
+        self.authNumberButton.titleLabel?.font = .AppleSDGothic(.bold, size: 13)
         
         
-        self.signupButton.layer.cornerRadius = signupButton.frame.height / 2
+    }
+    
+    func viewSetting() {
+        view.backgroundColor = UIColor(hex: 0xFDFCF9)
     }
     
     func authNumberSetting() {
@@ -294,7 +334,7 @@ extension UILabel {
             return text == ""
         }
         set {
-            textColor = newValue ? .blue : .red
+            textColor = newValue ? .blue : UIColor(hex: 0xE46962)
             text = newValue ? "" : "일치하지 않아요."
 
 

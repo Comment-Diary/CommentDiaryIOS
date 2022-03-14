@@ -33,6 +33,7 @@ class MyAccountViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSetting()
+        labelSetting()
     }
     
     func viewSetting() {
@@ -47,6 +48,15 @@ class MyAccountViewController : UIViewController {
         
     }
     
+    func labelSetting() {
+        myAccount.textColor = UIColor(hex: 0x4E4C49)
+        myAccount.font = UIFont.AppleSDGothic(.bold, size: 21)
+        logOutLabel.textColor = UIColor(hex: 0x4E4C49)
+        logOutLabel.font = UIFont.AppleSDGothic(.medium, size: 15)
+        memberOutLabel.textColor = UIColor(hex: 0x4E4C49)
+        memberOutLabel.font = UIFont.AppleSDGothic(.medium, size: 15)
+    }
+    
     
     //MARK: - Actions
     
@@ -55,6 +65,8 @@ class MyAccountViewController : UIViewController {
     }
     
     @IBAction func memberOutButtonTap(_ sender: Any) {
+        let memberOutVC = UIStoryboard(name: "MemberOut", bundle: nil).instantiateViewController(withIdentifier: "MemberOutViewController") as! MemberOutViewController
+        self.navigationController?.pushViewController(memberOutVC, animated: true)
     }
     
     @IBAction func logOutTapButton(_ sender: Any) {

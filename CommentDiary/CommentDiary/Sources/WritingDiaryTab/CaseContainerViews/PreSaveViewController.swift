@@ -44,6 +44,11 @@ class PreSaveViewController : UIViewController {
         super.viewWillAppear(animated)
         
         view.layer.cornerRadius = 10
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadDate(_:)), name: NSNotification.Name(rawValue: "SelectedDate"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadTitle(_:)), name: NSNotification.Name(rawValue: "SelectedTitle"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadContent(_:)), name: NSNotification.Name(rawValue: "SelectedContent"), object: nil)
     }
     
     func viewSetting() {
@@ -68,4 +73,17 @@ class PreSaveViewController : UIViewController {
     func buttonSetting() {
         
     }
+    
+    
+    @objc func loadDate(_ notification: NSNotification) {
+        dateLabel.text = notification.object as? String ?? ""
+    }
+    
+    @objc func loadTitle(_ notification: NSNotification) {
+        diaryTItleLabel.text = notification.object as? String ?? ""
+    }
+    @objc func loadContent(_ notification: NSNotification) {
+        contentLabel.text = notification.object as? String ?? ""
+    }
+    
 }

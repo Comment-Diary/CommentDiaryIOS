@@ -162,6 +162,20 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     
     @IBOutlet weak var calendarTopInnerView: UIView!
     
+    
+    @IBOutlet weak var sundayLabel: UILabel!
+    
+    @IBOutlet weak var monLabel: UILabel!
+    
+    @IBOutlet weak var tueLabel: UILabel!
+    
+    @IBOutlet weak var wedlabel: UILabel!
+    
+    @IBOutlet weak var thurLabel: UILabel!
+    
+    @IBOutlet weak var friLabel: UILabel!
+    
+    @IBOutlet weak var satLabel: UILabel!
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -184,7 +198,8 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         //view radius
         caseView.layer.masksToBounds = true
         caseView.layer.cornerRadius = 10
-
+        
+        
   
         
         
@@ -250,6 +265,31 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         calendarView.headerHeight = 0
         calendarView.placeholderType = .none
         calendarView.weekdayHeight = 0
+        
+        calendarView.appearance.selectionColor = UIColor(hex: 0xFFAC86)
+        calendarView.allowsSelection = true
+        calendarView.allowsMultipleSelection = false
+        
+//        calendarView.appearance.titleFont = UIFont.AppleSDGothic(.bold, size: 14)
+        sundayLabel.textColor = UIColor(hex: 0x4E4C49)
+        monLabel.textColor = UIColor(hex: 0x4E4C49)
+        tueLabel.textColor = UIColor(hex: 0x4E4C49)
+        wedlabel.textColor = UIColor(hex: 0x4E4C49)
+        thurLabel.textColor = UIColor(hex: 0x4E4C49)
+        friLabel.textColor = UIColor(hex: 0x4E4C49)
+        satLabel.textColor = UIColor(hex: 0x4E4C49)
+        
+        sundayLabel.font = UIFont.AppleSDGothic(.bold, size: 12)
+        monLabel.font = UIFont.AppleSDGothic(.bold, size: 12)
+        tueLabel.font = UIFont.AppleSDGothic(.bold, size: 12)
+        wedlabel.font = UIFont.AppleSDGothic(.bold, size: 12)
+        thurLabel.font = UIFont.AppleSDGothic(.bold, size: 12)
+        friLabel.font = UIFont.AppleSDGothic(.bold, size: 12)
+        satLabel.font = UIFont.AppleSDGothic(.bold, size: 12)
+        
+        calendarDateLabel.textColor = UIColor(hex: 0x4E4C49)
+        calendarDateLabel.font = UIFont.AppleSDGothic(.extraBold, size: 20)
+        
     }
     
     //전달 다음달 액션 함수
@@ -285,7 +325,7 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SelectedDayDate"), object: krDayDateFormatter.string(from: date))
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Date"), object: krDayDateFormatter.string(from: date)) // ??
         
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "presentDate"), object: formatter.string(from: date)) 
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "presentDate"), object: formatter.string(from: date))
         
         
         //MARK: - 3.14
@@ -370,15 +410,6 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
                 self.preSaveView.isHidden = true
             }
         }
-
-            
-//            self.notDiaryDayView.isHidden = true
-//            self.todayWritingDiaryView.isHidden = false
-//            self.aloneDiaryView.isHidden = true
-//            self.commentSoonView.isHidden = true
-//            self.readCommentView.isHidden = true
-//            self.notArrivalCommentView.isHidden = true
-//            self.preSaveView.isHidden = true
         
         
         
@@ -465,28 +496,16 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
                 NotificationCenter.default.post(name: Notification.Name("SelectedContent"), object: i.content)
             }
         }
-        
-        //calendarview reload
-        calendarView.reloadData()
+
         
         
-//        for i in mainPageResult {
-//            if i.date == String(formatter.string(from: date)) {
-//                print(i.title, "일기 제목")
-//                titleLabel.text = i.title
-//                print(i.content, "일기 내용")
-//                contentLabel.text = i.content
-//            }
-//        }
+
     }
 
 
 
 
-    
-//    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventDefaultColorsFor date: Date) -> [UIColor]? {
-//        let dateString = date.toString(dateFormatter: "yyyy.MM.dd")
-//    }
+
     
 
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
@@ -495,7 +514,7 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         if nDiaryList.contains(formatter.string(from: date)) {
             return 1
         } else if yDiaryList.contains(formatter.string(from: date)) {
-            return 2
+            return 1
         }
         return 0
 
@@ -521,6 +540,7 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         }
         return nil
     }
+    
     
 
 
@@ -550,48 +570,6 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
 
 
 
-//
-//    @objc func loadData(_ notification : NSNotification) {
-//       selectedTapDate = notification.object as? String ?? ""
-//        print(selectedTapDate, "selectedTapDate")
-//        print(notification.object as? String ?? "" , "notification")
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        NotificationCenter.default.addObserver(self, selector: #selector(loadData(_:)), name: NSNotification.Name(rawValue: "SelectedDate"), object: nil)
-//
-//
-//
-//        if indexPath.section == 0 {
-//            for i in mainPageResult {
-//                if i.date != selectedTapDate { //일기를 쓰지 않았다면 + 일기를 안쓰고 임시저장 (해야됌)
-//                    print(selectedTapDate, "셀의 날짜 데이터")
-//                    let cell = tableView.dequeueReusableCell(withIdentifier: "WritingDiaryTableViewCell", for: indexPath) as! WritingDiaryTableViewCell
-//                    cell.selectionStyle = UITableViewCell.SelectionStyle.none
-//                    let writingTableViewCell = cell
-//                    writingTableViewCell.diaryWriteButton.addTarget(self, action: #selector(TapWritingTableViewCell(_:)), for: .touchUpInside)
-//
-//                    let dateformatter = DateFormatter()
-//                    dateformatter.dateFormat = "yyyy.MM.dd"
-//                    selectedTapDate = dateformatter.string(from: Date())
-//                    writingTableViewCell.diaryDateLabel.text = dateformatter.string(from: Date())
-//                    return cell
-//                }
-//                else if i.date == selectedTapDate { //일기를 썼다면
-//                    if i.deliveryYn == "Y" { //코멘트 일기를 썼다면
-//
-//                    } else if i.deliveryYn == "N" { //혼자보기 일기를 썼다면
-//                        let cell = tableView.dequeueReusableCell(withIdentifier: "NWritedDiaryTableViewCell", for: indexPath) as! NWritedDiaryTableViewCell
-//                        cell.selectionStyle = UITableViewCell.SelectionStyle.none
-//                        let writingTableViewCell = cell
-//                        return cell
-//                    }
-//
-//                }
-//            }
-//
-//
-//        }
 
 
 extension WritingDiaryVC {

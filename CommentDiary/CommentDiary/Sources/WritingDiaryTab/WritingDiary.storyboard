@@ -309,14 +309,21 @@
                         <outlet property="calendarView" destination="Q1H-rS-9Lu" id="eZj-vP-dfg"/>
                         <outlet property="caseView" destination="FeP-gP-DlF" id="x9z-Xc-Crf"/>
                         <outlet property="commentSoonView" destination="HdH-2x-Wgv" id="4xg-vv-Dkp"/>
+                        <outlet property="friLabel" destination="B2K-WT-nkc" id="u5B-WU-7TW"/>
+                        <outlet property="monLabel" destination="c9f-wK-uaK" id="HqS-Fl-GfW"/>
                         <outlet property="nextButton" destination="lc1-1A-RmL" id="ZVS-Xn-lb1"/>
                         <outlet property="notArrivalCommentView" destination="eMb-Zx-XHe" id="eD6-jF-6cc"/>
                         <outlet property="notDiaryDayView" destination="abu-Nr-4O4" id="hO7-MA-Z4r"/>
                         <outlet property="preSaveView" destination="uRg-b6-gMJ" id="8eC-Lo-tu5"/>
                         <outlet property="prevButton" destination="f0E-Qa-g43" id="hPG-gy-S0j"/>
                         <outlet property="readCommentView" destination="Htu-cv-aC0" id="hPY-Ev-0rl"/>
+                        <outlet property="satLabel" destination="7wP-WO-aEG" id="gve-4S-cCp"/>
+                        <outlet property="sundayLabel" destination="gX6-CR-4iX" id="pTP-Zz-qM9"/>
+                        <outlet property="thurLabel" destination="Byr-Hx-hFj" id="c2M-eF-om4"/>
                         <outlet property="todayWritingDiaryView" destination="xhx-Dq-DHf" id="lxE-SQ-n6e"/>
                         <outlet property="topLayerView" destination="DXm-HH-3EE" id="67F-0O-ADK"/>
+                        <outlet property="tueLabel" destination="dhG-Hu-bV1" id="EZD-zm-IFK"/>
+                        <outlet property="wedlabel" destination="XQN-vo-5id" id="aqM-Lf-z3M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7E-XG-U3d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

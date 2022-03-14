@@ -43,7 +43,6 @@
 		A5242C6827D31E9900E24A76 /* NEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5242C6727D31E9900E24A76 /* NEditViewController.swift */; };
 		A5242C6A27D31EA400E24A76 /* NEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5242C6927D31EA400E24A76 /* NEdit.storyboard */; };
 		A5242C6D27D3443900E24A76 /* NWritedDiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5242C6B27D3443900E24A76 /* NWritedDiaryTableViewCell.swift */; };
-		A5242C6E27D3443900E24A76 /* NWritedDiaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5242C6C27D3443900E24A76 /* NWritedDiaryTableViewCell.xib */; };
 		A5242C9027D3840A00E24A76 /* WritingDiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5242C8F27D3840A00E24A76 /* WritingDiaryVC.swift */; };
 		A5242C9927D509EE00E24A76 /* NotDiaryDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5242C9827D509EE00E24A76 /* NotDiaryDayViewController.swift */; };
 		A5242C9B27D50A4B00E24A76 /* TodayWritingDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5242C9A27D50A4B00E24A76 /* TodayWritingDiaryViewController.swift */; };
@@ -116,9 +115,7 @@
 		A56B698927DA6E01001385DC /* MyPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56B698827DA6E01001385DC /* MyPageResponse.swift */; };
 		A56B698B27DA6E10001385DC /* MyPageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56B698A27DA6E10001385DC /* MyPageDataManager.swift */; };
 		A56FF78A27C0119D00C740F7 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56FF78827C0119D00C740F7 /* CalendarTableViewCell.swift */; };
-		A56FF78B27C0119D00C740F7 /* CalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A56FF78927C0119D00C740F7 /* CalendarTableViewCell.xib */; };
 		A56FF78E27C0C21F00C740F7 /* WritingDiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56FF78C27C0C21F00C740F7 /* WritingDiaryTableViewCell.swift */; };
-		A56FF78F27C0C21F00C740F7 /* WritingDiaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A56FF78D27C0C21F00C740F7 /* WritingDiaryTableViewCell.xib */; };
 		A56FF79427C0E88000C740F7 /* TodayDiaryBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56FF79327C0E88000C740F7 /* TodayDiaryBottomViewController.swift */; };
 		A56FF79627C0E89400C740F7 /* TodayDiaryBottom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56FF79527C0E89400C740F7 /* TodayDiaryBottom.storyboard */; };
 		A56FF79B27C16AC100C740F7 /* EmailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56FF79A27C16AC100C740F7 /* EmailResponse.swift */; };
@@ -198,7 +195,6 @@
 		A5242C6727D31E9900E24A76 /* NEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEditViewController.swift; sourceTree = "<group>"; };
 		A5242C6927D31EA400E24A76 /* NEdit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NEdit.storyboard; sourceTree = "<group>"; };
 		A5242C6B27D3443900E24A76 /* NWritedDiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWritedDiaryTableViewCell.swift; sourceTree = "<group>"; };
-		A5242C6C27D3443900E24A76 /* NWritedDiaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NWritedDiaryTableViewCell.xib; sourceTree = "<group>"; };
 		A5242C8F27D3840A00E24A76 /* WritingDiaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingDiaryVC.swift; sourceTree = "<group>"; };
 		A5242C9827D509EE00E24A76 /* NotDiaryDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotDiaryDayViewController.swift; sourceTree = "<group>"; };
 		A5242C9A27D50A4B00E24A76 /* TodayWritingDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWritingDiaryViewController.swift; sourceTree = "<group>"; };
@@ -273,9 +269,7 @@
 		A56B698827DA6E01001385DC /* MyPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageResponse.swift; sourceTree = "<group>"; };
 		A56B698A27DA6E10001385DC /* MyPageDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDataManager.swift; sourceTree = "<group>"; };
 		A56FF78827C0119D00C740F7 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
-		A56FF78927C0119D00C740F7 /* CalendarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarTableViewCell.xib; sourceTree = "<group>"; };
 		A56FF78C27C0C21F00C740F7 /* WritingDiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingDiaryTableViewCell.swift; sourceTree = "<group>"; };
-		A56FF78D27C0C21F00C740F7 /* WritingDiaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WritingDiaryTableViewCell.xib; sourceTree = "<group>"; };
 		A56FF79327C0E88000C740F7 /* TodayDiaryBottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDiaryBottomViewController.swift; sourceTree = "<group>"; };
 		A56FF79527C0E89400C740F7 /* TodayDiaryBottom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TodayDiaryBottom.storyboard; sourceTree = "<group>"; };
 		A56FF79A27C16AC100C740F7 /* EmailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailResponse.swift; sourceTree = "<group>"; };
@@ -872,11 +866,8 @@
 			isa = PBXGroup;
 			children = (
 				A56FF78827C0119D00C740F7 /* CalendarTableViewCell.swift */,
-				A56FF78927C0119D00C740F7 /* CalendarTableViewCell.xib */,
 				A56FF78C27C0C21F00C740F7 /* WritingDiaryTableViewCell.swift */,
-				A56FF78D27C0C21F00C740F7 /* WritingDiaryTableViewCell.xib */,
 				A5242C6B27D3443900E24A76 /* NWritedDiaryTableViewCell.swift */,
-				A5242C6C27D3443900E24A76 /* NWritedDiaryTableViewCell.xib */,
 			);
 			path = WritingDiaryCell;
 			sourceTree = "<group>";
@@ -1131,7 +1122,6 @@
 				A5A0A34027D906EF00604A30 /* Terms.storyboard in Resources */,
 				A5A0A33927D9029700604A30 /* SendComment.storyboard in Resources */,
 				A567622527BBB8C9006FDA7F /* Login.storyboard in Resources */,
-				A56FF78B27C0119D00C740F7 /* CalendarTableViewCell.xib in Resources */,
 				A5567C8827BD4CC0001A4B98 /* ArrivedDiary.storyboard in Resources */,
 				A5242C6A27D31EA400E24A76 /* NEdit.storyboard in Resources */,
 				A520915D27DCD121003017AC /* SendCommentCell.xib in Resources */,
@@ -1150,8 +1140,6 @@
 				A56FF79627C0E89400C740F7 /* TodayDiaryBottom.storyboard in Resources */,
 				A5C9FB7F27C6263500445012 /* CommentReportAlert.storyboard in Resources */,
 				A520918627DE1B43003017AC /* MemberOut.storyboard in Resources */,
-				A5242C6E27D3443900E24A76 /* NWritedDiaryTableViewCell.xib in Resources */,
-				A56FF78F27C0C21F00C740F7 /* WritingDiaryTableViewCell.xib in Resources */,
 				A5A0A33627D9007200604A30 /* MyAccount.storyboard in Resources */,
 				A5567C9A27BD53FA001A4B98 /* AuthNumber.storyboard in Resources */,
 			);

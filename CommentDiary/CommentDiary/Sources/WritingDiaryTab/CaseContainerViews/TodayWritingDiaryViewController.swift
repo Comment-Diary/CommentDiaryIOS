@@ -35,10 +35,17 @@ class TodayWritingDiaryViewController : UIViewController {
     @IBOutlet weak var fourthNoteView: UIView!
     @IBOutlet weak var fifthNoteView: UIView!
     
+    @IBOutlet weak var writingDiaryButton: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSetting()
         dateLabelSetting()
+        labelSetting()
+        
+//        writingDiaryButton.contentMode = .scaleToFill
     }
     
     func dateLabelSetting() {
@@ -53,9 +60,18 @@ class TodayWritingDiaryViewController : UIViewController {
 
     }
     
+    func labelSetting() {
+        dateLabel.textColor = UIColor(hex: 0xFFAC86)
+        dateLabel.font = UIFont.AppleSDGothic(.bold, size: 14)
+        myDiaryLabel.textColor = UIColor(hex: 0xFFAC86)
+        myDiaryLabel.font = UIFont.AppleSDGothic(.bold, size: 14)
+        writingDiaryLabel.font = UIFont.AppleSDGothic(.bold, size: 21)
+        writingDiaryLabel.textColor = UIColor(hex: 0x4E4C49)
+    }
+    
     
     func viewSetting() {
-        view.backgroundColor = UIColor(hex: 0xE5E5E5)
+        view.backgroundColor = UIColor(hex: 0xF4EDE3)
         writingDiaryBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
         firstNoteView.backgroundColor = UIColor(hex: 0xE2DFD7)
         secondNoteView.backgroundColor = UIColor(hex: 0xE2DFD7)
@@ -69,7 +85,6 @@ class TodayWritingDiaryViewController : UIViewController {
     }
     @objc func updateData(_ notification : NSNotification) {
         presentDateString = notification.object as? String ?? ""
-        print(presentDateString, "좀 가랏")
     }
 
     

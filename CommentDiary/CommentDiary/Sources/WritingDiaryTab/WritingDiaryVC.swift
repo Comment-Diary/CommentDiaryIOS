@@ -179,6 +179,10 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        calendarView.locale = Locale(identifier: Locale.current.identifier)
+//        calendarView.today = Date(timeIntervalSinceNow: -25200)
+        calendarView.today = Date(timeIntervalSinceNow:  -800000)
+        
 
         
         calendarViewSetting()
@@ -267,6 +271,7 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         calendarView.weekdayHeight = 0
         
         calendarView.appearance.selectionColor = UIColor(hex: 0xFFAC86)
+        calendarView.appearance.todayColor = UIColor(hex: 0xFFAC86)
         calendarView.allowsSelection = true
         calendarView.allowsMultipleSelection = false
         
@@ -338,7 +343,7 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         
         let selectedDateValue = detailDayDateFormatter.date(from: selectedDateString)
         //날짜 비교 메서드
-        todayDateValue?.dateCompare(fromDate: selectedDateValue!)
+        Date(timeIntervalSinceNow: -80000).dateCompare(fromDate: selectedDateValue!)
         
 
                 
@@ -356,6 +361,19 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             self.preSaveView.isHidden = true
         }
         
+        for i in allDiaryList {
+            if i != String(formatter.string(from: date)) && compareString != "미래" {
+                self.notDiaryDayView.isHidden = true
+                self.todayWritingDiaryView.isHidden = false
+                self.aloneDiaryView.isHidden = true
+                self.commentSoonView.isHidden = true
+                self.readCommentView.isHidden = true
+                self.notArrivalCommentView.isHidden = true
+                self.preSaveView.isHidden = true
+                
+                
+            }
+        }
         
         
             //일기를 쓸 수 있는 날
@@ -523,20 +541,20 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     //이벤트 dot동그라미 색상 함수
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventDefaultColorsFor date: Date) -> [UIColor]?{
         if self.nDiaryList.contains(formatter.string(from: date)) {
-            return [UIColor.red]
+            return [UIColor(hex: 0xFFAC86)]
         }
         if self.yDiaryList.contains(formatter.string(from: date)) {
-            return [UIColor.blue]
+            return [UIColor(hex: 0x73BF90)]
         }
         return nil
 
     }
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventSelectionColorsFor date: Date) -> [UIColor]? {
         if self.nDiaryList.contains(formatter.string(from: date)) {
-            return [UIColor.red]
+            return [UIColor(hex: 0xFFAC86)]
         }
         if self.yDiaryList.contains(formatter.string(from: date)) {
-            return [UIColor.blue]
+            return [UIColor(hex: 0x73BF90)]
         }
         return nil
     }

@@ -69,8 +69,10 @@ class DiaryMainPageDataManager {
                 case .success(let response):
                     print("DEBUG >> Success \(response)")
                     viewcontroller.diaryMainDateSuccessResponse(response)
-                    print(viewcontroller.yDiaryList, "코멘트 일기 배열")
-                    print(viewcontroller.nDiaryList, "혼자 일기 배열")
+                    print(viewcontroller.tempYArray, "임시저장 배열")
+                    print(viewcontroller.deliveryNArray, "혼자 쓴 일기 배열")
+                    print(viewcontroller.commentNoArrivalArray, "코멘트 아직 안온 배열")
+                    print(viewcontroller.commentArrivalArray, "코멘트 온 배열")
                 case . failure(let error):
                     print(error.localizedDescription)
                 }

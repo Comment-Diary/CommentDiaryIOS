@@ -11,14 +11,19 @@ import UIKit
 class AloneDiaryViewController: UIViewController {
     private lazy var krMonthDateFormatter: DateFormatter = {
         let df = DateFormatter()
-        df.locale = Locale(identifier: "ko_KR")
-        df.dateFormat = "dd일"
+//        df.locale = Locale(identifier: "ko_KR")
+        df.dateFormat = "MM월 dd일"
         return df
     }()
     
     var diaryIDValue: Int = 0
     
     //MARK: - Properties
+    
+    @IBOutlet weak var topBackView: UIView!
+    
+    @IBOutlet weak var separateView: UIView!
+    
     
     @IBOutlet weak var dateLabel: UILabel!
     
@@ -34,12 +39,36 @@ class AloneDiaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dateLabelSetting()
+        buttonSetting()
+        viewSetting()
+    }
+    func viewSetting() {
+        topBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        view.backgroundColor = UIColor(hex: 0xFDFCF9)
+        separateView.backgroundColor = UIColor(hex: 0xE2DFD7)
+    }
+    
+    func buttonSetting() {
+        entireDiaryButton.setTitle("전체보기", for: .normal)
+        entireDiaryButton.setTitleColor(UIColor(hex: 0x878379), for: .normal)
+        entireDiaryButton.titleLabel?.font = UIFont.AppleSDGothic(.medium, size: 12)
     }
     
     func dateLabelSetting() {
-        self.dateLabel.text = self.krMonthDateFormatter.string(from: Date())
+        self.dateLabel.text = self.krMonthDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
+        dateLabel.textColor = UIColor(hex: 0xFFAC86)
+        myDiaryLabel.textColor = UIColor(hex: 0xFFAC86)
+        dateLabel.font = UIFont.AppleSDGothic(.bold, size: 15)
+        myDiaryLabel.font = UIFont.AppleSDGothic(.bold, size: 15)
+        titleLabel.textColor = UIColor(hex: 0x4E4C49)
+        titleLabel.font = UIFont.AppleSDGothic(.bold, size: 18)
+        contentLabel.textColor = UIColor(hex: 0x4E4C49)
+        contentLabel.font = UIFont.AppleSDGothic(.medium, size: 15)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(loadData(_:)), name: NSNotification.Name(rawValue: "SelectedDayDate"), object: nil)
+        
+//        self.dateLabel.text = self.krMonthDateFormatter.string(from: Date())
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadData(_:)), name: NSNotification.Name(rawValue: "SelectedDate"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(loadTitle(_:)), name: NSNotification.Name(rawValue: "SelectedTitle"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(loadContent(_:)), name: NSNotification.Name(rawValue: "SelectedContent"), object: nil)

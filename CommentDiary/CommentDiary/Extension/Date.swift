@@ -89,7 +89,7 @@ extension Date {
             break
         case .orderedSame:
             strDateMessage = "Same"
-            NotificationCenter.default.post(name: NSNotification.Name("compareDate"), object: "미래")
+            NotificationCenter.default.post(name: NSNotification.Name("compareDate"), object: "현재")
             break
         default:
             strDateMessage = "Error"

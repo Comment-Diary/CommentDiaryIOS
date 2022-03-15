@@ -10,7 +10,7 @@ import Alamofire
 
 class SignUpDataManager {
     func signUpPostData(_ viewController: SignUpViewController) {
-        let url = "http://jwyang.shop:8080/api/v1/members"
+        let url = "http://jwyang.shop:8080/api/v1/members/sign-up"
         let params = ["email" : SignUpRequest.email,
                       "password" : SignUpRequest.password,
                       "checkPassword" : SignUpRequest.checkPassword]
@@ -27,6 +27,16 @@ class SignUpDataManager {
                     viewController.signUpResponse()
                 case .failure(let error):
                     print(error.localizedDescription)
+                    if let httpStatusCOde = response.response?.statusCode {
+                        switch(httpStatusCOde) {
+                        case 409:
+                            viewController.presentBottomAlert(message: "이미 가입되어 있는 이메일입니다.")
+                            
+                        default:
+                            viewController.presentBottomAlert(message: "이미 가입되어 있는 이메일입니다.")
+                        }
+                    }
+                    
                 }
             }
     }

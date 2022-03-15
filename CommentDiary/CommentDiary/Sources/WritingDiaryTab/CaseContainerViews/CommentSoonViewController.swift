@@ -11,7 +11,7 @@ import UIKit
 class CommentSoonViewController:UIViewController {
     private lazy var krMonthDateFormatter: DateFormatter = {
         let df = DateFormatter()
-        df.locale = Locale(identifier: "ko_KR")
+//        df.locale = Locale(identifier: "ko_KR")
         df.dateFormat = "MM월 dd일"
         return df
     }()
@@ -37,29 +37,48 @@ class CommentSoonViewController:UIViewController {
     @IBOutlet weak var waitLabel: UILabel!
     
     
+    @IBOutlet weak var contentBackView: UIView!
+    
+    
     //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateLabelSetting()
         labelSetting()
         viewSetting()
+        buttonSetting()
         NotificationCenter.default.addObserver(self, selector: #selector(loadDate(_:)), name: NSNotification.Name(rawValue: "SelectedDate"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(loadTitle(_:)), name: NSNotification.Name(rawValue: "SelectedTitle"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(loadContent(_:)), name: NSNotification.Name(rawValue: "SelectedContent"), object: nil)
     }
-    func dateLabelSetting() {
-        
-    }
     
     func labelSetting() {
-        
+        dateLabel.textColor = UIColor(hex: 0xFFAC86)
+        dateLabel.font = UIFont.AppleSDGothic(.bold, size: 15)
+        myDiaryLabel.textColor = UIColor(hex: 0xFFAC86)
+        myDiaryLabel.font = UIFont.AppleSDGothic(.bold, size: 15)
+        titleLabel.textColor = UIColor(hex: 0x4E4C49)
+        titleLabel.font = UIFont.AppleSDGothic(.bold, size: 18)
+        contentLabel.textColor = UIColor(hex: 0x4E4C49)
+        contentLabel.font = UIFont.AppleSDGothic(.medium, size: 15)
+    
+        waitLabel.textColor = UIColor(hex: 0x878379)
+        waitLabel.font = UIFont.AppleSDGothic(.bold, size: 13)
     }
     func viewSetting() {
-        self.backView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        self.backView.backgroundColor = UIColor(hex: 0xE2DFD7)
         self.topBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
-        self.bottomBackView.backgroundColor = UIColor(hex: 0x73BF90)
+        self.bottomBackView.backgroundColor = UIColor(hex: 0xE2DFD7)
+        self.separateView.backgroundColor = UIColor(hex: 0xE2DFD7)
+        self.contentBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
     }
+    func buttonSetting() {
+        detailDiaryButton.setTitle("전체보기", for: .normal)
+        detailDiaryButton.setTitleColor(UIColor(hex: 0x878379), for: .normal)
+        detailDiaryButton.titleLabel?.font = UIFont.AppleSDGothic(.medium, size: 12)
+    }
+    
+    
     @objc func loadDate(_ notification: NSNotification) {
         dateLabel.text = notification.object as? String ?? ""
     }

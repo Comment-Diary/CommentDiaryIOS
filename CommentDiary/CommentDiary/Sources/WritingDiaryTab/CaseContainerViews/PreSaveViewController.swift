@@ -30,7 +30,6 @@ class PreSaveViewController : UIViewController {
     
     @IBOutlet weak var preSaveLabel: UILabel!
     
-    @IBOutlet weak var allLookLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -67,11 +66,16 @@ class PreSaveViewController : UIViewController {
         dateLabel.font = UIFont.AppleSDGothic(.bold, size: 15)
         myDiaryLabel.textColor = UIColor(hex: 0xFFAC86)
         myDiaryLabel.font = UIFont.AppleSDGothic(.bold, size: 15)
-        allLookLabel.textColor = UIColor(hex: 0x878379)
-        allLookLabel.font = UIFont.AppleSDGothic(.medium, size: 12)
+        contentLabel.textColor = UIColor(hex: 0x4E4C49)
+        contentLabel.font = UIFont.AppleSDGothic(.medium, size: 15)
+        diaryTItleLabel.textColor = UIColor(hex: 0x4E4C49)
+        diaryTItleLabel.font = UIFont.AppleSDGothic(.bold, size: 18)
+        
     }
     func buttonSetting() {
-        
+        allLookButton.setTitle("전체보기", for: .normal)
+        allLookButton.setTitleColor(UIColor(hex: 0x878379), for: .normal)
+        allLookButton.titleLabel?.font = UIFont.AppleSDGothic(.medium, size: 12)
     }
     
     

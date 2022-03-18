@@ -52,6 +52,11 @@ class CommentSoonViewController:UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(loadContent(_:)), name: NSNotification.Name(rawValue: "SelectedContent"), object: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadTodayData()
+    }
+    
     func labelSetting() {
         dateLabel.textColor = UIColor(hex: 0xFFAC86)
         dateLabel.font = UIFont.AppleSDGothic(.bold, size: 15)
@@ -90,6 +95,30 @@ class CommentSoonViewController:UIViewController {
         contentLabel.text = notification.object as? String ?? ""
     }
     
+    
+    
+    
+    func loadTodayData() {
+        NotificationCenter.default.addObserver(self, selector: #selector(todayLoadDate(_:)), name: NSNotification.Name("loadDate"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(todayLoadtitle(_:)), name: NSNotification.Name(rawValue: "loadTitle"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(todayLoadContent(_:)), name: NSNotification.Name(rawValue: "loadContent"), object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(loadID(_:)), name: NSNotification.Name(rawValue: "loadID"), object: nil)
+    }
+    
+    @objc func todayLoadDate(_ notification : NSNotification) {
+        dateLabel.text = notification.object as? String ?? ""
+    }
+    @objc func todayLoadtitle(_ notification : NSNotification) {
+        titleLabel.text = notification.object as? String ?? ""
+    }
+    @objc func todayLoadContent(_ notification : NSNotification) {
+        contentLabel.text = notification.object as? String ?? ""
+    }
+    //아이디값 적기
+//    @objc func loadID(_ notification : NSNotification) {
+//        .text = notification.object as? String ?? ""
+//    }
+
     
     
     

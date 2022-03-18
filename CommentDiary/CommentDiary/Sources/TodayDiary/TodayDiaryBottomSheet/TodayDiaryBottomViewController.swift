@@ -34,6 +34,7 @@ class TodayDiaryBottomViewController: UIViewController {
     
     //MARK: - Properties
     
+    @IBOutlet weak var okayButton: UIButton!
     @IBOutlet weak var selfButton: UIButton!
     
     @IBOutlet weak var comemtButton: UIButton!
@@ -43,14 +44,39 @@ class TodayDiaryBottomViewController: UIViewController {
     @IBOutlet weak var okButtonBackView: UIView!
     
     
+    @IBOutlet weak var diaryOptionLabel: UILabel!
+    
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSetting()
+        buttonSetting()
+        labelSetting()
+    }
+    func labelSetting() {
+        diaryOptionLabel.textColor = UIColor(hex: 0x4E4C49)
+        diaryOptionLabel.font = UIFont.AppleSDGothic(.bold, size: 14)
     }
     
     func buttonSetting() {
-
+        selfButton.layer.borderColor = UIColor(hex: 0x878379).cgColor
+        selfButton.layer.borderWidth = 0.5
+        comemtButton.layer.addBorder([.bottom], color: UIColor(hex: 0x878379), width: 0.5)
+        
+        selfButton.setTitle("전송하지 않고 혼자 볼게요.", for: .normal)
+        selfButton.setTitleColor(UIColor(hex: 0x4E4C49), for: .normal)
+        selfButton.setTitleColor(UIColor(hex: 0x4E4C49), for: .highlighted)
+        selfButton.titleLabel?.font = UIFont.AppleSDGothic(.medium, size: 14)
+        
+        comemtButton.setTitle("다른 누군가에게 전송하고 코멘트를 받아볼게요.", for: .normal)
+        comemtButton.setTitleColor(UIColor(hex: 0x4E4C49), for: .normal)
+        comemtButton.setTitleColor(UIColor(hex: 0x4E4C49), for: .highlighted)
+        comemtButton.titleLabel?.font = UIFont.AppleSDGothic(.medium, size: 14)
+        okayButton.setTitle("확인", for: .normal)
+        okayButton.setTitleColor(UIColor(hex: 0x4E4C49), for: .normal)
+        okayButton.setTitleColor(UIColor(hex: 0x4E4C49), for: .highlighted)
+        okayButton.titleLabel?.font = UIFont.AppleSDGothic(.bold, size: 18)
+        
     }
     
     func viewSetting() {
@@ -82,7 +108,7 @@ class TodayDiaryBottomViewController: UIViewController {
     
     
     @IBAction func dismissTapButton(_ sender: Any) {
-        dismiss(animated: true)
+            dismiss(animated: true, completion: nil)
     }
     
 }
@@ -94,6 +120,10 @@ extension TodayDiaryBottomViewController: PanModalPresentable {
     }
     
     var shortFormHeight: PanModalHeight {
-        return .contentHeight(self.bottomSheetBackVIew.frame.height)
+        return .contentHeight(self.bottomSheetBackVIew.frame.size.height)
+    }
+    
+    var longFormHeight: PanModalHeight {
+        return .maxHeightWithTopInset(self.bottomSheetBackVIew.frame.size.height)
     }
 }

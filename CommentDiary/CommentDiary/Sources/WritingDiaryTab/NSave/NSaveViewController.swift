@@ -48,6 +48,7 @@ class NSaveViewController: UIViewController {
         super.viewDidLoad()
         viewSetting()
         buttonSetting()
+        labelSetting()
         
         if diaryCheckToggle == false {
             //일기 작성후 넘어온 경우
@@ -60,10 +61,7 @@ class NSaveViewController: UIViewController {
         }
 
     }
-    
-    func detailSetting() {
-        
-    }
+
     
     func viewSetting() {
         buttonBackView.backgroundColor = UIColor(hex: 0xF4EDE3)
@@ -83,6 +81,14 @@ class NSaveViewController: UIViewController {
         dateLabel.text = dateString
         titleLabel.text = titleString
         contentLabel.text = contentString
+        
+        
+        dateLabel.font = UIFont.AppleSDGothic(.bold, size: 15)
+        dateLabel.textColor = UIColor(hex: 0xFFAC86)
+        titleLabel.font = UIFont.AppleSDGothic(.bold, size: 21)
+        titleLabel.textColor = UIColor(hex: 0x4E4C49)
+        contentLabel.textColor = UIColor(hex: 0x4E4C49)
+        contentLabel.font = UIFont.AppleSDGothic(.medium, size: 15)
     }
     
     

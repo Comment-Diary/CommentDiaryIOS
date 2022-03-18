@@ -42,10 +42,14 @@ class TodayWritingDiaryViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSetting()
-        dateLabelSetting()
+
         labelSetting()
         
 //        writingDiaryButton.contentMode = .scaleToFill
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        dateLabelSetting()
     }
     
     func dateLabelSetting() {

@@ -51,7 +51,7 @@
                                     <constraint firstAttribute="width" secondItem="WDq-rE-FzQ" secondAttribute="height" multiplier="272:44" id="ZpX-on-Q97"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 <connections>
                                     <action selector="changingPasswordText:" destination="Y6W-OH-hqX" eventType="editingChanged" id="aMk-a2-sdS"/>
                                 </connections>
@@ -79,7 +79,10 @@
                                     <constraint firstAttribute="width" secondItem="3NR-GV-IN4" secondAttribute="height" multiplier="272:44" id="vrl-a4-D0l"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <connections>
+                                    <action selector="changingPasswordValidText:" destination="Y6W-OH-hqX" eventType="editingChanged" id="LHO-cM-bzu"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEk-25-Pog">
                                 <rect key="frame" x="144" y="215.5" width="124" height="40"/>

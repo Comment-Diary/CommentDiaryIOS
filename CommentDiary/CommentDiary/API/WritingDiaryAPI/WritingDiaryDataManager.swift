@@ -23,7 +23,8 @@ class WritingDiaryDataManager {
         let params = ["title" : WritingDiaryRequest.title,
                       "content" : WritingDiaryRequest.content,
                       "date" : WritingDiaryRequest.date,
-                      "deliveryYn" : WritingDiaryRequest.deliveryYn]
+                      "deliveryYn" : WritingDiaryRequest.deliveryYn,
+                      "tempYn" : WritingDiaryRequest.tempYn]
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         AF.request(url,
@@ -49,8 +50,8 @@ class WritingDiaryDataManager {
 }
 
 
-class WritingDiaryEditDataManager {
-    func writingDiaryPostData(_ viewController: YPreSaveViewController) {
+class WritingCommentDiaryDataManager {
+    func writingCommentDiaryPostData(_ viewController: SendDiaryAlertViewController) {
         let url = "http://jwyang.shop:8080/api/v1/diary"
         let params = ["title" : WritingDiaryRequest.title,
                       "content" : WritingDiaryRequest.content,
@@ -68,6 +69,8 @@ class WritingDiaryEditDataManager {
                 switch response.result {
                 case .success(let response):
                     print("DEBUG >> Success \(response)")
+                    viewController.writingCommentDiarySuccessResponse(response)
+                    UserDefaults.standard.set(response.result.id, forKey: "DiaryID")
                 case .failure(let error):
                     print(error.localizedDescription)
                 }

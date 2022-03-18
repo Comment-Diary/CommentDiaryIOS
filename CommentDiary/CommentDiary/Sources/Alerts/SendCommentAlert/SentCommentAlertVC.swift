@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class SentCommentAlertVC : UIViewController {
+
     
     
     //MARK: - Properties
@@ -50,7 +51,7 @@ class SentCommentAlertVC : UIViewController {
     }
     
     @IBAction func okButtonTap(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        showIndicator()
     }
     
     

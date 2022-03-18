@@ -15,6 +15,8 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     //오늘 데이터 **
     var todayTitle = ""
     var todayContent = ""
+    var todayDiaryId = 0
+    var mainPageState = ""
     
     
     
@@ -232,6 +234,8 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         DiaryMainPageDataManager().diaryMainDate(self)
         calendarView.reloadData()
         
+        
+        
 
        
         
@@ -244,6 +248,9 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
 
 
     }
+    
+  
+    
     
 
     
@@ -350,6 +357,8 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     //캘린더 선택 함수
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
 
+    
+
 
 
         formatter.dateFormat = "yyyy.MM.dd"
@@ -379,6 +388,17 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         
         print(compareString, "비교 날짜 상태")
         
+        if allDiaryList.isEmpty && compareString != "미래" {
+            self.notDiaryDayView.isHidden = true
+            self.todayWritingDiaryView.isHidden = false
+            self.aloneDiaryView.isHidden = true
+            self.commentSoonView.isHidden = true
+            self.readCommentView.isHidden = true
+            self.notArrivalCommentView.isHidden = true
+            self.preSaveView.isHidden = true
+        }
+        
+        
         //오늘 일기쓸 날이 아님
         if compareString == "미래" {
             self.notDiaryDayView.isHidden = false
@@ -389,6 +409,8 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             self.notArrivalCommentView.isHidden = true
             self.preSaveView.isHidden = true
         }
+        
+
         
         for i in allDiaryList {
             if i != String(formatter.string(from: date)) && compareString != "미래" {
@@ -611,28 +633,17 @@ extension WritingDiaryVC {
             //??
             if todayDateData == i.date {
                 todayTitle = i.title
+                NotificationCenter.default.post(name: Notification.Name("loadDate"), object: todayDateData)
+                
+                print(todayTitle, "로드된 시점 제목")
+                NotificationCenter.default.post(name: Notification.Name("loadTitle"), object: todayTitle)
+                
                 todayContent = i.content
-                
-                
-                if i.tempYn == "Y" {
-                    
-                }
-                else if i.tempYn == "N" {
-                    
-                    
-                    if i.deliveryYn == "N" {
-                        
-                    }
-                    else if i.deliveryYn  == "Y" {
-                        
-                        if i.commentCnt == 0 {
-                            
-                        }
-                        else if i.commentCnt != 0 {
-                            
-                        }
-                    }
-                }
+                print(todayContent, "로드된 시점 내용")
+                NotificationCenter.default.post(name: Notification.Name("loadContent"), object: todayContent)
+                todayDiaryId = i.id
+                print(todayDiaryId, "로드된 시점 ID값")
+                NotificationCenter.default.post(name: Notification.Name("loadID"), object: todayDiaryId)
             }
             
             
@@ -668,12 +679,64 @@ extension WritingDiaryVC {
         }
         
         
-        
-        
+//
+//        //오늘 날짜에 맞는 화면 넣어주기
+        let todayDateValueString = detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
 
-        
-        
-        
-        
+
+        for i in allDiaryList {
+           if i != todayDateValueString { //일기 쓰기
+                self.notDiaryDayView.isHidden = true
+                self.todayWritingDiaryView.isHidden = false
+                self.aloneDiaryView.isHidden = true
+                self.commentSoonView.isHidden = true
+                self.readCommentView.isHidden = true
+                self.notArrivalCommentView.isHidden = true
+                self.preSaveView.isHidden = true
+            }
+            else if i == todayDateValueString {
+                for j in tempYArray {
+                    if j == todayDateValueString { //임시저장
+                        self.notDiaryDayView.isHidden = true
+                        self.todayWritingDiaryView.isHidden = true
+                        self.aloneDiaryView.isHidden = true
+                        self.commentSoonView.isHidden = true
+                        self.readCommentView.isHidden = true
+                        self.notArrivalCommentView.isHidden = true
+                        self.preSaveView.isHidden = false
+                    }
+                }
+                for k in deliveryNArray {
+                    if k == todayDateValueString { //혼자쓴일기
+                        self.notDiaryDayView.isHidden = true
+                        self.todayWritingDiaryView.isHidden = true
+                        self.aloneDiaryView.isHidden = false
+                        self.commentSoonView.isHidden = true
+                        self.readCommentView.isHidden = true
+                        self.notArrivalCommentView.isHidden = true
+                        self.preSaveView.isHidden = true
+                    }
+                }
+
+                for q in commentNoArrivalArray {
+                    if q == todayDateValueString { //코멘트일기
+                        self.notDiaryDayView.isHidden = true
+                        self.todayWritingDiaryView.isHidden = true
+                        self.aloneDiaryView.isHidden = true
+                        self.commentSoonView.isHidden = false
+                        self.readCommentView.isHidden = true
+                        self.notArrivalCommentView.isHidden = true
+                        self.preSaveView.isHidden = true
+                    }
+                }
+            }
+        }
+
     }
 }
+
+
+
+
+
+

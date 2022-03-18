@@ -90,7 +90,7 @@ class YPreSaveViewController: UIViewController {
         WritingDiaryRequest.content = contentLabel.text ?? ""
         WritingDiaryRequest.date = dateLabel.text ?? ""
         WritingDiaryRequest.deliveryYn = "Y"
-        WritingDiaryEditDataManager().writingDiaryPostData(self)
+//        WritingDiaryEditDataManager().writingDiaryPostData(self)
         
         
 

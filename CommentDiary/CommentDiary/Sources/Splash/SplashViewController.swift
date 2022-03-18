@@ -48,6 +48,8 @@ class SplashVieController : ViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.nextBtn.clipsToBounds = true
+        self.nextBtn.layer.cornerRadius = nextBtn.bounds.height / 2
         //자동 로그인
 //        self.autoLogin()
         
@@ -78,7 +80,7 @@ class SplashVieController : ViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.nextBtn.layer.cornerRadius = nextBtn.bounds.height / 2
+
     }
     
     

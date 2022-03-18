@@ -54,10 +54,6 @@ class NEidtViewController: UIViewController, UITextViewDelegate {
     
 
     
-    func labelSetting() {
-        
-    }
-    
     func viewSetting() {
         self.topBackView.backgroundColor = UIColor(hex: 0xF4EDE3)
         view.backgroundColor = UIColor(hex: 0xF4EDE3)
@@ -73,9 +69,26 @@ class NEidtViewController: UIViewController, UITextViewDelegate {
         
     }
     
+    func labelSetting() {
+        dateLabel.textColor = UIColor(hex: 0xFFAC86)
+        dateLabel.font = UIFont.AppleSDGothic(.bold, size: 15)
+        titleTextView.textColor = UIColor(hex: 0x4E4C49)
+        titleTextView.font = UIFont.AppleSDGothic(.bold, size: 21)
+        dairyContentTextView.textColor = UIColor(hex: 0x4E4C49)
+        dairyContentTextView.font = UIFont.AppleSDGothic(.medium, size: 15)
+        
+    }
+    
     func buttonSetting() {
+        saveButton.clipsToBounds = true
         saveButton.backgroundColor = UIColor(hex: 0x73BF90)
         saveButton.layer.cornerRadius = saveButton.frame.height / 2
+        
+        saveButton.setTitle("저장하기", for: .normal)
+        saveButton.setTitleColor(UIColor(hex: 0xFDFCF9), for: .normal)
+        saveButton.setTitleColor(UIColor(hex: 0xFDFCF9), for: .highlighted)
+        saveButton.titleLabel?.font = UIFont.AppleSDGothic(.bold, size: 18)
+        
     }
     
     

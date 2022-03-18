@@ -11,4 +11,5 @@ struct WritingDiaryRequest {
     static var content = ""
     static var date = ""
     static var deliveryYn = ""
+    static var tempYn = ""
 }

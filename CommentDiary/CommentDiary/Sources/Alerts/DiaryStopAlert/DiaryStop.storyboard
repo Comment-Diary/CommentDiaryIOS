@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Diary Stop View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="DiaryStopViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="Y6W-OH-hqX" customClass="DiaryStopViewController" customModule="CommentDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5iF-K0-TDS">
+                                <rect key="frame" x="40" y="337.5" width="334" height="221"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="KtW-vh-Wxj">
+                                        <rect key="frame" x="23" y="149.5" width="288" height="48.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMs-at-9EQ" customClass="CornerButton" customModule="CommentDiary" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="138" height="48.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="sMs-at-9EQ" secondAttribute="height" multiplier="114:40" id="mbF-7y-NBf"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="취소"/>
+                                                <connections>
+                                                    <action selector="cancelButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="SDU-zm-Drn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LrQ-Em-Teb" customClass="CornerButton" customModule="CommentDiary" customModuleProvider="target">
+                                                <rect key="frame" x="150" y="0.0" width="138" height="48.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="LrQ-Em-Teb" secondAttribute="height" multiplier="114:40" id="FpH-Fv-rpU"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="확인"/>
+                                                <connections>
+                                                    <action selector="okayButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="AjW-ag-GGA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fff-ne-BfH">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="149.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="smw-a7-NPX">
+                                                <rect key="frame" x="78.5" y="53" width="177" height="44"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지금 나가면 쓴 일기가 날아가요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzN-oz-Lqf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="177" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="그래도 나가시나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Teu-Uu-VUi">
+                                                        <rect key="frame" x="34.5" y="27" width="108" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="smw-a7-NPX" firstAttribute="centerX" secondItem="fff-ne-BfH" secondAttribute="centerX" id="A3o-Qd-2Xf"/>
+                                            <constraint firstItem="smw-a7-NPX" firstAttribute="centerY" secondItem="fff-ne-BfH" secondAttribute="centerY" id="rgc-5g-03P"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="fff-ne-BfH" firstAttribute="top" secondItem="5iF-K0-TDS" secondAttribute="top" id="3si-Vy-udX"/>
+                                    <constraint firstItem="KtW-vh-Wxj" firstAttribute="centerX" secondItem="5iF-K0-TDS" secondAttribute="centerX" id="4al-Yk-e4V"/>
+                                    <constraint firstAttribute="trailing" secondItem="fff-ne-BfH" secondAttribute="trailing" id="6K0-ee-1Yh"/>
+                                    <constraint firstAttribute="bottom" secondItem="KtW-vh-Wxj" secondAttribute="bottom" constant="23" id="Gbg-AA-6Zo"/>
+                                    <constraint firstAttribute="width" secondItem="5iF-K0-TDS" secondAttribute="height" multiplier="296:196" id="ILN-bu-L6j"/>
+                                    <constraint firstItem="fff-ne-BfH" firstAttribute="leading" secondItem="5iF-K0-TDS" secondAttribute="leading" id="IR2-IW-MOf"/>
+                                    <constraint firstItem="KtW-vh-Wxj" firstAttribute="leading" secondItem="5iF-K0-TDS" secondAttribute="leading" constant="23" id="kuu-bZ-nsY"/>
+                                    <constraint firstItem="KtW-vh-Wxj" firstAttribute="top" secondItem="fff-ne-BfH" secondAttribute="bottom" id="mJ0-yH-onT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59556084437086088" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="5iF-K0-TDS" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="5R6-WP-kBh"/>
+                            <constraint firstItem="5iF-K0-TDS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="bOI-Xe-MEq"/>
+                            <constraint firstItem="5iF-K0-TDS" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="yuc-55-bB3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alertView" destination="5iF-K0-TDS" id="bLt-fb-2H5"/>
+                        <outlet property="bottomLabel" destination="Teu-Uu-VUi" id="Z7v-df-ISs"/>
+                        <outlet property="cancelButton" destination="sMs-at-9EQ" id="utW-ix-sW8"/>
+                        <outlet property="okayButton" destination="LrQ-Em-Teb" id="dhy-66-ens"/>
+                        <outlet property="topBackView" destination="fff-ne-BfH" id="XZe-mE-Q4I"/>
+                        <outlet property="topLabel" destination="IzN-oz-Lqf" id="vyc-SH-KEf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4" y="78"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

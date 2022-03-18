@@ -9,10 +9,10 @@ import Foundation
 import Alamofire
 
 class CheckEmailDataManager {
-    func checkEmailPostData(_ viewController: AuthNumberViewController) {
+    func checkEmailPostData(_ viewController: AuthNumberViewController, email: String, code: String) {
         let url = "http://jwyang.shop:8080/api/v1/email/confirm"
-        let params = ["email" : CheckEmailRequest.email,
-                      "code" : CheckEmailRequest.code]
+        let params = ["email" : email,
+                      "code" : code]
         
         AF.request(url,
                    method: .post,

@@ -35,6 +35,9 @@ class LoginViewController: UIViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loginButton.clipsToBounds = true
+        self.loginButton.layer.cornerRadius = loginButton.frame.height / 2
+        
         emailTextField.delegate = self
         passwordTextField.delegate = self
         textFieldSetting()
@@ -45,7 +48,7 @@ class LoginViewController: UIViewController {
     }
     //키보드 제어
     override func viewWillAppear(_ animated: Bool) {
-        self.loginButton.layer.cornerRadius = loginButton.frame.height / 2
+
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.emailTextField.resignFirstResponder()

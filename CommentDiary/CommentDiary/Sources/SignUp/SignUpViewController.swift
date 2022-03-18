@@ -59,18 +59,26 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
     //MARK: - LifeCycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        passwordCheckLabel.text = ""
+        passwordCheckLabel.isHidden = true
         emailValidLabel.text = ""
         passwordValidLabel.text = ""
         emailTextFieldEnabled()
         authNumberSetting()
         
-        self.signupButton.layer.cornerRadius = signupButton.frame.height / 2
-        self.authNumberButton.layer.cornerRadius = authNumberButton.frame.height / 2
+        
+        
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.signupButton.layer.masksToBounds = true
+        self.signupButton.layer.masksToBounds = true
+        self.authNumberButton.clipsToBounds = true
+        self.signupButton.layer.cornerRadius = signupButton.frame.height / 2
+        self.authNumberButton.layer.cornerRadius = authNumberButton.frame.height / 2
+        
+        
 //        emailTextField.isUserInteractionEnabled = false 텍스트 필드 비활성화
         emailTextField.delegate = self
         passwordTextField.delegate = self
@@ -264,10 +272,16 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
             if passwordInput.isValidPassword == true {
                 passwordValidLabel.text = ""
             } else {
+                passwordCheckLabel.isHidden = false
                 passwordValidLabel.text = "작성 양식을 다시 한번 확인해주세요."
                 passwordValidLabel.textColor = UIColor(hex: 0xE46962)
             }
         }
+    }
+    
+    
+    @IBAction func changingPasswordValidText(_ sender: UITextField) {
+        
     }
     
     
@@ -350,6 +364,7 @@ extension SignUpViewController {
         let authNumberVC = UIStoryboard(name: "AuthNumber", bundle: nil).instantiateViewController(withIdentifier: "AuthNumberViewController") as! AuthNumberViewController
         authNumberVC.authButtonDelegate = self
         authNumberVC.emailTextFieldDelegate = self
+        authNumberVC.emailString = self.emailTextField.text!
         self.present(authNumberVC, animated: true)
         
     }

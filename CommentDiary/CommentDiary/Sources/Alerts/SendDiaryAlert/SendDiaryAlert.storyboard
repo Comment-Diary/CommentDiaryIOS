@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -11,35 +12,71 @@
         <!--Send Diary Alert View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="SendDiaryAlertViewController" id="Y6W-OH-hqX" customClass="SendDiaryAlertViewController" customModule="CommentDiary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SendDiaryAlertViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="Y6W-OH-hqX" customClass="SendDiaryAlertViewController" customModule="CommentDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OXD-2e-1Ub" customClass="CornerView" customModule="CommentDiary" customModuleProvider="target">
+                                <rect key="frame" x="52" y="176" width="216" height="216"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plane" translatesAutoresizingMaskIntoConstraints="NO" id="U4T-yh-HjV">
+                                        <rect key="frame" x="0.0" y="0.0" width="216" height="216"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lbE-FF-gCs">
+                                        <rect key="frame" x="40.5" y="132" width="135" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전송되었습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rN-RY-0fq">
+                                                <rect key="frame" x="0.0" y="0.0" width="135" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="곧 코멘트가 도착할거에요!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTU-ag-LZn">
+                                                <rect key="frame" x="0.0" y="24" width="135" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="U4T-yh-HjV" secondAttribute="trailing" id="5eE-50-MOZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="lbE-FF-gCs" secondAttribute="bottom" constant="44" id="B4I-le-x0X"/>
+                                    <constraint firstAttribute="width" constant="216" id="LWY-uV-9Kf"/>
+                                    <constraint firstItem="U4T-yh-HjV" firstAttribute="leading" secondItem="OXD-2e-1Ub" secondAttribute="leading" id="LfS-LM-0Lx"/>
+                                    <constraint firstItem="U4T-yh-HjV" firstAttribute="top" secondItem="OXD-2e-1Ub" secondAttribute="top" id="PUk-KL-zU8"/>
+                                    <constraint firstAttribute="bottom" secondItem="U4T-yh-HjV" secondAttribute="bottom" id="Tel-i6-1NM"/>
+                                    <constraint firstAttribute="width" secondItem="OXD-2e-1Ub" secondAttribute="height" multiplier="1:1" id="pQG-qD-4I0"/>
+                                    <constraint firstItem="lbE-FF-gCs" firstAttribute="centerX" secondItem="OXD-2e-1Ub" secondAttribute="centerX" id="rKm-ev-KRf"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RML-WS-Af8">
-                                <rect key="frame" x="40" y="347.66666666666669" width="348" height="230.66666666666669"/>
+                                <rect key="frame" x="40" y="204.5" width="240" height="159"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="wtJ-ay-gzb">
-                                        <rect key="frame" x="28" y="158.33333333333331" width="292" height="49.333333333333343"/>
+                                        <rect key="frame" x="28" y="106" width="184" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5I-z0-NoK">
-                                                <rect key="frame" x="0.0" y="0.0" width="140" height="49.333333333333336"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5I-z0-NoK" customClass="CornerButton" customModule="CommentDiary" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="86" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="f5I-z0-NoK" secondAttribute="height" multiplier="114:40" id="DSa-vn-F3i"/>
                                                 </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="취소"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="취소"/>
                                                 <connections>
                                                     <action selector="cancelButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Ptl-9V-rzV"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23u-dh-dGK">
-                                                <rect key="frame" x="152" y="0.0" width="140" height="49.333333333333336"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23u-dh-dGK" customClass="CornerButton" customModule="CommentDiary" customModuleProvider="target">
+                                                <rect key="frame" x="98" y="0.0" width="86" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="23u-dh-dGK" secondAttribute="height" multiplier="114:40" id="K6V-KA-UYd"/>
                                                 </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="확인"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="확인"/>
                                                 <connections>
                                                     <action selector="okButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Abm-kK-ePo"/>
                                                 </connections>
@@ -47,10 +84,10 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdO-cl-1ma">
-                                        <rect key="frame" x="0.0" y="0.0" width="348" height="158.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="106"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oTj-eg-hz6">
-                                                <rect key="frame" x="65.666666666666686" y="45.666666666666629" width="217" height="67"/>
+                                                <rect key="frame" x="11.5" y="19.5" width="217" height="67"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다른 누군가에게 일기가 전송됩니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvm-Mt-Fac">
                                                         <rect key="frame" x="0.0" y="0.0" width="217" height="17"/>
@@ -97,16 +134,22 @@
                         <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RML-WS-Af8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="98F-gW-Pva"/>
+                            <constraint firstItem="OXD-2e-1Ub" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="EEh-30-PVk"/>
+                            <constraint firstItem="OXD-2e-1Ub" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Siq-tH-sHg"/>
                             <constraint firstItem="RML-WS-Af8" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Su2-Xc-BBk"/>
                             <constraint firstItem="RML-WS-Af8" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="rDD-B3-PMf"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="airplaneImg" destination="U4T-yh-HjV" id="Tx7-wy-G0p"/>
                         <outlet property="alertView" destination="RML-WS-Af8" id="DEw-tQ-n6E"/>
                         <outlet property="bottomTextLabel" destination="Osb-5I-XoV" id="o7I-KX-1ck"/>
                         <outlet property="cancelButton" destination="f5I-z0-NoK" id="nvc-tZ-77e"/>
                         <outlet property="middleTextLabel" destination="3HD-tP-f8L" id="QpU-Dl-bVE"/>
                         <outlet property="okButton" destination="23u-dh-dGK" id="gPT-hs-e4l"/>
+                        <outlet property="sendBottomLabel" destination="YTU-ag-LZn" id="1fs-jS-bqS"/>
+                        <outlet property="sendDiaryView" destination="OXD-2e-1Ub" id="uC2-TN-Da6"/>
+                        <outlet property="sendTopLabel" destination="0rN-RY-0fq" id="nqL-ix-Suv"/>
                         <outlet property="textBackView" destination="gdO-cl-1ma" id="5X7-Lw-uLv"/>
                         <outlet property="topTextLabel" destination="lvm-Mt-Fac" id="3lI-Zp-gcK"/>
                     </connections>
@@ -117,6 +160,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plane" width="216" height="216"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,29 +14,29 @@
             <objects>
                 <viewController storyboardIdentifier="AuthNumberViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="Y6W-OH-hqX" customClass="AuthNumberViewController" customModule="CommentDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Avw-Bm-d3p">
-                                <rect key="frame" x="40" y="282" width="334" height="332"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Avw-Bm-d3p" customClass="yourView" customModule="CommentDiary" customModuleProvider="target">
+                                <rect key="frame" x="40" y="290.33333333333337" width="348" height="345.33333333333337"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIn-30-h31">
-                                        <rect key="frame" x="0.0" y="257" width="334" height="75"/>
+                                        <rect key="frame" x="0.0" y="267.66666666666669" width="348" height="77.666666666666686"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ha7-qF-Y8T">
-                                                <rect key="frame" x="0.0" y="0.0" width="167" height="75"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="174" height="77.666666666666671"/>
                                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="취소"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="취소"/>
                                                 <connections>
                                                     <action selector="cancelTapButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fID-R0-exo"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VT2-cA-vt0">
-                                                <rect key="frame" x="167" y="0.0" width="167" height="75"/>
+                                                <rect key="frame" x="174" y="0.0" width="174" height="77.666666666666671"/>
                                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="확인"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="확인"/>
                                                 <connections>
                                                     <action selector="okTapButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gbE-MJ-rQ4"/>
                                                 </connections>
@@ -47,25 +48,43 @@
                                         </constraints>
                                     </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWY-jh-Exn">
-                                        <rect key="frame" x="30" y="137" width="274" height="58"/>
+                                        <rect key="frame" x="30" y="142.33333333333337" width="288" height="60.666666666666657"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="BWY-jh-Exn" secondAttribute="height" multiplier="208:44" id="TcG-pE-sPc"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일로 인증번호가 전송되었습니다. 확인 후 입력해주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPh-TP-P3x">
-                                        <rect key="frame" x="64.5" y="71.5" width="205.5" height="33.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인증번호가 일치하지 않습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ys5-JZ-VcJ">
-                                        <rect key="frame" x="94.5" y="207" width="145.5" height="14.5"/>
+                                        <rect key="frame" x="101.33333333333333" y="215" width="145.33333333333337" height="14.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJl-Lx-vSA">
+                                        <rect key="frame" x="0.0" y="0.0" width="348" height="142.33333333333334"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일로 인증번호가 전송되었습니다. 확인 후 입력해주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPh-TP-P3x">
+                                                <rect key="frame" x="71.333333333333329" y="49" width="205.66666666666669" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="qmW-RK-wRA"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="EPh-TP-P3x" firstAttribute="centerX" secondItem="eJl-Lx-vSA" secondAttribute="centerX" id="beo-RK-b0M"/>
+                                            <constraint firstItem="EPh-TP-P3x" firstAttribute="centerY" secondItem="eJl-Lx-vSA" secondAttribute="centerY" id="jta-f7-tPj"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
@@ -74,13 +93,23 @@
                                     <constraint firstItem="BWY-jh-Exn" firstAttribute="centerY" secondItem="Avw-Bm-d3p" secondAttribute="centerY" id="8zX-S8-RVs"/>
                                     <constraint firstItem="Ys5-JZ-VcJ" firstAttribute="top" secondItem="BWY-jh-Exn" secondAttribute="bottom" constant="12" id="KVz-FJ-qpe"/>
                                     <constraint firstAttribute="bottom" secondItem="MIn-30-h31" secondAttribute="bottom" id="NQ2-EY-WUl"/>
+                                    <constraint firstItem="eJl-Lx-vSA" firstAttribute="leading" secondItem="Avw-Bm-d3p" secondAttribute="leading" id="P39-en-tLW"/>
                                     <constraint firstItem="MIn-30-h31" firstAttribute="leading" secondItem="Avw-Bm-d3p" secondAttribute="leading" id="VIh-9g-ewZ"/>
-                                    <constraint firstItem="EPh-TP-P3x" firstAttribute="centerX" secondItem="Avw-Bm-d3p" secondAttribute="centerX" id="YJ9-cn-XaV"/>
                                     <constraint firstAttribute="trailing" secondItem="MIn-30-h31" secondAttribute="trailing" id="Zoc-rF-0l1"/>
-                                    <constraint firstItem="BWY-jh-Exn" firstAttribute="top" secondItem="EPh-TP-P3x" secondAttribute="bottom" constant="32" id="aEt-a6-dLr"/>
                                     <constraint firstItem="BWY-jh-Exn" firstAttribute="leading" secondItem="Avw-Bm-d3p" secondAttribute="leading" constant="30" id="gEa-NN-kYp"/>
+                                    <constraint firstItem="eJl-Lx-vSA" firstAttribute="top" secondItem="Avw-Bm-d3p" secondAttribute="top" id="kR8-Fa-fGQ"/>
+                                    <constraint firstItem="BWY-jh-Exn" firstAttribute="top" secondItem="eJl-Lx-vSA" secondAttribute="bottom" id="oDX-kw-Rf7"/>
                                     <constraint firstItem="Ys5-JZ-VcJ" firstAttribute="centerX" secondItem="Avw-Bm-d3p" secondAttribute="centerX" id="qCH-e6-q9D"/>
+                                    <constraint firstAttribute="trailing" secondItem="eJl-Lx-vSA" secondAttribute="trailing" id="wCG-YR-Zjt"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -93,10 +122,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="alertView" destination="Avw-Bm-d3p" id="s91-P7-eUK"/>
                         <outlet property="authNumberNotMatchLabel" destination="Ys5-JZ-VcJ" id="LiU-M3-opt"/>
                         <outlet property="authTextField" destination="BWY-jh-Exn" id="LGT-26-7Yq"/>
                         <outlet property="cancelButton" destination="Ha7-qF-Y8T" id="TPY-3G-lGL"/>
                         <outlet property="okayButton" destination="VT2-cA-vt0" id="Z93-Hy-axW"/>
+                        <outlet property="topBackView" destination="eJl-Lx-vSA" id="WPQ-sP-alk"/>
+                        <outlet property="topLabel" destination="EPh-TP-P3x" id="n0V-IL-dh0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -105,6 +137,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

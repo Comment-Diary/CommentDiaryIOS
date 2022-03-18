@@ -15,6 +15,7 @@ class CommentSoonViewController:UIViewController {
         df.dateFormat = "MM월 dd일"
         return df
     }()
+    var diaryIDValue: Int = 0
     
     //MARK: - Properties
     @IBOutlet weak var dateLabel: UILabel!
@@ -102,7 +103,7 @@ class CommentSoonViewController:UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(todayLoadDate(_:)), name: NSNotification.Name("loadDate"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(todayLoadtitle(_:)), name: NSNotification.Name(rawValue: "loadTitle"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(todayLoadContent(_:)), name: NSNotification.Name(rawValue: "loadContent"), object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(loadID(_:)), name: NSNotification.Name(rawValue: "loadID"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadID(_:)), name: NSNotification.Name(rawValue: "loadID"), object: nil)
     }
     
     @objc func todayLoadDate(_ notification : NSNotification) {
@@ -114,15 +115,24 @@ class CommentSoonViewController:UIViewController {
     @objc func todayLoadContent(_ notification : NSNotification) {
         contentLabel.text = notification.object as? String ?? ""
     }
-    //아이디값 적기
-//    @objc func loadID(_ notification : NSNotification) {
-//        .text = notification.object as? String ?? ""
-//    }
+    @objc func loadID(_ notification: NSNotification) {
+        diaryIDValue = notification.object as? Int ?? 0
+    }
 
     
     
     
     //MARK: - Actions
+    
+    @IBAction func allLookButtonTap(_ sender: Any) {
+
+        let detailCommentVC = UIStoryboard(name: "DetailCommentDiary", bundle: nil).instantiateViewController(withIdentifier: "DetailCommentDiaryViewController") as! DetailCommentDiaryViewController
+        self.navigationController?.pushViewController(detailCommentVC, animated: true)
+        detailCommentVC.transToggle = true
+        detailCommentVC.diaryInt = diaryIDValue
+        print(diaryIDValue, "보낸 아이디 값")
+    }
+    
 }
 
     //MARK: - Extensions

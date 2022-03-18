@@ -140,6 +140,8 @@
 		A5C1D5B527C271E80046095A /* CheckEmailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1D5B427C271E80046095A /* CheckEmailDataManager.swift */; };
 		A5C1D5B727C271F40046095A /* CheckEmailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1D5B627C271F30046095A /* CheckEmailResponse.swift */; };
 		A5C1D5B927C271FE0046095A /* CheckEmailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1D5B827C271FE0046095A /* CheckEmailRequest.swift */; };
+		A5C7A37427E4D6C10055BAD7 /* NavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C7A37327E4D6C10055BAD7 /* NavigationVC.swift */; };
+		A5C7A37627E4D7910055BAD7 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C7A37527E4D7910055BAD7 /* TabBarVC.swift */; };
 		A5C9FB7427C60EE500445012 /* FailFindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C9FB7327C60EE500445012 /* FailFindPasswordViewController.swift */; };
 		A5C9FB7627C60EF600445012 /* FailFIndPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5C9FB7527C60EF600445012 /* FailFIndPassword.storyboard */; };
 		A5C9FB7827C60F3900445012 /* PasswordSentAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C9FB7727C60F3900445012 /* PasswordSentAlertService.swift */; };
@@ -294,6 +296,8 @@
 		A5C1D5B427C271E80046095A /* CheckEmailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailDataManager.swift; sourceTree = "<group>"; };
 		A5C1D5B627C271F30046095A /* CheckEmailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailResponse.swift; sourceTree = "<group>"; };
 		A5C1D5B827C271FE0046095A /* CheckEmailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailRequest.swift; sourceTree = "<group>"; };
+		A5C7A37327E4D6C10055BAD7 /* NavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationVC.swift; sourceTree = "<group>"; };
+		A5C7A37527E4D7910055BAD7 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		A5C9FB7327C60EE500445012 /* FailFindPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailFindPasswordViewController.swift; sourceTree = "<group>"; };
 		A5C9FB7527C60EF600445012 /* FailFIndPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FailFIndPassword.storyboard; sourceTree = "<group>"; };
 		A5C9FB7727C60F3900445012 /* PasswordSentAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSentAlertService.swift; sourceTree = "<group>"; };
@@ -691,7 +695,7 @@
 				A567615C27B7E784006FDA7F /* Extension */,
 				A567623427BD0553006FDA7F /* API */,
 				A567617727B7EF74006FDA7F /* Sources */,
-				A567617827B7F5EB006FDA7F /* Network */,
+				A567617827B7F5EB006FDA7F /* NavigationVC */,
 				A567614827B7E452006FDA7F /* AppDelegate.swift */,
 				A567614A27B7E452006FDA7F /* SceneDelegate.swift */,
 				A567614C27B7E452006FDA7F /* ViewController.swift */,
@@ -762,11 +766,13 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		A567617827B7F5EB006FDA7F /* Network */ = {
+		A567617827B7F5EB006FDA7F /* NavigationVC */ = {
 			isa = PBXGroup;
 			children = (
+				A5C7A37327E4D6C10055BAD7 /* NavigationVC.swift */,
+				A5C7A37527E4D7910055BAD7 /* TabBarVC.swift */,
 			);
-			path = Network;
+			path = NavigationVC;
 			sourceTree = "<group>";
 		};
 		A567617927B7F605006FDA7F /* Splash */ = {
@@ -1238,11 +1244,13 @@
 				A520914927DC7F36003017AC /* MyDiaryListCell.swift in Sources */,
 				A529502027DB6A3500192054 /* PeriodViewAlertViewController.swift in Sources */,
 				A520916527DD034A003017AC /* PeriodCommentViewController.swift in Sources */,
+				A5C7A37427E4D6C10055BAD7 /* NavigationVC.swift in Sources */,
 				A595203C27D89A5B005D414D /* CommentWritingRequest.swift in Sources */,
 				A567616A27B7E83C006FDA7F /* UIViewController.swift in Sources */,
 				A5CCD18D27C4CD660096281F /* PasswordSearchViewController.swift in Sources */,
 				A5B84FE727E3B59D001367B4 /* DetailCommentDiaryViewController.swift in Sources */,
 				A5567C9F27BE9452001A4B98 /* SignUpCompletionViewController.swift in Sources */,
+				A5C7A37627E4D7910055BAD7 /* TabBarVC.swift in Sources */,
 				A567616227B7E7CE006FDA7F /* String.swift in Sources */,
 				A52136F727D076BF00B98CF7 /* BaseInterceptor.swift in Sources */,
 				A56412A027CBCB9B00825571 /* WritingDiaryRequest.swift in Sources */,

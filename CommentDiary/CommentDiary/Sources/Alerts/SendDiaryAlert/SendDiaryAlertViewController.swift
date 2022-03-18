@@ -89,8 +89,8 @@ class SendDiaryAlertViewController: UIViewController {
         WritingDiaryRequest.title = commentDiaryTitle
         WritingDiaryRequest.content = commentDiaryContent
         WritingDiaryRequest.date = commentDiaryDate
-        WritingDiaryRequest.deliveryYn = commentDiaryDeliveryYn
-        WritingDiaryRequest.tempYn = commentDiaryTemyYn
+        WritingDiaryRequest.deliveryYn = "Y"
+        WritingDiaryRequest.tempYn = "N"
         WritingCommentDiaryDataManager().writingCommentDiaryPostData(self)
     }
     
@@ -104,10 +104,18 @@ extension SendDiaryAlertViewController {
         alertView.isHidden = true
         sendDiaryView.isHidden = false
         
+        var commentDiaryID : Int = 0
+        commentDiaryID = response.result.id
+        
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
             guard let presentingVC = self.presentingViewController as? UINavigationController else { return }
             self.dismiss(animated: true) {
                 guard let vc = UIStoryboard(name: "DetailCommentDiary", bundle: nil).instantiateViewController(withIdentifier: "DetailCommentDiaryViewController") as? DetailCommentDiaryViewController else { return }
+                //일기 id 값 보내기
+                vc.diaryInt = commentDiaryID
+                vc.transToggle = false
+                
                 presentingVC.pushViewController(vc, animated: true)
             }
         })

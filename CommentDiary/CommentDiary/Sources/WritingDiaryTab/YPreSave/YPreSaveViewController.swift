@@ -8,7 +8,14 @@
 import Foundation
 import UIKit
 
+//일기카운트 임시저장
+//UserDefaults.standard.set(chagnedText.count, forKey: "contentCount")
+
+
 class YPreSaveViewController: UIViewController {
+    var diaryID : Int = 0
+    var commentDiaryBool: Bool = false
+    var commentDiaryCount: Int = 0
 
     //MARK: - Properties
     
@@ -38,6 +45,10 @@ class YPreSaveViewController: UIViewController {
     
     @IBOutlet weak var topBackView: UIView!
     
+    @IBOutlet weak var allContentView: UIView!
+    
+    @IBOutlet weak var infoLabel: UILabel!
+    
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -45,22 +56,17 @@ class YPreSaveViewController: UIViewController {
         viewSetting()
         labelSetting()
         buttonSetting()
-        userDefaultSetting()
+
+        
+        //API 조회
+        PreSaveDiaryCheckDataManager().commentDiaryCheckData(diaryID: diaryID, self)
     }
     
-    func userDefaultSetting() {
-        let titleText = UserDefaults.standard.value(forKey: "diaryTitle") ?? ""
-        let contentText = UserDefaults.standard.value(forKey: "diaryContent") ?? ""
-        let dateText = UserDefaults.standard.value(forKey: "diaryDate") ?? ""
-        let contentTextCount = UserDefaults.standard.value(forKey: "contentCount") ?? 0
-        titleLabel.text = titleText as? String
-        contentLabel.text = contentText as? String
-        dateLabel.text = dateText as? String
-//        contentCountLabel.text = "\(contentTextCount)/100" //기준점 넘으면 버튼 활성화 비활성화
-    }
+
     
     
     func viewSetting() {
+        allContentView.layer.cornerRadius = 10
         diaryScrollView.backgroundColor = UIColor(hex: 0xFDFCF9)
         diaryScrollView.layer.cornerRadius = 10
         titleBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
@@ -69,14 +75,34 @@ class YPreSaveViewController: UIViewController {
         topBackView.backgroundColor = UIColor(hex: 0xF4EDE3)
         view.backgroundColor = UIColor(hex: 0xF4EDE3)
         
+        titleBackView.layer.cornerRadius = 10
+        titleBackView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        contentBackView.layer.cornerRadius = 10
+        contentBackView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        separateView.backgroundColor = UIColor(hex: 0xE2DFD7)
+        
         
     }
     func labelSetting() {
+        dateLabel.textColor = UIColor(hex: 0xFFAC86)
+        dateLabel.font = UIFont.AppleSDGothic(.bold, size: 15)
+        titleLabel.textColor = UIColor(hex: 0x4E4C49)
+        titleLabel.font = UIFont.AppleSDGothic(.bold, size: 21)
+        contentLabel.textColor = UIColor(hex: 0x4E4C49)
+        contentLabel.font = UIFont.AppleSDGothic(.medium, size: 15)
+        infoLabel.text = "일기전송은 다가오는 오전 7시에 종료돼요."
+        infoLabel.textColor = UIColor(hex: 0x878379)
+        infoLabel.font = UIFont.AppleSDGothic(.medium, size: 14)
+        
         
     }
     func buttonSetting() {
         sendButton.backgroundColor = UIColor(hex: 0x73BF90)
-        sendButton.layer.cornerRadius = sendButton.frame.height / 2
+        sendButton.setTitle("전송하기", for: .normal)
+        sendButton.setTitle("전송하기", for: .highlighted)
+        sendButton.setTitleColor(UIColor(hex: 0xFDFCF9), for: .normal)
+        sendButton.setTitleColor(UIColor(hex: 0xFDFCF9), for: .highlighted)
+        sendButton.titleLabel?.font = UIFont.AppleSDGothic(.bold, size: 18)
     }
     
     //MARK: - Actions
@@ -84,13 +110,19 @@ class YPreSaveViewController: UIViewController {
     
     @IBAction func sendButtonTap(_ sender: Any) {
         //조건 달기 count수
-        self.showIndicator()
+        if commentDiaryBool == false {
+            self.presentBottomAlert(message: "내용 100자 이상 입력해주세요.")
+        }
+        else if commentDiaryBool == true {
+            self.showIndicator()
+
+            WritingDiaryRequest.title = titleLabel.text ?? ""
+            WritingDiaryRequest.content = contentLabel.text ?? ""
+            WritingDiaryRequest.date = dateLabel.text ?? ""
+            WritingDiaryRequest.deliveryYn = "Y"
+        }
         
-        WritingDiaryRequest.title = titleLabel.text ?? ""
-        WritingDiaryRequest.content = contentLabel.text ?? ""
-        WritingDiaryRequest.date = dateLabel.text ?? ""
-        WritingDiaryRequest.deliveryYn = "Y"
-//        WritingDiaryEditDataManager().writingDiaryPostData(self)
+
         
         
 
@@ -103,11 +135,9 @@ class YPreSaveViewController: UIViewController {
     
     @IBAction func deleteButtonTap(_ sender: Any) {
         //삭제, 삭제 alert
-        //userdefault내용 삭제
-        UserDefaults.standard.removeObject(forKey: "diaryTitle")
-        UserDefaults.standard.removeObject(forKey: "diaryContent")
-        UserDefaults.standard.removeObject(forKey: "diaryDate")
-        let vc = UIStoryboard(name: "DeleteCheck", bundle: nil).instantiateViewController(withIdentifier: "DeleteCheckAlertViewController")
+
+        let vc = UIStoryboard(name: "DeleteCheck", bundle: nil).instantiateViewController(withIdentifier: "DeleteCheckAlertViewController") as! DeleteCheckAlertViewController
+        vc.diaryId = diaryID
         self.present(vc, animated: true)
         
     }
@@ -121,5 +151,9 @@ class YPreSaveViewController: UIViewController {
 
     //MARK: - Extensions
 extension YPreSaveViewController {
-    
+    func preSaveDiaryGet(_ response: DiaryCheckResopnse) {
+        dateLabel.text = response.result.date
+        contentLabel.text = response.result.content
+        titleLabel.text = response.result.title
+    }
 }

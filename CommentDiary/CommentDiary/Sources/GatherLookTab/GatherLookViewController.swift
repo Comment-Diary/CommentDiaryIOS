@@ -36,6 +36,9 @@ class GatherLookViewController : UIViewController, LabelChangeDelegate, DateChan
     @IBOutlet weak var dateButton: UIButton!
     @IBOutlet weak var sortTableView: UITableView!
     
+    @IBOutlet weak var topBackView: UIView!
+    
+    
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +80,8 @@ class GatherLookViewController : UIViewController, LabelChangeDelegate, DateChan
 
     func backViewSetting() {
         backgroundView.backgroundColor = UIColor(hex: 0xE5E5E5)
+        view.backgroundColor = UIColor(hex: 0xE2DFD7)
+        topBackView.backgroundColor = UIColor(hex: 0xE2DFD7)
     }
     func LabelSetting() {
         noDiaryLabel.text = "아직 작성된 일기가 없어요! 일기를 작성해주세요 :)"

@@ -326,6 +326,7 @@
                     <navigationItem key="navigationItem" id="zCs-4H-jyQ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="backView" destination="p3Q-wL-N5d" id="NHE-Ln-rk8"/>
                         <outlet property="emailBackView" destination="6w3-5v-EVB" id="Osc-OX-D8f"/>
                         <outlet property="emailLabel" destination="Cs7-BY-aYI" id="0br-na-5BU"/>
                         <outlet property="fifthSeparateView" destination="gqb-Uy-DP2" id="mKG-LL-Kyj"/>

@@ -10,6 +10,9 @@ import UIKit
 
 class MyPageViewController :UIViewController {
     //MARK: - Properties
+    
+    @IBOutlet weak var backView: UIView!
+    
     @IBOutlet weak var myPageView: UIView!
     @IBOutlet weak var myPageLabel: UILabel!
     
@@ -73,6 +76,7 @@ class MyPageViewController :UIViewController {
     }
     
     func viewSetting() {
+        backView.backgroundColor = UIColor(hex: 0xFDFCF9)
         firstSeparateView.backgroundColor = UIColor(hex: 0xE2DFD7)
         secondSeparateView.backgroundColor = UIColor(hex: 0xE2DFD7)
         thirdSeparateView.backgroundColor = UIColor(hex: 0xE2DFD7)

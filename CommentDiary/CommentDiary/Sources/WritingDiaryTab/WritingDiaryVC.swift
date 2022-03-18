@@ -388,15 +388,15 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         
         print(compareString, "비교 날짜 상태")
         
-        if allDiaryList.isEmpty && compareString != "미래" {
-            self.notDiaryDayView.isHidden = true
-            self.todayWritingDiaryView.isHidden = false
-            self.aloneDiaryView.isHidden = true
-            self.commentSoonView.isHidden = true
-            self.readCommentView.isHidden = true
-            self.notArrivalCommentView.isHidden = true
-            self.preSaveView.isHidden = true
-        }
+//        if allDiaryList.isEmpty && compareString != "미래" {
+//            self.notDiaryDayView.isHidden = true
+//            self.todayWritingDiaryView.isHidden = false
+//            self.aloneDiaryView.isHidden = true
+//            self.commentSoonView.isHidden = true
+//            self.readCommentView.isHidden = true
+//            self.notArrivalCommentView.isHidden = true
+//            self.preSaveView.isHidden = true
+//        }
         
         
         //오늘 일기쓸 날이 아님

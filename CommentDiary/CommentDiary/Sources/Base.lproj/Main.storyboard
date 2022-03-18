@@ -38,15 +38,16 @@
             </objects>
             <point key="canvasLocation" x="177" y="-17"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab BarVC-->
         <scene sceneID="s7f-sW-4pq">
             <objects>
-                <tabBarController useStoryboardIdentifierAsRestorationIdentifier="YES" id="JpM-Du-h0b" sceneMemberID="viewController">
+                <tabBarController useStoryboardIdentifierAsRestorationIdentifier="YES" id="JpM-Du-h0b" customClass="TabBarVC" customModule="CommentDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="pod-xT-OLu"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aKF-DV-EHp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.95686274770000002" green="0.94509804249999996" blue="0.92549026010000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.95686274509803915" green="0.94509803921568625" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.30588235294117649" green="0.29803921568627451" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" systemColor="systemPinkColor"/>
                         <tabBarAppearance key="standardAppearance"/>
                         <tabBarAppearance key="scrollEdgeAppearance"/>
@@ -72,13 +73,16 @@
             </objects>
             <point key="canvasLocation" x="262" y="193"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--NavigationVC-->
         <scene sceneID="mj9-PJ-AML">
             <objects>
-                <navigationController storyboardIdentifier="MainTabBarController" navigationBarHidden="YES" id="0n1-ej-vjk" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainTabBarController" navigationBarHidden="YES" id="0n1-ej-vjk" customClass="NavigationVC" customModule="CommentDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="J5Z-B5-hB1">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5fX-eo-JJm">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="JpM-Du-h0b" kind="relationship" relationship="rootViewController" id="E9y-Oj-Yl5"/>
                     </connections>

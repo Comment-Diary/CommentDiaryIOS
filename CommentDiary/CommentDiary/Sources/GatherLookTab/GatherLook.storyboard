@@ -18,16 +18,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rC4-Jj-xtZ">
-                                <rect key="frame" x="0.0" y="66" width="320" height="453"/>
+                                <rect key="frame" x="0.0" y="48.5" width="320" height="470.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 작성된 일기가 없어요! 일기를 작성해주세요 :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrO-DZ-yuF">
-                                        <rect key="frame" x="30.5" y="218.5" width="259.5" height="16"/>
+                                        <rect key="frame" x="30.5" y="227.5" width="259.5" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jlH-St-sW9">
-                                        <rect key="frame" x="17" y="0.0" width="286" height="453"/>
+                                        <rect key="frame" x="17" y="0.0" width="286" height="470.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>
@@ -42,16 +42,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="reL-PT-6hJ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="48.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IJo-89-HNX">
-                                        <rect key="frame" x="185" y="21" width="120" height="32"/>
+                                        <rect key="frame" x="170" y="6.5" width="135" height="36"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xdr-cR-9IV">
-                                                <rect key="frame" x="10" y="0.0" width="84" height="32"/>
+                                                <rect key="frame" x="10" y="0.0" width="91" height="36"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022년 12월" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfH-KE-vu7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="84" height="32"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="91" height="36"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -59,13 +59,13 @@
                                                 </subviews>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomArrow" translatesAutoresizingMaskIntoConstraints="NO" id="G1T-lu-aex">
-                                                <rect key="frame" x="99" y="15" width="8" height="4"/>
+                                                <rect key="frame" x="106" y="15" width="16" height="8"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="G1T-lu-aex" secondAttribute="height" multiplier="8:4" id="JIM-zZ-3im"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAs-aJ-3b5">
-                                                <rect key="frame" x="0.0" y="0.0" width="120" height="32"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="135" height="36"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <connections>
                                                     <action selector="dateButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="okM-eN-zqh"/>
@@ -91,9 +91,9 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="reL-PT-6hJ" secondAttribute="height" multiplier="375:57" id="603-3w-dYb"/>
                                     <constraint firstAttribute="trailing" secondItem="IJo-89-HNX" secondAttribute="trailing" constant="15" id="86G-tX-IWA"/>
-                                    <constraint firstItem="IJo-89-HNX" firstAttribute="top" secondItem="reL-PT-6hJ" secondAttribute="top" constant="21" id="w3h-r9-ZBd"/>
-                                    <constraint firstAttribute="bottom" secondItem="IJo-89-HNX" secondAttribute="bottom" constant="13" id="ztZ-NR-aiW"/>
+                                    <constraint firstItem="IJo-89-HNX" firstAttribute="centerY" secondItem="reL-PT-6hJ" secondAttribute="centerY" id="Lvo-zU-S7s"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -105,7 +105,6 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="reL-PT-6hJ" secondAttribute="trailing" id="EO5-Ho-LLb"/>
                             <constraint firstItem="rC4-Jj-xtZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="SoV-bf-7k4"/>
                             <constraint firstItem="rC4-Jj-xtZ" firstAttribute="top" secondItem="reL-PT-6hJ" secondAttribute="bottom" id="YN5-Q4-WYh"/>
-                            <constraint firstItem="rC4-Jj-xtZ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="66" id="udo-qd-pit"/>
                             <constraint firstItem="reL-PT-6hJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="vbf-4o-nxR"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rC4-Jj-xtZ" secondAttribute="trailing" id="w0v-5X-IYg"/>
                         </constraints>
@@ -118,6 +117,7 @@
                         <outlet property="dateButton" destination="VAs-aJ-3b5" id="iOa-oi-3eX"/>
                         <outlet property="noDiaryLabel" destination="rrO-DZ-yuF" id="ezf-eY-QtL"/>
                         <outlet property="sortTableView" destination="jlH-St-sW9" id="pb3-j1-dIu"/>
+                        <outlet property="topBackView" destination="reL-PT-6hJ" id="O4o-ZT-1W7"/>
                         <outlet property="yearLabel" destination="vfH-KE-vu7" id="go7-3s-uck"/>
                     </connections>
                 </viewController>

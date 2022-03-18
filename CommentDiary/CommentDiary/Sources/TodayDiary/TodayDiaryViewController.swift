@@ -82,7 +82,7 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
     @IBOutlet weak var diaryScrollView: UIScrollView!
     @IBOutlet weak var contentTextView: UITextView!
     
-//    @IBOutlet weak var commentView: UIView!
+
     @IBOutlet weak var textCountLabel: UILabel!
     
     @IBOutlet weak var saveButton: UIButton!
@@ -91,8 +91,6 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
     
     @IBOutlet weak var separateBarView: UIView!
     
-//    @IBOutlet weak var commentPickedLabel: UILabel!
-//    @IBOutlet weak var commentNBackView: UIView!
     
     
     @IBOutlet weak var titleBackView: UIView!
@@ -125,7 +123,29 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
         
 
 
+        //스와이프
+        swipeRecognizer()
     }
+    
+    
+    func swipeRecognizer() {
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(_:)))
+        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+        self.view.addGestureRecognizer(swipeRight)
+        
+    }
+    
+    @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction{
+            case UISwipeGestureRecognizer.Direction.right:
+                // 스와이프 시, 원하는 기능 구현.
+                self.dismiss(animated: true, completion: nil)
+            default: break
+            }
+        }
+    }
+
     
  
     
@@ -283,14 +303,7 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
     
     
     @IBAction func preSaveButtonTap(_ sender: Any) {
-//        //제목 임시저장
-//        UserDefaults.standard.set(titleTextView.text!, forKey: "diaryTitle")
-//        //내용 임시저장
-//        UserDefaults.standard.set(contentTextView.text!, forKey: "diaryContent")
-//        //날짜 임시저장
-//        UserDefaults.standard.set(diaryDate.text!, forKey: "diaryDate")
-//        let vc = UIStoryboard(name: "YPreSave", bundle: nil).instantiateViewController(withIdentifier: "YPreSaveViewController") as! YPreSaveViewController
-//        self.navigationController?.pushViewController(vc, animated: true)
+
         
         if titleTextView.text.count == 0 || titleTextView.text == "제목을 입력해주세요." || contentTextView.text.count == 0 || contentTextView.text == "내용을 입력해주세요." {
             self.presentBottomAlert(message: "제목과 내용을 입력해주세요.")
@@ -380,15 +393,18 @@ extension TodayDiaryViewController {
         if deliveryToggle == "Y" {
             //임시저장
             if tempToggle == "Y" {
-                
+                let yPreSaveVC = UIStoryboard(name: "YPreSave", bundle: nil).instantiateViewController(withIdentifier: "YPreSaveViewController") as! YPreSaveViewController
+                yPreSaveVC.diaryID = response.result.id
+                yPreSaveVC.commentDiaryBool = canSendDiaryBool
+                print(yPreSaveVC.diaryID, "임시저장 id 값")
+                self.navigationController?.pushViewController(yPreSaveVC, animated: true)
             }
             //코멘트 일기
             else if tempToggle == "N" {
  
             }
             
-//            let yPreSaveVC = UIStoryboard(name: "YPreSave", bundle: nil).instantiateViewController(withIdentifier: "YPreSaveViewController") as! YPreSaveViewController
-//            self.navigationController?.pushViewController(yPreSaveVC, animated: true)
+
         } else if deliveryToggle == "N" {
             //혼자쓰기
             let nSaveVC = UIStoryboard(name: "NSave", bundle: nil).instantiateViewController(withIdentifier: "NSaveViewController") as! NSaveViewController

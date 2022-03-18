@@ -63,7 +63,8 @@ class NEidtViewController: UIViewController, UITextViewDelegate {
         self.diaryTitleView.backgroundColor = UIColor(hex: 0xFDFCF9)
         self.titleTextView.backgroundColor = UIColor(hex: 0xFDFCF9)
         self.diaryContentView.backgroundColor = UIColor(hex: 0xFDFCF9)
-        self.diaryContentView.backgroundColor = UIColor(hex: 0xFDFCF9)
+
+        self.dairyContentTextView.backgroundColor = UIColor(hex: 0xFDFCF9)
         
         
         
@@ -80,9 +81,7 @@ class NEidtViewController: UIViewController, UITextViewDelegate {
     }
     
     func buttonSetting() {
-        saveButton.clipsToBounds = true
         saveButton.backgroundColor = UIColor(hex: 0x73BF90)
-        saveButton.layer.cornerRadius = saveButton.frame.height / 2
         
         saveButton.setTitle("저장하기", for: .normal)
         saveButton.setTitleColor(UIColor(hex: 0xFDFCF9), for: .normal)

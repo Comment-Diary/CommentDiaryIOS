@@ -10,40 +10,6 @@
     </dependencies>
     <scenes>
         <!--내 일기-->
-        <scene sceneID="s0d-6b-0kx">
-            <objects>
-                <viewController storyboardIdentifier="WritingDiaryViewController" id="Y6W-OH-hqX" customClass="WritingDiaryViewController" customModule="CommentDiary" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Z7W-Hz-jgn">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <sections/>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Z7W-Hz-jgn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="6Jv-bw-AJ0"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Z7W-Hz-jgn" secondAttribute="bottom" id="L1z-2V-n0D"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Z7W-Hz-jgn" secondAttribute="trailing" id="MKd-pi-ciB"/>
-                            <constraint firstItem="Z7W-Hz-jgn" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="pqI-Ga-bnm"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="내 일기" id="CXV-tV-2gH"/>
-                    <navigationItem key="navigationItem" id="FVQ-38-lvk"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="writingDiaryTableView" destination="Z7W-Hz-jgn" id="gVU-9K-1kU"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-379" y="85"/>
-        </scene>
-        <!--Item-->
         <scene sceneID="Tg3-dS-XR4">
             <objects>
                 <viewController storyboardIdentifier="WritingDiaryVC" id="eRN-iZ-r92" customClass="WritingDiaryVC" customModule="CommentDiary" customModuleProvider="target" sceneMemberID="viewController">
@@ -297,7 +263,7 @@
                             <constraint firstItem="O7D-Oa-wf5" firstAttribute="leading" secondItem="6ud-gr-yx2" secondAttribute="leading" constant="16" id="xa0-7F-XGZ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="QSr-0T-iao"/>
+                    <tabBarItem key="tabBarItem" title="내 일기" id="QSr-0T-iao"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="aloneDiaryView" destination="V7U-2Q-Z2R" id="Yxn-ly-05g"/>
@@ -695,6 +661,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="전체보기" image="slide"/>
+                                        <connections>
+                                            <action selector="allLookButtonTap:" destination="zKE-Od-4Es" eventType="touchUpInside" id="Fw6-bF-ouT"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXp-KI-r9Z">
                                         <rect key="frame" x="24" y="35" width="240" height="28"/>
@@ -719,10 +688,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5e-1I-7mo">
-                                <rect key="frame" x="0.0" y="182" width="288" height="43"/>
+                                <rect key="frame" x="0.0" y="189.5" width="288" height="35.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코멘트가 곧 도착해요 :) 조금만 기다려주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qek-K7-7gv">
-                                        <rect key="frame" x="36.5" y="14.5" width="215.5" height="14.5"/>
+                                        <rect key="frame" x="36.5" y="10.5" width="215.5" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -730,12 +699,13 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="s5e-1I-7mo" secondAttribute="height" multiplier="343:42" id="XhB-fC-Blf"/>
                                     <constraint firstItem="Qek-K7-7gv" firstAttribute="centerX" secondItem="s5e-1I-7mo" secondAttribute="centerX" id="tFA-e5-ynE"/>
                                     <constraint firstItem="Qek-K7-7gv" firstAttribute="centerY" secondItem="s5e-1I-7mo" secondAttribute="centerY" id="wxc-b6-anU"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hfm-UR-qAW">
-                                <rect key="frame" x="0.0" y="67" width="288" height="115"/>
+                                <rect key="frame" x="0.0" y="67" width="288" height="122.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B9t-08-kPV">
                                         <rect key="frame" x="24" y="0.0" width="240" height="2"/>
@@ -758,7 +728,6 @@
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="B9t-08-kPV" secondAttribute="trailing" constant="24" id="1qJ-fr-2xV"/>
-                                    <constraint firstAttribute="width" secondItem="Hfm-UR-qAW" secondAttribute="height" multiplier="343:137" id="A0a-AC-5G2"/>
                                     <constraint firstAttribute="trailing" secondItem="Ogt-Fe-5aP" secondAttribute="trailing" constant="28" id="DlM-sc-bXX"/>
                                     <constraint firstItem="Ogt-Fe-5aP" firstAttribute="leading" secondItem="Hfm-UR-qAW" secondAttribute="leading" constant="24" id="T95-DF-QJ0"/>
                                     <constraint firstItem="B9t-08-kPV" firstAttribute="leading" secondItem="Hfm-UR-qAW" secondAttribute="leading" constant="24" id="VPm-h2-dVF"/>
@@ -905,7 +874,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hns-pw-vqh">
-                                <rect key="frame" x="0.0" y="0.0" width="288" height="182"/>
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="189.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PhM-KO-jGk">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="67"/>
@@ -987,17 +956,16 @@
                                     <constraint firstAttribute="trailing" secondItem="Gr2-T9-WRs" secondAttribute="trailing" constant="50" id="c4y-70-aaD"/>
                                     <constraint firstItem="PhM-KO-jGk" firstAttribute="top" secondItem="Hns-pw-vqh" secondAttribute="top" id="dNP-DM-12R"/>
                                     <constraint firstItem="PhM-KO-jGk" firstAttribute="leading" secondItem="Hns-pw-vqh" secondAttribute="leading" id="ggu-Ke-WKA"/>
-                                    <constraint firstAttribute="width" secondItem="Hns-pw-vqh" secondAttribute="height" multiplier="343:217" id="hHV-xT-BN9"/>
                                     <constraint firstItem="7Di-oS-UDG" firstAttribute="leading" secondItem="Hns-pw-vqh" secondAttribute="leading" constant="24" id="pna-2y-blW"/>
                                     <constraint firstItem="Gr2-T9-WRs" firstAttribute="top" secondItem="7Di-oS-UDG" secondAttribute="bottom" constant="8" id="ric-gR-e1L"/>
                                     <constraint firstAttribute="bottom" secondItem="Gr2-T9-WRs" secondAttribute="bottom" priority="250" constant="24" id="zRL-lf-Pye"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JL5-CU-fuc">
-                                <rect key="frame" x="0.0" y="182" width="288" height="43"/>
+                                <rect key="frame" x="0.0" y="189.5" width="288" height="35.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코멘트가 곧 도착해요 :) 조심만 기다려주세요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYc-l4-VWf">
-                                        <rect key="frame" x="27.5" y="13.5" width="233" height="16"/>
+                                        <rect key="frame" x="27.5" y="10" width="233" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1005,6 +973,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="JL5-CU-fuc" secondAttribute="height" multiplier="343:42" id="RsG-Zl-d3J"/>
                                     <constraint firstItem="WYc-l4-VWf" firstAttribute="centerX" secondItem="JL5-CU-fuc" secondAttribute="centerX" id="eM0-1w-jwu"/>
                                     <constraint firstItem="WYc-l4-VWf" firstAttribute="centerY" secondItem="JL5-CU-fuc" secondAttribute="centerY" id="fdg-ch-tHq"/>
                                 </constraints>
@@ -1085,6 +1054,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="전체보기" image="slide"/>
+                                        <connections>
+                                            <action selector="allLookButtonTap:" destination="ei1-q6-58H" eventType="touchUpInside" id="S7c-m0-N6Y"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
@@ -1100,7 +1072,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwF-hy-Dd3">
-                                <rect key="frame" x="0.0" y="67" width="288" height="115"/>
+                                <rect key="frame" x="0.0" y="67" width="288" height="122.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yZy-3P-fLm">
                                         <rect key="frame" x="24" y="0.0" width="240" height="2"/>
@@ -1118,7 +1090,6 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="rwF-hy-Dd3" secondAttribute="height" multiplier="343:137" id="85O-YP-65r"/>
                                     <constraint firstItem="IIE-Ug-CPH" firstAttribute="top" secondItem="yZy-3P-fLm" secondAttribute="bottom" constant="8" id="MfE-SH-CST"/>
                                     <constraint firstItem="yZy-3P-fLm" firstAttribute="top" secondItem="rwF-hy-Dd3" secondAttribute="top" id="O7c-ve-GYO"/>
                                     <constraint firstAttribute="trailing" secondItem="yZy-3P-fLm" secondAttribute="trailing" constant="24" id="bZn-8f-ZHk"/>
@@ -1129,10 +1100,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4U8-dS-rjQ">
-                                <rect key="frame" x="0.0" y="182" width="288" height="43"/>
+                                <rect key="frame" x="0.0" y="189.5" width="288" height="35.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="임시저장된 일기에요. 일기를 전송해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9T-yA-4Tz">
-                                        <rect key="frame" x="25.5" y="13" width="237.5" height="17"/>
+                                        <rect key="frame" x="25.5" y="9.5" width="237.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1140,6 +1111,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="4U8-dS-rjQ" secondAttribute="height" multiplier="343:42" id="dD7-6r-bed"/>
                                     <constraint firstItem="O9T-yA-4Tz" firstAttribute="centerX" secondItem="4U8-dS-rjQ" secondAttribute="centerX" id="jxD-MM-axz"/>
                                     <constraint firstItem="O9T-yA-4Tz" firstAttribute="centerY" secondItem="4U8-dS-rjQ" secondAttribute="centerY" id="yAb-Sx-9Uv"/>
                                 </constraints>

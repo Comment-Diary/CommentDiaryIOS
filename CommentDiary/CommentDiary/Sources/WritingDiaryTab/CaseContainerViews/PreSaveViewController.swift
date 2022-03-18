@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class PreSaveViewController : UIViewController {
+    var diaryIDValue: Int = 0
     //MARK: - Properties
     
     @IBOutlet weak var dateLabel: UILabel!
@@ -37,10 +38,8 @@ class PreSaveViewController : UIViewController {
         viewSetting()
         labelSetting()
         buttonSetting()
-        NotificationCenter.default.addObserver(self, selector: #selector(loadDate(_:)), name: NSNotification.Name(rawValue: "SelectedDate"), object: nil)
+
         
-        NotificationCenter.default.addObserver(self, selector: #selector(loadTitle(_:)), name: NSNotification.Name(rawValue: "SelectedTitle"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(loadContent(_:)), name: NSNotification.Name(rawValue: "SelectedContent"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,13 +49,14 @@ class PreSaveViewController : UIViewController {
         
 
         loadTodayData()
+        selectedData()
     }
     
     func loadTodayData() {
         NotificationCenter.default.addObserver(self, selector: #selector(todayLoadDate(_:)), name: NSNotification.Name("loadDate"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(todayLoadtitle(_:)), name: NSNotification.Name(rawValue: "loadTitle"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(todayLoadContent(_:)), name: NSNotification.Name(rawValue: "loadContent"), object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(loadID(_:)), name: NSNotification.Name(rawValue: "loadID"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(todayLoadID(_:)), name: NSNotification.Name(rawValue: "loadID"), object: nil)
     }
     @objc func todayLoadDate(_ notification : NSNotification) {
         dateLabel.text = notification.object as? String ?? ""
@@ -68,9 +68,32 @@ class PreSaveViewController : UIViewController {
         contentLabel.text = notification.object as? String ?? ""
     }
     //아이디값 적기
-//    @objc func loadID(_ notification : NSNotification) {
-//        .text = notification.object as? String ?? ""
-//    }
+    @objc func todayLoadID(_ notification : NSNotification) {
+        diaryIDValue = notification.object as? Int ?? 0
+    }
+    
+    func selectedData() {
+        NotificationCenter.default.addObserver(self, selector: #selector(loadDate(_:)), name: NSNotification.Name(rawValue: "SelectedDate"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadTitle(_:)), name: NSNotification.Name(rawValue: "SelectedTitle"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadContent(_:)), name: NSNotification.Name(rawValue: "SelectedContent"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadID(_:)), name: NSNotification.Name(rawValue: "SelectedID"), object: nil)
+    }
+    
+    @objc func loadDate(_ notification: NSNotification) {
+        dateLabel.text = notification.object as? String ?? ""
+    }
+    
+    @objc func loadTitle(_ notification: NSNotification) {
+        diaryTItleLabel.text = notification.object as? String ?? ""
+    }
+    @objc func loadContent(_ notification: NSNotification) {
+        contentLabel.text = notification.object as? String ?? ""
+    }
+    @objc func loadID(_ notification: NSNotification) {
+        diaryIDValue = notification.object as? Int ?? 0
+    }
+    
     
     func viewSetting() {
         topBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
@@ -101,15 +124,14 @@ class PreSaveViewController : UIViewController {
     }
     
     
-    @objc func loadDate(_ notification: NSNotification) {
-        dateLabel.text = notification.object as? String ?? ""
+    //MARK: - Actions
+    
+    @IBAction func allLookButtonTap(_ sender: Any) {
+        let ypreSaveVC = UIStoryboard(name: "YPreSave", bundle: nil).instantiateViewController(withIdentifier: "YPreSaveViewController") as! YPreSaveViewController
+        ypreSaveVC.diaryID = diaryIDValue
+        self.navigationController?.pushViewController(ypreSaveVC, animated: true)
     }
     
-    @objc func loadTitle(_ notification: NSNotification) {
-        diaryTItleLabel.text = notification.object as? String ?? ""
-    }
-    @objc func loadContent(_ notification: NSNotification) {
-        contentLabel.text = notification.object as? String ?? ""
-    }
+
     
 }

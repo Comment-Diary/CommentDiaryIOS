@@ -125,7 +125,7 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="Bin-zI-LW8"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="eAL-No-XuN"/>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtC-Pa-6kt">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtC-Pa-6kt" customClass="CornerButton" customModule="CommentDiary" customModuleProvider="target">
                                 <rect key="frame" x="16" y="504" width="288" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="AtC-Pa-6kt" secondAttribute="height" multiplier="343:57" id="RmY-xd-Ttl"/>

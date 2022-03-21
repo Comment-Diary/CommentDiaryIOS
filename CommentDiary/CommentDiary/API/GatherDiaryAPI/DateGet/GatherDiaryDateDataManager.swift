@@ -8,12 +8,12 @@
 import Foundation
 import Alamofire
 class GatherDiaryDateDataManager {
-    func gatherDiaryDateData(_ viewController: GatherLookViewController) {
+    func gatherDiaryDateData(_ viewController: GatherLookViewController, dateValue : String) {
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers : HTTPHeaders = [.authorization(bearerToken: token as! String)]
         let url = "http://jwyang.shop:8080/api/v1/diary/my"
         let params : Parameters = [
-            "date" : "\(viewController.apiDateString)"
+            "date" : "\(dateValue)"
         ]
         
         
@@ -27,6 +27,8 @@ class GatherDiaryDateDataManager {
                 switch response.result {
                 case.success(let response):
                     print("DEBUG >> Success \(response)")
+
+                    viewController.gatehrDiaryDateSuccess(response)
                 case .failure(let error):
                     print(error.localizedDescription)
                     

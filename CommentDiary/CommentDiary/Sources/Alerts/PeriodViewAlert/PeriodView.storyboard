@@ -67,19 +67,13 @@
                                         <rect key="frame" x="0.0" y="68.999999999999986" width="348" height="130.66666666666663"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9dE-eg-kDb">
-                                                <rect key="frame" x="20" y="41.333333333333314" width="308" height="48"/>
+                                                <rect key="frame" x="20" y="4.0000000000000071" width="308" height="122.66666666666669"/>
                                                 <subviews>
                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zB6-sG-9t8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="48"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="zB6-sG-9t8" secondAttribute="height" multiplier="100:32" id="xIn-2Y-QdZ"/>
-                                                        </constraints>
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="122.66666666666667"/>
                                                     </pickerView>
                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4VJ-gD-2Gl">
-                                                        <rect key="frame" x="158" y="0.0" width="150" height="48"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="4VJ-gD-2Gl" secondAttribute="height" multiplier="100:32" id="Jau-Ne-8gz"/>
-                                                        </constraints>
+                                                        <rect key="frame" x="158" y="0.0" width="150" height="122.66666666666667"/>
                                                     </pickerView>
                                                 </subviews>
                                             </stackView>
@@ -87,8 +81,10 @@
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <constraints>
                                             <constraint firstItem="9dE-eg-kDb" firstAttribute="centerY" secondItem="Tk3-pz-iLe" secondAttribute="centerY" id="Cke-rr-2e6"/>
+                                            <constraint firstAttribute="bottom" secondItem="9dE-eg-kDb" secondAttribute="bottom" constant="4" id="MA4-ca-1Cw"/>
                                             <constraint firstItem="9dE-eg-kDb" firstAttribute="centerX" secondItem="Tk3-pz-iLe" secondAttribute="centerX" id="OHT-nC-0gp"/>
                                             <constraint firstAttribute="trailing" secondItem="9dE-eg-kDb" secondAttribute="trailing" constant="20" id="RFk-9X-aAI"/>
+                                            <constraint firstItem="9dE-eg-kDb" firstAttribute="top" secondItem="Tk3-pz-iLe" secondAttribute="top" constant="4" id="aXe-ix-ao3"/>
                                             <constraint firstItem="9dE-eg-kDb" firstAttribute="leading" secondItem="Tk3-pz-iLe" secondAttribute="leading" constant="20" id="zKG-1T-IB0"/>
                                         </constraints>
                                     </view>
@@ -122,6 +118,7 @@
                         <outlet property="dateView" destination="Tk3-pz-iLe" id="Kfd-2n-vIi"/>
                         <outlet property="mainVIew" destination="nyF-OO-lgR" id="lRk-5Q-Mou"/>
                         <outlet property="monthPickerView" destination="4VJ-gD-2Gl" id="cZz-SX-5nj"/>
+                        <outlet property="periodLookLabel" destination="1ru-vY-iyI" id="dez-oK-teL"/>
                         <outlet property="saveButton" destination="pQY-nz-I2L" id="Xtw-IA-r77"/>
                         <outlet property="yearPickerView" destination="zB6-sG-9t8" id="i3H-8P-zOE"/>
                     </connections>

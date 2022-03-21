@@ -123,28 +123,11 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
         
 
 
-        //스와이프
-        swipeRecognizer()
+
     }
     
     
-    func swipeRecognizer() {
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(_:)))
-        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
-        self.view.addGestureRecognizer(swipeRight)
-        
-    }
-    
-    @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer){
-        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
-            switch swipeGesture.direction{
-            case UISwipeGestureRecognizer.Direction.right:
-                // 스와이프 시, 원하는 기능 구현.
-                self.dismiss(animated: true, completion: nil)
-            default: break
-            }
-        }
-    }
+
 
     
  

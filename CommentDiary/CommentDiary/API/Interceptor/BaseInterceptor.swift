@@ -41,7 +41,7 @@ final class MyRequestInterceptor: RequestInterceptor {
           }
         
  
-        TokenRefreshDataManager().tokenRefreshPostData()
+//        TokenRefreshDataManager().tokenRefreshPostData()
         
         
 //        func refreshToken(completion: @escaping (_ isSuccess: Bool) -> Void) {

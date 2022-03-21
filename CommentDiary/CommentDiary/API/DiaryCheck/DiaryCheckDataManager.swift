@@ -81,3 +81,56 @@ class PreSaveDiaryCheckDataManager {
             }
     }
 }
+
+
+
+class GatherLookDetailDiaryCheckDataManager {
+    func commentDiaryCheckData(diaryID: Int, _ viewController: GatherLookDetailViewController) {
+        let url = "http://jwyang.shop:8080/api/v1/diary/\(diaryID)"
+        let token = UserDefaults.standard.value(forKey: "AccessToken") ?? ""
+        let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
+        
+        
+        AF.request(url,
+                   method: .get,
+                   parameters: nil,
+        headers: headers)
+            .validate()
+            .responseDecodable(of: DiaryCheckResopnse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    print("DEBUG >> Success \(response)")
+                    viewController.diaryGetSuccess(response)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+    }
+}
+
+
+
+class YReadCommentCheckDataManager {
+    func DiaryCheckData(diaryID: Int, _ viewController: YReadCommentViewController) {
+        let url = "http://jwyang.shop:8080/api/v1/diary/\(diaryID)"
+        let token = UserDefaults.standard.value(forKey: "AccessToken") ?? ""
+        let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
+        
+        
+        AF.request(url,
+                   method: .get,
+                   parameters: nil,
+        headers: headers)
+            .validate()
+            .responseDecodable(of: DiaryCheckResopnse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    print("DEBUG >> Success \(response)")
+//                    viewController.diaryGetSuccess(response)
+                    viewController.yReadDiarySuccessResponse(response)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+    }
+}

@@ -8,10 +8,24 @@
 import Foundation
 import UIKit
 
-class SendCommentViewController : UIViewController {
+class SendCommentViewController : UIViewController, CommentLabelChangeDelegate, CommentDateChangeDelegate {
+    var apiDateString = ""
+    
+    func onChange(data: String) {
+        yearLabel.text = data
+    }
+    
+    func onDateChange(data: String) {
+        apiDateString = data
+
+    }
+    
     //API 조회
     var commentListResult : [sentCommentListResult] = []
     //MARK: - Properties
+    @IBOutlet weak var yearLabel: UILabel!
+    
+    
     @IBOutlet weak var backButton: UIButton!
     
     @IBOutlet weak var sendCommentLabel: UILabel!
@@ -33,7 +47,6 @@ class SendCommentViewController : UIViewController {
         viewSetting()
         registerCell()
         
-        SentCommentListDataManager().sentCommentListData(self)
     }
     
     func viewSetting() {
@@ -79,18 +92,13 @@ extension SendCommentViewController: UITableViewDelegate, UITableViewDataSource 
         let allCommentListResult = commentListResult[indexPath.row]
         
         cell.backgroundColor = UIColor(hex: 0xFDFCF9)
-        cell.layer.cornerRadius = 10
+        cell.selectionStyle = .none
         cell.dateLabel.text = allCommentListResult.date
         cell.commentLabel.text = allCommentListResult.content
         
         return cell
         
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 142
-    }
-    
     
     
     
@@ -100,7 +108,9 @@ extension SendCommentViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension SendCommentViewController {
     func getCommentListSuccess(_ response : SentCommentListResponse) {
-        commentListResult = response.result
+        commentListResult = response.result!
         commentTableView.reloadData()
     }
+    
+//    func getCommentListDateSuccess(_ response: Se)
 }

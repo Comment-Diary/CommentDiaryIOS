@@ -27,7 +27,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나는 오늘도 너무너무 서툴다. sdfsdfs 나는 오늘도 너무너무 서툴다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kfu-JT-rMf">
-                        <rect key="frame" x="24" y="33" width="234.5" height="32"/>
+                        <rect key="frame" x="24" y="33" width="229.5" height="32"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="32" id="hb2-ij-htJ"/>
                         </constraints>
@@ -45,13 +45,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vf7-ZD-aBV">
-                        <rect key="frame" x="278.5" y="18.5" width="23" height="23"/>
+                        <rect key="frame" x="273.5" y="16" width="28" height="28"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="commentCount" translatesAutoresizingMaskIntoConstraints="NO" id="Omw-Ih-PCz">
-                                <rect key="frame" x="0.0" y="0.0" width="23" height="23"/>
+                                <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7K-ih-NDN">
-                                <rect key="frame" x="0.0" y="0.0" width="23" height="19"/>
+                                <rect key="frame" x="0.0" y="0.0" width="28" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -68,12 +68,13 @@
                             <constraint firstAttribute="trailing" secondItem="Omw-Ih-PCz" secondAttribute="trailing" id="bSY-gh-sgo"/>
                             <constraint firstAttribute="bottom" secondItem="W7K-ih-NDN" secondAttribute="bottom" constant="4" id="eWs-U9-q2I"/>
                             <constraint firstAttribute="bottom" secondItem="Omw-Ih-PCz" secondAttribute="bottom" id="qnr-uh-Ez0"/>
-                            <constraint firstAttribute="height" constant="23.329999999999998" id="rLc-Ux-udq"/>
+                            <constraint firstAttribute="height" constant="28" id="rLc-Ux-udq"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="vf7-ZD-aBV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18.329999999999998" id="Cr9-Yt-fPr"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tK2-gG-I7k" secondAttribute="trailing" constant="24" id="C7i-N8-MsT"/>
+                    <constraint firstItem="vf7-ZD-aBV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Cr9-Yt-fPr"/>
                     <constraint firstItem="vf7-ZD-aBV" firstAttribute="leading" secondItem="Kfu-JT-rMf" secondAttribute="trailing" constant="20" id="Nxf-gO-Aat"/>
                     <constraint firstItem="tK2-gG-I7k" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="dWq-8r-HHm"/>
                     <constraint firstItem="Kfu-JT-rMf" firstAttribute="top" secondItem="YVz-Yq-7qA" secondAttribute="bottom" id="dj1-h0-81f"/>

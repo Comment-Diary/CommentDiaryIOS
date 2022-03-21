@@ -35,8 +35,7 @@ class LoginViewController: UIViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loginButton.clipsToBounds = true
-        self.loginButton.layer.cornerRadius = loginButton.frame.height / 2
+
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
@@ -128,8 +127,8 @@ class LoginViewController: UIViewController {
         LoginRequest.email = emailTextField.text!
         LoginRequest.password = passwordTextField.text!
         //토큰tokenuserdefault 기존 삭제
-        UserDefaults.standard.removeObject(forKey: "AccessToken")
-        UserDefaults.standard.removeObject(forKey: "RefreshToken")
+//        UserDefaults.standard.removeObject(forKey: "AccessToken")
+//        UserDefaults.standard.removeObject(forKey: "RefreshToken")
         LoginDataManager().loginPostData(self)
 //        let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
 //        mainTabBarController.modalPresentationStyle = .fullScreen

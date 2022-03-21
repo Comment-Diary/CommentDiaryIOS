@@ -14,6 +14,7 @@ class NEidtViewController: UIViewController, UITextViewDelegate {
     var dateString = ""
     var titleString = ""
     var contentString = ""
+    var diaryId = 0
     //MARK: - Properties
     
     @IBOutlet weak var backButton: UIButton!
@@ -131,8 +132,10 @@ class NEidtViewController: UIViewController, UITextViewDelegate {
             
             ModifyDiaryRequest.title = titleTextView.text
             ModifyDiaryRequest.content = dairyContentTextView.text
+            ModifyDiaryRequest.deliveryYn = "N"
+            ModifyDiaryRequest.temyYn = "N"
             
-            ModifyDiaryDataManager().modifyDiaryPostData(self)
+            ModifyDiaryDataManager().modifyDiaryPostData(self, diaryId)
             
         }
         

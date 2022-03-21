@@ -26,6 +26,7 @@ class LoginDataManager {
                     print("DEBUG >> Success \(response)")
 //                    //AccessToken 저장
                     UserDefaults.standard.set(response.result.accessToken, forKey: "AccessToken")
+                    print(response.result.accessToken, "어세스토큰")
 //                    //RefreshToken 저장
                     UserDefaults.standard.set(response.result.refreshToken, forKey: "RefreshToken")
 //                    UserDefaultManager.shared.setTokens(accessToken: response.result.accessToken, refreshToken: response.result.refreshToken) //access refresh

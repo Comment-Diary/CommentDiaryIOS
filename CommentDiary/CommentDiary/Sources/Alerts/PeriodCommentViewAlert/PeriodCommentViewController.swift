@@ -21,7 +21,7 @@ class PeriodCommentViewController : UIViewController {
     var dateDelegate: CommentDateChangeDelegate?
     
     var yearString = "2020"
-    var monthString = "1"
+    var monthString = "01"
     var allLookString = ""
     var dateCaseString: String = ""
     var dateChangeString = ""
@@ -62,6 +62,7 @@ class PeriodCommentViewController : UIViewController {
         
         buttonSetting()
         setAvailableDate()
+        labelSetting()
     }
     
     override func viewWillLayoutSubviews() {
@@ -79,6 +80,12 @@ class PeriodCommentViewController : UIViewController {
             yearArray.append(i)
         }
     }
+    func labelSetting() {
+        periodLabel.text = "기간별 보기"
+        periodLabel.textColor = UIColor(hex: 0x4E4C49)
+        periodLabel.font = UIFont.AppleSDGothic(.bold, size: 20)
+        
+    }
     
     func viewSetting() {
         mainView.backgroundColor = UIColor(hex: 0xFDF8E9)
@@ -92,6 +99,15 @@ class PeriodCommentViewController : UIViewController {
     }
     
     func buttonSetting() {
+        allButton.setTitle("전체보기", for: .normal)
+        allButton.titleLabel?.font = .AppleSDGothic(.bold, size: 14)
+        allButton.setTitleColor(UIColor(hex: 0x5F5D59), for: .normal)
+        allButton.setTitleColor(UIColor(hex: 0x5F5D59), for: .highlighted)
+        saveButton.setTitle("저장", for: .normal)
+        saveButton.titleLabel?.font = .AppleSDGothic(.bold, size: 14)
+        saveButton.setTitleColor(UIColor(hex: 0x5F5D59), for: .normal)
+        saveButton.setTitleColor(UIColor(hex: 0x5F5D59), for: .highlighted)
+        
         allButton.backgroundColor = UIColor(hex: 0xFDF8E9)
         saveButton.backgroundColor = UIColor(hex: 0xFDF8E9)
         allButton.layer.borderColor = UIColor(hex: 0xE2DFD7).cgColor
@@ -111,10 +127,20 @@ class PeriodCommentViewController : UIViewController {
     
     @IBAction func allButtonTap(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+        dateCaseString = "전체보기"
+        dateChangeString = "전체보기"
+        delegate?.onChange(data: dateCaseString)
+        dateDelegate?.onDateChange(data: dateChangeString)
+        print(dateCaseString)
     }
     
     @IBAction func saveButtonTap(_ sender: Any) {
+        dateCaseString = "\(yearString)년 \(monthString)월"
+        dateChangeString = "\(yearString).\(monthString)"
+        delegate?.onChange(data: dateCaseString)
+        dateDelegate?.onDateChange(data: dateChangeString)
         dismiss(animated: true, completion: nil)
+        print(dateCaseString)
     }
     
     

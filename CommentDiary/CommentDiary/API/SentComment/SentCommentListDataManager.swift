@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class SentCommentListDataManager {
+class AllSentCommentListDataManager {
     func sentCommentListData(_ viewController: SendCommentViewController) {
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers : HTTPHeaders = [.authorization(bearerToken: token as! String)]

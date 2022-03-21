@@ -26,19 +26,19 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jlH-St-sW9">
-                                        <rect key="frame" x="17" y="0.0" width="286" height="470.5"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jlH-St-sW9">
+                                        <rect key="frame" x="0.0" y="5" width="320" height="465.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="rrO-DZ-yuF" firstAttribute="centerY" secondItem="rC4-Jj-xtZ" secondAttribute="centerY" id="1Oa-yH-hcP"/>
-                                    <constraint firstItem="jlH-St-sW9" firstAttribute="top" secondItem="rC4-Jj-xtZ" secondAttribute="top" id="23t-C2-F8N"/>
+                                    <constraint firstItem="jlH-St-sW9" firstAttribute="top" secondItem="rC4-Jj-xtZ" secondAttribute="top" constant="5" id="23t-C2-F8N"/>
                                     <constraint firstItem="rrO-DZ-yuF" firstAttribute="centerX" secondItem="rC4-Jj-xtZ" secondAttribute="centerX" id="JZ3-0X-7bQ"/>
-                                    <constraint firstItem="jlH-St-sW9" firstAttribute="leading" secondItem="rC4-Jj-xtZ" secondAttribute="leading" constant="17" id="iSL-Xq-X19"/>
+                                    <constraint firstItem="jlH-St-sW9" firstAttribute="leading" secondItem="rC4-Jj-xtZ" secondAttribute="leading" id="iSL-Xq-X19"/>
                                     <constraint firstAttribute="bottom" secondItem="jlH-St-sW9" secondAttribute="bottom" id="kFR-5n-zZW"/>
-                                    <constraint firstAttribute="trailing" secondItem="jlH-St-sW9" secondAttribute="trailing" constant="17" id="sgw-Vz-3xz"/>
+                                    <constraint firstAttribute="trailing" secondItem="jlH-St-sW9" secondAttribute="trailing" id="sgw-Vz-3xz"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="reL-PT-6hJ">
@@ -115,6 +115,7 @@
                     <connections>
                         <outlet property="backgroundView" destination="rC4-Jj-xtZ" id="oPf-wR-GX6"/>
                         <outlet property="dateButton" destination="VAs-aJ-3b5" id="iOa-oi-3eX"/>
+                        <outlet property="dateButtonView" destination="IJo-89-HNX" id="ekc-o7-4Y9"/>
                         <outlet property="noDiaryLabel" destination="rrO-DZ-yuF" id="ezf-eY-QtL"/>
                         <outlet property="sortTableView" destination="jlH-St-sW9" id="pb3-j1-dIu"/>
                         <outlet property="topBackView" destination="reL-PT-6hJ" id="O4o-ZT-1W7"/>

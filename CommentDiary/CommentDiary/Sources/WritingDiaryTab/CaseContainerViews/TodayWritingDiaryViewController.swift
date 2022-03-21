@@ -16,6 +16,14 @@ class TodayWritingDiaryViewController : UIViewController {
         return df
     }()
     
+    lazy var detailDayDateFormatter: DateFormatter = {
+        let df = DateFormatter()
+//        df.locale = Locale(identifier: "ko_KR")
+//        df.timeZone = TimeZone(identifier: "UTC")
+        df.dateFormat = "yyyy.MM.dd"
+        return df
+    }()
+    
     var presentDateString = ""
     //MARK: - Properties
     
@@ -41,6 +49,7 @@ class TodayWritingDiaryViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         viewSetting()
 
         labelSetting()
@@ -50,17 +59,22 @@ class TodayWritingDiaryViewController : UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         dateLabelSetting()
+        presentDateString = detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
     }
     
     func dateLabelSetting() {
         self.dateLabel.text = self.krMonthDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
 //        self.dateLabel.text = self.krMonthDateFormatter.string(from: Date())
         
+        //MM월dd일
         NotificationCenter.default.addObserver(self, selector: #selector(loadData(_:)), name: NSNotification.Name(rawValue: "SelectedDate"), object: nil)
         
+        
+        
+        //날짜 선택시 yyyy.MM.dd
         NotificationCenter.default.addObserver(self, selector: #selector(updateData(_:)), name: NSNotification.Name(rawValue: "presentDate"), object: nil)
-        
-        
+        //날짜 선택 없이 yyyy.MM.dd
+//        NotificationCenter.default.addObserver(self, selector: #selector(loadTodayData(_:)), name: NSNotification.Name(rawValue: "loadDate"), object: nil)
         
 
     }
@@ -91,6 +105,9 @@ class TodayWritingDiaryViewController : UIViewController {
     @objc func updateData(_ notification : NSNotification) {
         presentDateString = notification.object as? String ?? ""
     }
+//    @objc func loadTodayData(_ notification : NSNotification) {
+//        presentDateString = notification.object as? String ?? ""
+//    }
 
     
     @IBAction func writeDiaryButtonTap(_ sender: Any) {

@@ -18,19 +18,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gz1-TH-7lB">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="48.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="보낸 코멘트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGe-4g-joU">
-                                        <rect key="frame" x="121" y="22.5" width="78" height="20.5"/>
+                                        <rect key="frame" x="121" y="14" width="78" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1t-i6-kNC">
-                                        <rect key="frame" x="8" y="12" width="67" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1t-i6-kNC">
+                                        <rect key="frame" x="16" y="2.5" width="44" height="44"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" image="arrowLeft"/>
                                         <connections>
                                             <action selector="backButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ID0-bF-WHg"/>
                                         </connections>
@@ -38,13 +37,15 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="BR5-RF-Dvd"/>
+                                    <constraint firstAttribute="width" secondItem="Gz1-TH-7lB" secondAttribute="height" multiplier="375:57" id="HyS-VO-5zi"/>
                                     <constraint firstItem="lGe-4g-joU" firstAttribute="centerY" secondItem="Gz1-TH-7lB" secondAttribute="centerY" id="UNH-XY-WDF"/>
+                                    <constraint firstItem="t1t-i6-kNC" firstAttribute="leading" secondItem="Gz1-TH-7lB" secondAttribute="leading" constant="16" id="qi2-wZ-I7h"/>
                                     <constraint firstItem="lGe-4g-joU" firstAttribute="centerX" secondItem="Gz1-TH-7lB" secondAttribute="centerX" id="sDv-YK-paa"/>
+                                    <constraint firstItem="t1t-i6-kNC" firstAttribute="centerY" secondItem="Gz1-TH-7lB" secondAttribute="centerY" id="twb-ER-BaT"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaF-sc-H1a">
-                                <rect key="frame" x="0.0" y="65" width="320" height="503"/>
+                                <rect key="frame" x="0.0" y="48.5" width="320" height="519.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOW-Eb-3gn">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
@@ -54,16 +55,16 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PzO-Kp-rtr">
-                                        <rect key="frame" x="0.0" y="1" width="320" height="65"/>
+                                        <rect key="frame" x="0.0" y="1" width="320" height="54.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ux-ee-Cff">
-                                                <rect key="frame" x="184" y="15" width="120" height="32"/>
+                                                <rect key="frame" x="169" y="9.5" width="135" height="36"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m4x-sG-nMR">
-                                                        <rect key="frame" x="10" y="0.0" width="84" height="32"/>
+                                                        <rect key="frame" x="10" y="0.0" width="91" height="36"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022년 12월" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMF-c2-c97">
-                                                                <rect key="frame" x="0.0" y="0.0" width="84" height="32"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="91" height="36"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -71,13 +72,13 @@
                                                         </subviews>
                                                     </stackView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomArrow" translatesAutoresizingMaskIntoConstraints="NO" id="cao-QZ-qc3">
-                                                        <rect key="frame" x="99" y="15" width="8" height="4"/>
+                                                        <rect key="frame" x="106" y="15" width="16" height="8"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="cao-QZ-qc3" secondAttribute="height" multiplier="8:4" id="zzM-eD-nuN"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJL-DB-xpo">
-                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="32"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="135" height="36"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <connections>
                                                             <action selector="periodButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gul-Qn-VUd"/>
@@ -103,14 +104,13 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
-                                            <constraint firstItem="4Ux-ee-Cff" firstAttribute="top" secondItem="PzO-Kp-rtr" secondAttribute="top" constant="15" id="3Rg-g4-PFp"/>
+                                            <constraint firstAttribute="width" secondItem="PzO-Kp-rtr" secondAttribute="height" multiplier="377:64" id="5L9-an-chv"/>
                                             <constraint firstAttribute="trailing" secondItem="4Ux-ee-Cff" secondAttribute="trailing" constant="16" id="KJ8-BO-xWm"/>
-                                            <constraint firstAttribute="height" constant="65" id="bYi-T6-AwT"/>
-                                            <constraint firstAttribute="bottom" secondItem="4Ux-ee-Cff" secondAttribute="bottom" constant="18" id="m0M-Lz-bVv"/>
+                                            <constraint firstItem="4Ux-ee-Cff" firstAttribute="centerY" secondItem="PzO-Kp-rtr" secondAttribute="centerY" id="tmb-wZ-ben"/>
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="h8E-O0-JZS">
-                                        <rect key="frame" x="17" y="66" width="286" height="437"/>
+                                        <rect key="frame" x="17" y="55.5" width="286" height="464"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
@@ -148,6 +148,7 @@
                         <outlet property="periodButton" destination="dJL-DB-xpo" id="Tgl-4n-zKe"/>
                         <outlet property="sendCommentLabel" destination="lGe-4g-joU" id="Uqa-7S-eXg"/>
                         <outlet property="topBackView" destination="Gz1-TH-7lB" id="No7-1b-m6U"/>
+                        <outlet property="yearLabel" destination="MMF-c2-c97" id="Df1-WE-l9y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -156,6 +157,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowLeft" width="44" height="44"/>
         <image name="bottomArrow" width="16" height="8"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

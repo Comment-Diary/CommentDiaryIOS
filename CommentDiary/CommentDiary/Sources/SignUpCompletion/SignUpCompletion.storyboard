@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -14,11 +14,11 @@
             <objects>
                 <viewController storyboardIdentifier="SignUpCompletionViewController" id="Y6W-OH-hqX" customClass="SignUpCompletionViewController" customModule="CommentDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEm-ZR-WTH">
-                                <rect key="frame" x="16" y="817.33333333333337" width="396" height="64.666666666666629"/>
+                                <rect key="frame" x="16" y="499" width="288" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pEm-ZR-WTH" secondAttribute="height" multiplier="343:56" id="BYm-xd-t1W"/>
                                 </constraints>
@@ -29,7 +29,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboard4" translatesAutoresizingMaskIntoConstraints="NO" id="QDH-ow-7jI">
-                                <rect key="frame" x="0.0" y="44" width="428" height="726.33333333333337"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="452"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -37,8 +37,7 @@
                         <constraints>
                             <constraint firstItem="pEm-ZR-WTH" firstAttribute="top" secondItem="QDH-ow-7jI" secondAttribute="bottom" constant="47" id="1aP-p8-HT9"/>
                             <constraint firstItem="QDH-ow-7jI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Dnc-Nu-UcN"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="pEm-ZR-WTH" secondAttribute="bottom" priority="250" constant="22" id="EEL-dn-9bQ"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="pEm-ZR-WTH" secondAttribute="bottom" constant="10" id="HBM-PZ-O15"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="pEm-ZR-WTH" secondAttribute="bottom" constant="22" id="EEL-dn-9bQ"/>
                             <constraint firstItem="pEm-ZR-WTH" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="HX2-7i-ILT"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pEm-ZR-WTH" secondAttribute="trailing" constant="16" id="fDR-Ty-MCm"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="QDH-ow-7jI" secondAttribute="trailing" id="k0W-Dg-WvS"/>

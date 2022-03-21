@@ -73,6 +73,7 @@ class MyPageViewController :UIViewController {
         emailBackView.layer.cornerRadius = emailBackView.frame.height / 2
         progressBackView.layer.cornerRadius = progressBackView.frame.height / 2
         
+        
     }
     
     func viewSetting() {

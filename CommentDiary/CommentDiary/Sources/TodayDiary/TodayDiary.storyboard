@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZC1-Ee-aUX" customClass="CornerButton" customModule="CommentDiary" customModuleProvider="target">
-                                <rect key="frame" x="16" y="511" width="288" height="47"/>
+                                <rect key="frame" x="16" y="505" width="288" height="47"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ZC1-Ee-aUX" secondAttribute="height" multiplier="343:56" id="3gF-tR-hqf"/>
@@ -60,19 +60,19 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcY-w0-Xgg">
-                                <rect key="frame" x="16" y="48.5" width="288" height="448.5"/>
+                                <rect key="frame" x="16" y="48.5" width="288" height="442.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T7K-0Y-By9">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="417.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="411.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0v-Ki-N0Z">
-                                                <rect key="frame" x="220" y="384.5" width="42" height="21"/>
+                                                <rect key="frame" x="220" y="378.5" width="42" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2D-mZ-25E">
-                                                <rect key="frame" x="0.0" y="0.0" width="288" height="384.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="378.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qtK-Oi-S7J">
                                                         <rect key="frame" x="0.0" y="0.0" width="288" height="434"/>
@@ -118,7 +118,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIT-Ko-zgJ">
                                                                 <rect key="frame" x="0.0" y="105.5" width="288" height="328.5"/>
                                                                 <subviews>
-                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dqO-ZP-9RZ">
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="sdf" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dqO-ZP-9RZ">
                                                                         <rect key="frame" x="24" y="12" width="214" height="316.5"/>
                                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                                         <color key="textColor" systemColor="labelColor"/>
@@ -171,7 +171,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일기전송은 다가오는 오전 7시에 종료돼요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOg-Sy-14U">
-                                        <rect key="frame" x="43.5" y="433.5" width="201" height="15"/>
+                                        <rect key="frame" x="43.5" y="427.5" width="201" height="15"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -195,13 +195,12 @@
                             <constraint firstItem="ZC1-Ee-aUX" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="6Te-FM-nls"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZC1-Ee-aUX" secondAttribute="trailing" constant="16" id="KtH-Iq-xa0"/>
                             <constraint firstItem="JdS-Kk-ZCw" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Ogp-xc-ZGm"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ZC1-Ee-aUX" secondAttribute="bottom" priority="250" constant="22" id="R8y-9K-9DA"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fcY-w0-Xgg" secondAttribute="trailing" constant="16" id="Uxp-eG-UKn"/>
                             <constraint firstItem="ZC1-Ee-aUX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="XIw-uA-oDa"/>
                             <constraint firstItem="fcY-w0-Xgg" firstAttribute="top" secondItem="JdS-Kk-ZCw" secondAttribute="bottom" id="bx2-5e-im0"/>
                             <constraint firstItem="JdS-Kk-ZCw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="egp-sU-IHA"/>
                             <constraint firstItem="fcY-w0-Xgg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="ii5-0M-vLD"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ZC1-Ee-aUX" secondAttribute="bottom" constant="10" id="sTk-Gw-F9v"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ZC1-Ee-aUX" secondAttribute="bottom" constant="16" id="sTk-Gw-F9v"/>
                             <constraint firstItem="ZC1-Ee-aUX" firstAttribute="top" secondItem="fcY-w0-Xgg" secondAttribute="bottom" constant="14" id="tti-rs-fab"/>
                         </constraints>
                     </view>

@@ -111,6 +111,7 @@ class NSaveViewController: UIViewController {
         nEditVC.dateString = dateLabel.text ?? ""
         nEditVC.titleString = titleLabel.text ?? ""
         nEditVC.contentString = contentLabel.text ?? ""
+        nEditVC.diaryId = diaryidInt
 
         self.navigationController?.pushViewController(nEditVC, animated: true)
 

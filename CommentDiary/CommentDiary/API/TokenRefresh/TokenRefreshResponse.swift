@@ -16,5 +16,7 @@ struct tokenRefreshResult : Codable {
     var grantType : String
     var accessToken : String
     var refreshToken : String
-    var accessTokenExpiresIn: String
+    var accessTokenExpiresIn: Int
 }
+
+

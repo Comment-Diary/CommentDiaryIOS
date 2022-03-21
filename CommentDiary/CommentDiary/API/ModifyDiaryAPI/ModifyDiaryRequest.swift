@@ -9,4 +9,6 @@ import Foundation
 struct ModifyDiaryRequest {
     static var title = ""
     static var content = ""
+    static var deliveryYn = ""
+    static var temyYn = ""
 }

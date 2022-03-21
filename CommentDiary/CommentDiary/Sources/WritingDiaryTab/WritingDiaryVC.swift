@@ -465,6 +465,17 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
                     self.notArrivalCommentView.isHidden = true
                     self.preSaveView.isHidden = true
                 }
+                
+//                let interval = formatter.date(from: todaydate)
+//  //                let todayDate = formatter.date(from: <#T##String#>)
+//
+//  //                let interval = todayDateValue!.timeIntervalSince(<#T##date: Date##Date#>)
+//
+//                  if i == String(detailDayDateFormatter.string(from: date)) {
+//                      let selectedDate = detailDayDateFormatter.date(from: i)!
+//                      let interval = todayDateValue!.timeIntervalSince(selectedDate)
+//                      let days = Int(interval / 86400)
+//                  }
             }
         
         //todo 일기 결국 도착 x
@@ -628,7 +639,7 @@ extension WritingDiaryVC {
         
 
         let todayDateData = detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
-        
+        print(todayDateData, "-------------------------")
         for i in mainPageResult {
             //??
             if todayDateData == i.date {

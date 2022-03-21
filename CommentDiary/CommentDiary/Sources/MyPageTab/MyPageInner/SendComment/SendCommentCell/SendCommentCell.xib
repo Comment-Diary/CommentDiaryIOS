@@ -26,9 +26,13 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aut-v1-nwT">
-                        <rect key="frame" x="24" y="33" width="272" height="41"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aut-v1-nwT">
+                        <rect key="frame" x="24" y="33" width="272" height="93"/>
                         <string key="text">    "email": "ckdgnl@temp.com",
+234!"    "email": "ckdgnl@temp.com",
+234!"    "email": "ckdgnl@temp.com",
+234!"    "email": "ckdgnl@temp.com",
+234!"    "email": "ckdgnl@temp.com",
 234!"</string>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -37,7 +41,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="28w-5c-rut" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="5UM-kl-em2"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="aut-v1-nwT" secondAttribute="bottom" priority="250" constant="24" id="9Dx-ag-hOg"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="aut-v1-nwT" secondAttribute="bottom" constant="16" id="Q5T-Ot-p4L"/>
                     <constraint firstItem="aut-v1-nwT" firstAttribute="top" secondItem="28w-5c-rut" secondAttribute="bottom" id="Tzo-eS-Hqj"/>
                     <constraint firstItem="28w-5c-rut" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="dwu-6B-BQu"/>
                     <constraint firstAttribute="trailing" secondItem="aut-v1-nwT" secondAttribute="trailing" constant="24" id="fOm-dO-Kuf"/>

@@ -85,7 +85,7 @@
                                                 <rect key="frame" x="0.0" y="86" width="288" height="426.5"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zD1-Oi-Bmp">
-                                                        <rect key="frame" x="24" y="12" width="214" height="414.5"/>
+                                                        <rect key="frame" x="24" y="12" width="240" height="414.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -97,7 +97,7 @@
                                                     <constraint firstAttribute="width" secondItem="f9O-fi-6pw" secondAttribute="height" multiplier="343:508" priority="250" id="1cw-NU-vg8"/>
                                                     <constraint firstAttribute="bottom" secondItem="zD1-Oi-Bmp" secondAttribute="bottom" id="JdI-37-97u"/>
                                                     <constraint firstItem="zD1-Oi-Bmp" firstAttribute="leading" secondItem="f9O-fi-6pw" secondAttribute="leading" constant="24" id="U7k-qZ-6fF"/>
-                                                    <constraint firstAttribute="trailing" secondItem="zD1-Oi-Bmp" secondAttribute="trailing" constant="50" id="qmp-IG-BBt"/>
+                                                    <constraint firstAttribute="trailing" secondItem="zD1-Oi-Bmp" secondAttribute="trailing" constant="24" id="qmp-IG-BBt"/>
                                                     <constraint firstItem="zD1-Oi-Bmp" firstAttribute="top" secondItem="f9O-fi-6pw" secondAttribute="top" constant="12" id="tql-h0-xhW"/>
                                                     <constraint firstAttribute="height" priority="250" constant="470" id="vWm-gI-t5f"/>
                                                 </constraints>

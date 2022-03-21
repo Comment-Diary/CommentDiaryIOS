@@ -18,11 +18,13 @@ struct diaryCheckResult: Decodable {
     var content: String
     var date: String
     var deliveryYn: String
-    var commentResponseList: [commentCheckResponseList]
+    var commentResponseList: [myCommentCheckResponseList]
 }
 
-struct commentCheckResponseList : Decodable {
+struct myCommentCheckResponseList : Decodable {
     var id: Int
     var content: String
     var like: Bool
 }
+
+

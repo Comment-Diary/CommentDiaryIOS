@@ -61,6 +61,8 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
         buttonSetting()
         textViewPlaceholdeerSetting()
 //        scrollViewDismissKeyboard()
+//        self.tabBarController?.selectedIndex = 1
+//        self.navigationController?.tabBarController?.selectedIndex = 1
     }
     
     func viewSetting() {

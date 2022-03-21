@@ -16,26 +16,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="yWH-aa-sJ4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="회원가입" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="yWH-aa-sJ4">
                                 <rect key="frame" x="52" y="81" width="104" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이디(이메일)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="NfJ-ZY-heP">
-                                <rect key="frame" x="52" y="149" width="100.5" height="20.5"/>
+                                <rect key="frame" x="52" y="144.5" width="100.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nah-y8-v3v">
-                                <rect key="frame" x="52" y="271" width="55.5" height="19.5"/>
+                                <rect key="frame" x="52" y="259" width="55.5" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="coda@coda.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="azo-eb-zHY">
-                                <rect key="frame" x="52" y="173.5" width="216" height="35"/>
+                                <rect key="frame" x="52" y="169" width="216" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="azo-eb-zHY" secondAttribute="height" multiplier="272:44" id="62f-de-6ZB"/>
                                 </constraints>
@@ -46,7 +46,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WDq-rE-FzQ">
-                                <rect key="frame" x="52" y="294.5" width="216" height="35"/>
+                                <rect key="frame" x="52" y="282.5" width="216" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="WDq-rE-FzQ" secondAttribute="height" multiplier="272:44" id="ZpX-on-Q97"/>
                                 </constraints>
@@ -57,7 +57,7 @@
                                 </connections>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fK7-Z5-7HZ">
-                                <rect key="frame" x="52" y="372.5" width="216" height="20.5"/>
+                                <rect key="frame" x="52" y="360.5" width="216" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 확인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="09f-SW-nYb">
                                         <rect key="frame" x="0.0" y="0.0" width="93" height="20.5"/>
@@ -74,7 +74,7 @@
                                 </subviews>
                             </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3NR-GV-IN4">
-                                <rect key="frame" x="52" y="397.5" width="216" height="35"/>
+                                <rect key="frame" x="52" y="385.5" width="216" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="3NR-GV-IN4" secondAttribute="height" multiplier="272:44" id="vrl-a4-D0l"/>
                                 </constraints>
@@ -85,7 +85,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEk-25-Pog">
-                                <rect key="frame" x="144" y="215.5" width="124" height="40"/>
+                                <rect key="frame" x="144" y="211" width="124" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kEk-25-Pog" secondAttribute="height" multiplier="124:40" id="8G0-n9-zB3"/>
                                     <constraint firstAttribute="height" constant="40" id="rlS-b2-ObQ"/>
@@ -98,25 +98,25 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 양식에 맞춰주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Qby-Lm-B8M">
-                                <rect key="frame" x="160.5" y="152.5" width="131" height="16"/>
+                                <rect key="frame" x="160.5" y="148" width="131" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작성 양식을 다시 한번 확인해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iH0-fo-udR">
-                                <rect key="frame" x="115.5" y="273" width="187" height="16"/>
+                                <rect key="frame" x="115.5" y="261" width="187" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대소문자, 숫자, 특수문자를 포함해 8~16자 작성해주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="COv-EF-RJ0">
-                                <rect key="frame" x="52" y="332.5" width="216" height="16"/>
+                                <rect key="frame" x="52" y="320.5" width="216" height="16"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqF-CM-zom">
-                                <rect key="frame" x="16" y="511" width="288" height="47"/>
+                                <rect key="frame" x="16" y="499" width="288" height="47"/>
                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gqF-CM-zom" secondAttribute="height" multiplier="343:56" id="ODj-Lw-Nnc"/>
@@ -130,7 +130,7 @@
                                     <action selector="signUpTapButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hCP-Ep-pKp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLD-b9-tPH">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLD-b9-tPH">
                                 <rect key="frame" x="16" y="27" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="0t3-hJ-k2r"/>
@@ -143,7 +143,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입 시 코다의 개인정보 취급 방침 및 이용 약관에 동의합니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vYx-dK-qIf">
-                                <rect key="frame" x="20" y="492.5" width="280" height="14.5"/>
+                                <rect key="frame" x="20" y="480.5" width="280" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -178,7 +178,7 @@
                             <constraint firstItem="Qby-Lm-B8M" firstAttribute="leading" secondItem="NfJ-ZY-heP" secondAttribute="trailing" constant="8" symbolic="YES" id="T9K-4m-OBC"/>
                             <constraint firstItem="yWH-aa-sJ4" firstAttribute="top" secondItem="YLD-b9-tPH" secondAttribute="bottom" priority="100" constant="54" id="ToP-Cy-FCC"/>
                             <constraint firstItem="vYx-dK-qIf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="UJA-vP-nCb"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="gqF-CM-zom" secondAttribute="bottom" priority="250" constant="22" id="YXf-7P-qgi"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="gqF-CM-zom" secondAttribute="bottom" constant="22" id="YXf-7P-qgi"/>
                             <constraint firstItem="iH0-fo-udR" firstAttribute="centerY" secondItem="nah-y8-v3v" secondAttribute="centerY" id="bUq-sP-N1H"/>
                             <constraint firstItem="WDq-rE-FzQ" firstAttribute="top" secondItem="nah-y8-v3v" secondAttribute="bottom" constant="4" id="bZB-pT-jAF"/>
                             <constraint firstItem="NfJ-ZY-heP" firstAttribute="top" secondItem="yWH-aa-sJ4" secondAttribute="bottom" priority="250" constant="32" id="cDq-Zf-4r0"/>
@@ -192,7 +192,6 @@
                             <constraint firstItem="yWH-aa-sJ4" firstAttribute="top" relation="lessThanOrEqual" secondItem="YLD-b9-tPH" secondAttribute="bottom" constant="54" id="mFN-NM-sNg"/>
                             <constraint firstItem="gqF-CM-zom" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ozs-hm-s1u"/>
                             <constraint firstItem="YLD-b9-tPH" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="10" id="pQY-UY-k13"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="gqF-CM-zom" secondAttribute="bottom" constant="10" id="s2t-Vs-qv5"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gqF-CM-zom" secondAttribute="trailing" constant="16" id="svw-1o-jLO"/>
                             <constraint firstItem="fK7-Z5-7HZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="52" id="t4w-kw-Lrh"/>
                             <constraint firstItem="NfJ-ZY-heP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="52" id="v6x-sK-UJH"/>

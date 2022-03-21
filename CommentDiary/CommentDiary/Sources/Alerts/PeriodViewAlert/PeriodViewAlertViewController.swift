@@ -21,7 +21,7 @@ class PeriodViewAlertViewController : UIViewController {
     
     
     var yearString = "2020"
-    var monthString = "1"
+    var monthString = "01"
     var allLookString = ""
     var dateCaseString: String = ""
     var dateChangeString = ""
@@ -46,6 +46,10 @@ class PeriodViewAlertViewController : UIViewController {
     @IBOutlet weak var allButton: UIButton!
     
     @IBOutlet weak var saveButton: UIButton!
+    
+    @IBOutlet weak var periodLookLabel: UILabel!
+    
+    
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +59,7 @@ class PeriodViewAlertViewController : UIViewController {
         
         viewSetting()
         buttonSetting()
+        labelSetting()
     }
     override func viewWillLayoutSubviews() {
         yearPickerView.subviews[1].backgroundColor = .clear
@@ -72,6 +77,12 @@ class PeriodViewAlertViewController : UIViewController {
         }
     }
     
+    func labelSetting() {
+        periodLookLabel.text = "기간별 보기"
+        periodLookLabel.textColor = UIColor(hex: 0x4E4C49)
+        periodLookLabel.font = UIFont.AppleSDGothic(.bold, size: 20)
+    }
+    
     func viewSetting() {
         mainVIew.backgroundColor = UIColor(hex: 0xFDF8E9)
         dateView.backgroundColor = UIColor(hex: 0xFDF8E9)
@@ -84,6 +95,15 @@ class PeriodViewAlertViewController : UIViewController {
     }
     
     func buttonSetting() {
+        allButton.setTitle("전체보기", for: .normal)
+        allButton.titleLabel?.font = .AppleSDGothic(.bold, size: 14)
+        allButton.setTitleColor(UIColor(hex: 0x5F5D59), for: .normal)
+        allButton.setTitleColor(UIColor(hex: 0x5F5D59), for: .highlighted)
+        saveButton.setTitle("저장", for: .normal)
+        saveButton.titleLabel?.font = .AppleSDGothic(.bold, size: 14)
+        saveButton.setTitleColor(UIColor(hex: 0x5F5D59), for: .normal)
+        saveButton.setTitleColor(UIColor(hex: 0x5F5D59), for: .highlighted)
+        
         allButton.backgroundColor = UIColor(hex: 0xFDF8E9)
         saveButton.backgroundColor = UIColor(hex: 0xFDF8E9)
         allButton.layer.borderColor = UIColor(hex: 0xE2DFD7).cgColor

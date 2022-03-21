@@ -7,16 +7,16 @@
 
 import Foundation
 struct GatherDiaryAllResponse: Decodable {
-    var code: Int
-    var message: String
-    var result : [GatherDiaryAllListResult]
+    var code: Int?
+    var message: String?
+    var result : [GatherDiaryAllListResult]?
 }
 
 struct GatherDiaryAllListResult : Decodable {
-    var id: Int
-    var title: String
-    var content: String
-    var date: String
-    var deliveryYn: String
-    var commentCnt : Int
+    var id: Int?
+    var title: String?
+    var content: String?
+    var date: String?
+    var deliveryYn: String?
+    var commentCnt : Int?
 }

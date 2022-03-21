@@ -67,19 +67,13 @@
                                         <rect key="frame" x="0.0" y="69" width="334" height="122.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VwJ-03-j8S">
-                                                <rect key="frame" x="20" y="38.5" width="294" height="45.5"/>
+                                                <rect key="frame" x="20" y="4" width="294" height="114.5"/>
                                                 <subviews>
                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGr-JE-HXU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="143" height="45.5"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="gGr-JE-HXU" secondAttribute="height" multiplier="100:32" id="o0x-Wj-Ecw"/>
-                                                        </constraints>
+                                                        <rect key="frame" x="0.0" y="0.0" width="143" height="114.5"/>
                                                     </pickerView>
                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r92-Fo-oQp">
-                                                        <rect key="frame" x="151" y="0.0" width="143" height="45.5"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="r92-Fo-oQp" secondAttribute="height" multiplier="100:32" id="zRq-VZ-rnY"/>
-                                                        </constraints>
+                                                        <rect key="frame" x="151" y="0.0" width="143" height="114.5"/>
                                                     </pickerView>
                                                 </subviews>
                                             </stackView>
@@ -89,6 +83,8 @@
                                             <constraint firstItem="VwJ-03-j8S" firstAttribute="centerX" secondItem="7xg-wW-e3z" secondAttribute="centerX" id="0bX-uW-dYo"/>
                                             <constraint firstItem="VwJ-03-j8S" firstAttribute="centerY" secondItem="7xg-wW-e3z" secondAttribute="centerY" id="Mdm-gS-NfE"/>
                                             <constraint firstItem="VwJ-03-j8S" firstAttribute="leading" secondItem="7xg-wW-e3z" secondAttribute="leading" constant="20" id="MyA-FJ-hUq"/>
+                                            <constraint firstAttribute="bottom" secondItem="VwJ-03-j8S" secondAttribute="bottom" constant="4" id="SfJ-J7-7De"/>
+                                            <constraint firstItem="VwJ-03-j8S" firstAttribute="top" secondItem="7xg-wW-e3z" secondAttribute="top" constant="4" id="eqq-Av-k6x"/>
                                             <constraint firstAttribute="trailing" secondItem="VwJ-03-j8S" secondAttribute="trailing" constant="20" id="oKy-2i-m87"/>
                                         </constraints>
                                     </view>

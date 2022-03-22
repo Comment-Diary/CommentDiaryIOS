@@ -29,6 +29,11 @@ class MyAccountViewController : UIViewController {
     @IBOutlet weak var memberOutLabel: UILabel!
     @IBOutlet weak var thirdSeparateView: UIView!
     
+    @IBOutlet weak var fourthSeparateView: UIView!
+    
+    @IBOutlet weak var passwordChangeBackView: UIView!
+    @IBOutlet weak var changePasswordLabel: UILabel!
+    
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,11 +45,12 @@ class MyAccountViewController : UIViewController {
         view.backgroundColor = UIColor(hex: 0xFDFCF9)
         topBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
         myAccount.backgroundColor = UIColor(hex: 0xFDFCF9)
-        logOutLabel.backgroundColor = UIColor(hex: 0xFDFCF9)
         memberOutView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        passwordChangeBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
         firstSeparteView.backgroundColor = UIColor(hex: 0xE2DFD7)
         secondSeparateView.backgroundColor = UIColor(hex: 0xE2DFD7)
         thirdSeparateView.backgroundColor = UIColor(hex: 0xE2DFD7)
+        fourthSeparateView.backgroundColor = UIColor(hex: 0xE2DFD7)
         
     }
     
@@ -71,6 +77,12 @@ class MyAccountViewController : UIViewController {
     
     @IBAction func logOutTapButton(_ sender: Any) {
     }
+    
+    @IBAction func changePassowordButtonTap(_ sender: Any) {
+        let changePasswordVC = UIStoryboard(name: "ChangePassword", bundle: nil).instantiateViewController(withIdentifier: "ChagePasswordViewController") as! ChagePasswordViewController
+        self.navigationController?.pushViewController(changePasswordVC, animated: true)
+    }
+    
     
 }
 

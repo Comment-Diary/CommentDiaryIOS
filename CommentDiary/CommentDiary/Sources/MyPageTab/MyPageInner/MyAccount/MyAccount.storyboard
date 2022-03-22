@@ -121,15 +121,55 @@
                                     <constraint firstAttribute="height" constant="1" id="d64-Vn-5QW"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8CQ-Gj-jt7">
+                                <rect key="frame" x="0.0" y="242.5" width="414" height="61.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 변경" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxU-4T-JoK">
+                                        <rect key="frame" x="24" y="20.5" width="93" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aU-U0-4Wt">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="61.5"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="changePassowordButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="2MB-yg-Bdr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="0aU-U0-4Wt" secondAttribute="bottom" id="0S7-Xj-Ila"/>
+                                    <constraint firstItem="0aU-U0-4Wt" firstAttribute="leading" secondItem="8CQ-Gj-jt7" secondAttribute="leading" id="10L-01-vz4"/>
+                                    <constraint firstAttribute="trailing" secondItem="0aU-U0-4Wt" secondAttribute="trailing" id="Tgj-GW-hFb"/>
+                                    <constraint firstAttribute="width" secondItem="8CQ-Gj-jt7" secondAttribute="height" multiplier="375:56" id="atm-Ne-HnQ"/>
+                                    <constraint firstItem="0aU-U0-4Wt" firstAttribute="top" secondItem="8CQ-Gj-jt7" secondAttribute="top" id="fah-gb-f1e"/>
+                                    <constraint firstItem="AxU-4T-JoK" firstAttribute="centerY" secondItem="8CQ-Gj-jt7" secondAttribute="centerY" id="giO-uM-glQ"/>
+                                    <constraint firstItem="AxU-4T-JoK" firstAttribute="leading" secondItem="8CQ-Gj-jt7" secondAttribute="leading" constant="24" id="noH-wT-vre"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIR-g4-Pu2">
+                                <rect key="frame" x="0.0" y="304" width="414" height="1"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="8mF-4w-i7E"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="6cU-TD-5Yg" secondAttribute="trailing" id="1Qe-UL-bVp"/>
+                            <constraint firstItem="8CQ-Gj-jt7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="20j-sR-q7p"/>
+                            <constraint firstItem="8CQ-Gj-jt7" firstAttribute="top" secondItem="6cU-TD-5Yg" secondAttribute="bottom" id="4kV-2m-HC3"/>
                             <constraint firstItem="6cU-TD-5Yg" firstAttribute="top" secondItem="Ymq-SW-5aQ" secondAttribute="bottom" id="AFf-es-iM8"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vIR-g4-Pu2" secondAttribute="trailing" id="En1-Gh-qMz"/>
                             <constraint firstItem="Ymq-SW-5aQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Fdr-4E-str"/>
                             <constraint firstItem="v5W-oz-MLl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="I8g-70-OWi"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ymq-SW-5aQ" secondAttribute="trailing" id="Joc-CC-4z2"/>
+                            <constraint firstItem="8CQ-Gj-jt7" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="LSy-y2-hC1"/>
+                            <constraint firstItem="vIR-g4-Pu2" firstAttribute="top" secondItem="8CQ-Gj-jt7" secondAttribute="bottom" id="Pdn-Jl-QlZ"/>
                             <constraint firstItem="emu-h8-DbP" firstAttribute="top" secondItem="v5W-oz-MLl" secondAttribute="bottom" id="QtG-yV-hia"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="P1e-Ws-ymy" secondAttribute="trailing" id="R7L-Tr-VPt"/>
                             <constraint firstItem="P1e-Ws-ymy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="UFK-DZ-y73"/>
@@ -141,18 +181,22 @@
                             <constraint firstItem="emu-h8-DbP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="maz-7f-3w5"/>
                             <constraint firstItem="UNN-tP-few" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nMW-QL-fDL"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="UNN-tP-few" secondAttribute="trailing" id="pku-qW-c7v"/>
+                            <constraint firstItem="vIR-g4-Pu2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="v6U-at-SRZ"/>
                             <constraint firstItem="P1e-Ws-ymy" firstAttribute="top" secondItem="UNN-tP-few" secondAttribute="bottom" id="vvC-OR-ADg"/>
                             <constraint firstItem="UNN-tP-few" firstAttribute="top" secondItem="emu-h8-DbP" secondAttribute="bottom" id="wLS-UD-i4P"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="fSv-Jb-UyB" id="TpR-ad-iSJ"/>
+                        <outlet property="changePasswordLabel" destination="AxU-4T-JoK" id="hCe-63-fJO"/>
                         <outlet property="firstSeparteView" destination="emu-h8-DbP" id="Pcm-hi-XxW"/>
+                        <outlet property="fourthSeparateView" destination="vIR-g4-Pu2" id="jn2-DZ-tNq"/>
                         <outlet property="logOutBackView" destination="UNN-tP-few" id="Ylx-Do-Iak"/>
                         <outlet property="logOutLabel" destination="kzr-9E-Mvv" id="Ogq-gW-Pto"/>
                         <outlet property="memberOutLabel" destination="ZyB-kh-vdw" id="Cen-Rx-7Mr"/>
                         <outlet property="memberOutView" destination="Ymq-SW-5aQ" id="3oZ-gH-UoJ"/>
                         <outlet property="myAccount" destination="J64-ob-TrD" id="aqp-rG-UjW"/>
+                        <outlet property="passwordChangeBackView" destination="8CQ-Gj-jt7" id="fq5-ZZ-4Nl"/>
                         <outlet property="secondSeparateView" destination="P1e-Ws-ymy" id="CEV-YK-vig"/>
                         <outlet property="thirdSeparateView" destination="6cU-TD-5Yg" id="QF4-Qj-dG7"/>
                         <outlet property="topBackView" destination="v5W-oz-MLl" id="2ZS-Nw-OK9"/>
@@ -173,6 +217,9 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

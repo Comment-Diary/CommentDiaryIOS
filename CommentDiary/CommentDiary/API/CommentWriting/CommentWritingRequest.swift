@@ -7,7 +7,7 @@
 
 import Foundation
 struct CommentWritingRequest {
-    static var diaryId : String = ""
+    static var diaryId : Int = 0
     static var date : String = ""
     static var content: String = ""
 }

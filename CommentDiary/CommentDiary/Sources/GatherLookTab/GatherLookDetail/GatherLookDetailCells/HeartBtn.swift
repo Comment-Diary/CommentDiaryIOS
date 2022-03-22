@@ -17,6 +17,13 @@ class HeartBtn: UIButton {
     }
     
     func setState(_ newValue: Bool) {
+        print("HeartBtn - setState() called / newValue: \(newValue)")
+        // 1. 현재 버튼 상태 변경
+        self.isActivated = newValue
         
+        let activatedImage = UIImage(named: "customHeartFill")
+        let normalImage = UIImage(named: "customHeart")
+        
+        self.setImage(self.isActivated ? activatedImage: normalImage, for: .normal)
     }
 }

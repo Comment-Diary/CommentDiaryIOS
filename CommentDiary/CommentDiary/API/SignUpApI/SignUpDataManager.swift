@@ -30,6 +30,7 @@ class SignUpDataManager {
                     if let httpStatusCOde = response.response?.statusCode {
                         switch(httpStatusCOde) {
                         case 409:
+                            viewController.dismissIndicator()
                             viewController.presentBottomAlert(message: "이미 가입되어 있는 이메일입니다.")
                             
                         default:

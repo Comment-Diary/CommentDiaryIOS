@@ -13,5 +13,5 @@ struct MyPageResponse: Decodable {
 }
 struct myPageResult: Decodable {
     var email: String
-    var temp: Int
+    var temperature: Float
 }

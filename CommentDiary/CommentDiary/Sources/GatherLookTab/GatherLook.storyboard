@@ -109,7 +109,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rC4-Jj-xtZ" secondAttribute="trailing" id="w0v-5X-IYg"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="모아보기" id="49W-zk-ekl"/>
+                    <tabBarItem key="tabBarItem" title="모아보기" image="diary" selectedImage="diaryFill" id="49W-zk-ekl"/>
                     <navigationItem key="navigationItem" id="nLS-5q-A43"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -129,6 +129,8 @@
     </scenes>
     <resources>
         <image name="bottomArrow" width="16" height="8"/>
+        <image name="diary" width="24" height="24"/>
+        <image name="diaryFill" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

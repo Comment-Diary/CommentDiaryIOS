@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--마이페이지-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="MyPageViewController" id="Y6W-OH-hqX" customClass="MyPageViewController" customModule="CommentDiary" customModuleProvider="target" sceneMemberID="viewController">
@@ -322,7 +322,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="p3Q-wL-N5d" secondAttribute="bottom" id="fAE-dk-2sY"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Jax-z1-Dob"/>
+                    <tabBarItem key="tabBarItem" title="마이페이지" image="mypage" selectedImage="mypageFill" id="Jax-z1-Dob"/>
                     <navigationItem key="navigationItem" id="zCs-4H-jyQ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -359,6 +359,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="mypage" width="24" height="24"/>
+        <image name="mypageFill" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

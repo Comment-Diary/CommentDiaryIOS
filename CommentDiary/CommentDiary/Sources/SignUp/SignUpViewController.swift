@@ -20,8 +20,14 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
 
     func onAuthButtonChange(data: Bool) {
         authNumberButton.isEnabled = data
+        //이메일 인증하면 false
+        authEmailBool = data
+        
     }
     
+    
+    //이메일 인증 확인 bool
+    var authEmailBool : Bool = true
     //API
     lazy var emailDataManager: EmailDataManager = EmailDataManager()
     //alert
@@ -72,11 +78,7 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.signupButton.layer.masksToBounds = true
-        self.signupButton.layer.masksToBounds = true
-        self.authNumberButton.clipsToBounds = true
-        self.signupButton.layer.cornerRadius = signupButton.frame.height / 2
-        self.authNumberButton.layer.cornerRadius = authNumberButton.frame.height / 2
+
         
         
 //        emailTextField.isUserInteractionEnabled = false 텍스트 필드 비활성화
@@ -175,16 +177,16 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
     func textFieldSetting() {
         emailTextField.placeholder = "coda@coda.com"
         emailTextField.layer.borderWidth = 2
-        emailTextField.layer.borderColor = UIColor(hex: 0x98C2A8).cgColor
+        emailTextField.layer.borderColor = UIColor(hex: 0x73BF90).cgColor
         emailTextField.layer.cornerRadius = 4
         emailTextField.backgroundColor = UIColor(hex: 0xFDFCF9)
         passwordTextField.placeholder = "********"
-        passwordTextField.layer.borderColor = UIColor(hex: 0x98C2A8).cgColor
+        passwordTextField.layer.borderColor = UIColor(hex: 0x73BF90).cgColor
         passwordTextField.layer.borderWidth = 2
         passwordTextField.layer.cornerRadius = 4
         passwordTextField.backgroundColor = UIColor(hex: 0xFDFCF9)
         passwordConfirmTextField.placeholder = "********"
-        passwordConfirmTextField.layer.borderColor = UIColor(hex: 0x98C2A8).cgColor
+        passwordConfirmTextField.layer.borderColor = UIColor(hex: 0x73BF90).cgColor
         passwordConfirmTextField.layer.borderWidth = 2
         passwordConfirmTextField.layer.cornerRadius = 4
         passwordConfirmTextField.backgroundColor = UIColor(hex: 0xFDFCF9)
@@ -194,7 +196,7 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
         //인증 번호 전송 버튼 초기 비활성화
         signupButton.isEnabled = false
         self.signupButton.setTitleColor(UIColor(hex: 0xFDFDF9), for: .normal)
-        self.signupButton.layer.opacity = 0.3
+        self.signupButton.layer.opacity = 0.4
         self.signupButton.backgroundColor = UIColor(hex: 0x73BF90)
         
         self.authNumberButton.setTitleColor(UIColor(hex: 0xFDFDF9), for: .normal)
@@ -217,11 +219,18 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
     
     @IBAction func signUpTapButton(_ sender: Any) {
         //SignUpAPI
-        self.showIndicator()
-        SignUpRequest.email = emailTextField.text!
-        SignUpRequest.password = passwordTextField.text!
-        SignUpRequest.checkPassword = passwordConfirmTextField.text!
-        SignUpDataManager().signUpPostData(self)
+        if authEmailBool == true {
+            self.presentBottomAlert(message: "이메일 인증을 해주세요.")
+        }
+        else if authEmailBool == false {
+            self.showIndicator()
+            SignUpRequest.email = emailTextField.text!
+            SignUpRequest.password = passwordTextField.text!
+            SignUpRequest.checkPassword = passwordConfirmTextField.text!
+            SignUpDataManager().signUpPostData(self)
+        }
+        
+
         
 
 
@@ -349,7 +358,7 @@ extension UILabel {
         }
         set {
             textColor = newValue ? .blue : UIColor(hex: 0xE46962)
-            text = newValue ? "" : "일치하지 않아요."
+            text = newValue ? "" : "일치하지 않아요!"
 
 
         }

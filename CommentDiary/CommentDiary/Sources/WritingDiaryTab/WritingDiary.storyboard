@@ -263,7 +263,7 @@
                             <constraint firstItem="O7D-Oa-wf5" firstAttribute="leading" secondItem="6ud-gr-yx2" secondAttribute="leading" constant="16" id="xa0-7F-XGZ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="내 일기" id="QSr-0T-iao"/>
+                    <tabBarItem key="tabBarItem" title="내 일기" image="pencil" selectedImage="pencilFill" id="QSr-0T-iao"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="aloneDiaryView" destination="V7U-2Q-Z2R" id="Yxn-ly-05g"/>
@@ -1213,6 +1213,8 @@
         <image name="Slice 17" width="44" height="44"/>
         <image name="Slice 17-1" width="44" height="44"/>
         <image name="ic_arrow_right" width="44" height="44"/>
+        <image name="pencil" width="24" height="24"/>
+        <image name="pencilFill" width="24" height="24"/>
         <image name="slide" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

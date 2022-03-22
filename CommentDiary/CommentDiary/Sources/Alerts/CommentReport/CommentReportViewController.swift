@@ -66,8 +66,6 @@ class CommentReportViewController : UIViewController {
         okayButton.titleLabel?.font = UIFont.AppleSDGothic(.bold, size: 14)
         okayButton.layer.cornerRadius = 10
         okayButton.layer.maskedCorners = .layerMaxXMaxYCorner
-//        cancelButton.layer.addBorder([.top, .right], color: UIColor(hex: 0xE2DFD7), width: 1)
-//        okayButton.layer.addBorder([.top], color: UIColor(hex: 0xE2DFD7), width: 1)
         cancelButton.layer.borderColor = UIColor(hex: 0xE2DFD7).cgColor
         cancelButton.layer.borderWidth = 1
         okayButton.layer.borderWidth = 1

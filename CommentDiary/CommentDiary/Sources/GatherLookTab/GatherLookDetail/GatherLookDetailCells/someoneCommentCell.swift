@@ -37,6 +37,9 @@ class someoneCommentCell: UITableViewCell {
     
     @IBOutlet weak var heartButton: UIButton!
     
+    //정대리님 강의
+    @IBOutlet var btns: [UIButton]!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

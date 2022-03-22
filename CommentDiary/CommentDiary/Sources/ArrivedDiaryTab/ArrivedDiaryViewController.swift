@@ -15,7 +15,31 @@ import UIKit
 //https://icksw.tistory.com/87
 
 class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
+
+    
+    //도착한 일기 id 값
+    var arrivedDiaryId: Int = 0
+    //코멘트 작성 여부
+    var writedCommentCount : Int = 0
+    
+    //오늘 날짜
+    var todayDateString : String = ""
+    
+    lazy var detailDayDateFormatter: DateFormatter = {
+        let df = DateFormatter()
+//        df.locale = Locale(identifier: "ko_KR")
+//        df.timeZone = TimeZone(identifier: "UTC")
+        df.dateFormat = "yyyy.MM.dd"
+        return df
+    }()
+    
+    //앱 초기화 bool
+    var viewload : Bool = false
     //MARK: - Properties
+    
+    
+    
+    @IBOutlet weak var notArrivedDiaryLabel: UILabel!
     
     @IBOutlet weak var separateView: UIView!
     
@@ -53,6 +77,17 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.showIndicator()
+        todayDateString = detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
+        print(todayDateString, "받을 날짜")
+
+        
+        
+        
+        
+        
+        
+        
         myCommentTextView.delegate = self
         commentScrollView.delegate = self
         textLineSpacing()
@@ -61,11 +96,28 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
         buttonSetting()
         textViewPlaceholdeerSetting()
 //        scrollViewDismissKeyboard()
-//        self.tabBarController?.selectedIndex = 1
-//        self.navigationController?.tabBarController?.selectedIndex = 1
+
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //API 조회
+        ReceivedDiaryDataManager().receivedDiaryGetData(self, dateValue: todayDateString)
+        
+        print(viewload, "false라면 초기화 된것")
+        viewload = false
+        
+        
+
     }
     
+
+    
     func viewSetting() {
+        arrivalBackView.layer.cornerRadius = 10
+        arrivalBackView.layer.borderWidth = 3
+        arrivalBackView.layer.borderColor = UIColor(hex: 0xE2DFD7).cgColor
+        commentBackView.layer.cornerRadius = 10
+        myCommentTextView.backgroundColor = UIColor(hex: 0xFDFCF9)
         topBackView.backgroundColor = UIColor(hex: 0xF4EDE3)
         view.backgroundColor = UIColor(hex: 0xF4EDE3)
         commentBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
@@ -77,29 +129,44 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
         
     }
     func labelSetting() {
-        commentCountLabel.text = "0/50"
-        commentCountLabel.isHidden = false
+        notArrivedDiaryLabel.font = UIFont.AppleSDGothic(.medium, size: 13)
+        notArrivedDiaryLabel.textColor = UIColor(hex: 0x878379)
+        mySendCommentLabel.text = "내가 보내는 코멘트"
+        mySendCommentLabel.font = UIFont.AppleSDGothic(.bold, size: 15)
+        mySendCommentLabel.textColor = UIColor(hex: 0x73BF90)
+        arrivalDiaryLabel.textColor = UIColor(hex: 0x4E4C49)
+        arrivalDiaryLabel.font = UIFont.AppleSDGothic(.bold, size: 15)
+        arrivalDiaryLabel.text = "도착한 일기"
+        dateLabel.textColor = UIColor(hex: 0xFFAC86)
+        dateLabel.font = UIFont.AppleSDGothic(.bold, size: 15)
+        diaryTitleLabel.textColor = UIColor(hex: 0x4E4C49)
+        diaryTitleLabel.font = UIFont.AppleSDGothic(.bold, size: 21)
+        diaryContentTextView.font = UIFont.AppleSDGothic(.medium, size: 15)
+        diaryContentTextView.textColor = UIColor(hex: 0x4E4C49)
+        
+        commentCountLabel.text = "0/20"
+        commentCountLabel.isHidden = true
     }
     func buttonSetting() {
         self.sendCommentButton.isEnabled = false
+        sendCommentButton.layer.opacity = 0.4
         self.sendCommentButton.backgroundColor = UIColor(hex: 0x73BF90)
+        sendCommentButton.setTitle("보내기", for: .normal)
+        sendCommentButton.setTitleColor(UIColor(hex: 0xFDFCF9), for: .normal)
+        sendCommentButton.setTitleColor(UIColor(hex: 0xFDFCF9), for: .highlighted)
+        sendCommentButton.titleLabel?.font = UIFont.AppleSDGothic(.bold, size: 13)
+        
+        reportButton.setTitle("신고하기", for: .normal)
+        reportButton.setTitleColor(UIColor(hex: 0x878379), for: .normal)
+        reportButton.setTitleColor(UIColor(hex: 0x878379), for: .highlighted)
+        reportButton.titleLabel?.font = UIFont.AppleSDGothic(.medium, size: 12)
     }
     
     func textViewPlaceholdeerSetting() {
         myCommentTextView.text = "일기를 읽고 따뜻한 코멘트를 달아주세요."
         myCommentTextView.textColor = UIColor(hex: 0xD2D2D2)
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//        self.addKeyboardNotification()
-//    }
-//    override func viewWillDisappear(_ animated: Bool) {
-//        self.removeKeyboardNotification()
-//    }
-    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        myCommentTextView.resignFirstResponder()
-//
-//    }
+
     
 //    func scrollViewDismissKeyboard() {
 //        let singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MyTapMethod))
@@ -143,18 +210,21 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if textView == myCommentTextView {
+            
             let currentText = myCommentTextView.text ?? ""
             guard let stringRange = Range(range, in: currentText) else { return false }
             let changedText = currentText.replacingCharacters(in: stringRange, with: text)
-            commentCountLabel.text = "\(changedText.count)/50"
+            commentCountLabel.text = "\(changedText.count)/20"
             if changedText.count >= 1 {
                 commentCountLabel.isHidden = false
             }
             
-            if changedText.count < 10 {
+            if changedText.count < 20 {
                 sendCommentButton.isEnabled = false
-            } else if changedText.count >= 10 {
+                sendCommentButton.layer.opacity = 0.4
+            } else if changedText.count >= 20 {
                 sendCommentButton.isEnabled = true
+                sendCommentButton.layer.opacity = 1
             }
             return true
         }
@@ -201,11 +271,19 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
     @IBAction func sendCommentButtonTap(_ sender: UIButton) {
         
         
-//        CommentWritingRequest.diaryId
-//        CommentWritingRequest.content
-//        CommentWritingRequest.date
-        
-        CommentWritingDataManager().commentWritingPostData(self)
+//        CommentWritingRequest.diaryId = arrivedDiaryId
+//        CommentWritingRequest.content = diaryContentTextView.text
+//        CommentWritingRequest.date = todayDateString
+//
+//        CommentWritingDataManager().commentWritingPostData(self)
+        //알람 띄우기
+        let sendCommentAlertVC = UIStoryboard(name: "SendCommentAlert", bundle: nil).instantiateViewController(withIdentifier: "SendCommentAlertViewController") as! SendCommentAlertViewController
+        sendCommentAlertVC.diaryID = arrivedDiaryId
+        sendCommentAlertVC.diaryDate = todayDateString
+        sendCommentAlertVC.diaryContent = myCommentTextView.text
+    
+
+        self.present(sendCommentAlertVC, animated: true, completion: nil)
         
     }
     
@@ -213,6 +291,13 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
         //알람 띄우기
 //        DiaryReportRequest.diaryId
 //        DiaryReportRequest.content
+        
+//        DiaryReport
+        let diaryReportVC = UIStoryboard(name: "DiaryReport", bundle: nil).instantiateViewController(withIdentifier: "DiaryReportViewController") as! DiaryReportViewController
+        diaryReportVC.diaryId = arrivedDiaryId
+        print(diaryReportVC.diaryId, "넘어간 일기 ID")
+        //해주기
+        self.present(diaryReportVC, animated: true, completion: nil)
     }
     
     
@@ -220,3 +305,41 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
 
 
     //MARK: - Extensions
+extension ArrivedDiaryViewController {
+    func receivedDiaryGetSuccess(_ responsse: ReceivedDiaryResponse) {
+        //버튼 형태 바꾸기
+        dismissIndicator()
+        arrivedDiaryId = responsse.result.diaryId
+        writedCommentCount = responsse.result.myCommentResponse.count
+        print(writedCommentCount, "내가 작성안했으면 0 했으면 1")
+        print(arrivedDiaryId, "신고할 id 값")
+        dateLabel.text = responsse.result.date
+        diaryTitleLabel.text = responsse.result.title
+        diaryContentTextView.text = responsse.result.content
+        
+        
+        
+        if writedCommentCount != 0 {
+            
+            myCommentTextView.text = ""
+            myCommentTextView.isEditable = false
+            sendCommentButton.isHidden = false
+            sendCommentButton.isEnabled = false
+            sendCommentButton.layer.borderColor = UIColor(hex: 0x878379).cgColor
+            sendCommentButton.setTitle("전송완료", for: .normal)
+            sendCommentButton.setTitleColor(UIColor(hex: 0x878379), for: .normal)
+            sendCommentButton.backgroundColor = UIColor(hex: 0xFDFCF9)
+            sendCommentButton.layer.borderWidth = 1
+            sendCommentButton.layer.opacity = 1
+        }
+    }
+}
+
+
+////코멘트 전송 여부에 따라 버튼 바꿔주기 코멘트 작성안했으면 0
+//if writedCommentCount == 0 {
+//
+//}
+//else if writedCommentCount != 0 {
+//
+//}

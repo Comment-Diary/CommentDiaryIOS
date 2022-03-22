@@ -28,6 +28,7 @@ class MyPageDataManager {
                     viewController.myPageSuccessResponse(response)
                 case .failure(let error):
                     print(error.localizedDescription)
+                    print(error)
                     
                 }
             }

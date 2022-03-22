@@ -85,6 +85,7 @@ class GatherLookDetailViewController : UIViewController {
 extension GatherLookDetailViewController : UITableViewDelegate, UITableViewDataSource, HeartDelegate, ReportDelegate {
     func heartButtonTapped(_ index: Int) {
         print(index, "인덱스 값, 하트")
+        
     }
     
     func reportButtonTapped(_ index: Int) {

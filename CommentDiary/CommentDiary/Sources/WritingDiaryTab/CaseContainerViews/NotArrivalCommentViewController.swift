@@ -12,6 +12,7 @@ import UIKit
 class NotArrivalCommentViewController: UIViewController {
     //MARK: - Properties
     
+    
     @IBOutlet weak var dateLabel: UILabel!
     
     @IBOutlet weak var myDiaryLabel: UILabel!
@@ -100,6 +101,13 @@ class NotArrivalCommentViewController: UIViewController {
     
     //MARK: - Actions
     
+    @IBAction func allLookButtonTap(_ sender: Any) {
+//        let ypreSaveVC = UIStoryboard(name: "YPreSave", bundle: nil).instantiateViewController(withIdentifier: "YPreSaveViewController") as! YPreSaveViewController
+//        ypreSaveVC.diaryID = diaryIDValue
+//        self.navigationController?.pushViewController(ypreSaveVC, animated: true)
+        let notArrivalCommentDiaryVC = UIStoryboard(name: "NotArrivalCommentDiary", bundle: nil).instantiateViewController(withIdentifier: "NotArrivalCommentDiaryViewController") as! NotArrivalCommentDiaryViewController
+        self.navigationController?.pushViewController(notArrivalCommentDiaryVC, animated: true)
+    }
     
 
 }

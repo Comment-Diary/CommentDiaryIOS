@@ -27,6 +27,7 @@ class TodayWritingDiaryViewController : UIViewController {
     var presentDateString = ""
     //MARK: - Properties
     
+    @IBOutlet weak var infoLabel: UILabel!
     
     @IBOutlet weak var dateLabel: UILabel!
     
@@ -80,6 +81,9 @@ class TodayWritingDiaryViewController : UIViewController {
     }
     
     func labelSetting() {
+        infoLabel.text = "오늘은 기록이 없어요. 기록을 하고 코멘트를 받아봐요 :)"
+        infoLabel.textColor = UIColor(hex: 0xD3CDBD)
+        infoLabel.font = UIFont.AppleSDGothic(.medium, size: 12)
         dateLabel.textColor = UIColor(hex: 0xFFAC86)
         dateLabel.font = UIFont.AppleSDGothic(.bold, size: 14)
         myDiaryLabel.textColor = UIColor(hex: 0xFFAC86)
@@ -90,6 +94,7 @@ class TodayWritingDiaryViewController : UIViewController {
     
     
     func viewSetting() {
+        writingDiaryBackView.layer.cornerRadius = 10
         view.backgroundColor = UIColor(hex: 0xF4EDE3)
         writingDiaryBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
         firstNoteView.backgroundColor = UIColor(hex: 0xE2DFD7)

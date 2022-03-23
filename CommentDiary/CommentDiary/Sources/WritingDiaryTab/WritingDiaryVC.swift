@@ -132,6 +132,8 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     //코멘트 곧 도착 or 결국 x 해야함
     var commentNoArrivalArray = [String]()
     
+    var commentSoonArray = [String]()
+    
     
     
     
@@ -197,6 +199,10 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        //초기화
+
+        
+        
         calendarView.locale = Locale(identifier: Locale.current.identifier)
 //        calendarView.today = Date(timeIntervalSinceNow: -25200)
         calendarView.today = Date(timeIntervalSinceNow: -25200)
@@ -231,6 +237,21 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //배열 초기화
+        tempYArray = []
+        tempYDeadlineArray = []
+        allDiaryList = []
+        nDiaryList = []
+        yDiaryList = []
+        yDiaryCommentList = []
+        yDiaryNoCommentList = []
+        deliveryNArray = []
+        commentNoArrivalArray = []
+        commentArrivalArray = []
+        commentSoonArray = []
+        
+        
+        
 
         
         DiaryMainPageDataManager().diaryMainDate(self)
@@ -391,15 +412,7 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         
         print(compareString, "비교 날짜 상태")
         
-//        if allDiaryList.isEmpty && compareString != "미래" {
-//            self.notDiaryDayView.isHidden = true
-//            self.todayWritingDiaryView.isHidden = false
-//            self.aloneDiaryView.isHidden = true
-//            self.commentSoonView.isHidden = true
-//            self.readCommentView.isHidden = true
-//            self.notArrivalCommentView.isHidden = true
-//            self.preSaveView.isHidden = true
-//        }
+
         
         
         //오늘 일기쓸 날이 아님
@@ -475,8 +488,8 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
                     self.deadlinePreSaveView.isHidden = true
                 }
             }
-            //코멘트 일기, 일기 도착 x
-            for i in commentNoArrivalArray {
+            //코멘트 일기, 일기 도착 x, 곧 도착
+            for i in commentSoonArray {
                 if i == String(formatter.string(from: date)) {
                     self.notDiaryDayView.isHidden = true
                     self.todayWritingDiaryView.isHidden = true
@@ -487,18 +500,22 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
                     self.preSaveView.isHidden = true
                     self.deadlinePreSaveView.isHidden = true
                 }
-                
-//                let interval = formatter.date(from: todaydate)
-//  //                let todayDate = formatter.date(from: <#T##String#>)
-//
-//  //                let interval = todayDateValue!.timeIntervalSince(<#T##date: Date##Date#>)
-//
-//                  if i == String(detailDayDateFormatter.string(from: date)) {
-//                      let selectedDate = detailDayDateFormatter.date(from: i)!
-//                      let interval = todayDateValue!.timeIntervalSince(selectedDate)
-//                      let days = Int(interval / 86400)
-//                  }
             }
+        
+        //코멘트 일기, 결국 도착 x
+        for i in commentNoArrivalArray {
+            if i == String(formatter.string(from: date)) {
+                self.notDiaryDayView.isHidden = true
+                self.todayWritingDiaryView.isHidden = true
+                self.aloneDiaryView.isHidden = true
+                self.commentSoonView.isHidden = true
+                self.readCommentView.isHidden = true
+                self.notArrivalCommentView.isHidden = false
+                self.preSaveView.isHidden = true
+                self.deadlinePreSaveView.isHidden = true
+            }
+        }
+        
         
         //todo 일기 결국 도착 x
         //notArrivalCommentView
@@ -682,15 +699,19 @@ extension WritingDiaryVC {
             
             
             
+            let preSaveDateString = detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
+            let prepareDate = formatter.date(from: preSaveDateString)
+
+            
             
             // tempYn = "Y" 임시저장
             // tempYn = "N" 임시저장 x
             if i.tempYn == "Y" {
                 //임시저장 배열
                 //임시저장 마감
-                //오전 6시에 마감 6시간을 빼서 같으면 아직 임시저장 다르면 마감
-                //임시저장 6시간빼기
-                let preSaveDateString = detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -21600))
+                //오전 7시에 마감 7시간을 빼서 같으면 아직 임시저장 다르면 마감
+                //임시저장 7시간빼기
+
                 if i.date == preSaveDateString {
                     tempYArray.append(i.date)
                     print(tempYArray, "임시저장 배열")
@@ -714,7 +735,21 @@ extension WritingDiaryVC {
                     //코멘트가 안온 경우
                     //기다리세요 or 코멘트 x
                     if i.commentCnt == 0 {
-                        commentNoArrivalArray.append(i.date)
+//                        commentNoArrivalArray.append(i.date)
+                        //날짜 비교 *******
+                        let arrayDate = formatter.date(from: i.date)!
+                        let interval = prepareDate!.timeIntervalSince(arrayDate)
+                        let days = Int(interval / 86400)
+                        if days >= 2 {
+                            commentNoArrivalArray.append(i.date)
+                            print(commentNoArrivalArray, "코멘트 결국 오지 않음")
+                        }
+                        else if days < 2 {
+                            commentSoonArray.append(i.date)
+                            print(commentSoonArray, "코멘트 곧 도착")
+                        }
+                        
+                        
                     }
                     
                     //코멘트가 온 경우
@@ -785,7 +820,7 @@ extension WritingDiaryVC {
                     }
                 }
 
-                for q in commentNoArrivalArray {
+                for q in commentSoonArray {
                     if q == todayDateValueString { //코멘트일기
                         self.notDiaryDayView.isHidden = true
                         self.todayWritingDiaryView.isHidden = true

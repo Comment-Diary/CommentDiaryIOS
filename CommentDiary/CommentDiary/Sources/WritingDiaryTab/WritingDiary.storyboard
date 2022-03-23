@@ -525,6 +525,7 @@
                         <outlet property="fifthNoteView" destination="Fwh-XU-99J" id="b3F-8L-qcs"/>
                         <outlet property="firstNoteView" destination="UGA-5Y-FvK" id="grQ-r3-L57"/>
                         <outlet property="fourthNoteView" destination="knL-Oj-uTJ" id="N17-a2-qG6"/>
+                        <outlet property="infoLabel" destination="4aM-Gm-hOI" id="JtI-1C-Tym"/>
                         <outlet property="myDiaryLabel" destination="VeE-iS-VSq" id="TIc-L7-FzY"/>
                         <outlet property="secondNoteView" destination="oO2-Ua-HKd" id="e7F-gI-4fG"/>
                         <outlet property="thirdNoteView" destination="8DR-oo-H3I" id="pY4-6H-rua"/>
@@ -980,6 +981,9 @@
                                                 <state key="normal" title="전체보기" image="slide">
                                                     <color key="titleColor" systemColor="systemIndigoColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="allLookButtonTap:" destination="ccw-3s-Bnt" eventType="touchUpInside" id="x4e-qJ-puJ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

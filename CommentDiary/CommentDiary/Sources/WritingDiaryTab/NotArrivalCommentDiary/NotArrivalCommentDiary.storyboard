@@ -103,9 +103,19 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QqY-R3-im5">
                                                 <rect key="frame" x="0.0" y="501.5" width="382" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfV-eH-mxK">
+                                                        <rect key="frame" x="170" y="0.0" width="42" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="pfV-eH-mxK" firstAttribute="top" secondItem="QqY-R3-im5" secondAttribute="top" id="1Ue-D0-k8o"/>
                                                     <constraint firstAttribute="height" constant="30" id="9oO-dL-2Ns"/>
+                                                    <constraint firstItem="pfV-eH-mxK" firstAttribute="centerX" secondItem="QqY-R3-im5" secondAttribute="centerX" id="R0Y-dm-jdf"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -147,6 +157,20 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="y4C-0N-KmL" secondAttribute="trailing" constant="16" id="yZ5-t1-v6P"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="allBackView" destination="fHP-2A-bso" id="8DH-cW-epP"/>
+                        <outlet property="backButtonTap" destination="C5g-lL-oK6" id="sTR-ym-kwC"/>
+                        <outlet property="bottomBackView" destination="QqY-R3-im5" id="7JG-5I-lgs"/>
+                        <outlet property="contentBackView" destination="swX-YJ-QrE" id="Cre-An-wgM"/>
+                        <outlet property="contentLabel" destination="r0h-I8-p55" id="wNP-9h-8kq"/>
+                        <outlet property="dateLabel" destination="XvU-Yb-P27" id="cpI-z4-rSu"/>
+                        <outlet property="diaryScrollView" destination="y4C-0N-KmL" id="Mlo-PQ-dE7"/>
+                        <outlet property="infoLabel" destination="pfV-eH-mxK" id="B8l-rh-YOp"/>
+                        <outlet property="separateView" destination="1DF-B9-vFq" id="moh-I8-I0u"/>
+                        <outlet property="titleBackView" destination="Pwv-WW-ek7" id="SZ8-ZM-cuz"/>
+                        <outlet property="titleLabel" destination="ZgX-Zv-DyE" id="hQL-uK-3hZ"/>
+                        <outlet property="topBackView" destination="C5g-lL-oK6" id="ZuJ-Ij-bhg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

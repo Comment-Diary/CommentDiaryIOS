@@ -56,6 +56,7 @@ class CommentSoonViewController:UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadTodayData()
+        dateLabel.text = self.krMonthDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
     }
     
     func labelSetting() {
@@ -100,15 +101,15 @@ class CommentSoonViewController:UIViewController {
     
     
     func loadTodayData() {
-        NotificationCenter.default.addObserver(self, selector: #selector(todayLoadDate(_:)), name: NSNotification.Name("loadDate"), object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(todayLoadDate(_:)), name: NSNotification.Name("loadDate"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(todayLoadtitle(_:)), name: NSNotification.Name(rawValue: "loadTitle"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(todayLoadContent(_:)), name: NSNotification.Name(rawValue: "loadContent"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(loadID(_:)), name: NSNotification.Name(rawValue: "loadID"), object: nil)
     }
     
-    @objc func todayLoadDate(_ notification : NSNotification) {
-        dateLabel.text = notification.object as? String ?? ""
-    }
+//    @objc func todayLoadDate(_ notification : NSNotification) {
+//        dateLabel.text = notification.object as? String ?? ""
+//    }
     @objc func todayLoadtitle(_ notification : NSNotification) {
         titleLabel.text = notification.object as? String ?? ""
     }

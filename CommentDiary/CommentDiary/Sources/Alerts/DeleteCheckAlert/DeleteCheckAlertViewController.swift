@@ -106,10 +106,7 @@ extension DeleteCheckAlertViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
             let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
             self.changeRootViewController(mainTabBarController)
-//            guard let presentingVC = self.presentingViewController as? UINavigationController else { return }
-//            self.dismiss(animated: true) {
-//                presentingVC.popToRootViewController(animated: true)
-//            }
+
             UserDefaults.standard.removeObject(forKey: "DiaryID")
             
         })

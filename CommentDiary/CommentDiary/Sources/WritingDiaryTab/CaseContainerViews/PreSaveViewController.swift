@@ -9,6 +9,12 @@ import Foundation
 import UIKit
 
 class PreSaveViewController : UIViewController {
+    private lazy var krMonthDateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.locale = Locale(identifier: "ko_KR")
+        df.dateFormat = "MM월 dd일"
+        return df
+    }()
     var diaryIDValue: Int = 0
     //MARK: - Properties
     
@@ -50,17 +56,18 @@ class PreSaveViewController : UIViewController {
 
         loadTodayData()
         selectedData()
+        dateLabel.text = krMonthDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
     }
     
     func loadTodayData() {
-        NotificationCenter.default.addObserver(self, selector: #selector(todayLoadDate(_:)), name: NSNotification.Name("loadDate"), object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(todayLoadDate(_:)), name: NSNotification.Name("loadDate"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(todayLoadtitle(_:)), name: NSNotification.Name(rawValue: "loadTitle"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(todayLoadContent(_:)), name: NSNotification.Name(rawValue: "loadContent"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(todayLoadID(_:)), name: NSNotification.Name(rawValue: "loadID"), object: nil)
     }
-    @objc func todayLoadDate(_ notification : NSNotification) {
-        dateLabel.text = notification.object as? String ?? ""
-    }
+//    @objc func todayLoadDate(_ notification : NSNotification) {
+//        dateLabel.text = notification.object as? String ?? ""
+//    }
     @objc func todayLoadtitle(_ notification : NSNotification) {
         diaryTItleLabel.text = notification.object as? String ?? ""
     }

@@ -64,7 +64,7 @@ class TodayWritingDiaryViewController : UIViewController {
     
     func dateLabelSetting() {
         self.dateLabel.text = self.krMonthDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
-//        self.dateLabel.text = self.krMonthDateFormatter.string(from: Date())
+
         
         //MM월dd일
         NotificationCenter.default.addObserver(self, selector: #selector(loadData(_:)), name: NSNotification.Name(rawValue: "SelectedDate"), object: nil)

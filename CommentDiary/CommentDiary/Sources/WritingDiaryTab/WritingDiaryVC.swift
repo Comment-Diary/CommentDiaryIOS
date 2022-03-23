@@ -119,6 +119,8 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     
     //임시저장 배열
     var tempYArray = [String]()
+    //임시저장 기간 지난 배열
+    var tempYDeadlineArray = [String]()
     
     //혼자 쓴 일기 배열
     var deliveryNArray = [String]()
@@ -158,7 +160,7 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     @IBOutlet weak var notArrivalCommentView: UIView!
     @IBOutlet weak var preSaveView: UIView!
     @IBOutlet weak var caseView: UIView!
-    
+    @IBOutlet weak var deadlinePreSaveView: UIView!
     
     @IBOutlet weak var calendarView: FSCalendar!
     
@@ -376,6 +378,7 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         //MARK: - 3.14
         
         let todayDateString = detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
+
         
         let todayDateValue = detailDayDateFormatter.date(from: todayDateString)
         
@@ -408,6 +411,7 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             self.readCommentView.isHidden = true
             self.notArrivalCommentView.isHidden = true
             self.preSaveView.isHidden = true
+            self.deadlinePreSaveView.isHidden = true
         }
         
 
@@ -421,6 +425,7 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
                 self.readCommentView.isHidden = true
                 self.notArrivalCommentView.isHidden = true
                 self.preSaveView.isHidden = true
+                self.deadlinePreSaveView.isHidden = true
                 
                 
             }
@@ -439,8 +444,23 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
                     self.readCommentView.isHidden = true
                     self.notArrivalCommentView.isHidden = true
                     self.preSaveView.isHidden = false
+                    self.deadlinePreSaveView.isHidden = true
                 }
             }
+        for i in tempYDeadlineArray {
+            if i == String(formatter.string(from: date)) {
+                self.notDiaryDayView.isHidden = true
+                self.todayWritingDiaryView.isHidden = true
+                self.aloneDiaryView.isHidden = true
+                self.commentSoonView.isHidden = true
+                self.readCommentView.isHidden = true
+                self.notArrivalCommentView.isHidden = true
+                self.preSaveView.isHidden = true
+                self.deadlinePreSaveView.isHidden = false
+            }
+        }
+        
+        
             
             //혼자 쓴 일기
             for i in deliveryNArray {
@@ -452,6 +472,7 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
                     self.readCommentView.isHidden = true
                     self.notArrivalCommentView.isHidden = true
                     self.preSaveView.isHidden = true
+                    self.deadlinePreSaveView.isHidden = true
                 }
             }
             //코멘트 일기, 일기 도착 x
@@ -464,6 +485,7 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
                     self.readCommentView.isHidden = true
                     self.notArrivalCommentView.isHidden = true
                     self.preSaveView.isHidden = true
+                    self.deadlinePreSaveView.isHidden = true
                 }
                 
 //                let interval = formatter.date(from: todaydate)
@@ -494,6 +516,7 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
                 self.readCommentView.isHidden = false
                 self.notArrivalCommentView.isHidden = true
                 self.preSaveView.isHidden = true
+                self.deadlinePreSaveView.isHidden = true
             }
         }
         
@@ -644,7 +667,7 @@ extension WritingDiaryVC {
             //??
             if todayDateData == i.date {
                 todayTitle = i.title
-                NotificationCenter.default.post(name: Notification.Name("loadDate"), object: todayDateData)
+                NotificationCenter.default.post(name: Notification.Name("loadDate"), object: krMonthDateFormatter)
                 
                 print(todayTitle, "로드된 시점 제목")
                 NotificationCenter.default.post(name: Notification.Name("loadTitle"), object: todayTitle)
@@ -664,7 +687,20 @@ extension WritingDiaryVC {
             // tempYn = "N" 임시저장 x
             if i.tempYn == "Y" {
                 //임시저장 배열
-                tempYArray.append(i.date)
+                //임시저장 마감
+                //오전 6시에 마감 6시간을 빼서 같으면 아직 임시저장 다르면 마감
+                //임시저장 6시간빼기
+                let preSaveDateString = detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -21600))
+                if i.date == preSaveDateString {
+                    tempYArray.append(i.date)
+                    print(tempYArray, "임시저장 배열")
+                }
+                else if i.date != preSaveDateString {
+                    //임시저장 마감
+                    tempYDeadlineArray.append(i.date)
+                    print(tempYDeadlineArray, "임시저장 마감 배열")
+                }
+                
             }
             else if  i.tempYn == "N" {
                 //임시저장 아닌 경우
@@ -704,6 +740,7 @@ extension WritingDiaryVC {
                 self.readCommentView.isHidden = true
                 self.notArrivalCommentView.isHidden = true
                 self.preSaveView.isHidden = true
+               self.deadlinePreSaveView.isHidden = true
             }
             else if i == todayDateValueString {
                 for j in tempYArray {
@@ -715,8 +752,26 @@ extension WritingDiaryVC {
                         self.readCommentView.isHidden = true
                         self.notArrivalCommentView.isHidden = true
                         self.preSaveView.isHidden = false
+                        self.deadlinePreSaveView.isHidden = true
                     }
                 }
+                
+                //*****************MARK: - 수정해야하는지 확인
+                //임시저장 기간 지난 배열
+                for j in tempYDeadlineArray {
+                    if j == todayDateValueString { //임시저장
+                        self.notDiaryDayView.isHidden = true
+                        self.todayWritingDiaryView.isHidden = true
+                        self.aloneDiaryView.isHidden = true
+                        self.commentSoonView.isHidden = true
+                        self.readCommentView.isHidden = true
+                        self.notArrivalCommentView.isHidden = true
+                        self.preSaveView.isHidden = true
+                        self.deadlinePreSaveView.isHidden = false
+                    }
+                }
+                
+                
                 for k in deliveryNArray {
                     if k == todayDateValueString { //혼자쓴일기
                         self.notDiaryDayView.isHidden = true
@@ -726,6 +781,7 @@ extension WritingDiaryVC {
                         self.readCommentView.isHidden = true
                         self.notArrivalCommentView.isHidden = true
                         self.preSaveView.isHidden = true
+                        self.deadlinePreSaveView.isHidden = true
                     }
                 }
 
@@ -738,6 +794,7 @@ extension WritingDiaryVC {
                         self.readCommentView.isHidden = true
                         self.notArrivalCommentView.isHidden = true
                         self.preSaveView.isHidden = true
+                        self.deadlinePreSaveView.isHidden = true
                     }
                 }
             }

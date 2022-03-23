@@ -20,6 +20,11 @@
 		A518AFBD27E9B4F40024E1F1 /* ReceivedDiaryDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518AFBC27E9B4F40024E1F1 /* ReceivedDiaryDataManager.swift */; };
 		A518AFC027EA1E7D0024E1F1 /* SendCommentAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518AFBF27EA1E7D0024E1F1 /* SendCommentAlertViewController.swift */; };
 		A518AFC227EA1ECE0024E1F1 /* SendCommentAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A518AFC127EA1ECE0024E1F1 /* SendCommentAlert.storyboard */; };
+		A518AFC427EB0BB00024E1F1 /* DeadlinePreSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518AFC327EB0BB00024E1F1 /* DeadlinePreSaveViewController.swift */; };
+		A518AFC727EB28B50024E1F1 /* YPreSaveDeadlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518AFC627EB28B50024E1F1 /* YPreSaveDeadlineViewController.swift */; };
+		A518AFC927EB28C10024E1F1 /* YPreSaveDeadline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A518AFC827EB28C10024E1F1 /* YPreSaveDeadline.storyboard */; };
+		A518AFCC27EB4F200024E1F1 /* NotArrivalCommentDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518AFCB27EB4F200024E1F1 /* NotArrivalCommentDiaryViewController.swift */; };
+		A518AFCE27EB4F330024E1F1 /* NotArrivalCommentDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A518AFCD27EB4F330024E1F1 /* NotArrivalCommentDiary.storyboard */; };
 		A520914927DC7F36003017AC /* MyDiaryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A520914727DC7F36003017AC /* MyDiaryListCell.swift */; };
 		A520914A27DC7F36003017AC /* MyDiaryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A520914827DC7F36003017AC /* MyDiaryListCell.xib */; };
 		A520914F27DC98CE003017AC /* GatherDiaryDateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A520914E27DC98CE003017AC /* GatherDiaryDateResponse.swift */; };
@@ -195,6 +200,11 @@
 		A518AFBC27E9B4F40024E1F1 /* ReceivedDiaryDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedDiaryDataManager.swift; sourceTree = "<group>"; };
 		A518AFBF27EA1E7D0024E1F1 /* SendCommentAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendCommentAlertViewController.swift; sourceTree = "<group>"; };
 		A518AFC127EA1ECE0024E1F1 /* SendCommentAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SendCommentAlert.storyboard; sourceTree = "<group>"; };
+		A518AFC327EB0BB00024E1F1 /* DeadlinePreSaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlinePreSaveViewController.swift; sourceTree = "<group>"; };
+		A518AFC627EB28B50024E1F1 /* YPreSaveDeadlineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YPreSaveDeadlineViewController.swift; sourceTree = "<group>"; };
+		A518AFC827EB28C10024E1F1 /* YPreSaveDeadline.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YPreSaveDeadline.storyboard; sourceTree = "<group>"; };
+		A518AFCB27EB4F200024E1F1 /* NotArrivalCommentDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotArrivalCommentDiaryViewController.swift; sourceTree = "<group>"; };
+		A518AFCD27EB4F330024E1F1 /* NotArrivalCommentDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotArrivalCommentDiary.storyboard; sourceTree = "<group>"; };
 		A520914727DC7F36003017AC /* MyDiaryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryListCell.swift; sourceTree = "<group>"; };
 		A520914827DC7F36003017AC /* MyDiaryListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyDiaryListCell.xib; sourceTree = "<group>"; };
 		A520914E27DC98CE003017AC /* GatherDiaryDateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatherDiaryDateResponse.swift; sourceTree = "<group>"; };
@@ -435,6 +445,24 @@
 			path = SendComment;
 			sourceTree = "<group>";
 		};
+		A518AFC527EB288C0024E1F1 /* YPreSaveDeadline */ = {
+			isa = PBXGroup;
+			children = (
+				A518AFC627EB28B50024E1F1 /* YPreSaveDeadlineViewController.swift */,
+				A518AFC827EB28C10024E1F1 /* YPreSaveDeadline.storyboard */,
+			);
+			path = YPreSaveDeadline;
+			sourceTree = "<group>";
+		};
+		A518AFCA27EB4ED30024E1F1 /* NotArrivalCommentDiary */ = {
+			isa = PBXGroup;
+			children = (
+				A518AFCB27EB4F200024E1F1 /* NotArrivalCommentDiaryViewController.swift */,
+				A518AFCD27EB4F330024E1F1 /* NotArrivalCommentDiary.storyboard */,
+			);
+			path = NotArrivalCommentDiary;
+			sourceTree = "<group>";
+		};
 		A520914627DC7E41003017AC /* DiaryListCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,6 +607,7 @@
 				A5242CA027D50CAA00E24A76 /* ReadCommentViewController.swift */,
 				A5242CA227D50CF500E24A76 /* NotArrivalCommentViewController.swift */,
 				A5242CA427D50EE800E24A76 /* PreSaveViewController.swift */,
+				A518AFC327EB0BB00024E1F1 /* DeadlinePreSaveViewController.swift */,
 			);
 			path = CaseContainerViews;
 			sourceTree = "<group>";
@@ -648,6 +677,8 @@
 				A5C7A39227E793BB0055BAD7 /* YReadComment */,
 				A5C7A37727E5AA0C0055BAD7 /* YEdit */,
 				A5242C6627D31E7F00E24A76 /* NEdit */,
+				A518AFCA27EB4ED30024E1F1 /* NotArrivalCommentDiary */,
+				A518AFC527EB288C0024E1F1 /* YPreSaveDeadline */,
 				A503FF7427CE4CBB0049FF82 /* YPreSave */,
 				A503FF7327CE4C090049FF82 /* NSave */,
 				A5567C8F27BD4D5B001A4B98 /* WritingDiary.storyboard */,
@@ -1251,6 +1282,7 @@
 				A503FF7C27CE4D6C0049FF82 /* YPreSave.storyboard in Resources */,
 				A529502827DB751F00192054 /* GatherLook.storyboard in Resources */,
 				A567615527B7E454006FDA7F /* LaunchScreen.storyboard in Resources */,
+				A518AFCE27EB4F330024E1F1 /* NotArrivalCommentDiary.storyboard in Resources */,
 				A520918027DDDA6B003017AC /* AppleSDGothicNeoEB.ttf in Resources */,
 				A5CBCC0027CA99FF00BE857D /* SuccessFindPassword.storyboard in Resources */,
 				A5567C9027BD4D5B001A4B98 /* WritingDiary.storyboard in Resources */,
@@ -1279,6 +1311,7 @@
 				A529502227DB6A4200192054 /* PeriodView.storyboard in Resources */,
 				A567622C27BBC7DC006FDA7F /* SignUp.storyboard in Resources */,
 				A520916727DD0365003017AC /* PeriodCommentView.storyboard in Resources */,
+				A518AFC927EB28C10024E1F1 /* YPreSaveDeadline.storyboard in Resources */,
 				A520914A27DC7F36003017AC /* MyDiaryListCell.xib in Resources */,
 				A5C9FB7627C60EF600445012 /* FailFIndPassword.storyboard in Resources */,
 				A5C7A37E27E5EA910055BAD7 /* GatherLookDetail.storyboard in Resources */,
@@ -1362,6 +1395,7 @@
 				A520915127DC98E3003017AC /* GatherDiaryDateDataManager.swift in Sources */,
 				A56B697C27DA02CF001385DC /* DiaryReportResponse.swift in Sources */,
 				A56B697E27DA02DA001385DC /* DiaryReportRequest.swift in Sources */,
+				A518AFC727EB28B50024E1F1 /* YPreSaveDeadlineViewController.swift in Sources */,
 				A567622727BBB8D5006FDA7F /* LoginViewController.swift in Sources */,
 				A5BF9CEA27C8C5880093B900 /* SendDiaryAlertViewController.swift in Sources */,
 				A567614D27B7E452006FDA7F /* ViewController.swift in Sources */,
@@ -1379,6 +1413,7 @@
 				A567616C27B7E890006FDA7F /* UINavigaionBar.swift in Sources */,
 				A5C7A3A027E8EF750055BAD7 /* ChangePasswordViewController.swift in Sources */,
 				A520914927DC7F36003017AC /* MyDiaryListCell.swift in Sources */,
+				A518AFCC27EB4F200024E1F1 /* NotArrivalCommentDiaryViewController.swift in Sources */,
 				A529502027DB6A3500192054 /* PeriodViewAlertViewController.swift in Sources */,
 				A520916527DD034A003017AC /* PeriodCommentViewController.swift in Sources */,
 				A5C7A37427E4D6C10055BAD7 /* NavigationVC.swift in Sources */,
@@ -1398,6 +1433,7 @@
 				A56B698227DA0371001385DC /* CommentReportResponse.swift in Sources */,
 				A521372B27D12ED300B98CF7 /* DeleteDiaryDataManager.swift in Sources */,
 				A521371027D0D89500B98CF7 /* OAuthCredential.swift in Sources */,
+				A518AFC427EB0BB00024E1F1 /* DeadlinePreSaveViewController.swift in Sources */,
 				A5CCD19427C4E4060096281F /* SearchPasswordDataManager.swift in Sources */,
 				A5567C9827BD5353001A4B98 /* AuthNumberViewController.swift in Sources */,
 				A595203A27D89A4F005D414D /* CommentWritingResponse.swift in Sources */,

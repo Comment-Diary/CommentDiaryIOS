@@ -29,7 +29,9 @@ class NotArrivalCommentViewController: UIViewController {
     
     @IBOutlet weak var separateView: UIView!
     
-    @IBOutlet weak var commentSoonLabel: UILabel!
+    @IBOutlet weak var firstLabel : UILabel!
+    
+    @IBOutlet weak var secondLabel: UILabel!
     
     @IBOutlet weak var bottomBackView: UIView!
     
@@ -62,10 +64,11 @@ class NotArrivalCommentViewController: UIViewController {
         contentLabel.text = notification.object as? String ?? ""
     }
     
+    
     func viewSetting() {
         topBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
         contentBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
-        bottomBackView.backgroundColor = UIColor(hex: 0xE2DFD7)
+        bottomBackView.backgroundColor = UIColor(hex: 0xF4EDE3)
         separateView.backgroundColor = UIColor(hex: 0xE2DFD7)
     }
     
@@ -78,8 +81,15 @@ class NotArrivalCommentViewController: UIViewController {
         titleLabel.font = UIFont.AppleSDGothic(.bold, size: 18)
         contentLabel.textColor = UIColor(hex: 0x4E4C49)
         contentLabel.font = UIFont.AppleSDGothic(.medium, size: 15)
-        commentSoonLabel.textColor = UIColor(hex: 0x878379)
-        commentSoonLabel.font = UIFont.AppleSDGothic(.bold, size: 13)
+        firstLabel.text = "아쉽게도 코멘트가 도착하지 않았어요."
+        secondLabel.text = "그래도 오늘의 기록은 내일의 기억이 될 거예요 :)"
+        firstLabel.font = UIFont.AppleSDGothic(.medium, size: 12)
+        secondLabel.font = UIFont.AppleSDGothic(.medium, size: 12)
+        firstLabel.textColor = UIColor(hex: 0x878379)
+        secondLabel.textColor = UIColor(hex: 0x878379)
+        contentBackView.layer.cornerRadius = 10
+        view.backgroundColor = UIColor(hex: 0xF4EDE3)
+
     }
     
     func buttonSetting() {

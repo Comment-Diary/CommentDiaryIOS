@@ -134,7 +134,15 @@ class YPreSaveViewController: UIViewController {
             self.presentBottomAlert(message: "내용 100자 이상 입력해주세요.")
         }
         else if commentDiaryBool == true {
-            self.showIndicator()
+            let modifySendDiaryVC = UIStoryboard(name: "ModifySendDiaryAlert", bundle: nil).instantiateViewController(withIdentifier: "ModifySendDiaryAlertViewController") as! ModifySendDiaryAlertViewController
+            modifySendDiaryVC.commentDiaryID = self.diaryID
+            print(modifySendDiaryVC.commentDiaryID, "보내는 id 값")
+            modifySendDiaryVC.commentDiaryTitle = self.titleTextView.text ?? ""
+            print(modifySendDiaryVC.commentDiaryTitle, "보내는 제목")
+            modifySendDiaryVC.commentDiaryContent = self.contentTextView.text ?? ""
+            print(modifySendDiaryVC.commentDiaryContent, "보내는 내용")
+            present(modifySendDiaryVC, animated: true, completion: nil)
+            
 
 //            WritingDiaryRequest.title = titleTextView.text ?? ""
 //            WritingDiaryRequest.content = contentTextView.text ?? ""
@@ -172,6 +180,7 @@ class YPreSaveViewController: UIViewController {
         yEditVC.contentString = self.contentTextView.text ?? ""
         print(yEditVC.contentString, "내용")
         yEditVC.diaryID = self.diaryID
+        print(yEditVC.diaryID, "id값")
         navigationController?.pushViewController(yEditVC, animated: true)
     }
     

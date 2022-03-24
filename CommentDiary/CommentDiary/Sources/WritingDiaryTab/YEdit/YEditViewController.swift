@@ -145,6 +145,21 @@ class YEditViewController : UIViewController {
         navigationController?.popToRootViewController(animated: true)
     }
     
+    
+    
+    @IBAction func preSaveButtonTap(_ sender: Any) {
+        if titleTextView.text.count == 0 || contentTextView.text.count == 0 || titleTextView.text == "제목을 입력해주세요." || contentTextView.text == "내용을 입력해주세요." {
+            self.presentBottomAlert(message: "제목과 내용을 입력해주세요.")
+        } else {
+            self.showIndicator()
+            ModifyDiaryRequest.title = titleTextView.text ?? ""
+            ModifyDiaryRequest.content = contentTextView.text ?? ""
+            ModifyDiaryRequest.deliveryYn = "Y"
+            ModifyDiaryRequest.temyYn = "Y"
+            YModifyDiaryDataManager().modifyDiaryPostData(self, diaryID)
+        }
+    }
+    
 
     
     @IBAction func sendButtonTap(_ sender: Any) {
@@ -152,7 +167,18 @@ class YEditViewController : UIViewController {
             self.presentBottomAlert(message: "내용을 100자 이상 입력해주세요")
         }
         else if canDeliveryBool == true {
+            let modifySendDiaryVC = UIStoryboard(name: "ModifySendDiaryAlert", bundle: nil).instantiateViewController(withIdentifier: "ModifySendDiaryAlertViewController") as! ModifySendDiaryAlertViewController
             
+            modifySendDiaryVC.commentDiaryID = self.diaryID
+            modifySendDiaryVC.commentDiaryTitle = self.titleTextView.text ?? ""
+            modifySendDiaryVC.commentDiaryContent = self.contentTextView.text ?? ""
+            modifySendDiaryVC.commentDiaryDate = self.dateLabel.text ?? ""
+            print(modifySendDiaryVC.commentDiaryID, "보내는 id 값")
+            print(modifySendDiaryVC.commentDiaryDate, "보내는 날짜 값")
+            print(modifySendDiaryVC.commentDiaryTitle, "보내는 제목")
+            print(modifySendDiaryVC.commentDiaryContent, "보내는 내용")
+            
+            present(modifySendDiaryVC, animated: true, completion: nil)
         }
     }
     
@@ -199,5 +225,16 @@ extension YEditViewController : UITextViewDelegate {
             contentTextView.text = nil
             contentTextView.textColor = UIColor(hex: 0x4E4C49)
         }
+    }
+}
+
+
+extension YEditViewController {
+    func yEditSuccess(_ response: ModifyDiaryResopnse) {
+        self.dismissIndicator()
+        self.presentBottomAlert(message: "수정이 완료되었어요.")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            self.navigationController?.popToRootViewController(animated: true)
+        })
     }
 }

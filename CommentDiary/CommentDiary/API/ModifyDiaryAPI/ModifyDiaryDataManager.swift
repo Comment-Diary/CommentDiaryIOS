@@ -58,7 +58,38 @@ class YModifyDiaryDataManager {
                 switch response.result {
                 case .success(let response):
                     print("DEBUG >> Success \(response)")
+                    viewController.yEditSuccess(response)
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+    }
+}
+
+
+class YModifySendDiaryDataManager {
+    func modifyDiaryPostData(_ viewController: ModifySendDiaryAlertViewController, _ diaryValue: Int) {
+        let url = "http://jwyang.shop:8080/api/v1/diary/\(diaryValue)"
+        let params = ["title" : ModifyDiaryRequest.title,
+                      "content" : ModifyDiaryRequest.content,
+                      "deliveryYn" : ModifyDiaryRequest.deliveryYn,
+                      "tempYn" : ModifyDiaryRequest.temyYn]
+        let token = UserDefaults.standard.value(forKey: "AccessToken") ?? ""
+        let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
+        
+        AF.request(url,
+                   method: .patch,
+                   parameters: params,
+                   encoder: JSONParameterEncoder(),
+                   headers: headers)
+            .validate()
+            .responseDecodable(of: ModifyDiaryResopnse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    print("DEBUG >> Success \(response)")
 //                    viewController.editDiarySuccessResponse(response)
+                    viewController.editDidarySuccess(response)
                     
                 case .failure(let error):
                     print(error.localizedDescription)

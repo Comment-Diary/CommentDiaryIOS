@@ -18,6 +18,8 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
         return df
     }()
     
+    //오늘이 아니면 바텀 시트 띄우지 않기 true/오늘 false/오늘 아님
+    var bottomSheetBool : Bool = true
 
     
     //일기쓰기API
@@ -103,8 +105,9 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
-        bottomsheetSetting()
+        
+        
+        
         
         titleTextView.delegate = self
         contentTextView.delegate = self
@@ -124,6 +127,17 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
 
 
 
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //바텀 시트
+
+        if self.bottomSheetBool == true {
+            bottomsheetSetting()
+        }
+        else if self.bottomSheetBool == false {
+            return
+        }
     }
     
     
@@ -213,8 +227,6 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
     func bottomsheetSetting() {
         //조건달기
             let todayDiaryBottomVC = UIStoryboard(name: "TodayDiaryBottom", bundle: nil).instantiateViewController(withIdentifier: "TodayDiaryBottomViewController") as! TodayDiaryBottomViewController
-        
-        
             todayDiaryBottomVC.preSaveButtonDelegate = self
             todayDiaryBottomVC.countLabelChangeDelegate = self
             todayDiaryBottomVC.buttonChangeDelegate = self

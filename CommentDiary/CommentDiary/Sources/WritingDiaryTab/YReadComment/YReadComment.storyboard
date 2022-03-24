@@ -40,7 +40,7 @@
                                 <rect key="frame" x="16" y="48.5" width="288" height="472.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lab-jp-9vo">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="599"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="499"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IH3-7V-UQa">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="85.5"/>
@@ -84,7 +84,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rDg-l4-T9K">
-                                                <rect key="frame" x="0.0" y="85.5" width="288" height="400"/>
+                                                <rect key="frame" x="0.0" y="85.5" width="288" height="300"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sdf" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONp-IV-U2Q">
                                                         <rect key="frame" x="24" y="12" width="240" height="20.5"/>
@@ -100,12 +100,12 @@
                                                     <constraint firstAttribute="width" secondItem="rDg-l4-T9K" secondAttribute="height" multiplier="343:508" priority="250" id="MmY-vX-AAl"/>
                                                     <constraint firstItem="ONp-IV-U2Q" firstAttribute="leading" secondItem="rDg-l4-T9K" secondAttribute="leading" constant="24" id="Tcq-Gg-yEq"/>
                                                     <constraint firstAttribute="bottom" secondItem="ONp-IV-U2Q" secondAttribute="bottom" priority="250" constant="96" id="X6i-ax-xch"/>
-                                                    <constraint firstAttribute="height" priority="250" constant="400" id="hko-z8-Ash"/>
+                                                    <constraint firstAttribute="height" priority="250" constant="300" id="hko-z8-Ash"/>
                                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ONp-IV-U2Q" secondAttribute="bottom" constant="30" id="x80-zZ-75U"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6j-Zu-WQg">
-                                                <rect key="frame" x="0.0" y="502.5" width="288" height="96.5"/>
+                                                <rect key="frame" x="0.0" y="402.5" width="288" height="96.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdW-eP-Mqo" customClass="CornerButton" customModule="CommentDiary" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="288" height="44.5"/>

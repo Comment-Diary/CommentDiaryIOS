@@ -141,6 +141,7 @@ class YPreSaveViewController: UIViewController {
             print(modifySendDiaryVC.commentDiaryTitle, "보내는 제목")
             modifySendDiaryVC.commentDiaryContent = self.contentTextView.text ?? ""
             print(modifySendDiaryVC.commentDiaryContent, "보내는 내용")
+            modifySendDiaryVC.commentDiaryDate = self.dateLabel.text ?? ""
             present(modifySendDiaryVC, animated: true, completion: nil)
             
 

@@ -91,6 +91,7 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     
     //전체 배열
     var allDiaryList = [String]()
+//    var allDiaryList : Set<String> = []
     
     //혼자쓰기 일기 배열
     var nDiaryList = [String]()
@@ -622,13 +623,13 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     
     @IBAction func prevButtonTap(_ sender: Any) {
         scrollCurrentPage(isPrev: true)
-        DiaryMainPageDataManager().diaryMainDate(self)
+ 
         
     }
     
     @IBAction func nextButtonTap(_ sender: Any) {
         scrollCurrentPage(isPrev: false)
-        DiaryMainPageDataManager().diaryMainDate(self)
+
     }
     
     
@@ -649,6 +650,8 @@ extension WritingDiaryVC {
         //전체 배열
         for i in mainPageResult {
             allDiaryList.append(i.date)
+//            allDiaryList.insert(i.date)
+            print(allDiaryList, "전체 배열")
         }
         
         

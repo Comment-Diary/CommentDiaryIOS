@@ -51,7 +51,7 @@ class DiaryMainPageDataManager {
     func diaryMainDate(_ viewcontroller: WritingDiaryVC) {
         let url = "http://jwyang.shop:8080/api/v1/diary/main"
         let params: Parameters = [
-                    "date" : "\(viewcontroller.monthDateString)"
+                    "date" : ""
                 ]
 
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""

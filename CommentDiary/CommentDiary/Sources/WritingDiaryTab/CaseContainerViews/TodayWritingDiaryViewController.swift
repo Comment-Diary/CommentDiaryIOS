@@ -25,6 +25,9 @@ class TodayWritingDiaryViewController : UIViewController {
     }()
     
     var presentDateString = ""
+    var selectedDateString = ""
+    var todayDateString = ""
+    
     //MARK: - Properties
     
     @IBOutlet weak var infoLabel: UILabel!
@@ -61,6 +64,7 @@ class TodayWritingDiaryViewController : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         dateLabelSetting()
         presentDateString = detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
+        todayDateString = detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
     }
     
     func dateLabelSetting() {
@@ -106,6 +110,7 @@ class TodayWritingDiaryViewController : UIViewController {
     
     @objc func loadData(_ notification : NSNotification) {
         dateLabel.text = notification.object as? String ?? ""
+        selectedDateString = notification.object as? String ?? ""
     }
     @objc func updateData(_ notification : NSNotification) {
         presentDateString = notification.object as? String ?? ""
@@ -116,8 +121,15 @@ class TodayWritingDiaryViewController : UIViewController {
 
     
     @IBAction func writeDiaryButtonTap(_ sender: Any) {
+
         let todayDiaryVC = UIStoryboard(name: "TodayDiary", bundle: nil).instantiateViewController(identifier: "TodayDiaryViewController") as! TodayDiaryViewController
         todayDiaryVC.dateText = presentDateString
+        if todayDateString == selectedDateString {
+            todayDiaryVC.bottomSheetBool = true
+        }
+        else if todayDateString != selectedDateString {
+            todayDiaryVC.bottomSheetBool = false
+        }
         self.navigationController?.pushViewController(todayDiaryVC, animated: true)
     }
 }

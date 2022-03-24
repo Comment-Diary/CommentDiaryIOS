@@ -106,6 +106,9 @@ class NotArrivalCommentViewController: UIViewController {
 //        ypreSaveVC.diaryID = diaryIDValue
 //        self.navigationController?.pushViewController(ypreSaveVC, animated: true)
         let notArrivalCommentDiaryVC = UIStoryboard(name: "NotArrivalCommentDiary", bundle: nil).instantiateViewController(withIdentifier: "NotArrivalCommentDiaryViewController") as! NotArrivalCommentDiaryViewController
+        notArrivalCommentDiaryVC.diaryDate = dateLabel.text ?? ""
+        notArrivalCommentDiaryVC.diaryTitle = titleLabel.text ?? ""
+        notArrivalCommentDiaryVC.diaryContent = contentLabel.text ?? ""
         self.navigationController?.pushViewController(notArrivalCommentDiaryVC, animated: true)
     }
     

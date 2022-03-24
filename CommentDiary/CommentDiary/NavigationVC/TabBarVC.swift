@@ -14,8 +14,8 @@ class TabBarVC : UITabBarController, UITabBarControllerDelegate {
     let gatherLookVC = GatherLookViewController()
     let myPageVC = MyPageViewController()
     
-    let writingTabBarItem = UITabBarItem(title: "내 일기", image: UIImage(named: ""), tag: 0)
-    let arrivalTabBarItem = UITabBarItem(title: "??", image: UIImage(named: ""), tag: 1)
+//    let writingTabBarItem = UITabBarItem(title: "내 일기", image: UIImage(named: ""), tag: 0)
+//    let arrivalTabBarItem = UITabBarItem(title: "??", image: UIImage(named: ""), tag: 1)
     
     var index : Int = 0
     

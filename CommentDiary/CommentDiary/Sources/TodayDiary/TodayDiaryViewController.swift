@@ -172,6 +172,8 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
         diaryDate.font = UIFont.AppleSDGothic(.bold, size: 15)
         commentAlertLabel.textColor = UIColor(hex: 0x878379)
         commentAlertLabel.font = UIFont.AppleSDGothic(.medium, size: 12)
+        textCountLabel.textColor = UIColor(hex: 0x878379)
+        textCountLabel.font = UIFont.AppleSDGothic(.medium, size: 12)
     }
     
     func buttonSetting() {
@@ -350,10 +352,7 @@ extension TodayDiaryViewController: UITextViewDelegate {
             contentTextView.text = "내용을 입력해주세요."
             contentTextView.textColor = UIColor(hex: 0xE2DFD7)
         }
-//        if contentTextView.text.isEmpty {
-//            contentTextView.text = "내용을 입력해주세요."
-//            contentTextView.textColor = UIColor(hex: 0xE2DFD7)
-//        }
+
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -376,11 +375,10 @@ extension TodayDiaryViewController {
         if deliveryToggle == "Y" {
             //임시저장
             if tempToggle == "Y" {
-                let yPreSaveVC = UIStoryboard(name: "YPreSave", bundle: nil).instantiateViewController(withIdentifier: "YPreSaveViewController") as! YPreSaveViewController
-                yPreSaveVC.diaryID = response.result.id
-                yPreSaveVC.commentDiaryBool = canSendDiaryBool
-                print(yPreSaveVC.diaryID, "임시저장 id 값")
-                self.navigationController?.pushViewController(yPreSaveVC, animated: true)
+                let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
+                self.changeRootViewController(mainTabBarController)
+                
+                
             }
             //코멘트 일기
             else if tempToggle == "N" {

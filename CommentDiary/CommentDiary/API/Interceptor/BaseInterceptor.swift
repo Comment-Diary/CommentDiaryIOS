@@ -28,44 +28,50 @@ import Alamofire
 final class MyRequestInterceptor: RequestInterceptor {
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         let accessToken: String = UserDefaults.standard.value(forKey: "AccessToken") as! String
-
+        print("인터셉트??")
         var urlRequest = urlRequest
         urlRequest.headers.add(.authorization(bearerToken: accessToken))
         completion(.success(urlRequest))
     }
 
     func retry(_ request: Request, for session: Session, dueTo error: Error, completion: @escaping (RetryResult) -> Void) {
+        print("왜왜왜")
         guard let response = request.task?.response as? HTTPURLResponse, response.statusCode == 401 else {
               completion(.doNotRetryWithError(error))
               return
           }
+
+        
+        refreshToken { isSuccess in
+            isSuccess ? completion(.retry) : completion(.doNotRetry)
+        }
         
  
-//        TokenRefreshDataManager().tokenRefreshPostData()
-        
-        
-//        func refreshToken(completion: @escaping (_ isSuccess: Bool) -> Void) {
-//            let url = "http://jwyang.shop:8080/api/v1/members/reissue"
-//            let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
-//            let refreshToken = UserDefaults.standard.value(forKey: "RefreshToken") ?? ""
-//            let headers: HTTPHeaders = ["X-AUTH-TOKEN" : "\(token)", "REFRESH-TOKEN" : "\(refreshToken)"]
-//
-//            AF.request(url, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers)
-//                .validate()
-//                .responseDecodable(of: TokenRefreshResponse.self) { response in
-//                    switch response.result {
-//                    case .success(let response):
-//                        print("DEBUG >> Success \(response)")
-//                        UserDefaults.standard.set(response.result.accessToken, forKey: "AccessToken")
-//
-//                    case .failure(let error):
-//                        print(error.localizedDescription)
-//                    }
-//
-//
-//            }
-//        }
     }
+}
+
+func refreshToken(completion: @escaping (_ isSuccess: Bool) -> Void) {
+    let url = "http://jwyang.shop:8080/api/v1/members/reissue"
+    let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
+    let refreshToken = UserDefaults.standard.value(forKey: "RefreshToken") ?? ""
+    print(token, "토큰")
+    print(refreshToken, "리프레시")
+    let headers: HTTPHeaders = ["X-AUTH-TOKEN" : token as! String, "REFRESH-TOKEN" : refreshToken as! String]
+    
+    AF.request(url, method: .post, parameters: nil, encoding: URLEncoding.default, headers: headers)
+        .validate()
+        .responseDecodable(of: TokenRefreshResponse.self) { response in
+            switch response.result {
+            case .success(let response):
+                print("DEBUG>> Success\(response)")
+                print("되나???")
+                completion(true)
+
+            case .failure(let error):
+                completion(false)
+                print(error.localizedDescription)
+            }
+        }
 }
 //import Foundation
 //import Alamofire

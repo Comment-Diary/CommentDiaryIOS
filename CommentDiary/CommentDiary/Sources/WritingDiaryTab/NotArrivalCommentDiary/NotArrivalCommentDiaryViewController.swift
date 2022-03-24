@@ -37,6 +37,11 @@ class NotArrivalCommentDiaryViewController : UIViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        dateLabel.text = diaryDate
+        titleLabel.text = diaryTitle
+        contentLabel.text = diaryContent
+        
+        
         labelSetting()
         buttonSetting()
         viewSetting()
@@ -61,6 +66,8 @@ class NotArrivalCommentDiaryViewController : UIViewController {
     }
     
     func viewSetting() {
+        topBackView.backgroundColor = UIColor(hex: 0xF4EDE3)
+        
         bottomBackView.backgroundColor = UIColor(hex: 0xF4EDE3)
         titleBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
         contentBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
@@ -71,6 +78,9 @@ class NotArrivalCommentDiaryViewController : UIViewController {
         titleBackView.layer.cornerRadius = 10
         titleBackView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         allBackView.layer.cornerRadius = 10
+        allBackView.backgroundColor = .clear
+        diaryScrollView.backgroundColor = .clear
+        separateView.backgroundColor = UIColor(hex: 0xE2DFD7)
         
         
     }
@@ -78,7 +88,9 @@ class NotArrivalCommentDiaryViewController : UIViewController {
     
     //MARK: - Actions
     
-    @IBOutlet weak var backButtonTap: UIView!
+    @IBAction func backButtonTap(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     
 }

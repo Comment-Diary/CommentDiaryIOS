@@ -15,84 +15,104 @@ import UIKit
 class YPreSaveViewController: UIViewController {
     var diaryID : Int = 0
     var commentDiaryBool: Bool = false
-    var commentDiaryCount: Int = 0
+    var commentDiaryCount: String = ""
 
     //MARK: - Properties
-    
-    
+    @IBOutlet weak var topBackView: UIView!
+    @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     
     @IBOutlet weak var deleteButton: UIButton!
     
     @IBOutlet weak var editButton: UIButton!
     
-    
     @IBOutlet weak var dateLabel: UILabel!
     
-    @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet weak var contentLabel: UILabel!
     
-    @IBOutlet weak var contentBackView: UIView!
+    @IBOutlet weak var titleTextView: UITextView!
     
-    @IBOutlet weak var titleBackView: UIView!
-    
-    @IBOutlet weak var sendButton: UIButton!
-    @IBOutlet weak var diaryScrollView: UIScrollView!
+    @IBOutlet weak var contentTextView: UITextView!
     
     
     @IBOutlet weak var separateView: UIView!
     
-    @IBOutlet weak var topBackView: UIView!
-    
-    @IBOutlet weak var allContentView: UIView!
     
     @IBOutlet weak var infoLabel: UILabel!
+    
+    @IBOutlet weak var titleBackView: UIView!
+    
+    @IBOutlet weak var contentBackView: UIView!
+    
+    
+    @IBOutlet weak var countLabel: UILabel!
+    
+    @IBOutlet weak var scrollBackView: UIView!
+    
+    
+    @IBOutlet weak var allBackView: UIView!
+    
+    @IBOutlet weak var contentAllBackView: UIView!
+    
+    @IBOutlet weak var diaryScrollView: UIScrollView!
+    
+
     
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleTextView.isEditable = false
+        contentTextView.isEditable = false
         viewSetting()
         labelSetting()
         buttonSetting()
-
+        textViewSetting()
         
         //API 조회
         PreSaveDiaryCheckDataManager().commentDiaryCheckData(diaryID: diaryID, self)
+//        countLabel.text = commentDiaryCount
     }
     
+    
+    func textViewSetting() {
+        titleTextView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        contentTextView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        titleTextView.textColor = UIColor(hex: 0x4E4C49)
+        titleTextView.font = UIFont.AppleSDGothic(.bold, size: 21)
+        contentTextView.textColor = UIColor(hex: 0x4E4C49)
+        contentTextView.font = UIFont.AppleSDGothic(.medium, size: 15)
+    }
 
     
     
     func viewSetting() {
-        allContentView.layer.cornerRadius = 10
-        diaryScrollView.backgroundColor = UIColor(hex: 0xFDFCF9)
-        diaryScrollView.layer.cornerRadius = 10
-        titleBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
-        contentBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
-        separateView.backgroundColor = UIColor(hex: 0xE2DFD7)
         topBackView.backgroundColor = UIColor(hex: 0xF4EDE3)
         view.backgroundColor = UIColor(hex: 0xF4EDE3)
-        
+        separateView.backgroundColor =  UIColor(hex: 0xE2DFD7)
+        contentAllBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        contentAllBackView.layer.cornerRadius = 10
+        allBackView.layer.cornerRadius = 10
+        allBackView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        allBackView.backgroundColor = UIColor(hex: 0xF4EDE3)
+        allBackView.layer.cornerRadius = 10
+        scrollBackView.layer.cornerRadius = 10
+        diaryScrollView.layer.cornerRadius = 10
         titleBackView.layer.cornerRadius = 10
-        titleBackView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        contentBackView.layer.cornerRadius = 10
-        contentBackView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-        separateView.backgroundColor = UIColor(hex: 0xE2DFD7)
+        titleBackView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        titleBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        contentBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
         
         
     }
     func labelSetting() {
         dateLabel.textColor = UIColor(hex: 0xFFAC86)
         dateLabel.font = UIFont.AppleSDGothic(.bold, size: 15)
-        titleLabel.textColor = UIColor(hex: 0x4E4C49)
-        titleLabel.font = UIFont.AppleSDGothic(.bold, size: 21)
-        contentLabel.textColor = UIColor(hex: 0x4E4C49)
-        contentLabel.font = UIFont.AppleSDGothic(.medium, size: 15)
         infoLabel.text = "일기전송은 다가오는 오전 7시에 종료돼요."
-        infoLabel.textColor = UIColor(hex: 0x878379)
-        infoLabel.font = UIFont.AppleSDGothic(.medium, size: 14)
+        infoLabel.font = UIFont.AppleSDGothic(.medium, size: 12)
+        infoLabel.textColor = UIColor(hex: 0x5F5D59)
+        countLabel.textColor = UIColor(hex: 0x878379)
+        countLabel.font = UIFont.AppleSDGothic(.medium, size: 12)
         
         
     }
@@ -116,10 +136,10 @@ class YPreSaveViewController: UIViewController {
         else if commentDiaryBool == true {
             self.showIndicator()
 
-            WritingDiaryRequest.title = titleLabel.text ?? ""
-            WritingDiaryRequest.content = contentLabel.text ?? ""
-            WritingDiaryRequest.date = dateLabel.text ?? ""
-            WritingDiaryRequest.deliveryYn = "Y"
+//            WritingDiaryRequest.title = titleTextView.text ?? ""
+//            WritingDiaryRequest.content = contentTextView.text ?? ""
+//            WritingDiaryRequest.date = dateLabel.text ?? ""
+//            WritingDiaryRequest.deliveryYn = "Y"
         }
         
 
@@ -144,6 +164,15 @@ class YPreSaveViewController: UIViewController {
     
     @IBAction func editButtonTap(_ sender: Any) {
         //수정하기 화면전환
+        let yEditVC = UIStoryboard(name: "YEdit", bundle: nil).instantiateViewController(withIdentifier: "YEditViewController") as! YEditViewController
+        yEditVC.dateString = self.dateLabel.text ?? ""
+        print(yEditVC.dateString, "날짜")
+        yEditVC.titleString = self.titleTextView.text ?? ""
+        print(yEditVC.titleString, "제목")
+        yEditVC.contentString = self.contentTextView.text ?? ""
+        print(yEditVC.contentString, "내용")
+        yEditVC.diaryID = self.diaryID
+        navigationController?.pushViewController(yEditVC, animated: true)
     }
     
     
@@ -153,7 +182,9 @@ class YPreSaveViewController: UIViewController {
 extension YPreSaveViewController {
     func preSaveDiaryGet(_ response: DiaryCheckResopnse) {
         dateLabel.text = response.result.date
-        contentLabel.text = response.result.content
-        titleLabel.text = response.result.title
+        contentTextView.text = response.result.content
+        titleTextView.text = response.result.title
+        countLabel.text =  "\(response.result.content.count)/100"
     }
 }
+

@@ -41,6 +41,9 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJo-hY-P3p">
                                         <rect key="frame" x="238" y="0.0" width="52" height="48.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="52" id="ng7-X5-tpb"/>
+                                        </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="임시저장"/>
                                         <connections>
@@ -119,7 +122,7 @@
                                                                 <rect key="frame" x="0.0" y="105.5" width="288" height="328.5"/>
                                                                 <subviews>
                                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="sdf" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dqO-ZP-9RZ">
-                                                                        <rect key="frame" x="24" y="12" width="214" height="316.5"/>
+                                                                        <rect key="frame" x="24" y="12" width="240" height="316.5"/>
                                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                                         <color key="textColor" systemColor="labelColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -128,7 +131,7 @@
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="trailing" secondItem="dqO-ZP-9RZ" secondAttribute="trailing" constant="50" id="0J6-uE-dN5"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="dqO-ZP-9RZ" secondAttribute="trailing" constant="24" id="0J6-uE-dN5"/>
                                                                     <constraint firstItem="dqO-ZP-9RZ" firstAttribute="leading" secondItem="vIT-Ko-zgJ" secondAttribute="leading" constant="24" id="23j-j7-wue"/>
                                                                     <constraint firstAttribute="width" secondItem="vIT-Ko-zgJ" secondAttribute="height" multiplier="143:163" priority="250" id="MaL-WP-uDk"/>
                                                                     <constraint firstAttribute="bottom" secondItem="dqO-ZP-9RZ" secondAttribute="bottom" id="Mth-EF-N25"/>

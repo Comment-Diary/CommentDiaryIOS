@@ -10,7 +10,7 @@ import Alamofire
 
 
 class DateCommentDataManager {
-    func dateCommentData(_ viewController: UIViewController, dateValue: String) {
+    func dateCommentData(_ viewController: SendCommentViewController, dateValue: String) {
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers : HTTPHeaders = [.authorization(bearerToken: token as! String)]
         let url = "http://jwyang.shop:8080/api/v1/comment"
@@ -28,7 +28,7 @@ class DateCommentDataManager {
                 switch response.result {
                 case .success(let response):
                     print("DEBUG >> Success \(response)")
-                    
+                    viewController.getDateCommentListSucces(response)
                     
                 case .failure(let error):
                     print(error.localizedDescription)

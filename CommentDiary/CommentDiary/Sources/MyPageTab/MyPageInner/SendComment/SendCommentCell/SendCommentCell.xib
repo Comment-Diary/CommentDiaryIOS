@@ -5,55 +5,68 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="142" id="KGk-i7-Jjw" customClass="SendCommentCell" customModule="CommentDiary" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="142"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="198" id="KGk-i7-Jjw" customClass="SendCommentCell" customModule="CommentDiary" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="198"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="142"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="198"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28w-5c-rut">
-                        <rect key="frame" x="24" y="10" width="37.5" height="23"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPa-Vw-Xa2">
+                        <rect key="frame" x="0.0" y="16" width="320" height="182"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28w-5c-rut">
+                                <rect key="frame" x="20" y="16" width="37.5" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="wUs-6f-Yr8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aut-v1-nwT">
+                                <rect key="frame" x="20" y="39" width="10.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="23" id="wUs-6f-Yr8"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aut-v1-nwT" secondAttribute="trailing" constant="20" id="BpZ-Km-od5"/>
+                            <constraint firstItem="28w-5c-rut" firstAttribute="leading" secondItem="TPa-Vw-Xa2" secondAttribute="leading" constant="20" id="FTO-7w-LAQ"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="aut-v1-nwT" secondAttribute="bottom" constant="18" id="LcH-w3-5TA"/>
+                            <constraint firstItem="28w-5c-rut" firstAttribute="top" secondItem="TPa-Vw-Xa2" secondAttribute="top" constant="16" id="Yj2-lK-bJ3"/>
+                            <constraint firstItem="aut-v1-nwT" firstAttribute="leading" secondItem="TPa-Vw-Xa2" secondAttribute="leading" constant="20" id="d2M-7e-FZG"/>
+                            <constraint firstItem="aut-v1-nwT" firstAttribute="top" secondItem="28w-5c-rut" secondAttribute="bottom" id="kHj-TQ-FTK"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aut-v1-nwT">
-                        <rect key="frame" x="24" y="33" width="272" height="93"/>
-                        <string key="text">    "email": "ckdgnl@temp.com",
-234!"    "email": "ckdgnl@temp.com",
-234!"    "email": "ckdgnl@temp.com",
-234!"    "email": "ckdgnl@temp.com",
-234!"    "email": "ckdgnl@temp.com",
-234!"</string>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="28w-5c-rut" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="5UM-kl-em2"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="aut-v1-nwT" secondAttribute="bottom" constant="16" id="Q5T-Ot-p4L"/>
-                    <constraint firstItem="aut-v1-nwT" firstAttribute="top" secondItem="28w-5c-rut" secondAttribute="bottom" id="Tzo-eS-Hqj"/>
-                    <constraint firstItem="28w-5c-rut" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="dwu-6B-BQu"/>
-                    <constraint firstAttribute="trailing" secondItem="aut-v1-nwT" secondAttribute="trailing" constant="24" id="fOm-dO-Kuf"/>
-                    <constraint firstItem="aut-v1-nwT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="tYG-8q-egP"/>
+                    <constraint firstItem="TPa-Vw-Xa2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="MDG-5K-zTS"/>
+                    <constraint firstAttribute="bottom" secondItem="TPa-Vw-Xa2" secondAttribute="bottom" id="jqH-lf-fZk"/>
+                    <constraint firstItem="TPa-Vw-Xa2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="tEz-K5-kcg"/>
+                    <constraint firstAttribute="trailing" secondItem="TPa-Vw-Xa2" secondAttribute="trailing" id="ygk-V1-ZVK"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="commentLabel" destination="aut-v1-nwT" id="LwD-e4-80B"/>
+                <outlet property="contentBackView" destination="TPa-Vw-Xa2" id="kXz-Ce-65T"/>
                 <outlet property="dateLabel" destination="28w-5c-rut" id="BEu-jn-qD5"/>
             </connections>
-            <point key="canvasLocation" x="131.8840579710145" y="107.8125"/>
+            <point key="canvasLocation" x="131.8840579710145" y="126.5625"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

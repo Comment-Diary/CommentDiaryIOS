@@ -6,14 +6,14 @@
 //
 
 import Foundation
-struct SentCommentListResponse: Codable {
+struct SentCommentListResponse: Decodable {
     let code: Int?
     let message: String?
     let result: [sentCommentListResult]?
 }
 
 // MARK: - Result
-struct sentCommentListResult: Codable {
+struct sentCommentListResult: Decodable {
     let id: Int?
     let content: String?
     let date: String?

@@ -33,9 +33,9 @@ class MyPageViewController :UIViewController {
     
     @IBOutlet weak var sendCommentLabel: UILabel!
     
-    @IBOutlet weak var pushAlertView: UIView!
-    
-    @IBOutlet weak var pushAlertLabel: UILabel!
+//    @IBOutlet weak var pushAlertView: UIView!
+//
+//    @IBOutlet weak var pushAlertLabel: UILabel!
     
     @IBOutlet weak var termsView: UIView!
     
@@ -45,7 +45,7 @@ class MyPageViewController :UIViewController {
     
     @IBOutlet weak var fifthSeparateView: UIView!
     
-    @IBOutlet weak var sixthSeparateView: UIView!
+//    @IBOutlet weak var sixthSeparateView: UIView!
     
     @IBOutlet weak var emailBackView: UIView!
     
@@ -59,19 +59,22 @@ class MyPageViewController :UIViewController {
     
     @IBOutlet weak var myTempInfoLabel: UILabel!
     
+    @IBOutlet weak var currentTempLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSetting()
         labelSetting()
         
+        self.showIndicator()
         MyPageDataManager().myPageData(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        emailBackView.layer.cornerRadius = emailBackView.frame.height / 2
-        progressBackView.layer.cornerRadius = progressBackView.frame.height / 2
+//        emailBackView.layer.cornerRadius = emailBackView.frame.height / 2
+//        progressBackView.layer.cornerRadius = progressBackView.frame.height / 2
         
         
     }
@@ -83,13 +86,13 @@ class MyPageViewController :UIViewController {
         thirdSeparateView.backgroundColor = UIColor(hex: 0xE2DFD7)
         fourthSeparateView.backgroundColor = UIColor(hex: 0xE2DFD7)
         fifthSeparateView.backgroundColor = UIColor(hex: 0xE2DFD7)
-        sixthSeparateView.backgroundColor = UIColor(hex: 0xE2DFD7)
+//        sixthSeparateView.backgroundColor = UIColor(hex: 0xE2DFD7)
         view.backgroundColor = UIColor(hex: 0xFDFCF9)
         myPageView.backgroundColor = UIColor(hex: 0xFDFCF9)
         myTempView.backgroundColor = UIColor(hex: 0xFDFCF9)
         myAccountView.backgroundColor = UIColor(hex: 0xFDFCF9)
         sendCommentView.backgroundColor = UIColor(hex: 0xFDFCF9)
-        pushAlertView.backgroundColor = UIColor(hex: 0xFDFCF9)
+//        pushAlertView.backgroundColor = UIColor(hex: 0xFDFCF9)
         termsView.backgroundColor = UIColor(hex: 0xFDFCF9)
         emailBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
         emailBackView.layer.borderWidth = 1
@@ -100,6 +103,8 @@ class MyPageViewController :UIViewController {
     }
     
     func labelSetting() {
+        currentTempLabel.textColor = UIColor(hex: 0x878379)
+        currentTempLabel.font = UIFont.AppleSDGothic(.bold, size: 14)
         myTemp.textColor = UIColor(hex: 0x878379)
         myTemp.font = UIFont.AppleSDGothic(.bold, size: 14)
         myTempInfoLabel.text = "보낸 코멘트가 '좋아요'를 받을 때 온도가 채워집니다."
@@ -113,8 +118,8 @@ class MyPageViewController :UIViewController {
         myAccountLabel.font = UIFont.AppleSDGothic(.medium, size: 15)
         sendCommentLabel.textColor = UIColor(hex: 0x4E4C49)
         sendCommentLabel.font = UIFont.AppleSDGothic(.medium, size: 15)
-        pushAlertLabel.textColor = UIColor(hex: 0x4E4C49)
-        pushAlertLabel.font = UIFont.AppleSDGothic(.medium, size: 15)
+//        pushAlertLabel.textColor = UIColor(hex: 0x4E4C49)
+//        pushAlertLabel.font = UIFont.AppleSDGothic(.medium, size: 15)
         termsLabel.textColor = UIColor(hex: 0x4E4C49)
         termsLabel.font = UIFont.AppleSDGothic(.medium, size: 15)
     }
@@ -147,6 +152,9 @@ class MyPageViewController :UIViewController {
     //Extensions
 extension MyPageViewController {
     func myPageSuccessResponse(_ response: MyPageResponse) {
+        self.dismissIndicator()
         self.emailLabel.text = response.result.email
+        self.currentTempLabel.text = "\(response.result.temperature)도"
+        self.tempProgressView.progress = response.result.temperature * 0.01
     }
 }

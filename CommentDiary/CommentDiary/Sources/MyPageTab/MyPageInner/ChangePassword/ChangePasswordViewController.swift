@@ -112,6 +112,8 @@ class ChagePasswordViewController : UIViewController {
     
     
     func labelSetting() {
+        ruleLabel.textColor = UIColor(hex: 0x878379)
+        ruleLabel.font = UIFont.AppleSDGothic(.medium, size: 12)
         changePasswordLabel.text = "비밀번호 변경"
         changePasswordLabel.textColor = UIColor(hex: 0x4E4C49)
         changePasswordLabel.font = UIFont.AppleSDGothic(.bold, size: 21)

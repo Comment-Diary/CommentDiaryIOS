@@ -9,6 +9,7 @@ import UIKit
 
 class SendCommentCell: UITableViewCell {
     
+    @IBOutlet weak var contentBackView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     
@@ -30,10 +31,10 @@ class SendCommentCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        contentView.layer.cornerRadius = 10
-        contentView.backgroundColor = UIColor(hex: 0xFDFCF9)
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16))
+        contentBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        contentBackView.layer.cornerRadius = 10
+//        contentView.layer.cornerRadius = 10
+        contentView.backgroundColor = UIColor(hex: 0xF4EDE3)
     }
     
 }

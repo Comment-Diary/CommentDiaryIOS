@@ -623,12 +623,14 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     
     @IBAction func prevButtonTap(_ sender: Any) {
         scrollCurrentPage(isPrev: true)
+//        calendarView.reloadData()
  
         
     }
     
     @IBAction func nextButtonTap(_ sender: Any) {
         scrollCurrentPage(isPrev: false)
+//        calendarView.reloadData()
 
     }
     

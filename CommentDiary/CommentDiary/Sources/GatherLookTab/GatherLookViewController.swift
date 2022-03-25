@@ -98,6 +98,7 @@ class GatherLookViewController : UIViewController, LabelChangeDelegate, DateChan
         backgroundView.backgroundColor = UIColor(hex: 0xF4EDE3)
         topBackView.backgroundColor = UIColor(hex: 0xE2DFD7)
         dateButtonView.layer.cornerRadius = 4
+        dateButtonView.backgroundColor = UIColor(hex: 0xFDFCF9)
     }
     func LabelSetting() {
         noDiaryLabel.text = "아직 작성된 일기가 없어요! 일기를 작성해주세요 :)"

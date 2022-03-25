@@ -13,15 +13,22 @@ class SendCommentViewController : UIViewController, CommentLabelChangeDelegate, 
     
     func onChange(data: String) {
         yearLabel.text = data
+        
     }
     
     func onDateChange(data: String) {
         apiDateString = data
+        DateCommentDataManager().dateCommentData(self, dateValue: apiDateString)
+        if apiDateString == "전체보기" {
+            AllCommentDataManager().allCommentData(self)
+        }
+
 
     }
     
     //API 조회
-    var commentListResult : [sentCommentListResult] = []
+    var commentListResult : [AllCommentResultList] = []
+    var dateCommentListResult : [DateCommentResultList] = []
     //MARK: - Properties
     @IBOutlet weak var yearLabel: UILabel!
     
@@ -36,8 +43,17 @@ class SendCommentViewController : UIViewController, CommentLabelChangeDelegate, 
     
     @IBOutlet weak var commentTableView: UITableView!
     
+    @IBOutlet weak var dateBackView: UIView!
     
     @IBOutlet weak var periodButton: UIButton!
+    @IBOutlet weak var separateView: UIView!
+    
+    @IBOutlet weak var dateView: UIView!
+    
+    
+    @IBOutlet weak var firstLabel: UILabel!
+    
+    @IBOutlet weak var secondLabel: UILabel!
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -46,6 +62,33 @@ class SendCommentViewController : UIViewController, CommentLabelChangeDelegate, 
         commentTableView.dataSource = self
         viewSetting()
         registerCell()
+        labelSetting()
+        commentTableView.backgroundColor = UIColor(hex: 0xF4EDE3)
+        
+        yearLabel.text = "전체보기"
+        apiDateString = "전체보기"
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if apiDateString == "전체보기" {
+            AllCommentDataManager().allCommentData(self)
+        }
+    }
+    
+    func labelSetting() {
+        sendCommentLabel.text = "보낸 코멘트"
+        sendCommentLabel.font = UIFont.AppleSDGothic(.bold, size: 21)
+        sendCommentLabel.textColor = UIColor(hex: 0x4E4C49)
+        yearLabel.textColor = UIColor(hex: 0x4E4C49)
+        yearLabel.font = UIFont.AppleSDGothic(.medium, size: 15)
+        
+        firstLabel.text = "아직 보낸 코멘트가 없어요."
+        secondLabel.text = "코멘트를 작성해주세요."
+        firstLabel.textColor = UIColor(hex: 0x878379)
+        secondLabel.textColor = UIColor(hex: 0x878379)
+        firstLabel.font = UIFont.AppleSDGothic(.medium, size: 14)
+        secondLabel.font = UIFont.AppleSDGothic(.medium, size: 14)
         
     }
     
@@ -53,6 +96,11 @@ class SendCommentViewController : UIViewController, CommentLabelChangeDelegate, 
         view.backgroundColor = UIColor(hex: 0xFDFCF9)
         topBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
         commentBackView.backgroundColor = UIColor(hex: 0xF4EDE3)
+        separateView.backgroundColor = UIColor(hex: 0xE2DFD7)
+        dateBackView.backgroundColor = UIColor(hex: 0xF4EDE3)
+        dateView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        dateView.layer.cornerRadius = 4
+        
         
     }
     
@@ -71,8 +119,8 @@ class SendCommentViewController : UIViewController, CommentLabelChangeDelegate, 
     
     @IBAction func periodButtonTap(_ sender: Any) {
         let vc = UIStoryboard(name: "PeriodCommentView", bundle: nil).instantiateViewController(withIdentifier: "PeriodCommentViewController") as! PeriodCommentViewController
-//        vc.delegate = self
-//        vc.dateDelegate = self
+        vc.delegate = self
+        vc.dateDelegate = self
         self.present(vc, animated: true)
     }
     
@@ -83,18 +131,35 @@ class SendCommentViewController : UIViewController, CommentLabelChangeDelegate, 
     //MARK: - Extensions
 extension SendCommentViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return commentListResult.count
+//        return commentListResult.count
+        if yearLabel.text == "전체보기" {
+            return commentListResult.count
+        }
+        else if yearLabel.text != "전체보기" {
+            return dateCommentListResult.count
+        }
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 142
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SendCommentCell", for: indexPath) as! SendCommentCell
-        
-        let allCommentListResult = commentListResult[indexPath.row]
-        
-        cell.backgroundColor = UIColor(hex: 0xFDFCF9)
+        cell.backgroundColor = UIColor(hex: 0xF4EDE3)
         cell.selectionStyle = .none
-        cell.dateLabel.text = allCommentListResult.date
-        cell.commentLabel.text = allCommentListResult.content
+
+        if yearLabel.text == "전체보기" {
+            let allCommentListResult = commentListResult[indexPath.row]
+            cell.dateLabel.text = allCommentListResult.date
+            cell.commentLabel.text = allCommentListResult.content
+        }
+        else if yearLabel.text != "전체보기" {
+            let dateCommentList = dateCommentListResult[indexPath.row]
+            cell.dateLabel.text = dateCommentList.date
+            cell.commentLabel.text = dateCommentList.content
+        }
         
         return cell
         
@@ -107,10 +172,26 @@ extension SendCommentViewController: UITableViewDelegate, UITableViewDataSource 
 
 
 extension SendCommentViewController {
-    func getCommentListSuccess(_ response : SentCommentListResponse) {
-        commentListResult = response.result!
+    func getCommentListSuccess(_ response : AllCommentResponse) {
+        commentListResult = response.result
+        if commentListResult.count == 0 {
+            commentTableView.isHidden = true
+        }
+        else if commentListResult.count != 0 {
+            commentTableView.isHidden = false
+        }
         commentTableView.reloadData()
     }
     
 //    func getCommentListDateSuccess(_ response: Se)
+    func getDateCommentListSucces(_ response: DateCommentResponse) {
+        dateCommentListResult = response.result
+        if dateCommentListResult.count == 0 {
+            commentTableView.isHidden = true
+        }
+        else if dateCommentListResult.count != 0 {
+            commentTableView.isHidden = false
+        }
+        commentTableView.reloadData()
+    }
 }

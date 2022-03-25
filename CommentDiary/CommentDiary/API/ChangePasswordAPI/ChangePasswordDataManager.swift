@@ -25,6 +25,7 @@ class ChangePasswordDataManager {
                 switch response.result {
                 case .success(let response):
                     print("DEBUG >> Success \(response)")
+                    viewController.presentBottomAlert(message: "비밀번호가 변경되었습니다.")
                 case .failure(let error):
                     print(error.localizedDescription)
                     

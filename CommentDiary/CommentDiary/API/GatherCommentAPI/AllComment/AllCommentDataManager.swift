@@ -9,10 +9,10 @@ import Foundation
 import Alamofire
 
 class AllCommentDataManager {
-    func allCommentData(_ viewController: UIViewController) {
+    func allCommentData(_ viewController: SendCommentViewController) {
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers : HTTPHeaders = [.authorization(bearerToken: token as! String)]
-        let url = "http://jwyang.shop:8080/api/v1/diary/all"
+        let url = "http://jwyang.shop:8080/api/v1/comment/all"
         
         
         AF.request(url,
@@ -25,9 +25,11 @@ class AllCommentDataManager {
                 switch response.result {
                 case .success(let response):
                     print("DEBUG >> Success \(response)")
+                    viewController.getCommentListSuccess(response)
                     
                 case .failure(let error):
                     print(error.localizedDescription)
+                    print(error)
                 }
             }
     }

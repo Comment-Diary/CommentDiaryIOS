@@ -61,6 +61,8 @@ class MyAccountViewController : UIViewController {
         logOutLabel.font = UIFont.AppleSDGothic(.medium, size: 15)
         memberOutLabel.textColor = UIColor(hex: 0x4E4C49)
         memberOutLabel.font = UIFont.AppleSDGothic(.medium, size: 15)
+        changePasswordLabel.textColor = UIColor(hex: 0x4E4C49)
+        changePasswordLabel.font = UIFont.AppleSDGothic(.medium, size: 15)
     }
     
     

@@ -78,6 +78,7 @@ class MyAccountViewController : UIViewController {
     }
     
     @IBAction func logOutTapButton(_ sender: Any) {
+        LogOutDataManager().logOutMemberData(self)
     }
     
     @IBAction func changePassowordButtonTap(_ sender: Any) {
@@ -89,3 +90,13 @@ class MyAccountViewController : UIViewController {
 }
 
     //MARK: - Extensions
+extension MyAccountViewController {
+    func successLogOut(_ response: LogOutResponse) {
+        let splashVC = UIStoryboard(name: "Splash", bundle: nil).instantiateViewController(withIdentifier: "splashNavigation")
+        
+        self.changeRootViewController(splashVC)
+//        UserDefaults.standard.removeObject(forKey: "AccessToken")
+//        UserDefaults.standard.removeObject(forKey: "RefreshToken")
+//        UserDefaults.standard.set(false, forKey: "login_save")
+    }
+}

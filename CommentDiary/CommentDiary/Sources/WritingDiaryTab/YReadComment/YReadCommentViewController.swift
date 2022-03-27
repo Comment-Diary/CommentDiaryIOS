@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class YReadCommentViewController : UIViewController {
+class YReadCommentViewController : UIViewController, UIScrollViewDelegate {
     var diaryId : Int = 0
     //true 이면 코멘트 쓰러가기 false 이면 코멘트 보러가기
     var myCommentBool : Bool = false
@@ -62,6 +62,11 @@ class YReadCommentViewController : UIViewController {
         
         self.showIndicator()
         YReadCommentCheckDataManager().DiaryCheckData(diaryID: diaryId, self)
+        allScrollView.delegate = self
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
     }
     
     func labelSetting() {

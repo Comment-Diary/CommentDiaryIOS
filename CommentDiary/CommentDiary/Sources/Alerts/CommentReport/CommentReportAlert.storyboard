@@ -20,17 +20,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPu-Uy-2EG">
                                 <rect key="frame" x="40" y="131.5" width="240" height="305"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vDd-Ib-SQW">
-                                        <rect key="frame" x="16" y="65.5" width="208" height="171.5"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="vDd-Ib-SQW" secondAttribute="height" multiplier="264:218" id="ehI-5S-DcT"/>
-                                        </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="m8e-eD-kDZ">
                                         <rect key="frame" x="0.0" y="253" width="240" height="52"/>
                                         <subviews>
@@ -56,24 +45,44 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신고하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyb-hi-a2C">
-                                        <rect key="frame" x="89" y="32" width="62.5" height="21.5"/>
+                                        <rect key="frame" x="89" y="26" width="62.5" height="21.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FiB-Tx-Xos">
+                                        <rect key="frame" x="16" y="69.5" width="208" height="167.5"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vDd-Ib-SQW">
+                                                <rect key="frame" x="16" y="16" width="176" height="135.5"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="vDd-Ib-SQW" firstAttribute="leading" secondItem="FiB-Tx-Xos" secondAttribute="leading" constant="16" id="5C2-Op-eVj"/>
+                                            <constraint firstAttribute="trailing" secondItem="vDd-Ib-SQW" secondAttribute="trailing" constant="16" id="93j-Il-wGz"/>
+                                            <constraint firstAttribute="bottom" secondItem="vDd-Ib-SQW" secondAttribute="bottom" constant="16" id="ZPF-ac-mMQ"/>
+                                            <constraint firstItem="vDd-Ib-SQW" firstAttribute="top" secondItem="FiB-Tx-Xos" secondAttribute="top" constant="16" id="frD-G3-LuV"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
+                                    <constraint firstItem="FiB-Tx-Xos" firstAttribute="leading" secondItem="MPu-Uy-2EG" secondAttribute="leading" constant="16" id="Mbo-o8-VTl"/>
                                     <constraint firstItem="m8e-eD-kDZ" firstAttribute="leading" secondItem="MPu-Uy-2EG" secondAttribute="leading" id="Mcg-SJ-hqZ"/>
                                     <constraint firstAttribute="trailing" secondItem="m8e-eD-kDZ" secondAttribute="trailing" id="N6N-Tz-hYI"/>
+                                    <constraint firstAttribute="trailing" secondItem="FiB-Tx-Xos" secondAttribute="trailing" constant="16" id="Nby-UA-pYV"/>
+                                    <constraint firstItem="FiB-Tx-Xos" firstAttribute="top" secondItem="Cyb-hi-a2C" secondAttribute="bottom" constant="22" id="Xao-7q-IT1"/>
                                     <constraint firstAttribute="width" secondItem="MPu-Uy-2EG" secondAttribute="height" multiplier="296:376" id="b4p-F7-SVI"/>
-                                    <constraint firstItem="vDd-Ib-SQW" firstAttribute="centerX" secondItem="MPu-Uy-2EG" secondAttribute="centerX" id="caX-Ch-9XS"/>
                                     <constraint firstAttribute="bottom" secondItem="m8e-eD-kDZ" secondAttribute="bottom" id="ehx-Bx-JLc"/>
-                                    <constraint firstItem="m8e-eD-kDZ" firstAttribute="top" secondItem="vDd-Ib-SQW" secondAttribute="bottom" constant="16" id="fZ6-5Q-Ge2"/>
+                                    <constraint firstItem="m8e-eD-kDZ" firstAttribute="top" secondItem="FiB-Tx-Xos" secondAttribute="bottom" constant="16" id="lEp-1T-4pi"/>
                                     <constraint firstItem="Cyb-hi-a2C" firstAttribute="centerX" secondItem="MPu-Uy-2EG" secondAttribute="centerX" id="pKn-9T-PY3"/>
-                                    <constraint firstItem="vDd-Ib-SQW" firstAttribute="top" relation="lessThanOrEqual" secondItem="Cyb-hi-a2C" secondAttribute="bottom" priority="750" constant="28" id="qWq-nQ-2IE"/>
-                                    <constraint firstItem="vDd-Ib-SQW" firstAttribute="leading" secondItem="MPu-Uy-2EG" secondAttribute="leading" constant="16" id="sc8-Y5-hQu"/>
-                                    <constraint firstItem="Cyb-hi-a2C" firstAttribute="top" secondItem="MPu-Uy-2EG" secondAttribute="top" constant="32" id="xEZ-Gr-Pkx"/>
+                                    <constraint firstItem="Cyb-hi-a2C" firstAttribute="top" secondItem="MPu-Uy-2EG" secondAttribute="top" constant="26" id="xEZ-Gr-Pkx"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -91,6 +100,7 @@
                         <outlet property="okayButton" destination="PrZ-Rg-trP" id="hko-C3-77H"/>
                         <outlet property="reportLabel" destination="Cyb-hi-a2C" id="UsQ-jR-Z2X"/>
                         <outlet property="reportTextView" destination="vDd-Ib-SQW" id="0X5-nk-5ry"/>
+                        <outlet property="textBackView" destination="FiB-Tx-Xos" id="7lT-V1-vvw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

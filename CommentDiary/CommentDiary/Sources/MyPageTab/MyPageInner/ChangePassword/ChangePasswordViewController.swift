@@ -241,3 +241,13 @@ extension UILabel {
         }
     }
 }
+
+extension ChagePasswordViewController {
+    func changeSuccess(_ response : ChangePasswordResponse) {
+        self.dismissIndicator()
+        self.presentBottomAlert(message: "비밀번호가 변경되었습니다.")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            self.navigationController?.popViewController(animated: true)
+        })
+    }
+}

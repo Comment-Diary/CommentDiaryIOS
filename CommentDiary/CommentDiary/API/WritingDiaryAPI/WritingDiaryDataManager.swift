@@ -31,8 +31,7 @@ class WritingDiaryDataManager {
                    method: .post,
                    parameters: params,
                    encoder: JSONParameterEncoder(),
-                   headers: headers,
-        interceptor: MyRequestInterceptor())
+                   headers: headers)
             .validate()
             .responseDecodable(of: WritingDiaryResponse.self) { response in
                 switch response.result {

@@ -23,6 +23,13 @@ class SuccessFindPasswordViewController: UIViewController {
         super.viewDidLoad()
         viewSetting()
         buttonSetting()
+        labelSetting()
+    }
+    func labelSetting() {
+        sentCompleteLabel.textColor = UIColor(hex: 0x5F5D59)
+        sentCompleteLabel.font = UIFont.AppleSDGothic(.bold, size: 15)
+        checkEmailLabel.textColor = UIColor(hex: 0x5F5D59)
+        checkEmailLabel.font = UIFont.AppleSDGothic(.bold, size: 15)
     }
     
     func viewSetting() {
@@ -32,7 +39,8 @@ class SuccessFindPasswordViewController: UIViewController {
     
     func buttonSetting() {
         self.okButton.backgroundColor = UIColor(hex: 0xFDFCF9)
-        self.okButton.layer.cornerRadius = okButton.frame.height / 2
+        self.okButton.setTitleColor(UIColor(hex: 0xFDFCF9), for: .normal)
+        self.okButton.setTitle("작성하기", for: .normal)
     }
     //MARK: - Actions
     @IBAction func okTapButton(_ sender: Any) {

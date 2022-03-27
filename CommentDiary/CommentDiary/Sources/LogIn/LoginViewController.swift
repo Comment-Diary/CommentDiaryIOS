@@ -180,9 +180,15 @@ func loginSuccessResponse() {
 extension LoginViewController {
 func loginFailResponse() {
     self.dismissIndicator()
+    self.loginFailLabel.text = "이메일 혹은 비밀번호가 올바르지 않습니다."
     self.loginFailLabel.isHidden = false
 
 }
+    func blockResponse() {
+        dismissIndicator()
+        self.loginFailLabel.text = "차단된 계정입니다."
+        self.loginFailLabel.isHidden = false
+    }
 }
 
 

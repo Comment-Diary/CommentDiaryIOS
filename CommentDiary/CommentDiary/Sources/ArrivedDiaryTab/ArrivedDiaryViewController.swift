@@ -90,7 +90,7 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
         
         myCommentTextView.delegate = self
         commentScrollView.delegate = self
-        textLineSpacing()
+//        textLineSpacing()
         viewSetting()
         labelSetting()
         buttonSetting()
@@ -185,13 +185,13 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
     }
     
     //텍스트 간 간격 조정
-    func textLineSpacing() {
-        let attrString = NSMutableAttributedString(string: diaryTitleLabel.text!)
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 10
-        attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
-        diaryTitleLabel.attributedText = attrString
-    }
+//    func textLineSpacing() {
+//        let attrString = NSMutableAttributedString(string: diaryTitleLabel.text!)
+//        let paragraphStyle = NSMutableParagraphStyle()
+//        paragraphStyle.lineSpacing = 10
+//        attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
+//        diaryTitleLabel.attributedText = attrString
+//    }
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if myCommentTextView.text.isEmpty {

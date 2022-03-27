@@ -57,6 +57,10 @@ class ModifySendDiaryAlertViewController : UIViewController {
     }
     
     func labelSetting() {
+        sendTopLabel.textColor = UIColor(hex: 0x5F5D59)
+        sendTopLabel.font = UIFont.AppleSDGothic(.bold, size: 13)
+        sendBottomLabel.textColor = UIColor(hex: 0x5F5D59)
+        sendBottomLabel.font = UIFont.AppleSDGothic(.bold, size: 13)
         topTextLabel.text = "다른 누군가에게 일기가 전송됩니다."
         middleTextLabel.text = "전송 후에는 수정 및 삭제가 어렵습니다."
         bottomTextLabel.text = "전송하시겠습니까?"

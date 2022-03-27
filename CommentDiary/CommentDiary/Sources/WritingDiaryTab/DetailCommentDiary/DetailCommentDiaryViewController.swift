@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class DetailCommentDiaryViewController: UIViewController {
+class DetailCommentDiaryViewController: UIViewController, UIScrollViewDelegate {
     //API 코멘트 일기 id 값
     var diaryInt = 0
     //pop or 루트뷰 토글
@@ -50,10 +50,16 @@ class DetailCommentDiaryViewController: UIViewController {
         buttonSetting()
         viewSetting()
         scrollViewSetting()
+        commentDiaryScrollView.delegate = self
+        
         
         //API 조회
         print(diaryInt, "코멘트 일기 id 값")
         CommentDiaryCheckDataManager().commentDiaryCheckData(diaryID: diaryInt, self)
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
     }
     
     

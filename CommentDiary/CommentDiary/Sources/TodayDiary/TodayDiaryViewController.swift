@@ -124,6 +124,14 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
         dateLabelSetting()
         textViewSetting()
         
+        
+        
+        if self.diaryDate.text == dateFormatter.string(from: Date(timeIntervalSinceNow: -25200)) {
+            bottomsheetSetting()
+        }
+        else if self.diaryDate.text != dateFormatter.string(from: Date(timeIntervalSinceNow: -25200)) {
+            return
+        }
 
 
 
@@ -132,12 +140,13 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
         super.viewWillAppear(animated)
         //바텀 시트
 
-        if self.bottomSheetBool == true {
-            bottomsheetSetting()
-        }
-        else if self.bottomSheetBool == false {
-            return
-        }
+//        if self.bottomSheetBool == true {
+//            bottomsheetSetting()
+//        }
+//        else if self.bottomSheetBool == false {
+//            return
+//        }
+
     }
     
     
@@ -254,7 +263,7 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
                 WritingDiaryRequest.content = contentTextView.text ?? ""
                 WritingDiaryRequest.date = dateText
                 WritingDiaryRequest.deliveryYn = deliveryToggle
-                WritingDiaryRequest.tempYn = tempToggle
+                WritingDiaryRequest.tempYn = "N"
                 WritingDiaryDataManager().writingDiaryPostData(self)
             }
         }

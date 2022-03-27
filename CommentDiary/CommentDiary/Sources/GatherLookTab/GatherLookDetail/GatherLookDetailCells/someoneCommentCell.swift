@@ -21,6 +21,10 @@ class someoneCommentCell: UITableViewCell {
 
     var index = 0
     
+    var heartIndex = 0
+    
+    var isenabled: Bool = false
+    
     
     static let identifier = "someoneCommentCell"
     static func nib() -> UINib {
@@ -61,10 +65,21 @@ class someoneCommentCell: UITableViewCell {
         self.reportButton.addTarget(self, action: #selector(reportClicked), for: .touchUpInside)
     }
     
+    func heartDate(heartIndex: Int) {
+        self.heartIndex = heartIndex
+    }
+    
+    
+    
     @objc func heartClicked() {
 //        print("하트 버튼 눌림")
 //        reportDelegate?.reportButtonTapped()
         heartDelegate?.heartButtonTapped(self.index)
+//        heartButton.isEnabled = false
+        heartButton.setImage(UIImage(named: "customHeartFill"), for: .normal)
+
+        
+        
     }
     
     @objc func reportClicked() {

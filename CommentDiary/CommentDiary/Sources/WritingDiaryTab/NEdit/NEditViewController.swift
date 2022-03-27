@@ -40,6 +40,7 @@ class NEidtViewController: UIViewController, UITextViewDelegate {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        diartScrollView.delegate = self
         viewSetting()
         labelSetting()
         buttonSetting()
@@ -50,6 +51,10 @@ class NEidtViewController: UIViewController, UITextViewDelegate {
         
         titleTextView.delegate = self
         dairyContentTextView.delegate = self
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
     }
     
     

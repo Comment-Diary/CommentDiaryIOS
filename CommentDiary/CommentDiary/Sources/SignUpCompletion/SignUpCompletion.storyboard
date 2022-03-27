@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEm-ZR-WTH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEm-ZR-WTH" customClass="CornerButton" customModule="CommentDiary" customModuleProvider="target">
                                 <rect key="frame" x="16" y="499" width="288" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pEm-ZR-WTH" secondAttribute="height" multiplier="343:56" id="BYm-xd-t1W"/>

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class NSaveViewController: UIViewController {
+class NSaveViewController: UIViewController, UIScrollViewDelegate {
     var dateString = ""
     var titleString = ""
     var contentString = ""
@@ -46,6 +46,7 @@ class NSaveViewController: UIViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        diaryScrollView.delegate = self
         viewSetting()
         buttonSetting()
         labelSetting()
@@ -60,6 +61,9 @@ class NSaveViewController: UIViewController {
             print(diaryidInt, "일기 값")
         }
 
+    }
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
     }
 
     

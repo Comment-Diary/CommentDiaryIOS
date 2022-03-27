@@ -36,7 +36,14 @@ class LoginDataManager {
 
                 case .failure(let error):
                     print(error.localizedDescription)
-                    viewController.loginFailResponse()
+                    
+                    
+                    if response.response?.statusCode == 404 {
+                        viewController.loginFailResponse()
+                    }
+                    else if response.response?.statusCode == 403 {
+                        viewController.blockResponse()
+                    }
                 }
             }
     }
@@ -59,10 +66,14 @@ class LoginAPIDataManager {
                 case .success(let response):
                     print("DEBUG >> Success \(response)")
                     viewController.loginSuccessResponse()
+                    //                    //AccessToken 저장
+                                        UserDefaults.standard.set(response.result.accessToken, forKey: "AccessToken")
+                                        print(response.result.accessToken, "어세스토큰")
+                    //                    //RefreshToken 저장
+                                        UserDefaults.standard.set(response.result.refreshToken, forKey: "RefreshToken")
 
                 case .failure(let error):
                     print(error.localizedDescription)
-                    viewController.loginFailResponse()
                 }
             }
     }

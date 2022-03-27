@@ -7,6 +7,6 @@
 
 import Foundation
 struct CommentReportResponse : Decodable {
-    var code : String
+    var code : Int
     var message : String
 }

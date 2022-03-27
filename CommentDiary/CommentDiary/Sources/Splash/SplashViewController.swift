@@ -47,6 +47,7 @@ class SplashVieController : ViewController {
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
+
         super.viewDidLoad()
         //자동 로그인
         self.autoLogin()
@@ -83,22 +84,22 @@ class SplashVieController : ViewController {
     
     func autoLogin() {
 
-//            TokenRefreshDataManager().tokenRefreshPostData { result in
-//                guard result else {
-//                    print("테스트")
-//                    return
-//                }
-//                if UserDefaults.standard.bool(forKey: "login_save") == true {
-//                let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
-//                mainTabBarController.modalPresentationStyle = .fullScreen
-//                mainTabBarController.modalTransitionStyle = .crossDissolve
-//                self.present(mainTabBarController, animated: true, completion: nil)
-//                } else {
-//                    let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-//                    loginVC.modalPresentationStyle = .fullScreen
-//                    loginVC.modalTransitionStyle = .crossDissolve
-//                }
-//            }
+            TokenRefreshDataManager().tokenRefreshPostData { result in
+                guard result else {
+                    print("테스트")
+                    return
+                }
+                if UserDefaults.standard.bool(forKey: "login_save") == true {
+                let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
+                mainTabBarController.modalPresentationStyle = .fullScreen
+                mainTabBarController.modalTransitionStyle = .crossDissolve
+                self.present(mainTabBarController, animated: true, completion: nil)
+                } else {
+                    let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                    loginVC.modalPresentationStyle = .fullScreen
+                    loginVC.modalTransitionStyle = .crossDissolve
+                }
+            }
 //   
     }
     

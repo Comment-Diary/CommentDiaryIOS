@@ -18,7 +18,7 @@
         <!--Splash Vie Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="SplashVieController" customModule="CommentDiary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashVieController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="SplashVieController" customModule="CommentDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,7 +112,7 @@
         <!--Navigation Controller-->
         <scene sceneID="QxR-eG-bgz">
             <objects>
-                <navigationController navigationBarHidden="YES" id="sha-b5-irM" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="splashNavigation" navigationBarHidden="YES" id="sha-b5-irM" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HIh-QD-RGd">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

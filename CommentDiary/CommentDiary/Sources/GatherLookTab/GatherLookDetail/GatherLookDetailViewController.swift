@@ -42,8 +42,12 @@ class GatherLookDetailViewController : UIViewController {
         
         registerCell()
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         //API 조회
         GatherLookDetailDiaryCheckDataManager().commentDiaryCheckData(diaryID: diaryID, self)
+
     }
     
     func labelSetting() {
@@ -85,7 +89,8 @@ class GatherLookDetailViewController : UIViewController {
 extension GatherLookDetailViewController : UITableViewDelegate, UITableViewDataSource, HeartDelegate, ReportDelegate {
     func heartButtonTapped(_ index: Int) {
         print(index, "인덱스 값, 하트")
-        
+        //
+        LikeDataManager().likePatchData(self, index)
     }
     
     func reportButtonTapped(_ index: Int) {
@@ -161,6 +166,13 @@ extension GatherLookDetailViewController : UITableViewDelegate, UITableViewDataS
             
             cell.selectionStyle = .none
             cell.someoneComment.text = someoneComment.content
+            cell.heartButton.isSelected = someoneComment.like
+            if cell.heartButton.isSelected == true {
+                cell.heartButton.setImage(UIImage(named: "customHeartFill"), for: .normal)
+            }
+            else if cell.heartButton.isSelected == false {
+                cell.heartButton.setImage(UIImage(named: "customHeart"), for: .normal)
+            }
             commentID = someoneComment.id
             print(commentID)
             

@@ -6,17 +6,17 @@
 //
 
 import Foundation
-struct TokenRefreshResponse: Codable {
-    var code: Int
-    var message: String
-    var result: tokenRefreshResult
+struct TokenRefreshResponse: Decodable {
+    var code: Int?
+    var message: String?
+    var result: tokenRefreshResult?
 }
 
-struct tokenRefreshResult : Codable {
-    var grantType : String
-    var accessToken : String
-    var refreshToken : String
-    var accessTokenExpiresIn: Int
+struct tokenRefreshResult : Decodable {
+    var grantType : String?
+    var accessToken : String?
+    var refreshToken : String?
+    var accessTokenExpiresIn: Int?
 }
 
 

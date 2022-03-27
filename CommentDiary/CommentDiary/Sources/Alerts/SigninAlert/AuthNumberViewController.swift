@@ -32,7 +32,11 @@ class AuthNumberViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var okayButton: UIButton!
     
-    @IBOutlet weak var topLabel: UILabel!
+    
+    
+    @IBOutlet weak var topFirstLabel: UILabel!
+    
+    @IBOutlet weak var topSecondLabel: UILabel!
     
     @IBOutlet weak var topBackView: UIView!
     
@@ -52,7 +56,7 @@ class AuthNumberViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        alertView.layer.cornerRadius = 10
+//        alertView.layer.cornerRadius = 10
     }
     
     
@@ -62,8 +66,12 @@ class AuthNumberViewController: UIViewController {
         authNumberNotMatchLabel.textColor = UIColor(hex: 0xE46962)
         authNumberNotMatchLabel.font = UIFont.AppleSDGothic(.medium, size: 12)
         
-        topLabel.textColor = UIColor(hex: 0x5F5D59)
-        topLabel.font = UIFont.AppleSDGothic(.medium, size: 12)
+        topFirstLabel.text = "이메일로 인증번호가 전송되었습니다."
+        topSecondLabel.text = "확인 후 입력해주세요."
+        topFirstLabel.textColor = UIColor(hex: 0x5F5D59)
+        topFirstLabel.font = UIFont.AppleSDGothic(.bold, size: 14)
+        topSecondLabel.textColor = UIColor(hex: 0x5F5D59)
+        topSecondLabel.font = UIFont.AppleSDGothic(.bold, size: 14)
         
     }
     func textFieldSetting() {
@@ -77,7 +85,14 @@ class AuthNumberViewController: UIViewController {
     
     func viewSetting() {
         alertView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        alertView.layer.cornerRadius = 10
         topBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        topBackView.layer.cornerRadius = 10
+        cancelButton.layer.cornerRadius =  10
+        cancelButton.layer.maskedCorners = .layerMinXMaxYCorner
+        okayButton.layer.cornerRadius = 10
+        okayButton.layer.maskedCorners = .layerMaxXMaxYCorner
+        
 
     }
     

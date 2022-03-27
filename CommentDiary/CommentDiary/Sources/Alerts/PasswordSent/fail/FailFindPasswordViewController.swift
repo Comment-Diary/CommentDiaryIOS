@@ -23,6 +23,16 @@ class FailFindPasswordViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSetting()
+        labelSetting()
+        
+        
+    }
+    
+    func labelSetting() {
+        noEmailFirstLabel.textColor = UIColor(hex: 0x5F5D59)
+        noEmailFirstLabel.font = UIFont.AppleSDGothic(.bold, size: 15)
+        noEmailSecondLabel.textColor = UIColor(hex: 0x5F5D59)
+        noEmailSecondLabel.font = UIFont.AppleSDGothic(.bold, size: 15)
     }
     
     func viewSetting() {

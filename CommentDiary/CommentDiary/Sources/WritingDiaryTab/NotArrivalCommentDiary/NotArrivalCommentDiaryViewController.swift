@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class NotArrivalCommentDiaryViewController : UIViewController {
+class NotArrivalCommentDiaryViewController : UIViewController, UIScrollViewDelegate {
     var diaryDate: String = ""
     var diaryTitle: String = ""
     var diaryContent: String = ""
@@ -37,14 +37,20 @@ class NotArrivalCommentDiaryViewController : UIViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        diaryScrollView.delegate = self
         dateLabel.text = diaryDate
         titleLabel.text = diaryTitle
         contentLabel.text = diaryContent
         
         
+        
         labelSetting()
         buttonSetting()
         viewSetting()
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
     }
     
     

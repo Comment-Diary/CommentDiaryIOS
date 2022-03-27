@@ -22,6 +22,8 @@ class CommentReportViewController : UIViewController {
     
     @IBOutlet weak var okayButton: UIButton!
     
+    @IBOutlet weak var textBackView: UIView!
+    
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +46,8 @@ class CommentReportViewController : UIViewController {
         backView.layer.cornerRadius = 10
         reportTextView.backgroundColor = UIColor(hex: 0xFDFCF9)
         reportTextView.layer.cornerRadius = 10
+        textBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        textBackView.layer.cornerRadius = 10
         
     }
     
@@ -91,8 +95,10 @@ class CommentReportViewController : UIViewController {
         } else {
             //API
             self.showIndicator()
-            CommentReportRequest.content = reportTextView.text ?? ""
-            CommentReportRequest.commentId = commentIndex
+//            CommentReportRequest.content = reportTextView.text ?? ""
+//            CommentReportRequest.commentId = commentIndex
+            CommentReportDataManager().commentReportPostData(self, commentIdx: commentIndex, commentReportContent: reportTextView.text ?? "")
+            
         }
     }
     
@@ -123,6 +129,13 @@ extension CommentReportViewController : UITextViewDelegate {
 
 extension CommentReportViewController {
     func commentReportSuccess(_ response: CommentReportResponse) {
-        
+        self.dismissIndicator()
+        self.dismiss(animated: true)
+        guard let presentingVC = self.presentingViewController as? UINavigationController else { return }
+        self.dismiss(animated: true) {
+            presentingVC.popToRootViewController(animated: true)
+        }
+//        let mainTabBarController = UIStoryboard(name: "GatherLook", bundle: nil).instantiateViewController(withIdentifier: "GatherLookViewController")
+//        self.changeRootViewController(mainTabBarController)
     }
 }

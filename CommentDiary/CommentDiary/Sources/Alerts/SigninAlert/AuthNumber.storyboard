@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Avw-Bm-d3p" customClass="yourView" customModule="CommentDiary" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Avw-Bm-d3p">
                                 <rect key="frame" x="40" y="290.33333333333337" width="348" height="345.33333333333337"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIn-30-h31">
@@ -25,7 +25,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ha7-qF-Y8T">
                                                 <rect key="frame" x="0.0" y="0.0" width="174" height="77.666666666666671"/>
-                                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="취소"/>
                                                 <connections>
@@ -34,7 +34,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VT2-cA-vt0">
                                                 <rect key="frame" x="174" y="0.0" width="174" height="77.666666666666671"/>
-                                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="확인"/>
                                                 <connections>
@@ -64,20 +64,28 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJl-Lx-vSA">
                                         <rect key="frame" x="0.0" y="0.0" width="348" height="142.33333333333334"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일로 인증번호가 전송되었습니다. 확인 후 입력해주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPh-TP-P3x">
-                                                <rect key="frame" x="71.333333333333329" y="49" width="205.66666666666669" height="44"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="44" id="qmW-RK-wRA"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="JEf-2d-Y4e">
+                                                <rect key="frame" x="71.333333333333329" y="49" width="205.66666666666669" height="44.333333333333343"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일로 인증번호가 전송되었습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPh-TP-P3x">
+                                                        <rect key="frame" x="0.0" y="0.0" width="205.66666666666666" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCx-HZ-Fmq">
+                                                        <rect key="frame" x="82.000000000000014" y="24" width="41.333333333333329" height="20.333333333333329"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="EPh-TP-P3x" firstAttribute="centerX" secondItem="eJl-Lx-vSA" secondAttribute="centerX" id="beo-RK-b0M"/>
-                                            <constraint firstItem="EPh-TP-P3x" firstAttribute="centerY" secondItem="eJl-Lx-vSA" secondAttribute="centerY" id="jta-f7-tPj"/>
+                                            <constraint firstItem="JEf-2d-Y4e" firstAttribute="centerX" secondItem="eJl-Lx-vSA" secondAttribute="centerX" id="8DS-Hz-WBs"/>
+                                            <constraint firstItem="JEf-2d-Y4e" firstAttribute="centerY" secondItem="eJl-Lx-vSA" secondAttribute="centerY" id="Rcx-d4-doJ"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -128,7 +136,8 @@
                         <outlet property="cancelButton" destination="Ha7-qF-Y8T" id="TPY-3G-lGL"/>
                         <outlet property="okayButton" destination="VT2-cA-vt0" id="Z93-Hy-axW"/>
                         <outlet property="topBackView" destination="eJl-Lx-vSA" id="WPQ-sP-alk"/>
-                        <outlet property="topLabel" destination="EPh-TP-P3x" id="n0V-IL-dh0"/>
+                        <outlet property="topFirstLabel" destination="EPh-TP-P3x" id="jY0-di-YD0"/>
+                        <outlet property="topSecondLabel" destination="iCx-HZ-Fmq" id="352-hZ-87a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -137,14 +146,8 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

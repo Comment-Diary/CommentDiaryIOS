@@ -8,7 +8,7 @@
 import Foundation
 
 struct LoginResponse: Codable {
-    var code: Int = 0
+//    var code: Int = 0
     var message: String = ""
     var result: TokenData
 }

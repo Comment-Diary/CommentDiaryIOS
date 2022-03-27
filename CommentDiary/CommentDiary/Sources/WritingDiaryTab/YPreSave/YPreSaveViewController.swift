@@ -12,7 +12,7 @@ import UIKit
 //UserDefaults.standard.set(chagnedText.count, forKey: "contentCount")
 
 
-class YPreSaveViewController: UIViewController {
+class YPreSaveViewController: UIViewController, UIScrollViewDelegate {
     var diaryID : Int = 0
     var commentDiaryBool: Bool = false
     var commentDiaryCount: String = ""
@@ -68,10 +68,15 @@ class YPreSaveViewController: UIViewController {
         labelSetting()
         buttonSetting()
         textViewSetting()
+        diaryScrollView.delegate = self
         
         //API 조회
         PreSaveDiaryCheckDataManager().commentDiaryCheckData(diaryID: diaryID, self)
 //        countLabel.text = commentDiaryCount
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
     }
     
     

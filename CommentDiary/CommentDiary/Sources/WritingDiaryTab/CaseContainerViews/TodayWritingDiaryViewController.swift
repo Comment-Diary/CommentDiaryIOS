@@ -124,12 +124,7 @@ class TodayWritingDiaryViewController : UIViewController {
 
         let todayDiaryVC = UIStoryboard(name: "TodayDiary", bundle: nil).instantiateViewController(identifier: "TodayDiaryViewController") as! TodayDiaryViewController
         todayDiaryVC.dateText = presentDateString
-        if todayDateString == selectedDateString {
-            todayDiaryVC.bottomSheetBool = true
-        }
-        else if todayDateString != selectedDateString {
-            todayDiaryVC.bottomSheetBool = false
-        }
+
         self.navigationController?.pushViewController(todayDiaryVC, animated: true)
     }
 }

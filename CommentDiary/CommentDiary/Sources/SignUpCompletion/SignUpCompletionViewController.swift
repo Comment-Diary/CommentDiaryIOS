@@ -21,8 +21,7 @@ class SignUpCompletionViewController: UIViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        recordStartButton.clipsToBounds = true
-        recordStartButton.layer.cornerRadius = recordStartButton.frame.height / 2
+
         buttonSetting()
   
         
@@ -67,7 +66,7 @@ extension SignUpCompletionViewController {
         UserDefaults.standard.removeObject(forKey: "password")
         
         //자동 로그인
-//        UserDefaults.standard.set(true, forKey: "login_save")
+        UserDefaults.standard.set(true, forKey: "login_save")
         
         //화면전환
         let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")

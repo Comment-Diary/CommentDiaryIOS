@@ -254,7 +254,7 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         
         
 
-        
+        self.showIndicator()
         DiaryMainPageDataManager().diaryMainDate(self)
         calendarView.reloadData()
         
@@ -552,13 +552,13 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
 
         for i in mainPageResult {
             if i.date == String(formatter.string(from: date)) {
-                print(i.id, "일기 ID")
+//                print(i.id, "일기 ID")
                 NotificationCenter.default.post(name: Notification.Name("SelectedID"), object: i.id)
-                print(i.title, "일기 제목")
+//                print(i.title, "일기 제목")
                 NotificationCenter.default.post(name: Notification.Name("SelectedTitle"), object: i.title)
-                print(i.content, "일기 내용")
+//                print(i.content, "일기 내용")
                 NotificationCenter.default.post(name: Notification.Name("SelectedContent"), object: i.content)
-                print(i.date, "일기 날짜")
+//                print(i.date, "일기 날짜")
             }
         }
 
@@ -644,26 +644,31 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
 extension WritingDiaryVC {
     func diaryMainDateSuccessResponse(_ response: DiaryMainPageResponse) {
 
-        mainPageResult = response.result
+        mainPageResult = response.result ?? []
+        
+        if response.result?.count == 0 {
+            allDiaryList.append("")
+        }
         
         calendarView.reloadData()
+        
         
 
         //전체 배열
         for i in mainPageResult {
-            allDiaryList.append(i.date)
+            allDiaryList.append(i.date ?? "")
 //            allDiaryList.insert(i.date)
-            print(allDiaryList, "전체 배열")
+//            print(allDiaryList, "전체 배열")
         }
         
         
 
         for i in mainPageResult {
             if i.deliveryYn == "N" {
-                nDiaryList.append(i.date)
+                nDiaryList.append(i.date ?? "")
             }
             else if i.deliveryYn == "Y" {
-                yDiaryList.append(i.date)
+                yDiaryList.append(i.date ?? "")
             }
         }
         
@@ -671,11 +676,11 @@ extension WritingDiaryVC {
         
         
         for i in mainPageResult {
-            if (i.commentResponseList.count != 0) && i.deliveryYn == "Y" {
-                yDiaryCommentList.append(i.date)
+            if (i.commentResponseList?.count != 0) && i.deliveryYn == "Y" {
+                yDiaryCommentList.append(i.date ?? "")
             }
-            else if (i.commentResponseList.count == 0) && i.deliveryYn == "Y" {
-                yDiaryNoCommentList.append(i.date)
+            else if (i.commentResponseList?.count == 0) && i.deliveryYn == "Y" {
+                yDiaryNoCommentList.append(i.date ?? "")
             }
         }
         
@@ -688,17 +693,17 @@ extension WritingDiaryVC {
         for i in mainPageResult {
             //??
             if todayDateData == i.date {
-                todayTitle = i.title
+                todayTitle = i.title ?? ""
                 NotificationCenter.default.post(name: Notification.Name("loadDate"), object: krMonthDateFormatter)
                 
-                print(todayTitle, "로드된 시점 제목")
+//                print(todayTitle, "로드된 시점 제목")
                 NotificationCenter.default.post(name: Notification.Name("loadTitle"), object: todayTitle)
                 
-                todayContent = i.content
-                print(todayContent, "로드된 시점 내용")
+                todayContent = i.content ?? ""
+//                print(todayContent, "로드된 시점 내용")
                 NotificationCenter.default.post(name: Notification.Name("loadContent"), object: todayContent)
-                todayDiaryId = i.id
-                print(todayDiaryId, "로드된 시점 ID값")
+                todayDiaryId = i.id ?? 0
+//                print(todayDiaryId, "로드된 시점 ID값")
                 NotificationCenter.default.post(name: Notification.Name("loadID"), object: todayDiaryId)
             }
             
@@ -718,13 +723,13 @@ extension WritingDiaryVC {
                 //임시저장 7시간빼기
 
                 if i.date == preSaveDateString {
-                    tempYArray.append(i.date)
-                    print(tempYArray, "임시저장 배열")
+                    tempYArray.append(i.date ?? "")
+//                    print(tempYArray, "임시저장 배열")
                 }
                 else if i.date != preSaveDateString {
                     //임시저장 마감
-                    tempYDeadlineArray.append(i.date)
-                    print(tempYDeadlineArray, "임시저장 마감 배열")
+                    tempYDeadlineArray.append(i.date ?? "")
+//                    print(tempYDeadlineArray, "임시저장 마감 배열")
                 }
                 
             }
@@ -733,7 +738,7 @@ extension WritingDiaryVC {
                 
                 //혼자 쓴 일기
                 if i.deliveryYn == "N" {
-                    deliveryNArray.append(i.date)
+                    deliveryNArray.append(i.date ?? "")
                 }
                 //코멘트 받는 일기를 씀
                 else if i.deliveryYn == "Y" {
@@ -742,16 +747,16 @@ extension WritingDiaryVC {
                     if i.commentCnt == 0 {
 //                        commentNoArrivalArray.append(i.date)
                         //날짜 비교 *******
-                        let arrayDate = formatter.date(from: i.date)!
+                        let arrayDate = formatter.date(from: i.date ?? "")!
                         let interval = prepareDate!.timeIntervalSince(arrayDate)
                         let days = Int(interval / 86400)
                         if days >= 2 {
-                            commentNoArrivalArray.append(i.date)
-                            print(commentNoArrivalArray, "코멘트 결국 오지 않음")
+                            commentNoArrivalArray.append(i.date ?? "")
+//                            print(commentNoArrivalArray, "코멘트 결국 오지 않음")
                         }
                         else if days < 2 {
-                            commentSoonArray.append(i.date)
-                            print(commentSoonArray, "코멘트 곧 도착")
+                            commentSoonArray.append(i.date ?? "")
+//                            print(commentSoonArray, "코멘트 곧 도착")
                         }
                         
                         
@@ -759,7 +764,7 @@ extension WritingDiaryVC {
                     
                     //코멘트가 온 경우
                     else if i.commentCnt != 0 {
-                        commentArrivalArray.append(i.date)
+                        commentArrivalArray.append(i.date ?? "")
                     }
                 }
             }
@@ -840,6 +845,11 @@ extension WritingDiaryVC {
             }
         }
 
+        
+        
+        
+        
+        self.dismissIndicator()
     }
 }
 

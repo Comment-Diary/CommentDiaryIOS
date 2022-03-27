@@ -93,7 +93,23 @@ class MemberOutViewController : UIViewController {
     }
     
     @IBAction func memberOutButtonTap(_ sender: Any) {
+        MemberOutDataManager().deleteMemberData(self)
+        showIndicator()
     }
     
     
+}
+
+
+extension MemberOutViewController {
+    func memberOutSuccess(_ response : MemberOutResponse) {
+        dismissIndicator()
+        let splashVC = UIStoryboard(name: "Splash", bundle: nil).instantiateViewController(withIdentifier: "splashNavigation")
+        self.changeRootViewController(splashVC)
+//        UserDefaults.standard.removeObject(forKey: "AccessToken")
+//        UserDefaults.standard.removeObject(forKey: "RefreshToken")
+//        UserDefaults.standard.set(false, forKey: "login_save")
+
+        
+    }
 }

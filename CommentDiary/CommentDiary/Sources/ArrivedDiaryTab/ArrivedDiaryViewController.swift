@@ -38,6 +38,7 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
     //MARK: - Properties
     
     
+    @IBOutlet weak var blockButton: UIButton!
     
     @IBOutlet weak var notArrivedDiaryLabel: UILabel!
     
@@ -160,6 +161,12 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
         reportButton.setTitleColor(UIColor(hex: 0x878379), for: .normal)
         reportButton.setTitleColor(UIColor(hex: 0x878379), for: .highlighted)
         reportButton.titleLabel?.font = UIFont.AppleSDGothic(.medium, size: 12)
+        
+        
+        blockButton.setTitle("차단하기", for: .normal)
+        blockButton.setTitleColor(UIColor(hex: 0x878379), for: .normal)
+        blockButton.setTitleColor(UIColor(hex: 0x878379), for: .highlighted)
+        blockButton.titleLabel?.font = UIFont.AppleSDGothic(.medium, size: 12)
     }
     
     func textViewPlaceholdeerSetting() {
@@ -298,6 +305,14 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
         print(diaryReportVC.diaryId, "넘어간 일기 ID")
         //해주기
         self.present(diaryReportVC, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func blockButtonTap(_ sender: Any) {
+        let diaryBlockVC = UIStoryboard(name: "DiaryBlock", bundle: nil).instantiateViewController(withIdentifier: "DiaryBlockViewController") as! DiaryBlockViewController
+        diaryBlockVC.diaryID = arrivedDiaryId
+        print(diaryBlockVC.diaryID, "차단할 일기 ID")
+        self.present(diaryBlockVC, animated: true, completion: nil)
     }
     
     

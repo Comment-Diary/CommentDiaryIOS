@@ -89,8 +89,8 @@ class DiaryReportViewController : UIViewController {
         } else {
             //API
             self.showIndicator()
-            DiaryReportRequest.content = reportTextView.text
-            DiaryReportDataManager().diaryReportPostData(self, diaryId: diaryId)
+//            DiaryReportRequest.content = reportTextView.text
+            DiaryReportDataManager().diaryReportPostData(self, diaryId: diaryId, reportContent: reportTextView.text)
 
         }
     }

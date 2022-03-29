@@ -76,11 +76,19 @@
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgB-cE-dUa">
-                                                        <rect key="frame" x="309" y="374" width="52" height="30"/>
+                                                        <rect key="frame" x="237" y="374" width="52" height="30"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="신고하기"/>
                                                         <connections>
                                                             <action selector="reportButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ZkS-NW-6fY"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Mr-tk-HgQ">
+                                                        <rect key="frame" x="309" y="374" width="52" height="30"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="차단하기"/>
+                                                        <connections>
+                                                            <action selector="blockButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="adk-lU-1Ts"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -89,9 +97,10 @@
                                                     <constraint firstItem="apA-qM-L9Q" firstAttribute="centerX" secondItem="lhC-3u-qeQ" secondAttribute="centerX" id="01u-4J-EHp"/>
                                                     <constraint firstItem="9mR-zR-9qe" firstAttribute="top" secondItem="lMJ-FW-8Os" secondAttribute="bottom" constant="2" id="0kp-bm-xl3"/>
                                                     <constraint firstAttribute="height" priority="250" constant="421" id="1nF-vT-Wgt"/>
-                                                    <constraint firstAttribute="trailing" secondItem="vgB-cE-dUa" secondAttribute="trailing" constant="21" id="2hS-06-JcX"/>
+                                                    <constraint firstAttribute="bottom" secondItem="9Mr-tk-HgQ" secondAttribute="bottom" constant="17" id="3lq-m9-UbR"/>
                                                     <constraint firstItem="lMJ-FW-8Os" firstAttribute="top" secondItem="lhC-3u-qeQ" secondAttribute="top" constant="16" id="7o8-JU-B7w"/>
                                                     <constraint firstItem="9mR-zR-9qe" firstAttribute="leading" secondItem="lhC-3u-qeQ" secondAttribute="leading" constant="24" id="9vV-kS-SXF"/>
+                                                    <constraint firstAttribute="trailing" secondItem="9Mr-tk-HgQ" secondAttribute="trailing" constant="21" id="FKF-iU-WEe"/>
                                                     <constraint firstItem="ZrT-zP-pPW" firstAttribute="leading" secondItem="lhC-3u-qeQ" secondAttribute="leading" constant="24" id="K3X-QQ-tB2"/>
                                                     <constraint firstAttribute="bottom" secondItem="ZrT-zP-pPW" secondAttribute="bottom" constant="50" id="McM-FQ-yj3"/>
                                                     <constraint firstItem="ZrT-zP-pPW" firstAttribute="top" secondItem="apA-qM-L9Q" secondAttribute="bottom" constant="12" id="RAB-uS-xKH"/>
@@ -100,6 +109,7 @@
                                                     <constraint firstItem="apA-qM-L9Q" firstAttribute="leading" secondItem="lhC-3u-qeQ" secondAttribute="leading" constant="24" id="ePa-w5-t9W"/>
                                                     <constraint firstAttribute="bottom" secondItem="vgB-cE-dUa" secondAttribute="bottom" constant="17" id="f1U-gs-weR"/>
                                                     <constraint firstItem="apA-qM-L9Q" firstAttribute="top" secondItem="9mR-zR-9qe" secondAttribute="bottom" constant="12" id="gBn-io-uqu"/>
+                                                    <constraint firstItem="9Mr-tk-HgQ" firstAttribute="leading" secondItem="vgB-cE-dUa" secondAttribute="trailing" constant="20" id="wHT-sS-7Fx"/>
                                                     <constraint firstItem="lMJ-FW-8Os" firstAttribute="leading" secondItem="lhC-3u-qeQ" secondAttribute="leading" constant="24" id="za1-Wj-Eeq"/>
                                                     <constraint firstAttribute="width" secondItem="lhC-3u-qeQ" secondAttribute="height" multiplier="343:421" priority="250" id="zyY-Sd-spq"/>
                                                 </constraints>
@@ -200,6 +210,7 @@
                     <connections>
                         <outlet property="arrivalBackView" destination="lhC-3u-qeQ" id="lpL-Wv-tSH"/>
                         <outlet property="arrivalDiaryLabel" destination="lwU-Ff-SpB" id="O0a-iw-tIT"/>
+                        <outlet property="blockButton" destination="9Mr-tk-HgQ" id="TDb-pg-Bgh"/>
                         <outlet property="commentBackView" destination="Mcy-AQ-8GM" id="7gP-Fo-8l9"/>
                         <outlet property="commentCountLabel" destination="3Zb-ET-c9u" id="bkA-qh-3YG"/>
                         <outlet property="commentScrollView" destination="jCe-Tb-wyz" id="2IH-GB-M4e"/>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Diary Block View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="DiaryBlockViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="Y6W-OH-hqX" customClass="DiaryBlockViewController" customModule="CommentDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yj3-64-VHG">
+                                <rect key="frame" x="40" y="205" width="240" height="158"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="V3q-p9-BLN">
+                                        <rect key="frame" x="28" y="105" width="184" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2M-O5-daH" customClass="CornerButton" customModule="CommentDiary" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="86" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="n2M-O5-daH" secondAttribute="height" multiplier="114:40" id="1WZ-Pl-JLh"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="취소"/>
+                                                <connections>
+                                                    <action selector="cancelButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="z5C-kM-ZFN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3u-Lf-CvH" customClass="CornerButton" customModule="CommentDiary" customModuleProvider="target">
+                                                <rect key="frame" x="98" y="0.0" width="86" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="B3u-Lf-CvH" secondAttribute="height" multiplier="114:40" id="hi9-SF-O1X"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="확인"/>
+                                                <connections>
+                                                    <action selector="okayButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="u0q-UK-9d2"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0m9-DD-L3G">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="105"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="진짜 차단하시나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRk-XH-bTr">
+                                                <rect key="frame" x="55" y="42" width="130.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="dRk-XH-bTr" firstAttribute="centerX" secondItem="0m9-DD-L3G" secondAttribute="centerX" id="7m8-VH-PJm"/>
+                                            <constraint firstItem="dRk-XH-bTr" firstAttribute="centerY" secondItem="0m9-DD-L3G" secondAttribute="centerY" id="aGt-Ll-t0K"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="0m9-DD-L3G" secondAttribute="trailing" id="DHR-GQ-xpg"/>
+                                    <constraint firstItem="V3q-p9-BLN" firstAttribute="centerX" secondItem="yj3-64-VHG" secondAttribute="centerX" id="Ezc-iO-53N"/>
+                                    <constraint firstItem="0m9-DD-L3G" firstAttribute="top" secondItem="yj3-64-VHG" secondAttribute="top" id="IJc-JP-Eda"/>
+                                    <constraint firstItem="V3q-p9-BLN" firstAttribute="top" secondItem="0m9-DD-L3G" secondAttribute="bottom" id="Rhx-Zj-Y3x"/>
+                                    <constraint firstAttribute="bottom" secondItem="V3q-p9-BLN" secondAttribute="bottom" constant="23" id="SJr-vx-XSz"/>
+                                    <constraint firstItem="0m9-DD-L3G" firstAttribute="leading" secondItem="yj3-64-VHG" secondAttribute="leading" id="Xrh-1D-Qx8"/>
+                                    <constraint firstItem="V3q-p9-BLN" firstAttribute="leading" secondItem="yj3-64-VHG" secondAttribute="leading" constant="28" id="g0g-dY-G6G"/>
+                                    <constraint firstAttribute="width" secondItem="yj3-64-VHG" secondAttribute="height" multiplier="297:196" id="sls-pR-BbF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.60477028145695366" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yj3-64-VHG" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="COr-qZ-H36"/>
+                            <constraint firstItem="yj3-64-VHG" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Urf-4q-LCz"/>
+                            <constraint firstItem="yj3-64-VHG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="vaq-IZ-INr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alertLabel" destination="dRk-XH-bTr" id="Op9-Qz-rkp"/>
+                        <outlet property="alertView" destination="yj3-64-VHG" id="ee8-hy-EZx"/>
+                        <outlet property="cancelButton" destination="n2M-O5-daH" id="Bur-rH-Gmi"/>
+                        <outlet property="okayButton" destination="B3u-Lf-CvH" id="W2E-E7-WCv"/>
+                        <outlet property="topBackView" destination="0m9-DD-L3G" id="3Ie-hb-7z1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-16" y="50"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

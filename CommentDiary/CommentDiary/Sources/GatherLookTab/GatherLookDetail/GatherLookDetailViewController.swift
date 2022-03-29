@@ -86,12 +86,14 @@ class GatherLookDetailViewController : UIViewController {
 
 
     //MARK: - Extensions
-extension GatherLookDetailViewController : UITableViewDelegate, UITableViewDataSource, HeartDelegate, ReportDelegate {
+extension GatherLookDetailViewController : UITableViewDelegate, UITableViewDataSource, HeartDelegate, ReportDelegate, BlockDelegate {
+    
     func heartButtonTapped(_ index: Int) {
         print(index, "인덱스 값, 하트")
         //
         LikeDataManager().likePatchData(self, index)
     }
+    
     
     func reportButtonTapped(_ index: Int) {
         print(index, "인덱스 값 신고")
@@ -99,14 +101,14 @@ extension GatherLookDetailViewController : UITableViewDelegate, UITableViewDataS
         vc.commentIndex = index
         self.present(vc, animated: true)
     }
+    func blockButtonTapped(_ index: Int) {
+        print(index, "인뎃스 값, 신고")
+        let vc = UIStoryboard(name: "CommentBlock", bundle: nil).instantiateViewController(withIdentifier: "CommentBlockViewController") as! CommentBlockViewController
+        vc.commentID = index
+        self.present(vc, animated: true)
+    }
     
-//    func heartButtonTapped() {
-//        print("하트버튼 눌림")
-//    }
-//
-//    func reportButtonTapped() {
-//        print("신고 버튼 눌림")
-//    }
+
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -178,6 +180,7 @@ extension GatherLookDetailViewController : UITableViewDelegate, UITableViewDataS
             
             cell.reportDelegate = self
             cell.heartDelegate = self
+            cell.blockDelegate = self
             
             
             return cell

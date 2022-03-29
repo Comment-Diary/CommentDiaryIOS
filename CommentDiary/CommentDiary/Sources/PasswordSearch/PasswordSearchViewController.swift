@@ -34,8 +34,8 @@ class PasswordSearchViewController : UIViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.sendPasswordButton.clipsToBounds = true
-        self.sendPasswordButton.layer.cornerRadius = sendPasswordButton.frame.height / 2
+//        self.sendPasswordButton.clipsToBounds = true
+//        self.sendPasswordButton.layer.cornerRadius = sendPasswordButton.frame.height / 2
         
         emailInputTextField.delegate = self
         backgroundSetting()

@@ -10,12 +10,16 @@ import UIKit
 protocol ReportDelegate: AnyObject {
     func reportButtonTapped(_ index : Int)
 }
+protocol BlockDelegate: AnyObject {
+    func blockButtonTapped(_ index: Int)
+}
 protocol HeartDelegate: AnyObject {
     func heartButtonTapped(_ index: Int)
 }
 
 class someoneCommentCell: UITableViewCell {
     var reportDelegate: ReportDelegate?
+    var blockDelegate: BlockDelegate?
     var heartDelegate: HeartDelegate?
     
 
@@ -41,6 +45,9 @@ class someoneCommentCell: UITableViewCell {
     
     @IBOutlet weak var heartButton: UIButton!
     
+    @IBOutlet weak var blockButton: UIButton!
+    
+    
     //정대리님 강의
     @IBOutlet var btns: [UIButton]!
     
@@ -56,6 +63,10 @@ class someoneCommentCell: UITableViewCell {
         reportButton.setTitleColor(UIColor(hex: 0x878379), for: .normal)
         reportButton.setTitleColor(UIColor(hex: 0x878379), for: .highlighted)
         reportButton.titleLabel?.font = UIFont.AppleSDGothic(.medium, size: 12)
+        blockButton.setTitle("차단하기", for: .normal)
+        blockButton.setTitleColor(UIColor(hex: 0x878379), for: .normal)
+        blockButton.setTitleColor(UIColor(hex: 0x878379), for: .highlighted)
+        blockButton.titleLabel?.font = UIFont.AppleSDGothic(.medium, size: 12)
         bakcView.backgroundColor = UIColor(hex: 0xFDFCF9)
         bakcView.layer.cornerRadius = 8
         
@@ -63,13 +74,12 @@ class someoneCommentCell: UITableViewCell {
         //버튼
         self.heartButton.addTarget(self, action: #selector(heartClicked), for: .touchUpInside)
         self.reportButton.addTarget(self, action: #selector(reportClicked), for: .touchUpInside)
+        self.blockButton.addTarget(self, action: #selector(blockClicked), for: .touchUpInside)
     }
     
     func heartDate(heartIndex: Int) {
         self.heartIndex = heartIndex
     }
-    
-    
     
     @objc func heartClicked() {
 //        print("하트 버튼 눌림")
@@ -85,6 +95,10 @@ class someoneCommentCell: UITableViewCell {
     @objc func reportClicked() {
 //        print("신고 버튼 눌림")
         reportDelegate?.reportButtonTapped(self.index)
+    }
+    @objc func blockClicked() {
+//        print("신고 버튼 눌림")
+        blockDelegate?.blockButtonTapped(self.index)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

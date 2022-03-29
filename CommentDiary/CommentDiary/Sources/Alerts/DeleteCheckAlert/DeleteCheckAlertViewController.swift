@@ -79,13 +79,6 @@ class DeleteCheckAlertViewController :UIViewController {
         
         print(diaryId, "삭제할 id 값")
 
-//        self.dismiss(animated: true) {
-//            let viewController: [UIViewController] = self.navigationController!.viewControllers
-//            for aViewController in viewController {
-//                if aViewController is WritingDiaryViewController {
-//
-//            }
-            
             
 
     }

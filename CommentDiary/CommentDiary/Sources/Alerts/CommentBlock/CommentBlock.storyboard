@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Comment Block View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="CommentBlockViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="Y6W-OH-hqX" customClass="CommentBlockViewController" customModule="CommentDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVo-Mk-MSB">
+                                <rect key="frame" x="40" y="338" width="334" height="220"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="eDG-iA-PHN">
+                                        <rect key="frame" x="28" y="150.5" width="278" height="46.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdX-k1-Ewx" customClass="CornerButton" customModule="CommentDiary" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="133" height="46.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="wdX-k1-Ewx" secondAttribute="height" multiplier="114:40" id="IZh-8M-vl3"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="취소"/>
+                                                <connections>
+                                                    <action selector="cancelButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="GWB-9P-48p"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MH-yQ-CS2" customClass="CornerButton" customModule="CommentDiary" customModuleProvider="target">
+                                                <rect key="frame" x="145" y="0.0" width="133" height="46.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="7MH-yQ-CS2" secondAttribute="height" multiplier="114:40" id="bEb-lO-xAc"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="확인"/>
+                                                <connections>
+                                                    <action selector="okayButtonTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gg9-ak-SQK"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ctw-Na-1Dr">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="150.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="진짜 차단하시나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiZ-F1-0K7">
+                                                <rect key="frame" x="102" y="65" width="130.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="hiZ-F1-0K7" firstAttribute="centerY" secondItem="ctw-Na-1Dr" secondAttribute="centerY" id="9RI-dM-v10"/>
+                                            <constraint firstItem="hiZ-F1-0K7" firstAttribute="centerX" secondItem="ctw-Na-1Dr" secondAttribute="centerX" id="Njr-24-BQ3"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="eDG-iA-PHN" firstAttribute="top" secondItem="ctw-Na-1Dr" secondAttribute="bottom" id="0Ev-TH-fFQ"/>
+                                    <constraint firstAttribute="width" secondItem="dVo-Mk-MSB" secondAttribute="height" multiplier="297:196" id="403-se-REi"/>
+                                    <constraint firstItem="eDG-iA-PHN" firstAttribute="leading" secondItem="dVo-Mk-MSB" secondAttribute="leading" constant="28" id="4FN-jp-5cx"/>
+                                    <constraint firstItem="eDG-iA-PHN" firstAttribute="centerX" secondItem="dVo-Mk-MSB" secondAttribute="centerX" id="7ej-Kh-UJn"/>
+                                    <constraint firstAttribute="bottom" secondItem="eDG-iA-PHN" secondAttribute="bottom" constant="23" id="A8Y-E0-QrD"/>
+                                    <constraint firstAttribute="trailing" secondItem="ctw-Na-1Dr" secondAttribute="trailing" id="HGC-2S-W8q"/>
+                                    <constraint firstItem="ctw-Na-1Dr" firstAttribute="leading" secondItem="dVo-Mk-MSB" secondAttribute="leading" id="fvz-sM-vgI"/>
+                                    <constraint firstItem="ctw-Na-1Dr" firstAttribute="top" secondItem="dVo-Mk-MSB" secondAttribute="top" id="tzZ-ma-Hro"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.60448572019867552" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dVo-Mk-MSB" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="ccj-GR-emH"/>
+                            <constraint firstItem="dVo-Mk-MSB" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="jub-wy-ZoL"/>
+                            <constraint firstItem="dVo-Mk-MSB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="wPA-h2-P4Y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alertLabel" destination="hiZ-F1-0K7" id="FmG-2S-HoV"/>
+                        <outlet property="alertView" destination="dVo-Mk-MSB" id="Nze-cx-5NX"/>
+                        <outlet property="cancelButton" destination="wdX-k1-Ewx" id="wzC-zW-lHP"/>
+                        <outlet property="okayButton" destination="7MH-yQ-CS2" id="OzM-9C-2Yq"/>
+                        <outlet property="topBackView" destination="ctw-Na-1Dr" id="7SE-qU-VR9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-16" y="50"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

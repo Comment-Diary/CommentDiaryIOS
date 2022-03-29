@@ -8,5 +8,5 @@
 import Foundation
 struct DiaryReportResponse : Decodable {
     var code : Int
-    var content: String
+    var message: String
 }

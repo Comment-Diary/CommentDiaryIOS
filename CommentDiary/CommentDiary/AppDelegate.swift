@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
 
+    var window: UIWindow?
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -23,12 +24,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = UIColor(hex: 0x4E4C49)
         UITabBar.appearance().barTintColor = UIColor(hex: 0xF4F1Eb)
 //        UITabBar.appearance().unselectedItemTintColor = UIColor(hex: <#T##UInt#>)
+//        self.window?.overrideUserInterfaceStyle = .light
+ 
+//        self.window?.overrideUserInterfaceStyle = .light
 
         IQKeyboardManager.shared.enable = true
         
 
         IQKeyboardManager.shared.enableAutoToolbar = false
+        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        
         return true
     }
 

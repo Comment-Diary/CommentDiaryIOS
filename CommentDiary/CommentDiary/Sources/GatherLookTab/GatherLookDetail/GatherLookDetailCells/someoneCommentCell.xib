@@ -44,12 +44,20 @@
                                 <state key="highlighted" image="customHeartFill"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcm-ie-SpH">
-                                <rect key="frame" x="250" y="220" width="52" height="27"/>
+                                <rect key="frame" x="183" y="220" width="52" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="kpr-fm-MDU"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="신고하기"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZ9-GC-Jt1">
+                                <rect key="frame" x="250" y="220" width="52" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="Tt4-Xn-Gct"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="차단하기"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -58,11 +66,13 @@
                             <constraint firstItem="dT4-vo-Dve" firstAttribute="top" secondItem="YUL-wC-huT" secondAttribute="top" constant="16" id="68k-XU-lHK"/>
                             <constraint firstItem="imI-lz-LIQ" firstAttribute="leading" secondItem="YUL-wC-huT" secondAttribute="leading" constant="20" id="6l6-Mm-hrf"/>
                             <constraint firstItem="imI-lz-LIQ" firstAttribute="top" secondItem="YUL-wC-huT" secondAttribute="top" constant="16" id="8Ng-T4-Ghh"/>
+                            <constraint firstItem="nZ9-GC-Jt1" firstAttribute="leading" secondItem="Kcm-ie-SpH" secondAttribute="trailing" constant="15" id="FOh-KB-Kbk"/>
                             <constraint firstAttribute="trailing" secondItem="dT4-vo-Dve" secondAttribute="trailing" constant="17" id="FiW-BN-4WI"/>
                             <constraint firstItem="Lfu-mx-Nq6" firstAttribute="top" secondItem="imI-lz-LIQ" secondAttribute="bottom" constant="6" id="OLY-mo-9da"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Lfu-mx-Nq6" secondAttribute="trailing" constant="24" id="Yge-T9-sjN"/>
-                            <constraint firstAttribute="trailing" secondItem="Kcm-ie-SpH" secondAttribute="trailing" constant="18" id="a9a-XG-0O9"/>
                             <constraint firstItem="Lfu-mx-Nq6" firstAttribute="leading" secondItem="YUL-wC-huT" secondAttribute="leading" constant="24" id="heh-Hq-xq8"/>
+                            <constraint firstAttribute="bottom" secondItem="nZ9-GC-Jt1" secondAttribute="bottom" constant="8" id="soH-3R-qDj"/>
+                            <constraint firstAttribute="trailing" secondItem="nZ9-GC-Jt1" secondAttribute="trailing" constant="18" id="xKG-tI-dBE"/>
                             <constraint firstAttribute="bottom" secondItem="Kcm-ie-SpH" secondAttribute="bottom" constant="8" id="yoQ-68-75D"/>
                         </constraints>
                     </view>
@@ -78,6 +88,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="bakcView" destination="YUL-wC-huT" id="l2A-cG-YPM"/>
+                <outlet property="blockButton" destination="nZ9-GC-Jt1" id="LAu-mD-Lld"/>
                 <outlet property="heartButton" destination="dT4-vo-Dve" id="4aQ-b8-sqf"/>
                 <outlet property="reportButton" destination="Kcm-ie-SpH" id="pdq-m1-iLt"/>
                 <outlet property="someoneComment" destination="Lfu-mx-Nq6" id="S9z-dJ-a6l"/>

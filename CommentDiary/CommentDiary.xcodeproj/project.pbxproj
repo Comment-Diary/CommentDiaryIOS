@@ -152,6 +152,10 @@
 		A5B84FE427E38959001367B4 /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B84FE327E38959001367B4 /* Layer.swift */; };
 		A5B84FE727E3B59D001367B4 /* DetailCommentDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B84FE627E3B59D001367B4 /* DetailCommentDiaryViewController.swift */; };
 		A5B84FE927E3B5AF001367B4 /* DetailCommentDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B84FE827E3B5AF001367B4 /* DetailCommentDiary.storyboard */; };
+		A5B9B97727F352B80049D329 /* CommentBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B9B97627F352B80049D329 /* CommentBlockViewController.swift */; };
+		A5B9B97927F352D50049D329 /* CommentBlock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B9B97827F352D50049D329 /* CommentBlock.storyboard */; };
+		A5B9B97C27F3554C0049D329 /* DiaryBlock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B9B97B27F3554C0049D329 /* DiaryBlock.storyboard */; };
+		A5B9B97E27F355590049D329 /* DiaryBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B9B97D27F355590049D329 /* DiaryBlockViewController.swift */; };
 		A5BF9CDE27C743A70093B900 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BF9CDD27C743A70093B900 /* SignUpRequest.swift */; };
 		A5BF9CE027C743B10093B900 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BF9CDF27C743B10093B900 /* SignUpResponse.swift */; };
 		A5BF9CE227C743BC0093B900 /* SignUpDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BF9CE127C743BC0093B900 /* SignUpDataManager.swift */; };
@@ -343,6 +347,10 @@
 		A5B84FE327E38959001367B4 /* Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
 		A5B84FE627E3B59D001367B4 /* DetailCommentDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCommentDiaryViewController.swift; sourceTree = "<group>"; };
 		A5B84FE827E3B5AF001367B4 /* DetailCommentDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailCommentDiary.storyboard; sourceTree = "<group>"; };
+		A5B9B97627F352B80049D329 /* CommentBlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentBlockViewController.swift; sourceTree = "<group>"; };
+		A5B9B97827F352D50049D329 /* CommentBlock.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommentBlock.storyboard; sourceTree = "<group>"; };
+		A5B9B97B27F3554C0049D329 /* DiaryBlock.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryBlock.storyboard; sourceTree = "<group>"; };
+		A5B9B97D27F355590049D329 /* DiaryBlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryBlockViewController.swift; sourceTree = "<group>"; };
 		A5BF9CDD27C743A70093B900 /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		A5BF9CDF27C743B10093B900 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		A5BF9CE127C743BC0093B900 /* SignUpDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDataManager.swift; sourceTree = "<group>"; };
@@ -762,6 +770,8 @@
 		A5567C9527BD52F0001A4B98 /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
+				A5B9B97A27F3553A0049D329 /* DiaryBlock */,
+				A5B9B97527F3528E0049D329 /* CommentBlock */,
 				A518AFBE27EA1E670024E1F1 /* SendComment */,
 				A5B84FDE27E3787B001367B4 /* DiaryStopAlert */,
 				A520916327DD0318003017AC /* PeriodCommentViewAlert */,
@@ -1128,6 +1138,24 @@
 			path = DetailCommentDiary;
 			sourceTree = "<group>";
 		};
+		A5B9B97527F3528E0049D329 /* CommentBlock */ = {
+			isa = PBXGroup;
+			children = (
+				A5B9B97627F352B80049D329 /* CommentBlockViewController.swift */,
+				A5B9B97827F352D50049D329 /* CommentBlock.storyboard */,
+			);
+			path = CommentBlock;
+			sourceTree = "<group>";
+		};
+		A5B9B97A27F3553A0049D329 /* DiaryBlock */ = {
+			isa = PBXGroup;
+			children = (
+				A5B9B97B27F3554C0049D329 /* DiaryBlock.storyboard */,
+				A5B9B97D27F355590049D329 /* DiaryBlockViewController.swift */,
+			);
+			path = DiaryBlock;
+			sourceTree = "<group>";
+		};
 		A5BF9CDC27C7438C0093B900 /* SignUpApI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1363,6 +1391,7 @@
 				A5A0A34027D906EF00604A30 /* Terms.storyboard in Resources */,
 				A5A0A33927D9029700604A30 /* SendComment.storyboard in Resources */,
 				A567622527BBB8C9006FDA7F /* Login.storyboard in Resources */,
+				A5B9B97927F352D50049D329 /* CommentBlock.storyboard in Resources */,
 				A5567C8827BD4CC0001A4B98 /* ArrivedDiary.storyboard in Resources */,
 				A5242C6A27D31EA400E24A76 /* NEdit.storyboard in Resources */,
 				A520915D27DCD121003017AC /* SendCommentCell.xib in Resources */,
@@ -1373,6 +1402,7 @@
 				A5C7A38D27E622D90055BAD7 /* someoneCommentCell.xib in Resources */,
 				A520917F27DDDA68003017AC /* AppleSDGothicNeoB.ttf in Resources */,
 				A5C7A3A227E8EF810055BAD7 /* ChangePassword.storyboard in Resources */,
+				A5B9B97C27F3554C0049D329 /* DiaryBlock.storyboard in Resources */,
 				A5CCD19127C4CDF00096281F /* PasswordSearch.storyboard in Resources */,
 				A5B84FE927E3B5AF001367B4 /* DetailCommentDiary.storyboard in Resources */,
 				A529502227DB6A4200192054 /* PeriodView.storyboard in Resources */,
@@ -1464,6 +1494,7 @@
 				A56B697C27DA02CF001385DC /* DiaryReportResponse.swift in Sources */,
 				A56B697E27DA02DA001385DC /* DiaryReportRequest.swift in Sources */,
 				A547A9A027EE50D700DAAFE3 /* MemberOutResponse.swift in Sources */,
+				A5B9B97727F352B80049D329 /* CommentBlockViewController.swift in Sources */,
 				A518AFC727EB28B50024E1F1 /* YPreSaveDeadlineViewController.swift in Sources */,
 				A567622727BBB8D5006FDA7F /* LoginViewController.swift in Sources */,
 				A5BF9CEA27C8C5880093B900 /* SendDiaryAlertViewController.swift in Sources */,
@@ -1505,6 +1536,7 @@
 				A56B698227DA0371001385DC /* CommentReportResponse.swift in Sources */,
 				A521372B27D12ED300B98CF7 /* DeleteDiaryDataManager.swift in Sources */,
 				A521371027D0D89500B98CF7 /* OAuthCredential.swift in Sources */,
+				A5B9B97E27F355590049D329 /* DiaryBlockViewController.swift in Sources */,
 				A518AFC427EB0BB00024E1F1 /* DeadlinePreSaveViewController.swift in Sources */,
 				A5CCD19427C4E4060096281F /* SearchPasswordDataManager.swift in Sources */,
 				A5567C9827BD5353001A4B98 /* AuthNumberViewController.swift in Sources */,
@@ -1728,9 +1760,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JB8T59WMFR;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CommentDiary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1738,7 +1771,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Splash;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UIUserInterfaceStyle = Lignt;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1746,8 +1779,9 @@
 				);
 				MARKETING_VERSION = 1.0;
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.CMC.CommentDiary;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CMC.coda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1760,8 +1794,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CommentDiary/Info.plist;
@@ -1770,7 +1805,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Splash;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UIUserInterfaceStyle = Lignt;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1778,8 +1813,9 @@
 				);
 				MARKETING_VERSION = 1.0;
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.CMC.CommentDiary;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CMC.coda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

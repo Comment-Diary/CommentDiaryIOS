@@ -24,6 +24,8 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
     
     //오늘 날짜
     var todayDateString : String = ""
+    //내가 쓴 코멘트 카운트
+    var commentCount : Int = 0
     
     lazy var detailDayDateFormatter: DateFormatter = {
         let df = DateFormatter()
@@ -149,7 +151,7 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
         commentCountLabel.isHidden = true
     }
     func buttonSetting() {
-        self.sendCommentButton.isEnabled = false
+//        self.sendCommentButton.isEnabled = false
         sendCommentButton.layer.opacity = 0.4
         self.sendCommentButton.backgroundColor = UIColor(hex: 0x73BF90)
         sendCommentButton.setTitle("보내기", for: .normal)
@@ -221,16 +223,18 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
             let currentText = myCommentTextView.text ?? ""
             guard let stringRange = Range(range, in: currentText) else { return false }
             let changedText = currentText.replacingCharacters(in: stringRange, with: text)
+            commentCount = changedText.count
             commentCountLabel.text = "\(changedText.count)/20"
             if changedText.count >= 1 {
                 commentCountLabel.isHidden = false
             }
             
             if changedText.count < 20 {
-                sendCommentButton.isEnabled = false
+
+//                sendCommentButton.isEnabled = false
                 sendCommentButton.layer.opacity = 0.4
             } else if changedText.count >= 20 {
-                sendCommentButton.isEnabled = true
+//                sendCommentButton.isEnabled = true
                 sendCommentButton.layer.opacity = 1
             }
             return true
@@ -277,20 +281,20 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
     //MARK: - Actions
     @IBAction func sendCommentButtonTap(_ sender: UIButton) {
         
-        
-//        CommentWritingRequest.diaryId = arrivedDiaryId
-//        CommentWritingRequest.content = diaryContentTextView.text
-//        CommentWritingRequest.date = todayDateString
-//
-//        CommentWritingDataManager().commentWritingPostData(self)
-        //알람 띄우기
-        let sendCommentAlertVC = UIStoryboard(name: "SendCommentAlert", bundle: nil).instantiateViewController(withIdentifier: "SendCommentAlertViewController") as! SendCommentAlertViewController
-        sendCommentAlertVC.diaryID = arrivedDiaryId
-        sendCommentAlertVC.diaryDate = todayDateString
-        sendCommentAlertVC.diaryContent = myCommentTextView.text
-    
+        //20자 미만일 경우
 
-        self.present(sendCommentAlertVC, animated: true, completion: nil)
+        if commentCount < 20 {
+            self.presentBottomAlert(message: "20자 이상 코멘트를 작성해주세요.")
+        }
+        else if commentCount >= 20 {
+            //알람 띄우기
+            let sendCommentAlertVC = UIStoryboard(name: "SendCommentAlert", bundle: nil).instantiateViewController(withIdentifier: "SendCommentAlertViewController") as! SendCommentAlertViewController
+            sendCommentAlertVC.diaryID = arrivedDiaryId
+            sendCommentAlertVC.diaryDate = todayDateString
+            sendCommentAlertVC.diaryContent = myCommentTextView.text
+            self.present(sendCommentAlertVC, animated: true, completion: nil)
+        }
+
         
     }
     

@@ -51,6 +51,7 @@ class CommentSoonViewController:UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(loadTitle(_:)), name: NSNotification.Name(rawValue: "SelectedTitle"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(loadContent(_:)), name: NSNotification.Name(rawValue: "SelectedContent"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(selectedLoadID(_:)), name: NSNotification.Name(rawValue: "SelectedID"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,6 +98,10 @@ class CommentSoonViewController:UIViewController {
         contentLabel.text = notification.object as? String ?? ""
     }
     
+    @objc func selectedLoadID(_ notification: NSNotification) {
+        diaryIDValue = notification.object as? Int ?? 0
+    }
+    
     
     
     
@@ -118,6 +123,7 @@ class CommentSoonViewController:UIViewController {
     }
     @objc func loadID(_ notification: NSNotification) {
         diaryIDValue = notification.object as? Int ?? 0
+        print(diaryIDValue, "코멘트 곧 도착 id값")
     }
 
     

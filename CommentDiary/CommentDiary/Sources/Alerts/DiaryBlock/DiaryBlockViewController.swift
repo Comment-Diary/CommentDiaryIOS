@@ -57,7 +57,7 @@ class DiaryBlockViewController: UIViewController {
     func viewSetting() {
         alertLabel.font = UIFont.AppleSDGothic(.bold, size: 14)
         alertLabel.textColor = UIColor(hex: 0x5F5D59)
-        alertLabel.text = "정말 삭제하시나요?"
+        alertLabel.text = "정말 차단하시나요?"
     }
     
     //MARK: - Actions

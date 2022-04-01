@@ -100,6 +100,7 @@ class NSaveViewController: UIViewController, UIScrollViewDelegate {
     //MARK: - Actions
     @IBAction func backButtonTap(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: true)
+        
     }
     
     @IBAction func deleteButtonTap(_ sender: Any) {

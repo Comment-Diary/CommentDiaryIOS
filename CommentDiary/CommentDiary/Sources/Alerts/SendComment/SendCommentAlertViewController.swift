@@ -95,8 +95,13 @@ class SendCommentAlertViewController : UIViewController {
 extension SendCommentAlertViewController {
     func sendCommentSuccess(_ response: CommentWriteResponse) {
         dismissIndicator()
-        let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
-        self.changeRootViewController(mainTabBarController)
+//        let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
+//        self.changeRootViewController(mainTabBarController)
+        guard let pvc = self.presentingViewController else { return }
+        dismiss(animated:true) {
+            pvc.viewWillAppear(true)
+            
+        }
         
     }
 }

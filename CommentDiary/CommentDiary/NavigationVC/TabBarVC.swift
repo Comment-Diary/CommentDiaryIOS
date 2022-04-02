@@ -22,6 +22,7 @@ class TabBarVC : UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
+        self.selectedIndex = index
     }
     
     override func viewWillAppear(_ animated: Bool) {

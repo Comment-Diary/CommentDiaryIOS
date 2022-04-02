@@ -15,6 +15,7 @@ import UIKit
 class YPreSaveViewController: UIViewController, UIScrollViewDelegate {
     var diaryID : Int = 0
     var commentDiaryBool: Bool = false
+    var diaryCount: Int = 0
     var commentDiaryCount: String = ""
 
     //MARK: - Properties
@@ -144,10 +145,10 @@ class YPreSaveViewController: UIViewController, UIScrollViewDelegate {
     
     @IBAction func sendButtonTap(_ sender: Any) {
         //조건 달기 count수
-        if commentDiaryBool == false {
+        if diaryCount < 100 {
             self.presentBottomAlert(message: "내용 100자 이상 입력해주세요.")
         }
-        else if commentDiaryBool == true {
+        else if diaryCount >= 100 {
             let modifySendDiaryVC = UIStoryboard(name: "ModifySendDiaryAlert", bundle: nil).instantiateViewController(withIdentifier: "ModifySendDiaryAlertViewController") as! ModifySendDiaryAlertViewController
             modifySendDiaryVC.commentDiaryID = self.diaryID
             print(modifySendDiaryVC.commentDiaryID, "보내는 id 값")
@@ -209,6 +210,8 @@ extension YPreSaveViewController {
         contentTextView.text = response.result.content
         titleTextView.text = response.result.title
         countLabel.text =  "\(response.result.content.count)/100"
+        diaryCount = response.result.content.count
+        
     }
 }
 

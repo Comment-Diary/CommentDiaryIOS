@@ -39,6 +39,16 @@ class MyAccountViewController : UIViewController {
         super.viewDidLoad()
         viewSetting()
         labelSetting()
+        navigationBackSwipeMotion()
+    }
+    
+    func navigationBackSwipeMotion() {
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(_:)))
+        swipeRecognizer.direction = .right
+        self.view.addGestureRecognizer(swipeRecognizer)
+    }
+    @objc func swipeAction(_ sender: UISwipeGestureRecognizer) {
+        navigationController?.popViewController(animated: true)
     }
     
     func viewSetting() {

@@ -61,12 +61,21 @@ class YEditViewController : UIViewController {
         buttonSetting()
         labelSetting()
         textViewSetting()
+        navigationBackSwipeMotion()
         
         contentTextView.delegate = self
         diaryScrollView.delegate = self
         
         
 
+    }
+    func navigationBackSwipeMotion() {
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(_:)))
+        swipeRecognizer.direction = .right
+        self.view.addGestureRecognizer(swipeRecognizer)
+    }
+    @objc func swipeAction(_ sender: UISwipeGestureRecognizer) {
+        navigationController?.popToRootViewController(animated: true)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

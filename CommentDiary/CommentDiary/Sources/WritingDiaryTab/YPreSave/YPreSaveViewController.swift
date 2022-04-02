@@ -73,6 +73,15 @@ class YPreSaveViewController: UIViewController, UIScrollViewDelegate {
         //API 조회
         PreSaveDiaryCheckDataManager().commentDiaryCheckData(diaryID: diaryID, self)
 //        countLabel.text = commentDiaryCount
+        navigationBackSwipeMotion()
+    }
+    func navigationBackSwipeMotion() {
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(_:)))
+        swipeRecognizer.direction = .right
+        self.view.addGestureRecognizer(swipeRecognizer)
+    }
+    @objc func swipeAction(_ sender: UISwipeGestureRecognizer) {
+        navigationController?.popToRootViewController(animated: true)
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

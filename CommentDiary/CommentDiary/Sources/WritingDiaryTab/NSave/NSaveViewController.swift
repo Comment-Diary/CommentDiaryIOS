@@ -50,6 +50,7 @@ class NSaveViewController: UIViewController, UIScrollViewDelegate {
         viewSetting()
         buttonSetting()
         labelSetting()
+        navigationBackSwipeMotion()
         
         if diaryCheckToggle == false {
             //일기 작성후 넘어온 경우
@@ -61,6 +62,15 @@ class NSaveViewController: UIViewController, UIScrollViewDelegate {
             print(diaryidInt, "일기 값")
         }
 
+    }
+    
+    func navigationBackSwipeMotion() {
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(_:)))
+        swipeRecognizer.direction = .right
+        self.view.addGestureRecognizer(swipeRecognizer)
+    }
+    @objc func swipeAction(_ sender: UISwipeGestureRecognizer) {
+        navigationController?.popToRootViewController(animated: true)
     }
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.view.endEditing(true)

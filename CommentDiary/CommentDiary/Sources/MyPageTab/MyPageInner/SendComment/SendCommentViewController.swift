@@ -67,8 +67,18 @@ class SendCommentViewController : UIViewController, CommentLabelChangeDelegate, 
         
         yearLabel.text = "전체보기"
         apiDateString = "전체보기"
+        navigationBackSwipeMotion()
         
     }
+    func navigationBackSwipeMotion() {
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(_:)))
+        swipeRecognizer.direction = .right
+        self.view.addGestureRecognizer(swipeRecognizer)
+    }
+    @objc func swipeAction(_ sender: UISwipeGestureRecognizer) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if apiDateString == "전체보기" {

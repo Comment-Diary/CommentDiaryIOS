@@ -54,10 +54,19 @@ class YPreSaveDeadlineViewController : UIViewController {
         labelSetting()
         viewSetting()
         buttonSetting()
+        navigationBackSwipeMotion()
         
         titleLabel.text = diaryTItle
         dateLabel.text = diaryDate
         contentLabel.text = diaryContent
+    }
+    func navigationBackSwipeMotion() {
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(_:)))
+        swipeRecognizer.direction = .right
+        self.view.addGestureRecognizer(swipeRecognizer)
+    }
+    @objc func swipeAction(_ sender: UISwipeGestureRecognizer) {
+        navigationController?.popViewController(animated: true)
     }
     
     func labelSetting() {

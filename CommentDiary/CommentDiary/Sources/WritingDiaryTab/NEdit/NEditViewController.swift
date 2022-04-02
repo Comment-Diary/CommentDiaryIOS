@@ -44,6 +44,7 @@ class NEidtViewController: UIViewController, UITextViewDelegate {
         viewSetting()
         labelSetting()
         buttonSetting()
+        navigationBackSwipeMotion()
         
         dateLabel.text = dateString
         titleTextView.text = titleString
@@ -51,6 +52,15 @@ class NEidtViewController: UIViewController, UITextViewDelegate {
         
         titleTextView.delegate = self
         dairyContentTextView.delegate = self
+    }
+    
+    func navigationBackSwipeMotion() {
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(_:)))
+        swipeRecognizer.direction = .right
+        self.view.addGestureRecognizer(swipeRecognizer)
+    }
+    @objc func swipeAction(_ sender: UISwipeGestureRecognizer) {
+        navigationController?.popViewController(animated: true)
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

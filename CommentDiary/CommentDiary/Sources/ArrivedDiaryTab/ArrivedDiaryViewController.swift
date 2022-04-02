@@ -101,6 +101,12 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
 //        scrollViewDismissKeyboard()
 
     }
+    
+    
+    
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //API 조회

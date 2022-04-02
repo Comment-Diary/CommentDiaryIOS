@@ -56,6 +56,21 @@ class DetailCommentDiaryViewController: UIViewController, UIScrollViewDelegate {
         //API 조회
         print(diaryInt, "코멘트 일기 id 값")
         CommentDiaryCheckDataManager().commentDiaryCheckData(diaryID: diaryInt, self)
+        navigationBackSwipeMotion()
+    }
+    func navigationBackSwipeMotion() {
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(_:)))
+        swipeRecognizer.direction = .right
+        self.view.addGestureRecognizer(swipeRecognizer)
+    }
+    @objc func swipeAction(_ sender: UISwipeGestureRecognizer) {
+        if transToggle == true {
+            navigationController?.popViewController(animated: true)
+        }
+        else {
+            let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
+            self.changeRootViewController(mainTabBarController)
+        }
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

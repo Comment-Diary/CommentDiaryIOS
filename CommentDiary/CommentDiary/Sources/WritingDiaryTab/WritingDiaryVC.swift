@@ -778,19 +778,10 @@ extension WritingDiaryVC {
 
 
         for i in allDiaryList {
-            print(i, "어떤식")
-           if i != todayDateValueString { //일기 쓰기
-                self.notDiaryDayView.isHidden = true
-                self.todayWritingDiaryView.isHidden = false
-                self.aloneDiaryView.isHidden = true
-                self.commentSoonView.isHidden = true
-                self.readCommentView.isHidden = true
-                self.notArrivalCommentView.isHidden = true
-                self.preSaveView.isHidden = true
-               self.deadlinePreSaveView.isHidden = true
-            }
-            else if i == todayDateValueString {
+            if i == todayDateValueString {
+                print(i, "그럼 이거는")
                 for j in tempYArray {
+                    print(j, "임시저장 배열")
                     if j == todayDateValueString { //임시저장
                         self.notDiaryDayView.isHidden = true
                         self.todayWritingDiaryView.isHidden = true
@@ -820,7 +811,10 @@ extension WritingDiaryVC {
                 
                 
                 for k in deliveryNArray {
+                    print(k, "혼자쓴 일기 배열")
                     if k == todayDateValueString { //혼자쓴일기
+                        print("앙앙")
+                        
                         self.notDiaryDayView.isHidden = true
                         self.todayWritingDiaryView.isHidden = true
                         self.aloneDiaryView.isHidden = false
@@ -834,6 +828,7 @@ extension WritingDiaryVC {
 
                 for q in commentSoonArray {
                     if q == todayDateValueString { //코멘트일기
+                        print("잉잉")
                         self.notDiaryDayView.isHidden = true
                         self.todayWritingDiaryView.isHidden = true
                         self.aloneDiaryView.isHidden = true
@@ -844,7 +839,33 @@ extension WritingDiaryVC {
                         self.deadlinePreSaveView.isHidden = true
                     }
                 }
+                break
             }
+//            print(i, "어떤식")
+           else if i != todayDateValueString { //일기 쓰기
+               print(i, "이건뭐지")
+               print("????")
+                self.notDiaryDayView.isHidden = true
+                self.todayWritingDiaryView.isHidden = false
+                self.aloneDiaryView.isHidden = true
+                self.commentSoonView.isHidden = true
+                self.readCommentView.isHidden = true
+                self.notArrivalCommentView.isHidden = true
+                self.preSaveView.isHidden = true
+               self.deadlinePreSaveView.isHidden = true
+
+            }
+//            else {
+//                self.notDiaryDayView.isHidden = true
+//                self.todayWritingDiaryView.isHidden = false
+//                self.aloneDiaryView.isHidden = true
+//                self.commentSoonView.isHidden = true
+//                self.readCommentView.isHidden = true
+//                self.notArrivalCommentView.isHidden = true
+//                self.preSaveView.isHidden = true
+//               self.deadlinePreSaveView.isHidden = true
+//            }
+            
         }
 
         

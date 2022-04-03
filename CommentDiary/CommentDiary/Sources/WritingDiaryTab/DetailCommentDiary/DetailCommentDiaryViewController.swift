@@ -55,8 +55,12 @@ class DetailCommentDiaryViewController: UIViewController, UIScrollViewDelegate {
         
         //API 조회
         print(diaryInt, "코멘트 일기 id 값")
-        CommentDiaryCheckDataManager().commentDiaryCheckData(diaryID: diaryInt, self)
+
         navigationBackSwipeMotion()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        CommentDiaryCheckDataManager().commentDiaryCheckData(diaryID: diaryInt, self)
     }
     func navigationBackSwipeMotion() {
         let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(_:)))

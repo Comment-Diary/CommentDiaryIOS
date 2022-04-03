@@ -132,7 +132,7 @@ class YReadCommentViewController : UIViewController, UIScrollViewDelegate {
 
 
         
-        if myCommentBool == true && pastOrNow == true   { //코멘트 씀, 현재
+        if myCommentBool == true { //코멘트 씀, 현재
             //코멘트 보여주기
             
             let gatherLookDetailVC = UIStoryboard(name: "GatherLookDetail", bundle: nil).instantiateViewController(withIdentifier: "GatherLookDetailViewController") as! GatherLookDetailViewController

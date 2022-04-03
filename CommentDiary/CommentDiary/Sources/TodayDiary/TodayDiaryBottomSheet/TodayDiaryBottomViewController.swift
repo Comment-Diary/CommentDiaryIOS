@@ -32,7 +32,16 @@ class TodayDiaryBottomViewController: UIViewController {
     var countLabelChangeDelegate: countLabelChangeDelegate?
     
     
+    var hasLoaded = true
+    
     //MARK: - Properties
+    
+    
+    @IBOutlet weak var infoBackView: UIView!
+    
+    @IBOutlet weak var aloneBackView: UIView!
+    
+    @IBOutlet weak var commentBackView: UIView!
     
     @IBOutlet weak var okayButton: UIButton!
     @IBOutlet weak var selfButton: UIButton!
@@ -49,6 +58,12 @@ class TodayDiaryBottomViewController: UIViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        //test
+        hasLoaded = true
+        
+        
+        
+        
         viewSetting()
         buttonSetting()
         labelSetting()
@@ -82,6 +97,10 @@ class TodayDiaryBottomViewController: UIViewController {
     func viewSetting() {
         bottomSheetBackVIew.backgroundColor = UIColor(hex: 0xFDFCF9)
         okButtonBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        aloneBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        infoBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        commentBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        view.backgroundColor = UIColor(hex: 0xFDFCF9)
     }
     //MARK: - Actions
     @IBAction func diaryToggleTapButton(_ sender: UIButton) {
@@ -119,11 +138,25 @@ extension TodayDiaryBottomViewController: PanModalPresentable {
         return nil
     }
     
+//    var shortFormHeight: PanModalHeight {
+//        if hasLoaded {
+//            return .contentHeight(self.bottomSheetBackVIew.frame.size.height)
+//        }
+//        return .maxHeight
+//    }
+    
     var shortFormHeight: PanModalHeight {
-        return .contentHeight(self.bottomSheetBackVIew.frame.size.height)
+        return .contentHeight(269)
+    }
+    var  longFormHeight: PanModalHeight {
+        return .contentHeight(269)
     }
     
-    var longFormHeight: PanModalHeight {
-        return .maxHeightWithTopInset(self.bottomSheetBackVIew.frame.size.height)
-    }
+    
+//    var longFormHeight: PanModalHeight {
+//        return .maxHeightWithTopInset(self.bottomSheetBackVIew.frame.size.height)
+//    }
+//    var maxForHeight: PanModalHeight {
+//        return .maxHeight(self.bottomSheetBackVIew.frame.size.height)
+//    }
 }

@@ -123,7 +123,7 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
         
         dateLabelSetting()
         textViewSetting()
-        
+        navigationBackSwipeMotion()
         
         
         if self.diaryDate.text == dateFormatter.string(from: Date(timeIntervalSinceNow: -25200)) {
@@ -133,8 +133,16 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
             return
         }
 
-
-
+    }
+    
+    func navigationBackSwipeMotion() {
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(_:)))
+        swipeRecognizer.direction = .right
+        self.view.addGestureRecognizer(swipeRecognizer)
+    }
+    @objc func swipeAction(_ sender: UISwipeGestureRecognizer) {
+        let vc = UIStoryboard(name: "DiaryStop", bundle: nil).instantiateViewController(withIdentifier: "DiaryStopViewController") as! DiaryStopViewController
+        self.present(vc, animated: true, completion: nil)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

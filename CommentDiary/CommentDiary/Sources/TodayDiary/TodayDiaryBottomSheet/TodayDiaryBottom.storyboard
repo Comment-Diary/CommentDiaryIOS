@@ -18,19 +18,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g1o-fW-6uO">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="297"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="269"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Uzt-nU-awA">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="181"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="164"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="00K-N5-1xK">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="181"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="164"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bH-Pd-ZCl">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="59.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일기 저장유형을 선택해 주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQV-6r-v1l">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="59.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -40,16 +40,16 @@
                                                         <constraints>
                                                             <constraint firstItem="eQV-6r-v1l" firstAttribute="leading" secondItem="8bH-Pd-ZCl" secondAttribute="leading" id="1FE-G2-wC6"/>
                                                             <constraint firstAttribute="bottom" secondItem="eQV-6r-v1l" secondAttribute="bottom" id="9sf-hw-fOH"/>
+                                                            <constraint firstAttribute="height" constant="54" id="C4v-Ei-s5V"/>
                                                             <constraint firstItem="eQV-6r-v1l" firstAttribute="top" secondItem="8bH-Pd-ZCl" secondAttribute="top" id="Roj-OX-Cgx"/>
                                                             <constraint firstAttribute="trailing" secondItem="eQV-6r-v1l" secondAttribute="trailing" id="UgE-OV-ZVb"/>
-                                                            <constraint firstAttribute="width" secondItem="8bH-Pd-ZCl" secondAttribute="height" multiplier="375:54" id="vCE-sW-dXo"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huH-oQ-q90">
-                                                        <rect key="frame" x="0.0" y="60.5" width="414" height="59.5"/>
+                                                        <rect key="frame" x="0.0" y="55" width="414" height="54"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emf-Cv-1re">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="59.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="혼자 볼게요"/>
                                                                 <connections>
@@ -63,14 +63,14 @@
                                                             <constraint firstAttribute="trailing" secondItem="emf-Cv-1re" secondAttribute="trailing" id="Wgq-bK-MwE"/>
                                                             <constraint firstItem="emf-Cv-1re" firstAttribute="leading" secondItem="huH-oQ-q90" secondAttribute="leading" id="lEv-eZ-JX7"/>
                                                             <constraint firstItem="emf-Cv-1re" firstAttribute="top" secondItem="huH-oQ-q90" secondAttribute="top" id="lM0-6l-xPd"/>
-                                                            <constraint firstAttribute="width" secondItem="huH-oQ-q90" secondAttribute="height" multiplier="375:54" id="pPS-XL-hHW"/>
+                                                            <constraint firstAttribute="height" constant="54" id="w2s-g2-xzx"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpl-pK-JNn">
-                                                        <rect key="frame" x="0.0" y="121" width="414" height="60"/>
+                                                        <rect key="frame" x="0.0" y="110" width="414" height="54"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWG-bt-zGt">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="다른 사용자에게 전송하고 코멘트를 받아볼게요"/>
                                                                 <connections>
@@ -80,10 +80,10 @@
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="height" constant="54" id="9hc-IS-N3C"/>
                                                             <constraint firstAttribute="trailing" secondItem="LWG-bt-zGt" secondAttribute="trailing" id="DvK-uY-csu"/>
                                                             <constraint firstItem="LWG-bt-zGt" firstAttribute="top" secondItem="vpl-pK-JNn" secondAttribute="top" id="EXQ-og-apq"/>
                                                             <constraint firstAttribute="bottom" secondItem="LWG-bt-zGt" secondAttribute="bottom" id="Exz-eV-yTi"/>
-                                                            <constraint firstAttribute="width" secondItem="vpl-pK-JNn" secondAttribute="height" multiplier="375:54" id="SIR-cs-dQG"/>
                                                             <constraint firstItem="LWG-bt-zGt" firstAttribute="leading" secondItem="vpl-pK-JNn" secondAttribute="leading" id="lKC-gs-AR0"/>
                                                         </constraints>
                                                     </view>
@@ -92,12 +92,11 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HLt-ZZ-ma5">
-                                        <rect key="frame" x="0.0" y="181" width="414" height="116"/>
+                                        <rect key="frame" x="0.0" y="164" width="414" height="105"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yrv-IV-NhK">
-                                                <rect key="frame" x="0.0" y="20" width="414" height="96"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="확인"/>
+                                                <rect key="frame" x="0.0" y="20" width="414" height="85"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <connections>
                                                     <action selector="dismissTapButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ZtG-L9-jNk"/>
                                                 </connections>
@@ -105,9 +104,9 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="HLt-ZZ-ma5" secondAttribute="height" multiplier="375:105" id="6mt-cS-fDl"/>
                                             <constraint firstItem="Yrv-IV-NhK" firstAttribute="top" secondItem="HLt-ZZ-ma5" secondAttribute="top" constant="20" id="CMT-BC-dNA"/>
                                             <constraint firstItem="Yrv-IV-NhK" firstAttribute="centerX" secondItem="HLt-ZZ-ma5" secondAttribute="centerX" id="MCA-gL-yGA"/>
+                                            <constraint firstAttribute="height" constant="105" id="bm7-N3-mig"/>
                                             <constraint firstAttribute="bottom" secondItem="Yrv-IV-NhK" secondAttribute="bottom" id="mPZ-Vd-6Ns"/>
                                             <constraint firstItem="Yrv-IV-NhK" firstAttribute="leading" secondItem="HLt-ZZ-ma5" secondAttribute="leading" id="rbN-Ej-cKf"/>
                                         </constraints>
@@ -116,6 +115,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Uzt-nU-awA" firstAttribute="top" secondItem="g1o-fW-6uO" secondAttribute="top" id="3QF-kn-NLp"/>
+                                    <constraint firstAttribute="height" constant="269" id="4iS-ih-BCN"/>
                                     <constraint firstItem="Uzt-nU-awA" firstAttribute="leading" secondItem="g1o-fW-6uO" secondAttribute="leading" id="Dfp-Re-z2M"/>
                                     <constraint firstAttribute="bottom" secondItem="HLt-ZZ-ma5" secondAttribute="bottom" id="Q3r-H2-DpN"/>
                                     <constraint firstAttribute="trailing" secondItem="Uzt-nU-awA" secondAttribute="trailing" id="ROw-s6-DuG"/>
@@ -135,9 +135,12 @@
                     </view>
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
+                        <outlet property="aloneBackView" destination="huH-oQ-q90" id="28z-9y-vKE"/>
                         <outlet property="bottomSheetBackVIew" destination="g1o-fW-6uO" id="qW2-wZ-gyL"/>
                         <outlet property="comemtButton" destination="LWG-bt-zGt" id="Oig-OJ-WTl"/>
+                        <outlet property="commentBackView" destination="vpl-pK-JNn" id="fiG-7L-ghA"/>
                         <outlet property="diaryOptionLabel" destination="eQV-6r-v1l" id="vfD-Ea-Uon"/>
+                        <outlet property="infoBackView" destination="8bH-Pd-ZCl" id="Fay-GB-mk1"/>
                         <outlet property="okButtonBackView" destination="HLt-ZZ-ma5" id="Ypi-ir-z54"/>
                         <outlet property="okayButton" destination="Yrv-IV-NhK" id="3Z2-Uj-IoM"/>
                         <outlet property="selfButton" destination="emf-Cv-1re" id="LlE-2F-LG8"/>
@@ -145,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4.7999999999999998" y="83.658170914542737"/>
+            <point key="canvasLocation" x="3.75" y="83.450704225352112"/>
         </scene>
     </scenes>
     <resources>

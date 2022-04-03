@@ -354,7 +354,7 @@ extension ArrivedDiaryViewController {
         if writedCommentCount != 0 {
             
             myCommentTextView.text = UserDefaults.standard.value(forKey: "saveComment") as? String
-            myCommentTextView.textColor = UIColor(hex: 0xD2D2D2)
+            myCommentTextView.textColor = UIColor(hex: 0x4E4C49)
             myCommentTextView.isEditable = false
             sendCommentButton.isHidden = false
             sendCommentButton.isEnabled = false

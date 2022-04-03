@@ -14,8 +14,14 @@ import UIKit
 //키보드 높이만큼 올리고 내리기
 //https://icksw.tistory.com/87
 
-class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
+class ArrivedDiaryViewController: UIViewController, UITextViewDelegate, CallAPIDelegate {
+    func callAPI(data: String) {
+        ReceivedDiaryDataManager().receivedDiaryGetData(self, dateValue: data)
+    }
+    
+    
 
+    //ㅇ
     
     //도착한 일기 id 값
     var arrivedDiaryId: Int = 0
@@ -295,6 +301,7 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate {
         else if commentCount >= 20 {
             //알람 띄우기
             let sendCommentAlertVC = UIStoryboard(name: "SendCommentAlert", bundle: nil).instantiateViewController(withIdentifier: "SendCommentAlertViewController") as! SendCommentAlertViewController
+            sendCommentAlertVC.delegate = self
             sendCommentAlertVC.diaryID = arrivedDiaryId
             sendCommentAlertVC.diaryDate = todayDateString
             sendCommentAlertVC.diaryContent = myCommentTextView.text
@@ -346,7 +353,8 @@ extension ArrivedDiaryViewController {
         
         if writedCommentCount != 0 {
             
-            myCommentTextView.text = ""
+            myCommentTextView.text = UserDefaults.standard.value(forKey: "saveComment") as? String
+            myCommentTextView.textColor = UIColor(hex: 0xD2D2D2)
             myCommentTextView.isEditable = false
             sendCommentButton.isHidden = false
             sendCommentButton.isEnabled = false
@@ -356,6 +364,9 @@ extension ArrivedDiaryViewController {
             sendCommentButton.backgroundColor = UIColor(hex: 0xFDFCF9)
             sendCommentButton.layer.borderWidth = 1
             sendCommentButton.layer.opacity = 1
+        }
+        else if writedCommentCount == 0 {
+            UserDefaults.standard.removeObject(forKey: "saveComment")
         }
     }
 }

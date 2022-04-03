@@ -8,11 +8,17 @@
 import Foundation
 import UIKit
 
+protocol CallAPIDelegate {
+    func callAPI(data: String)
+}
 
 
 class SendCommentAlertViewController : UIViewController {
     
     //MARK: - Properties
+    var delegate: CallAPIDelegate?
+
+    
     var diaryID: Int = 0
     var diaryDate: String = ""
     var diaryContent: String = ""
@@ -97,11 +103,9 @@ extension SendCommentAlertViewController {
         dismissIndicator()
 //        let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
 //        self.changeRootViewController(mainTabBarController)
-        guard let pvc = self.presentingViewController else { return }
-        dismiss(animated:true) {
-            pvc.viewWillAppear(true)
-            
-        }
+        delegate?.callAPI(data: diaryDate)
+        UserDefaults.standard.set(diaryContent, forKey: "saveComment")
+        dismiss(animated:true)
         
     }
 }

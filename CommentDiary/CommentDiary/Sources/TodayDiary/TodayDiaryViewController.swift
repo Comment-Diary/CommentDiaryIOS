@@ -124,6 +124,7 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
         dateLabelSetting()
         textViewSetting()
         navigationBackSwipeMotion()
+
         
         
         if self.diaryDate.text == dateFormatter.string(from: Date(timeIntervalSinceNow: -25200)) {
@@ -134,7 +135,14 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
         }
 
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+    }
     
+
+    
+    //스와이프 제스처
     func navigationBackSwipeMotion() {
         let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(_:)))
         swipeRecognizer.direction = .right
@@ -144,18 +152,7 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
         let vc = UIStoryboard(name: "DiaryStop", bundle: nil).instantiateViewController(withIdentifier: "DiaryStopViewController") as! DiaryStopViewController
         self.present(vc, animated: true, completion: nil)
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        //바텀 시트
 
-//        if self.bottomSheetBool == true {
-//            bottomsheetSetting()
-//        }
-//        else if self.bottomSheetBool == false {
-//            return
-//        }
-
-    }
     
     
 
@@ -205,6 +202,8 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
         commentAlertLabel.font = UIFont.AppleSDGothic(.medium, size: 12)
         textCountLabel.textColor = UIColor(hex: 0x878379)
         textCountLabel.font = UIFont.AppleSDGothic(.medium, size: 12)
+        titleTextView.font = UIFont.AppleSDGothic(.bold, size: 21)
+        contentTextView.font = UIFont.AppleSDGothic(.medium, size: 15)
     }
     
     func buttonSetting() {

@@ -51,13 +51,19 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="df" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgX-Zv-DyE">
-                                                        <rect key="frame" x="24" y="38.666666666666657" width="348" height="33"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgX-Zv-DyE">
+                                                        <rect key="frame" x="24" y="38.666666666666657" width="19" height="33"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33" id="AgK-RU-KPF"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                        <nil key="textColor"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="df">
+                                                                <attributes>
+                                                                    <font key="NSFont" metaFont="system" size="21"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.02" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1DF-B9-vFq">
@@ -71,7 +77,7 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="1DF-B9-vFq" firstAttribute="leading" secondItem="Pwv-WW-ek7" secondAttribute="leading" constant="24" id="1wc-MA-XBJ"/>
-                                                    <constraint firstAttribute="trailing" secondItem="ZgX-Zv-DyE" secondAttribute="trailing" constant="24" id="3s5-lR-YQA"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZgX-Zv-DyE" secondAttribute="trailing" constant="24" id="3s5-lR-YQA"/>
                                                     <constraint firstItem="ZgX-Zv-DyE" firstAttribute="top" secondItem="XvU-Yb-P27" secondAttribute="bottom" constant="2" id="9RD-v0-l7k"/>
                                                     <constraint firstItem="XvU-Yb-P27" firstAttribute="top" secondItem="Pwv-WW-ek7" secondAttribute="top" constant="16" id="HcH-Zf-kl7"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="78" id="LyM-Pt-cqJ"/>
@@ -86,10 +92,16 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="swX-YJ-QrE">
                                                 <rect key="frame" x="0.0" y="85.666666666666629" width="396" height="350"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅇ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0h-I8-p55">
-                                                        <rect key="frame" x="24" y="11.999999999999998" width="348" height="20.333333333333329"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0h-I8-p55">
+                                                        <rect key="frame" x="24" y="11.999999999999998" width="348" height="23.333333333333329"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="ㅇ">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.23" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>

@@ -48,6 +48,7 @@ class NotArrivalCommentDiaryViewController : UIViewController, UIScrollViewDeleg
         buttonSetting()
         viewSetting()
         navigationBackSwipeMotion()
+//      
     }
     func navigationBackSwipeMotion() {
         let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(_:)))
@@ -61,6 +62,8 @@ class NotArrivalCommentDiaryViewController : UIViewController, UIScrollViewDeleg
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.view.endEditing(true)
     }
+    
+
     
     
     //MARK: - Actions

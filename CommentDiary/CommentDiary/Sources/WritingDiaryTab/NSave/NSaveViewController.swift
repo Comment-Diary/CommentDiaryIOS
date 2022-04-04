@@ -51,6 +51,8 @@ class NSaveViewController: UIViewController, UIScrollViewDelegate {
         buttonSetting()
         labelSetting()
         navigationBackSwipeMotion()
+//        textLineSpacing()
+
         
         if diaryCheckToggle == false {
             //일기 작성후 넘어온 경우
@@ -63,6 +65,20 @@ class NSaveViewController: UIViewController, UIScrollViewDelegate {
         }
 
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    //텍스트 간 간격 조정
+//    func textLineSpacing() {
+//        let attrString = NSMutableAttributedString(string: contentLabel.text!)
+//        let paragraphStyle = NSMutableParagraphStyle()
+//        paragraphStyle.lineHeightMultiple = 1.17
+//        attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
+//        contentLabel.attributedText = attrString
+//    }
+    
+
     
     func navigationBackSwipeMotion() {
         let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(_:)))

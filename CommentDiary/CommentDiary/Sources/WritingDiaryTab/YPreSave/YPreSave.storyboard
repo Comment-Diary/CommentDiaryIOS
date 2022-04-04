@@ -95,11 +95,18 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="ㅇ" translatesAutoresizingMaskIntoConstraints="NO" id="g1s-xc-YtO">
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g1s-xc-YtO">
                                                                         <rect key="frame" x="24" y="38.5" width="240" height="45"/>
                                                                         <color key="backgroundColor" systemColor="systemBrownColor"/>
-                                                                        <color key="textColor" systemColor="labelColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                                        <attributedString key="attributedText">
+                                                                            <fragment content="ㅇ">
+                                                                                <attributes>
+                                                                                    <color key="NSColor" systemColor="labelColor"/>
+                                                                                    <font key="NSFont" size="24" name=".AppleSDGothicNeoI-Regular"/>
+                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.02" tighteningFactorForTruncation="0.0"/>
+                                                                                </attributes>
+                                                                            </fragment>
+                                                                        </attributedString>
                                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                     </textView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnq-NB-tMr">
@@ -127,11 +134,18 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ehu-AW-HJN">
                                                                 <rect key="frame" x="0.0" y="97.5" width="288" height="328.5"/>
                                                                 <subviews>
-                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="sdf" translatesAutoresizingMaskIntoConstraints="NO" id="gWI-dt-0tu">
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gWI-dt-0tu">
                                                                         <rect key="frame" x="24" y="12" width="240" height="316.5"/>
                                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
-                                                                        <color key="textColor" systemColor="labelColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                        <attributedString key="attributedText">
+                                                                            <fragment content="sdf">
+                                                                                <attributes>
+                                                                                    <color key="NSColor" systemColor="labelColor"/>
+                                                                                    <font key="NSFont" metaFont="system" size="15"/>
+                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.23" tighteningFactorForTruncation="0.0"/>
+                                                                                </attributes>
+                                                                            </fragment>
+                                                                        </attributedString>
                                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                     </textView>
                                                                 </subviews>

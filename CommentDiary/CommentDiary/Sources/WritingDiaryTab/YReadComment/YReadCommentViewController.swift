@@ -65,6 +65,11 @@ class YReadCommentViewController : UIViewController, UIScrollViewDelegate {
         allScrollView.delegate = self
         navigationBackSwipeMotion()
     }
+    
+    
+    
+    
+    
     func navigationBackSwipeMotion() {
         let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(_:)))
         swipeRecognizer.direction = .right

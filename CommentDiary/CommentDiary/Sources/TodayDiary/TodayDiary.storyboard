@@ -78,26 +78,33 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="378.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qtK-Oi-S7J">
-                                                        <rect key="frame" x="0.0" y="0.0" width="288" height="434"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="288" height="410.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ry6-PP-yNH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="288" height="105.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="288" height="82"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅣㅣㅣㅣ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjl-7p-oyd">
-                                                                        <rect key="frame" x="16" y="24" width="59" height="20.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅣㅣㅣㅣ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjl-7p-oyd">
+                                                                        <rect key="frame" x="24" y="16" width="59" height="20.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eHS-WI-myK">
-                                                                        <rect key="frame" x="23" y="46.5" width="215" height="45"/>
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eHS-WI-myK">
+                                                                        <rect key="frame" x="24" y="38.5" width="240" height="29.5"/>
                                                                         <color key="backgroundColor" systemColor="systemBrownColor"/>
-                                                                        <color key="textColor" systemColor="labelColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                                        <attributedString key="attributedText">
+                                                                            <fragment content="empty">
+                                                                                <attributes>
+                                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <font key="NSFont" metaFont="toolTip"/>
+                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.02" tighteningFactorForTruncation="0.0"/>
+                                                                                </attributes>
+                                                                            </fragment>
+                                                                        </attributedString>
                                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                     </textView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bit-fd-FH8">
-                                                                        <rect key="frame" x="25" y="103.5" width="238" height="2"/>
+                                                                        <rect key="frame" x="25" y="80" width="238" height="2"/>
                                                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="2" id="PFG-tT-RIc"/>
@@ -106,26 +113,33 @@
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="Wjl-7p-oyd" firstAttribute="leading" secondItem="ry6-PP-yNH" secondAttribute="leading" constant="16" id="0tk-vZ-wxc"/>
+                                                                    <constraint firstItem="Wjl-7p-oyd" firstAttribute="leading" secondItem="ry6-PP-yNH" secondAttribute="leading" constant="24" id="0tk-vZ-wxc"/>
                                                                     <constraint firstItem="bit-fd-FH8" firstAttribute="top" secondItem="eHS-WI-myK" secondAttribute="bottom" constant="12" id="7Bb-IZ-Ekx"/>
                                                                     <constraint firstAttribute="trailing" secondItem="bit-fd-FH8" secondAttribute="trailing" constant="25" id="Gz0-3k-Fbj"/>
                                                                     <constraint firstItem="bit-fd-FH8" firstAttribute="leading" secondItem="ry6-PP-yNH" secondAttribute="leading" constant="25" id="Ufj-Ci-nOU"/>
-                                                                    <constraint firstItem="Wjl-7p-oyd" firstAttribute="top" secondItem="ry6-PP-yNH" secondAttribute="top" constant="24" id="Wmy-Dh-P2m"/>
+                                                                    <constraint firstItem="Wjl-7p-oyd" firstAttribute="top" secondItem="ry6-PP-yNH" secondAttribute="top" constant="16" id="Wmy-Dh-P2m"/>
                                                                     <constraint firstAttribute="bottom" secondItem="bit-fd-FH8" secondAttribute="bottom" id="cCM-AR-kTc"/>
                                                                     <constraint firstAttribute="width" secondItem="ry6-PP-yNH" secondAttribute="height" multiplier="328:84" priority="250" id="jMa-2g-IXh"/>
                                                                     <constraint firstItem="eHS-WI-myK" firstAttribute="top" secondItem="Wjl-7p-oyd" secondAttribute="bottom" constant="2" id="n7A-Rk-CE3"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="eHS-WI-myK" secondAttribute="trailing" constant="50" id="vC7-nz-BIS"/>
-                                                                    <constraint firstItem="eHS-WI-myK" firstAttribute="leading" secondItem="ry6-PP-yNH" secondAttribute="leading" constant="23" id="voS-Pw-PZx"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="eHS-WI-myK" secondAttribute="trailing" constant="24" id="vC7-nz-BIS"/>
+                                                                    <constraint firstItem="eHS-WI-myK" firstAttribute="leading" secondItem="ry6-PP-yNH" secondAttribute="leading" constant="24" id="voS-Pw-PZx"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIT-Ko-zgJ">
-                                                                <rect key="frame" x="0.0" y="105.5" width="288" height="328.5"/>
+                                                                <rect key="frame" x="0.0" y="82" width="288" height="328.5"/>
                                                                 <subviews>
-                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="sdf" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dqO-ZP-9RZ">
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dqO-ZP-9RZ">
                                                                         <rect key="frame" x="24" y="12" width="240" height="316.5"/>
                                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
-                                                                        <color key="textColor" systemColor="labelColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                        <attributedString key="attributedText">
+                                                                            <fragment content="sdf">
+                                                                                <attributes>
+                                                                                    <color key="NSColor" systemColor="labelColor"/>
+                                                                                    <font key="NSFont" metaFont="system" size="15"/>
+                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.23" tighteningFactorForTruncation="0.0"/>
+                                                                                </attributes>
+                                                                            </fragment>
+                                                                        </attributedString>
                                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                     </textView>
                                                                 </subviews>

@@ -42,6 +42,9 @@ class AloneDiaryViewController: UIViewController {
         buttonSetting()
         viewSetting()
     }
+
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadTodayData()

@@ -159,7 +159,7 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate, CallAPID
         diaryContentTextView.font = UIFont.AppleSDGothic(.medium, size: 15)
         diaryContentTextView.textColor = UIColor(hex: 0x4E4C49)
         
-        commentCountLabel.text = "0/20"
+        commentCountLabel.text = "0/20자 이상 작성"
         commentCountLabel.isHidden = true
     }
     func buttonSetting() {
@@ -184,8 +184,8 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate, CallAPID
     }
     
     func textViewPlaceholdeerSetting() {
-        myCommentTextView.text = "일기를 읽고 따뜻한 코멘트를 달아주세요."
-        myCommentTextView.textColor = UIColor(hex: 0xD2D2D2)
+//        myCommentTextView.text = "일기를 읽고 따뜻한 코멘트를 달아주세요."
+//        myCommentTextView.textColor = UIColor(hex: 0xD2D2D2)
     }
 
     
@@ -236,7 +236,7 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate, CallAPID
             guard let stringRange = Range(range, in: currentText) else { return false }
             let changedText = currentText.replacingCharacters(in: stringRange, with: text)
             commentCount = changedText.count
-            commentCountLabel.text = "\(changedText.count)/20"
+            commentCountLabel.text = "\(changedText.count)/20자 이상 작성"
             if changedText.count >= 1 {
                 commentCountLabel.isHidden = false
             }
@@ -351,6 +351,7 @@ extension ArrivedDiaryViewController {
         
         
         
+        print(writedCommentCount, "코멘트 썼는지 안썼는지")
         if writedCommentCount != 0 {
             
             myCommentTextView.text = UserDefaults.standard.value(forKey: "saveComment") as? String
@@ -367,6 +368,8 @@ extension ArrivedDiaryViewController {
         }
         else if writedCommentCount == 0 {
             UserDefaults.standard.removeObject(forKey: "saveComment")
+            myCommentTextView.text = "일기를 읽고 따뜻한 코멘트를 달아주세요."
+            myCommentTextView.textColor = UIColor(hex: 0xD2D2D2)
         }
     }
 }

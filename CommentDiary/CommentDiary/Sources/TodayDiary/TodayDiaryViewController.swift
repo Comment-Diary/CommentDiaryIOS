@@ -188,7 +188,7 @@ class TodayDiaryViewController: UIViewController, commentViewChangeDelegate, but
     
     
     func countLabelSetting() {
-        textCountLabel.text = "0/100"
+        textCountLabel.text = "0/100자 이상 작성"
     }
     
     func textViewPlaceholderSetting() {
@@ -351,7 +351,7 @@ extension TodayDiaryViewController: UITextViewDelegate {
             let chagnedText = currentText.replacingCharacters(in: stringRange, with: text)
             //일기카운트 임시저장
             UserDefaults.standard.set(chagnedText.count, forKey: "contentCount")
-            textCountLabel.text = "\(chagnedText.count)/100"
+            textCountLabel.text = "\(chagnedText.count)/100자 이상 작성"
             
             // 혼자 쓰기일떄는 카운트 필요없음
             // 코멘트 받기 쓰기는 초기 button false

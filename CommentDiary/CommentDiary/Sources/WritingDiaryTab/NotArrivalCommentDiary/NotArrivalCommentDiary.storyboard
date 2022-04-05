@@ -93,11 +93,11 @@
                                                 <rect key="frame" x="0.0" y="85.666666666666629" width="396" height="350"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0h-I8-p55">
-                                                        <rect key="frame" x="24" y="11.999999999999998" width="348" height="23.333333333333329"/>
+                                                        <rect key="frame" x="24" y="12" width="348" height="25"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="ㅇ">
                                                                 <attributes>
-                                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
+                                                                    <font key="NSFont" metaFont="system" size="17"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.23" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>

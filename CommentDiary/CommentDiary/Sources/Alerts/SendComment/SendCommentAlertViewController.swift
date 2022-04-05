@@ -104,7 +104,6 @@ extension SendCommentAlertViewController {
 //        let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
 //        self.changeRootViewController(mainTabBarController)
         delegate?.callAPI(data: diaryDate)
-        UserDefaults.standard.set(diaryContent, forKey: "saveComment")
         dismiss(animated:true)
         
     }

@@ -59,7 +59,8 @@
                                                         <attributedString key="attributedText">
                                                             <fragment content="ㄴㅇㄹ">
                                                                 <attributes>
-                                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" size="17" name="AppleGothic"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.02" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>

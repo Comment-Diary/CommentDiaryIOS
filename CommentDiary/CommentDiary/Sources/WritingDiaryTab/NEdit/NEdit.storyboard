@@ -58,7 +58,7 @@
                                                             <fragment content="ㅇ">
                                                                 <attributes>
                                                                     <color key="NSColor" systemColor="labelColor"/>
-                                                                    <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
+                                                                    <font key="NSFont" metaFont="system" size="14"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.02" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
@@ -98,7 +98,7 @@
                                                             <fragment content="ㅇ">
                                                                 <attributes>
                                                                     <color key="NSColor" systemColor="labelColor"/>
-                                                                    <font key="NSFont" size="14" name=".AppleSDGothicNeoI-Regular"/>
+                                                                    <font key="NSFont" metaFont="system" size="14"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.23" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>

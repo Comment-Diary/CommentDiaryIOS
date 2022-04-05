@@ -73,7 +73,7 @@ class NSaveViewController: UIViewController, UIScrollViewDelegate {
 //    func textLineSpacing() {
 //        let attrString = NSMutableAttributedString(string: contentLabel.text!)
 //        let paragraphStyle = NSMutableParagraphStyle()
-//        paragraphStyle.lineHeightMultiple = 1.17
+//        paragraphStyle.lineHeightMultiple = 10
 //        attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
 //        contentLabel.attributedText = attrString
 //    }

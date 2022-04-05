@@ -102,7 +102,7 @@
                                                                             <fragment content="ㅇ">
                                                                                 <attributes>
                                                                                     <color key="NSColor" systemColor="labelColor"/>
-                                                                                    <font key="NSFont" size="24" name=".AppleSDGothicNeoI-Regular"/>
+                                                                                    <font key="NSFont" metaFont="system" size="24"/>
                                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.02" tighteningFactorForTruncation="0.0"/>
                                                                                 </attributes>
                                                                             </fragment>

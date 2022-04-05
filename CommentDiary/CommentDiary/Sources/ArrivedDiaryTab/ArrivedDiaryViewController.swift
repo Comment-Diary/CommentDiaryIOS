@@ -21,7 +21,8 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate, CallAPID
     
     
 
-    //ㅇ
+    //api
+    var myCommentResponseList : [myCommentResponse] = []
     
     //도착한 일기 id 값
     var arrivedDiaryId: Int = 0
@@ -158,6 +159,7 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate, CallAPID
         diaryTitleLabel.font = UIFont.AppleSDGothic(.bold, size: 21)
         diaryContentTextView.font = UIFont.AppleSDGothic(.medium, size: 15)
         diaryContentTextView.textColor = UIColor(hex: 0x4E4C49)
+        myCommentTextView.font = UIFont.AppleSDGothic(.medium, size: 14)
         
         commentCountLabel.text = "0/20자 이상 작성"
         commentCountLabel.isHidden = true
@@ -350,11 +352,14 @@ extension ArrivedDiaryViewController {
         diaryContentTextView.text = responsse.result.content
         
         
+        myCommentResponseList = responsse.result.myCommentResponse
+        
+        
         
         print(writedCommentCount, "코멘트 썼는지 안썼는지")
         if writedCommentCount != 0 {
             
-            myCommentTextView.text = UserDefaults.standard.value(forKey: "saveComment") as? String
+            myCommentTextView.text = myCommentResponseList[0].content
             myCommentTextView.textColor = UIColor(hex: 0x4E4C49)
             myCommentTextView.isEditable = false
             sendCommentButton.isHidden = false
@@ -367,7 +372,6 @@ extension ArrivedDiaryViewController {
             sendCommentButton.layer.opacity = 1
         }
         else if writedCommentCount == 0 {
-            UserDefaults.standard.removeObject(forKey: "saveComment")
             myCommentTextView.text = "일기를 읽고 따뜻한 코멘트를 달아주세요."
             myCommentTextView.textColor = UIColor(hex: 0xD2D2D2)
         }

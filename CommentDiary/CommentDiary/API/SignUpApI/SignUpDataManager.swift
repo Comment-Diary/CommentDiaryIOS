@@ -10,7 +10,7 @@ import Alamofire
 
 class SignUpDataManager {
     func signUpPostData(_ viewController: SignUpViewController) {
-        let url = "http://jwyang.shop:8080/api/v1/members/sign-up"
+        let url = "http://comment-diary.shop/api/v1/members/sign-up"
         let params = ["email" : SignUpRequest.email,
                       "password" : SignUpRequest.password,
                       "checkPassword" : SignUpRequest.checkPassword]

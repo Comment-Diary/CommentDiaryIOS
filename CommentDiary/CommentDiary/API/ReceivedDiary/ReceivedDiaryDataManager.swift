@@ -12,7 +12,7 @@ class ReceivedDiaryDataManager {
     func receivedDiaryGetData(_ viewController: ArrivedDiaryViewController, dateValue: String) {
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers : HTTPHeaders = [.authorization(bearerToken: token as! String)]
-        let url = "http://jwyang.shop:8080/api/v1/delivery"
+        let url = "http://comment-diary.shop/api/v1/delivery"
         let params : Parameters = [
             "date" : "\(dateValue)"
         ]

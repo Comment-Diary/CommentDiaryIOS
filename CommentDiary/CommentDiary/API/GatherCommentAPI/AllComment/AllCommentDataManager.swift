@@ -12,7 +12,7 @@ class AllCommentDataManager {
     func allCommentData(_ viewController: SendCommentViewController) {
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers : HTTPHeaders = [.authorization(bearerToken: token as! String)]
-        let url = "http://jwyang.shop:8080/api/v1/comment/all"
+        let url = "http://comment-diary.shop/api/v1/comment/all"
         
         
         AF.request(url,

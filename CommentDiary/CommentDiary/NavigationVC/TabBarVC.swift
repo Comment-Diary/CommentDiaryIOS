@@ -23,6 +23,14 @@ class TabBarVC : UITabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
 //        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
         self.selectedIndex = index
+        
+        
+//        UITabBar.appearance().isTranslucent = false
+//        UITabBar.appearance().tintColor = UIColor(hex: 0x4E4C49)
+////        UITabBar.appearance().barTintColor = UIColor(hex: 0xF4F1EB)
+//        UITabBar.appearance().barTintColor = .red
+//        tabBar.tintColor = UIColor(hex: 0x4E4C49)
+//        tabBar.barTintColor = .purple
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -13,6 +13,15 @@ class GatherLookDetailViewController : UIViewController {
     var diaryResult : diaryCheckResult?
     var myCommentLists : [myCommentCheckResponseList] = []
     var commentID : Int = 0
+    //코멘트 작성 여부
+    var myCommentBool : Bool = false
+    
+    
+    lazy var detailDayDateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy.MM.dd"
+        return df
+    }()
     //MARK: - Properties
     
     @IBOutlet weak var commentTableView: UITableView!
@@ -77,10 +86,7 @@ class GatherLookDetailViewController : UIViewController {
     }
     
     func registerCell() {
-//        let someoneCell = UINib(nibName: "someoneCommentCell", bundle: nil)
-//        commentTableView.register(someoneCell.self, forCellReuseIdentifier: "someoneCommentCell")
-//        let myCommentCell = UINib(nibName: "myCommentDiaryCell", bundle: nil)
-//        commentTableView.register(myCommentCell.self, forCellReuseIdentifier: "myCommentDiaryCell")
+
         commentTableView.register(someoneCommentCell.nib(), forCellReuseIdentifier: someoneCommentCell.identifier)
         commentTableView.register(myCommentDiaryCell.nib(), forCellReuseIdentifier: myCommentDiaryCell.identifier)
     }
@@ -130,10 +136,17 @@ extension GatherLookDetailViewController : UITableViewDelegate, UITableViewDataS
         case 0:
             return 1
         case 1:
-            return myCommentLists.count
+//            return myCommentLists.count
+            if myCommentBool == false {
+                return 0
+            }
+            else if myCommentBool == true {
+                return myCommentLists.count
+            }
         default:
             return 0
         }
+        return 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -163,8 +176,6 @@ extension GatherLookDetailViewController : UITableViewDelegate, UITableViewDataS
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "someoneCommentCell", for: indexPath) as! someoneCommentCell
             let someoneComment = myCommentLists[indexPath.row]
-            
-//            cell.index = indexPath.row
             cell.index = someoneComment.id
             
             
@@ -219,8 +230,39 @@ extension GatherLookDetailViewController {
         print(myCommentLists.count, "?????????????????????????")
         diaryResult = response.result
 
+        //내가 선택한 일기의 날짜
+//        selectedDiaryDate = response.result.date
+        print(response.result.date, "내가 선택한 일기의 날짜")
+        //날짜 Date 값 변환
+        let selectedDiaryDateString = detailDayDateFormatter.date(from: response.result.date)
+        
+        let selectedDiaryDatePlusOne = Calendar.current.date(byAdding: .day, value: 1, to: selectedDiaryDateString!)
+        print(selectedDiaryDatePlusOne!, "하루 더한 일기의 날짜")
+        let selectedDiaryDatePlusOneString = detailDayDateFormatter.string(from: selectedDiaryDatePlusOne!)
+        print(selectedDiaryDatePlusOneString, "하루를 더한 일기의 날짜 stirng")
         
         
+        //코멘트를 썼는지 여부에 따라 받은 코멘트 보일지 말지
+        self.showIndicator()
+        PreparationStatusDataManager().preparationStatusData(self, dateValue: selectedDiaryDatePlusOneString)
+        
+        
+        
+        
+        commentTableView.reloadData()
+    }
+}
+
+extension GatherLookDetailViewController {
+    func preparationStatusResponse(_ response: DateCommentResponse) {
+        self.dismissIndicator()
+        
+        if response.result.count == 0 {
+            myCommentBool = false
+        }
+        else if response.result.count != 0 {
+            myCommentBool = true
+        }
         commentTableView.reloadData()
     }
 }

@@ -51,7 +51,7 @@ import Alamofire
 //
 class TokenRefreshDataManager {
     func tokenRefreshPostData(completion: @escaping(Bool) -> Void) {
-        let url = "http://jwyang.shop:8080/api/v1/members/reissue"
+        let url = "http://comment-diary.shop/api/v1/members/reissue"
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let refreshToken = UserDefaults.standard.value(forKey: "RefreshToken") ?? ""
         print(token, "토큰")

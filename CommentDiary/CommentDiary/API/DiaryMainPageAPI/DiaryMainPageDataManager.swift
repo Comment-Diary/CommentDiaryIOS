@@ -11,7 +11,7 @@ import Alamofire
 
 class DiaryMainPageDataManager {
     func diaryMainDate(_ viewcontroller: WritingDiaryVC) {
-        let url = "http://jwyang.shop:8080/api/v1/diary/main"
+        let url = "http://comment-diary.shop/api/v1/diary/main"
         let params: Parameters = [
                     "date" : ""
                 ]

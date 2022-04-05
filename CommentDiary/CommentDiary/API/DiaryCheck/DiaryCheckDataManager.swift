@@ -10,7 +10,7 @@ import Alamofire
 
 class DiaryCheckDataManager {
     func diaryCheckData(diaryID: Int, _ viewController: NSaveViewController) {
-        let url = "http://jwyang.shop:8080/api/v1/diary/\(diaryID)"
+        let url = "http://comment-diary.shop/api/v1/diary/\(diaryID)"
         let token = UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         
@@ -35,7 +35,7 @@ class DiaryCheckDataManager {
 
 class CommentDiaryCheckDataManager {
     func commentDiaryCheckData(diaryID: Int, _ viewController: DetailCommentDiaryViewController) {
-        let url = "http://jwyang.shop:8080/api/v1/diary/\(diaryID)"
+        let url = "http://comment-diary.shop/api/v1/diary/\(diaryID)"
         let token = UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         
@@ -60,7 +60,7 @@ class CommentDiaryCheckDataManager {
 
 class PreSaveDiaryCheckDataManager {
     func commentDiaryCheckData(diaryID: Int, _ viewController: YPreSaveViewController) {
-        let url = "http://jwyang.shop:8080/api/v1/diary/\(diaryID)"
+        let url = "http://comment-diary.shop/api/v1/diary/\(diaryID)"
         let token = UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         
@@ -86,7 +86,7 @@ class PreSaveDiaryCheckDataManager {
 
 class GatherLookDetailDiaryCheckDataManager {
     func commentDiaryCheckData(diaryID: Int, _ viewController: GatherLookDetailViewController) {
-        let url = "http://jwyang.shop:8080/api/v1/diary/\(diaryID)"
+        let url = "http://comment-diary.shop/api/v1/diary/\(diaryID)"
         let token = UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         
@@ -112,7 +112,7 @@ class GatherLookDetailDiaryCheckDataManager {
 
 class YReadCommentCheckDataManager {
     func DiaryCheckData(diaryID: Int, _ viewController: YReadCommentViewController) {
-        let url = "http://jwyang.shop:8080/api/v1/diary/\(diaryID)"
+        let url = "http://comment-diary.shop/api/v1/diary/\(diaryID)"
         let token = UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         

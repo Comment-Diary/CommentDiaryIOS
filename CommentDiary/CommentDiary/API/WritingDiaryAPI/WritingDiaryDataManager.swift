@@ -19,7 +19,7 @@ class WritingDiaryDataManager {
         
         
         
-        let url = "http://jwyang.shop:8080/api/v1/diary"
+        let url = "http://comment-diary.shop/api/v1/diary"
         let params = ["title" : WritingDiaryRequest.title,
                       "content" : WritingDiaryRequest.content,
                       "date" : WritingDiaryRequest.date,
@@ -51,7 +51,7 @@ class WritingDiaryDataManager {
 
 class WritingCommentDiaryDataManager {
     func writingCommentDiaryPostData(_ viewController: SendDiaryAlertViewController) {
-        let url = "http://jwyang.shop:8080/api/v1/diary"
+        let url = "http://comment-diary.shop/api/v1/diary"
         let params = ["title" : WritingDiaryRequest.title,
                       "content" : WritingDiaryRequest.content,
                       "date" : WritingDiaryRequest.date,

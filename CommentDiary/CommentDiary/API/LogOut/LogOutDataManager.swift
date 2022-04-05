@@ -10,7 +10,7 @@ import Alamofire
 
 class LogOutDataManager {
     func logOutMemberData(_ viewController: MyAccountViewController) {
-        let url = "http://jwyang.shop:8080/api/v1/members/logout"
+        let url = "http://comment-diary.shop/api/v1/members/logout"
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
 //        let headers : HTTPHeaders = [.authorization(bearerToken: token as! String)]
         let headers: HTTPHeaders = ["X-AUTH-TOKEN" : token as! String]

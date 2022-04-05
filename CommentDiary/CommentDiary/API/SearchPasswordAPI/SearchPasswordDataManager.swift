@@ -10,7 +10,7 @@ import Alamofire
 
 class SearchPasswordDataManager {
     func getPasswordData(emailValue: String, _ viewController: PasswordSearchViewController) {
-        let url = "http://jwyang.shop:8080/api/v1/email/password"
+        let url = "http://comment-diary.shop/api/v1/email/password"
         let params: Parameters = [
             "email" : "\(emailValue)"
         ]

@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 class CommentReportDataManager {
     func commentReportPostData(_ viewController: CommentReportViewController, commentIdx: Int, commentReportContent: String) {
-        let url = "http://jwyang.shop:8080/api/v1/report/comment"
+        let url = "http://comment-diary.shop/api/v1/report/comment"
         let params = ["commentId" : "\(commentIdx)",
                       "content" : commentReportContent]
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
@@ -38,7 +38,7 @@ class CommentReportDataManager {
 
 class CommentBlockDataManager {
     func commentReportPostData(_ viewController: CommentBlockViewController, commentIdx: Int, commentReportContent: String) {
-        let url = "http://jwyang.shop:8080/api/v1/report/comment"
+        let url = "http://comment-diary.shop/api/v1/report/comment"
         let params = ["commentId" : "\(commentIdx)",
                       "content" : commentReportContent]
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""

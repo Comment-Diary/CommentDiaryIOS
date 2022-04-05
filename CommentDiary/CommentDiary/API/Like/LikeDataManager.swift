@@ -10,7 +10,7 @@ import Alamofire
 
 class LikeDataManager {
     func likePatchData(_ viewController: GatherLookDetailViewController, _ commentValue: Int) {
-        let url = "http://jwyang.shop:8080/api/v1/comment/like/\(commentValue)"
+        let url = "http://comment-diary.shop/api/v1/comment/like/\(commentValue)"
         let token = UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         

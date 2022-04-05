@@ -10,7 +10,7 @@ import Alamofire
 
 class MemberOutDataManager {
     func deleteMemberData(_ viewController : MemberOutViewController) {
-        let url = "http://jwyang.shop:8080/api/v1/members"
+        let url = "http://comment-diary.shop/api/v1/members"
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         

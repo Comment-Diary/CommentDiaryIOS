@@ -10,7 +10,7 @@ import Alamofire
 
 class LoginDataManager {
     func loginPostData(_ viewController: LoginViewController) {
-        let url = "http://jwyang.shop:8080/api/v1/members/login"
+        let url = "http://comment-diary.shop/api/v1/members/login"
         let params = ["email" : LoginRequest.email,
                       "password" : LoginRequest.password]
         
@@ -51,7 +51,7 @@ class LoginDataManager {
 
 class LoginAPIDataManager {
     func loginPostData(_ viewController: SignUpCompletionViewController) {
-        let url = "http://jwyang.shop:8080/api/v1/members/login"
+        let url = "http://comment-diary.shop/api/v1/members/login"
         let params = ["email" : LoginRequest.email,
                       "password" : LoginRequest.password]
         

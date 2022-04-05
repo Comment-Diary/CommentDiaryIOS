@@ -11,7 +11,7 @@ import Alamofire
 class DiaryReportDataManager {
     func diaryReportPostData(_ viewController: DiaryReportViewController, diaryId : Int, reportContent: String) {
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
-        let url = "http://jwyang.shop:8080/api/v1/report/diary"
+        let url = "http://comment-diary.shop/api/v1/report/diary"
         let params = ["diaryId" : "\(diaryId)",
                       "content" : "\(reportContent)"]
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]

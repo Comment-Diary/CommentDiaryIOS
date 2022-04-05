@@ -37,9 +37,6 @@
 		A520916727DD0365003017AC /* PeriodCommentView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A520916627DD0365003017AC /* PeriodCommentView.storyboard */; };
 		A520916A27DDC8B9003017AC /* DiaryReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A520916927DDC8B9003017AC /* DiaryReport.storyboard */; };
 		A520916C27DDC9A7003017AC /* DiaryReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A520916B27DDC9A7003017AC /* DiaryReportViewController.swift */; };
-		A520917F27DDDA68003017AC /* AppleSDGothicNeoB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A520917E27DDDA65003017AC /* AppleSDGothicNeoB.ttf */; };
-		A520918027DDDA6B003017AC /* AppleSDGothicNeoEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A520917C27DDDA65003017AC /* AppleSDGothicNeoEB.ttf */; };
-		A520918127DDDA6E003017AC /* AppleSDGothicNeoM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A520917D27DDDA65003017AC /* AppleSDGothicNeoM.ttf */; };
 		A520918427DE1B39003017AC /* MemberOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A520918327DE1B38003017AC /* MemberOutViewController.swift */; };
 		A520918627DE1B43003017AC /* MemberOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A520918527DE1B43003017AC /* MemberOut.storyboard */; };
 		A52136F727D076BF00B98CF7 /* BaseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52136F627D076BF00B98CF7 /* BaseInterceptor.swift */; };
@@ -94,6 +91,9 @@
 		A5567CA127BE945E001A4B98 /* SignUpCompletion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5567CA027BE945E001A4B98 /* SignUpCompletion.storyboard */; };
 		A5567CA427BEA342001A4B98 /* TodayDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5567CA327BEA342001A4B98 /* TodayDiary.storyboard */; };
 		A5567CA627BEA350001A4B98 /* TodayDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5567CA527BEA350001A4B98 /* TodayDiaryViewController.swift */; };
+		A561E79F27FBDF0D00EAACEC /* AppleSDGothicNeoB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A561E79C27FBDF0400EAACEC /* AppleSDGothicNeoB.ttf */; };
+		A561E7A027FBDF1000EAACEC /* AppleSDGothicNeoEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A561E79D27FBDF0400EAACEC /* AppleSDGothicNeoEB.ttf */; };
+		A561E7A127FBDF1300EAACEC /* AppleSDGothicNeoM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A561E79E27FBDF0400EAACEC /* AppleSDGothicNeoM.ttf */; };
 		A564129E27CBCB6800825571 /* WritingDiaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A564129D27CBCB6800825571 /* WritingDiaryResponse.swift */; };
 		A56412A027CBCB9B00825571 /* WritingDiaryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A564129F27CBCB9B00825571 /* WritingDiaryRequest.swift */; };
 		A56412A227CBCBFA00825571 /* WritingDiaryDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56412A127CBCBFA00825571 /* WritingDiaryDataManager.swift */; };
@@ -230,9 +230,6 @@
 		A520916627DD0365003017AC /* PeriodCommentView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PeriodCommentView.storyboard; sourceTree = "<group>"; };
 		A520916927DDC8B9003017AC /* DiaryReport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryReport.storyboard; sourceTree = "<group>"; };
 		A520916B27DDC9A7003017AC /* DiaryReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryReportViewController.swift; sourceTree = "<group>"; };
-		A520917C27DDDA65003017AC /* AppleSDGothicNeoEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoEB.ttf; path = ../../../../../AppleSDGothicNeoEB.ttf; sourceTree = "<group>"; };
-		A520917D27DDDA65003017AC /* AppleSDGothicNeoM.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoM.ttf; path = ../../../../../AppleSDGothicNeoM.ttf; sourceTree = "<group>"; };
-		A520917E27DDDA65003017AC /* AppleSDGothicNeoB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoB.ttf; path = ../../../../../AppleSDGothicNeoB.ttf; sourceTree = "<group>"; };
 		A520918327DE1B38003017AC /* MemberOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberOutViewController.swift; sourceTree = "<group>"; };
 		A520918527DE1B43003017AC /* MemberOut.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MemberOut.storyboard; sourceTree = "<group>"; };
 		A52136F627D076BF00B98CF7 /* BaseInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInterceptor.swift; sourceTree = "<group>"; };
@@ -287,6 +284,9 @@
 		A5567CA027BE945E001A4B98 /* SignUpCompletion.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpCompletion.storyboard; sourceTree = "<group>"; };
 		A5567CA327BEA342001A4B98 /* TodayDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TodayDiary.storyboard; sourceTree = "<group>"; };
 		A5567CA527BEA350001A4B98 /* TodayDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDiaryViewController.swift; sourceTree = "<group>"; };
+		A561E79C27FBDF0400EAACEC /* AppleSDGothicNeoB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoB.ttf; path = ../../../../../IOS/AppleSDGothicNeoB.ttf; sourceTree = "<group>"; };
+		A561E79D27FBDF0400EAACEC /* AppleSDGothicNeoEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoEB.ttf; path = ../../../../../IOS/AppleSDGothicNeoEB.ttf; sourceTree = "<group>"; };
+		A561E79E27FBDF0400EAACEC /* AppleSDGothicNeoM.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoM.ttf; path = ../../../../../IOS/AppleSDGothicNeoM.ttf; sourceTree = "<group>"; };
 		A564129D27CBCB6800825571 /* WritingDiaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingDiaryResponse.swift; sourceTree = "<group>"; };
 		A564129F27CBCB9B00825571 /* WritingDiaryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingDiaryRequest.swift; sourceTree = "<group>"; };
 		A56412A127CBCBFA00825571 /* WritingDiaryDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingDiaryDataManager.swift; sourceTree = "<group>"; };
@@ -893,9 +893,9 @@
 		A567616D27B7E8BA006FDA7F /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				A520917E27DDDA65003017AC /* AppleSDGothicNeoB.ttf */,
-				A520917C27DDDA65003017AC /* AppleSDGothicNeoEB.ttf */,
-				A520917D27DDDA65003017AC /* AppleSDGothicNeoM.ttf */,
+				A561E79C27FBDF0400EAACEC /* AppleSDGothicNeoB.ttf */,
+				A561E79D27FBDF0400EAACEC /* AppleSDGothicNeoEB.ttf */,
+				A561E79E27FBDF0400EAACEC /* AppleSDGothicNeoM.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -1378,11 +1378,9 @@
 				A529502827DB751F00192054 /* GatherLook.storyboard in Resources */,
 				A567615527B7E454006FDA7F /* LaunchScreen.storyboard in Resources */,
 				A518AFCE27EB4F330024E1F1 /* NotArrivalCommentDiary.storyboard in Resources */,
-				A520918027DDDA6B003017AC /* AppleSDGothicNeoEB.ttf in Resources */,
 				A5CBCC0027CA99FF00BE857D /* SuccessFindPassword.storyboard in Resources */,
 				A5567C9027BD4D5B001A4B98 /* WritingDiary.storyboard in Resources */,
 				A567615227B7E454006FDA7F /* Assets.xcassets in Resources */,
-				A520918127DDDA6E003017AC /* AppleSDGothicNeoM.ttf in Resources */,
 				A5C7A39627E796640055BAD7 /* YReadComment.storyboard in Resources */,
 				A567615027B7E452006FDA7F /* Main.storyboard in Resources */,
 				A5567CA127BE945E001A4B98 /* SignUpCompletion.storyboard in Resources */,
@@ -1400,15 +1398,16 @@
 				A54645D227CCF9FD008BA823 /* WritingComment.storyboard in Resources */,
 				A5567C9227BD4D71001A4B98 /* MyPage.storyboard in Resources */,
 				A5C7A38D27E622D90055BAD7 /* someoneCommentCell.xib in Resources */,
-				A520917F27DDDA68003017AC /* AppleSDGothicNeoB.ttf in Resources */,
 				A5C7A3A227E8EF810055BAD7 /* ChangePassword.storyboard in Resources */,
 				A5B9B97C27F3554C0049D329 /* DiaryBlock.storyboard in Resources */,
 				A5CCD19127C4CDF00096281F /* PasswordSearch.storyboard in Resources */,
+				A561E7A127FBDF1300EAACEC /* AppleSDGothicNeoM.ttf in Resources */,
 				A5B84FE927E3B5AF001367B4 /* DetailCommentDiary.storyboard in Resources */,
 				A529502227DB6A4200192054 /* PeriodView.storyboard in Resources */,
 				A567622C27BBC7DC006FDA7F /* SignUp.storyboard in Resources */,
 				A520916727DD0365003017AC /* PeriodCommentView.storyboard in Resources */,
 				A518AFC927EB28C10024E1F1 /* YPreSaveDeadline.storyboard in Resources */,
+				A561E7A027FBDF1000EAACEC /* AppleSDGothicNeoEB.ttf in Resources */,
 				A520914A27DC7F36003017AC /* MyDiaryListCell.xib in Resources */,
 				A5C9FB7627C60EF600445012 /* FailFIndPassword.storyboard in Resources */,
 				A5C7A37E27E5EA910055BAD7 /* GatherLookDetail.storyboard in Resources */,
@@ -1419,6 +1418,7 @@
 				A518AFC227EA1ECE0024E1F1 /* SendCommentAlert.storyboard in Resources */,
 				A5C9FB7F27C6263500445012 /* CommentReportAlert.storyboard in Resources */,
 				A520918627DE1B43003017AC /* MemberOut.storyboard in Resources */,
+				A561E79F27FBDF0D00EAACEC /* AppleSDGothicNeoB.ttf in Resources */,
 				A5A0A33627D9007200604A30 /* MyAccount.storyboard in Resources */,
 				A5C7A37B27E5AA300055BAD7 /* YEdit.storyboard in Resources */,
 				A5567C9A27BD53FA001A4B98 /* AuthNumber.storyboard in Resources */,
@@ -1780,7 +1780,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CMC.coda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1815,7 +1815,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CMC.coda;
 				PRODUCT_NAME = "$(TARGET_NAME)";

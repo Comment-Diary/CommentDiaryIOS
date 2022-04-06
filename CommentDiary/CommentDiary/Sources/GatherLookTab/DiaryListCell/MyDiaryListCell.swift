@@ -15,6 +15,7 @@ class MyDiaryListCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet weak var commentCountBackView: UIView!
     
     @IBOutlet weak var contentLabel: UILabel!
     

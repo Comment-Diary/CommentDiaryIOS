@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="16" width="320" height="170"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28w-5c-rut">
-                                <rect key="frame" x="20" y="16" width="37.5" height="23"/>
+                                <rect key="frame" x="24" y="16" width="37.5" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="wUs-6f-Yr8"/>
                                 </constraints>
@@ -31,24 +31,34 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aut-v1-nwT">
-                                <rect key="frame" x="20" y="39" width="10.5" height="24.5"/>
+                                <rect key="frame" x="24" y="39" width="10.5" height="25"/>
                                 <attributedString key="attributedText">
                                     <fragment content="0">
                                         <attributes>
+                                            <color key="NSColor" red="0.0079703282828282873" green="0.0079703282828282873" blue="0.0079703282828282873" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" metaFont="system" size="17"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.23" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="customHeartFill" translatesAutoresizingMaskIntoConstraints="NO" id="96r-MJ-BAc">
+                                <rect key="frame" x="282" y="18.5" width="20" height="18.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18.5" id="Ioy-Kg-b1w"/>
+                                    <constraint firstAttribute="width" constant="20" id="Nhn-RB-DB6"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aut-v1-nwT" secondAttribute="trailing" constant="20" id="BpZ-Km-od5"/>
-                            <constraint firstItem="28w-5c-rut" firstAttribute="leading" secondItem="TPa-Vw-Xa2" secondAttribute="leading" constant="20" id="FTO-7w-LAQ"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aut-v1-nwT" secondAttribute="trailing" constant="24" id="BpZ-Km-od5"/>
+                            <constraint firstAttribute="trailing" secondItem="96r-MJ-BAc" secondAttribute="trailing" constant="18" id="Dkd-cU-lVl"/>
+                            <constraint firstItem="28w-5c-rut" firstAttribute="leading" secondItem="TPa-Vw-Xa2" secondAttribute="leading" constant="24" id="FTO-7w-LAQ"/>
                             <constraint firstItem="28w-5c-rut" firstAttribute="top" secondItem="TPa-Vw-Xa2" secondAttribute="top" constant="16" id="Yj2-lK-bJ3"/>
-                            <constraint firstItem="aut-v1-nwT" firstAttribute="leading" secondItem="TPa-Vw-Xa2" secondAttribute="leading" constant="20" id="d2M-7e-FZG"/>
+                            <constraint firstItem="aut-v1-nwT" firstAttribute="leading" secondItem="TPa-Vw-Xa2" secondAttribute="leading" constant="24" id="d2M-7e-FZG"/>
+                            <constraint firstItem="96r-MJ-BAc" firstAttribute="centerY" secondItem="28w-5c-rut" secondAttribute="centerY" id="ekF-oF-jQ2"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="aut-v1-nwT" secondAttribute="bottom" constant="30" id="fFF-vg-LPF"/>
                             <constraint firstItem="aut-v1-nwT" firstAttribute="top" secondItem="28w-5c-rut" secondAttribute="bottom" id="kHj-TQ-FTK"/>
                         </constraints>
@@ -66,11 +76,13 @@
                 <outlet property="commentLabel" destination="aut-v1-nwT" id="LwD-e4-80B"/>
                 <outlet property="contentBackView" destination="TPa-Vw-Xa2" id="kXz-Ce-65T"/>
                 <outlet property="dateLabel" destination="28w-5c-rut" id="BEu-jn-qD5"/>
+                <outlet property="hearyImage" destination="96r-MJ-BAc" id="pMQ-QN-YQY"/>
             </connections>
             <point key="canvasLocation" x="127.53623188405798" y="57.589285714285708"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="customHeartFill" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

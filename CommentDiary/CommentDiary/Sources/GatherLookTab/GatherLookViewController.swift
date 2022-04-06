@@ -24,8 +24,10 @@ class GatherLookViewController : UIViewController, LabelChangeDelegate, DateChan
         print(data, "API에 들어갈 값")
 //        GatherDiaryDateDataManager().gatherDiaryDateData(diaryDate: data, self)
         apiDateString = data
-        GatherDiaryDateDataManager().gatherDiaryDateData(self, dateValue: apiDateString)
-        if apiDateString == "전체보기" {
+        if apiDateString != "전체보기" {
+            GatherDiaryDateDataManager().gatherDiaryDateData(self, dateValue: apiDateString)
+        }
+        else if apiDateString == "전체보기" {
             GatherDiaryAllDataManager().gahterDiaryAllData(self)
         }
     }
@@ -102,6 +104,8 @@ class GatherLookViewController : UIViewController, LabelChangeDelegate, DateChan
     }
     func LabelSetting() {
         noDiaryLabel.text = "아직 작성된 일기가 없어요! 일기를 작성해주세요 :)"
+        noDiaryLabel.font = UIFont.AppleSDGothic(.medium, size: 14)
+        noDiaryLabel.textColor = UIColor(hex: 0x878379)
     }
     
 
@@ -175,6 +179,13 @@ extension GatherLookViewController: UITableViewDelegate, UITableViewDataSource {
             cell.titleLabel.text = gatherDiaryAllResult.title ?? ""
             cell.contentLabel.text = gatherDiaryAllResult.content ?? ""
             cell.commentCountLabel.text = "\(gatherDiaryAllResult.commentCnt ?? 0)"
+            //혼자 쓴 일기일 경우 이미지 숨기기
+            if gatherDiaryAllResult.deliveryYn == "N" {
+                cell.commentCountBackView.isHidden = true
+            }
+            else if gatherDiaryAllResult.deliveryYn == "Y" {
+                cell.commentCountBackView.isHidden = false
+            }
             cell.selectedId = gatherDiaryAllResult.id ?? 0
             allSelectedDiaryID = gatherDiaryAllResult.id ?? 0
         } else if yearLabel.text != "전체보기" {
@@ -183,6 +194,13 @@ extension GatherLookViewController: UITableViewDelegate, UITableViewDataSource {
             cell.titleLabel.text = gatherDiaryDateResult.title ?? ""
             cell.contentLabel.text = gatherDiaryDateResult.content ?? ""
             cell.commentCountLabel.text = "\(gatherDiaryDateResult.commentCnt ?? 0)"
+            //혼자 쓴 일기일 경우 이미지 숨기기
+            if gatherDiaryDateResult.deliveryYn == "N" {
+                cell.commentCountBackView.isHidden = true
+            }
+            else if gatherDiaryDateResult.deliveryYn == "Y" {
+                cell.commentCountBackView.isHidden = false
+            }
             cell.selectedId = gatherDiaryDateResult.id ?? 0
             dateSelectedDiaryID = gatherDiaryDateResult.id ?? 0
             
@@ -221,7 +239,6 @@ extension GatherLookViewController: UITableViewDelegate, UITableViewDataSource {
 
 
 }
-
 
 
 

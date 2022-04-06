@@ -100,6 +100,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="commentCountBackView" destination="vf7-ZD-aBV" id="WLf-PO-qeG"/>
                 <outlet property="commentCountLabel" destination="W7K-ih-NDN" id="oqz-Z1-bNK"/>
                 <outlet property="contentLabel" destination="tK2-gG-I7k" id="1U2-1d-Pwe"/>
                 <outlet property="dateLabel" destination="YVz-Yq-7qA" id="jPv-bz-cFa"/>

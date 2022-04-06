@@ -18,9 +18,13 @@ class SendCommentViewController : UIViewController, CommentLabelChangeDelegate, 
     
     func onDateChange(data: String) {
         apiDateString = data
-        DateCommentDataManager().dateCommentData(self, dateValue: apiDateString)
-        if apiDateString == "전체보기" {
+        if apiDateString != "전체보기" {
+            DateCommentDataManager().dateCommentData(self, dateValue: apiDateString)
+            print(apiDateString, "전체보기???")
+        }
+        else if apiDateString == "전체보기" {
             AllCommentDataManager().allCommentData(self)
+            print(apiDateString, "전체보기!!!")
         }
 
 
@@ -151,9 +155,6 @@ extension SendCommentViewController: UITableViewDelegate, UITableViewDataSource 
         return 0
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 142
-//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SendCommentCell", for: indexPath) as! SendCommentCell
@@ -162,11 +163,23 @@ extension SendCommentViewController: UITableViewDelegate, UITableViewDataSource 
 
         if yearLabel.text == "전체보기" {
             let allCommentListResult = commentListResult[indexPath.row]
+            if allCommentListResult.like == true {
+                cell.hearyImage.isHidden = false
+            }
+            else if allCommentListResult.like == false {
+                cell.hearyImage.isHidden = true
+            }
             cell.dateLabel.text = allCommentListResult.date
             cell.commentLabel.text = allCommentListResult.content
         }
         else if yearLabel.text != "전체보기" {
             let dateCommentList = dateCommentListResult[indexPath.row]
+            if dateCommentList.like == true {
+                cell.hearyImage.isHidden = false
+            }
+            else if dateCommentList.like == false {
+                cell.hearyImage.isHidden = true
+            }
             cell.dateLabel.text = dateCommentList.date
             cell.commentLabel.text = dateCommentList.content
         }

@@ -3,6 +3,10 @@
 //  CommentDiary
 //
 //  Created by 류창휘 on 2022/02/12.
+
+
+//https://madilyn.tistory.com/23?category=833875
+//ios 15 텝바
 //
 
 import UIKit
@@ -21,23 +25,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-//        UITabBar.appearance().isTranslucent = false
-        UITabBar.appearance().tintColor = UIColor(hex: 0x4E4C49)
-        UITabBar.appearance().backgroundColor = UIColor(hex: 0xF4F1EB)
-//        UITabBar.appearance().barTintColor = .black
-//        UITabBar.appearance().barTintColor = UIColor(hex: 0xF4F1EB)
+
+        if #available(iOS 13.0, *) {
+            UITabBar.appearance().isTranslucent = false
+            UITabBar.appearance().tintColor = UIColor(hex: 0x4E4C49)
+            UITabBar.appearance().backgroundColor = UIColor(hex: 0xF4F1EB)
+        }
+
+        if #available(iOS 14.0, *) {
+            UITabBar.appearance().isTranslucent = false
+            UITabBar.appearance().tintColor = UIColor(hex: 0x4E4C49)
+            UITabBar.appearance().backgroundColor = UIColor(hex: 0xF4F1EB)
+        }
+        
+        
+        if #available(iOS 15.0, *) {
+            let appearance = UITabBarAppearance()
+            let tabBar = UITabBar()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor(hex: 0xF4F1EB)
+            tabBar.standardAppearance = appearance;
+            UITabBar.appearance().scrollEdgeAppearance = appearance
+        }
         
         
         
         
-//        UITabBar.appearance().unselectedItemTintColor = UIColor(hex: <#T##UInt#>)
-//        self.window?.overrideUserInterfaceStyle = .light
- 
-//        self.window?.overrideUserInterfaceStyle = .light
+        
 
         IQKeyboardManager.shared.enable = true
-        
-
         IQKeyboardManager.shared.enableAutoToolbar = false
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true

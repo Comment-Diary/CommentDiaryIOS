@@ -25,6 +25,10 @@ class TabBarVC : UITabBarController, UITabBarControllerDelegate {
         self.selectedIndex = index
         
         
+//        tabBar.isTranslucent = false
+//        tabBar.barTintColor = UIColor(hex: 0xF4F1EB)
+//        tabBar.tintColor = UIColor(hex: 0x4E4C49)
+        
 //        UITabBar.appearance().isTranslucent = false
 //        UITabBar.appearance().tintColor = UIColor(hex: 0x4E4C49)
 ////        UITabBar.appearance().barTintColor = UIColor(hex: 0xF4F1EB)
@@ -35,10 +39,7 @@ class TabBarVC : UITabBarController, UITabBarControllerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        let nextVC = TabBarVC()
-//        nextVC.index = 0
-//        self.changeRootViewController(nextVC)
-//        self.selectedIndex = index
+
         
     }
 }

@@ -325,7 +325,11 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         calendarView.placeholderType = .none
         calendarView.weekdayHeight = 0
         
-        calendarView.appearance.selectionColor = UIColor(hex: 0xFFAC86)
+//        calendarView.appearance.subtitleTodayColor = UIColor.red
+        calendarView.appearance.selectionColor = UIColor.clear
+        calendarView.appearance.borderSelectionColor = UIColor(hex: 0xFFAC86)
+        calendarView.appearance.titleSelectionColor = nil
+        calendarView.appearance.titleTodayColor = nil
         calendarView.appearance.todayColor = UIColor(hex: 0xFFAC86)
         calendarView.allowsSelection = true
         calendarView.allowsMultipleSelection = false
@@ -375,11 +379,19 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     
 
     
-    
 
     
     //캘린더 선택 함수
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        
+        if calendar.today == calendar.selectedDate {
+            calendarView.appearance.selectionColor = UIColor(hex: 0xFFAC86)
+        }
+        else if calendar.today != calendar.selectedDate {
+            calendarView.appearance.selectionColor = UIColor.clear
+            calendarView.appearance.borderSelectionColor = UIColor(hex: 0xFFAC86)
+            calendarView.appearance.titleSelectionColor = nil
+        }
 
     
 
@@ -586,6 +598,11 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     }
     
     
+    //Event 표시 Dot 사이즈 조정
+    func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
+        cell.eventIndicator.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+    }
+
     //이벤트 dot동그라미 색상 함수
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventDefaultColorsFor date: Date) -> [UIColor]?{
         if self.nDiaryList.contains(formatter.string(from: date)) {
@@ -636,6 +653,8 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     
     
 }
+
+
 
 
 

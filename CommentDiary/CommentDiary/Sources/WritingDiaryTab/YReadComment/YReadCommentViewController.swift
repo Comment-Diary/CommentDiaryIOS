@@ -10,10 +10,10 @@ import UIKit
 
 class YReadCommentViewController : UIViewController, UIScrollViewDelegate {
     var diaryId : Int = 0
-    //true 이면 코멘트 쓰러가기 false 이면 코멘트 보러가기
-    var myCommentBool : Bool = false
-    //true이면 현재 false이면 과거
-    var pastOrNow : Bool = true
+//    //true 이면 코멘트 쓰러가기 false 이면 코멘트 보러가기
+//    var myCommentBool : Bool = false
+//    //true이면 현재 false이면 과거
+//    var pastOrNow : Bool = true
     var completion : (() -> Void)?
     
     
@@ -101,7 +101,7 @@ class YReadCommentViewController : UIViewController, UIScrollViewDelegate {
     
     func buttonSetting() {
         commentReadButton.backgroundColor = UIColor(hex: 0x73BF90)
-        commentReadButton.setTitle("도착한 코멘트 보기", for: .normal)
+        commentReadButton.setTitle("코멘트 작성하기", for: .normal)
         commentReadButton.setTitleColor(UIColor(hex: 0xFDFCF9), for: .normal)
         commentReadButton.setTitleColor(UIColor(hex: 0xFDFCF9), for: .highlighted)
         commentReadButton.titleLabel?.font = UIFont.AppleSDGothic(.bold, size: 15)
@@ -137,28 +137,36 @@ class YReadCommentViewController : UIViewController, UIScrollViewDelegate {
 
 
         
-        if myCommentBool == true { //코멘트 씀, 현재
-            //코멘트 보여주기
-            
-            let gatherLookDetailVC = UIStoryboard(name: "GatherLookDetail", bundle: nil).instantiateViewController(withIdentifier: "GatherLookDetailViewController") as! GatherLookDetailViewController
-            gatherLookDetailVC.diaryID = self.diaryId
-            self.navigationController?.pushViewController(gatherLookDetailVC, animated: true)
-        }
-        else if myCommentBool == false && pastOrNow == true { //코멘트 안씀, 현재
-            //코멘트 쓰러가기
-            self.navigationController?.popViewController(animated: true, completion: {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
-                    
-                    self.completion?()
-                })
+//        if myCommentBool == true { //코멘트 씀, 현재
+//            //코멘트 보여주기
+//
+//            let gatherLookDetailVC = UIStoryboard(name: "GatherLookDetail", bundle: nil).instantiateViewController(withIdentifier: "GatherLookDetailViewController") as! GatherLookDetailViewController
+//            gatherLookDetailVC.diaryID = self.diaryId
+//            self.navigationController?.pushViewController(gatherLookDetailVC, animated: true)
+//        }
+//        else if myCommentBool == false && pastOrNow == true { //코멘트 안씀, 현재
+//            //코멘트 쓰러가기
+//            self.navigationController?.popViewController(animated: true, completion: {
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+//
+//                    self.completion?()
+//                })
+//            })
+//
+//        }
+//        else if myCommentBool == false && pastOrNow == false { //코멘트 안씀, 과거
+//            self.presentBottomAlert(message: "코멘트를 작성하지 않았어요.")
+//        }
+        
+        
+        
+        //코멘트 쓰러가기
+        self.navigationController?.popViewController(animated: true, completion: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                
+                self.completion?()
             })
-            
-        }
-        else if myCommentBool == false && pastOrNow == false { //코멘트 안씀, 과거
-            self.presentBottomAlert(message: "코멘트를 작성하지 않았어요.")
-        }
-        
-        
+        })
     }
     
     
@@ -198,36 +206,36 @@ extension YReadCommentViewController {
         contentLabel.text = response.result.content
         dateLabel.text = response.result.date
         
-        let commentDate = detailDayDateFormatter.date(from: dateLabel.text!)
+//        let commentDate = detailDayDateFormatter.date(from: dateLabel.text!)
+//
+//        let datePlus = Calendar.current.date(byAdding: .day, value: 1, to: commentDate!)
+//        let datePlusString = detailDayDateFormatter.string(from: datePlus!)
+//        print(datePlusString, "하루 더한 날짜")
+//        print(detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200)), "오늘")
+//
+//        if datePlusString == detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200)) {
+//            pastOrNow = true //현재
+//        }
+//        else if datePlusString != detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200)) {
+//            pastOrNow = false //과거
+//        }
         
-        let datePlus = Calendar.current.date(byAdding: .day, value: 1, to: commentDate!)
-        let datePlusString = detailDayDateFormatter.string(from: datePlus!)
-        print(datePlusString, "하루 더한 날짜")
-        print(detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200)), "오늘")
-        
-        if datePlusString == detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200)) {
-            pastOrNow = true //현재
-        }
-        else if datePlusString != detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200)) {
-            pastOrNow = false //과거
-        }
-        
-        self.showIndicator()
-        CompareDataManager().dateCommentData(self, dateValue: datePlusString)
+//        self.showIndicator()
+//        CompareDataManager().dateCommentData(self, dateValue: datePlusString)
     
         
     }
 }
 
 
-extension YReadCommentViewController {
-    func countMyCommentResponse(_ response: DateCommentResponse) {
-        self.dismissIndicator()
-        if response.result.count == 0 {
-            myCommentBool = false
-        }
-        else if response.result.count != 0 {
-            myCommentBool = true
-        }
-    }
-}
+//extension YReadCommentViewController {
+//    func countMyCommentResponse(_ response: DateCommentResponse) {
+//        self.dismissIndicator()
+//        if response.result.count == 0 {
+//            myCommentBool = false
+//        }
+//        else if response.result.count != 0 {
+//            myCommentBool = true
+//        }
+//    }
+//}

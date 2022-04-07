@@ -72,6 +72,7 @@ class YPreSaveViewController: UIViewController, UIScrollViewDelegate {
         diaryScrollView.delegate = self
         
         //API 조회
+        self.showIndicator()
         PreSaveDiaryCheckDataManager().commentDiaryCheckData(diaryID: diaryID, self)
 //        countLabel.text = commentDiaryCount
         navigationBackSwipeMotion()
@@ -211,6 +212,7 @@ extension YPreSaveViewController {
         titleTextView.text = response.result.title
         countLabel.text =  "\(response.result.content.count)/100"
         diaryCount = response.result.content.count
+        self.dismissIndicator()
         
     }
 }

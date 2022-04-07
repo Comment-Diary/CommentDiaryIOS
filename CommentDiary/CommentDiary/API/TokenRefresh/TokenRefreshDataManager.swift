@@ -76,13 +76,14 @@ class TokenRefreshDataManager {
 
                 case .failure(let error):
                     print(error.localizedDescription)
-                    if response.response?.statusCode == 401 {
+                    print(error)
+//                    if response.response?.statusCode == 401 {
                         UserDefaults.standard.set(nil, forKey: "AccessToken")
                         UserDefaults.standard.set(nil, forKey: "RefreshToken")
                         UserDefaults.standard.set(false, forKey: "login_save")
                         completion(false)
 
-                    }
+//                    }
                 }
             }
     }

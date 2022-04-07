@@ -10,6 +10,7 @@ import UIKit
 
 
 class NotArrivalCommentViewController: UIViewController {
+    var diaryIDValue : Int = 0
     //MARK: - Properties
     
     
@@ -52,6 +53,7 @@ class NotArrivalCommentViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(loadTitle(_:)), name: NSNotification.Name(rawValue: "SelectedTitle"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(loadContent(_:)), name: NSNotification.Name(rawValue: "SelectedContent"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadID(_:)), name: NSNotification.Name(rawValue: "SelectedID"), object: nil)
     }
     
     @objc func loadDate(_ notification: NSNotification) {
@@ -63,6 +65,9 @@ class NotArrivalCommentViewController: UIViewController {
     }
     @objc func loadContent(_ notification: NSNotification) {
         contentLabel.text = notification.object as? String ?? ""
+    }
+    @objc func loadID(_ notification: NSNotification) {
+        diaryIDValue = notification.object as? Int ?? 0
     }
     
     
@@ -106,9 +111,10 @@ class NotArrivalCommentViewController: UIViewController {
 //        ypreSaveVC.diaryID = diaryIDValue
 //        self.navigationController?.pushViewController(ypreSaveVC, animated: true)
         let notArrivalCommentDiaryVC = UIStoryboard(name: "NotArrivalCommentDiary", bundle: nil).instantiateViewController(withIdentifier: "NotArrivalCommentDiaryViewController") as! NotArrivalCommentDiaryViewController
-        notArrivalCommentDiaryVC.diaryDate = dateLabel.text ?? ""
-        notArrivalCommentDiaryVC.diaryTitle = titleLabel.text ?? ""
-        notArrivalCommentDiaryVC.diaryContent = contentLabel.text ?? ""
+//        notArrivalCommentDiaryVC.diaryDate = dateLabel.text ?? ""
+//        notArrivalCommentDiaryVC.diaryTitle = titleLabel.text ?? ""
+//        notArrivalCommentDiaryVC.diaryContent = contentLabel.text ?? ""
+        notArrivalCommentDiaryVC.diaryID = self.diaryIDValue
         self.navigationController?.pushViewController(notArrivalCommentDiaryVC, animated: true)
     }
     

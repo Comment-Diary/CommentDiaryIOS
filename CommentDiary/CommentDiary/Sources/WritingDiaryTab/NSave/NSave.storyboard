@@ -60,7 +60,7 @@
                                 <rect key="frame" x="16" y="111" width="382" height="704"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbe-Hk-K7A">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="217.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="219"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaa-MQ-Zgc">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="86"/>
@@ -110,14 +110,14 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66B-pA-BGf">
-                                                <rect key="frame" x="0.0" y="86" width="382" height="131.5"/>
+                                                <rect key="frame" x="0.0" y="86" width="382" height="133"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUY-Nr-HaA">
-                                                        <rect key="frame" x="24" y="12" width="334" height="23.5"/>
+                                                        <rect key="frame" x="24" y="12" width="334" height="25"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="ㅇ">
                                                                 <attributes>
-                                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
+                                                                    <font key="NSFont" metaFont="system" size="17"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.23" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>

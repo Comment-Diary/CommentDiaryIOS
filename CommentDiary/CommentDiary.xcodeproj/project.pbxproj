@@ -140,6 +140,8 @@
 		A595203A27D89A4F005D414D /* CommentWritingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A595203927D89A4F005D414D /* CommentWritingResponse.swift */; };
 		A595203C27D89A5B005D414D /* CommentWritingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A595203B27D89A5B005D414D /* CommentWritingRequest.swift */; };
 		A595203E27D89A67005D414D /* CommentWritingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A595203D27D89A67005D414D /* CommentWritingDataManager.swift */; };
+		A59909B127FEF4AD00025C58 /* YNotWriteCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59909B027FEF4AD00025C58 /* YNotWriteCommentViewController.swift */; };
+		A59909B327FEF4BA00025C58 /* YNotWriteComment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59909B227FEF4BA00025C58 /* YNotWriteComment.storyboard */; };
 		A5A0A33427D9006700604A30 /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A0A33327D9006700604A30 /* MyAccountViewController.swift */; };
 		A5A0A33627D9007200604A30 /* MyAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A0A33527D9007200604A30 /* MyAccount.storyboard */; };
 		A5A0A33927D9029700604A30 /* SendComment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A0A33827D9029700604A30 /* SendComment.storyboard */; };
@@ -336,6 +338,8 @@
 		A595203927D89A4F005D414D /* CommentWritingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentWritingResponse.swift; sourceTree = "<group>"; };
 		A595203B27D89A5B005D414D /* CommentWritingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentWritingRequest.swift; sourceTree = "<group>"; };
 		A595203D27D89A67005D414D /* CommentWritingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentWritingDataManager.swift; sourceTree = "<group>"; };
+		A59909B027FEF4AD00025C58 /* YNotWriteCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YNotWriteCommentViewController.swift; sourceTree = "<group>"; };
+		A59909B227FEF4BA00025C58 /* YNotWriteComment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YNotWriteComment.storyboard; sourceTree = "<group>"; };
 		A5A0A33327D9006700604A30 /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
 		A5A0A33527D9007200604A30 /* MyAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyAccount.storyboard; sourceTree = "<group>"; };
 		A5A0A33827D9029700604A30 /* SendComment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SendComment.storyboard; sourceTree = "<group>"; };
@@ -755,6 +759,7 @@
 			children = (
 				A5B84FE527E3B510001367B4 /* DetailCommentDiary */,
 				A5242C9727D5065B00E24A76 /* CaseContainerViews */,
+				A59909AF27FEF46000025C58 /* YNotWriteComment */,
 				A5C7A39227E793BB0055BAD7 /* YReadComment */,
 				A5C7A37727E5AA0C0055BAD7 /* YEdit */,
 				A5242C6627D31E7F00E24A76 /* NEdit */,
@@ -1080,6 +1085,15 @@
 				A595203D27D89A67005D414D /* CommentWritingDataManager.swift */,
 			);
 			path = CommentWriting;
+			sourceTree = "<group>";
+		};
+		A59909AF27FEF46000025C58 /* YNotWriteComment */ = {
+			isa = PBXGroup;
+			children = (
+				A59909B027FEF4AD00025C58 /* YNotWriteCommentViewController.swift */,
+				A59909B227FEF4BA00025C58 /* YNotWriteComment.storyboard */,
+			);
+			path = YNotWriteComment;
 			sourceTree = "<group>";
 		};
 		A5A0A33127D9002300604A30 /* MyPageInner */ = {
@@ -1413,6 +1427,7 @@
 				A5B9B97C27F3554C0049D329 /* DiaryBlock.storyboard in Resources */,
 				A5CCD19127C4CDF00096281F /* PasswordSearch.storyboard in Resources */,
 				A561E7A127FBDF1300EAACEC /* AppleSDGothicNeoM.ttf in Resources */,
+				A59909B327FEF4BA00025C58 /* YNotWriteComment.storyboard in Resources */,
 				A5B84FE927E3B5AF001367B4 /* DetailCommentDiary.storyboard in Resources */,
 				A529502227DB6A4200192054 /* PeriodView.storyboard in Resources */,
 				A567622C27BBC7DC006FDA7F /* SignUp.storyboard in Resources */,
@@ -1564,6 +1579,7 @@
 				A5242C9B27D50A4B00E24A76 /* TodayWritingDiaryViewController.swift in Sources */,
 				A5A0A33427D9006700604A30 /* MyAccountViewController.swift in Sources */,
 				A56B698627DA0453001385DC /* CommentReportDataManager.swift in Sources */,
+				A59909B127FEF4AD00025C58 /* YNotWriteCommentViewController.swift in Sources */,
 				A567617027B7E8EA006FDA7F /* KobisKey.swift in Sources */,
 				A54645D027CCF958008BA823 /* WritingCommentAlertViewController.swift in Sources */,
 				A567622A27BBC7D3006FDA7F /* SignUpViewController.swift in Sources */,
@@ -1776,7 +1792,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CommentDiary/Info.plist;
@@ -1792,7 +1808,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CMC.coda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1811,7 +1827,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CommentDiary/Info.plist;
@@ -1827,7 +1843,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CMC.coda;
 				PRODUCT_NAME = "$(TARGET_NAME)";

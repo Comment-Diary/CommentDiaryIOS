@@ -123,6 +123,8 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate, CallAPID
         viewload = false
         
         
+        commentCountLabel.text = "0/20자 이상 작성"
+        commentCountLabel.isHidden = true
 
     }
     
@@ -161,8 +163,7 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate, CallAPID
         diaryContentTextView.textColor = UIColor(hex: 0x4E4C49)
         myCommentTextView.font = UIFont.AppleSDGothic(.medium, size: 14)
         
-        commentCountLabel.text = "0/20자 이상 작성"
-        commentCountLabel.isHidden = true
+
     }
     func buttonSetting() {
 //        self.sendCommentButton.isEnabled = false
@@ -374,6 +375,7 @@ extension ArrivedDiaryViewController {
         else if writedCommentCount == 0 {
             myCommentTextView.text = "일기를 읽고 따뜻한 코멘트를 달아주세요."
             myCommentTextView.textColor = UIColor(hex: 0xD2D2D2)
+            
         }
     }
 }

@@ -38,11 +38,11 @@ class LoginDataManager {
                     print(error.localizedDescription)
                     
                     
-                    if response.response?.statusCode == 404 {
-                        viewController.loginFailResponse()
-                    }
-                    else if response.response?.statusCode == 403 {
+                    if response.response?.statusCode == 403 {
                         viewController.blockResponse()
+                    }
+                    else {
+                        viewController.loginFailResponse()
                     }
                 }
             }

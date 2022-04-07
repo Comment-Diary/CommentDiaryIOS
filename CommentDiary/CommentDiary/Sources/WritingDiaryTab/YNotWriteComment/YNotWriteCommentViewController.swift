@@ -1,59 +1,56 @@
 //
-//  NotArrivalCommentDiaryViewController.swift
+//  YNotWriteCommentViewController.swift
 //  CommentDiary
 //
-//  Created by 류창휘 on 2022/03/23.
+//  Created by 류창휘 on 2022/04/07.
 //
 
 import Foundation
 import UIKit
 
-class NotArrivalCommentDiaryViewController : UIViewController, UIScrollViewDelegate {
-    var diaryDate: String = ""
-    var diaryTitle: String = ""
-    var diaryContent: String = ""
+class YNotWriteCommentViewController : UIViewController {
     var diaryID : Int = 0
     //MARK: - Properties
     
-    @IBOutlet weak var allBackView: UIView!
-    
     @IBOutlet weak var topBackView: UIView!
+    
+    @IBOutlet weak var diaryScrollView: UIScrollView!
+    
+    @IBOutlet weak var alllBackView: UIView!
+    
+    @IBOutlet weak var titleBackView: UIView!
+    
+    @IBOutlet weak var bottomBackView: UIView!
+    @IBOutlet weak var contentBackView: UIView!
+    
     
     @IBOutlet weak var dateLabel: UILabel!
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet weak var titleBackView: UIView!
     @IBOutlet weak var separateView: UIView!
-    
-    @IBOutlet weak var contentBackView: UIView!
     
     @IBOutlet weak var contentLabel: UILabel!
     
-    @IBOutlet weak var bottomBackView: UIView!
+    @IBOutlet weak var infoTopLabel: UILabel!
     
-    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var infoBottomLabel: UILabel!
+    @IBOutlet weak var backButtonTap: UIButton!
     
-    @IBOutlet weak var diaryScrollView: UIScrollView!
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        diaryScrollView.delegate = self
-        dateLabel.text = diaryDate
-        titleLabel.text = diaryTitle
-        contentLabel.text = diaryContent
-        
-        
-        
-        labelSetting()
-        buttonSetting()
         viewSetting()
+        labelSetting()
         navigationBackSwipeMotion()
+        
+        
         //API 조회
+        YNotWriteCommentDataManager().YNotWriteCommentData(diaryID: diaryID, self)
         self.showIndicator()
-        NotArrivalCommentDiaryCheckDataManager().diaryCheckData(diaryID: diaryID, self)
-//      
+        
     }
+    
     func navigationBackSwipeMotion() {
         let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(_:)))
         swipeRecognizer.direction = .right
@@ -63,14 +60,6 @@ class NotArrivalCommentDiaryViewController : UIViewController, UIScrollViewDeleg
         navigationController?.popViewController(animated: true)
     }
     
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        self.view.endEditing(true)
-    }
-    
-
-    
-    
-    //MARK: - Actions
     
     func labelSetting() {
         dateLabel.textColor = UIColor(hex: 0xFFAC86)
@@ -79,12 +68,12 @@ class NotArrivalCommentDiaryViewController : UIViewController, UIScrollViewDeleg
         titleLabel.textColor = UIColor(hex: 0x4E4C49)
         contentLabel.textColor = UIColor(hex: 0x4E4C49)
         contentLabel.font = UIFont.AppleSDGothic(.medium, size: 15)
-        infoLabel.text = "아쉽게도 누군가로부터 코멘트가 도착하지 않았어요."
-        infoLabel.font = UIFont.AppleSDGothic(.medium, size: 12)
-        infoLabel.textColor = UIColor(hex: 0x878379)
-    }
-    func buttonSetting() {
-        
+        infoTopLabel.text = "'도착한 일기'의 코멘트를 작성하지 않아서"
+        infoTopLabel.font = UIFont.AppleSDGothic(.medium, size: 12)
+        infoTopLabel.textColor = UIColor(hex: 0x878379)
+        infoBottomLabel.text = "코멘트를 놓쳤어요. 다음에는 꼭 작성해주세요."
+        infoBottomLabel.font = UIFont.AppleSDGothic(.medium, size: 12)
+        infoBottomLabel.textColor = UIColor(hex: 0x878379)
     }
     
     func viewSetting() {
@@ -99,31 +88,30 @@ class NotArrivalCommentDiaryViewController : UIViewController, UIScrollViewDeleg
         contentBackView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         titleBackView.layer.cornerRadius = 10
         titleBackView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        allBackView.layer.cornerRadius = 10
-        allBackView.backgroundColor = .clear
+        alllBackView.layer.cornerRadius = 10
+        alllBackView.backgroundColor = .clear
         diaryScrollView.backgroundColor = .clear
         separateView.backgroundColor = UIColor(hex: 0xE2DFD7)
-        
-        
     }
     
     
     //MARK: - Actions
     
     @IBAction func backButtonTap(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
+    
     
     
 }
 
     //MARK: - Extensions
-extension NotArrivalCommentDiaryViewController {
-    func successGetDiary(_ response: DiaryCheckResopnse) {
-        
+extension YNotWriteCommentViewController {
+    func diaryGet(_ response: DiaryCheckResopnse) {
         dateLabel.text = response.result.date
         titleLabel.text = response.result.title
         contentLabel.text = response.result.content
         self.dismissIndicator()
+        
     }
 }

@@ -9,9 +9,28 @@ import Foundation
 import UIKit
 
 class GatherLookViewController : UIViewController, LabelChangeDelegate, DateChangeDelegate {
+    
+    lazy var detailDayDateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy.MM.dd"
+        return df
+    }()
+    
+    //클릭한 셀의 코멘트 달렸는지
+    var hadCommentBool : Bool = false
+    
+    //선택된 날짜
+    var selectedDateString : String = ""
+    
+    //이틀 넘어가는지 bool
+    var twodaysBool : Bool = false
+    //true이면 현재 false이면 과거
+    var pastOrNow : Bool = true
+    
+    //true 이면 코멘트 쓰러가기 false 이면 코멘트 보러가기
+    var myCommentBool : Bool = false
 
-    var allSelectedDiaryID : Int = 0
-    var dateSelectedDiaryID : Int = 0
+    var SelectedDiaryID : Int = 0
     
     //API 조회
     var gatherDiaryAllList : [GatherDiaryAllListResult] = []
@@ -152,6 +171,10 @@ extension GatherLookViewController {
         sortTableView.reloadData()
     }
 }
+
+
+
+
 extension GatherLookViewController: UITableViewDelegate, UITableViewDataSource {
     
 
@@ -173,6 +196,7 @@ extension GatherLookViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyDiaryListCell", for: indexPath) as! MyDiaryListCell
         cell.backgroundColor = UIColor(hex: 0xF4EDE3)
         cell.selectionStyle = .none
+        
         if yearLabel.text == "전체보기" {
             let gatherDiaryAllResult = gatherDiaryAllList[indexPath.row]
             cell.dateLabel.text = gatherDiaryAllResult.date ?? ""
@@ -187,7 +211,7 @@ extension GatherLookViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.commentCountBackView.isHidden = false
             }
             cell.selectedId = gatherDiaryAllResult.id ?? 0
-            allSelectedDiaryID = gatherDiaryAllResult.id ?? 0
+//            allSelectedDiaryID = gatherDiaryAllResult.id ?? 0
         } else if yearLabel.text != "전체보기" {
             let gatherDiaryDateResult = gatherDiaryDateList[indexPath.row]
             cell.dateLabel.text = gatherDiaryDateResult.date ?? ""
@@ -202,7 +226,7 @@ extension GatherLookViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.commentCountBackView.isHidden = false
             }
             cell.selectedId = gatherDiaryDateResult.id ?? 0
-            dateSelectedDiaryID = gatherDiaryDateResult.id ?? 0
+//            dateSelectedDiaryID = gatherDiaryDateResult.id ?? 0
             
         }
 
@@ -217,28 +241,271 @@ extension GatherLookViewController: UITableViewDelegate, UITableViewDataSource {
         return 142
     }
 
+    
+    
+    
+    
+    
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let gatherLookDetailVC = UIStoryboard(name: "GatherLookDetail", bundle: nil).instantiateViewController(withIdentifier: "GatherLookDetailViewController") as! GatherLookDetailViewController
-        
-        self.navigationController?.pushViewController(gatherLookDetailVC, animated: true)
+
+//        print(gatherDiaryDateList[indexPath.row].id, "선택한 일기의 id값")
         
         if yearLabel.text == "전체보기" {
-//            gatherLookDetailVC.diaryID = allSelectedDiaryID
-//            print(gatherLookDetailVC.diaryID, "id값?????????")
-            gatherLookDetailVC.diaryID = gatherDiaryAllList[indexPath.row].id ?? 0
-            print(gatherLookDetailVC.diaryID, "id값???????")
+            let gatherDiaryAllListResult = gatherDiaryAllList[indexPath.row]
+            SelectedDiaryID = gatherDiaryAllListResult.id ?? 0
         }
         else if yearLabel.text != "전체보기" {
-//            gatherLookDetailVC.diaryID = dateSelectedDiaryID
-//            print(gatherLookDetailVC.diaryID, "id값??????????")
-            gatherLookDetailVC.diaryID = gatherDiaryDateList[indexPath.row].id ?? 0
-            print(gatherLookDetailVC.diaryID, "id값????????/0")
+            let gatherDiaryDateListResult = gatherDiaryDateList[indexPath.row]
+            SelectedDiaryID = gatherDiaryDateListResult.id ?? 0
         }
+        
+        self.showIndicator()
+        SortationDataManager().gatherLookDetailSortData(diaryID: SelectedDiaryID, self)
+        
+        
+        
+        
+        
+        
+
     }
+}
+
+extension GatherLookViewController {
+    func selectedDiaryGet(_ response: DiaryCheckResopnse) {
+        self.dismissIndicator()
+        
+        if response.result.commentResponseList.count == 0 {
+            //코멘트 없음
+            hadCommentBool = false
+        }
+        else if response.result.commentResponseList.count != 0 {
+            //코멘트 있음
+            hadCommentBool = true
+        }
     
+        
+        //혼자 쓴 일기
+        if response.result.deliveryYn == "N" {
+            print("혼자쓴 일기로 이동")
+            let gatherLookDetailVC = UIStoryboard(name: "GatherLookDetail", bundle: nil).instantiateViewController(withIdentifier: "GatherLookDetailViewController") as! GatherLookDetailViewController
+            gatherLookDetailVC.diaryID = self.SelectedDiaryID
+            self.navigationController?.pushViewController(gatherLookDetailVC, animated: true)
+        }
+        
+        else if response.result.deliveryYn == "Y" {
+            //일기 날짜
+            let diaryDateString = response.result.date
+            
+            let diaryDateValue = detailDayDateFormatter.date(from: diaryDateString)
+            
+            let datePlus = Calendar.current.date(byAdding: .day, value: 1, to: diaryDateValue!)
+            
+            let datePlusString = detailDayDateFormatter.string(from: datePlus!)
+            print("하루 더한 날짜")
+            
+            print(detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200)), "오늘")
+            
+            if datePlusString == detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200)) {
+                pastOrNow = true
+            }
+            else if datePlusString != detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200)) {
+                pastOrNow = false
+            }
+            
+            
+            
+            //오늘 날짜
+            let todayDateString = detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
+            let todayDateValue = detailDayDateFormatter.date(from: todayDateString)
+            
+            //날짜 비교
+            let interval = todayDateValue!.timeIntervalSince(diaryDateValue!)
+            
+            let days = Int(interval / 86400)
+            
+            if days >= 2 {
+                twodaysBool = true
+            }
+            else if days < 2 {
+                twodaysBool = false
+            }
+            
+            
+            self.showIndicator()
+            CompareDateDataManager().commentDiaryDateData(self, dateValue: datePlusString)
+        }
+        
+        
+    }
+}
 
 
+extension GatherLookViewController {
+    func countCommentResponse(_ response: DateCommentResponse) {
+        self.dismissIndicator()
+        if response.result.count == 0 {
+            //유저가 코멘트 안씀
+            myCommentBool = false
+        }
+        else if response.result.count != 0 {
+            myCommentBool = true
+        }
+        
+        
+        if hadCommentBool == true {
+            if myCommentBool == true {
+                print("코멘트 보러가기")
+                let gatherLookDetailVC = UIStoryboard(name: "GatherLookDetail", bundle: nil).instantiateViewController(withIdentifier: "GatherLookDetailViewController") as! GatherLookDetailViewController
+                gatherLookDetailVC.diaryID = self.SelectedDiaryID
+                self.navigationController?.pushViewController(gatherLookDetailVC, animated: true)
+            }
+            else if myCommentBool == false {
+                if twodaysBool == true {
+                    print("내가 코멘트 안씀")
+                    let yNotWriteCommentVC = UIStoryboard(name: "YNotWriteComment", bundle: nil).instantiateViewController(withIdentifier: "YNotWriteCommentViewController") as! YNotWriteCommentViewController
+                    yNotWriteCommentVC.diaryID = self.SelectedDiaryID
+                    self.navigationController?.pushViewController(yNotWriteCommentVC, animated: true)
+                }
+                else if twodaysBool == false {
+                    print("코멘트 작성하기")
+                    let yReadCommentVC = UIStoryboard(name: "YReadComment", bundle: nil).instantiateViewController(withIdentifier: "YReadCommentViewController") as! YReadCommentViewController
+                    yReadCommentVC.diaryId = self.SelectedDiaryID
+                    yReadCommentVC.completion = {
+                        self.tabBarController?.selectedIndex = 1
+                    }
+                    self.navigationController?.pushViewController(yReadCommentVC, animated: true)
+                }
+               
+                
+                
+            }
+        }
+        
+        else if hadCommentBool == false {
+            if twodaysBool == true {
+                print("코멘트 오지 않음")
+                let notArrivalCommentDiaryVC = UIStoryboard(name: "NotArrivalCommentDiary", bundle: nil).instantiateViewController(withIdentifier: "NotArrivalCommentDiaryViewController") as! NotArrivalCommentDiaryViewController
+                notArrivalCommentDiaryVC.diaryID = self.SelectedDiaryID
+                self.navigationController?.pushViewController(notArrivalCommentDiaryVC, animated: true)
+                
+            }
+            else if twodaysBool == false {
+                print("코멘트 기다리기")
+                let detailCommentDiaryVC = UIStoryboard(name: "DetailCommentDiary", bundle: nil).instantiateViewController(withIdentifier: "DetailCommentDiaryViewController") as! DetailCommentDiaryViewController
+                detailCommentDiaryVC.diaryInt = self.SelectedDiaryID
+                detailCommentDiaryVC.transToggle = true
+                self.navigationController?.pushViewController(detailCommentDiaryVC, animated: true)
+                
+            }
+        }
+        
+        //코멘트 보러가기
+        //myCommentBool = true, myCommentBool = true
+
+    }
 }
 
 
 
+
+//코멘트 보러가기
+//delivery Y
+
+
+
+
+//코멘트 기다리기
+//delivery Y
+//코멘트 cnt 0
+
+
+//코멘트 오지 않음
+
+
+
+//코멘트 작성 해야함
+
+
+//
+////오늘 날짜
+//let todayDateString = detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
+//let todayDateValue = detailDayDateFormatter.date(from: todayDateString)
+//
+//
+//
+//
+//
+//
+//
+//let gatherLookDetailVC = UIStoryboard(name: "GatherLookDetail", bundle: nil).instantiateViewController(withIdentifier: "GatherLookDetailViewController") as! GatherLookDetailViewController
+//self.navigationController?.pushViewController(gatherLookDetailVC, animated: true)
+//
+//if yearLabel.text == "전체보기" {
+//    let gatherDiaryAllListResult = gatherDiaryAllList[indexPath.row]
+//    //선택된 날짜
+////            selectedDateString = gatherDiaryAllListResult.date ?? ""
+//    print(selectedDateString, "cell 중에 선택된 날짜")
+//
+//
+//    //선택된 날짜 Date
+//    let selectedDateValueAll = detailDayDateFormatter.date(from: selectedDateString)!
+//    //날짜 비교
+//    let intervalAll = todayDateValue!.timeIntervalSince(selectedDateValueAll)
+//
+//    let daysAll = Int(intervalAll / 86400)
+//
+//    if daysAll >= 2 {
+//        //이틀 이상 넘어감
+//        twodaysBool = true
+//    }
+//    else if daysAll < 2 {
+//        twodaysBool = false
+//    }
+//
+//
+//    if gatherDiaryAllListResult.commentCnt == 0 && gatherDiaryAllListResult.deliveryYn == "Y" && twodaysBool == true {
+//        print("코멘트 없는 일기")
+//
+//    }
+//    else if gatherDiaryAllListResult.commentCnt == 0 && gatherDiaryAllListResult.deliveryYn == "Y" && twodaysBool == false {
+//        print("전송완료 - 조금만 기다려주세요.")
+//
+//    }
+//
+//    else if gatherDiaryAllListResult.commentCnt != 0 && gatherDiaryAllListResult.deliveryYn == "Y" &&
+//
+//
+//
+//
+//    gatherLookDetailVC.diaryID = gatherDiaryAllList[indexPath.row].id ?? 0
+//    print(gatherLookDetailVC.diaryID, "id값???????")
+//
+//
+//
+//
+//}
+//
+//
+//
+////        let gatherLookDetailVC = UIStoryboard(name: "GatherLookDetail", bundle: nil).instantiateViewController(withIdentifier: "GatherLookDetailViewController") as! GatherLookDetailViewController
+////        self.navigationController?.pushViewController(gatherLookDetailVC, animated: true)
+////
+////        if yearLabel.text == "전체보기" {
+//////            gatherLookDetailVC.diaryID = allSelectedDiaryID
+//////            print(gatherLookDetailVC.diaryID, "id값?????????")
+////            gatherLookDetailVC.diaryID = gatherDiaryAllList[indexPath.row].id ?? 0
+////            print(gatherLookDetailVC.diaryID, "id값???????")
+////        }
+////        else if yearLabel.text != "전체보기" {
+//////            gatherLookDetailVC.diaryID = dateSelectedDiaryID
+//////            print(gatherLookDetailVC.diaryID, "id값??????????")
+////            gatherLookDetailVC.diaryID = gatherDiaryDateList[indexPath.row].id ?? 0
+////            print(gatherLookDetailVC.diaryID, "id값????????/0")
+////        }
+//
+//
+//
+//}

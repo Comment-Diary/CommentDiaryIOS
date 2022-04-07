@@ -401,9 +401,12 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         
         selectedDate = formatter.string(from: date)
         //tableviewCell에 데이트값 보내주기
-        
+        //mm월dd일
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SelectedDate"), object: krMonthDateFormatter.string(from: date))
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SelectedDayDate"), object: krDayDateFormatter.string(from: date))
+        //yyyy.mm.dd
+        NotificationCenter.default.post(name: NSNotification.Name("FullSelectedDate"), object: detailDayDateFormatter.string(from: date))
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SelectedDayDate"), object: krMonthDateFormatter.string(from: date))
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Date"), object: krDayDateFormatter.string(from: date)) // ??
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "presentDate"), object: formatter.string(from: date))

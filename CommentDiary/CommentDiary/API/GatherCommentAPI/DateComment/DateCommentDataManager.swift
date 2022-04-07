@@ -32,6 +32,7 @@ class DateCommentDataManager {
                     
                 case .failure(let error):
                     print(error.localizedDescription)
+                    print(error)
                     
                 }
             }
@@ -39,7 +40,7 @@ class DateCommentDataManager {
 }
 
 class CompareDataManager {
-    func dateCommentData(_ viewController: YReadCommentViewController, dateValue: String) {
+    func dateCommentData(_ viewController: ReadCommentViewController, dateValue: String) {
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers : HTTPHeaders = [.authorization(bearerToken: token as! String)]
         let url = "http://jwyang.shop:8080/api/v1/comment"
@@ -62,11 +63,42 @@ class CompareDataManager {
                     
                 case .failure(let error):
                     print(error.localizedDescription)
+                    print(error)
                     
                 }
             }
     }
 }
+
+class CompareDateDataManager {
+    func commentDiaryDateData(_ viewController: GatherLookViewController, dateValue: String) {
+        let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
+        let headers : HTTPHeaders = [.authorization(bearerToken: token as! String)]
+        let url = "http://jwyang.shop:8080/api/v1/comment"
+        let params : Parameters = [
+            "date" : "\(dateValue)"
+        ]
+        
+        AF.request(url,
+                   method: .get,
+                   parameters: params,
+                   encoding: URLEncoding.default,
+                   headers: headers)
+            .validate()
+            .responseDecodable(of: DateCommentResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    print("DEBUG>> Success \(response)")
+                    viewController.countCommentResponse(response)
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    print(error)
+                }
+            }
+    }
+}
+
 
 
 class PreparationStatusDataManager {
@@ -91,7 +123,9 @@ class PreparationStatusDataManager {
                     
                 case .failure(let error):
                     print(error.localizedDescription)
+                    print(error)
                 }
             }
     }
 }
+

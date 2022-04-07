@@ -124,6 +124,7 @@ class LoginViewController: UIViewController {
     @IBAction func loginTapButton(_ sender: Any) {
 
         self.showIndicator()
+
         LoginRequest.email = emailTextField.text!
         LoginRequest.password = passwordTextField.text!
         //토큰tokenuserdefault 기존 삭제

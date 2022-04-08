@@ -134,6 +134,13 @@ class PreSaveViewController : UIViewController {
     //MARK: - Actions
     
     @IBAction func allLookButtonTap(_ sender: Any) {
+//        let ypreSaveVC = UIStoryboard(name: "YPreSave", bundle: nil).instantiateViewController(withIdentifier: "YPreSaveViewController") as! YPreSaveViewController
+//        ypreSaveVC.diaryID = diaryIDValue
+//        self.navigationController?.pushViewController(ypreSaveVC, animated: true)
+    }
+    
+    
+    @IBAction func allButtonTap(_ sender: Any) {
         let ypreSaveVC = UIStoryboard(name: "YPreSave", bundle: nil).instantiateViewController(withIdentifier: "YPreSaveViewController") as! YPreSaveViewController
         ypreSaveVC.diaryID = diaryIDValue
         self.navigationController?.pushViewController(ypreSaveVC, animated: true)

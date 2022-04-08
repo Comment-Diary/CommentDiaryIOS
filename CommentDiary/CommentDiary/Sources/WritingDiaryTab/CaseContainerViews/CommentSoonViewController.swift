@@ -133,12 +133,23 @@ class CommentSoonViewController:UIViewController {
     
     @IBAction func allLookButtonTap(_ sender: Any) {
 
+//        let detailCommentVC = UIStoryboard(name: "DetailCommentDiary", bundle: nil).instantiateViewController(withIdentifier: "DetailCommentDiaryViewController") as! DetailCommentDiaryViewController
+//        self.navigationController?.pushViewController(detailCommentVC, animated: true)
+//        detailCommentVC.transToggle = true
+//        detailCommentVC.diaryInt = diaryIDValue
+//        print(diaryIDValue, "보낸 아이디 값")
+    }
+    
+    @IBAction func allButtonTap(_ sender: Any) {
         let detailCommentVC = UIStoryboard(name: "DetailCommentDiary", bundle: nil).instantiateViewController(withIdentifier: "DetailCommentDiaryViewController") as! DetailCommentDiaryViewController
         self.navigationController?.pushViewController(detailCommentVC, animated: true)
         detailCommentVC.transToggle = true
         detailCommentVC.diaryInt = diaryIDValue
         print(diaryIDValue, "보낸 아이디 값")
+        
+        
     }
+    
     
 }
 

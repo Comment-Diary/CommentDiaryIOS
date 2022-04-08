@@ -19,6 +19,8 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate, CallAPID
         ReceivedDiaryDataManager().receivedDiaryGetData(self, dateValue: data)
     }
     
+    //당겨서 리프레쉬
+    private var refreshControl = UIRefreshControl()
     
 
     //api
@@ -94,7 +96,8 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate, CallAPID
         
         
         
-        
+        commentScrollView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         
         
         
@@ -109,6 +112,12 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate, CallAPID
 
     }
     
+    @objc func refresh() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            ReceivedDiaryDataManager().receivedDiaryGetData(self, dateValue: self.todayDateString)
+            self.refreshControl.endRefreshing()
+        }
+    }
     
     
     
@@ -207,6 +216,8 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate, CallAPID
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.view.endEditing(true)
     }
+    
+
     
     //텍스트 간 간격 조정
 //    func textLineSpacing() {

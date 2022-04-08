@@ -121,12 +121,19 @@ class ReadCommentViewController: UIViewController {
 //        self.navigationController?.pushViewController(yReadCommentVC, animated: true)
         
         
-        self.showIndicator()
-        ReadCommentAllButtonTapDataManager().allbuttonTapData(diaryID: diaryIDValue, self)
+//        self.showIndicator()
+//        ReadCommentAllButtonTapDataManager().allbuttonTapData(diaryID: diaryIDValue, self)
         
         
         
     }
+    
+    @IBAction func allButtonTap(_ sender: Any) {
+        self.showIndicator()
+        ReadCommentAllButtonTapDataManager().allbuttonTapData(diaryID: diaryIDValue, self)
+    }
+    
+    
     
 }
 

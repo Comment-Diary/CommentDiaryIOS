@@ -125,12 +125,21 @@ class AloneDiaryViewController: UIViewController {
     
     
     @IBAction func entireDiaryButtonTap(_ sender: Any) {
+//        let nSaveVC = UIStoryboard(name: "NSave", bundle: nil).instantiateViewController(withIdentifier: "NSaveViewController") as! NSaveViewController
+//        nSaveVC.diaryCheckToggle = true
+//        nSaveVC.diaryidInt = diaryIDValue
+//        print(diaryIDValue, "보낸 아이디 값")
+//        self.navigationController?.pushViewController(nSaveVC, animated: true)
+
+    }
+    
+    @IBAction func allButtonTap(_ sender: Any) {
         let nSaveVC = UIStoryboard(name: "NSave", bundle: nil).instantiateViewController(withIdentifier: "NSaveViewController") as! NSaveViewController
         nSaveVC.diaryCheckToggle = true
         nSaveVC.diaryidInt = diaryIDValue
         print(diaryIDValue, "보낸 아이디 값")
         self.navigationController?.pushViewController(nSaveVC, animated: true)
-
     }
+    
     
 }

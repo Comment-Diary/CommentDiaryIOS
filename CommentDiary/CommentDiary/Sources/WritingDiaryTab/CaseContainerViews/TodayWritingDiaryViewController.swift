@@ -39,6 +39,8 @@ class TodayWritingDiaryViewController : UIViewController {
     @IBOutlet weak var writingDiaryLabel: UILabel!
     
     
+    
+    
     @IBOutlet weak var writingDiaryBackView: UIView!
     
     @IBOutlet weak var firstNoteView: UIView!
@@ -120,11 +122,20 @@ class TodayWritingDiaryViewController : UIViewController {
 //    }
 
     
-    @IBAction func writeDiaryButtonTap(_ sender: Any) {
-
+    @IBAction func allButtonTap(_ sender: Any) {
         let todayDiaryVC = UIStoryboard(name: "TodayDiary", bundle: nil).instantiateViewController(identifier: "TodayDiaryViewController") as! TodayDiaryViewController
         todayDiaryVC.dateText = presentDateString
 
         self.navigationController?.pushViewController(todayDiaryVC, animated: true)
+        
+    }
+    
+    
+    @IBAction func writeDiaryButtonTap(_ sender: Any) {
+
+//        let todayDiaryVC = UIStoryboard(name: "TodayDiary", bundle: nil).instantiateViewController(identifier: "TodayDiaryViewController") as! TodayDiaryViewController
+//        todayDiaryVC.dateText = presentDateString
+//
+//        self.navigationController?.pushViewController(todayDiaryVC, animated: true)
     }
 }

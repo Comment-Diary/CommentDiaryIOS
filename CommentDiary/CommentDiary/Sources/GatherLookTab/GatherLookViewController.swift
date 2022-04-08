@@ -51,6 +51,9 @@ class GatherLookViewController : UIViewController, LabelChangeDelegate, DateChan
         }
     }
     
+    //당겨서 리프레쉬
+    private var refreshControl = UIRefreshControl()
+    
     
     var apiDateString = ""
     //MARK: - Properties
@@ -88,6 +91,26 @@ class GatherLookViewController : UIViewController, LabelChangeDelegate, DateChan
         registerCell()
         buttonSetting()
         
+
+        
+        //당겨서 리프레시
+        sortTableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+    }
+    
+    @objc func refresh() {
+    
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            if self.apiDateString == "전체보기" {
+                GatherDiaryAllDataManager().gahterDiaryAllData(self)
+            }
+            else if self.apiDateString != "전체보기" {
+                GatherDiaryDateDataManager().gatherDiaryDateData(self, dateValue: self.apiDateString)
+            }
+            
+            self.sortTableView.reloadData()
+            self.refreshControl.endRefreshing()
+        }
 
     }
     
@@ -131,6 +154,8 @@ class GatherLookViewController : UIViewController, LabelChangeDelegate, DateChan
     func buttonSetting() {
         dateButton.layer.cornerRadius = 4
     }
+    
+    
     
     
     //MARK: - Actions

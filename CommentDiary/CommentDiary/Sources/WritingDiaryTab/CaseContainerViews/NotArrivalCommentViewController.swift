@@ -110,13 +110,25 @@ class NotArrivalCommentViewController: UIViewController {
 //        let ypreSaveVC = UIStoryboard(name: "YPreSave", bundle: nil).instantiateViewController(withIdentifier: "YPreSaveViewController") as! YPreSaveViewController
 //        ypreSaveVC.diaryID = diaryIDValue
 //        self.navigationController?.pushViewController(ypreSaveVC, animated: true)
-        let notArrivalCommentDiaryVC = UIStoryboard(name: "NotArrivalCommentDiary", bundle: nil).instantiateViewController(withIdentifier: "NotArrivalCommentDiaryViewController") as! NotArrivalCommentDiaryViewController
+//        let notArrivalCommentDiaryVC = UIStoryboard(name: "NotArrivalCommentDiary", bundle: nil).instantiateViewController(withIdentifier: "NotArrivalCommentDiaryViewController") as! NotArrivalCommentDiaryViewController
 //        notArrivalCommentDiaryVC.diaryDate = dateLabel.text ?? ""
 //        notArrivalCommentDiaryVC.diaryTitle = titleLabel.text ?? ""
 //        notArrivalCommentDiaryVC.diaryContent = contentLabel.text ?? ""
+//        notArrivalCommentDiaryVC.diaryID = self.diaryIDValue
+//        self.navigationController?.pushViewController(notArrivalCommentDiaryVC, animated: true)
+    }
+    
+    
+    @IBAction func allButtonTap(_ sender: Any) {
+        let notArrivalCommentDiaryVC = UIStoryboard(name: "NotArrivalCommentDiary", bundle: nil).instantiateViewController(withIdentifier: "NotArrivalCommentDiaryViewController") as! NotArrivalCommentDiaryViewController
+        
+        
         notArrivalCommentDiaryVC.diaryID = self.diaryIDValue
         self.navigationController?.pushViewController(notArrivalCommentDiaryVC, animated: true)
+        
+        
     }
+    
     
 
 }

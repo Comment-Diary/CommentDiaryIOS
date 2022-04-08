@@ -87,6 +87,16 @@ class DeadlinePreSaveViewController : UIViewController {
     
     @IBAction func entireButtonTap(_ sender: Any) {
 
+//        let yPreSaveDeadlineVC = UIStoryboard(name: "YPreSaveDeadline", bundle: nil).instantiateViewController(withIdentifier: "YPreSaveDeadlineViewController") as! YPreSaveDeadlineViewController
+//        yPreSaveDeadlineVC.diaryDate = self.dateLabel.text ?? ""
+//        yPreSaveDeadlineVC.diaryContent = self.contentLabel.text ?? ""
+//        yPreSaveDeadlineVC.diaryTItle = self.titleLabel.text ?? ""
+//        yPreSaveDeadlineVC.diaryId = self.diaryIDValue
+//        self.navigationController?.pushViewController(yPreSaveDeadlineVC, animated: true)
+    }
+    
+    
+    @IBAction func allButtonTap(_ sender: Any) {
         let yPreSaveDeadlineVC = UIStoryboard(name: "YPreSaveDeadline", bundle: nil).instantiateViewController(withIdentifier: "YPreSaveDeadlineViewController") as! YPreSaveDeadlineViewController
         yPreSaveDeadlineVC.diaryDate = self.dateLabel.text ?? ""
         yPreSaveDeadlineVC.diaryContent = self.contentLabel.text ?? ""

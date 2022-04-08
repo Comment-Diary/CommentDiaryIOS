@@ -40,7 +40,7 @@ class ModifyDiaryDataManager {
 
 class YModifyDiaryDataManager {
     func modifyDiaryPostData(_ viewController: YEditViewController, _ diaryValue: Int) {
-        let url = "http://jwyang.shop:8080/api/v1/diary/\(diaryValue)"
+        let url = "http://comment-diary.shop/api/v1/diary/\(diaryValue)"
         let params = ["title" : ModifyDiaryRequest.title,
                       "content" : ModifyDiaryRequest.content,
                       "deliveryYn" : ModifyDiaryRequest.deliveryYn,
@@ -70,7 +70,7 @@ class YModifyDiaryDataManager {
 
 class YModifySendDiaryDataManager {
     func modifyDiaryPostData(_ viewController: ModifySendDiaryAlertViewController, _ diaryValue: Int) {
-        let url = "http://jwyang.shop:8080/api/v1/diary/\(diaryValue)"
+        let url = "http://comment-diary.shop/api/v1/diary/\(diaryValue)"
         let params = ["title" : ModifyDiaryRequest.title,
                       "content" : ModifyDiaryRequest.content,
                       "deliveryYn" : ModifyDiaryRequest.deliveryYn,

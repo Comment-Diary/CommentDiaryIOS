@@ -36,7 +36,7 @@ class DiaryReportDataManager {
 class DiaryBlockDataManaber {
     func diaryReportPostData(_ viewController: DiaryBlockViewController, diaryId : Int, blockContent: String) {
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
-        let url = "http://jwyang.shop:8080/api/v1/report/diary"
+        let url = "http://comment-diary.shop/api/v1/report/diary"
         let params = ["diaryId" : "\(diaryId)",
                       "content" : "\(blockContent)"]
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]

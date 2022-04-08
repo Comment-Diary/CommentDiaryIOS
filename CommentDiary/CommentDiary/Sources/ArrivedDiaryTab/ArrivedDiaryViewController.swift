@@ -375,6 +375,15 @@ extension ArrivedDiaryViewController {
         else if writedCommentCount == 0 {
             myCommentTextView.text = "일기를 읽고 따뜻한 코멘트를 달아주세요."
             myCommentTextView.textColor = UIColor(hex: 0xD2D2D2)
+            myCommentTextView.isEditable = true
+            myCommentTextView.isEditable = true
+            sendCommentButton.layer.borderWidth = 0
+            sendCommentButton.isEnabled = true
+            sendCommentButton.layer.opacity = 0.4
+            sendCommentButton.backgroundColor = UIColor(hex: 0x73BF90)
+            sendCommentButton.setTitle("보내기", for: .normal)
+            sendCommentButton.setTitleColor(UIColor(hex: 0xFDFCF9), for: .normal)
+            sendCommentButton.setTitleColor(UIColor(hex: 0xFDFCF9), for: .highlighted)
             
         }
     }

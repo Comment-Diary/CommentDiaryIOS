@@ -89,9 +89,7 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate, CallAPID
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.showIndicator()
-        todayDateString = detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
-        print(todayDateString, "받을 날짜")
+
 
         
         
@@ -126,6 +124,9 @@ class ArrivedDiaryViewController: UIViewController, UITextViewDelegate, CallAPID
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //API 조회
+        self.showIndicator()
+        todayDateString = detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
+        print(todayDateString, "받을 날짜")
         ReceivedDiaryDataManager().receivedDiaryGetData(self, dateValue: todayDateString)
         
         print(viewload, "false라면 초기화 된것")

@@ -204,9 +204,7 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
 
         
         
-        calendarView.locale = Locale(identifier: Locale.current.identifier)
-//        calendarView.today = Date(timeIntervalSinceNow: -25200)
-        calendarView.today = Date(timeIntervalSinceNow: -25200)
+
         
         
         calendarViewSetting()
@@ -214,7 +212,6 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         calendarView.delegate = self
         calendarView.dataSource = self
         setEvents()
-        diaryMainPageAPICalled()
         
         caseViewsSetting()
         viewSetting()
@@ -238,6 +235,10 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        calendarView.locale = Locale(identifier: Locale.current.identifier)
+        calendarView.today = Date(timeIntervalSinceNow: -25200)
+        
+        
         //배열 초기화
         tempYArray = []
         tempYDeadlineArray = []
@@ -304,9 +305,6 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
 
     }
     
-    func diaryMainPageAPICalled() {
-//        DiaryMainPageDataManager().diaryMainDate(self)
-    }
     
     func setEvents() {
         let dfMatter = DateFormatter()

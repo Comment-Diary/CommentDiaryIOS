@@ -5,6 +5,7 @@ PODS:
   - FSCalendar (2.8.2)
   - IQKeyboardManagerSwift (6.5.9)
   - PanModal (1.2.7)
+  - Siren (5.8.1)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - FSCalendar
   - IQKeyboardManagerSwift
   - PanModal
+  - Siren
   - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
@@ -22,6 +24,7 @@ SPEC REPOS:
     - FSCalendar
     - IQKeyboardManagerSwift
     - PanModal
+    - Siren
     - SnapKit
 
 SPEC CHECKSUMS:
@@ -30,8 +33,9 @@ SPEC CHECKSUMS:
   FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
+  Siren: de768099aff1f1c9acda4247064788a4940b4bf3
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 7691b633589a15e8427a7ad38c91e6c8448b5320
+PODFILE CHECKSUM: cd1acc6548c5306d781df443c88eb7a5a6c0515b
 
 COCOAPODS: 1.11.2

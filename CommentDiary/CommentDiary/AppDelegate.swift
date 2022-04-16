@@ -10,6 +10,7 @@
 //
 
 import UIKit
+import Siren
 //import AlamofireNetworkActivityIndicator
 import IQKeyboardManagerSwift
 
@@ -48,8 +49,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UITabBar.appearance().scrollEdgeAppearance = appearance
         }
         
-        
-        
+        //업데이트
+        window?.makeKeyAndVisible()
+        let siren = Siren.shared
+        siren.apiManager = APIManager(country: .korea)
+        siren.presentationManager = PresentationManager(forceLanguageLocalization: .korean)
+        siren.rulesManager = RulesManager(majorUpdateRules: .critical, minorUpdateRules: .critical, patchUpdateRules: .critical, revisionUpdateRules: .critical)
+        siren.wail()
+
         
         
 

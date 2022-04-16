@@ -1808,7 +1808,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.1.5;
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CMC.coda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1843,7 +1843,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.1.5;
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CMC.coda;
 				PRODUCT_NAME = "$(TARGET_NAME)";

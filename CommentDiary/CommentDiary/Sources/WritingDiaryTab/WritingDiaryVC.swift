@@ -258,9 +258,6 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         
         
 
-       
-        
-        
         //미래 날짜 화면 부르기
         NotificationCenter.default.addObserver(self, selector: #selector(compareDate(_:)), name: NSNotification.Name(rawValue: "compareDate"), object: nil)
         
@@ -400,7 +397,7 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "presentDate"), object: formatter.string(from: date))
         
         
-        //MARK: - 3.14
+    
         
         let todayDateString = detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
 
@@ -543,8 +540,7 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         
 
 
-        //MARK: -
-//       self.preSaveView.isHidden = true
+
    
         
   
@@ -652,6 +648,8 @@ extension WritingDiaryVC {
 
         mainPageResult = response.result
         
+        
+        
         if response.result.count == 0 {
             allDiaryList.append("")
         }
@@ -693,9 +691,33 @@ extension WritingDiaryVC {
 
         //오늘 일기의 제목, 내용, id
         let todayDateData = detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
-        print(todayDateData, "-------------------------")
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        //MARK: - 코드리뷰
+        
+        //1. mainPageResult에 일기 date값을 전부 담는다.
+        //2. 임시저장 "Y" + 오늘날짜(-7시간) -> 임시저장 페이지
+        //3. 임시저장 "Y" + 오늘날짜가 아님 -> 임시저장 마감 페이지
+        //4. 임시저장 "N" + 코멘트일기"N" -> 혼자쓴 일기 페이지
+        //5. 임시저장 "N" + 코멘트일기"Y" + 코멘트 0개 + 이틀 넘게 차이 -> "코멘트 안옴 페이지"
+        //6. 임시저장 "N" + "코멘트일기"Y" + 코멘트 0개 + 이틀 안쪽으로 차이 -> "코멘트 곧 도착 페이지"
+        //7. 임시저장 "N" + "코멘트일기"Y" + 코멘트 0개 아님 -> 코멘트 도착 페이지
         for i in mainPageResult {
-            //??
+            // i -> diary
+            
+            
+            //명칭 (displayTodayDate)
             if todayDateData == i.date {
                 todayTitle = i.title
                 NotificationCenter.default.post(name: Notification.Name("loadDate"), object: krMonthDateFormatter)
@@ -720,6 +742,9 @@ extension WritingDiaryVC {
             
             // tempYn = "Y" 임시저장
             // tempYn = "N" 임시저장 x
+            
+            //enum(코드리뷰) 제일 먼저
+            //
             if i.tempYn == "Y" {
                 //임시저장 배열
                 //임시저장 마감
@@ -737,6 +762,8 @@ extension WritingDiaryVC {
                 }
                 
             }
+            
+            
             else if  i.tempYn == "N" {
                 //임시저장 아닌 경우
                 

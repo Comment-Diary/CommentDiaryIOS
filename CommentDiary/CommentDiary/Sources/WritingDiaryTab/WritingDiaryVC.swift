@@ -203,10 +203,6 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         //초기화
 
         
-        
-
-        
-        
         calendarViewSetting()
         setCalendar()
         calendarView.delegate = self
@@ -292,13 +288,7 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     }
     
     func caseViewsSetting() {
-//        notDiaryDayView.isHidden = true
-//        todayWritingDiaryView.isHidden = false
-//        aloneDiaryView.isHidden = true
-//        commentSoonView.isHidden = true
-//        readCommentView.isHidden = true
-//        notArrivalCommentView.isHidden = true
-//        preSaveView.isHidden = true
+
         calendarTopView.layer.cornerRadius = 60
         calendarTopInnerView.layer.cornerRadius = 60
         
@@ -531,11 +521,7 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         }
         
         
-        //todo 일기 결국 도착 x
-        //notArrivalCommentView
-        //아이디어 2틀이상 차이나면 바꿔주기
-        
-        
+
             
             //코멘트 일기, 일기 도착 o
         for i in commentArrivalArray {
@@ -671,8 +657,6 @@ extension WritingDiaryVC {
         }
         
 
-        
-        
 
         //전체 배열
         for i in mainPageResult {
@@ -875,16 +859,7 @@ extension WritingDiaryVC {
                self.deadlinePreSaveView.isHidden = true
 
             }
-//            else {
-//                self.notDiaryDayView.isHidden = true
-//                self.todayWritingDiaryView.isHidden = false
-//                self.aloneDiaryView.isHidden = true
-//                self.commentSoonView.isHidden = true
-//                self.readCommentView.isHidden = true
-//                self.notArrivalCommentView.isHidden = true
-//                self.preSaveView.isHidden = true
-//               self.deadlinePreSaveView.isHidden = true
-//            }
+
             
         }
 

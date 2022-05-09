@@ -16,25 +16,17 @@ class NotArrivalCommentDiaryViewController : UIViewController, UIScrollViewDeleg
     //MARK: - Properties
     
     @IBOutlet weak var allBackView: UIView!
-    
     @IBOutlet weak var topBackView: UIView!
-    
     @IBOutlet weak var dateLabel: UILabel!
-    
     @IBOutlet weak var titleLabel: UILabel!
-    
     @IBOutlet weak var titleBackView: UIView!
     @IBOutlet weak var separateView: UIView!
-    
     @IBOutlet weak var contentBackView: UIView!
-    
     @IBOutlet weak var contentLabel: UILabel!
-    
     @IBOutlet weak var bottomBackView: UIView!
-    
     @IBOutlet weak var infoLabel: UILabel!
-    
     @IBOutlet weak var diaryScrollView: UIScrollView!
+    
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +34,6 @@ class NotArrivalCommentDiaryViewController : UIViewController, UIScrollViewDeleg
         dateLabel.text = diaryDate
         titleLabel.text = diaryTitle
         contentLabel.text = diaryContent
-        
-        
-        
         labelSetting()
         buttonSetting()
         viewSetting()
@@ -52,13 +41,15 @@ class NotArrivalCommentDiaryViewController : UIViewController, UIScrollViewDeleg
         //API 조회
         self.showIndicator()
         NotArrivalCommentDiaryCheckDataManager().diaryCheckData(diaryID: diaryID, self)
-//      
+        
     }
+    
     func navigationBackSwipeMotion() {
         let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(_:)))
         swipeRecognizer.direction = .right
         self.view.addGestureRecognizer(swipeRecognizer)
     }
+    
     @objc func swipeAction(_ sender: UISwipeGestureRecognizer) {
         navigationController?.popViewController(animated: true)
     }
@@ -89,7 +80,6 @@ class NotArrivalCommentDiaryViewController : UIViewController, UIScrollViewDeleg
     
     func viewSetting() {
         topBackView.backgroundColor = UIColor(hex: 0xF4EDE3)
-        
         bottomBackView.backgroundColor = UIColor(hex: 0xF4EDE3)
         titleBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
         contentBackView.backgroundColor = UIColor(hex: 0xFDFCF9)

@@ -100,11 +100,7 @@ class SplashVieController : ViewController {
                     loginVC.modalTransitionStyle = .crossDissolve
                 }
             }
-//   
     }
-    
-    
-    //자동 로그인
 
     
     

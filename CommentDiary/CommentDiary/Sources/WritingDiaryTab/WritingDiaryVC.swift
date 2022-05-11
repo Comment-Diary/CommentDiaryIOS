@@ -10,7 +10,11 @@ import UIKit
 import FSCalendar
 
 
+
 class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
+    
+
+
     
     //오늘 데이터 **
     var todayTitle = ""
@@ -28,58 +32,41 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     lazy var today: Date = {
         return Date(timeIntervalSinceNow: -25200)
     }()
-//    private var currentPage: Date?
-//    lazy var today: Date = {
-//        return Date()
-//    }()
+
     
     
     
     private lazy var dateFormatter: DateFormatter = {
         let df = DateFormatter()
-//        let now = Date(timeIntervalSinceNow:  -25200)
-//        df.locale = Locale(identifier: Locale.current.identifier)
         df.dateFormat = "yyyy년 M월"
         return df
     }()
     
     lazy var krMonthDateFormatter: DateFormatter = {
         let df = DateFormatter()
-//        df.locale = Locale(identifier: "ko_KR")
         df.dateFormat = "MM월 dd일"
         return df
     }()
     
     lazy var krDayDateFormatter: DateFormatter = {
         let df = DateFormatter()
-//        df.locale = Locale(identifier: "ko_KR")
         df.dateFormat = "dd일"
         return df
     }()
     
     lazy var detailDayDateFormatter: DateFormatter = {
         let df = DateFormatter()
-//        df.locale = Locale(identifier: "ko_KR")
-//        df.timeZone = TimeZone(identifier: "UTC")
         df.dateFormat = "yyyy.MM.dd"
         return df
     }()
     
     
     
-    
-    
-    //
-    
-    
-    ///
-    
     //API
     //메인페이지 조회 파라미터
     var monthDateString = ""
     private lazy var monthDateFormatter: DateFormatter = {
         let df = DateFormatter()
-//        df.locale = Locale(identifier: "ko_KR")
         df.dateFormat = "yyyy.MM"
         return df
     }()
@@ -91,7 +78,6 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     
     //전체 배열
     var allDiaryList = [String]()
-//    var allDiaryList : Set<String> = []
     
     //혼자쓰기 일기 배열
     var nDiaryList = [String]()
@@ -113,7 +99,6 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     
     //MARK: - Array
     
-    //3.14 수정 반영
     
     //임시저장 상태 string
     var compareString = ""
@@ -201,8 +186,6 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         //초기화
-
-        
         calendarViewSetting()
         setCalendar()
         calendarView.delegate = self
@@ -213,28 +196,17 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         viewSetting()
         
         formatter.dateFormat = "yyyy.MM.dd"
-        
-        //???
-        
-        
-        
-        
-        
+
         //view radius
         caseView.layer.masksToBounds = true
         caseView.layer.cornerRadius = 10
-        
-        
-  
-        
-        
     }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         calendarView.locale = Locale(identifier: Locale.current.identifier)
         calendarView.today = Date(timeIntervalSinceNow: -25200)
-        
-        
         //배열 초기화
         tempYArray = []
         tempYDeadlineArray = []
@@ -248,8 +220,6 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         commentArrivalArray = []
         commentSoonArray = []
         
-        
-        
 
         self.showIndicator()
         DiaryMainPageDataManager().diaryMainDate(self)
@@ -260,19 +230,37 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
 
         //미래 날짜 화면 부르기
         NotificationCenter.default.addObserver(self, selector: #selector(compareDate(_:)), name: NSNotification.Name(rawValue: "compareDate"), object: nil)
-        
-        
-        
-
-
     }
     
+    
+    //MARK:  달력 밑 viewCase 코드리뷰
+    func diaryCaseView(
+        diaryPreSaveCase : Bool,
+        diaryWritingCase : Bool,
+        writedAloneDiaryCase : Bool,
+        writedCommentDiaryCase : Bool,
+        notDiaryDayCase: Bool,
+        notArrivalCommentCase : Bool,
+        arrivalCommentCase: Bool,
+        timeoverPreSaveDiaryCase: Bool) {
+            self.preSaveView.isHidden = diaryPreSaveCase
+            self.todayWritingDiaryView.isHidden = diaryWritingCase
+            self.aloneDiaryView.isHidden = writedAloneDiaryCase
+            self.commentSoonView.isHidden = writedCommentDiaryCase
+            self.notDiaryDayView.isHidden = notDiaryDayCase
+            self.notArrivalCommentView.isHidden = notArrivalCommentCase
+            self.readCommentView.isHidden = arrivalCommentCase
+            self.deadlinePreSaveView.isHidden = timeoverPreSaveDiaryCase
+        
+            print("함수호출~~~~~~~~~~~~~~~~")
+            //MARK: - 코드리뷰 함수가 여러번 호출됌??
+    }
   
     
     
 
     
-
+    //MARK: - ViewSetting
     func viewSetting() {
         view.backgroundColor = UIColor(hex: 0xF4EDE3)
         calendarBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
@@ -285,11 +273,8 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     }
     
     func caseViewsSetting() {
-
         calendarTopView.layer.cornerRadius = 60
         calendarTopInnerView.layer.cornerRadius = 60
-        
-
     }
     
     
@@ -297,10 +282,6 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         let dfMatter = DateFormatter()
         dfMatter.locale = Locale(identifier: "ko_KR")
         dfMatter.dateFormat = "yyyy.MM.dd"
-        
-
-        
-
     }
     
     
@@ -309,8 +290,6 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         calendarView.headerHeight = 0
         calendarView.placeholderType = .none
         calendarView.weekdayHeight = 0
-        
-//        calendarView.appearance.subtitleTodayColor = UIColor.red
         calendarView.appearance.selectionColor = UIColor.clear
         calendarView.appearance.borderSelectionColor = UIColor(hex: 0xFFAC86)
         calendarView.appearance.titleSelectionColor = nil
@@ -318,8 +297,6 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         calendarView.appearance.todayColor = UIColor(hex: 0xFFAC86)
         calendarView.allowsSelection = true
         calendarView.allowsMultipleSelection = false
-        
-//        calendarView.appearance.titleFont = UIFont.AppleSDGothic(.bold, size: 14)
         sundayLabel.textColor = UIColor(hex: 0x4E4C49)
         monLabel.textColor = UIColor(hex: 0x4E4C49)
         tueLabel.textColor = UIColor(hex: 0x4E4C49)
@@ -409,11 +386,6 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         let selectedDateValue = detailDayDateFormatter.date(from: selectedDateString)
         //날짜 비교 메서드
         todayDateValue!.dateCompare(fromDate: selectedDateValue!)
-                
-        
-        print(compareString, "비교 날짜 상태")
-        
-
         
         
         //오늘 일기쓸 날이 아님
@@ -661,9 +633,6 @@ extension WritingDiaryVC {
             allDiaryList.append(i.date)
             print(allDiaryList, "전체배열")
         }
-        
-        
-
         for i in mainPageResult {
             if i.deliveryYn == "N" {
                 nDiaryList.append(i.date)
@@ -672,10 +641,6 @@ extension WritingDiaryVC {
                 yDiaryList.append(i.date)
             }
         }
-        
-
-        
-        
         for i in mainPageResult {
             if (i.commentResponseList?.count != 0) && i.deliveryYn == "Y" {
                 yDiaryCommentList.append(i.date)
@@ -685,26 +650,19 @@ extension WritingDiaryVC {
             }
         }
         
-        
-        
-        
 
         //오늘 일기의 제목, 내용, id
         let todayDateData = detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         
         //MARK: - 코드리뷰
+
+        
+        
+        //MARK: - 배열 저장 프로세스 설명
         
         //1. mainPageResult에 일기 date값을 전부 담는다.
         //2. 임시저장 "Y" + 오늘날짜(-7시간) -> 임시저장 페이지
@@ -713,22 +671,22 @@ extension WritingDiaryVC {
         //5. 임시저장 "N" + 코멘트일기"Y" + 코멘트 0개 + 이틀 넘게 차이 -> "코멘트 안옴 페이지"
         //6. 임시저장 "N" + "코멘트일기"Y" + 코멘트 0개 + 이틀 안쪽으로 차이 -> "코멘트 곧 도착 페이지"
         //7. 임시저장 "N" + "코멘트일기"Y" + 코멘트 0개 아님 -> 코멘트 도착 페이지
-        for i in mainPageResult {
+        for diary in mainPageResult {
             // i -> diary
             
             
             //명칭 (displayTodayDate)
-            if todayDateData == i.date {
-                todayTitle = i.title
+            if todayDateData == diary.date {
+                todayTitle = diary.title
                 NotificationCenter.default.post(name: Notification.Name("loadDate"), object: krMonthDateFormatter)
                 
 //                print(todayTitle, "로드된 시점 제목")
                 NotificationCenter.default.post(name: Notification.Name("loadTitle"), object: todayTitle)
                 
-                todayContent = i.content
+                todayContent = diary.content
 //                print(todayContent, "로드된 시점 내용")
                 NotificationCenter.default.post(name: Notification.Name("loadContent"), object: todayContent)
-                todayDiaryId = i.id
+                todayDiaryId = diary.id
 //                print(todayDiaryId, "로드된 시점 ID값")
                 NotificationCenter.default.post(name: Notification.Name("loadID"), object: todayDiaryId)
             }
@@ -745,48 +703,48 @@ extension WritingDiaryVC {
             
             //enum(코드리뷰) 제일 먼저
             //
-            if i.tempYn == "Y" {
+            if diary.tempYn == "Y" {
                 //임시저장 배열
                 //임시저장 마감
                 //오전 7시에 마감 7시간을 빼서 같으면 아직 임시저장 다르면 마감
                 //임시저장 7시간빼기
 
-                if i.date == preSaveDateString {
-                    tempYArray.append(i.date)
+                if diary.date == preSaveDateString {
+                    tempYArray.append(diary.date)
 //                    print(tempYArray, "임시저장 배열")
                 }
-                else if i.date != preSaveDateString {
+                else if diary.date != preSaveDateString {
                     //임시저장 마감
-                    tempYDeadlineArray.append(i.date)
+                    tempYDeadlineArray.append(diary.date)
 //                    print(tempYDeadlineArray, "임시저장 마감 배열")
                 }
                 
             }
             
             
-            else if  i.tempYn == "N" {
+            else if  diary.tempYn == "N" {
                 //임시저장 아닌 경우
                 
                 //혼자 쓴 일기
-                if i.deliveryYn == "N" {
-                    deliveryNArray.append(i.date)
+                if diary.deliveryYn == "N" {
+                    deliveryNArray.append(diary.date)
                 }
                 //코멘트 받는 일기를 씀
-                else if i.deliveryYn == "Y" {
+                else if diary.deliveryYn == "Y" {
                     //코멘트가 안온 경우
                     //기다리세요 or 코멘트 x
-                    if i.commentCnt == 0 {
+                    if diary.commentCnt == 0 {
 //                        commentNoArrivalArray.append(i.date)
                         //날짜 비교 *******
-                        let arrayDate = formatter.date(from: i.date)!
+                        let arrayDate = formatter.date(from: diary.date)!
                         let interval = prepareDate!.timeIntervalSince(arrayDate)
                         let days = Int(interval / 86400)
                         if days >= 2 {
-                            commentNoArrivalArray.append(i.date)
+                            commentNoArrivalArray.append(diary.date)
 //                            print(commentNoArrivalArray, "코멘트 결국 오지 않음")
                         }
                         else if days < 2 {
-                            commentSoonArray.append(i.date)
+                            commentSoonArray.append(diary.date)
 //                            print(commentSoonArray, "코멘트 곧 도착")
                         }
                         
@@ -794,8 +752,8 @@ extension WritingDiaryVC {
                     }
                     
                     //코멘트가 온 경우
-                    else if i.commentCnt != 0 {
-                        commentArrivalArray.append(i.date)
+                    else if diary.commentCnt != 0 {
+                        commentArrivalArray.append(diary.date)
                     }
                 }
             }
@@ -806,6 +764,12 @@ extension WritingDiaryVC {
 //        //오늘 날짜에 맞는 화면 넣어주기
         let todayDateValueString = detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
         print(todayDateValueString, "오늘 날짜를 비교해보자")
+        
+        
+
+
+        
+
 
 
         for i in allDiaryList {
@@ -814,14 +778,17 @@ extension WritingDiaryVC {
                 for j in tempYArray {
                     print(j, "임시저장 배열")
                     if j == todayDateValueString { //임시저장
-                        self.notDiaryDayView.isHidden = true
-                        self.todayWritingDiaryView.isHidden = true
-                        self.aloneDiaryView.isHidden = true
-                        self.commentSoonView.isHidden = true
-                        self.readCommentView.isHidden = true
-                        self.notArrivalCommentView.isHidden = true
-                        self.preSaveView.isHidden = false
-                        self.deadlinePreSaveView.isHidden = true
+//                        self.notDiaryDayView.isHidden = true
+//                        self.todayWritingDiaryView.isHidden = true
+//                        self.aloneDiaryView.isHidden = true
+//                        self.commentSoonView.isHidden = true
+//                        self.readCommentView.isHidden = true
+//                        self.notArrivalCommentView.isHidden = true
+//                        self.preSaveView.isHidden = false
+//                        self.deadlinePreSaveView.isHidden = true
+                        
+                        diaryCaseView(diaryPreSaveCase: false, diaryWritingCase: true , writedAloneDiaryCase: true, writedCommentDiaryCase: true, notDiaryDayCase: true, notArrivalCommentCase: true, arrivalCommentCase: true, timeoverPreSaveDiaryCase: true)
+                        
                     }
                 }
                 
@@ -829,14 +796,17 @@ extension WritingDiaryVC {
                 //임시저장 기간 지난 배열
                 for j in tempYDeadlineArray {
                     if j == todayDateValueString { //임시저장
-                        self.notDiaryDayView.isHidden = true
-                        self.todayWritingDiaryView.isHidden = true
-                        self.aloneDiaryView.isHidden = true
-                        self.commentSoonView.isHidden = true
-                        self.readCommentView.isHidden = true
-                        self.notArrivalCommentView.isHidden = true
-                        self.preSaveView.isHidden = true
-                        self.deadlinePreSaveView.isHidden = false
+//                        self.notDiaryDayView.isHidden = true
+//                        self.todayWritingDiaryView.isHidden = true
+//                        self.aloneDiaryView.isHidden = true
+//                        self.commentSoonView.isHidden = true
+//                        self.readCommentView.isHidden = true
+//                        self.notArrivalCommentView.isHidden = true
+//                        self.preSaveView.isHidden = true
+//                        self.deadlinePreSaveView.isHidden = false
+                        
+                        
+                        diaryCaseView(diaryPreSaveCase: true, diaryWritingCase: true, writedAloneDiaryCase: true, writedCommentDiaryCase: true, notDiaryDayCase: true, notArrivalCommentCase: true, arrivalCommentCase: true, timeoverPreSaveDiaryCase: false)
                     }
                 }
                 
@@ -846,54 +816,54 @@ extension WritingDiaryVC {
                     if k == todayDateValueString { //혼자쓴일기
                         print("앙앙")
                         
-                        self.notDiaryDayView.isHidden = true
-                        self.todayWritingDiaryView.isHidden = true
-                        self.aloneDiaryView.isHidden = false
-                        self.commentSoonView.isHidden = true
-                        self.readCommentView.isHidden = true
-                        self.notArrivalCommentView.isHidden = true
-                        self.preSaveView.isHidden = true
-                        self.deadlinePreSaveView.isHidden = true
+//                        self.notDiaryDayView.isHidden = true
+//                        self.todayWritingDiaryView.isHidden = true
+//                        self.aloneDiaryView.isHidden = false
+//                        self.commentSoonView.isHidden = true
+//                        self.readCommentView.isHidden = true
+//                        self.notArrivalCommentView.isHidden = true
+//                        self.preSaveView.isHidden = true
+//                        self.deadlinePreSaveView.isHidden = true
+                        
+                        diaryCaseView(diaryPreSaveCase: true, diaryWritingCase: true, writedAloneDiaryCase: false, writedCommentDiaryCase: true, notDiaryDayCase: true, notArrivalCommentCase: true, arrivalCommentCase: true, timeoverPreSaveDiaryCase: true)
                     }
                 }
 
                 for q in commentSoonArray {
                     if q == todayDateValueString { //코멘트일기
                         print("잉잉")
-                        self.notDiaryDayView.isHidden = true
-                        self.todayWritingDiaryView.isHidden = true
-                        self.aloneDiaryView.isHidden = true
-                        self.commentSoonView.isHidden = false
-                        self.readCommentView.isHidden = true
-                        self.notArrivalCommentView.isHidden = true
-                        self.preSaveView.isHidden = true
-                        self.deadlinePreSaveView.isHidden = true
+//                        self.notDiaryDayView.isHidden = true
+//                        self.todayWritingDiaryView.isHidden = true
+//                        self.aloneDiaryView.isHidden = true
+//                        self.commentSoonView.isHidden = false
+//                        self.readCommentView.isHidden = true
+//                        self.notArrivalCommentView.isHidden = true
+//                        self.preSaveView.isHidden = true
+//                        self.deadlinePreSaveView.isHidden = true
+                        
+                        diaryCaseView(diaryPreSaveCase: true, diaryWritingCase: true, writedAloneDiaryCase: true, writedCommentDiaryCase: false, notDiaryDayCase: true, notArrivalCommentCase: true, arrivalCommentCase: true, timeoverPreSaveDiaryCase: true)
                     }
                 }
                 break
             }
-//            print(i, "어떤식")
            else if i != todayDateValueString { //일기 쓰기
-               print(i, "이건뭐지")
-               print("????")
-                self.notDiaryDayView.isHidden = true
-                self.todayWritingDiaryView.isHidden = false
-                self.aloneDiaryView.isHidden = true
-                self.commentSoonView.isHidden = true
-                self.readCommentView.isHidden = true
-                self.notArrivalCommentView.isHidden = true
-                self.preSaveView.isHidden = true
-               self.deadlinePreSaveView.isHidden = true
+
+//                self.notDiaryDayView.isHidden = true
+//                self.todayWritingDiaryView.isHidden = false
+//                self.aloneDiaryView.isHidden = true
+//                self.commentSoonView.isHidden = true
+//                self.readCommentView.isHidden = true
+//                self.notArrivalCommentView.isHidden = true
+//                self.preSaveView.isHidden = true
+//               self.deadlinePreSaveView.isHidden = true
+               
+               diaryCaseView(diaryPreSaveCase: true, diaryWritingCase: false , writedAloneDiaryCase: true, writedCommentDiaryCase: true, notDiaryDayCase: true, notArrivalCommentCase: true, arrivalCommentCase: true, timeoverPreSaveDiaryCase: true)
 
             }
 
             
         }
 
-        
-        
-        
-        
         self.dismissIndicator()
         calendarView.reloadData()
     }

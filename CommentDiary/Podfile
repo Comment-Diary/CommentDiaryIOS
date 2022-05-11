@@ -13,4 +13,6 @@ pod 'Alamofire', '~> 5.5'
 pod 'PanModal'
 pod 'IQKeyboardManagerSwift'
 pod 'Siren'
+pod 'Firebase/Analytics'
+pod 'Firebase/Messaging'
 end

@@ -274,8 +274,6 @@ extension GatherLookViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-//        print(gatherDiaryDateList[indexPath.row].id, "선택한 일기의 id값")
         
         if yearLabel.text == "전체보기" {
             let gatherDiaryAllListResult = gatherDiaryAllList[indexPath.row]
@@ -340,8 +338,6 @@ extension GatherLookViewController {
                 pastOrNow = false
             }
             
-            
-            
             //오늘 날짜
             let todayDateString = detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
             let todayDateValue = detailDayDateFormatter.date(from: todayDateString)
@@ -378,8 +374,6 @@ extension GatherLookViewController {
         else if response.result.count != 0 {
             myCommentBool = true
         }
-        
-        
         if hadCommentBool == true {
             if myCommentBool == true {
                 print("코멘트 보러가기")
@@ -434,103 +428,3 @@ extension GatherLookViewController {
 }
 
 
-
-
-//코멘트 보러가기
-//delivery Y
-
-
-
-
-//코멘트 기다리기
-//delivery Y
-//코멘트 cnt 0
-
-
-//코멘트 오지 않음
-
-
-
-//코멘트 작성 해야함
-
-
-//
-////오늘 날짜
-//let todayDateString = detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
-//let todayDateValue = detailDayDateFormatter.date(from: todayDateString)
-//
-//
-//
-//
-//
-//
-//
-//let gatherLookDetailVC = UIStoryboard(name: "GatherLookDetail", bundle: nil).instantiateViewController(withIdentifier: "GatherLookDetailViewController") as! GatherLookDetailViewController
-//self.navigationController?.pushViewController(gatherLookDetailVC, animated: true)
-//
-//if yearLabel.text == "전체보기" {
-//    let gatherDiaryAllListResult = gatherDiaryAllList[indexPath.row]
-//    //선택된 날짜
-////            selectedDateString = gatherDiaryAllListResult.date ?? ""
-//    print(selectedDateString, "cell 중에 선택된 날짜")
-//
-//
-//    //선택된 날짜 Date
-//    let selectedDateValueAll = detailDayDateFormatter.date(from: selectedDateString)!
-//    //날짜 비교
-//    let intervalAll = todayDateValue!.timeIntervalSince(selectedDateValueAll)
-//
-//    let daysAll = Int(intervalAll / 86400)
-//
-//    if daysAll >= 2 {
-//        //이틀 이상 넘어감
-//        twodaysBool = true
-//    }
-//    else if daysAll < 2 {
-//        twodaysBool = false
-//    }
-//
-//
-//    if gatherDiaryAllListResult.commentCnt == 0 && gatherDiaryAllListResult.deliveryYn == "Y" && twodaysBool == true {
-//        print("코멘트 없는 일기")
-//
-//    }
-//    else if gatherDiaryAllListResult.commentCnt == 0 && gatherDiaryAllListResult.deliveryYn == "Y" && twodaysBool == false {
-//        print("전송완료 - 조금만 기다려주세요.")
-//
-//    }
-//
-//    else if gatherDiaryAllListResult.commentCnt != 0 && gatherDiaryAllListResult.deliveryYn == "Y" &&
-//
-//
-//
-//
-//    gatherLookDetailVC.diaryID = gatherDiaryAllList[indexPath.row].id ?? 0
-//    print(gatherLookDetailVC.diaryID, "id값???????")
-//
-//
-//
-//
-//}
-//
-//
-//
-////        let gatherLookDetailVC = UIStoryboard(name: "GatherLookDetail", bundle: nil).instantiateViewController(withIdentifier: "GatherLookDetailViewController") as! GatherLookDetailViewController
-////        self.navigationController?.pushViewController(gatherLookDetailVC, animated: true)
-////
-////        if yearLabel.text == "전체보기" {
-//////            gatherLookDetailVC.diaryID = allSelectedDiaryID
-//////            print(gatherLookDetailVC.diaryID, "id값?????????")
-////            gatherLookDetailVC.diaryID = gatherDiaryAllList[indexPath.row].id ?? 0
-////            print(gatherLookDetailVC.diaryID, "id값???????")
-////        }
-////        else if yearLabel.text != "전체보기" {
-//////            gatherLookDetailVC.diaryID = dateSelectedDiaryID
-//////            print(gatherLookDetailVC.diaryID, "id값??????????")
-////            gatherLookDetailVC.diaryID = gatherDiaryDateList[indexPath.row].id ?? 0
-////            print(gatherLookDetailVC.diaryID, "id값????????/0")
-////        }
-//
-//
-//
-//}

@@ -137,6 +137,7 @@
 		A56FF79627C0E89400C740F7 /* TodayDiaryBottom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56FF79527C0E89400C740F7 /* TodayDiaryBottom.storyboard */; };
 		A56FF79B27C16AC100C740F7 /* EmailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56FF79A27C16AC100C740F7 /* EmailResponse.swift */; };
 		A56FF79D27C16ACC00C740F7 /* EmailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56FF79C27C16ACC00C740F7 /* EmailDataManager.swift */; };
+		A5713F9F282BA66B00A73CC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5713F9E282BA66A00A73CC1 /* GoogleService-Info.plist */; };
 		A595203A27D89A4F005D414D /* CommentWritingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A595203927D89A4F005D414D /* CommentWritingResponse.swift */; };
 		A595203C27D89A5B005D414D /* CommentWritingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A595203B27D89A5B005D414D /* CommentWritingRequest.swift */; };
 		A595203E27D89A67005D414D /* CommentWritingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A595203D27D89A67005D414D /* CommentWritingDataManager.swift */; };
@@ -335,6 +336,7 @@
 		A56FF79527C0E89400C740F7 /* TodayDiaryBottom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TodayDiaryBottom.storyboard; sourceTree = "<group>"; };
 		A56FF79A27C16AC100C740F7 /* EmailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailResponse.swift; sourceTree = "<group>"; };
 		A56FF79C27C16ACC00C740F7 /* EmailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailDataManager.swift; sourceTree = "<group>"; };
+		A5713F9E282BA66A00A73CC1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A595203927D89A4F005D414D /* CommentWritingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentWritingResponse.swift; sourceTree = "<group>"; };
 		A595203B27D89A5B005D414D /* CommentWritingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentWritingRequest.swift; sourceTree = "<group>"; };
 		A595203D27D89A67005D414D /* CommentWritingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentWritingDataManager.swift; sourceTree = "<group>"; };
@@ -886,6 +888,7 @@
 				A567614C27B7E452006FDA7F /* ViewController.swift */,
 				A567615127B7E454006FDA7F /* Assets.xcassets */,
 				A567615327B7E454006FDA7F /* LaunchScreen.storyboard */,
+				A5713F9E282BA66A00A73CC1 /* GoogleService-Info.plist */,
 				A567615627B7E454006FDA7F /* Info.plist */,
 			);
 			path = CommentDiary;
@@ -1440,6 +1443,7 @@
 				A5BF9CEC27C8C64C0093B900 /* SendDiaryAlert.storyboard in Resources */,
 				A567617D27B7F640006FDA7F /* Splash.storyboard in Resources */,
 				A56FF79627C0E89400C740F7 /* TodayDiaryBottom.storyboard in Resources */,
+				A5713F9F282BA66B00A73CC1 /* GoogleService-Info.plist in Resources */,
 				A547A99127EC889000DAAFE3 /* ModifySendDiaryAlert.storyboard in Resources */,
 				A518AFC227EA1ECE0024E1F1 /* SendCommentAlert.storyboard in Resources */,
 				A5C9FB7F27C6263500445012 /* CommentReportAlert.storyboard in Resources */,

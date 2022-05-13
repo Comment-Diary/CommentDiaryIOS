@@ -13,6 +13,9 @@ import UIKit
 import Siren
 //import AlamofireNetworkActivityIndicator
 import IQKeyboardManagerSwift
+import UserNotifications
+import Firebase
+import FirebaseMessaging
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,7 +28,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-
+        //MARK: - PushAlert
+        FirebaseApp.configure()
+        Messaging.messaging().delegate = self
+        
+        //FCM 현재 등록 토큰 확인
+        Messaging.messaging().token { token, error in
+            if let error = error {
+                print("ERROR FCM 토큰 가져오기 \(error.localizedDescription)")
+            } else if let token = token {
+                print("FCM 등록토큰 \(token)")
+            }
+        }
+        
+        
+        
+        //특정페이지 이동
+        let userNotificationCenter = UNUserNotificationCenter.current()
+        
+        
+        userNotificationCenter.delegate = self
+        application.registerForRemoteNotifications()
+        
+        
+        let authOptions: UNAuthorizationOptions = [.alert, .sound, .badge]
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { _, error in
+            print("ERROR, Request Notifications Authorization: \(error.debugDescription)")
+        }
+        application.registerForRemoteNotifications()
+        
+        
+        
+        
 
         if #available(iOS 13.0, *) {
             UITabBar.appearance().isTranslucent = false
@@ -91,5 +126,75 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        TokenRefreshDataManager().tokenRefreshPostData()
 //    }
 
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+ 
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let userInfo = notification.request.content.userInfo
+        Messaging.messaging().appDidReceiveMessage(userInfo)
+        
+        
+        completionHandler([.alert, .sound, .badge])
+    }
+    
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        Messaging.messaging().appDidReceiveMessage(userInfo)
+        completionHandler()
+        
+        
+        let application = UIApplication.shared
+        print(response.notification.request.content.title, "제목값")
+        
+        enum fcmTitle: String {
+            case arrivalComment = "하이"
+            case writeComment = "하이하이"
+            
+        }
+
+        
+        func fcmTitleCase() {
+            switch response.notification.request.content.title {
+            case fcmTitle.arrivalComment.rawValue:
+                print("1")
+                NotificationCenter.default.post(name: Notification.Name("arrivalCommentFCM"), object: nil)
+            case fcmTitle.writeComment.rawValue:
+                print("2")
+                NotificationCenter.default.post(name: Notification.Name("writeCommentFCM"), object: nil)
+            default:
+                print("예외")
+            }
+        }
+
+        switch application.applicationState {
+            //앱이 켜져있는 상태에서 푸쉬 알림 눌렀을 때
+        case .inactive:
+            fcmTitleCase()
+            //앱이 꺼져있는 상태에서 푸쉬알림 눌렀을 때
+        case .active:
+            fcmTitleCase()
+            
+        case .background:
+            fcmTitleCase()
+        default:
+            break
+        }
+        
+
+    }
+}
+
+extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        guard let token = fcmToken else { return }
+        print("FCM 등록토큰 갱신 \(token)")
+        
+        //토큰 저장
+        UserDefaults.standard.set(token, forKey: "deviceToken")
+        
+    }
 }
 

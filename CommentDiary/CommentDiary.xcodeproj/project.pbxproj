@@ -400,6 +400,7 @@
 		A5CCD19027C4CDF00096281F /* PasswordSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordSearch.storyboard; sourceTree = "<group>"; };
 		A5CCD19327C4E4060096281F /* SearchPasswordDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPasswordDataManager.swift; sourceTree = "<group>"; };
 		A5CCD19527C4E4110096281F /* SearchPasswordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPasswordResponse.swift; sourceTree = "<group>"; };
+		A5EF5E93282E376200B13EAD /* CommentDiary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CommentDiary.entitlements; sourceTree = "<group>"; };
 		E3C33BD30605D7DB387967A7 /* Pods-CommentDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommentDiary.release.xcconfig"; path = "Target Support Files/Pods-CommentDiary/Pods-CommentDiary.release.xcconfig"; sourceTree = "<group>"; };
 		F7CFBFB7F6DD1F7AD2C2DF30 /* Pods-CommentDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommentDiary.debug.xcconfig"; path = "Target Support Files/Pods-CommentDiary/Pods-CommentDiary.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -875,6 +876,7 @@
 		A567614727B7E452006FDA7F /* CommentDiary */ = {
 			isa = PBXGroup;
 			children = (
+				A5EF5E93282E376200B13EAD /* CommentDiary.entitlements */,
 				A51573A527FCB5DF00390CC7 /* Configuration */,
 				A567617127B7EA13006FDA7F /* CommonClass */,
 				A567616E27B7E8C8006FDA7F /* Secret */,
@@ -1794,6 +1796,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CommentDiary/CommentDiary.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1830,6 +1833,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CommentDiary/CommentDiary.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

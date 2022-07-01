@@ -23,6 +23,7 @@
 import Foundation
 import UIKit
 
+
 extension UIFont {
    public enum NotoSansType: String {
        case bold = "Bold"

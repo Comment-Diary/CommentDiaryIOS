@@ -31,5 +31,13 @@ extension UIColor {
     class var mainGreenColor : UIColor { UIColor(hex: 0x73BF90)}
     
     class var mainBackgroundColor : UIColor { UIColor(hex: 0xE5E5E5)}
+    
+    
+    
+    //VER2
+    class var mainTabBarItemColor: UIColor { UIColor(hex: 0x4E4C49)}
+    class var myDiaryMainBackgroundColor: UIColor { UIColor(hex: 0xF5F5F5)}
+    class var myDiaryCalendarBorderColor: UIColor { UIColor(hex: 0x5ABD80)}
+    class var myDiaryCalendarBackgroundColor : UIColor { UIColor(hex: 0xFDFCF9)}
   
 }

@@ -37,12 +37,12 @@
             </objects>
             <point key="canvasLocation" x="177" y="-17"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab BarVC-->
         <scene sceneID="s7f-sW-4pq">
             <objects>
-                <tabBarController useStoryboardIdentifierAsRestorationIdentifier="YES" id="JpM-Du-h0b" sceneMemberID="viewController">
+                <tabBarController useStoryboardIdentifierAsRestorationIdentifier="YES" id="JpM-Du-h0b" customClass="TabBarVC" customModule="CommentDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="pod-xT-OLu"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aKF-DV-EHp">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="aKF-DV-EHp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <tabBarAppearance key="standardAppearance"/>

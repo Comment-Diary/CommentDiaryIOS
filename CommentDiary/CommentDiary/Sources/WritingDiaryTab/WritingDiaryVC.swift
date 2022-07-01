@@ -251,8 +251,6 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             self.notArrivalCommentView.isHidden = notArrivalCommentCase
             self.readCommentView.isHidden = arrivalCommentCase
             self.deadlinePreSaveView.isHidden = timeoverPreSaveDiaryCase
-        
-            print("함수호출~~~~~~~~~~~~~~~~")
             //MARK: - 코드리뷰 함수가 여러번 호출됌??
     }
   
@@ -262,12 +260,14 @@ class WritingDiaryVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     
     //MARK: - ViewSetting
     func viewSetting() {
-        view.backgroundColor = UIColor(hex: 0xF4EDE3)
-        calendarBackView.backgroundColor = UIColor(hex: 0xFDFCF9)
+        view.backgroundColor = UIColor.myDiaryMainBackgroundColor
+        calendarBackView.backgroundColor = UIColor.myDiaryCalendarBackgroundColor
+//        calendarBackView.backgroundColor = UIColor.red
+        
         calendarBackView.layer.borderWidth = 4
         calendarBackView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         calendarBackView.layer.cornerRadius = 60
-        calendarBackView.layer.borderColor = UIColor(hex: 0x73BF90).cgColor
+        calendarBackView.layer.borderColor = UIColor.myDiaryCalendarBorderColor.cgColor
         topLayerView.backgroundColor = UIColor(hex: 0xE2DFD7)
         bottomLayerView.backgroundColor = UIColor(hex: 0xE2DFD7)
     }

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today Diary2 View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="TodayDiary2ViewController" id="Y6W-OH-hqX" customClass="TodayDiary2ViewController" customModule="CommentDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bDs-qs-a5F">
+                                <rect key="frame" x="0.0" y="44" width="414" height="63"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ola-Cl-Qyo">
+                                        <rect key="frame" x="16" y="9.5" width="44" height="44"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="arrowLeft"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9Y-eW-0Lg">
+                                        <rect key="frame" x="149" y="16" width="117" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="코멘트 받는 일기"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VaP-8X-rYd">
+                                        <rect key="frame" x="334" y="16" width="62" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="62" id="bNb-bs-jfH"/>
+                                            <constraint firstAttribute="height" constant="31" id="dFE-1T-x9F"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="전송"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="VaP-8X-rYd" secondAttribute="trailing" constant="18" id="RyC-Ed-fN2"/>
+                                    <constraint firstItem="VaP-8X-rYd" firstAttribute="centerY" secondItem="bDs-qs-a5F" secondAttribute="centerY" id="Sym-gZ-7sH"/>
+                                    <constraint firstAttribute="width" secondItem="bDs-qs-a5F" secondAttribute="height" multiplier="375:57" id="ebC-FZ-OEL"/>
+                                    <constraint firstItem="Ola-Cl-Qyo" firstAttribute="centerY" secondItem="bDs-qs-a5F" secondAttribute="centerY" id="geK-ju-Vy3"/>
+                                    <constraint firstItem="Ola-Cl-Qyo" firstAttribute="leading" secondItem="bDs-qs-a5F" secondAttribute="leading" constant="16" id="jx6-1k-FKc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bDs-qs-a5F" secondAttribute="trailing" id="K14-ni-0bw"/>
+                            <constraint firstItem="bDs-qs-a5F" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="tAB-vM-VhO"/>
+                            <constraint firstItem="bDs-qs-a5F" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="uRv-Bb-l46"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="101" y="81"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrowLeft" width="44" height="44"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

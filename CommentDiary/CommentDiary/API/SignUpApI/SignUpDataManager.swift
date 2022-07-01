@@ -33,8 +33,12 @@ class SignUpDataManager {
                             viewController.dismissIndicator()
                             viewController.presentBottomAlert(message: "이미 가입되어 있는 이메일입니다.")
                             
+                        case 500:
+                            viewController.dismissIndicator()
+                            viewController.presentBottomAlert(message: "서버 내부에 에러가 발생했습니다.")
                         default:
-                            viewController.presentBottomAlert(message: "이미 가입되어 있는 이메일입니다.")
+                            viewController.dismissIndicator()
+                            viewController.presentBottomAlert(message: "서버 내부에 에러가 발생했습니다.")
                         }
                     }
                     

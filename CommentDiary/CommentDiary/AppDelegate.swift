@@ -19,13 +19,7 @@ import FirebaseMessaging
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-
-    
-
     var window: UIWindow?
-    
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //MARK: - PushAlert
@@ -143,47 +137,70 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         let userInfo = response.notification.request.content.userInfo
         Messaging.messaging().appDidReceiveMessage(userInfo)
-        completionHandler()
+
         
         
         let application = UIApplication.shared
         print(response.notification.request.content.title, "제목값")
         
         enum fcmTitle: String {
-            case arrivalComment = "하이"
+            case arrivalComment = "코멘트가 도착했어요"
             case writeComment = "하이하이"
             
         }
 
         
-        func fcmTitleCase() {
-            switch response.notification.request.content.title {
-            case fcmTitle.arrivalComment.rawValue:
-                print("1")
-                NotificationCenter.default.post(name: Notification.Name("arrivalCommentFCM"), object: nil)
-            case fcmTitle.writeComment.rawValue:
-                print("2")
-                NotificationCenter.default.post(name: Notification.Name("writeCommentFCM"), object: nil)
-            default:
-                print("예외")
-            }
-        }
+//        func fcmTitleCase() {
+//            guard let rootViewController = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController else { return }
+//            let gatherLookStoryboard = UIStoryboard(name: "GatherLookDetail", bundle: nil)
+//
+//            switch response.notification.request.content.title {
+//            case fcmTitle.arrivalComment.rawValue:
+//                print("코멘트가 도착했어요")
+//                NotificationCenter.default.post(name: Notification.Name("arrivalCommentFCM"), object: nil)
+//                let gatherLookDetailVC = gatherLookStoryboard.instantiateViewController(withIdentifier: "GatherLookDetailViewController") as! GatherLookDetailViewController
+//                let navVC = rootViewController as? UINavigationController
+//                navVC?.pushViewController(gatherLookDetailVC, animated: true)
+//
+//            case fcmTitle.writeComment.rawValue:
+//                print("2")
+//                NotificationCenter.default.post(name: Notification.Name("writeCommentFCM"), object: nil)
+//            default:
+//                print("예외")
+//            }
+//        }
 
         switch application.applicationState {
             //앱이 켜져있는 상태에서 푸쉬 알림 눌렀을 때
         case .inactive:
-            fcmTitleCase()
+//            fcmTitleCase()
+            print("inactive")
+            
+            if response.notification.request.content.title == "코멘트가 도착했어요" {
+                guard let rootViewController = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController else { return }
+                let gatherLookStoryboard = UIStoryboard(name: "GatherLookDetail", bundle: nil)
+                let gatherLookDetailVC = gatherLookStoryboard.instantiateViewController(withIdentifier: "GatherLookDetailViewController") as! GatherLookDetailViewController
+                let navVC = rootViewController as? UINavigationController
+//                let tabBarVC = navVC?.viewControllers.first
+//                tabBarVC?.pushViewController(gatherLookDetailVC, animated: true)
+                
+                
+//                navVC?.viewControllers.first?.present(gatherLookDetailVC, animated: true)
+
+            }
+            
             //앱이 꺼져있는 상태에서 푸쉬알림 눌렀을 때
         case .active:
-            fcmTitleCase()
+//            fcmTitleCase()
+            print("active")
             
         case .background:
-            fcmTitleCase()
+//            fcmTitleCase()
+            print("background")
         default:
             break
         }
-        
-
+        completionHandler()
     }
 }
 
@@ -197,4 +214,5 @@ extension AppDelegate: MessagingDelegate {
         
     }
 }
+
 

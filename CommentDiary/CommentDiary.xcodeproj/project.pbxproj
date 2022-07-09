@@ -207,6 +207,7 @@
 		A5CCD19127C4CDF00096281F /* PasswordSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CCD19027C4CDF00096281F /* PasswordSearch.storyboard */; };
 		A5CCD19427C4E4060096281F /* SearchPasswordDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCD19327C4E4060096281F /* SearchPasswordDataManager.swift */; };
 		A5CCD19627C4E4110096281F /* SearchPasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCD19527C4E4110096281F /* SearchPasswordResponse.swift */; };
+		A5E7EFA42879716D00D3C086 /* WritingDiaryCancelAlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E7EFA32879716D00D3C086 /* WritingDiaryCancelAlertModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -412,6 +413,7 @@
 		A5CCD19027C4CDF00096281F /* PasswordSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordSearch.storyboard; sourceTree = "<group>"; };
 		A5CCD19327C4E4060096281F /* SearchPasswordDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPasswordDataManager.swift; sourceTree = "<group>"; };
 		A5CCD19527C4E4110096281F /* SearchPasswordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPasswordResponse.swift; sourceTree = "<group>"; };
+		A5E7EFA32879716D00D3C086 /* WritingDiaryCancelAlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingDiaryCancelAlertModel.swift; sourceTree = "<group>"; };
 		A5EF5E93282E376200B13EAD /* CommentDiary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CommentDiary.entitlements; sourceTree = "<group>"; };
 		E3C33BD30605D7DB387967A7 /* Pods-CommentDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommentDiary.release.xcconfig"; path = "Target Support Files/Pods-CommentDiary/Pods-CommentDiary.release.xcconfig"; sourceTree = "<group>"; };
 		F7CFBFB7F6DD1F7AD2C2DF30 /* Pods-CommentDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommentDiary.debug.xcconfig"; path = "Target Support Files/Pods-CommentDiary/Pods-CommentDiary.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1245,6 +1247,7 @@
 			children = (
 				A5C7135B286B5174009CE07B /* WritingDiaryCancel.storyboard */,
 				A5C7135D286B5185009CE07B /* WritingDiaryCancelAlertViewController.swift */,
+				A5E7EFA32879716D00D3C086 /* WritingDiaryCancelAlertModel.swift */,
 			);
 			path = WritingDiaryCancelAlert;
 			sourceTree = "<group>";
@@ -1645,6 +1648,7 @@
 				A54647B427D9EC5600FBD3C2 /* TokenRefreshResponse.swift in Sources */,
 				A529502A27DB752B00192054 /* GatherLookViewController.swift in Sources */,
 				A5C9FB7827C60F3900445012 /* PasswordSentAlertService.swift in Sources */,
+				A5E7EFA42879716D00D3C086 /* WritingDiaryCancelAlertModel.swift in Sources */,
 				A520915C27DCD121003017AC /* SendCommentCell.swift in Sources */,
 				A5567C8627BD4C98001A4B98 /* ArrivedDiaryViewController.swift in Sources */,
 				A56B698027DA02E7001385DC /* DiaryReportDataManager.swift in Sources */,

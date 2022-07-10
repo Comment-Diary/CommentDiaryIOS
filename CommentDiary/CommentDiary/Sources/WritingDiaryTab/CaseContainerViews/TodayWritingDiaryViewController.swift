@@ -123,10 +123,10 @@ class TodayWritingDiaryViewController : UIViewController {
 
     
     @IBAction func allButtonTap(_ sender: Any) {
-        let todayDiaryVC = UIStoryboard(name: "TodayDiary", bundle: nil).instantiateViewController(identifier: "TodayDiaryViewController") as! TodayDiaryViewController
-        todayDiaryVC.dateText = presentDateString
+        let todayDiary2VC = UIStoryboard(name: "TodayDiary2", bundle: nil).instantiateViewController(identifier: "TodayDiary2ViewController") as! TodayDiary2ViewController
+//        todayDiary2VC.dateText = presentDateString
 
-        self.navigationController?.pushViewController(todayDiaryVC, animated: true)
+        self.navigationController?.pushViewController(todayDiary2VC, animated: true)
         
     }
     

@@ -22,6 +22,19 @@ class TodayDiary2ViewController : UIViewController {
     
     //MARK: - ACTIONS
     
+    @IBAction func backButtonClicked(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "WritingDiaryCancel", bundle: nil).instantiateViewController(withIdentifier: "WritingDiaryCancelAlertViewController") as! WritingDiaryCancelAlertViewController
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func diaryTypeButtonClicked(_ sender: UIButton) {
+    }
+    
+    @IBAction func saveDiaryButtonClicked(_ sender: UIButton) {
+    }
+    
+    
+    
 }
 
 

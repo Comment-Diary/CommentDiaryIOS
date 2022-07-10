@@ -10,15 +10,18 @@ import UIKit
 
 class WritingDiaryCancelAlertViewController : UIViewController {
     
-    enum ButtonName: String {
+    enum StringCase : String {
         case cancel
         case exit
-        func getButtonName() -> String {
+        case alert
+        func getString() -> String {
             switch self {
             case .cancel:
                 return "취소"
             case .exit:
                 return "나가기"
+            case .alert:
+                return "지금 나가면 쓴 일기가 날아가요. \n나가시겠어요?"
             }
         }
     }
@@ -63,17 +66,20 @@ class WritingDiaryCancelAlertViewController : UIViewController {
         buttonFont()
         buttonBackground()
         labelFont()
+        labelText()
         
     }
     
     func buttonTitle() {
-        exitButton.setTitle(ButtonName.cancel.getButtonName(), for: .normal)
-        cancelButton.setTitle(ButtonName.cancel.getButtonName(), for: .normal)
+        exitButton.setTitle(StringCase.exit.getString(), for: .normal)
+        cancelButton.setTitle(StringCase.cancel.getString(), for: .normal)
         
     }
     func buttonTitleColor() {
         exitButton.setTitleColor(hexColor.stringColor.getHexColor(), for: .normal)
+        exitButton.isHighlighted = false
         cancelButton.setTitleColor(hexColor.stringColor.getHexColor(), for: .normal)
+        cancelButton.isHighlighted = false
     }
     func buttonBackground() {
         exitButton.backgroundColor = hexColor.backgroundColor.getHexColor()
@@ -84,8 +90,13 @@ class WritingDiaryCancelAlertViewController : UIViewController {
         cancelButton.titleLabel?.font = .AppleSDGothic(.bold, size: 13)
         exitButton.titleLabel?.font = .AppleSDGothic(.bold, size: 13)
     }
+    func labelText() {
+        alertLabel.text = StringCase.alert.getString()
+        alertLabel.setLineSpacing(spacing: 12)
+        alertLabel.textAlignment = .center
+    }
     func labelFont() {
-        alertLabel.font = UIFont.AppleSDGothic(.bold, size: 13)
+        alertLabel.font = .AppleSDGothic(.bold, size: 13)
     }
     func viewSetting() {
         alertView.backgroundColor = hexColor.backgroundColor.getHexColor()
@@ -93,6 +104,7 @@ class WritingDiaryCancelAlertViewController : UIViewController {
         bottomBackView.backgroundColor = hexColor.backgroundColor.getHexColor()
         verSeparateView.backgroundColor = hexColor.separateColor.getHexColor()
         horSeparateView.backgroundColor = hexColor.separateColor.getHexColor()
+        alertView.clipsToBounds = true
         alertView.layer.cornerRadius = CGFloat(alerViewCornerRadiusValue)
     }
     

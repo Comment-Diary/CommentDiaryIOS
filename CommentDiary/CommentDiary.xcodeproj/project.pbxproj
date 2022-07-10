@@ -95,6 +95,8 @@
 		A561E79F27FBDF0D00EAACEC /* AppleSDGothicNeoB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A561E79C27FBDF0400EAACEC /* AppleSDGothicNeoB.ttf */; };
 		A561E7A027FBDF1000EAACEC /* AppleSDGothicNeoEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A561E79D27FBDF0400EAACEC /* AppleSDGothicNeoEB.ttf */; };
 		A561E7A127FBDF1300EAACEC /* AppleSDGothicNeoM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A561E79E27FBDF0400EAACEC /* AppleSDGothicNeoM.ttf */; };
+		A562CF8F287AB10600DB57B7 /* TodayDiary2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562CF8E287AB10600DB57B7 /* TodayDiary2Model.swift */; };
+		A562CF91287AB74800DB57B7 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562CF90287AB74800DB57B7 /* UILabel.swift */; };
 		A564129E27CBCB6800825571 /* WritingDiaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A564129D27CBCB6800825571 /* WritingDiaryResponse.swift */; };
 		A56412A027CBCB9B00825571 /* WritingDiaryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A564129F27CBCB9B00825571 /* WritingDiaryRequest.swift */; };
 		A56412A227CBCBFA00825571 /* WritingDiaryDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56412A127CBCBFA00825571 /* WritingDiaryDataManager.swift */; };
@@ -299,6 +301,8 @@
 		A561E79C27FBDF0400EAACEC /* AppleSDGothicNeoB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoB.ttf; path = ../../../../../IOS/AppleSDGothicNeoB.ttf; sourceTree = "<group>"; };
 		A561E79D27FBDF0400EAACEC /* AppleSDGothicNeoEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoEB.ttf; path = ../../../../../IOS/AppleSDGothicNeoEB.ttf; sourceTree = "<group>"; };
 		A561E79E27FBDF0400EAACEC /* AppleSDGothicNeoM.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoM.ttf; path = ../../../../../IOS/AppleSDGothicNeoM.ttf; sourceTree = "<group>"; };
+		A562CF8E287AB10600DB57B7 /* TodayDiary2Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDiary2Model.swift; sourceTree = "<group>"; };
+		A562CF90287AB74800DB57B7 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		A564129D27CBCB6800825571 /* WritingDiaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingDiaryResponse.swift; sourceTree = "<group>"; };
 		A564129F27CBCB9B00825571 /* WritingDiaryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingDiaryRequest.swift; sourceTree = "<group>"; };
 		A56412A127CBCBFA00825571 /* WritingDiaryDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingDiaryDataManager.swift; sourceTree = "<group>"; };
@@ -925,6 +929,7 @@
 				A5B84FE327E38959001367B4 /* Layer.swift */,
 				A5C71351286B4553009CE07B /* UIBeziePath.swift */,
 				A5C71353286B45B3009CE07B /* UIVIew.swift */,
+				A562CF90287AB74800DB57B7 /* UILabel.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1238,6 +1243,7 @@
 			children = (
 				A5C71356286B4AB9009CE07B /* TodayDiary2ViewController.swift */,
 				A5C71358286B4ACA009CE07B /* TodayDiary2.storyboard */,
+				A562CF8E287AB10600DB57B7 /* TodayDiary2Model.swift */,
 			);
 			path = TodayDiary2;
 			sourceTree = "<group>";
@@ -1606,6 +1612,7 @@
 				A567616827B7E820006FDA7F /* UIButton.swift in Sources */,
 				A518AFBD27E9B4F40024E1F1 /* ReceivedDiaryDataManager.swift in Sources */,
 				A5C1D5B927C271FE0046095A /* CheckEmailRequest.swift in Sources */,
+				A562CF8F287AB10600DB57B7 /* TodayDiary2Model.swift in Sources */,
 				A5C1D5B527C271E80046095A /* CheckEmailDataManager.swift in Sources */,
 				A56B698227DA0371001385DC /* CommentReportResponse.swift in Sources */,
 				A521372B27D12ED300B98CF7 /* DeleteDiaryDataManager.swift in Sources */,
@@ -1630,6 +1637,7 @@
 				A59909B127FEF4AD00025C58 /* YNotWriteCommentViewController.swift in Sources */,
 				A567617027B7E8EA006FDA7F /* KobisKey.swift in Sources */,
 				A54645D027CCF958008BA823 /* WritingCommentAlertViewController.swift in Sources */,
+				A562CF91287AB74800DB57B7 /* UILabel.swift in Sources */,
 				A567622A27BBC7D3006FDA7F /* SignUpViewController.swift in Sources */,
 				A5567CA627BEA350001A4B98 /* TodayDiaryViewController.swift in Sources */,
 				A595203E27D89A67005D414D /* CommentWritingDataManager.swift in Sources */,

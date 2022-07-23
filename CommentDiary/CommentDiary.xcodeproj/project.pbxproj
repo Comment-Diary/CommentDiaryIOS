@@ -80,6 +80,8 @@
 		A547A9A427EE510900DAAFE3 /* LogOutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547A9A327EE510900DAAFE3 /* LogOutResponse.swift */; };
 		A547A9A627EE511800DAAFE3 /* LogOutDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547A9A527EE511800DAAFE3 /* LogOutDataManager.swift */; };
 		A547A9A827EF018900DAAFE3 /* UITableViewButtonSelectedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547A9A727EF018900DAAFE3 /* UITableViewButtonSelectedDelegate.swift */; };
+		A54C124728859AAA004FA514 /* TopSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C124628859AAA004FA514 /* TopSheetViewController.swift */; };
+		A54C124928859AB5004FA514 /* TopSheet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54C124828859AB5004FA514 /* TopSheet.storyboard */; };
 		A5567C8627BD4C98001A4B98 /* ArrivedDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5567C8527BD4C98001A4B98 /* ArrivedDiaryViewController.swift */; };
 		A5567C8827BD4CC0001A4B98 /* ArrivedDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5567C8727BD4CC0001A4B98 /* ArrivedDiary.storyboard */; };
 		A5567C9027BD4D5B001A4B98 /* WritingDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5567C8F27BD4D5B001A4B98 /* WritingDiary.storyboard */; };
@@ -140,6 +142,8 @@
 		A56FF79B27C16AC100C740F7 /* EmailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56FF79A27C16AC100C740F7 /* EmailResponse.swift */; };
 		A56FF79D27C16ACC00C740F7 /* EmailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56FF79C27C16ACC00C740F7 /* EmailDataManager.swift */; };
 		A5713F9F282BA66B00A73CC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5713F9E282BA66A00A73CC1 /* GoogleService-Info.plist */; };
+		A57532BE2880426A00898776 /* AloneDiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57532BD2880426A00898776 /* AloneDiaryDetailViewController.swift */; };
+		A57532C02880427B00898776 /* AloneDiaryDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57532BF2880427B00898776 /* AloneDiaryDetail.storyboard */; };
 		A595203A27D89A4F005D414D /* CommentWritingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A595203927D89A4F005D414D /* CommentWritingResponse.swift */; };
 		A595203C27D89A5B005D414D /* CommentWritingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A595203B27D89A5B005D414D /* CommentWritingRequest.swift */; };
 		A595203E27D89A67005D414D /* CommentWritingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A595203D27D89A67005D414D /* CommentWritingDataManager.swift */; };
@@ -286,6 +290,8 @@
 		A547A9A327EE510900DAAFE3 /* LogOutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutResponse.swift; sourceTree = "<group>"; };
 		A547A9A527EE511800DAAFE3 /* LogOutDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutDataManager.swift; sourceTree = "<group>"; };
 		A547A9A727EF018900DAAFE3 /* UITableViewButtonSelectedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewButtonSelectedDelegate.swift; sourceTree = "<group>"; };
+		A54C124628859AAA004FA514 /* TopSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSheetViewController.swift; sourceTree = "<group>"; };
+		A54C124828859AB5004FA514 /* TopSheet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TopSheet.storyboard; sourceTree = "<group>"; };
 		A5567C8527BD4C98001A4B98 /* ArrivedDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivedDiaryViewController.swift; sourceTree = "<group>"; };
 		A5567C8727BD4CC0001A4B98 /* ArrivedDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArrivedDiary.storyboard; sourceTree = "<group>"; };
 		A5567C8F27BD4D5B001A4B98 /* WritingDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WritingDiary.storyboard; sourceTree = "<group>"; };
@@ -348,6 +354,8 @@
 		A56FF79A27C16AC100C740F7 /* EmailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailResponse.swift; sourceTree = "<group>"; };
 		A56FF79C27C16ACC00C740F7 /* EmailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailDataManager.swift; sourceTree = "<group>"; };
 		A5713F9E282BA66A00A73CC1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A57532BD2880426A00898776 /* AloneDiaryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AloneDiaryDetailViewController.swift; sourceTree = "<group>"; };
+		A57532BF2880427B00898776 /* AloneDiaryDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AloneDiaryDetail.storyboard; sourceTree = "<group>"; };
 		A595203927D89A4F005D414D /* CommentWritingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentWritingResponse.swift; sourceTree = "<group>"; };
 		A595203B27D89A5B005D414D /* CommentWritingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentWritingRequest.swift; sourceTree = "<group>"; };
 		A595203D27D89A67005D414D /* CommentWritingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentWritingDataManager.swift; sourceTree = "<group>"; };
@@ -765,6 +773,15 @@
 			path = LogOut;
 			sourceTree = "<group>";
 		};
+		A54C124528859A79004FA514 /* TopSheet */ = {
+			isa = PBXGroup;
+			children = (
+				A54C124628859AAA004FA514 /* TopSheetViewController.swift */,
+				A54C124828859AB5004FA514 /* TopSheet.storyboard */,
+			);
+			path = TopSheet;
+			sourceTree = "<group>";
+		};
 		A5567C8127BD4C0C001A4B98 /* MyPageTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -787,6 +804,7 @@
 				A518AFCA27EB4ED30024E1F1 /* NotArrivalCommentDiary */,
 				A518AFC527EB288C0024E1F1 /* YPreSaveDeadline */,
 				A503FF7427CE4CBB0049FF82 /* YPreSave */,
+				A57532BC2880415A00898776 /* AloneDiaryDetailViewController */,
 				A503FF7327CE4C090049FF82 /* NSave */,
 				A5567C8F27BD4D5B001A4B98 /* WritingDiary.storyboard */,
 				A5242C8F27D3840A00E24A76 /* WritingDiaryVC.swift */,
@@ -1105,6 +1123,15 @@
 			path = RequestEmailAuthAPI;
 			sourceTree = "<group>";
 		};
+		A57532BC2880415A00898776 /* AloneDiaryDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A57532BD2880426A00898776 /* AloneDiaryDetailViewController.swift */,
+				A57532BF2880427B00898776 /* AloneDiaryDetail.storyboard */,
+			);
+			path = AloneDiaryDetailViewController;
+			sourceTree = "<group>";
+		};
 		A595203827D899F8005D414D /* CommentWriting */ = {
 			isa = PBXGroup;
 			children = (
@@ -1241,6 +1268,7 @@
 		A5C71355286B4A69009CE07B /* TodayDiary2 */ = {
 			isa = PBXGroup;
 			children = (
+				A54C124528859A79004FA514 /* TopSheet */,
 				A5C71356286B4AB9009CE07B /* TodayDiary2ViewController.swift */,
 				A5C71358286B4ACA009CE07B /* TodayDiary2.storyboard */,
 				A562CF8E287AB10600DB57B7 /* TodayDiary2Model.swift */,
@@ -1453,6 +1481,7 @@
 				A567615527B7E454006FDA7F /* LaunchScreen.storyboard in Resources */,
 				A518AFCE27EB4F330024E1F1 /* NotArrivalCommentDiary.storyboard in Resources */,
 				A5CBCC0027CA99FF00BE857D /* SuccessFindPassword.storyboard in Resources */,
+				A57532C02880427B00898776 /* AloneDiaryDetail.storyboard in Resources */,
 				A5567C9027BD4D5B001A4B98 /* WritingDiary.storyboard in Resources */,
 				A567615227B7E454006FDA7F /* Assets.xcassets in Resources */,
 				A5C7A39627E796640055BAD7 /* YReadComment.storyboard in Resources */,
@@ -1482,6 +1511,7 @@
 				A529502227DB6A4200192054 /* PeriodView.storyboard in Resources */,
 				A567622C27BBC7DC006FDA7F /* SignUp.storyboard in Resources */,
 				A520916727DD0365003017AC /* PeriodCommentView.storyboard in Resources */,
+				A54C124928859AB5004FA514 /* TopSheet.storyboard in Resources */,
 				A518AFC927EB28C10024E1F1 /* YPreSaveDeadline.storyboard in Resources */,
 				A561E7A027FBDF1000EAACEC /* AppleSDGothicNeoEB.ttf in Resources */,
 				A520914A27DC7F36003017AC /* MyDiaryListCell.xib in Resources */,
@@ -1553,6 +1583,7 @@
 			files = (
 				A521372727D12EA700B98CF7 /* DeleteDiaryResponse.swift in Sources */,
 				A5BF9CDE27C743A70093B900 /* SignUpRequest.swift in Sources */,
+				A57532BE2880426A00898776 /* AloneDiaryDetailViewController.swift in Sources */,
 				A5C71354286B45B3009CE07B /* UIVIew.swift in Sources */,
 				A5B84FE227E378A5001367B4 /* DiaryStopViewController.swift in Sources */,
 				A520915527DC9904003017AC /* GatherDiaryAllDataManager.swift in Sources */,
@@ -1599,6 +1630,7 @@
 				A547A9A627EE511800DAAFE3 /* LogOutDataManager.swift in Sources */,
 				A529502027DB6A3500192054 /* PeriodViewAlertViewController.swift in Sources */,
 				A520916527DD034A003017AC /* PeriodCommentViewController.swift in Sources */,
+				A54C124728859AAA004FA514 /* TopSheetViewController.swift in Sources */,
 				A5C7A37427E4D6C10055BAD7 /* NavigationVC.swift in Sources */,
 				A595203C27D89A5B005D414D /* CommentWritingRequest.swift in Sources */,
 				A567616A27B7E83C006FDA7F /* UIViewController.swift in Sources */,

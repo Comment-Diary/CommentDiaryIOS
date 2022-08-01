@@ -8,9 +8,59 @@
 import Foundation
 import UIKit
 
-class TodayDiary2ViewController : UIViewController {
-    var todayDiary = TodayDiaryModel()
+class TodayDiary2ViewController : UIViewController, DiaryType {
+    func diaryTypeString(data: String) {
+        getDiaryType(diaryType: data)
+    }
+    var canSendCommentDiary : Bool = false
     
+    //키보드 노티피케이션
+    var textViewYValue = CGFloat(0)
+    
+    var todayDiary = TodayDiaryModel()
+    var commentDiaryType = true
+    var diaryTypeButtonText = "코멘트 받는 일기"
+    var dateString = ""
+    var diaryTypeColor = hexColor.dateGreenColor.getHexColor()
+    var diaryTypeCountText = 0
+    
+    
+    enum diaryTypeText {
+        case commemtDiary
+        case aloneDiary
+        
+        func getDiaryText() -> String {
+            switch self {
+            case .commemtDiary:
+                return "코멘트 받는 일기"
+            case .aloneDiary:
+                return "혼자 쓰는 일기"
+            }
+        }
+    }
+    
+    func getDiaryType(diaryType : String) {
+        switch diaryType {
+        case "코멘트 받는 일기":
+            diaryTypeButtonText = diaryTypeText.commemtDiary.getDiaryText()
+            dateLabel.textColor = hexColor.dateGreenColor.getHexColor()
+            diaryTypeButton.setTitle(diaryTypeButtonText, for: .normal)
+            diaryTypeButton.setTitle(diaryTypeButtonText, for: .highlighted)
+            sendButton.backgroundColor = hexColor.sendButtonBackgroundColor.getHexColor()
+            sendButton.setTitleColor(hexColor.sendButtonTitleColor.getHexColor(), for: .normal)
+            sendButton.setTitleColor(hexColor.sendButtonTitleColor.getHexColor(), for: .highlighted)
+        case "혼자 쓰는 일기":
+            diaryTypeButtonText = diaryTypeText.aloneDiary.getDiaryText()
+            dateLabel.textColor = hexColor.dateOrangeColor.getHexColor()
+            diaryTypeButton.setTitle(diaryTypeButtonText, for: .normal)
+            diaryTypeButton.setTitle(diaryTypeButtonText, for: .highlighted)
+            sendButton.backgroundColor = .clear
+            sendButton.setTitleColor(hexColor.sendButtonBackgroundColor.getHexColor(), for: .normal)
+            sendButton.setTitleColor(hexColor.sendButtonBackgroundColor.getHexColor(), for: .highlighted)
+        default:
+            break
+        }
+    }
     
     // MARK: - DiaryType
     
@@ -101,20 +151,19 @@ class TodayDiary2ViewController : UIViewController {
         labelSetting()
         textviewSetting()
         buttonSetting()
-        
-//        diaryTypeTopsheetView.isHidden = true
-//        topSheetTopView.isHidden = true
-//        topsheetBottomView.isHidden = true
+        keyboardCheck()
     }
     override func viewWillAppear(_ animated: Bool) {
 //        super.viewWillAppear(animated)
 //        self.addKeyboardNotification()
         print("rrrr")
-        addKeyboardNotification()
+//        addKeyboardNotification()
+        keyboardWillShowFunc()
     }
     override func viewWillDisappear(_ animated: Bool) {
 //        super.viewWillDisappear(animated)
 //        self.removeKeyboardNotification()
+        keyboardWillHideFunc()
         print("////")
     }
     
@@ -134,6 +183,7 @@ class TodayDiary2ViewController : UIViewController {
     func labelSetting() {
         dateLabel.font = UIFont.AppleSDGothic(.bold, size: 15)
         dateLabel.textColor = hexColor.dateGreenColor.getHexColor()
+        dateLabel.text = dateString
     }
     
     func textviewSetting() {
@@ -152,15 +202,17 @@ class TodayDiary2ViewController : UIViewController {
     }
     
     func buttonSetting() {
+        diaryTypeButton.titleLabel?.font = UIFont.AppleSDGothic(.bold, size: 14)
         diaryTypeButton.setTitleColor(hexColor.diaryTypeButtonColor.getHexColor(), for: .normal)
         diaryTypeButton.setTitleColor(hexColor.diaryTypeButtonColor.getHexColor(), for: .highlighted)
-        
+        diaryTypeButton.setTitle(diaryTypeButtonText, for: .normal)
+        diaryTypeButton.setTitle(diaryTypeButtonText, for: .highlighted)
         sendButton.setTitleColor(hexColor.sendButtonTitleColor.getHexColor(), for: .normal)
         sendButton.setTitleColor(hexColor.sendButtonTitleColor.getHexColor(), for: .highlighted)
         sendButton.setTitle("전송", for: .normal)
         sendButton.titleLabel?.font = UIFont.AppleSDGothic(.bold, size: 13)
         sendButton.backgroundColor = hexColor.sendButtonBackgroundColor.getHexColor()
-//        sendButton.layer.cornerRadius =
+        sendButton.layer.cornerRadius = 10
         
     }
     
@@ -180,24 +232,39 @@ class TodayDiary2ViewController : UIViewController {
     //MARK: - ACTIONS
     
     @IBAction func backButtonClicked(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "WritingDiaryCancel", bundle: nil).instantiateViewController(withIdentifier: "WritingDiaryCancelAlertViewController") as! WritingDiaryCancelAlertViewController
-        self.present(vc, animated: true, completion: nil)
+        if diaryTypeButtonText == diaryTypeText.commemtDiary.getDiaryText() {
+            //저장
+        }
+        else if diaryTypeButtonText == diaryTypeText.aloneDiary.getDiaryText()  {
+            let vc = UIStoryboard(name: "WritingDiaryCancel", bundle: nil).instantiateViewController(withIdentifier: "WritingDiaryCancelAlertViewController") as! WritingDiaryCancelAlertViewController
+            self.present(vc, animated: true, completion: nil)
+        }
     }
     
     @IBAction func diaryTypeButtonClicked(_ sender: UIButton) {
         guard let topSheetVC = UIStoryboard(name: "TopSheet", bundle: nil).instantiateViewController(withIdentifier: "TopSheetViewController") as? TopSheetViewController else { return }
         topSheetVC.modalPresentationStyle = .overFullScreen
         topSheetVC.modalTransitionStyle = .crossDissolve
+        topSheetVC.diaryTypeDelegate = self
+        if diaryTypeButtonText == diaryTypeText.commemtDiary.getDiaryText() {
+            topSheetVC.commentDiary = true
+        }
+        else {
+            topSheetVC.commentDiary = false
+        }
         self.present(topSheetVC, animated: true, completion: nil)
     }
     
     
     
     @IBAction func saveDiaryButtonClicked(_ sender: UIButton) {
+        if diaryTypeButtonText == diaryTypeText.commemtDiary.getDiaryText() {
+            
+        }
+        else if diaryTypeButtonText == diaryTypeText.aloneDiary.getDiaryText() {
+            
+        }
     }
-    
-    
-    
 }
 
 
@@ -216,52 +283,74 @@ class TodayDiary2ViewController : UIViewController {
 
     //MARK: - Extensions
 extension TodayDiary2ViewController {
-    //스크롤시 키보드 내리기
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        self.view.endEditing(true)
-        removeKeyboardNotification()
+////    스크롤시 키보드 내리기
+    func keyboardCheck() {
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
+        
+    }
+    func keyboardWillShowFunc() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    func keyboardWillHideFunc() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    func keyboardDidShowFunc() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
     }
     
-    //노티피케이션을 추가하는 메서드
-    func addKeyboardNotification() {
-        //키보드가 나타날 때 앱에게 알리는 메서드
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        
-        //키보드가 사라질 때 앱에게 알리는 메서드
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    //노티피케이션을 제거하는 메서드
-    func removeKeyboardNotification() {
-        //키보드가 나타날 때 앱에게 알리는 메서드 제거
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        //키보드가 사라질 때 앱에게 알리는 메서드 제거
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    //키보드가 나타났다는 알림을 받으면 실행할 메서드
-    @objc func keyboardWillShow(_ noti: NSNotification) {
-        //키보드 높이만큼 화면을 올려줌
-        if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keyboardRectangle.height
-            UIView.animate(withDuration: 1) {
-                self.diaryCountView.frame.origin.y -= keyboardHeight
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            print("키보드 will show")
+            if textViewYValue == 0 {
+                textViewYValue = self.diaryCountView.frame.origin.y
             }
+            if self.diaryCountView.frame.origin.y == textViewYValue {
+                textViewYValue = self.diaryCountView.frame.origin.y
+                self.diaryCountView.frame.origin.y -= keyboardSize.height - UIApplication.shared.windows.first!.safeAreaInsets.bottom
+            }
+//            if self.diaryCountView.frame.origin.y == 0 {
+//                self.diaryCountView.frame.origin.y += keyboardSize.height + UIApplication.shared.windows.first!.safeAreaInsets.bottom
+//            }
         }
     }
-    @objc func keyboardWillHide(_ noti: NSNotification) {
-        //키보드의 높이만큼 화면을 내려줌
-        if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keyboardRectangle.height
-            UIView.animate(withDuration: 1) {
-                self.diaryCountView.frame.origin.y += keyboardHeight
+    
+    @objc func keyboardDidShow(notification: NSNotification) {
+
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            print("키보드 did show")
+            if textViewYValue == 0 {
+                textViewYValue = self.diaryCountView.frame.origin.y
             }
+            if self.diaryCountView.frame.origin.y == textViewYValue {
+                textViewYValue = self.diaryCountView.frame.origin.y
+                self.diaryCountView.frame.origin.y -= keyboardSize.height - UIApplication.shared.windows.first!.safeAreaInsets.bottom
+            }
+//            if self.diaryCountView.frame.origin.y == 0 {
+//                self.diaryCountView.frame.origin.y += keyboardSize.height + UIApplication.shared.windows.first!.safeAreaInsets.bottom
+//            }
         }
     }
+    @objc func keyboardWillHide(notification: NSNotification) {
+
+        print("키보드 will hide")
+        if self.diaryCountView.frame.origin.y != textViewYValue {
+            self.diaryCountView.frame.origin.y = textViewYValue
+        }
+//        if self.diaryCountView.frame.origin.y != 0 {
+//            self.diaryCountView.frame.origin.y = 0
+//        }
+    }
+    
 }
+
+
+
+
 extension TodayDiary2ViewController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
-        print("bbb")
+        print("textviewdidendEditing")
         if titleTextView.text.isEmpty {
             titleTextView.text = textViewPlaceholder.title.getPlaceholderString()
             titleTextView.textColor = hexColor.placeholderColor.getHexColor()
@@ -271,39 +360,53 @@ extension TodayDiary2ViewController: UITextViewDelegate {
             contentTextView.textColor = hexColor.placeholderColor.getHexColor()
         }
     }
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        print("DDD")
-        if textView == titleTextView && titleTextView.textColor == hexColor.placeholderColor.getHexColor() {
-            titleTextView.text = nil
-            titleTextView.textColor = hexColor.textviewStringColor.getHexColor()
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        if textView.textColor == hexColor.placeholderColor.getHexColor() {
+            textView.text = nil
+            textView.textColor = hexColor.textviewStringColor.getHexColor()
         }
-        else if textView == contentTextView && contentTextView.textColor == hexColor.placeholderColor.getHexColor() {
-            contentTextView.text = nil
-            contentTextView.textColor = hexColor.textviewStringColor.getHexColor()
-        }
+        return true
     }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == hexColor.placeholderColor.getHexColor() {
+            textView.text = nil
+            textView.textColor = hexColor.textviewStringColor.getHexColor()
+        }
+            print("textviewDidBeginEditing")
+            if textView == titleTextView && titleTextView.textColor == hexColor.placeholderColor.getHexColor() {
+                titleTextView.text = nil
+                titleTextView.textColor = hexColor.textviewStringColor.getHexColor()
+            }
+            if textView == contentTextView && contentTextView.textColor == hexColor.placeholderColor.getHexColor() {
+                contentTextView.text = nil
+                contentTextView.textColor = hexColor.textviewStringColor.getHexColor()
+            }
+
+    }
+    
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if textView == contentTextView {
+            let currentText = contentTextView.text ?? ""
+            guard let stringRange = Range(range, in: currentText) else {
+                return false
+            }
+            let changedText = currentText.replacingCharacters(in: stringRange, with: text)
+            if diaryTypeButtonText == diaryTypeText.commemtDiary.getDiaryText() {
+                if changedText.count < 100 {
+                    canSendCommentDiary = false
+                }
+                else {
+                    canSendCommentDiary = true
+                }
+
+            }
+            
+            
+        }
+        return true
+    }
+
+
 }
-//extension TodayDiaryViewController: UITextViewDelegate {
-//
-//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-//
-//        if textView == contentTextView {
-//            let currentText = contentTextView.text ?? ""
-//            guard let stringRange = Range(range, in: currentText) else { return false }
-//            let chagnedText = currentText.replacingCharacters(in: stringRange, with: text)
-//            //일기카운트 임시저장
-//            UserDefaults.standard.set(chagnedText.count, forKey: "contentCount")
-//            textCountLabel.text = "\(chagnedText.count)/100자 이상 작성"
-//
-//            // 혼자 쓰기일떄는 카운트 필요없음
-//            // 코멘트 받기 쓰기는 초기 button false
-//            if deliveryToggle == "Y" {
-//                if chagnedText.count < 100 {
-//                    canSendDiaryBool = false
-//                } else {
-//                    canSendDiaryBool = true
-//                }
-//            return true
-//
-//            }
-//        }

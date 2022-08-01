@@ -114,6 +114,11 @@ class WritingDiaryCancelAlertViewController : UIViewController {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func exitButtonClicked(_ sender: UIButton) {
+        
+            guard let presentingVC = self.presentingViewController as? UINavigationController else { return }
+            self.dismiss(animated: true) {
+                presentingVC.popToRootViewController(animated: true)
+            }
     }
     
     

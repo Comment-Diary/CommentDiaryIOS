@@ -466,52 +466,6 @@
                                     <constraint firstItem="3mx-bU-qKW" firstAttribute="top" secondItem="cpW-II-vpg" secondAttribute="top" constant="16" id="gNG-ff-qML"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘은 기록이 없어요. 기록을 하고 코멘트를 받아봐요 :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aM-Gm-hOI">
-                                <rect key="frame" x="39.666666666666657" y="151" width="264" height="14.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="Rk8-to-bXC">
-                                <rect key="frame" x="25" y="169.33333333333334" width="293" height="114.00000000000003"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGA-5Y-FvK">
-                                        <rect key="frame" x="0.0" y="0.0" width="293" height="2"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="2" id="8AX-tZ-VQ3"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oO2-Ua-HKd">
-                                        <rect key="frame" x="0.0" y="28" width="293" height="2"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="2" id="u23-o8-VPx"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8DR-oo-H3I">
-                                        <rect key="frame" x="0.0" y="56" width="293" height="2"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="2" id="4yN-NX-JWl"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="knL-Oj-uTJ">
-                                        <rect key="frame" x="0.0" y="84" width="293" height="2"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="2" id="57X-SO-5Py"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fwh-XU-99J">
-                                        <rect key="frame" x="0.0" y="111.99999999999997" width="293" height="2"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="2" id="ZPc-xf-tR6"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uq2-rl-S4V">
                                 <rect key="frame" x="0.0" y="44" width="343" height="239"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -526,26 +480,15 @@
                             <constraint firstItem="cpW-II-vpg" firstAttribute="leading" secondItem="s6u-Hu-Aab" secondAttribute="leading" id="AXB-VU-Bn3"/>
                             <constraint firstItem="Uq2-rl-S4V" firstAttribute="top" secondItem="1av-cx-XNL" secondAttribute="top" id="D16-5Z-Fcz"/>
                             <constraint firstAttribute="trailing" secondItem="cpW-II-vpg" secondAttribute="trailing" id="EOQ-Dq-OHL"/>
-                            <constraint firstItem="4aM-Gm-hOI" firstAttribute="centerX" secondItem="s6u-Hu-Aab" secondAttribute="centerX" id="Et9-qP-ugp"/>
                             <constraint firstItem="Uq2-rl-S4V" firstAttribute="trailing" secondItem="1av-cx-XNL" secondAttribute="trailing" id="NhN-MU-RR0"/>
                             <constraint firstItem="Uq2-rl-S4V" firstAttribute="leading" secondItem="1av-cx-XNL" secondAttribute="leading" id="VUM-Rd-ssN"/>
                             <constraint firstItem="1av-cx-XNL" firstAttribute="bottom" secondItem="Uq2-rl-S4V" secondAttribute="bottom" id="X7K-Y8-sHN"/>
-                            <constraint firstItem="Rk8-to-bXC" firstAttribute="leading" secondItem="s6u-Hu-Aab" secondAttribute="leading" constant="25" id="d0b-M7-Fl8"/>
-                            <constraint firstItem="4aM-Gm-hOI" firstAttribute="top" secondItem="cpW-II-vpg" secondAttribute="bottom" constant="10" id="deb-Qw-KkT"/>
                             <constraint firstItem="cpW-II-vpg" firstAttribute="top" secondItem="s6u-Hu-Aab" secondAttribute="topMargin" id="hxi-7i-kXV"/>
-                            <constraint firstItem="Rk8-to-bXC" firstAttribute="centerX" secondItem="s6u-Hu-Aab" secondAttribute="centerX" id="uA7-ug-ulq"/>
-                            <constraint firstItem="Rk8-to-bXC" firstAttribute="top" secondItem="4aM-Gm-hOI" secondAttribute="bottom" constant="4" id="uVC-G6-MJZ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="1xN-ch-xs8" id="HPD-6m-zJ6"/>
-                        <outlet property="fifthNoteView" destination="Fwh-XU-99J" id="b3F-8L-qcs"/>
-                        <outlet property="firstNoteView" destination="UGA-5Y-FvK" id="grQ-r3-L57"/>
-                        <outlet property="fourthNoteView" destination="knL-Oj-uTJ" id="N17-a2-qG6"/>
-                        <outlet property="infoLabel" destination="4aM-Gm-hOI" id="JtI-1C-Tym"/>
                         <outlet property="myDiaryLabel" destination="VeE-iS-VSq" id="TIc-L7-FzY"/>
-                        <outlet property="secondNoteView" destination="oO2-Ua-HKd" id="e7F-gI-4fG"/>
-                        <outlet property="thirdNoteView" destination="8DR-oo-H3I" id="pY4-6H-rua"/>
                         <outlet property="writingDiaryBackView" destination="cpW-II-vpg" id="Mj7-hc-QhM"/>
                         <outlet property="writingDiaryButton" destination="9Gs-O8-kp6" id="Gyk-rg-PjH"/>
                         <outlet property="writingDiaryLabel" destination="e6y-No-uDM" id="Fnb-Ug-EfA"/>

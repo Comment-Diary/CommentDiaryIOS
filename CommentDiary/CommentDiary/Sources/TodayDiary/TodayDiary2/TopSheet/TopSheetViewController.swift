@@ -8,7 +8,32 @@
 import Foundation
 import UIKit
 
+protocol DiaryType {
+    func diaryTypeString(data : String)
+}
+
 class TopSheetViewController : UIViewController {
+    private var isTopSheetShown = false
+    var selectedCommentDiaryButton = true
+    var commentDiary = true
+    var diaryTypeDelegate: DiaryType?
+    var diaryTypeString = ""
+    
+    
+    enum diaryType {
+        case commemtDiary
+        case aloneDiary
+        
+        func getDiaryText() -> String {
+            switch self {
+            case .commemtDiary:
+                return "코멘트 받는 일기"
+            case .aloneDiary:
+                return "혼자 쓰는 일기"
+            }
+        }
+    }
+    
     enum hexColor {
         case backgroundColor
         case commentDiaryMainColor
@@ -74,8 +99,6 @@ class TopSheetViewController : UIViewController {
     
     @IBOutlet weak var aloneDiaryButton: UIButton!
     
-    private var isTopSheetShown = false
-    private var selectedCommentDiaryButton = true
     
     
     // MARK: - LIFECYCLE
@@ -87,6 +110,7 @@ class TopSheetViewController : UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         topsheetShown()
+//        diaryTypeUpdateUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -121,6 +145,8 @@ class TopSheetViewController : UIViewController {
         navigationLabel.font = UIFont.AppleSDGothic(.bold, size: 14)
         typeCommentLabel.font = UIFont.AppleSDGothic(.medium, size: 14)
         typeAloneLabel.font = UIFont.AppleSDGothic(.medium, size: 14)
+        typeCommentLabel.text = diaryType.commemtDiary.getDiaryText()
+        typeAloneLabel.text = diaryType.aloneDiary.getDiaryText()
     }
 
     
@@ -140,6 +166,7 @@ class TopSheetViewController : UIViewController {
     }
     
     func diaryTypeUpdateUI() {
+        selectedCommentDiaryButton = commentDiary
         if selectedCommentDiaryButton == true {
             typeCommentbuttonSelectedView.isHidden = false
             typeAloneButtonSelectedView.isHidden = true
@@ -166,25 +193,20 @@ class TopSheetViewController : UIViewController {
     }
     
     @IBAction func diaryTypeButtonClicked(_ sender: UIButton) {
-
         switch sender.tag {
         case 1:
             selectedCommentDiaryButton = true
-            print("코멘트 받는 일기")
-            print(selectedCommentDiaryButton)
             typeCommentbuttonSelectedView.isHidden = false
             typeAloneButtonSelectedView.isHidden = true
-
+            diaryTypeDelegate?.diaryTypeString(data: diaryType.commemtDiary.getDiaryText())
         case 2:
             selectedCommentDiaryButton = false
-            print("혼자 쓰는 일기")
-            print(selectedCommentDiaryButton)
             typeCommentbuttonSelectedView.isHidden = true
             typeAloneButtonSelectedView.isHidden = false
+            diaryTypeDelegate?.diaryTypeString(data: diaryType.aloneDiary.getDiaryText())
         default:
             break
         }
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
             self.dismissTopsheet()
         })

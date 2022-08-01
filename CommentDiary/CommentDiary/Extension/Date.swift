@@ -8,6 +8,21 @@
 import Foundation
 import UIKit
 
+struct DateModel {
+    lazy var krMonthDateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.locale = Locale(identifier: "ko_KR")
+        df.dateFormat = "MM월 dd일"
+        return df
+    }()
+    
+    lazy var detailDayDateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy.MM.dd"
+        return df
+    }()
+}
+
 extension Date {
     init(year: Int, month: Int, day: Int) {
         let dateFormatter = DateFormatter()
@@ -34,35 +49,6 @@ extension Date {
         return dateFormatter.string(from: self)
     }
 }
-
-//extension Date {
-//
-//    /**
-//     # dateCompare
-//     - Parameters:
-//        - fromDate: 비교 대상 Date
-//     - Note: 두 날짜간 비교해서 과거(Future)/현재(Same)/미래(Past) 반환
-//    */
-//    public func dateCompare(fromDate: Date) -> String {
-//        var strDateMessage:String = ""
-//        let result:ComparisonResult = self.compare(fromDate)
-//        switch result {
-//        case .orderedAscending:
-//            strDateMessage = "Future"
-//            break
-//        case .orderedDescending:
-//            strDateMessage = "Past"
-//            break
-//        case .orderedSame:
-//            strDateMessage = "Same"
-//            break
-//        default:
-//            strDateMessage = "Error"
-//            break
-//        }
-//        return strDateMessage
-//    }
-//}
 
 
 extension Date {
@@ -99,8 +85,3 @@ extension Date {
     }
 }
 
-
-//NotificationCenter.default.addObserver(self, selector: #selector(updateData(_:)), name: NSNotification.Name(rawValue: "presentDate"), object: nil)
-//@objc func loadData(_ notification : NSNotification) {
-//    dateLabel.text = notification.object as? String ?? ""
-//}

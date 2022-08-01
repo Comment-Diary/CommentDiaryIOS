@@ -9,11 +9,12 @@ import Foundation
 import UIKit
 
 class TodayWritingDiaryViewController : UIViewController {
-    var dateModel = DateModel()
-    var presentDateString = ""
-    var selectedDateString = ""
-    var todayDateString = ""
-    
+//    var dateModel = DateModel()
+    let todayWritingDiaryViewModel = TodayWritingDiaryViewModel()
+//    var presentDateString = ""
+//    var selectedDateString = ""
+//    var todayDateString = ""
+//
     enum hexColor {
         case backgroundColor
         case buttonBackgroundColor
@@ -51,20 +52,22 @@ class TodayWritingDiaryViewController : UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         dateLabelSetting()
+        // MARK: - 삭제?
 //        presentDateString = detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
-        presentDateString = dateModel.detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
-        todayDateString = dateModel.detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
+//        presentDateString = dateModel.detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
+//        todayDateString = dateModel.detailDayDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
     }
     
     func dateLabelSetting() {
-        self.dateLabel.text = dateModel.krMonthDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
+        self.dateLabel.text = todayWritingDiaryViewModel.krMonthDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
         //MM월dd일
         NotificationCenter.default.addObserver(self, selector: #selector(loadData(_:)), name: NSNotification.Name(rawValue: "SelectedDate"), object: nil)
         
         
         
         //날짜 선택시 yyyy.MM.dd
-        NotificationCenter.default.addObserver(self, selector: #selector(updateData(_:)), name: NSNotification.Name(rawValue: "presentDate"), object: nil)
+        // MARK: - 삭제?
+//        NotificationCenter.default.addObserver(self, selector: #selector(updateData(_:)), name: NSNotification.Name(rawValue: "presentDate"), object: nil)
     }
     
     func labelSetting() {
@@ -83,11 +86,14 @@ class TodayWritingDiaryViewController : UIViewController {
     
     @objc func loadData(_ notification : NSNotification) {
         dateLabel.text = notification.object as? String ?? ""
-        selectedDateString = notification.object as? String ?? ""
+        // MARK: - 삭제?
+//        selectedDateString = notification.object as? String ?? ""
     }
-    @objc func updateData(_ notification : NSNotification) {
-        presentDateString = notification.object as? String ?? ""
-    }
+    
+    // MARK: - 삭제?
+//    @objc func updateData(_ notification : NSNotification) {
+////        presentDateString = notification.object as? String ?? ""
+//    }
 
     
     @IBAction func allButtonTap(_ sender: Any) {

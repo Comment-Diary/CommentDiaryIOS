@@ -63,6 +63,7 @@
 		A529502227DB6A4200192054 /* PeriodView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A529502127DB6A4200192054 /* PeriodView.storyboard */; };
 		A529502827DB751F00192054 /* GatherLook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A529502727DB751F00192054 /* GatherLook.storyboard */; };
 		A529502A27DB752B00192054 /* GatherLookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A529502927DB752B00192054 /* GatherLookViewController.swift */; };
+		A52E50602897E5D600255840 /* TodayWritingDiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52E505F2897E5D600255840 /* TodayWritingDiaryViewModel.swift */; };
 		A54645D027CCF958008BA823 /* WritingCommentAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54645CF27CCF958008BA823 /* WritingCommentAlertViewController.swift */; };
 		A54645D227CCF9FD008BA823 /* WritingComment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54645D127CCF9FD008BA823 /* WritingComment.storyboard */; };
 		A54647AC27D9A78400FBD3C2 /* DiaryCheckResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54647AB27D9A78400FBD3C2 /* DiaryCheckResponse.swift */; };
@@ -273,6 +274,7 @@
 		A529502127DB6A4200192054 /* PeriodView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PeriodView.storyboard; sourceTree = "<group>"; };
 		A529502727DB751F00192054 /* GatherLook.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GatherLook.storyboard; sourceTree = "<group>"; };
 		A529502927DB752B00192054 /* GatherLookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatherLookViewController.swift; sourceTree = "<group>"; };
+		A52E505F2897E5D600255840 /* TodayWritingDiaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWritingDiaryViewModel.swift; sourceTree = "<group>"; };
 		A54645CF27CCF958008BA823 /* WritingCommentAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingCommentAlertViewController.swift; sourceTree = "<group>"; };
 		A54645D127CCF9FD008BA823 /* WritingComment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WritingComment.storyboard; sourceTree = "<group>"; };
 		A54647AB27D9A78400FBD3C2 /* DiaryCheckResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCheckResponse.swift; sourceTree = "<group>"; };
@@ -661,7 +663,7 @@
 			isa = PBXGroup;
 			children = (
 				A5242C9827D509EE00E24A76 /* NotDiaryDayViewController.swift */,
-				A5242C9A27D50A4B00E24A76 /* TodayWritingDiaryViewController.swift */,
+				A52E505E2897E5B300255840 /* TodayWritingDiary */,
 				A5242C9C27D50B9C00E24A76 /* AloneDiaryViewController.swift */,
 				A5242C9E27D50C4400E24A76 /* CommentSoonViewController.swift */,
 				A5242CA027D50CAA00E24A76 /* ReadCommentViewController.swift */,
@@ -690,6 +692,15 @@
 				A529502927DB752B00192054 /* GatherLookViewController.swift */,
 			);
 			path = GatherLookTab;
+			sourceTree = "<group>";
+		};
+		A52E505E2897E5B300255840 /* TodayWritingDiary */ = {
+			isa = PBXGroup;
+			children = (
+				A5242C9A27D50A4B00E24A76 /* TodayWritingDiaryViewController.swift */,
+				A52E505F2897E5D600255840 /* TodayWritingDiaryViewModel.swift */,
+			);
+			path = TodayWritingDiary;
 			sourceTree = "<group>";
 		};
 		A54645CE27CCF922008BA823 /* WritingCommentAlert */ = {
@@ -1640,6 +1651,7 @@
 				A5C7A37627E4D7910055BAD7 /* TabBarVC.swift in Sources */,
 				A567616227B7E7CE006FDA7F /* String.swift in Sources */,
 				A52136F727D076BF00B98CF7 /* BaseInterceptor.swift in Sources */,
+				A52E50602897E5D600255840 /* TodayWritingDiaryViewModel.swift in Sources */,
 				A56412A027CBCB9B00825571 /* WritingDiaryRequest.swift in Sources */,
 				A567616827B7E820006FDA7F /* UIButton.swift in Sources */,
 				A518AFBD27E9B4F40024E1F1 /* ReceivedDiaryDataManager.swift in Sources */,

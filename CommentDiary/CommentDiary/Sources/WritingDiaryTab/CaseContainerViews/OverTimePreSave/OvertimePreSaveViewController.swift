@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class DeadlinePreSaveViewController : UIViewController {
+class OvertimePreSaveViewController : UIViewController {
     private lazy var krMonthDateFormatter: DateFormatter = {
         let df = DateFormatter()
 //        df.locale = Locale(identifier: "ko_KR")
@@ -97,17 +97,17 @@ class DeadlinePreSaveViewController : UIViewController {
     
     
     @IBAction func allButtonTap(_ sender: Any) {
-        let yPreSaveDeadlineVC = UIStoryboard(name: "YPreSaveDeadline", bundle: nil).instantiateViewController(withIdentifier: "YPreSaveDeadlineViewController") as! YPreSaveDeadlineViewController
-        yPreSaveDeadlineVC.diaryDate = self.dateLabel.text ?? ""
-        yPreSaveDeadlineVC.diaryContent = self.contentLabel.text ?? ""
-        yPreSaveDeadlineVC.diaryTItle = self.titleLabel.text ?? ""
-        yPreSaveDeadlineVC.diaryId = self.diaryIDValue
-        self.navigationController?.pushViewController(yPreSaveDeadlineVC, animated: true)
+        let overTimeCommentDiaryViewController = UIStoryboard(name: "OverTImeCommentDiary", bundle: nil).instantiateViewController(withIdentifier: "OverTImeCommentDiaryViewController") as! OverTImeCommentDiaryViewController
+        overTimeCommentDiaryViewController.diaryDate = self.dateLabel.text ?? ""
+        overTimeCommentDiaryViewController.diaryContent = self.contentLabel.text ?? ""
+        overTimeCommentDiaryViewController.diaryTItle = self.titleLabel.text ?? ""
+        overTimeCommentDiaryViewController.diaryId = self.diaryIDValue
+        self.navigationController?.pushViewController(overTimeCommentDiaryViewController, animated: true)
     }
     
     
     
-    
+//    OverTImeCommentDiaryViewController
     //MARK: - Actions
 }
 

@@ -9,12 +9,37 @@ import Foundation
 import UIKit
 
 class PreSaveViewController : UIViewController {
-    private lazy var krMonthDateFormatter: DateFormatter = {
-        let df = DateFormatter()
-        df.locale = Locale(identifier: "ko_KR")
-        df.dateFormat = "MM월 dd일"
-        return df
-    }()
+    let preSaveDiaryViewModel = PreSaveDiaryViewModel()
+    enum hexColor {
+        case backgroundColor
+        case dateLabelColor
+        case titleLabelColor
+        case titleSeparateColor
+        case contentLabelColor
+        case bottomViewMainColor
+        case bottomViewLabelColor
+        
+        func getHexColor() -> UIColor {
+            switch self {
+            case .backgroundColor:
+                return UIColor(hex: 0xFDFCF9)
+            case .dateLabelColor:
+                return UIColor(hex: 0x5ABD80)
+            case .titleLabelColor:
+                return UIColor(hex: 0x4E4C49)
+            case .titleSeparateColor:
+                return UIColor(hex: 0xE2DFD7)
+            case .contentLabelColor:
+                return UIColor(hex: 0x4E4C49)
+            case .bottomViewMainColor:
+                return UIColor(hex: 0xFFA665)
+            case .bottomViewLabelColor:
+                return UIColor(hex: 0xFDFCF9)
+            }
+        }
+    }
+    
+    
     var diaryIDValue: Int = 0
     //MARK: - Properties
     
@@ -28,7 +53,6 @@ class PreSaveViewController : UIViewController {
     
     @IBOutlet weak var contentBackView: UIView!
     
-    @IBOutlet weak var allLookButton: UIButton!
     
     @IBOutlet weak var separateView: UIView!
     
@@ -43,9 +67,6 @@ class PreSaveViewController : UIViewController {
         super.viewDidLoad()
         viewSetting()
         labelSetting()
-        buttonSetting()
-
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,7 +77,7 @@ class PreSaveViewController : UIViewController {
 
         loadTodayData()
         selectedData()
-        dateLabel.text = krMonthDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
+        dateLabel.text = preSaveDiaryViewModel.krMonthDateFormatter.string(from: Date(timeIntervalSinceNow: -25200))
     }
     
     func loadTodayData() {
@@ -65,9 +86,6 @@ class PreSaveViewController : UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(todayLoadContent(_:)), name: NSNotification.Name(rawValue: "loadContent"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(todayLoadID(_:)), name: NSNotification.Name(rawValue: "loadID"), object: nil)
     }
-//    @objc func todayLoadDate(_ notification : NSNotification) {
-//        dateLabel.text = notification.object as? String ?? ""
-//    }
     @objc func todayLoadtitle(_ notification : NSNotification) {
         diaryTItleLabel.text = notification.object as? String ?? ""
     }
@@ -124,20 +142,10 @@ class PreSaveViewController : UIViewController {
         diaryTItleLabel.font = UIFont.AppleSDGothic(.bold, size: 18)
         
     }
-    func buttonSetting() {
-        allLookButton.setTitle("전체보기", for: .normal)
-        allLookButton.setTitleColor(UIColor(hex: 0x878379), for: .normal)
-        allLookButton.titleLabel?.font = UIFont.AppleSDGothic(.medium, size: 12)
-    }
     
     
     //MARK: - Actions
     
-    @IBAction func allLookButtonTap(_ sender: Any) {
-//        let ypreSaveVC = UIStoryboard(name: "YPreSave", bundle: nil).instantiateViewController(withIdentifier: "YPreSaveViewController") as! YPreSaveViewController
-//        ypreSaveVC.diaryID = diaryIDValue
-//        self.navigationController?.pushViewController(ypreSaveVC, animated: true)
-    }
     
     
     @IBAction func allButtonTap(_ sender: Any) {

@@ -141,10 +141,10 @@ class CommentSoonViewController:UIViewController {
     }
     
     @IBAction func allButtonTap(_ sender: Any) {
-        let detailCommentVC = UIStoryboard(name: "DetailCommentDiary", bundle: nil).instantiateViewController(withIdentifier: "DetailCommentDiaryViewController") as! DetailCommentDiaryViewController
-        self.navigationController?.pushViewController(detailCommentVC, animated: true)
-        detailCommentVC.transToggle = true
-        detailCommentVC.diaryInt = diaryIDValue
+        let watingCommentDiaryVC = UIStoryboard(name: "WatingCommentDiary", bundle: nil).instantiateViewController(withIdentifier: "WaitingCommentDiaryViewController") as! WaitingCommentDiaryViewController
+        self.navigationController?.pushViewController(watingCommentDiaryVC, animated: true)
+        watingCommentDiaryVC.transToggle = true
+        watingCommentDiaryVC.diaryInt = diaryIDValue
         print(diaryIDValue, "보낸 아이디 값")
         
         

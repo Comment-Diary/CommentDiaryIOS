@@ -50,6 +50,8 @@
 		A521372B27D12ED300B98CF7 /* DeleteDiaryDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A521372A27D12ED300B98CF7 /* DeleteDiaryDataManager.swift */; };
 		A521372E27D21A5700B98CF7 /* DiaryMainPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A521372D27D21A5700B98CF7 /* DiaryMainPageResponse.swift */; };
 		A521373027D21A7300B98CF7 /* DiaryMainPageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A521372F27D21A7300B98CF7 /* DiaryMainPageDataManager.swift */; };
+		A522EB9028A64793001324A8 /* ReadCommentDiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A522EB8F28A64793001324A8 /* ReadCommentDiaryDetailViewController.swift */; };
+		A522EB9228A6484F001324A8 /* ReadCommentDiaryDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A522EB9128A6484F001324A8 /* ReadCommentDiaryDetail.storyboard */; };
 		A5242C6827D31E9900E24A76 /* NEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5242C6727D31E9900E24A76 /* NEditViewController.swift */; };
 		A5242C6A27D31EA400E24A76 /* NEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5242C6927D31EA400E24A76 /* NEdit.storyboard */; };
 		A5242C9027D3840A00E24A76 /* WritingDiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5242C8F27D3840A00E24A76 /* WritingDiaryVC.swift */; };
@@ -268,6 +270,8 @@
 		A521372A27D12ED300B98CF7 /* DeleteDiaryDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteDiaryDataManager.swift; sourceTree = "<group>"; };
 		A521372D27D21A5700B98CF7 /* DiaryMainPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMainPageResponse.swift; sourceTree = "<group>"; };
 		A521372F27D21A7300B98CF7 /* DiaryMainPageDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMainPageDataManager.swift; sourceTree = "<group>"; };
+		A522EB8F28A64793001324A8 /* ReadCommentDiaryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadCommentDiaryDetailViewController.swift; sourceTree = "<group>"; };
+		A522EB9128A6484F001324A8 /* ReadCommentDiaryDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReadCommentDiaryDetail.storyboard; sourceTree = "<group>"; };
 		A5242C6727D31E9900E24A76 /* NEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEditViewController.swift; sourceTree = "<group>"; };
 		A5242C6927D31EA400E24A76 /* NEdit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NEdit.storyboard; sourceTree = "<group>"; };
 		A5242C8F27D3840A00E24A76 /* WritingDiaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingDiaryVC.swift; sourceTree = "<group>"; };
@@ -675,6 +679,31 @@
 			path = DiaryMainPageAPI;
 			sourceTree = "<group>";
 		};
+		A522EB8E28A6475C001324A8 /* ReadCommentDiaryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A522EB9428A64AAC001324A8 /* ReadCommentDiaryCell */,
+				A522EB9328A64AA6001324A8 /* ReadCommentsCell */,
+				A522EB8F28A64793001324A8 /* ReadCommentDiaryDetailViewController.swift */,
+				A522EB9128A6484F001324A8 /* ReadCommentDiaryDetail.storyboard */,
+			);
+			path = ReadCommentDiaryDetail;
+			sourceTree = "<group>";
+		};
+		A522EB9328A64AA6001324A8 /* ReadCommentsCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ReadCommentsCell;
+			sourceTree = "<group>";
+		};
+		A522EB9428A64AAC001324A8 /* ReadCommentDiaryCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ReadCommentDiaryCell;
+			sourceTree = "<group>";
+		};
 		A5242C6627D31E7F00E24A76 /* NEdit */ = {
 			isa = PBXGroup;
 			children = (
@@ -851,6 +880,7 @@
 				A5242C9727D5065B00E24A76 /* CaseContainerViews */,
 				A5B84FE527E3B510001367B4 /* WatingCommentDiary */,
 				A59909AF27FEF46000025C58 /* YNotWriteComment */,
+				A522EB8E28A6475C001324A8 /* ReadCommentDiaryDetail */,
 				A5C7A39227E793BB0055BAD7 /* YReadComment */,
 				A5C7A37727E5AA0C0055BAD7 /* YEdit */,
 				A5242C6627D31E7F00E24A76 /* NEdit */,
@@ -1574,6 +1604,7 @@
 				A59909B327FEF4BA00025C58 /* YNotWriteComment.storyboard in Resources */,
 				A5B84FE927E3B5AF001367B4 /* DetailCommentDiary.storyboard in Resources */,
 				A529502227DB6A4200192054 /* PeriodView.storyboard in Resources */,
+				A522EB9228A6484F001324A8 /* ReadCommentDiaryDetail.storyboard in Resources */,
 				A567622C27BBC7DC006FDA7F /* SignUp.storyboard in Resources */,
 				A520916727DD0365003017AC /* PeriodCommentView.storyboard in Resources */,
 				A54C124928859AB5004FA514 /* TopSheet.storyboard in Resources */,
@@ -1728,6 +1759,7 @@
 				A5A0A33B27D902A300604A30 /* SendCommentViewController.swift in Sources */,
 				A56B698B27DA6E10001385DC /* MyPageDataManager.swift in Sources */,
 				A5242C9027D3840A00E24A76 /* WritingDiaryVC.swift in Sources */,
+				A522EB9028A64793001324A8 /* ReadCommentDiaryDetailViewController.swift in Sources */,
 				A518AFB427E9A5520024E1F1 /* ChangePasswordRequest.swift in Sources */,
 				A518AFAF27E985450024E1F1 /* ChangePasswordChangeModel.swift in Sources */,
 				A547A9A227EE50EC00DAAFE3 /* MemberOutDataManager.swift in Sources */,

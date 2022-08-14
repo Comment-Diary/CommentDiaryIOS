@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Read Comment Diary Detail View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="ReadCommentDiaryDetailViewController" id="Y6W-OH-hqX" customClass="ReadCommentDiaryDetailViewController" customModule="CommentDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1DQ-a5-8SN">
+                                <rect key="frame" x="0.0" y="44" width="414" height="70.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeb-VU-mRQ">
+                                        <rect key="frame" x="0.0" y="13" width="44" height="44"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="arrowLeft"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코멘트 받는 일기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmo-kd-sKz">
+                                        <rect key="frame" x="151" y="24.5" width="112" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnC-UE-dNu">
+                                        <rect key="frame" x="346" y="13" width="44" height="44"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="ic_delete"/>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWf-9S-8v7">
+                                        <rect key="frame" x="0.0" y="69.5" width="414" height="1"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="okX-8A-3WP"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstItem="tmo-kd-sKz" firstAttribute="centerY" secondItem="1DQ-a5-8SN" secondAttribute="centerY" id="8sY-TJ-NnV"/>
+                                    <constraint firstAttribute="bottom" secondItem="bWf-9S-8v7" secondAttribute="bottom" id="HI5-1J-l9S"/>
+                                    <constraint firstAttribute="trailing" secondItem="xnC-UE-dNu" secondAttribute="trailing" constant="24" id="N0J-GK-scU"/>
+                                    <constraint firstAttribute="trailing" secondItem="bWf-9S-8v7" secondAttribute="trailing" id="OgV-kW-u8a"/>
+                                    <constraint firstItem="bWf-9S-8v7" firstAttribute="leading" secondItem="1DQ-a5-8SN" secondAttribute="leading" id="cz7-Db-NdN"/>
+                                    <constraint firstItem="aeb-VU-mRQ" firstAttribute="leading" secondItem="1DQ-a5-8SN" secondAttribute="leading" id="gTq-E6-VzU"/>
+                                    <constraint firstItem="xnC-UE-dNu" firstAttribute="centerY" secondItem="1DQ-a5-8SN" secondAttribute="centerY" id="hy3-7o-WDR"/>
+                                    <constraint firstItem="aeb-VU-mRQ" firstAttribute="centerY" secondItem="1DQ-a5-8SN" secondAttribute="centerY" id="jgt-Ti-j7N"/>
+                                    <constraint firstItem="tmo-kd-sKz" firstAttribute="centerX" secondItem="1DQ-a5-8SN" secondAttribute="centerX" id="rOZ-Qp-xmC"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6A8-0P-keX">
+                                <rect key="frame" x="0.0" y="114.5" width="414" height="781.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="6A8-0P-keX" secondAttribute="bottom" id="3oe-Gs-Owh"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1DQ-a5-8SN" secondAttribute="trailing" id="QV5-1m-gkX"/>
+                            <constraint firstItem="1DQ-a5-8SN" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Wr1-st-3Hu"/>
+                            <constraint firstItem="1DQ-a5-8SN" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="ZPx-uX-Wcd"/>
+                            <constraint firstItem="6A8-0P-keX" firstAttribute="top" secondItem="1DQ-a5-8SN" secondAttribute="bottom" id="aD4-AK-U89"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="6A8-0P-keX" secondAttribute="trailing" id="liN-aB-1qP"/>
+                            <constraint firstItem="6A8-0P-keX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="vFa-bk-Sf5"/>
+                            <constraint firstItem="1DQ-a5-8SN" firstAttribute="width" secondItem="1DQ-a5-8SN" secondAttribute="height" multiplier="376:64" id="xP9-lo-JBJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="diaryTableView" destination="6A8-0P-keX" id="bHE-CB-Z2k"/>
+                        <outlet property="navigationBarSeparateView" destination="bWf-9S-8v7" id="s1l-eh-Fjf"/>
+                        <outlet property="navigationBarTItleLabel" destination="tmo-kd-sKz" id="k4e-j8-iqk"/>
+                        <outlet property="navigationBarVIew" destination="1DQ-a5-8SN" id="6NB-WS-Dy0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-17.39130434782609" y="67.633928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrowLeft" width="44" height="44"/>
+        <image name="ic_delete" width="44" height="44"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -110,12 +110,16 @@ class SplashVieController : ViewController {
 
     @IBAction func nextBtnClicked(_ sender: Any) {
         if currentPage == slides.count - 1 {
-            print("Go to the next page")
-            let vc = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
-//            navigationController?.pushViewController(vc, animated: true)
-            vc.modalTransitionStyle = .crossDissolve
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true, completion: nil)
+//            print("Go to the next page")
+//            let vc = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+////            navigationController?.pushViewController(vc, animated: true)
+//            vc.modalTransitionStyle = .crossDissolve
+//            vc.modalPresentationStyle = .fullScreen
+//            self.present(vc, animated: true, completion: nil)
+            let loginCaseVC = LoginCaseViewController()
+            loginCaseVC.modalTransitionStyle = .crossDissolve
+            loginCaseVC.modalPresentationStyle = .fullScreen
+            present(loginCaseVC, animated: true, completion: nil)
         } else {
             currentPage += 1
             let indexPath = IndexPath(item: currentPage, section: 0)

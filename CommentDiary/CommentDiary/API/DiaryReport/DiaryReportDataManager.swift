@@ -47,6 +47,7 @@ class DiaryBlockDataManaber {
         headers: headers)
             .validate()
             .responseDecodable(of: DiaryReportResponse.self) { response in
+                
                 switch response.result {
                 case .success(let response):
                     print("DEBUG >> Success \(response)")

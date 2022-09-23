@@ -108,8 +108,15 @@ PODS:
   - nanopb/encode (2.30908.0)
   - PanModal (1.2.7)
   - PromisesObjC (2.1.0)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
   - Siren (5.8.1)
   - SnapKit (5.0.1)
+  - Then (3.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.5)
@@ -119,8 +126,11 @@ DEPENDENCIES:
   - FSCalendar
   - IQKeyboardManagerSwift
   - PanModal
+  - RxCocoa (= 6.5.0)
+  - RxSwift (= 6.5.0)
   - Siren
   - SnapKit (~> 5.0.0)
+  - Then
 
 SPEC REPOS:
   trunk:
@@ -141,8 +151,12 @@ SPEC REPOS:
     - nanopb
     - PanModal
     - PromisesObjC
+    - RxCocoa
+    - RxRelay
+    - RxSwift
     - Siren
     - SnapKit
+    - Then
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
@@ -162,9 +176,13 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
   PromisesObjC: 99b6f43f9e1044bd87a95a60beff28c2c44ddb72
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   Siren: de768099aff1f1c9acda4247064788a4940b4bf3
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: f828037cc988d7fda7d36e3234f7a98fed02eafc
+PODFILE CHECKSUM: a492c4396a314816a82b4bf8c114de6eb33f2a0e
 
 COCOAPODS: 1.11.3

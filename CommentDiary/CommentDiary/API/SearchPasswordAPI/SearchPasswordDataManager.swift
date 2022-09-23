@@ -22,6 +22,7 @@ class SearchPasswordDataManager {
                    headers: nil)
             .validate()
             .responseDecodable(of: SearchPasswordResponse.self) { response in
+                
                 switch response.result {
                 case .success(let response):
                     print("DEBUG >> Success \(response)")

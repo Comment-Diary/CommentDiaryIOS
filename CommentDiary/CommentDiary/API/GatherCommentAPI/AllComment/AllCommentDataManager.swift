@@ -24,6 +24,7 @@ class AllCommentDataManager {
             .responseDecodable(of: AllCommentResponse.self) { response in
                 switch response.result {
                 case .success(let response):
+                    
                     print("DEBUG >> Success \(response)")
                     viewController.getCommentListSuccess(response)
                     

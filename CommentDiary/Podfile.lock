@@ -119,7 +119,7 @@ PODS:
   - Then (3.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.5)
+  - Alamofire
   - AlamofireNetworkActivityIndicator (~> 3.1)
   - Firebase/Analytics
   - Firebase/Messaging
@@ -183,6 +183,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: a492c4396a314816a82b4bf8c114de6eb33f2a0e
+PODFILE CHECKSUM: 2bb635bb0ebd46d7d6f5e23ec2005a3bcda3d59b
 
 COCOAPODS: 1.11.3

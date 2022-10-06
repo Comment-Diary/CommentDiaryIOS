@@ -674,7 +674,7 @@ extension WritingDiaryVC {
         for diary in mainPageResult {
             // i -> diary
             
-            
+
             //명칭 (displayTodayDate)
             if todayDateData == diary.date {
                 todayTitle = diary.title

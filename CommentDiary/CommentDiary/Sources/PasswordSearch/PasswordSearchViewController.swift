@@ -94,9 +94,8 @@ class PasswordSearchViewController : UIViewController {
     @IBAction func sendPasswordTapButton(_ sender: Any) {
         //API 비밀번호 찾기
         let emailInputValue: String = emailInputTextField.text!
-        searchPasswordDataManager.getPasswordData(emailValue: emailInputValue, self)
+//        searchPasswordDataManager.getPasswordData(emailValue: emailInputValue, self)
         self.showIndicator()
-
     }
     @IBAction func backButtonTap(_ sender: Any) {
         dismiss(animated: true)

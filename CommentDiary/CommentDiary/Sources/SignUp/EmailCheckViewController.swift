@@ -1,8 +1,8 @@
 //
-//  SearchPasswordViewController.swift
+//  SignUpEmailViewController.swift
 //  CommentDiary
 //
-//  Created by 류창휘 on 2022/09/25.
+//  Created by 류창휘 on 2022/10/09.
 //
 
 import Foundation
@@ -12,24 +12,22 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-class SearchPasswordViewController : UIViewController {
+class EmailCheckViewController : UIViewController {
     let disposeBag = DisposeBag()
-    var viewModel = SearchPasswordViewModel()
-    
+    var viewModel = EmailCheckViewModel()
     // MARK: - PROPERTIES
     private let backButton = UIButton().then {
         $0.setImage(UIImage(named: "arrowLeft.png"), for: .normal)
     }
     private let mainTitleLabel = UILabel().then {
-        $0.text = "비밀번호 찾기"
+        $0.text = "회원가입"
         $0.textColor = HexColor.textColor.getHexColor()
         $0.font = UIFont.AppleSDGothic(.extraBold, size: 30)
     }
-    private let infoLabel = UILabel().then {
-        $0.text = "코다 가입시 사용했던 \n아이디(이메일)을 입력해주세요"
-        $0.numberOfLines = 2
+    private let emailLabel = UILabel().then {
+        $0.text = "아이디(이메일)"
         $0.textColor = HexColor.textColor.getHexColor()
-        $0.font =  UIFont.AppleSDGothic(.medium, size: 14)
+        $0.font = UIFont.AppleSDGothic(.bold, size: 14)
     }
     private let emailTextField = UITextField().then {
         $0.placeholder = "coda@coda.com"
@@ -44,23 +42,22 @@ class SearchPasswordViewController : UIViewController {
         $0.textColor = HexColor.warning.getHexColor()
         $0.font = UIFont.AppleSDGothic(.medium, size: 12)
     }
-    private let sendPasswordButton = UIButton().then {
-        $0.setTitle("비밀번호 전송하기", for: .normal)
+    private let sendCertificationNumberButton = UIButton().then {
+        $0.setTitle("인증번호 보내기", for: .normal)
         $0.titleLabel?.font = UIFont.AppleSDGothic(.bold, size: 18)
         $0.setTitleColor(HexColor.whiteColor.getHexColor(), for: .normal)
         $0.backgroundColor = HexColor.mainGreenColor.getHexColor()
         $0.layer.cornerRadius = 10
-
     }
     
     
     // MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
+        action()
         configureUI()
-        actions()
         emailFormCheck()
-        searchButtonClicked()
+        sendCertificationNumberButtonClicked()
     }
     private func emailFormCheck() {
         emailTextField.rx.text
@@ -68,54 +65,50 @@ class SearchPasswordViewController : UIViewController {
             .asDriver(onErrorJustReturn: "")
             .drive(viewModel.emailTextFieldSubject)
             .disposed(by: disposeBag)
-        
         viewModel.idFormCheck
             .subscribe(onNext: { value in
-                print(value)
                 if value {
                     self.warningAlertLabel.text = ""
-                    self.sendPasswordButton.isEnabled = true
-                    self.sendPasswordButton.alpha = 1.0
+                    self.sendCertificationNumberButton.isEnabled = true
+                    self.sendCertificationNumberButton.alpha = 1.0
                 }
                 else {
                     self.warningAlertLabel.text = "이메일 양식에 맞춰주세요."
                     self.warningAlertLabel.textColor = HexColor.warning.getHexColor()
-                    self.sendPasswordButton.isEnabled = false
-                    self.sendPasswordButton.alpha = 0.4
+                    self.sendCertificationNumberButton.isEnabled = false
+                    self.sendCertificationNumberButton.alpha = 0.4
                 }
             }).disposed(by: disposeBag)
     }
-    func searchButtonClicked() {
-        sendPasswordButton.rx.tap
+    private func sendCertificationNumberButtonClicked() {
+        sendCertificationNumberButton.rx.tap
             .bind {
                 self.showIndicator()
                 self.viewModel.buttonTapped(self.emailTextField.text ?? "", completion: { result in
                     self.dismissIndicator()
-                    if result == 200 {
-                        print("200")
-                        self.warningAlertLabel.text = "비밀번호를 전송했어요. 알림을 확인해주세요"
-                        self.warningAlertLabel.textColor = HexColor.mainGreenColor.getHexColor()
-                    } else {
-                        self.warningAlertLabel.text = "해당 이메일을 가지고 있는 사용자가 없어요"
-                        self.warningAlertLabel.textColor = HexColor.warning.getHexColor()
+                    switch result {
+                    case 200:
+                        //화면전환
+                        print("성공")
+                    case 409:
+                        self.warningAlertLabel.text = "이미 이메일을 사용하는 유저가 있습니다."
+                    default:
+                        print("예외")
                     }
-                    
                 })
             }
             .disposed(by: disposeBag)
     }
-    
-    private func actions() {
+    private func action() {
         backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
     }
-    
     // MARK: - ACTIONS
     @objc func backButtonTapped() {
         dismiss(animated: true, completion: nil)
     }
 }
 
-extension SearchPasswordViewController {
+extension EmailCheckViewController {
     enum HexColor {
         case backgroundColor
         case textColor
@@ -138,12 +131,10 @@ extension SearchPasswordViewController {
             }
         }
     }
-    
-    
     private func configureUI() {
-        [backButton, mainTitleLabel, infoLabel, emailTextField, warningAlertLabel, sendPasswordButton].forEach {
+        [backButton, mainTitleLabel, emailLabel, emailTextField, warningAlertLabel, sendCertificationNumberButton].forEach({
             view.addSubview($0)
-        }
+        })
         backButton.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(3)
             make.leading.equalToSuperview().offset(7)
@@ -152,12 +143,12 @@ extension SearchPasswordViewController {
             make.top.equalTo(view.safeAreaLayoutGuide).offset(54)
             make.leading.equalToSuperview().offset(52)
         }
-        infoLabel.snp.makeConstraints { make in
-            make.top.equalTo(mainTitleLabel.snp.bottom).offset(16)
+        emailLabel.snp.makeConstraints { make in
+            make.top.equalTo(mainTitleLabel.snp.bottom).offset(18)
             make.leading.equalToSuperview().offset(52)
         }
         emailTextField.snp.makeConstraints { make in
-            make.top.equalTo(infoLabel.snp.bottom).offset(12)
+            make.top.equalTo(emailLabel.snp.bottom).offset(4)
             make.centerX.equalToSuperview()
             make.leading.equalToSuperview().offset(52)
             make.height.equalTo(40)
@@ -166,7 +157,7 @@ extension SearchPasswordViewController {
             make.top.equalTo(emailTextField.snp.bottom).offset(4)
             make.leading.equalToSuperview().offset(52)
         }
-        sendPasswordButton.snp.makeConstraints { make in
+        sendCertificationNumberButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.leading.equalToSuperview().offset(16)
             make.height.equalTo(56)
@@ -174,8 +165,7 @@ extension SearchPasswordViewController {
         }
         
         view.backgroundColor = HexColor.backgroundColor.getHexColor()
-        sendPasswordButton.isEnabled = false
-        sendPasswordButton.alpha = 0.4
-        
+        sendCertificationNumberButton.isEnabled = false
+        sendCertificationNumberButton.alpha = 0.4
     }
 }

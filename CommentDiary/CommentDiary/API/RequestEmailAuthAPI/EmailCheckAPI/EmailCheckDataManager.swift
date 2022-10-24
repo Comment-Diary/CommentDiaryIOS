@@ -1,38 +1,38 @@
 //
-//  SearchPasswordDataManager.swift
+//  CertificationNumberDataManager.swift
 //  CommentDiary
 //
-//  Created by 류창휘 on 2022/02/22.
+//  Created by 류창휘 on 2022/10/25.
 //
 
 import Foundation
 import Alamofire
 import RxSwift
 
-class SearchPasswordDataManager {
-    var viewModel = SearchPasswordViewModel()
+class EmailCheckDataManager {
+    var viewModel = EmailCheckViewModel()
     let disposeBag = DisposeBag()
-    func getPasswordData(emailValue: String,completion: @escaping (Int) -> (Void)){
-        let url = "http://comment-diary.shop/api/v1/email/password"
+    func getEmailData(emailValue: String, completion: @escaping (Int) -> (Void)) {
+        let url = "http://comment-diary.shop/api/v1/email"
         let params: Parameters = [
             "email" : "\(emailValue)"
         ]
-
+        
+        
         AF.request(url,
                    method: .get,
-        parameters: params,
+                   parameters: params,
                    encoding: URLEncoding.default,
                    headers: nil)
             .validate()
-            .responseDecodable(of: SearchPasswordResponse.self) { response in
+            .responseDecodable(of: EmailResponse.self) { response in
                 completion(response.response?.statusCode ?? 0)
-                
                 switch response.result {
                 case .success(let response):
                     print("DEBUG >> Success \(response)")
+
                 case .failure(let error):
-                    print(error)
-                
+                    print(error.localizedDescription)
 
                 }
             }

@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Then
+import SnapKit
 import RxCocoa
 import RxSwift
 
@@ -91,6 +92,9 @@ class EmailLoginViewController: UIViewController {
     }
     private func actions() {
         backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        
+        searchPasswordButton.addTarget(self, action: #selector(searchPasswordButtonTapped), for: .touchUpInside)
+        signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
     }
  
     
@@ -98,6 +102,18 @@ class EmailLoginViewController: UIViewController {
     // MARK: - ACTIONS
     @objc func backButtonTapped() {
         dismiss(animated: true, completion: nil)
+    }
+    @objc func signUpButtonTapped() {
+        let signUpTermsVC = SignUpTermsViewController()
+        signUpTermsVC.modalTransitionStyle = .crossDissolve
+        signUpTermsVC.modalPresentationStyle = .fullScreen
+        present(signUpTermsVC, animated: true, completion: nil)
+    }
+    @objc func searchPasswordButtonTapped() {
+        let searchPasswordVC = SearchPasswordViewController()
+        searchPasswordVC.modalTransitionStyle = .crossDissolve
+        searchPasswordVC.modalPresentationStyle = .fullScreen
+        present(searchPasswordVC, animated: true, completion: nil)
     }
     
 }

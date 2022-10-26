@@ -11,7 +11,7 @@ class GatherDiaryDateDataManager {
     func gatherDiaryDateData(_ viewController: GatherLookViewController, dateValue : String) {
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers : HTTPHeaders = [.authorization(bearerToken: token as! String)]
-        let url = "http://comment-diary.shop/api/v1/diary/my"
+        let url = "\(Constant.CODA_URL)/diary/my"
         let params : Parameters = [
             "date" : "\(dateValue)"
         ]

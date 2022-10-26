@@ -10,16 +10,8 @@ import Alamofire
 
 class WritingDiaryDataManager {
     func writingDiaryPostData(_ viewController: TodayDiaryViewController) {
-//        let storedTokenData = UserDefaultManager.shared.getTokens()
-//        let credential = OAuthCredential(accessToken: storedTokenData.accessToken , refreshToken: storedTokenData.refreshToken, expiration: Date(timeIntervalSinceNow: 60 * 5))
-//        let authenticator = OAuthAuthenticator()
-//        let authInterceptor = AuthenticationInterceptor(authenticator: authenticator,
-//                                                    credential: credential)
-//
         
-        
-        
-        let url = "http://comment-diary.shop/api/v1/diary"
+        let url = "\(Constant.CODA_URL)/diary"
         let params = ["title" : WritingDiaryRequest.title,
                       "content" : WritingDiaryRequest.content,
                       "date" : WritingDiaryRequest.date,

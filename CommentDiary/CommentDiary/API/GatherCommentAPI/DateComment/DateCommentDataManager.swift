@@ -13,7 +13,7 @@ class DateCommentDataManager {
     func dateCommentData(_ viewController: SendCommentViewController, dateValue: String) {
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers : HTTPHeaders = [.authorization(bearerToken: token as! String)]
-        let url = "http://comment-diary.shop/api/v1/comment"
+        let url = "\(Constant.CODA_URL)/comment"
         let params : Parameters = [
             "date" : "\(dateValue)"
         ]
@@ -43,7 +43,7 @@ class CompareDataManager {
     func dateCommentData(_ viewController: ReadCommentViewController, dateValue: String) {
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers : HTTPHeaders = [.authorization(bearerToken: token as! String)]
-        let url = "http://comment-diary.shop/api/v1/comment"
+        let url = "\(Constant.CODA_URL)/comment"
         let params : Parameters = [
             "date" : "\(dateValue)"
         ]
@@ -74,7 +74,7 @@ class CompareDateDataManager {
     func commentDiaryDateData(_ viewController: GatherLookViewController, dateValue: String) {
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers : HTTPHeaders = [.authorization(bearerToken: token as! String)]
-        let url = "http://comment-diary.shop/api/v1/comment"
+        let url = "\(Constant.CODA_URL)/comment"
         let params : Parameters = [
             "date" : "\(dateValue)"
         ]
@@ -105,7 +105,7 @@ class PreparationStatusDataManager {
     func preparationStatusData(_ viewController: GatherLookDetailViewController, dateValue: String) {
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers : HTTPHeaders = [.authorization(bearerToken: token as! String)]
-        let url = "http://comment-diary.shop/api/v1/comment"
+        let url = "\(Constant.CODA_URL)/comment"
         let params : Parameters = [
             "date" : "\(dateValue)"
         ]

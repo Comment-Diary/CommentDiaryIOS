@@ -38,6 +38,7 @@ class LoginViewController: UIViewController {
 
         
         emailTextField.delegate = self
+        
         passwordTextField.delegate = self
         textFieldSetting()
         buttonSetting()

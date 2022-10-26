@@ -10,7 +10,7 @@ import Alamofire
 
 class CheckEmailDataManager {
     func checkEmailPostData(_ viewController: AuthNumberViewController, email: String, code: String) {
-        let url = "http://comment-diary.shop/api/v1/email/confirm"
+        let url = "\(Constant.CODA_URL)/email/confirm"
         let params = ["email" : email,
                       "code" : code]
         

@@ -10,7 +10,7 @@ import Alamofire
 
 class MemberOutDataManager {
     func deleteMemberData(_ viewController : MemberOutViewController) {
-        let url = "http://comment-diary.shop/api/v1/members"
+        let url = "\(Constant.CODA_URL)/members"
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         

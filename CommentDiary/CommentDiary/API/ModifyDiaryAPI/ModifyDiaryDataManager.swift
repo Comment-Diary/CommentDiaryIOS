@@ -10,7 +10,7 @@ import Alamofire
 
 class ModifyDiaryDataManager {
     func modifyDiaryPostData(_ viewController: NEidtViewController, _ diaryValue: Int) {
-        let url = "http://comment-diary.shop/api/v1/diary/\(diaryValue)"
+        let url = "\(Constant.CODA_URL)/diary/\(diaryValue)"
         let params = ["title" : ModifyDiaryRequest.title,
                       "content" : ModifyDiaryRequest.content,
                       "deliveryYn" : ModifyDiaryRequest.deliveryYn,

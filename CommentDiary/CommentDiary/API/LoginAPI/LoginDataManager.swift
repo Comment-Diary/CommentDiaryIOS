@@ -10,9 +10,10 @@ import Alamofire
 
 class LoginDataManager {
     func loginPostData(_ viewController: LoginViewController) {
-        let url = "http://comment-diary.shop/api/v1/members/login"
+        let url = "\(Constant.CODA_URL)/members/login"
         let params = ["email" : LoginRequest.email,
-                      "password" : LoginRequest.password]
+                      "password" : LoginRequest.password,
+                      "deviceToken" : "test"]
         
         AF.request(url,
                    method: .post,
@@ -51,7 +52,7 @@ class LoginDataManager {
 
 class LoginAPIDataManager {
     func loginPostData(_ viewController: SignUpCompletionViewController) {
-        let url = "http://comment-diary.shop/api/v1/members/login"
+        let url = "\(Constant.CODA_URL)/members/login"
         let params = ["email" : LoginRequest.email,
                       "password" : LoginRequest.password]
         

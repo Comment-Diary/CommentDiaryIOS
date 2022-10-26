@@ -10,7 +10,7 @@ import Alamofire
 
 class DiaryCheckDataManager {
     func diaryCheckData(diaryID: Int, _ viewController: NSaveViewController) {
-        let url = "http://comment-diary.shop/api/v1/diary/\(diaryID)"
+        let url = "\(Constant.CODA_URL)/diary/\(diaryID)"
         let token = UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         
@@ -36,7 +36,7 @@ class DiaryCheckDataManager {
 
 class CommentDiaryCheckDataManager {
     func commentDiaryCheckData(diaryID: Int, _ viewController: DetailCommentDiaryViewController) {
-        let url = "http://comment-diary.shop/api/v1/diary/\(diaryID)"
+        let url = "\(Constant.CODA_URL)/diary/\(diaryID)"
         let token = UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         
@@ -62,7 +62,7 @@ class CommentDiaryCheckDataManager {
 
 class PreSaveDiaryCheckDataManager {
     func commentDiaryCheckData(diaryID: Int, _ viewController: YPreSaveViewController) {
-        let url = "http://comment-diary.shop/api/v1/diary/\(diaryID)"
+        let url = "\(Constant.CODA_URL)/diary/\(diaryID)"
         let token = UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         
@@ -87,7 +87,7 @@ class PreSaveDiaryCheckDataManager {
 
 class NotArrivalCommentDiaryCheckDataManager {
     func diaryCheckData(diaryID: Int, _ viewController: NotArrivalCommentDiaryViewController) {
-        let url = "http://comment-diary.shop/api/v1/diary/\(diaryID)"
+        let url = "\(Constant.CODA_URL)/diary/\(diaryID)"
         let token = UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         
@@ -113,7 +113,7 @@ class NotArrivalCommentDiaryCheckDataManager {
 
 class GatherLookDetailDiaryCheckDataManager {
     func commentDiaryCheckData(diaryID: Int, _ viewController: GatherLookDetailViewController) {
-        let url = "http://comment-diary.shop/api/v1/diary/\(diaryID)"
+        let url = "\(Constant.CODA_URL)/diary/\(diaryID)"
         let token = UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         
@@ -139,7 +139,7 @@ class GatherLookDetailDiaryCheckDataManager {
 
 class YReadCommentCheckDataManager {
     func DiaryCheckData(diaryID: Int, _ viewController: YReadCommentViewController) {
-        let url = "http://comment-diary.shop/api/v1/diary/\(diaryID)"
+        let url = "\(Constant.CODA_URL)/diary/\(diaryID)"
         let token = UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         
@@ -165,7 +165,7 @@ class YReadCommentCheckDataManager {
 
 class ReadCommentAllButtonTapDataManager {
     func allbuttonTapData(diaryID: Int, _ viewController: ReadCommentViewController) {
-        let url = "http://comment-diary.shop/api/v1/diary/\(diaryID)"
+        let url = "\(Constant.CODA_URL)/diary/\(diaryID)"
         let token = UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         
@@ -191,7 +191,7 @@ class ReadCommentAllButtonTapDataManager {
 
 class YNotWriteCommentDataManager {
     func YNotWriteCommentData(diaryID: Int, _ viewController: YNotWriteCommentViewController) {
-        let url = "http://comment-diary.shop/api/v1/diary/\(diaryID)"
+        let url = "\(Constant.CODA_URL)/diary/\(diaryID)"
         let token = UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         
@@ -216,7 +216,7 @@ class YNotWriteCommentDataManager {
 
 class SortationDataManager {
     func gatherLookDetailSortData(diaryID: Int, _ viewController: GatherLookViewController) {
-        let url = "http://comment-diary.shop/api/v1/diary/\(diaryID)"
+        let url = "\(Constant.CODA_URL)/diary/\(diaryID)"
         let token = UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         

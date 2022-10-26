@@ -11,7 +11,7 @@ import Alamofire
 class DiaryReportDataManager {
     func diaryReportPostData(_ viewController: DiaryReportViewController, diaryId : Int, reportContent: String) {
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
-        let url = "http://comment-diary.shop/api/v1/report/diary"
+        let url = "\(Constant.CODA_URL)/report/diary"
         let params = ["diaryId" : "\(diaryId)",
                       "content" : "\(reportContent)"]
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
@@ -36,7 +36,7 @@ class DiaryReportDataManager {
 class DiaryBlockDataManaber {
     func diaryReportPostData(_ viewController: DiaryBlockViewController, diaryId : Int, blockContent: String) {
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
-        let url = "http://comment-diary.shop/api/v1/report/diary"
+        let url = "\(Constant.CODA_URL)/report/diary"
         let params = ["diaryId" : "\(diaryId)",
                       "content" : "\(blockContent)"]
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]

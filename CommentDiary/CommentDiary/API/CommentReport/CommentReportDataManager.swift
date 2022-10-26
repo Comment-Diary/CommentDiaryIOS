@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 class CommentReportDataManager {
     func commentReportPostData(_ viewController: CommentReportViewController, commentIdx: Int, commentReportContent: String) {
-        let url = "http://comment-diary.shop/api/v1/report/comment"
+        let url = "\(Constant.CODA_URL)/report/comment"
         let params = ["commentId" : "\(commentIdx)",
                       "content" : commentReportContent]
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""

@@ -9,4 +9,5 @@ import Foundation
 struct LoginRequest {
     static var email = ""
     static var password = ""
+    static var deviceToken = ""
 }

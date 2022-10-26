@@ -11,7 +11,7 @@ import Alamofire
 class CommentWritingDataManager {
     func commentWritingPostData(_ viewController: SendCommentAlertViewController) {
         let token =  UserDefaults.standard.value(forKey: "AccessToken") ?? ""
-        let url = "http://comment-diary.shop/api/v1/comment"
+        let url = "\(Constant.CODA_URL)/comment"
         let params = ["diaryId" : "\(CommentWritingRequest.diaryId)",
                       "date": CommentWritingRequest.date,
                       "content" : CommentWritingRequest.content]

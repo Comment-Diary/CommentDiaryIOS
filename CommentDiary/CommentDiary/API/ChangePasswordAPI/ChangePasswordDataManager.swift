@@ -10,7 +10,7 @@ import Alamofire
 
 class ChangePasswordDataManager {
     func changePasswordPatchData(_ viewController: ChagePasswordViewController) {
-        let url = "http://comment-diary.shop/api/v1/members"
+        let url = "\(Constant.CODA_URL)/members"
         let params = ["password" : ChangePasswordRequest.password, "checkPassword" : ChangePasswordRequest.checkPassword]
         let token = UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]

@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 class GatherDiaryAllDataManager {
     func gahterDiaryAllData(_ viewController: GatherLookViewController) {
-        let url = "http://comment-diary.shop/api/v1/diary/my/all"
+        let url = "\(Constant.CODA_URL)/diary/my/all"
         let token = UserDefaults.standard.value(forKey: "AccessToken") ?? ""
         let headers: HTTPHeaders = [.authorization(bearerToken: token as! String)]
         

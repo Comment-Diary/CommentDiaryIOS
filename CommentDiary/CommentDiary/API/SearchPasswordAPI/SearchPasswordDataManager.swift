@@ -13,7 +13,7 @@ class SearchPasswordDataManager {
     var viewModel = SearchPasswordViewModel()
     let disposeBag = DisposeBag()
     func getPasswordData(emailValue: String,completion: @escaping (Int) -> (Void)){
-        let url = "http://comment-diary.shop/api/v1/email/password"
+        let url = "\(Constant.CODA_URL)/email/password"
         let params: Parameters = [
             "email" : "\(emailValue)"
         ]

@@ -13,7 +13,7 @@ class EmailCheckDataManager {
     var viewModel = EmailCheckViewModel()
     let disposeBag = DisposeBag()
     func getEmailData(emailValue: String, completion: @escaping (Int) -> (Void)) {
-        let url = "http://comment-diary.shop/api/v1/email"
+        let url = "\(Constant.CODA_URL)/email"
         let params: Parameters = [
             "email" : "\(emailValue)"
         ]
@@ -25,7 +25,7 @@ class EmailCheckDataManager {
                    encoding: URLEncoding.default,
                    headers: nil)
             .validate()
-            .responseDecodable(of: EmailResponse.self) { response in
+            .responseDecodable(of: EmailCheckResponse.self) { response in
                 completion(response.response?.statusCode ?? 0)
                 switch response.result {
                 case .success(let response):

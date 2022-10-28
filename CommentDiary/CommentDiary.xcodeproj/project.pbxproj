@@ -102,7 +102,7 @@
 		A5567CA127BE945E001A4B98 /* SignUpCompletion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5567CA027BE945E001A4B98 /* SignUpCompletion.storyboard */; };
 		A5567CA427BEA342001A4B98 /* TodayDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5567CA327BEA342001A4B98 /* TodayDiary.storyboard */; };
 		A5567CA627BEA350001A4B98 /* TodayDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5567CA527BEA350001A4B98 /* TodayDiaryViewController.swift */; };
-		A5611A2F2906EE4D00AA1AE3 /* CertificationNumberResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5611A2E2906EE4D00AA1AE3 /* CertificationNumberResponse.swift */; };
+		A5611A2F2906EE4D00AA1AE3 /* EmailCheckResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5611A2E2906EE4D00AA1AE3 /* EmailCheckResponse.swift */; };
 		A5611A312906EE6000AA1AE3 /* EmailCheckDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5611A302906EE6000AA1AE3 /* EmailCheckDataManager.swift */; };
 		A561E79F27FBDF0D00EAACEC /* AppleSDGothicNeoB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A561E79C27FBDF0400EAACEC /* AppleSDGothicNeoB.ttf */; };
 		A561E7A027FBDF1000EAACEC /* AppleSDGothicNeoEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A561E79D27FBDF0400EAACEC /* AppleSDGothicNeoEB.ttf */; };
@@ -154,6 +154,10 @@
 		A57532BE2880426A00898776 /* AloneDiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57532BD2880426A00898776 /* AloneDiaryDetailViewController.swift */; };
 		A57532C02880427B00898776 /* AloneDiaryDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57532BF2880427B00898776 /* AloneDiaryDetail.storyboard */; };
 		A586951128A2B91C002DB998 /* OverTImePreSaveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A586951028A2B91C002DB998 /* OverTImePreSaveViewModel.swift */; };
+		A58B1D9F290C297E000415BA /* EmailAuthenficationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58B1D9E290C297E000415BA /* EmailAuthenficationDataManager.swift */; };
+		A58B1DA1290C29A5000415BA /* EmailAuthenficationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58B1DA0290C29A5000415BA /* EmailAuthenficationResponse.swift */; };
+		A58B1DA3290C29BF000415BA /* EmailAuthenficationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58B1DA2290C29BF000415BA /* EmailAuthenficationRequest.swift */; };
+		A58B1DA5290C3C21000415BA /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58B1DA4290C3C21000415BA /* UserInfo.swift */; };
 		A59364D828B3CDDA0054305B /* ReadCommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59364D728B3CDDA0054305B /* ReadCommentsCell.swift */; };
 		A59364DA28B3CDFB0054305B /* ReadCommentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A59364D928B3CDFB0054305B /* ReadCommentsCell.xib */; };
 		A595203A27D89A4F005D414D /* CommentWritingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A595203927D89A4F005D414D /* CommentWritingResponse.swift */; };
@@ -188,6 +192,8 @@
 		A5C1D5B927C271FE0046095A /* CheckEmailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1D5B827C271FE0046095A /* CheckEmailRequest.swift */; };
 		A5C43E4729099C090097999D /* EmailAuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C43E4629099C090097999D /* EmailAuthenticationViewController.swift */; };
 		A5C43E4929099C190097999D /* EmailAuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C43E4829099C190097999D /* EmailAuthenticationViewModel.swift */; };
+		A5C43E4B290A5BF70097999D /* PasswordCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C43E4A290A5BF70097999D /* PasswordCheckViewController.swift */; };
+		A5C43E4D290A5C020097999D /* PasswordCheckVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C43E4C290A5C020097999D /* PasswordCheckVIewModel.swift */; };
 		A5C71352286B4553009CE07B /* UIBeziePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C71351286B4553009CE07B /* UIBeziePath.swift */; };
 		A5C71354286B45B3009CE07B /* UIVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C71353286B45B3009CE07B /* UIVIew.swift */; };
 		A5C71357286B4AB9009CE07B /* TodayDiary2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C71356286B4AB9009CE07B /* TodayDiary2ViewController.swift */; };
@@ -336,7 +342,7 @@
 		A5567CA027BE945E001A4B98 /* SignUpCompletion.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpCompletion.storyboard; sourceTree = "<group>"; };
 		A5567CA327BEA342001A4B98 /* TodayDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TodayDiary.storyboard; sourceTree = "<group>"; };
 		A5567CA527BEA350001A4B98 /* TodayDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDiaryViewController.swift; sourceTree = "<group>"; };
-		A5611A2E2906EE4D00AA1AE3 /* CertificationNumberResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationNumberResponse.swift; sourceTree = "<group>"; };
+		A5611A2E2906EE4D00AA1AE3 /* EmailCheckResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCheckResponse.swift; sourceTree = "<group>"; };
 		A5611A302906EE6000AA1AE3 /* EmailCheckDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCheckDataManager.swift; sourceTree = "<group>"; };
 		A561E79C27FBDF0400EAACEC /* AppleSDGothicNeoB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoB.ttf; path = ../../../../../IOS/AppleSDGothicNeoB.ttf; sourceTree = "<group>"; };
 		A561E79D27FBDF0400EAACEC /* AppleSDGothicNeoEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoEB.ttf; path = ../../../../../IOS/AppleSDGothicNeoEB.ttf; sourceTree = "<group>"; };
@@ -390,6 +396,10 @@
 		A57532BD2880426A00898776 /* AloneDiaryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AloneDiaryDetailViewController.swift; sourceTree = "<group>"; };
 		A57532BF2880427B00898776 /* AloneDiaryDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AloneDiaryDetail.storyboard; sourceTree = "<group>"; };
 		A586951028A2B91C002DB998 /* OverTImePreSaveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverTImePreSaveViewModel.swift; sourceTree = "<group>"; };
+		A58B1D9E290C297E000415BA /* EmailAuthenficationDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthenficationDataManager.swift; sourceTree = "<group>"; };
+		A58B1DA0290C29A5000415BA /* EmailAuthenficationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthenficationResponse.swift; sourceTree = "<group>"; };
+		A58B1DA2290C29BF000415BA /* EmailAuthenficationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthenficationRequest.swift; sourceTree = "<group>"; };
+		A58B1DA4290C3C21000415BA /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		A59364D728B3CDDA0054305B /* ReadCommentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadCommentsCell.swift; sourceTree = "<group>"; };
 		A59364D928B3CDFB0054305B /* ReadCommentsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReadCommentsCell.xib; sourceTree = "<group>"; };
 		A595203927D89A4F005D414D /* CommentWritingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentWritingResponse.swift; sourceTree = "<group>"; };
@@ -424,6 +434,8 @@
 		A5C1D5B827C271FE0046095A /* CheckEmailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailRequest.swift; sourceTree = "<group>"; };
 		A5C43E4629099C090097999D /* EmailAuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthenticationViewController.swift; sourceTree = "<group>"; };
 		A5C43E4829099C190097999D /* EmailAuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthenticationViewModel.swift; sourceTree = "<group>"; };
+		A5C43E4A290A5BF70097999D /* PasswordCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCheckViewController.swift; sourceTree = "<group>"; };
+		A5C43E4C290A5C020097999D /* PasswordCheckVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCheckVIewModel.swift; sourceTree = "<group>"; };
 		A5C71351286B4553009CE07B /* UIBeziePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBeziePath.swift; sourceTree = "<group>"; };
 		A5C71353286B45B3009CE07B /* UIVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIew.swift; sourceTree = "<group>"; };
 		A5C71356286B4AB9009CE07B /* TodayDiary2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDiary2ViewController.swift; sourceTree = "<group>"; };
@@ -539,6 +551,7 @@
 			isa = PBXGroup;
 			children = (
 				A51573A627FCB5F400390CC7 /* Constant.swift */,
+				A58B1DA4290C3C21000415BA /* UserInfo.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -999,7 +1012,7 @@
 		A5611A2D2906EDFC00AA1AE3 /* EmailCheckAPI */ = {
 			isa = PBXGroup;
 			children = (
-				A5611A2E2906EE4D00AA1AE3 /* CertificationNumberResponse.swift */,
+				A5611A2E2906EE4D00AA1AE3 /* EmailCheckResponse.swift */,
 				A5611A302906EE6000AA1AE3 /* EmailCheckDataManager.swift */,
 			);
 			name = EmailCheckAPI;
@@ -1163,6 +1176,8 @@
 				A5EFDF4B28F1CDA40098B29F /* EmailCheckViewModel.swift */,
 				A5C43E4629099C090097999D /* EmailAuthenticationViewController.swift */,
 				A5C43E4829099C190097999D /* EmailAuthenticationViewModel.swift */,
+				A5C43E4A290A5BF70097999D /* PasswordCheckViewController.swift */,
+				A5C43E4C290A5C020097999D /* PasswordCheckVIewModel.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -1201,9 +1216,10 @@
 				A547A99E27EE503000DAAFE3 /* LogOut */,
 				A547A99D27EE502C00DAAFE3 /* MemberOut */,
 				A56B698727DA6DAC001385DC /* MyPage */,
-				A5C1D5B327C271A80046095A /* CheckEmailAPI */,
+				A5C1D5B327C271A80046095A /* CheckEmailAPI(X) */,
 				A518AFB027E9A5280024E1F1 /* ChangePasswordAPI */,
 				A5611A2D2906EDFC00AA1AE3 /* EmailCheckAPI */,
+				A58B1D9D290C290A000415BA /* EmailAuthenficationAPI */,
 				A56FF79727C16A6C00C740F7 /* RequestEmailAuthAPI */,
 			);
 			path = API;
@@ -1272,6 +1288,17 @@
 				A586951028A2B91C002DB998 /* OverTImePreSaveViewModel.swift */,
 			);
 			path = OverTimePreSave;
+			sourceTree = "<group>";
+		};
+		A58B1D9D290C290A000415BA /* EmailAuthenficationAPI */ = {
+			isa = PBXGroup;
+			children = (
+				A58B1D9E290C297E000415BA /* EmailAuthenficationDataManager.swift */,
+				A58B1DA0290C29A5000415BA /* EmailAuthenficationResponse.swift */,
+				A58B1DA2290C29BF000415BA /* EmailAuthenficationRequest.swift */,
+			);
+			name = EmailAuthenficationAPI;
+			path = "CheckEmailAPI(X)/EmailAuthenficationAPI";
 			sourceTree = "<group>";
 		};
 		A595203827D899F8005D414D /* CommentWriting */ = {
@@ -1399,14 +1426,14 @@
 			path = SendDiaryAlert;
 			sourceTree = "<group>";
 		};
-		A5C1D5B327C271A80046095A /* CheckEmailAPI */ = {
+		A5C1D5B327C271A80046095A /* CheckEmailAPI(X) */ = {
 			isa = PBXGroup;
 			children = (
 				A5C1D5B427C271E80046095A /* CheckEmailDataManager.swift */,
 				A5C1D5B627C271F30046095A /* CheckEmailResponse.swift */,
 				A5C1D5B827C271FE0046095A /* CheckEmailRequest.swift */,
 			);
-			path = CheckEmailAPI;
+			path = "CheckEmailAPI(X)";
 			sourceTree = "<group>";
 		};
 		A5C71355286B4A69009CE07B /* TodayDiary2 */ = {
@@ -1785,6 +1812,7 @@
 				A518AFC027EA1E7D0024E1F1 /* SendCommentAlertViewController.swift in Sources */,
 				A567614927B7E452006FDA7F /* AppDelegate.swift in Sources */,
 				A503FF7827CE4D170049FF82 /* NSaveViewController.swift in Sources */,
+				A58B1D9F290C297E000415BA /* EmailAuthenficationDataManager.swift in Sources */,
 				A56B698927DA6E01001385DC /* MyPageResponse.swift in Sources */,
 				A5FAFECE28DCAF9500A91900 /* EmailLoginViewController.swift in Sources */,
 				A5C7A38027E5EAA00055BAD7 /* GatherLookDetailViewController.swift in Sources */,
@@ -1828,7 +1856,7 @@
 				A518AFC427EB0BB00024E1F1 /* OvertimePreSaveViewController.swift in Sources */,
 				A5CCD19427C4E4060096281F /* SearchPasswordDataManager.swift in Sources */,
 				A5567C9827BD5353001A4B98 /* AuthNumberViewController.swift in Sources */,
-				A5611A2F2906EE4D00AA1AE3 /* CertificationNumberResponse.swift in Sources */,
+				A5611A2F2906EE4D00AA1AE3 /* EmailCheckResponse.swift in Sources */,
 				A547A99C27ECE33A00DAAFE3 /* DateCommentDataManager.swift in Sources */,
 				A5C71352286B4553009CE07B /* UIBeziePath.swift in Sources */,
 				A595203A27D89A4F005D414D /* CommentWritingResponse.swift in Sources */,
@@ -1836,7 +1864,9 @@
 				A5A0A33B27D902A300604A30 /* SendCommentViewController.swift in Sources */,
 				A56B698B27DA6E10001385DC /* MyPageDataManager.swift in Sources */,
 				A5242C9027D3840A00E24A76 /* WritingDiaryVC.swift in Sources */,
+				A5C43E4D290A5C020097999D /* PasswordCheckVIewModel.swift in Sources */,
 				A522EB9028A64793001324A8 /* ReadCommentDiaryDetailViewController.swift in Sources */,
+				A58B1DA3290C29BF000415BA /* EmailAuthenficationRequest.swift in Sources */,
 				A518AFB427E9A5520024E1F1 /* ChangePasswordRequest.swift in Sources */,
 				A518AFAF27E985450024E1F1 /* ChangePasswordChangeModel.swift in Sources */,
 				A547A9A227EE50EC00DAAFE3 /* MemberOutDataManager.swift in Sources */,
@@ -1847,6 +1877,7 @@
 				A59909B127FEF4AD00025C58 /* YNotWriteCommentViewController.swift in Sources */,
 				A54645D027CCF958008BA823 /* WritingCommentAlertViewController.swift in Sources */,
 				A586951128A2B91C002DB998 /* OverTImePreSaveViewModel.swift in Sources */,
+				A58B1DA5290C3C21000415BA /* UserInfo.swift in Sources */,
 				A562CF91287AB74800DB57B7 /* UILabel.swift in Sources */,
 				A567622A27BBC7D3006FDA7F /* SignUpViewController.swift in Sources */,
 				A5567CA627BEA350001A4B98 /* TodayDiaryViewController.swift in Sources */,
@@ -1881,6 +1912,7 @@
 				A56412A727CBDDB400825571 /* ModifyDiaryRequest.swift in Sources */,
 				A567622E27BBFBBC006FDA7F /* SignUpPasswordViewModel.swift in Sources */,
 				A5C7A39027E71E370055BAD7 /* myCommentDiaryCell.swift in Sources */,
+				A58B1DA1290C29A5000415BA /* EmailAuthenficationResponse.swift in Sources */,
 				A54C7A4928B3B4630070C6F6 /* ReadCommentDiaryCell.swift in Sources */,
 				A56FF79D27C16ACC00C740F7 /* EmailDataManager.swift in Sources */,
 				A521372E27D21A5700B98CF7 /* DiaryMainPageResponse.swift in Sources */,
@@ -1899,6 +1931,7 @@
 				A5242C9927D509EE00E24A76 /* NotDiaryDayViewController.swift in Sources */,
 				A564129E27CBCB6800825571 /* WritingDiaryResponse.swift in Sources */,
 				A520915327DC98F6003017AC /* GatherDiaryAllResponse.swift in Sources */,
+				A5C43E4B290A5BF70097999D /* PasswordCheckViewController.swift in Sources */,
 				A5C1D5B727C271F40046095A /* CheckEmailResponse.swift in Sources */,
 				A547A99A27ECE32D00DAAFE3 /* DateCommentResponse.swift in Sources */,
 				A5EFDF4C28F1CDA40098B29F /* EmailCheckViewModel.swift in Sources */,

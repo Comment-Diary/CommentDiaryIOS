@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct CertificationNumberResponse: Decodable {
+struct EmailCheckResponse: Decodable {
     var code: Int
     var message: String
 }

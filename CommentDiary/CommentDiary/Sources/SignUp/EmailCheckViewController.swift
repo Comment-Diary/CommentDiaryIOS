@@ -89,11 +89,19 @@ class EmailCheckViewController : UIViewController {
                     switch result {
                     case 200:
                         //화면전환
-                        print("성공")
+                        let emailAuthenticationVC = EmailAuthenticationViewController()
+                        //email넘기기
+                        emailAuthenticationVC.emailValue = self.emailTextField.text ?? ""
+                        emailAuthenticationVC.modalTransitionStyle = .crossDissolve
+                        emailAuthenticationVC.modalPresentationStyle = .fullScreen
+                        self.present(emailAuthenticationVC, animated: true, completion: nil)
+                        
                     case 409:
                         self.warningAlertLabel.text = "이미 이메일을 사용하는 유저가 있습니다."
+                    case 403:
+                        self.warningAlertLabel.text = "이메일 전송에 실패하였습니다."
                     default:
-                        print("예외")
+                        print("예외 오류")
                     }
                 })
             }
@@ -165,6 +173,7 @@ extension EmailCheckViewController {
         }
         
         view.backgroundColor = HexColor.backgroundColor.getHexColor()
+        //버튼 초기 비활성화
         sendCertificationNumberButton.isEnabled = false
         sendCertificationNumberButton.alpha = 0.4
     }

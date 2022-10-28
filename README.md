@@ -27,11 +27,9 @@
 ### 익명 일기 서비스임을 고려해 익명 일기의 차단, 신고 기능과 받은 코멘트의 차단, 신고 기능 추가를 적용시켜달라는 내용<br/>
 - 앱 심사를 받기 전에는 익명 일기나 익명 코멘트를을 신고하면 함께 차단하는 기능으로 구현하였는데 앱 심사과정에서 추가로 차단 기능을 넣어야 한다고 하였습니다. 
 따라서 차단하기, 신고하기 버튼을 따로 만들어 이에 대응하였습니다. 
-<img src ="https://user-images.githubusercontent.com/78063938/198706003-176753e6-01f4-424c-b847-872f821df6cd.png" width = "700">
-------------
-### 익명 코멘트는 50자를 넘겨야 전송이 가능한데, 유저가 제대로 확인이 불가능하다고 판단하여 수정해달라는 내용
+<img src ="https://user-images.githubusercontent.com/78063938/198706003-176753e6-01f4-424c-b847-872f821df6cd.png" width = "700"> <br/>
+### 익명 코멘트는 50자를 넘겨야 전송이 가능한데, 유저가 제대로 확인이 불가능하다고 판단하여 수정해달라는 내용<br/>
 - 다음 이미지와 같이 " /20자 이상 작성"과 같이 수정하여 유저가 쉽게 넘겨야할 글자 수를 확인할 수 있게 대응하였습니다. 
 <img src ="https://user-images.githubusercontent.com/78063938/198706195-c7bd3a50-17af-4178-8f47-b683843ab751.png" width = "700">
 <img src ="https://user-images.githubusercontent.com/78063938/198705068-1557320e-e446-497b-9df5-0df172d078df.png" width = "400">
 <img src ="https://user-images.githubusercontent.com/78063938/198705411-06e0c66e-5b52-4a75-af12-2819a40cb7da.png" width = "400">
-------------

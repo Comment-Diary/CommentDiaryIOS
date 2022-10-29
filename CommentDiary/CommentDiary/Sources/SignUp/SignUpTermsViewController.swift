@@ -33,6 +33,45 @@ class SignUpTermsViewController: UIViewController {
         $0.backgroundColor = HexColor.mainGreenColor.getHexColor()
         $0.layer.cornerRadius = 10
     }
+    private let fullConsentLabel = UILabel().then {
+        $0.text = "전체동의"
+        $0.textColor = HexColor.textColor.getHexColor()
+        $0.font = UIFont.AppleSDGothic(.bold, size: 15)
+    }
+    private let fullConsentCheckImage = UIImageView().then {
+        $0.image = UIImage(named: "checkImage")
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    private let fullConsentButton = UIButton().then {
+        $0.layer.borderColor = HexColor.fullConsentButtonColor.getHexColor().cgColor
+        $0.layer.borderWidth = 1.5
+        $0.layer.cornerRadius = 10
+    }
+    private let privacyCheckButton = UIButton().then {
+        $0.setImage(UIImage(named: "checkImage"), for: .normal)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        
+    }
+    private let privacyButton = UIButton().then {
+        $0.setTitle("[필수] 개인정보 처리 방침", for: .normal)
+        $0.setTitleColor(HexColor.textColor.getHexColor(), for: .normal)
+        $0.titleLabel?.font = UIFont.AppleSDGothic(.medium, size: 14)
+        $0.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        $0.contentHorizontalAlignment = .leading
+    }
+    private let privacyButtonArrowImage = UIImageView().then {
+        $0.image = UIImage(named: "arrowRight")
+    }
+    private let termsCheckButton = UIButton().then {
+        //todo
+    }
+    private let privacyStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.alignment = .fill
+        $0.distribution = .fill
+        $0.spacing = 11
+    }
     // MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +96,10 @@ class SignUpTermsViewController: UIViewController {
     }
 }
 
+
+
+
+// MARK: - EXTENSIONS
 extension SignUpTermsViewController {
     enum HexColor {
         case backgroundColor
@@ -64,9 +107,11 @@ extension SignUpTermsViewController {
         case warning
         case mainGreenColor
         case whiteColor
-        
+        case fullConsentButtonColor
         func getHexColor() -> UIColor {
             switch self {
+            case .fullConsentButtonColor:
+                return UIColor(hex: 0x878379)
             case .backgroundColor:
                 return UIColor(hex: 0xFDFCF9)
             case .textColor:
@@ -81,9 +126,13 @@ extension SignUpTermsViewController {
         }
     }
     private func configureUI() {
-        [backButton, mainTitleLabel, infoLabel, signUpButton].forEach {
+        [backButton, mainTitleLabel, infoLabel, signUpButton, fullConsentLabel, fullConsentCheckImage, fullConsentButton, privacyStackView, privacyButtonArrowImage].forEach {
             view.addSubview($0)
         }
+        //개인정보 처리 방침 StackView
+        [privacyCheckButton, privacyButton].forEach({
+            privacyStackView.addArrangedSubview($0)
+        })
         backButton.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(3)
             make.leading.equalToSuperview().offset(7)
@@ -101,6 +150,34 @@ extension SignUpTermsViewController {
             make.leading.equalToSuperview().offset(16)
             make.height.equalTo(56)
             make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-88)
+        }
+        fullConsentButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.leading.equalToSuperview().offset(32)
+            make.height.equalTo(48)
+            make.top.equalTo(infoLabel.snp.bottom).offset(80)
+        }
+        fullConsentLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(fullConsentButton)
+            make.leading.equalTo(fullConsentButton.snp.leading).offset(20)
+        }
+        fullConsentCheckImage.snp.makeConstraints { make in
+            make.centerY.equalTo(fullConsentButton)
+            make.trailing.equalTo(fullConsentButton.snp.trailing).offset(-20)
+//            make.height.equalTo(20)
+        }
+        privacyStackView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.leading.equalToSuperview().offset(58)
+            make.top.equalTo(fullConsentButton.snp.bottom).offset(16)
+            make.height.equalTo(24)
+        }
+        privacyButton.snp.makeConstraints { make in
+            make.height.equalTo(24)
+        }
+        privacyButtonArrowImage.snp.makeConstraints { make in
+            make.centerY.equalTo(privacyButton.snp.centerY)
+            make.trailing.equalTo(privacyStackView.snp.trailing).offset(0)
         }
         view.backgroundColor = HexColor.backgroundColor.getHexColor()
         //버튼 초기 비활성화

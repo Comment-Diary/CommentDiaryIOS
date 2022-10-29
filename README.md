@@ -30,7 +30,7 @@
 | ------ | ------ | ------ |
 | 유저 조사, 기획 및 디자인 수정 | 2022.08.01~2022.08.31 | 기존 유저 리서치를 통해 개선해야 할 점 파악, 동아리 활동을 하며 제한된 기간 내에 진행하지 못한 점 반영 |
 | 앱 구현 | 2022.09.01~2022.12.31 | 앱 구현(진행중) |
-- 사용 기술, 라이브러리: `programmatic Auto Layout`, `Storyboard`,`MVVM` `MVC`,`RXSwift` `UIkit`, `Alamofire`,`SocialLogin`, `FSCalendar`, `Siren`, `PanModal`
+- 사용 기술, 라이브러리: `programmatic Auto Layout`, `Snapkit`, `Then`, `Storyboard`,`MVVM` `MVC`,`RXSwift` `UIkit`, `Alamofire`,`SocialLogin`, `FSCalendar`, `Siren`, `PanModal`
  ## 배운 점 
  - Storyboard와 Code로 AutoLayout를 둘 다 해보고 차이점
  - RxSwift의 기초

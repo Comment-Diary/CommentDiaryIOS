@@ -14,8 +14,10 @@ struct EmailAuthenticationViewModel {
     
     lazy var codeFormCheck = codeTextFieldSubject.map({
         value -> Bool in
-        return value.count > 0
+        print(value)
+        return value.count > 3 ? true : false
     })
+//    lazy var codeFormCheck = Observable.map(codeTextFieldSubject)
     
     func buttonTapped(_ emailValue : String, codeValue: String, completion: @escaping (Int) -> (Void)) {
         EmailAuthenficationRequest.email = emailValue

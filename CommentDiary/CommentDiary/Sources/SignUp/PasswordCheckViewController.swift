@@ -7,9 +7,15 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxCocoa
+import Then
+import SnapKit
 
 class PasswordCheckViewController: UIViewController {
     // MARK: - PROPERTIES
+    var viewModel = PasswordCheckViewModel()
+    let disposeBag = DisposeBag()
     
     //뒤로가기 Button
     private let backButton = UIButton().then {
@@ -78,7 +84,7 @@ class PasswordCheckViewController: UIViewController {
     
     //Coda Button
     private let codaButton = UIButton().then {
-        $0.setTitle("인증하기", for: .normal)
+        $0.setTitle("코다 시작하기", for: .normal)
         $0.titleLabel?.font = UIFont.AppleSDGothic(.bold, size: 18)
         $0.setTitleColor(HexColor.whiteColor.getHexColor(), for: .normal)
         $0.backgroundColor = HexColor.mainGreenColor.getHexColor()
@@ -89,8 +95,58 @@ class PasswordCheckViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        action()
+        passwordFormCheck()
+        passwordMatchCheck()
+        codaButtonEnabledCheck()
     }
     
+    private func passwordFormCheck() {
+        passwordTextField.rx.text
+            .orEmpty
+            .asDriver(onErrorJustReturn: "")
+            .drive(viewModel.passwordTextFieldSubject)
+            .disposed(by: disposeBag)
+        
+        viewModel.passwordFormCheck
+            .subscribe(onNext: { result in
+                if result {
+                    self.passwordFormWarningLabel.text = ""
+                }
+                else {
+                    self.passwordFormWarningLabel.text = "양식에 맞춰주세요."
+                }
+            }).disposed(by: disposeBag)
+
+    }
+    private func passwordMatchCheck() {
+        passwordCheckTextField.rx.text
+            .orEmpty
+            .asDriver(onErrorJustReturn: "")
+            .drive(viewModel.passwordCheckTextFieldSubject)
+            .disposed(by: disposeBag)
+        
+        viewModel.matchPasswordCheck.subscribe(onNext: { result in
+            if result {
+                self.passwordCheckWarningLabel.text = ""
+            }
+            else {
+                self.passwordCheckWarningLabel.text = "일치하지 않습니다."
+            }
+        }).disposed(by: disposeBag)
+    }
+    private func codaButtonEnabledCheck() {
+        viewModel.enabledButton.subscribe(onNext: { result in
+            if result {
+                self.codaButton.alpha = 1.0
+                self.codaButton.isEnabled = true
+            }
+            else {
+                self.codaButton.alpha = 0.4
+                self.codaButton.isEnabled = false
+            }
+        }).disposed(by: disposeBag)
+    }
     
     
     private func action() {
@@ -134,7 +190,7 @@ extension PasswordCheckViewController {
         }
     }
     private func configureUI() {
-        [backButton, mainTitleLabel, passwordLabel, passwordTextField, passwordFormAlertLabel, passwordFormWarningLabel, passwordCheckLabel, passwordCheckTextField, codaTermsLabel, passwordCheckWarningLabel].forEach {
+        [backButton, mainTitleLabel, passwordLabel, passwordTextField, passwordFormAlertLabel, passwordFormWarningLabel, passwordCheckLabel, passwordCheckTextField, codaTermsLabel, passwordCheckWarningLabel, codaButton].forEach {
             view.addSubview($0)
         }
         backButton.snp.makeConstraints { make in
@@ -143,6 +199,7 @@ extension PasswordCheckViewController {
             make.leading.equalToSuperview().offset(7)
         }
         mainTitleLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(52)
             make.top.equalTo(view.safeAreaLayoutGuide).offset(54)
             
         }
@@ -158,11 +215,12 @@ extension PasswordCheckViewController {
         }
         passwordFormAlertLabel.snp.makeConstraints { make in
             make.top.equalTo(passwordTextField.snp.bottom).offset(5)
-            make.leading.equalToSuperview().offset(51)
+            make.leading.equalToSuperview().offset(52)
         }
         passwordFormWarningLabel.snp.makeConstraints { make in
             make.top.equalTo(passwordFormAlertLabel.snp.bottom).offset(0)
             make.leading.equalToSuperview().offset(52)
+            make.height.equalTo(20)
         }
         passwordCheckLabel.snp.makeConstraints { make in
             make.top.equalTo(passwordFormWarningLabel.snp.bottom).offset(15)
@@ -177,6 +235,7 @@ extension PasswordCheckViewController {
         passwordCheckWarningLabel.snp.makeConstraints { make in
             make.top.equalTo(passwordCheckTextField.snp.bottom).offset(5)
             make.leading.equalToSuperview().offset(52)
+            make.height.equalTo(20)
         }
         codaButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -192,5 +251,7 @@ extension PasswordCheckViewController {
         }
         
         view.backgroundColor = HexColor.backgroundColor.getHexColor()
+        codaButton.alpha = 0.4
+        codaButton.isEnabled = false
     }
 }

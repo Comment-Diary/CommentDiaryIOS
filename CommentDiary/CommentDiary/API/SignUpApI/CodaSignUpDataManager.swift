@@ -7,8 +7,34 @@
 
 import Foundation
 import Alamofire
-
 class SignUpDataManager {
+    func signUpPostData(completion: @escaping (Int) -> (Void)) {
+        let url = "\(Constant.CODA_URL)/members/sign-up"
+        let params = ["email" : SignUpRequest.email,
+                      "password" : SignUpRequest.password,
+                      "checkPassword" : SignUpRequest.checkPassword, "loginType" : SignUpRequest.loginType, "pushyn" : SignUpRequest.pushYn]
+        AF.request(url,
+                   method: .post,
+                   parameters: params,
+                   encoder: JSONParameterEncoder(),
+                   headers: nil)
+            .validate()
+            .responseDecodable(of: SignUpResponse.self) { response in
+                completion(response.response?.statusCode ?? 0)
+                switch response.result {
+                case .success(let response):
+                    print("DEBUG >> Success \(response)")
+
+                case .failure(let error):
+                    print(error.localizedDescription)
+
+                }
+            }
+    }
+}
+
+
+class CodaSignUpDataManager {
     func signUpPostData(_ viewController: SignUpViewController) {
         let url = "\(Constant.CODA_URL)/members/sign-up"
         let params = ["email" : SignUpRequest.email,

@@ -72,6 +72,7 @@ class EmailAuthenticationViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         action()
+        authenficationNumberCheck()
         authenficationButtonClicked()
     }
     private func authenficationNumberCheck() {
@@ -159,7 +160,7 @@ extension EmailAuthenticationViewController {
         }
     }
     private func configureUI() {
-        [backButton, mainTitleLabel, emailLabel, guideLabel, codeTextField, warningAlertLabel].forEach {
+        [backButton, mainTitleLabel, emailLabel, guideLabel, codeTextField, warningAlertLabel, authenficationButton].forEach {
             view.addSubview($0)
         }
         backButton.snp.makeConstraints { make in

@@ -184,7 +184,7 @@
 		A5B9B97E27F355590049D329 /* DiaryBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B9B97D27F355590049D329 /* DiaryBlockViewController.swift */; };
 		A5BF9CDE27C743A70093B900 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BF9CDD27C743A70093B900 /* SignUpRequest.swift */; };
 		A5BF9CE027C743B10093B900 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BF9CDF27C743B10093B900 /* SignUpResponse.swift */; };
-		A5BF9CE227C743BC0093B900 /* SignUpDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BF9CE127C743BC0093B900 /* SignUpDataManager.swift */; };
+		A5BF9CE227C743BC0093B900 /* CodaSignUpDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BF9CE127C743BC0093B900 /* CodaSignUpDataManager.swift */; };
 		A5BF9CEA27C8C5880093B900 /* SendDiaryAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BF9CE927C8C5880093B900 /* SendDiaryAlertViewController.swift */; };
 		A5BF9CEC27C8C64C0093B900 /* SendDiaryAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5BF9CEB27C8C64C0093B900 /* SendDiaryAlert.storyboard */; };
 		A5C1D5B527C271E80046095A /* CheckEmailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C1D5B427C271E80046095A /* CheckEmailDataManager.swift */; };
@@ -193,7 +193,7 @@
 		A5C43E4729099C090097999D /* EmailAuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C43E4629099C090097999D /* EmailAuthenticationViewController.swift */; };
 		A5C43E4929099C190097999D /* EmailAuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C43E4829099C190097999D /* EmailAuthenticationViewModel.swift */; };
 		A5C43E4B290A5BF70097999D /* PasswordCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C43E4A290A5BF70097999D /* PasswordCheckViewController.swift */; };
-		A5C43E4D290A5C020097999D /* PasswordCheckVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C43E4C290A5C020097999D /* PasswordCheckVIewModel.swift */; };
+		A5C43E4D290A5C020097999D /* PasswordCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C43E4C290A5C020097999D /* PasswordCheckViewModel.swift */; };
 		A5C71352286B4553009CE07B /* UIBeziePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C71351286B4553009CE07B /* UIBeziePath.swift */; };
 		A5C71354286B45B3009CE07B /* UIVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C71353286B45B3009CE07B /* UIVIew.swift */; };
 		A5C71357286B4AB9009CE07B /* TodayDiary2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C71356286B4AB9009CE07B /* TodayDiary2ViewController.swift */; };
@@ -426,7 +426,7 @@
 		A5B9B97D27F355590049D329 /* DiaryBlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryBlockViewController.swift; sourceTree = "<group>"; };
 		A5BF9CDD27C743A70093B900 /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		A5BF9CDF27C743B10093B900 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
-		A5BF9CE127C743BC0093B900 /* SignUpDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDataManager.swift; sourceTree = "<group>"; };
+		A5BF9CE127C743BC0093B900 /* CodaSignUpDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodaSignUpDataManager.swift; sourceTree = "<group>"; };
 		A5BF9CE927C8C5880093B900 /* SendDiaryAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendDiaryAlertViewController.swift; sourceTree = "<group>"; };
 		A5BF9CEB27C8C64C0093B900 /* SendDiaryAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SendDiaryAlert.storyboard; sourceTree = "<group>"; };
 		A5C1D5B427C271E80046095A /* CheckEmailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailDataManager.swift; sourceTree = "<group>"; };
@@ -435,7 +435,7 @@
 		A5C43E4629099C090097999D /* EmailAuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthenticationViewController.swift; sourceTree = "<group>"; };
 		A5C43E4829099C190097999D /* EmailAuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthenticationViewModel.swift; sourceTree = "<group>"; };
 		A5C43E4A290A5BF70097999D /* PasswordCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCheckViewController.swift; sourceTree = "<group>"; };
-		A5C43E4C290A5C020097999D /* PasswordCheckVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCheckVIewModel.swift; sourceTree = "<group>"; };
+		A5C43E4C290A5C020097999D /* PasswordCheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCheckViewModel.swift; sourceTree = "<group>"; };
 		A5C71351286B4553009CE07B /* UIBeziePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBeziePath.swift; sourceTree = "<group>"; };
 		A5C71353286B45B3009CE07B /* UIVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIew.swift; sourceTree = "<group>"; };
 		A5C71356286B4AB9009CE07B /* TodayDiary2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDiary2ViewController.swift; sourceTree = "<group>"; };
@@ -1177,7 +1177,7 @@
 				A5C43E4629099C090097999D /* EmailAuthenticationViewController.swift */,
 				A5C43E4829099C190097999D /* EmailAuthenticationViewModel.swift */,
 				A5C43E4A290A5BF70097999D /* PasswordCheckViewController.swift */,
-				A5C43E4C290A5C020097999D /* PasswordCheckVIewModel.swift */,
+				A5C43E4C290A5C020097999D /* PasswordCheckViewModel.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -1210,7 +1210,6 @@
 				A56412A327CBDD8D00825571 /* ModifyDiaryAPI */,
 				A521372527D12E8100B98CF7 /* DeleteDiary */,
 				A564129C27CBCB0500825571 /* WritingDiaryAPI */,
-				A5BF9CDC27C7438C0093B900 /* SignUpApI */,
 				A5CCD19227C4E3F20096281F /* SearchPasswordAPI */,
 				A5CCD18227C34B7F0096281F /* LoginAPI */,
 				A547A99E27EE503000DAAFE3 /* LogOut */,
@@ -1220,6 +1219,7 @@
 				A518AFB027E9A5280024E1F1 /* ChangePasswordAPI */,
 				A5611A2D2906EDFC00AA1AE3 /* EmailCheckAPI */,
 				A58B1D9D290C290A000415BA /* EmailAuthenficationAPI */,
+				A5BF9CDC27C7438C0093B900 /* SignUpApI */,
 				A56FF79727C16A6C00C740F7 /* RequestEmailAuthAPI */,
 			);
 			path = API;
@@ -1410,9 +1410,9 @@
 		A5BF9CDC27C7438C0093B900 /* SignUpApI */ = {
 			isa = PBXGroup;
 			children = (
+				A5BF9CE127C743BC0093B900 /* CodaSignUpDataManager.swift */,
 				A5BF9CDD27C743A70093B900 /* SignUpRequest.swift */,
 				A5BF9CDF27C743B10093B900 /* SignUpResponse.swift */,
-				A5BF9CE127C743BC0093B900 /* SignUpDataManager.swift */,
 			);
 			path = SignUpApI;
 			sourceTree = "<group>";
@@ -1808,7 +1808,7 @@
 				A5BF9CEA27C8C5880093B900 /* SendDiaryAlertViewController.swift in Sources */,
 				A567614D27B7E452006FDA7F /* ViewController.swift in Sources */,
 				A5EFDF4E28F1D0AC0098B29F /* SignUpTermsViewController.swift in Sources */,
-				A5BF9CE227C743BC0093B900 /* SignUpDataManager.swift in Sources */,
+				A5BF9CE227C743BC0093B900 /* CodaSignUpDataManager.swift in Sources */,
 				A518AFC027EA1E7D0024E1F1 /* SendCommentAlertViewController.swift in Sources */,
 				A567614927B7E452006FDA7F /* AppDelegate.swift in Sources */,
 				A503FF7827CE4D170049FF82 /* NSaveViewController.swift in Sources */,
@@ -1864,7 +1864,7 @@
 				A5A0A33B27D902A300604A30 /* SendCommentViewController.swift in Sources */,
 				A56B698B27DA6E10001385DC /* MyPageDataManager.swift in Sources */,
 				A5242C9027D3840A00E24A76 /* WritingDiaryVC.swift in Sources */,
-				A5C43E4D290A5C020097999D /* PasswordCheckVIewModel.swift in Sources */,
+				A5C43E4D290A5C020097999D /* PasswordCheckViewModel.swift in Sources */,
 				A522EB9028A64793001324A8 /* ReadCommentDiaryDetailViewController.swift in Sources */,
 				A58B1DA3290C29BF000415BA /* EmailAuthenficationRequest.swift in Sources */,
 				A518AFB427E9A5520024E1F1 /* ChangePasswordRequest.swift in Sources */,

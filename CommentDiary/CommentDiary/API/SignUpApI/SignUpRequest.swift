@@ -10,4 +10,6 @@ struct SignUpRequest {
     static var email = ""
     static var password = ""
     static var checkPassword = ""
+    static var loginType = ""
+    static var pushYn = ""
 }

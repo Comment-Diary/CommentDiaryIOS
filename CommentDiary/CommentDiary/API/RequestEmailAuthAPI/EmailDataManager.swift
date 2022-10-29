@@ -12,7 +12,7 @@ import Alamofire
 
 class EmailDataManager {
     func getEmailData(emailValue: String, _ viewController: SignUpViewController) {
-        let url = "http://comment-diary.shop/api/v1/email"
+        let url = "\(Constant.CODA_URL)/email"
         let params: Parameters = [
             "email" : "\(emailValue)"
         ]

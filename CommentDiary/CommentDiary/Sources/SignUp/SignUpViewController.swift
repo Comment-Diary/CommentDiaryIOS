@@ -227,7 +227,7 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
             SignUpRequest.email = emailTextField.text!
             SignUpRequest.password = passwordTextField.text!
             SignUpRequest.checkPassword = passwordConfirmTextField.text!
-            SignUpDataManager().signUpPostData(self)
+            CodaSignUpDataManager().signUpPostData(self)
         }
         
 

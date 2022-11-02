@@ -12,7 +12,9 @@ class SignUpDataManager {
         let url = "\(Constant.CODA_URL)/members/sign-up"
         let params = ["email" : SignUpRequest.email,
                       "password" : SignUpRequest.password,
-                      "checkPassword" : SignUpRequest.checkPassword, "loginType" : SignUpRequest.loginType, "pushyn" : SignUpRequest.pushYn]
+                      "checkPassword" : SignUpRequest.checkPassword,
+                      "loginType" : SignUpRequest.loginType,
+                      "pushyn" : SignUpRequest.pushYn]
         AF.request(url,
                    method: .post,
                    parameters: params,

@@ -11,6 +11,7 @@ class UserInfo {
     var email : String?
     var password: String?
     var passwordCheck: String?
+    var pushAlertReception : String?
     private init() {
         
     }

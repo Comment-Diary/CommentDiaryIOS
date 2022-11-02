@@ -5,12 +5,12 @@
 //  Created by 류창휘 on 2022/10/27.
 //
 
-import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
 import Then
 import SnapKit
+
 
 class PasswordCheckViewController: UIViewController {
     // MARK: - PROPERTIES
@@ -50,7 +50,7 @@ class PasswordCheckViewController: UIViewController {
     }
     //비밀번호 Form Warning Label
     private let passwordFormWarningLabel = UILabel().then {
-        $0.text = "양식에 맞춰주세요."
+        $0.text = ""
         $0.textColor = HexColor.warning.getHexColor()
         $0.font = UIFont.AppleSDGothic(.medium, size: 12)
     }
@@ -71,7 +71,7 @@ class PasswordCheckViewController: UIViewController {
     }
     //Check Password Warning Label
     private let passwordCheckWarningLabel = UILabel().then {
-        $0.text = "일치하지 않습니다."
+        $0.text = ""
         $0.textColor = HexColor.warning.getHexColor()
         $0.font = UIFont.AppleSDGothic(.medium, size: 12)
     }
@@ -151,11 +151,35 @@ class PasswordCheckViewController: UIViewController {
     
     private func action() {
         backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        codaButton.addTarget(self, action: #selector(codaButtonTapped), for: .touchUpInside)
+        
     }
     // MARK: - ACTIONS
     @objc func backButtonTapped() {
         dismiss(animated: true, completion: nil)
     }
+    @objc func codaButtonTapped() {
+        let userInfo = UserInfo.shared
+        userInfo.password = passwordTextField.text ?? ""
+        userInfo.passwordCheck = passwordCheckTextField.text ?? ""
+        print(userInfo.email ?? "", "이메일 값")
+        print(userInfo.password ?? "", "비번 값")
+        print(userInfo.passwordCheck ?? "", "비번2 값")
+        print(userInfo.pushAlertReception ?? "", "푸시 값")
+        
+        viewModel.signUpButtonTapped { value in
+            switch value {
+            case 200:
+                print("성공")
+            case 409:
+                print("이미 가입되어 있는 이메일")
+            default:
+                print("에외 오류")
+            }
+        }
+    }
+    
+    
 }
 
 

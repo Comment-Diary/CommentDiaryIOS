@@ -11,7 +11,6 @@
 
 import UIKit
 import Siren
-//import AlamofireNetworkActivityIndicator
 import IQKeyboardManagerSwift
 import UserNotifications
 import Firebase

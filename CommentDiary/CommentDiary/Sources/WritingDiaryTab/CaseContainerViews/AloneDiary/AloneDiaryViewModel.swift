@@ -27,7 +27,6 @@ class AloneDiaryViewModel {
     var diaryTitleValue : String {
         return aloneDiaryModel.titleValue
         
-        print(aloneDiaryModel.titleValue , "ddd")
     }
     var titleValue = ""
     var diaryContentValue = ""

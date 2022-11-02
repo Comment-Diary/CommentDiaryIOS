@@ -24,7 +24,16 @@ struct PasswordCheckViewModel {
         (passwordFormCheck : Bool, matchPasswordCheck : Bool) in
         return passwordFormCheck == true && matchPasswordCheck == true ? true : false
     })
-    func signUpButtonTapped(_ passwordValue : String, passwordCheckValue : String, completion: @escaping (Int) -> (Void)) {
+    func signUpButtonTapped(completion: @escaping (Int) -> (Void)) {
+        let userInfo = UserInfo.shared
+        SignUpRequest.email = userInfo.email ?? ""
+        SignUpRequest.password = userInfo.password ?? ""
+        SignUpRequest.checkPassword = userInfo.passwordCheck ?? ""
+        SignUpRequest.loginType = "EMAIL"
+        SignUpRequest.pushYn = userInfo.pushAlertReception ?? "N"
         
+        SignUpDataManager().signUpPostData(completion: { response in
+            completion(response)
+        })
     }
 }

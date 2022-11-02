@@ -28,6 +28,8 @@
 		A518AFC927EB28C10024E1F1 /* YPreSaveDeadline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A518AFC827EB28C10024E1F1 /* YPreSaveDeadline.storyboard */; };
 		A518AFCC27EB4F200024E1F1 /* NotArrivalCommentDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518AFCB27EB4F200024E1F1 /* NotArrivalCommentDiaryViewController.swift */; };
 		A518AFCE27EB4F330024E1F1 /* NotArrivalCommentDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A518AFCD27EB4F330024E1F1 /* NotArrivalCommentDiary.storyboard */; };
+		A51AF6722910008000B17127 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = A51AF6712910008000B17127 /* KakaoSDK */; };
+		A51AF676291014B800B17127 /* SignUpTermsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51AF675291014B800B17127 /* SignUpTermsViewModel.swift */; };
 		A520914927DC7F36003017AC /* MyDiaryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A520914727DC7F36003017AC /* MyDiaryListCell.swift */; };
 		A520914A27DC7F36003017AC /* MyDiaryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A520914827DC7F36003017AC /* MyDiaryListCell.xib */; };
 		A520914F27DC98CE003017AC /* GatherDiaryDateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A520914E27DC98CE003017AC /* GatherDiaryDateResponse.swift */; };
@@ -268,6 +270,7 @@
 		A518AFC827EB28C10024E1F1 /* YPreSaveDeadline.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YPreSaveDeadline.storyboard; sourceTree = "<group>"; };
 		A518AFCB27EB4F200024E1F1 /* NotArrivalCommentDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotArrivalCommentDiaryViewController.swift; sourceTree = "<group>"; };
 		A518AFCD27EB4F330024E1F1 /* NotArrivalCommentDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotArrivalCommentDiary.storyboard; sourceTree = "<group>"; };
+		A51AF675291014B800B17127 /* SignUpTermsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTermsViewModel.swift; sourceTree = "<group>"; };
 		A520914727DC7F36003017AC /* MyDiaryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryListCell.swift; sourceTree = "<group>"; };
 		A520914827DC7F36003017AC /* MyDiaryListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyDiaryListCell.xib; sourceTree = "<group>"; };
 		A520914E27DC98CE003017AC /* GatherDiaryDateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatherDiaryDateResponse.swift; sourceTree = "<group>"; };
@@ -497,6 +500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72348980A73ACA4D0557B56A /* Pods_CommentDiary.framework in Frameworks */,
+				A51AF6722910008000B17127 /* KakaoSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1172,6 +1176,7 @@
 				A567622B27BBC7DC006FDA7F /* SignUp.storyboard */,
 				A567622D27BBFBBB006FDA7F /* SignUpPasswordViewModel.swift */,
 				A5EFDF4D28F1D0AC0098B29F /* SignUpTermsViewController.swift */,
+				A51AF675291014B800B17127 /* SignUpTermsViewModel.swift */,
 				A5EFDF4928F1CD940098B29F /* EmailCheckViewController.swift */,
 				A5EFDF4B28F1CDA40098B29F /* EmailCheckViewModel.swift */,
 				A5C43E4629099C090097999D /* EmailAuthenticationViewController.swift */,
@@ -1619,6 +1624,9 @@
 			dependencies = (
 			);
 			name = CommentDiary;
+			packageProductDependencies = (
+				A51AF6712910008000B17127 /* KakaoSDK */,
+			);
 			productName = CommentDiary;
 			productReference = A567614527B7E452006FDA7F /* CommentDiary.app */;
 			productType = "com.apple.product-type.application";
@@ -1647,6 +1655,9 @@
 				Base,
 			);
 			mainGroup = A567613C27B7E452006FDA7F;
+			packageReferences = (
+				A51AF6702910008000B17127 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+			);
 			productRefGroup = A567614627B7E452006FDA7F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1872,6 +1883,7 @@
 				A547A9A227EE50EC00DAAFE3 /* MemberOutDataManager.swift in Sources */,
 				A5242C9B27D50A4B00E24A76 /* TodayWritingDiaryViewController.swift in Sources */,
 				A5D2F89228E03C350036CFEA /* SearchPasswordViewController.swift in Sources */,
+				A51AF676291014B800B17127 /* SignUpTermsViewModel.swift in Sources */,
 				A5A0A33427D9006700604A30 /* MyAccountViewController.swift in Sources */,
 				A56B698627DA0453001385DC /* CommentReportDataManager.swift in Sources */,
 				A59909B127FEF4AD00025C58 /* YNotWriteCommentViewController.swift in Sources */,
@@ -2188,6 +2200,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A51AF6702910008000B17127 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A51AF6712910008000B17127 /* KakaoSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A51AF6702910008000B17127 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A567613D27B7E452006FDA7F /* Project object */;
 }

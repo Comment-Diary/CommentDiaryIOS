@@ -5,12 +5,12 @@
 //  Created by 류창휘 on 2022/10/09.
 //
 
-import Foundation
 import UIKit
 import Then
 import SnapKit
 import RxSwift
 import RxCocoa
+import RxKeyboard
 
 class EmailCheckViewController : UIViewController {
     let disposeBag = DisposeBag()
@@ -30,6 +30,7 @@ class EmailCheckViewController : UIViewController {
         $0.font = UIFont.AppleSDGothic(.bold, size: 14)
     }
     private let emailTextField = UITextField().then {
+        $0.keyboardType = .emailAddress
         $0.placeholder = "coda@coda.com"
         $0.layer.borderWidth = 2
         $0.layer.borderColor = HexColor.mainGreenColor.getHexColor().cgColor
@@ -58,6 +59,19 @@ class EmailCheckViewController : UIViewController {
         configureUI()
         emailFormCheck()
         sendCertificationNumberButtonClicked()
+        keyboardSetting()
+    }
+    // MARK: - 키보드 올라감과 동시에 버튼 올리기
+    private func keyboardSetting() {
+        RxKeyboard.instance.visibleHeight
+            .drive(onNext: { keyboardVisibleHeight in
+                let height = keyboardVisibleHeight > 0 ? -keyboardVisibleHeight + self.view.safeAreaInsets.bottom - 16 : -88
+                self.sendCertificationNumberButton.snp.updateConstraints { make in
+                    make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(height)
+                }
+                self.view.layoutIfNeeded()
+            })
+            .disposed(by: disposeBag)
     }
     private func emailFormCheck() {
         emailTextField.rx.text

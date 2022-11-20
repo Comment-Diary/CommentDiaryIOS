@@ -16,7 +16,8 @@ class SignUpTermsViewController: UIViewController {
     let infoURL = NSURL(string: "https://www.notion.so/59a704f6702f4382b9398fa3b4a0d780")
     let usageURL = NSURL(string: "https://glittery-silk-987.notion.site/fb0c6c765a7a411c9362dc8d102c95e0")
     let disposeBag = DisposeBag()
-    var viewModel = SignUpTermsViewModel()
+    lazy var viewModel = SignUpTermsViewModel()
+    lazy var kakaoAuthViewModel : KakaoAuthViewModel = { KakaoAuthViewModel() }()
     
     // MARK: - PROPERTIES
     private let backButton = UIButton().then {
@@ -245,17 +246,29 @@ class SignUpTermsViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     @objc func signUpButtonTapped() {
-        let emailCheckVC = EmailCheckViewController()
-        emailCheckVC.modalTransitionStyle = .crossDissolve
-        emailCheckVC.modalPresentationStyle = .fullScreen
-        let userInfo = UserInfo.shared
-        if viewModel.pushAlertReceptionValue == true {
-            userInfo.pushAlertReception = "Y"
+        switch viewModel.signUpCase {
+        case "kakao":
+            print("카카오 로그인")
+            kakaoAuthViewModel.hanldeKakaoLogin()
+            
+        case "email":
+            print("이메일 로그인")
+            let emailCheckVC = EmailCheckViewController()
+            emailCheckVC.modalTransitionStyle = .crossDissolve
+            emailCheckVC.modalPresentationStyle = .fullScreen
+            let userInfo = UserInfo.shared
+            if viewModel.pushAlertReceptionValue == true {
+                userInfo.pushAlertReception = "Y"
+            }
+            else {
+                userInfo.pushAlertReception = "N"
+            }
+            present(emailCheckVC, animated: true, completion: nil)
+        case "apple":
+            print("애플 로그인")
+        default:
+            print("에러")
         }
-        else {
-            userInfo.pushAlertReception = "N"
-        }
-        present(emailCheckVC, animated: true, completion: nil)
     }
     @objc func privacyButtonTapped() {
         let webView : SFSafariViewController = SFSafariViewController(url: infoURL! as URL)

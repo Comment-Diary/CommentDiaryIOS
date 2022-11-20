@@ -11,8 +11,11 @@ import Then
 import SnapKit
 import RxCocoa
 import RxSwift
+import RxKeyboard
 
 class EmailLoginViewController: UIViewController {
+    var viewModel = EmailLoginViewModel()
+    let disposeBag = DisposeBag()
     // MARK: - PROPERTIES
     private let backButton = UIButton().then {
         $0.setImage(UIImage(named: "arrowLeft.png"), for: .normal)
@@ -89,12 +92,53 @@ class EmailLoginViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         actions()
+        keyboardSetting()
     }
+    private func keyboardSetting() {
+        RxKeyboard.instance.visibleHeight
+            .drive(onNext: { keyboardVisibleHeight in
+                let height = keyboardVisibleHeight > 0 ? -keyboardVisibleHeight + self.view.safeAreaInsets.bottom - 16 + 28 + 48 : -12
+                self.loginButton.snp.updateConstraints { make in
+                    make.bottom.equalTo(self.signUpStackView.snp.top).offset(height)
+                }
+                self.view.layoutIfNeeded()
+            })
+            .disposed(by: disposeBag)
+    }
+
     private func actions() {
         backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         
         searchPasswordButton.addTarget(self, action: #selector(searchPasswordButtonTapped), for: .touchUpInside)
         signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
+        
+        //로그인 버튼
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+    }
+    private func formCheck() {
+        emailTextField.rx.text
+            .orEmpty
+            .asDriver(onErrorJustReturn: "")
+            .drive(viewModel.emailTextFieldSubject)
+            .disposed(by: disposeBag)
+        passwordTextField.rx.text
+            .orEmpty
+            .asDriver(onErrorJustReturn: "")
+            .drive(viewModel.passwordTextFieldSubject)
+            .disposed(by: disposeBag)
+        
+        // MARK: - 버튼 활성화 여부
+        viewModel.enabledButton.subscribe(onNext: { result in
+            if result {
+                self.loginButton.alpha = 1.0
+                self.loginButton.isEnabled = true
+            }
+            else {
+                self.loginButton.alpha = 0.4
+                self.loginButton.isEnabled = false
+            }
+        })
+        .disposed(by: disposeBag)
     }
  
     
@@ -105,6 +149,7 @@ class EmailLoginViewController: UIViewController {
     }
     @objc func signUpButtonTapped() {
         let signUpTermsVC = SignUpTermsViewController()
+        signUpTermsVC.viewModel.signUpCase = "email"
         signUpTermsVC.modalTransitionStyle = .crossDissolve
         signUpTermsVC.modalPresentationStyle = .fullScreen
         present(signUpTermsVC, animated: true, completion: nil)
@@ -114,6 +159,9 @@ class EmailLoginViewController: UIViewController {
         searchPasswordVC.modalTransitionStyle = .crossDissolve
         searchPasswordVC.modalPresentationStyle = .fullScreen
         present(searchPasswordVC, animated: true, completion: nil)
+    }
+    @objc func loginButtonTapped() {
+        print("로그인 버튼 클릭")
     }
     
 }
@@ -206,6 +254,8 @@ extension EmailLoginViewController {
         }
         
         view.backgroundColor = HexColor.backgroundColor.getHexColor()
+        loginButton.alpha = 0.4
+        loginButton.isEnabled = false
     }
     
 }

@@ -173,6 +173,7 @@
 		A5A0A33B27D902A300604A30 /* SendCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A0A33A27D902A300604A30 /* SendCommentViewController.swift */; };
 		A5A0A33E27D906DE00604A30 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A0A33D27D906DE00604A30 /* TermsViewController.swift */; };
 		A5A0A34027D906EF00604A30 /* Terms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A0A33F27D906EF00604A30 /* Terms.storyboard */; };
+		A5A7F7322927583900B0C4E2 /* EmailLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7F7312927583900B0C4E2 /* EmailLoginViewModel.swift */; };
 		A5B6B39C27CE405A0065DDF8 /* DeleteCheckAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B6B39B27CE405A0065DDF8 /* DeleteCheckAlertViewController.swift */; };
 		A5B6B39E27CE40710065DDF8 /* DeleteCheck.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B6B39D27CE40710065DDF8 /* DeleteCheck.storyboard */; };
 		A5B84FE027E37893001367B4 /* DiaryStop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B84FDF27E37893001367B4 /* DiaryStop.storyboard */; };
@@ -242,6 +243,7 @@
 		A5EA623B28A114FA00B3E2B7 /* WatingCommentDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5EA623A28A114FA00B3E2B7 /* WatingCommentDiary.storyboard */; };
 		A5EA623D28A1594800B3E2B7 /* OverTImeCommentDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA623C28A1594800B3E2B7 /* OverTImeCommentDiaryViewController.swift */; };
 		A5EA623F28A1595C00B3E2B7 /* OverTImeCommentDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5EA623E28A1595C00B3E2B7 /* OverTImeCommentDiary.storyboard */; };
+		A5EEC105291AB4EF003ADC30 /* KakaoAuthVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EEC104291AB4EF003ADC30 /* KakaoAuthVIewModel.swift */; };
 		A5EFDF4A28F1CD940098B29F /* EmailCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EFDF4928F1CD940098B29F /* EmailCheckViewController.swift */; };
 		A5EFDF4C28F1CDA40098B29F /* EmailCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EFDF4B28F1CDA40098B29F /* EmailCheckViewModel.swift */; };
 		A5EFDF4E28F1D0AC0098B29F /* SignUpTermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EFDF4D28F1D0AC0098B29F /* SignUpTermsViewController.swift */; };
@@ -416,6 +418,7 @@
 		A5A0A33A27D902A300604A30 /* SendCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendCommentViewController.swift; sourceTree = "<group>"; };
 		A5A0A33D27D906DE00604A30 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		A5A0A33F27D906EF00604A30 /* Terms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Terms.storyboard; sourceTree = "<group>"; };
+		A5A7F7312927583900B0C4E2 /* EmailLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewModel.swift; sourceTree = "<group>"; };
 		A5B6B39B27CE405A0065DDF8 /* DeleteCheckAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCheckAlertViewController.swift; sourceTree = "<group>"; };
 		A5B6B39D27CE40710065DDF8 /* DeleteCheck.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeleteCheck.storyboard; sourceTree = "<group>"; };
 		A5B84FDF27E37893001367B4 /* DiaryStop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiaryStop.storyboard; sourceTree = "<group>"; };
@@ -485,6 +488,8 @@
 		A5EA623A28A114FA00B3E2B7 /* WatingCommentDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WatingCommentDiary.storyboard; sourceTree = "<group>"; };
 		A5EA623C28A1594800B3E2B7 /* OverTImeCommentDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverTImeCommentDiaryViewController.swift; sourceTree = "<group>"; };
 		A5EA623E28A1595C00B3E2B7 /* OverTImeCommentDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OverTImeCommentDiary.storyboard; sourceTree = "<group>"; };
+		A5EEC102291AAE77003ADC30 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		A5EEC104291AB4EF003ADC30 /* KakaoAuthVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthVIewModel.swift; sourceTree = "<group>"; };
 		A5EF5E93282E376200B13EAD /* CommentDiary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CommentDiary.entitlements; sourceTree = "<group>"; };
 		A5EFDF4928F1CD940098B29F /* EmailCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCheckViewController.swift; sourceTree = "<group>"; };
 		A5EFDF4B28F1CDA40098B29F /* EmailCheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCheckViewModel.swift; sourceTree = "<group>"; };
@@ -1079,6 +1084,7 @@
 				A567615327B7E454006FDA7F /* LaunchScreen.storyboard */,
 				A5713F9E282BA66A00A73CC1 /* GoogleService-Info.plist */,
 				A567615627B7E454006FDA7F /* Info.plist */,
+				A5EEC102291AAE77003ADC30 /* Config.xcconfig */,
 			);
 			path = CommentDiary;
 			sourceTree = "<group>";
@@ -1199,6 +1205,7 @@
 		A567623427BD0553006FDA7F /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A5EEC103291AB4CF003ADC30 /* KAKAO */,
 				A54647B227D9EC0E00FBD3C2 /* TokenRefresh */,
 				A521371F27D0EFA700B98CF7 /* New Group1 */,
 				A52136F327D075E400B98CF7 /* Interceptor */,
@@ -1598,10 +1605,19 @@
 			path = SearchPassword;
 			sourceTree = "<group>";
 		};
+		A5EEC103291AB4CF003ADC30 /* KAKAO */ = {
+			isa = PBXGroup;
+			children = (
+				A5EEC104291AB4EF003ADC30 /* KakaoAuthVIewModel.swift */,
+			);
+			path = KAKAO;
+			sourceTree = "<group>";
+		};
 		A5FAFECC28DCAF6B00A91900 /* EmailLoginViewController */ = {
 			isa = PBXGroup;
 			children = (
 				A5FAFECD28DCAF9500A91900 /* EmailLoginViewController.swift */,
+				A5A7F7312927583900B0C4E2 /* EmailLoginViewModel.swift */,
 			);
 			path = EmailLoginViewController;
 			sourceTree = "<group>";
@@ -1796,6 +1812,7 @@
 				A5C7A39927E8E1770055BAD7 /* LikeResponse.swift in Sources */,
 				A51573A727FCB5F400390CC7 /* Constant.swift in Sources */,
 				A5CBCBFE27CA996D00BE857D /* SuccessPasswordSentAlertService.swift in Sources */,
+				A5EEC105291AB4EF003ADC30 /* KakaoAuthVIewModel.swift in Sources */,
 				A518AFB927E9B4DC0024E1F1 /* ReceivedDiaryResponse.swift in Sources */,
 				A518930728DA9CD300CEA419 /* LoginCaseViewController.swift in Sources */,
 				A5CCD18627C34BAE0096281F /* LoginResponse.swift in Sources */,
@@ -1869,6 +1886,7 @@
 				A5567C9827BD5353001A4B98 /* AuthNumberViewController.swift in Sources */,
 				A5611A2F2906EE4D00AA1AE3 /* EmailCheckResponse.swift in Sources */,
 				A547A99C27ECE33A00DAAFE3 /* DateCommentDataManager.swift in Sources */,
+				A5A7F7322927583900B0C4E2 /* EmailLoginViewModel.swift in Sources */,
 				A5C71352286B4553009CE07B /* UIBeziePath.swift in Sources */,
 				A595203A27D89A4F005D414D /* CommentWritingResponse.swift in Sources */,
 				A567617B27B7F627006FDA7F /* SplashViewController.swift in Sources */,
@@ -1988,6 +2006,7 @@
 /* Begin XCBuildConfiguration section */
 		A567615727B7E454006FDA7F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5EEC102291AAE77003ADC30 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -2050,6 +2069,7 @@
 		};
 		A567615827B7E454006FDA7F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5EEC102291AAE77003ADC30 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

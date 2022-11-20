@@ -15,11 +15,16 @@ import IQKeyboardManagerSwift
 import UserNotifications
 import Firebase
 import FirebaseMessaging
+import KakaoSDKCommon
+import KakaoSDKAuth
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // MARK: - KAKAOSDK
+        let nativeAppKey = Bundle.main.infoDictionary?["KAKAO_NATIVE_APP_KEY"] ?? ""
+        KakaoSDK.initSDK(appKey: nativeAppKey as! String)
         // Override point for customization after application launch.
         //MARK: - PushAlert
         FirebaseApp.configure()
@@ -95,11 +100,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-    
-//    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-//        // 세로방향 고정
-//        return UIInterfaceOrientationMask.portrait
-//    }
+    // MARK: - KAKAO SDK Auth
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        if (AuthApi.isKakaoTalkLoginUrl(url)) {
+            return AuthController.handleOpenUrl(url: url)
+        }
+
+        return false
+    }
 
     // MARK: UISceneSession Lifecycle
 

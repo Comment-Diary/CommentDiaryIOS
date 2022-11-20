@@ -10,6 +10,7 @@ import RxSwift
 import RxCocoa
 import Then
 import SnapKit
+import RxKeyboard
 
 
 class PasswordCheckViewController: UIViewController {
@@ -99,6 +100,19 @@ class PasswordCheckViewController: UIViewController {
         passwordFormCheck()
         passwordMatchCheck()
         codaButtonEnabledCheck()
+        keyboardSetting()
+    }
+    // MARK: - 키보드 올라감과 동시에 버튼 올리기
+    private func keyboardSetting() {
+        RxKeyboard.instance.visibleHeight
+            .drive(onNext: { keyboardVisibleHeight in
+                let height = keyboardVisibleHeight > 0 ? -keyboardVisibleHeight + self.view.safeAreaInsets.bottom - 16 : -88
+                self.codaButton.snp.updateConstraints { make in
+                    make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(height)
+                }
+                self.view.layoutIfNeeded()
+            })
+            .disposed(by: disposeBag)
     }
     
     private func passwordFormCheck() {

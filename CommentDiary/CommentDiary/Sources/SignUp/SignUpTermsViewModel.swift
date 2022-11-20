@@ -9,6 +9,7 @@ import Foundation
 import RxCocoa
 import RxSwift
 struct SignUpTermsViewModel {
+    var signUpCase : String = ""
     var fullConsentButtonSubject = BehaviorSubject<Bool>(value: false)
     var pushAlertButtonSubject = BehaviorSubject<Bool>(value: false)
     var privacyButtonSubject = BehaviorSubject<Bool>(value: false)

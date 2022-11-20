@@ -4,13 +4,12 @@
 //
 //  Created by 류창휘 on 2022/10/27.
 //
-
-import Foundation
 import UIKit
 import SnapKit
 import Then
 import RxSwift
 import RxCocoa
+import RxKeyboard
 
 class EmailAuthenticationViewController: UIViewController {
     //전달받을 email String
@@ -51,6 +50,7 @@ class EmailAuthenticationViewController: UIViewController {
         $0.borderStyle = .roundedRect
         $0.layer.cornerRadius = 4
         $0.backgroundColor = HexColor.backgroundColor.getHexColor()
+        $0.keyboardType = .numberPad
     }
     //인증번호 불일치 안내 라벨
     private let warningAlertLabel = UILabel().then {
@@ -74,6 +74,19 @@ class EmailAuthenticationViewController: UIViewController {
         action()
         authenficationNumberCheck()
         authenficationButtonClicked()
+        keyboardSetting()
+    }
+    // MARK: - 키보드 올라감과 동시에 버튼 올리기
+    private func keyboardSetting() {
+        RxKeyboard.instance.visibleHeight
+            .drive(onNext: { keyboardVisibleHeight in
+                let height = keyboardVisibleHeight > 0 ? -keyboardVisibleHeight + self.view.safeAreaInsets.bottom : -88 - 16
+                self.authenficationButton.snp.updateConstraints { make in
+                    make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(height)
+                }
+                self.view.layoutIfNeeded()
+            })
+            .disposed(by: disposeBag)
     }
     private func authenficationNumberCheck() {
         codeTextField.rx.text

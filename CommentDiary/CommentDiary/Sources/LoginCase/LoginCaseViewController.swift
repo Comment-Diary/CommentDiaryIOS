@@ -19,6 +19,9 @@ class LoginCaseViewController : UIViewController {
         $0.textColor = HexColor.mainTitleColor.getHexColor()
         $0.font =  UIFont.AppleSDGothic(.extraBold, size: 30)
     }
+    private let kakaoButton = UIButton().then {
+        $0.setImage(UIImage(named: "kakao"), for: .normal)
+    }
     private let emailButton = UIButton().then {
         $0.setTitle("이메일로 시작하기", for: .normal)
         $0.setTitleColor(HexColor.emailButtonColor.getHexColor(), for: .normal)
@@ -35,10 +38,9 @@ class LoginCaseViewController : UIViewController {
     }
     private func actions() {
         emailButton.addTarget(self, action: #selector(emailButtonTapped), for: .touchUpInside)
+        kakaoButton.addTarget(self, action: #selector(kakaoButtonTapped), for: .touchUpInside)
     }
     
-    
-//    LoginViewController
     
     
     // MARK: - ACTIONS
@@ -47,6 +49,13 @@ class LoginCaseViewController : UIViewController {
         emailLoginVC.modalTransitionStyle = .crossDissolve
         emailLoginVC.modalPresentationStyle = .fullScreen
         present(emailLoginVC, animated: true, completion: nil)
+    }
+    @objc func kakaoButtonTapped() {
+        let signUpTermsVC = SignUpTermsViewController()
+        signUpTermsVC.viewModel.signUpCase = "kakao"
+        signUpTermsVC.modalTransitionStyle = .crossDissolve
+        signUpTermsVC.modalPresentationStyle = .fullScreen
+        present(signUpTermsVC, animated: true, completion: nil)
     }
 }
 
@@ -58,7 +67,7 @@ class LoginCaseViewController : UIViewController {
 
 extension LoginCaseViewController {
     private func configureUI() {
-        [mainTitleLabel, emailButton].forEach({
+        [mainTitleLabel, emailButton, kakaoButton].forEach({
             view.addSubview($0)
         })
         view.backgroundColor = HexColor.backgroundColor.getHexColor()
@@ -73,6 +82,18 @@ extension LoginCaseViewController {
             make.centerX.equalToSuperview()
             make.height.equalTo(56)
         }
+        kakaoButton.snp.makeConstraints { make in
+            make.bottom.equalTo(emailButton.snp.top).offset(-8)
+            make.leading.equalToSuperview().offset(16)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(56)
+        }
+        //text 행간 조절
+        let paragraghStyle = NSMutableParagraphStyle()
+        paragraghStyle.lineHeightMultiple = 0.93
+        let infoLabelAttrString = NSMutableAttributedString(string: mainTitleLabel.text ?? "")
+        infoLabelAttrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraghStyle, range: NSMakeRange(0, infoLabelAttrString.length))
+        mainTitleLabel.attributedText = infoLabelAttrString
     }
     
     enum HexColor {

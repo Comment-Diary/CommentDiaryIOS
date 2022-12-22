@@ -2,10 +2,9 @@
 //  LoginCaseViewController.swift
 //  CommentDiary
 //
-//  Created by 류창휘 on 2022/09/21.
+//  Created by 류창휘 on 2022/12/23.
 //
 
-import Foundation
 import UIKit
 import Then
 import SnapKit

@@ -155,7 +155,7 @@ class EmailLoginViewController: UIViewController {
         present(signUpTermsVC, animated: true, completion: nil)
     }
     @objc func searchPasswordButtonTapped() {
-        let searchPasswordVC = SearchPasswordViewController()
+        let searchPasswordVC = PasswordSearchViewController()
         searchPasswordVC.modalTransitionStyle = .crossDissolve
         searchPasswordVC.modalPresentationStyle = .fullScreen
         present(searchPasswordVC, animated: true, completion: nil)

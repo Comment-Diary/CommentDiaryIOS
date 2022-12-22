@@ -116,7 +116,7 @@ class MemberOutViewController : UIViewController {
 extension MemberOutViewController {
     func memberOutSuccess(_ response : MemberOutResponse) {
         dismissIndicator()
-        let splashVC = UIStoryboard(name: "Splash", bundle: nil).instantiateViewController(withIdentifier: "splashNavigation")
+        let splashVC = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "splashNavigation")
         self.changeRootViewController(splashVC)
 //        UserDefaults.standard.removeObject(forKey: "AccessToken")
 //        UserDefaults.standard.removeObject(forKey: "RefreshToken")

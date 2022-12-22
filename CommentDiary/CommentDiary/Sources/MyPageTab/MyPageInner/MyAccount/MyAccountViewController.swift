@@ -102,7 +102,7 @@ class MyAccountViewController : UIViewController {
     //MARK: - Extensions
 extension MyAccountViewController {
     func successLogOut(_ response: LogOutResponse) {
-        let splashVC = UIStoryboard(name: "Splash", bundle: nil).instantiateViewController(withIdentifier: "splashNavigation")
+        let splashVC = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "splashNavigation")
         
         self.changeRootViewController(splashVC)
 //        UserDefaults.standard.removeObject(forKey: "AccessToken")

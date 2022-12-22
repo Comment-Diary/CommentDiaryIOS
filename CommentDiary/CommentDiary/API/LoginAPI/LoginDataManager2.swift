@@ -37,7 +37,7 @@ class LoginDataManager {
 
                 case .failure(let error):
                     print(error.localizedDescription)
-                    
+                    print(response.response?.statusCode)
                     
                     if response.response?.statusCode == 403 {
                         viewController.blockResponse()

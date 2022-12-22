@@ -8,6 +8,6 @@
 import Foundation
 import UIKit
 
-struct OnboardingSlide {
-    let image: UIImage
-}
+//struct OnboardingSlide {
+//    let image: UIImage
+//}

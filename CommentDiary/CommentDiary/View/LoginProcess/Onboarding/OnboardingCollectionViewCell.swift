@@ -2,10 +2,17 @@
 //  OnboardingCollectionViewCell.swift
 //  CommentDiary
 //
-//  Created by 류창휘 on 2022/02/16.
+//  Created by 류창휘 on 2022/12/22.
 //
 
+import Foundation
 import UIKit
+
+
+struct OnboardingSlide {
+    let image: UIImage
+}
+
 
 class OnboardingCollectionViewCell: UICollectionViewCell {
     

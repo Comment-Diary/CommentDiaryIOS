@@ -33,7 +33,7 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
     //alert
     let authNumberAlertService = AuthNumberAlertService()
     
-    var viewModel: SignUpPasswordViewModel!
+//    var viewModel: SignUpPasswordViewModel!
     //메모리 관리
     private var passwordSubscription = Set<AnyCancellable>()
     
@@ -85,7 +85,7 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
         emailTextField.delegate = self
         passwordTextField.delegate = self
         passwordConfirmTextField.delegate = self
-        viewModel = SignUpPasswordViewModel()
+//        viewModel = SignUpPasswordViewModel()
         textFieldSetting()
         passwordCheck()
         buttonSetting()
@@ -298,23 +298,23 @@ class SignUpViewController: UIViewController, emailTextFieldChangeDelegate, auth
     
     
     func passwordCheck() {
-        passwordTextField
-            .myTextPublisher
-            .receive(on: DispatchQueue.main)
-            .assign(to: \.passwordInput, on: viewModel)
-            .store(in: &passwordSubscription)
-
-        passwordConfirmTextField
-            .myTextPublisher
-            .receive(on: DispatchQueue.main)
-            .assign(to: \.passwordComfirmInput, on: viewModel)
-            .store(in: &passwordSubscription)
-
-        viewModel.isMatchPasswordInput
-            .print()
-            .receive(on: RunLoop.main)
-            .assign(to: \.isValid, on: passwordCheckLabel)
-            .store(in: &passwordSubscription)
+//        passwordTextField
+//            .myTextPublisher
+//            .receive(on: DispatchQueue.main)
+//            .assign(to: \.passwordInput, on: viewModel)
+//            .store(in: &passwordSubscription)
+//
+//        passwordConfirmTextField
+//            .myTextPublisher
+//            .receive(on: DispatchQueue.main)
+//            .assign(to: \.passwordComfirmInput, on: viewModel)
+//            .store(in: &passwordSubscription)
+//
+//        viewModel.isMatchPasswordInput
+//            .print()
+//            .receive(on: RunLoop.main)
+//            .assign(to: \.isValid, on: passwordCheckLabel)
+//            .store(in: &passwordSubscription)
     }
 
     

@@ -14,7 +14,6 @@
 		A503FF7C27CE4D6C0049FF82 /* YPreSave.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A503FF7B27CE4D6C0049FF82 /* YPreSave.storyboard */; };
 		A50F298528996A3C00898DD7 /* PreSaveDiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50F298428996A3C00898DD7 /* PreSaveDiaryViewModel.swift */; };
 		A51573A727FCB5F400390CC7 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51573A627FCB5F400390CC7 /* Constant.swift */; };
-		A518930728DA9CD300CEA419 /* LoginCaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518930628DA9CD300CEA419 /* LoginCaseViewController.swift */; };
 		A518AFAF27E985450024E1F1 /* ChangePasswordChangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518AFAE27E985450024E1F1 /* ChangePasswordChangeModel.swift */; };
 		A518AFB227E9A5490024E1F1 /* ChangePasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518AFB127E9A5490024E1F1 /* ChangePasswordResponse.swift */; };
 		A518AFB427E9A5520024E1F1 /* ChangePasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518AFB327E9A5520024E1F1 /* ChangePasswordRequest.swift */; };
@@ -29,7 +28,6 @@
 		A518AFCC27EB4F200024E1F1 /* NotArrivalCommentDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518AFCB27EB4F200024E1F1 /* NotArrivalCommentDiaryViewController.swift */; };
 		A518AFCE27EB4F330024E1F1 /* NotArrivalCommentDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A518AFCD27EB4F330024E1F1 /* NotArrivalCommentDiary.storyboard */; };
 		A51AF6722910008000B17127 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = A51AF6712910008000B17127 /* KakaoSDK */; };
-		A51AF676291014B800B17127 /* SignUpTermsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51AF675291014B800B17127 /* SignUpTermsViewModel.swift */; };
 		A520914927DC7F36003017AC /* MyDiaryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A520914727DC7F36003017AC /* MyDiaryListCell.swift */; };
 		A520914A27DC7F36003017AC /* MyDiaryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A520914827DC7F36003017AC /* MyDiaryListCell.xib */; };
 		A520914F27DC98CE003017AC /* GatherDiaryDateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A520914E27DC98CE003017AC /* GatherDiaryDateResponse.swift */; };
@@ -109,6 +107,14 @@
 		A561E79F27FBDF0D00EAACEC /* AppleSDGothicNeoB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A561E79C27FBDF0400EAACEC /* AppleSDGothicNeoB.ttf */; };
 		A561E7A027FBDF1000EAACEC /* AppleSDGothicNeoEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A561E79D27FBDF0400EAACEC /* AppleSDGothicNeoEB.ttf */; };
 		A561E7A127FBDF1300EAACEC /* AppleSDGothicNeoM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A561E79E27FBDF0400EAACEC /* AppleSDGothicNeoM.ttf */; };
+		A561EE83295477E700C0DCD8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A561EE82295477E700C0DCD8 /* BaseViewController.swift */; };
+		A561EE852954791600C0DCD8 /* OnboardingVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A561EE842954791600C0DCD8 /* OnboardingVIewController.swift */; };
+		A561EE892954798D00C0DCD8 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A561EE882954798D00C0DCD8 /* Splash.storyboard */; };
+		A561EE8B295482FB00C0DCD8 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A561EE8A295482FB00C0DCD8 /* OnboardingCollectionViewCell.swift */; };
+		A561EE8D2954848A00C0DCD8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A561EE8C2954848A00C0DCD8 /* LoginViewController.swift */; };
+		A561EE8F295484D100C0DCD8 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A561EE8E295484D100C0DCD8 /* LogIn.storyboard */; };
+		A561EE922954858F00C0DCD8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A561EE912954858F00C0DCD8 /* LoginViewModel.swift */; };
+		A561EE9929548B0100C0DCD8 /* LoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A561EE9829548B0100C0DCD8 /* LoginDataManager.swift */; };
 		A562CF8F287AB10600DB57B7 /* TodayDiary2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562CF8E287AB10600DB57B7 /* TodayDiary2Model.swift */; };
 		A562CF91287AB74800DB57B7 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562CF90287AB74800DB57B7 /* UILabel.swift */; };
 		A564129E27CBCB6800825571 /* WritingDiaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A564129D27CBCB6800825571 /* WritingDiaryResponse.swift */; };
@@ -131,15 +137,8 @@
 		A567616A27B7E83C006FDA7F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567616927B7E83C006FDA7F /* UIViewController.swift */; };
 		A567616C27B7E890006FDA7F /* UINavigaionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567616B27B7E890006FDA7F /* UINavigaionBar.swift */; };
 		A567617427B7EA56006FDA7F /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567617327B7EA56006FDA7F /* IndicatorView.swift */; };
-		A567617B27B7F627006FDA7F /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567617A27B7F627006FDA7F /* SplashViewController.swift */; };
-		A567617D27B7F640006FDA7F /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A567617C27B7F640006FDA7F /* Splash.storyboard */; };
-		A567622527BBB8C9006FDA7F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A567622427BBB8C9006FDA7F /* Login.storyboard */; };
-		A567622727BBB8D5006FDA7F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567622627BBB8D5006FDA7F /* LoginViewController.swift */; };
 		A567622A27BBC7D3006FDA7F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567622927BBC7D3006FDA7F /* SignUpViewController.swift */; };
 		A567622C27BBC7DC006FDA7F /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A567622B27BBC7DC006FDA7F /* SignUp.storyboard */; };
-		A567622E27BBFBBC006FDA7F /* SignUpPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567622D27BBFBBB006FDA7F /* SignUpPasswordViewModel.swift */; };
-		A567623127BC2E33006FDA7F /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567623027BC2E33006FDA7F /* OnboardingSlide.swift */; };
-		A567623327BC2F10006FDA7F /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567623227BC2F10006FDA7F /* OnboardingCollectionViewCell.swift */; };
 		A56B697C27DA02CF001385DC /* DiaryReportResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56B697B27DA02CF001385DC /* DiaryReportResponse.swift */; };
 		A56B697E27DA02DA001385DC /* DiaryReportRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56B697D27DA02DA001385DC /* DiaryReportRequest.swift */; };
 		A56B698027DA02E7001385DC /* DiaryReportDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56B697F27DA02E7001385DC /* DiaryReportDataManager.swift */; };
@@ -167,6 +166,13 @@
 		A595203E27D89A67005D414D /* CommentWritingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A595203D27D89A67005D414D /* CommentWritingDataManager.swift */; };
 		A59909B127FEF4AD00025C58 /* YNotWriteCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59909B027FEF4AD00025C58 /* YNotWriteCommentViewController.swift */; };
 		A59909B327FEF4BA00025C58 /* YNotWriteComment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59909B227FEF4BA00025C58 /* YNotWriteComment.storyboard */; };
+		A59C627D2954BAFA00DCD88F /* PasswordSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C627C2954BAFA00DCD88F /* PasswordSearchViewController.swift */; };
+		A59C62802954BB5500DCD88F /* PasswordSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C627F2954BB5500DCD88F /* PasswordSearchViewModel.swift */; };
+		A59C62832954BBED00DCD88F /* PasswordSearchDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C62822954BBED00DCD88F /* PasswordSearchDataManager.swift */; };
+		A59C62862954BC7900DCD88F /* PasswordSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C62852954BC7900DCD88F /* PasswordSearchResponse.swift */; };
+		A59C62892954C3AF00DCD88F /* LoginCaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C62882954C3AF00DCD88F /* LoginCaseViewController.swift */; };
+		A59C628C2954C58200DCD88F /* SignUpTermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C628B2954C58200DCD88F /* SignUpTermsViewController.swift */; };
+		A59C628F2954C67800DCD88F /* SignUpTermsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C628E2954C67800DCD88F /* SignUpTermsViewModel.swift */; };
 		A5A0A33427D9006700604A30 /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A0A33327D9006700604A30 /* MyAccountViewController.swift */; };
 		A5A0A33627D9007200604A30 /* MyAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A0A33527D9007200604A30 /* MyAccount.storyboard */; };
 		A5A0A33927D9029700604A30 /* SendComment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A0A33827D9029700604A30 /* SendComment.storyboard */; };
@@ -229,11 +235,9 @@
 		A5CBCBFC27CA96AA00BE857D /* SuccessFindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CBCBFB27CA96AA00BE857D /* SuccessFindPasswordViewController.swift */; };
 		A5CBCBFE27CA996D00BE857D /* SuccessPasswordSentAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CBCBFD27CA996D00BE857D /* SuccessPasswordSentAlertService.swift */; };
 		A5CBCC0027CA99FF00BE857D /* SuccessFindPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CBCBFF27CA99FF00BE857D /* SuccessFindPassword.storyboard */; };
-		A5CCD18427C34BA30096281F /* LoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCD18327C34BA30096281F /* LoginDataManager.swift */; };
+		A5CCD18427C34BA30096281F /* LoginDataManager2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCD18327C34BA30096281F /* LoginDataManager2.swift */; };
 		A5CCD18627C34BAE0096281F /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCD18527C34BAE0096281F /* LoginResponse.swift */; };
 		A5CCD18827C34BB70096281F /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCD18727C34BB70096281F /* LoginRequest.swift */; };
-		A5CCD18D27C4CD660096281F /* PasswordSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCD18C27C4CD660096281F /* PasswordSearchViewController.swift */; };
-		A5CCD19127C4CDF00096281F /* PasswordSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CCD19027C4CDF00096281F /* PasswordSearch.storyboard */; };
 		A5CCD19427C4E4060096281F /* SearchPasswordDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCD19327C4E4060096281F /* SearchPasswordDataManager.swift */; };
 		A5CCD19627C4E4110096281F /* SearchPasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCD19527C4E4110096281F /* SearchPasswordResponse.swift */; };
 		A5D2F89228E03C350036CFEA /* SearchPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D2F89128E03C350036CFEA /* SearchPasswordViewController.swift */; };
@@ -246,7 +250,6 @@
 		A5EEC105291AB4EF003ADC30 /* KakaoAuthVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EEC104291AB4EF003ADC30 /* KakaoAuthVIewModel.swift */; };
 		A5EFDF4A28F1CD940098B29F /* EmailCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EFDF4928F1CD940098B29F /* EmailCheckViewController.swift */; };
 		A5EFDF4C28F1CDA40098B29F /* EmailCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EFDF4B28F1CDA40098B29F /* EmailCheckViewModel.swift */; };
-		A5EFDF4E28F1D0AC0098B29F /* SignUpTermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EFDF4D28F1D0AC0098B29F /* SignUpTermsViewController.swift */; };
 		A5FAFECE28DCAF9500A91900 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FAFECD28DCAF9500A91900 /* EmailLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -258,7 +261,6 @@
 		A503FF7B27CE4D6C0049FF82 /* YPreSave.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YPreSave.storyboard; sourceTree = "<group>"; };
 		A50F298428996A3C00898DD7 /* PreSaveDiaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreSaveDiaryViewModel.swift; sourceTree = "<group>"; };
 		A51573A627FCB5F400390CC7 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		A518930628DA9CD300CEA419 /* LoginCaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCaseViewController.swift; sourceTree = "<group>"; };
 		A518AFAE27E985450024E1F1 /* ChangePasswordChangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordChangeModel.swift; sourceTree = "<group>"; };
 		A518AFB127E9A5490024E1F1 /* ChangePasswordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordResponse.swift; sourceTree = "<group>"; };
 		A518AFB327E9A5520024E1F1 /* ChangePasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRequest.swift; sourceTree = "<group>"; };
@@ -272,7 +274,6 @@
 		A518AFC827EB28C10024E1F1 /* YPreSaveDeadline.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YPreSaveDeadline.storyboard; sourceTree = "<group>"; };
 		A518AFCB27EB4F200024E1F1 /* NotArrivalCommentDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotArrivalCommentDiaryViewController.swift; sourceTree = "<group>"; };
 		A518AFCD27EB4F330024E1F1 /* NotArrivalCommentDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotArrivalCommentDiary.storyboard; sourceTree = "<group>"; };
-		A51AF675291014B800B17127 /* SignUpTermsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTermsViewModel.swift; sourceTree = "<group>"; };
 		A520914727DC7F36003017AC /* MyDiaryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryListCell.swift; sourceTree = "<group>"; };
 		A520914827DC7F36003017AC /* MyDiaryListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyDiaryListCell.xib; sourceTree = "<group>"; };
 		A520914E27DC98CE003017AC /* GatherDiaryDateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatherDiaryDateResponse.swift; sourceTree = "<group>"; };
@@ -352,6 +353,14 @@
 		A561E79C27FBDF0400EAACEC /* AppleSDGothicNeoB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoB.ttf; path = ../../../../../IOS/AppleSDGothicNeoB.ttf; sourceTree = "<group>"; };
 		A561E79D27FBDF0400EAACEC /* AppleSDGothicNeoEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoEB.ttf; path = ../../../../../IOS/AppleSDGothicNeoEB.ttf; sourceTree = "<group>"; };
 		A561E79E27FBDF0400EAACEC /* AppleSDGothicNeoM.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeoM.ttf; path = ../../../../../IOS/AppleSDGothicNeoM.ttf; sourceTree = "<group>"; };
+		A561EE82295477E700C0DCD8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A561EE842954791600C0DCD8 /* OnboardingVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVIewController.swift; sourceTree = "<group>"; };
+		A561EE882954798D00C0DCD8 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		A561EE8A295482FB00C0DCD8 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		A561EE8C2954848A00C0DCD8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A561EE8E295484D100C0DCD8 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
+		A561EE912954858F00C0DCD8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A561EE9829548B0100C0DCD8 /* LoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManager.swift; sourceTree = "<group>"; };
 		A562CF8E287AB10600DB57B7 /* TodayDiary2Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDiary2Model.swift; sourceTree = "<group>"; };
 		A562CF90287AB74800DB57B7 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		A564129D27CBCB6800825571 /* WritingDiaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingDiaryResponse.swift; sourceTree = "<group>"; };
@@ -376,15 +385,8 @@
 		A567616927B7E83C006FDA7F /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		A567616B27B7E890006FDA7F /* UINavigaionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigaionBar.swift; sourceTree = "<group>"; };
 		A567617327B7EA56006FDA7F /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
-		A567617A27B7F627006FDA7F /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
-		A567617C27B7F640006FDA7F /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
-		A567622427BBB8C9006FDA7F /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		A567622627BBB8D5006FDA7F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A567622927BBC7D3006FDA7F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A567622B27BBC7DC006FDA7F /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
-		A567622D27BBFBBB006FDA7F /* SignUpPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordViewModel.swift; sourceTree = "<group>"; };
-		A567623027BC2E33006FDA7F /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
-		A567623227BC2F10006FDA7F /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		A56B697B27DA02CF001385DC /* DiaryReportResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryReportResponse.swift; sourceTree = "<group>"; };
 		A56B697D27DA02DA001385DC /* DiaryReportRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryReportRequest.swift; sourceTree = "<group>"; };
 		A56B697F27DA02E7001385DC /* DiaryReportDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryReportDataManager.swift; sourceTree = "<group>"; };
@@ -412,6 +414,13 @@
 		A595203D27D89A67005D414D /* CommentWritingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentWritingDataManager.swift; sourceTree = "<group>"; };
 		A59909B027FEF4AD00025C58 /* YNotWriteCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YNotWriteCommentViewController.swift; sourceTree = "<group>"; };
 		A59909B227FEF4BA00025C58 /* YNotWriteComment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YNotWriteComment.storyboard; sourceTree = "<group>"; };
+		A59C627C2954BAFA00DCD88F /* PasswordSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSearchViewController.swift; sourceTree = "<group>"; };
+		A59C627F2954BB5500DCD88F /* PasswordSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSearchViewModel.swift; sourceTree = "<group>"; };
+		A59C62822954BBED00DCD88F /* PasswordSearchDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSearchDataManager.swift; sourceTree = "<group>"; };
+		A59C62852954BC7900DCD88F /* PasswordSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSearchResponse.swift; sourceTree = "<group>"; };
+		A59C62882954C3AF00DCD88F /* LoginCaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCaseViewController.swift; sourceTree = "<group>"; };
+		A59C628B2954C58200DCD88F /* SignUpTermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTermsViewController.swift; sourceTree = "<group>"; };
+		A59C628E2954C67800DCD88F /* SignUpTermsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTermsViewModel.swift; sourceTree = "<group>"; };
 		A5A0A33327D9006700604A30 /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
 		A5A0A33527D9007200604A30 /* MyAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyAccount.storyboard; sourceTree = "<group>"; };
 		A5A0A33827D9029700604A30 /* SendComment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SendComment.storyboard; sourceTree = "<group>"; };
@@ -474,11 +483,9 @@
 		A5CBCBFB27CA96AA00BE857D /* SuccessFindPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessFindPasswordViewController.swift; sourceTree = "<group>"; };
 		A5CBCBFD27CA996D00BE857D /* SuccessPasswordSentAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPasswordSentAlertService.swift; sourceTree = "<group>"; };
 		A5CBCBFF27CA99FF00BE857D /* SuccessFindPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SuccessFindPassword.storyboard; sourceTree = "<group>"; };
-		A5CCD18327C34BA30096281F /* LoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManager.swift; sourceTree = "<group>"; };
+		A5CCD18327C34BA30096281F /* LoginDataManager2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManager2.swift; sourceTree = "<group>"; };
 		A5CCD18527C34BAE0096281F /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		A5CCD18727C34BB70096281F /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
-		A5CCD18C27C4CD660096281F /* PasswordSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSearchViewController.swift; sourceTree = "<group>"; };
-		A5CCD19027C4CDF00096281F /* PasswordSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordSearch.storyboard; sourceTree = "<group>"; };
 		A5CCD19327C4E4060096281F /* SearchPasswordDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPasswordDataManager.swift; sourceTree = "<group>"; };
 		A5CCD19527C4E4110096281F /* SearchPasswordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPasswordResponse.swift; sourceTree = "<group>"; };
 		A5D2F89128E03C350036CFEA /* SearchPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPasswordViewController.swift; sourceTree = "<group>"; };
@@ -493,7 +500,6 @@
 		A5EF5E93282E376200B13EAD /* CommentDiary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CommentDiary.entitlements; sourceTree = "<group>"; };
 		A5EFDF4928F1CD940098B29F /* EmailCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCheckViewController.swift; sourceTree = "<group>"; };
 		A5EFDF4B28F1CDA40098B29F /* EmailCheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCheckViewModel.swift; sourceTree = "<group>"; };
-		A5EFDF4D28F1D0AC0098B29F /* SignUpTermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTermsViewController.swift; sourceTree = "<group>"; };
 		A5FAFECD28DCAF9500A91900 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		E3C33BD30605D7DB387967A7 /* Pods-CommentDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommentDiary.release.xcconfig"; path = "Target Support Files/Pods-CommentDiary/Pods-CommentDiary.release.xcconfig"; sourceTree = "<group>"; };
 		F7CFBFB7F6DD1F7AD2C2DF30 /* Pods-CommentDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommentDiary.debug.xcconfig"; path = "Target Support Files/Pods-CommentDiary/Pods-CommentDiary.debug.xcconfig"; sourceTree = "<group>"; };
@@ -568,7 +574,6 @@
 		A518930528DA9CAC00CEA419 /* LoginCase */ = {
 			isa = PBXGroup;
 			children = (
-				A518930628DA9CD300CEA419 /* LoginCaseViewController.swift */,
 			);
 			path = LoginCase;
 			sourceTree = "<group>";
@@ -1028,6 +1033,160 @@
 			path = RequestEmailAuthAPI/EmailCheckAPI;
 			sourceTree = "<group>";
 		};
+		A561EE772954746500C0DCD8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A561EE7D295475A400C0DCD8 /* LoginProcess */,
+				A561EE7C2954759B00C0DCD8 /* CodaProcess */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A561EE782954746E00C0DCD8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A561EE7A2954750400C0DCD8 /* LoginProcess */,
+				A561EE7B2954757800C0DCD8 /* CodaProcess */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A561EE792954747500C0DCD8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A561EE7F295475B600C0DCD8 /* LoginProcess */,
+				A561EE7E295475AD00C0DCD8 /* CodaProcess */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A561EE7A2954750400C0DCD8 /* LoginProcess */ = {
+			isa = PBXGroup;
+			children = (
+				A561EE802954766B00C0DCD8 /* Onboarding */,
+				A59C62872954C38800DCD88F /* LoginCase */,
+				A561EE812954767900C0DCD8 /* Login */,
+				A59C628A2954C56900DCD88F /* SignUp */,
+				A561EE9A2954B76A00C0DCD8 /* PasswordSearch */,
+			);
+			path = LoginProcess;
+			sourceTree = "<group>";
+		};
+		A561EE7B2954757800C0DCD8 /* CodaProcess */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CodaProcess;
+			sourceTree = "<group>";
+		};
+		A561EE7C2954759B00C0DCD8 /* CodaProcess */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CodaProcess;
+			sourceTree = "<group>";
+		};
+		A561EE7D295475A400C0DCD8 /* LoginProcess */ = {
+			isa = PBXGroup;
+			children = (
+				A59C62842954BC6400DCD88F /* PasswordSearch */,
+				A561EE9629548A7700C0DCD8 /* Login */,
+			);
+			path = LoginProcess;
+			sourceTree = "<group>";
+		};
+		A561EE7E295475AD00C0DCD8 /* CodaProcess */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CodaProcess;
+			sourceTree = "<group>";
+		};
+		A561EE7F295475B600C0DCD8 /* LoginProcess */ = {
+			isa = PBXGroup;
+			children = (
+				A59C628D2954C66600DCD88F /* SignUp */,
+				A59C627E2954BB4000DCD88F /* PasswordSearch */,
+				A561EE902954858100C0DCD8 /* Login */,
+			);
+			path = LoginProcess;
+			sourceTree = "<group>";
+		};
+		A561EE802954766B00C0DCD8 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A561EE842954791600C0DCD8 /* OnboardingVIewController.swift */,
+				A561EE8A295482FB00C0DCD8 /* OnboardingCollectionViewCell.swift */,
+				A561EE882954798D00C0DCD8 /* Splash.storyboard */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		A561EE812954767900C0DCD8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A561EE8C2954848A00C0DCD8 /* LoginViewController.swift */,
+				A561EE8E295484D100C0DCD8 /* LogIn.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A561EE902954858100C0DCD8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A561EE912954858F00C0DCD8 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A561EE932954869100C0DCD8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A561EE942954895400C0DCD8 /* LoginProcess */,
+				A561EE952954895F00C0DCD8 /* CodaProcess */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A561EE942954895400C0DCD8 /* LoginProcess */ = {
+			isa = PBXGroup;
+			children = (
+				A59C62812954BBCE00DCD88F /* PasswordSearch */,
+				A561EE9729548AEA00C0DCD8 /* Login */,
+			);
+			path = LoginProcess;
+			sourceTree = "<group>";
+		};
+		A561EE952954895F00C0DCD8 /* CodaProcess */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CodaProcess;
+			sourceTree = "<group>";
+		};
+		A561EE9629548A7700C0DCD8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A561EE9729548AEA00C0DCD8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A561EE9829548B0100C0DCD8 /* LoginDataManager.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A561EE9A2954B76A00C0DCD8 /* PasswordSearch */ = {
+			isa = PBXGroup;
+			children = (
+				A59C627C2954BAFA00DCD88F /* PasswordSearchViewController.swift */,
+			);
+			path = PasswordSearch;
+			sourceTree = "<group>";
+		};
 		A564129C27CBCB0500825571 /* WritingDiaryAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1069,6 +1228,10 @@
 		A567614727B7E452006FDA7F /* CommentDiary */ = {
 			isa = PBXGroup;
 			children = (
+				A561EE932954869100C0DCD8 /* Network */,
+				A561EE772954746500C0DCD8 /* Model */,
+				A561EE782954746E00C0DCD8 /* View */,
+				A561EE792954747500C0DCD8 /* ViewModel */,
 				A5EF5E93282E376200B13EAD /* CommentDiary.entitlements */,
 				A51573A527FCB5DF00390CC7 /* Configuration */,
 				A567617127B7EA13006FDA7F /* CommonClass */,
@@ -1121,6 +1284,7 @@
 			isa = PBXGroup;
 			children = (
 				A567617327B7EA56006FDA7F /* IndicatorView.swift */,
+				A561EE82295477E700C0DCD8 /* BaseViewController.swift */,
 			);
 			path = CommonClass;
 			sourceTree = "<group>";
@@ -1136,11 +1300,8 @@
 				A567622827BBC7B6006FDA7F /* SignUp */,
 				A5567C9D27BE9432001A4B98 /* SignUpCompletion */,
 				A5D2F89028E03C120036CFEA /* SearchPassword */,
-				A5CCD18B27C4CD1C0096281F /* PasswordSearch */,
 				A518930528DA9CAC00CEA419 /* LoginCase */,
 				A5FAFECC28DCAF6B00A91900 /* EmailLoginViewController */,
-				A567622327BBB8AE006FDA7F /* LogIn */,
-				A567617927B7F605006FDA7F /* Splash */,
 				A5567C9527BD52F0001A4B98 /* Alerts */,
 				A567614E27B7E452006FDA7F /* Main.storyboard */,
 			);
@@ -1156,33 +1317,11 @@
 			path = NavigationVC;
 			sourceTree = "<group>";
 		};
-		A567617927B7F605006FDA7F /* Splash */ = {
-			isa = PBXGroup;
-			children = (
-				A567622F27BC2CA1006FDA7F /* Onboarding */,
-				A567617A27B7F627006FDA7F /* SplashViewController.swift */,
-				A567617C27B7F640006FDA7F /* Splash.storyboard */,
-			);
-			path = Splash;
-			sourceTree = "<group>";
-		};
-		A567622327BBB8AE006FDA7F /* LogIn */ = {
-			isa = PBXGroup;
-			children = (
-				A567622427BBB8C9006FDA7F /* Login.storyboard */,
-				A567622627BBB8D5006FDA7F /* LoginViewController.swift */,
-			);
-			path = LogIn;
-			sourceTree = "<group>";
-		};
 		A567622827BBC7B6006FDA7F /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
 				A567622927BBC7D3006FDA7F /* SignUpViewController.swift */,
 				A567622B27BBC7DC006FDA7F /* SignUp.storyboard */,
-				A567622D27BBFBBB006FDA7F /* SignUpPasswordViewModel.swift */,
-				A5EFDF4D28F1D0AC0098B29F /* SignUpTermsViewController.swift */,
-				A51AF675291014B800B17127 /* SignUpTermsViewModel.swift */,
 				A5EFDF4928F1CD940098B29F /* EmailCheckViewController.swift */,
 				A5EFDF4B28F1CDA40098B29F /* EmailCheckViewModel.swift */,
 				A5C43E4629099C090097999D /* EmailAuthenticationViewController.swift */,
@@ -1191,15 +1330,6 @@
 				A5C43E4C290A5C020097999D /* PasswordCheckViewModel.swift */,
 			);
 			path = SignUp;
-			sourceTree = "<group>";
-		};
-		A567622F27BC2CA1006FDA7F /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				A567623027BC2E33006FDA7F /* OnboardingSlide.swift */,
-				A567623227BC2F10006FDA7F /* OnboardingCollectionViewCell.swift */,
-			);
-			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		A567623427BD0553006FDA7F /* API */ = {
@@ -1330,6 +1460,54 @@
 				A59909B227FEF4BA00025C58 /* YNotWriteComment.storyboard */,
 			);
 			path = YNotWriteComment;
+			sourceTree = "<group>";
+		};
+		A59C627E2954BB4000DCD88F /* PasswordSearch */ = {
+			isa = PBXGroup;
+			children = (
+				A59C627F2954BB5500DCD88F /* PasswordSearchViewModel.swift */,
+			);
+			path = PasswordSearch;
+			sourceTree = "<group>";
+		};
+		A59C62812954BBCE00DCD88F /* PasswordSearch */ = {
+			isa = PBXGroup;
+			children = (
+				A59C62822954BBED00DCD88F /* PasswordSearchDataManager.swift */,
+			);
+			path = PasswordSearch;
+			sourceTree = "<group>";
+		};
+		A59C62842954BC6400DCD88F /* PasswordSearch */ = {
+			isa = PBXGroup;
+			children = (
+				A59C62852954BC7900DCD88F /* PasswordSearchResponse.swift */,
+			);
+			path = PasswordSearch;
+			sourceTree = "<group>";
+		};
+		A59C62872954C38800DCD88F /* LoginCase */ = {
+			isa = PBXGroup;
+			children = (
+				A59C62882954C3AF00DCD88F /* LoginCaseViewController.swift */,
+			);
+			path = LoginCase;
+			sourceTree = "<group>";
+		};
+		A59C628A2954C56900DCD88F /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				A59C628B2954C58200DCD88F /* SignUpTermsViewController.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		A59C628D2954C66600DCD88F /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				A59C628E2954C67800DCD88F /* SignUpTermsViewModel.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		A5A0A33127D9002300604A30 /* MyPageInner */ = {
@@ -1571,20 +1749,11 @@
 		A5CCD18227C34B7F0096281F /* LoginAPI */ = {
 			isa = PBXGroup;
 			children = (
-				A5CCD18327C34BA30096281F /* LoginDataManager.swift */,
+				A5CCD18327C34BA30096281F /* LoginDataManager2.swift */,
 				A5CCD18527C34BAE0096281F /* LoginResponse.swift */,
 				A5CCD18727C34BB70096281F /* LoginRequest.swift */,
 			);
 			path = LoginAPI;
-			sourceTree = "<group>";
-		};
-		A5CCD18B27C4CD1C0096281F /* PasswordSearch */ = {
-			isa = PBXGroup;
-			children = (
-				A5CCD18C27C4CD660096281F /* PasswordSearchViewController.swift */,
-				A5CCD19027C4CDF00096281F /* PasswordSearch.storyboard */,
-			);
-			path = PasswordSearch;
 			sourceTree = "<group>";
 		};
 		A5CCD19227C4E3F20096281F /* SearchPasswordAPI */ = {
@@ -1701,6 +1870,7 @@
 				A5567C9027BD4D5B001A4B98 /* WritingDiary.storyboard in Resources */,
 				A567615227B7E454006FDA7F /* Assets.xcassets in Resources */,
 				A5C7A39627E796640055BAD7 /* YReadComment.storyboard in Resources */,
+				A561EE892954798D00C0DCD8 /* Splash.storyboard in Resources */,
 				A567615027B7E452006FDA7F /* Main.storyboard in Resources */,
 				A5567CA127BE945E001A4B98 /* SignUpCompletion.storyboard in Resources */,
 				A5B6B39E27CE40710065DDF8 /* DeleteCheck.storyboard in Resources */,
@@ -1708,7 +1878,6 @@
 				A5C7135C286B5175009CE07B /* WritingDiaryCancel.storyboard in Resources */,
 				A5A0A34027D906EF00604A30 /* Terms.storyboard in Resources */,
 				A5A0A33927D9029700604A30 /* SendComment.storyboard in Resources */,
-				A567622527BBB8C9006FDA7F /* Login.storyboard in Resources */,
 				A5B9B97927F352D50049D329 /* CommentBlock.storyboard in Resources */,
 				A5567C8827BD4CC0001A4B98 /* ArrivedDiary.storyboard in Resources */,
 				A5242C6A27D31EA400E24A76 /* NEdit.storyboard in Resources */,
@@ -1720,7 +1889,6 @@
 				A5C7A38D27E622D90055BAD7 /* someoneCommentCell.xib in Resources */,
 				A5C7A3A227E8EF810055BAD7 /* ChangePassword.storyboard in Resources */,
 				A5B9B97C27F3554C0049D329 /* DiaryBlock.storyboard in Resources */,
-				A5CCD19127C4CDF00096281F /* PasswordSearch.storyboard in Resources */,
 				A561E7A127FBDF1300EAACEC /* AppleSDGothicNeoM.ttf in Resources */,
 				A59909B327FEF4BA00025C58 /* YNotWriteComment.storyboard in Resources */,
 				A5B84FE927E3B5AF001367B4 /* DetailCommentDiary.storyboard in Resources */,
@@ -1738,7 +1906,6 @@
 				A5C9FB7627C60EF600445012 /* FailFIndPassword.storyboard in Resources */,
 				A5C7A37E27E5EA910055BAD7 /* GatherLookDetail.storyboard in Resources */,
 				A5BF9CEC27C8C64C0093B900 /* SendDiaryAlert.storyboard in Resources */,
-				A567617D27B7F640006FDA7F /* Splash.storyboard in Resources */,
 				A56FF79627C0E89400C740F7 /* TodayDiaryBottom.storyboard in Resources */,
 				A5713F9F282BA66B00A73CC1 /* GoogleService-Info.plist in Resources */,
 				A547A99127EC889000DAAFE3 /* ModifySendDiaryAlert.storyboard in Resources */,
@@ -1748,6 +1915,7 @@
 				A561E79F27FBDF0D00EAACEC /* AppleSDGothicNeoB.ttf in Resources */,
 				A5A0A33627D9007200604A30 /* MyAccount.storyboard in Resources */,
 				A5C7A37B27E5AA300055BAD7 /* YEdit.storyboard in Resources */,
+				A561EE8F295484D100C0DCD8 /* LogIn.storyboard in Resources */,
 				A5567C9A27BD53FA001A4B98 /* AuthNumber.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1814,7 +1982,6 @@
 				A5CBCBFE27CA996D00BE857D /* SuccessPasswordSentAlertService.swift in Sources */,
 				A5EEC105291AB4EF003ADC30 /* KakaoAuthVIewModel.swift in Sources */,
 				A518AFB927E9B4DC0024E1F1 /* ReceivedDiaryResponse.swift in Sources */,
-				A518930728DA9CD300CEA419 /* LoginCaseViewController.swift in Sources */,
 				A5CCD18627C34BAE0096281F /* LoginResponse.swift in Sources */,
 				A59364D828B3CDDA0054305B /* ReadCommentsCell.swift in Sources */,
 				A5EFDF4A28F1CD940098B29F /* EmailCheckViewController.swift in Sources */,
@@ -1832,10 +1999,8 @@
 				A5B9B97727F352B80049D329 /* CommentBlockViewController.swift in Sources */,
 				A5C43E4929099C190097999D /* EmailAuthenticationViewModel.swift in Sources */,
 				A518AFC727EB28B50024E1F1 /* YPreSaveDeadlineViewController.swift in Sources */,
-				A567622727BBB8D5006FDA7F /* LoginViewController.swift in Sources */,
 				A5BF9CEA27C8C5880093B900 /* SendDiaryAlertViewController.swift in Sources */,
 				A567614D27B7E452006FDA7F /* ViewController.swift in Sources */,
-				A5EFDF4E28F1D0AC0098B29F /* SignUpTermsViewController.swift in Sources */,
 				A5BF9CE227C743BC0093B900 /* CodaSignUpDataManager.swift in Sources */,
 				A518AFC027EA1E7D0024E1F1 /* SendCommentAlertViewController.swift in Sources */,
 				A567614927B7E452006FDA7F /* AppDelegate.swift in Sources */,
@@ -1862,8 +2027,8 @@
 				A5C7A37427E4D6C10055BAD7 /* NavigationVC.swift in Sources */,
 				A595203C27D89A5B005D414D /* CommentWritingRequest.swift in Sources */,
 				A5611A312906EE6000AA1AE3 /* EmailCheckDataManager.swift in Sources */,
+				A59C62862954BC7900DCD88F /* PasswordSearchResponse.swift in Sources */,
 				A567616A27B7E83C006FDA7F /* UIViewController.swift in Sources */,
-				A5CCD18D27C4CD660096281F /* PasswordSearchViewController.swift in Sources */,
 				A5B84FE727E3B59D001367B4 /* DetailCommentDiaryViewController.swift in Sources */,
 				A5567C9F27BE9452001A4B98 /* SignUpCompletionViewController.swift in Sources */,
 				A5C7A37627E4D7910055BAD7 /* TabBarVC.swift in Sources */,
@@ -1886,11 +2051,13 @@
 				A5567C9827BD5353001A4B98 /* AuthNumberViewController.swift in Sources */,
 				A5611A2F2906EE4D00AA1AE3 /* EmailCheckResponse.swift in Sources */,
 				A547A99C27ECE33A00DAAFE3 /* DateCommentDataManager.swift in Sources */,
+				A59C628F2954C67800DCD88F /* SignUpTermsViewModel.swift in Sources */,
+				A59C62892954C3AF00DCD88F /* LoginCaseViewController.swift in Sources */,
 				A5A7F7322927583900B0C4E2 /* EmailLoginViewModel.swift in Sources */,
 				A5C71352286B4553009CE07B /* UIBeziePath.swift in Sources */,
 				A595203A27D89A4F005D414D /* CommentWritingResponse.swift in Sources */,
-				A567617B27B7F627006FDA7F /* SplashViewController.swift in Sources */,
 				A5A0A33B27D902A300604A30 /* SendCommentViewController.swift in Sources */,
+				A59C627D2954BAFA00DCD88F /* PasswordSearchViewController.swift in Sources */,
 				A56B698B27DA6E10001385DC /* MyPageDataManager.swift in Sources */,
 				A5242C9027D3840A00E24A76 /* WritingDiaryVC.swift in Sources */,
 				A5C43E4D290A5C020097999D /* PasswordCheckViewModel.swift in Sources */,
@@ -1901,18 +2068,18 @@
 				A547A9A227EE50EC00DAAFE3 /* MemberOutDataManager.swift in Sources */,
 				A5242C9B27D50A4B00E24A76 /* TodayWritingDiaryViewController.swift in Sources */,
 				A5D2F89228E03C350036CFEA /* SearchPasswordViewController.swift in Sources */,
-				A51AF676291014B800B17127 /* SignUpTermsViewModel.swift in Sources */,
 				A5A0A33427D9006700604A30 /* MyAccountViewController.swift in Sources */,
 				A56B698627DA0453001385DC /* CommentReportDataManager.swift in Sources */,
 				A59909B127FEF4AD00025C58 /* YNotWriteCommentViewController.swift in Sources */,
 				A54645D027CCF958008BA823 /* WritingCommentAlertViewController.swift in Sources */,
 				A586951128A2B91C002DB998 /* OverTImePreSaveViewModel.swift in Sources */,
+				A561EE83295477E700C0DCD8 /* BaseViewController.swift in Sources */,
 				A58B1DA5290C3C21000415BA /* UserInfo.swift in Sources */,
 				A562CF91287AB74800DB57B7 /* UILabel.swift in Sources */,
 				A567622A27BBC7D3006FDA7F /* SignUpViewController.swift in Sources */,
 				A5567CA627BEA350001A4B98 /* TodayDiaryViewController.swift in Sources */,
 				A595203E27D89A67005D414D /* CommentWritingDataManager.swift in Sources */,
-				A5CCD18427C34BA30096281F /* LoginDataManager.swift in Sources */,
+				A5CCD18427C34BA30096281F /* LoginDataManager2.swift in Sources */,
 				A5C9FB7B27C6205400445012 /* CommentReportViewController.swift in Sources */,
 				A5CCD18827C34BB70096281F /* LoginRequest.swift in Sources */,
 				A5567C9C27BD5A3C001A4B98 /* AuthNumberAlertService.swift in Sources */,
@@ -1939,24 +2106,28 @@
 				A5C9FB7D27C625DD00445012 /* CommentReportAlertService.swift in Sources */,
 				A518AFB227E9A5490024E1F1 /* ChangePasswordResponse.swift in Sources */,
 				A5EA623D28A1594800B3E2B7 /* OverTImeCommentDiaryViewController.swift in Sources */,
+				A59C628C2954C58200DCD88F /* SignUpTermsViewController.swift in Sources */,
 				A56412A727CBDDB400825571 /* ModifyDiaryRequest.swift in Sources */,
-				A567622E27BBFBBC006FDA7F /* SignUpPasswordViewModel.swift in Sources */,
 				A5C7A39027E71E370055BAD7 /* myCommentDiaryCell.swift in Sources */,
 				A58B1DA1290C29A5000415BA /* EmailAuthenficationResponse.swift in Sources */,
 				A54C7A4928B3B4630070C6F6 /* ReadCommentDiaryCell.swift in Sources */,
 				A56FF79D27C16ACC00C740F7 /* EmailDataManager.swift in Sources */,
 				A521372E27D21A5700B98CF7 /* DiaryMainPageResponse.swift in Sources */,
-				A567623127BC2E33006FDA7F /* OnboardingSlide.swift in Sources */,
+				A561EE8B295482FB00C0DCD8 /* OnboardingCollectionViewCell.swift in Sources */,
 				A521372127D0EFB700B98CF7 /* UserDefaultManager.swift in Sources */,
 				A567617427B7EA56006FDA7F /* IndicatorView.swift in Sources */,
 				A521372927D12EC800B98CF7 /* DeleteDiaryRequest.swift in Sources */,
+				A561EE9929548B0100C0DCD8 /* LoginDataManager.swift in Sources */,
 				A518AFB627E9A5600024E1F1 /* ChangePasswordDataManager.swift in Sources */,
+				A561EE852954791600C0DCD8 /* OnboardingVIewController.swift in Sources */,
 				A503FF7A27CE4D630049FF82 /* YPreSaveViewController.swift in Sources */,
+				A561EE8D2954848A00C0DCD8 /* LoginViewController.swift in Sources */,
 				A56B698427DA0413001385DC /* CommentReportRequest.swift in Sources */,
 				A567616427B7E7E2006FDA7F /* Color.swift in Sources */,
 				A5CBCBFC27CA96AA00BE857D /* SuccessFindPasswordViewController.swift in Sources */,
 				A5242CA327D50CF500E24A76 /* NotArrivalCommentViewController.swift in Sources */,
 				A5C9FB7427C60EE500445012 /* FailFindPasswordViewController.swift in Sources */,
+				A59C62802954BB5500DCD88F /* PasswordSearchViewModel.swift in Sources */,
 				A547A9A827EF018900DAAFE3 /* UITableViewButtonSelectedDelegate.swift in Sources */,
 				A5242C9927D509EE00E24A76 /* NotDiaryDayViewController.swift in Sources */,
 				A564129E27CBCB6800825571 /* WritingDiaryResponse.swift in Sources */,
@@ -1964,6 +2135,7 @@
 				A5C43E4B290A5BF70097999D /* PasswordCheckViewController.swift in Sources */,
 				A5C1D5B727C271F40046095A /* CheckEmailResponse.swift in Sources */,
 				A547A99A27ECE32D00DAAFE3 /* DateCommentResponse.swift in Sources */,
+				A561EE922954858F00C0DCD8 /* LoginViewModel.swift in Sources */,
 				A5EFDF4C28F1CDA40098B29F /* EmailCheckViewModel.swift in Sources */,
 				A5C7A39427E796570055BAD7 /* YReadCommentViewController.swift in Sources */,
 				A54647AC27D9A78400FBD3C2 /* DiaryCheckResponse.swift in Sources */,
@@ -1976,8 +2148,8 @@
 				A5242C9D27D50B9D00E24A76 /* AloneDiaryViewController.swift in Sources */,
 				A5B84FE427E38959001367B4 /* Layer.swift in Sources */,
 				A5C7A38C27E622D90055BAD7 /* someoneCommentCell.swift in Sources */,
+				A59C62832954BBED00DCD88F /* PasswordSearchDataManager.swift in Sources */,
 				A520914F27DC98CE003017AC /* GatherDiaryDateResponse.swift in Sources */,
-				A567623327BC2F10006FDA7F /* OnboardingCollectionViewCell.swift in Sources */,
 				A56FF79427C0E88000C740F7 /* TodayDiaryBottomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2139,7 +2311,7 @@
 				INFOPLIST_FILE = CommentDiary/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "코다";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Splash;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -2176,7 +2348,7 @@
 				INFOPLIST_FILE = CommentDiary/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "코다";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Splash;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

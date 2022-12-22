@@ -2,7 +2,7 @@
 //  LoginViewController.swift
 //  CommentDiary
 //
-//  Created by 류창휘 on 2022/02/15.
+//  Created by 류창휘 on 2022/12/22.
 //
 
 import Foundation
@@ -11,55 +11,37 @@ import UIKit
 class LoginViewController: UIViewController {
     //로그인을 위한 이메일, 비밀번호
     var loginEmail = UserDefaults.standard.value(forKey: "email") as? String ?? ""
-    
     var loginPassword = UserDefaults.standard.value(forKey: "password") as? String ?? ""
     //MARK: - Properties
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
-    
     @IBOutlet weak var findPasswordButton: UIButton!
-    
     @IBOutlet weak var loginLabel: UILabel!
-    
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var idEmailLabel: UILabel!
-    
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var signinButton: UIButton!
-    
     @IBOutlet weak var loginFailLabel: UILabel!
     
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
         emailTextField.delegate = self
-        
         passwordTextField.delegate = self
         textFieldSetting()
         buttonSetting()
         labelSetting()
-
         viewSetting()
-    }
-    //키보드 제어
-    override func viewWillAppear(_ animated: Bool) {
-
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.emailTextField.resignFirstResponder()
         self.passwordTextField.resignFirstResponder()
     }
-    
     func viewSetting() {
         view.backgroundColor = UIColor(hex: 0xFDFCF9)
     }
-    
-    
     func textFieldSetting() {
         emailTextField.placeholder = "coda@coda.com"
         emailTextField.layer.borderWidth = 2
@@ -72,7 +54,6 @@ class LoginViewController: UIViewController {
         passwordTextField.layer.cornerRadius = 4
         passwordTextField.backgroundColor = UIColor(hex: 0xFDFCF9)
     }
-    
     func buttonSetting() {
         self.signinButton.setTitle("회원가입", for: .normal)
         self.signinButton.setTitleColor(UIColor(hex: 0x5F5D59), for: .normal)
@@ -85,18 +66,13 @@ class LoginViewController: UIViewController {
         self.loginButton.setTitle("로그인", for: .normal)
         self.loginButton.setTitleColor(UIColor(hex: 0xFDFCF9), for: .normal)
         self.loginButton.titleLabel?.font = UIFont.AppleSDGothic(.bold, size: 18)
-
-
-        
     }
-    
     func labelSetting() {
         self.loginLabel.textColor = UIColor(hex: 0x5F5D59)
         self.loginLabel.font = UIFont.AppleSDGothic(.extraBold, size: 30)
         self.idEmailLabel.text = "아이디(이메일)"
         self.idEmailLabel.font = UIFont.AppleSDGothic(.bold, size: 14)
         self.idEmailLabel.textColor = UIColor(hex: 0x5F5D59)
-        
         self.passwordLabel.text = "비밀번호"
         self.passwordLabel.font = UIFont.AppleSDGothic(.bold, size: 14)
         self.passwordLabel.textColor = UIColor(hex: 0x5F5D59)
@@ -104,7 +80,6 @@ class LoginViewController: UIViewController {
         self.questionLabel.font = UIFont.AppleSDGothic(.medium, size: 14)
         self.questionLabel.textColor = UIColor(hex: 0x5F5D59)
         self.questionLabel.font = UIFont.AppleSDGothic(.medium, size: 14)
-        
         self.loginFailLabel.isHidden = true
         self.loginFailLabel.textColor = UIColor(hex: 0xE46962)
         self.loginFailLabel.font = UIFont.AppleSDGothic(.medium, size: 14)
@@ -166,9 +141,6 @@ func loginSuccessResponse() {
     
     //화면전환
     let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
-//    mainTabBarController.modalPresentationStyle = .fullScreen
-//    mainTabBarController.modalTransitionStyle = .crossDissolve
-//    self.present(mainTabBarController, animated: true, completion: nil)
     self.changeRootViewController(mainTabBarController)
     
 }
@@ -201,6 +173,4 @@ extension LoginViewController: UITextFieldDelegate {
         return true
     }
 }
-
-
 

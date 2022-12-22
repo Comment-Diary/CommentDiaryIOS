@@ -27,6 +27,7 @@ class TabBarVC : UITabBarController, UITabBarControllerDelegate {
         UITabBar.appearance().tintColor = UIColor.mainTabBarItemColor
         
         
+
 //        tabBar.isTranslucent = false
 //        tabBar.barTintColor = UIColor(hex: 0xF4F1EB)
 //        tabBar.tintColor = UIColor(hex: 0x4E4C49)

@@ -2,7 +2,7 @@
 //  SignUpTermsViewController.swift
 //  CommentDiary
 //
-//  Created by 류창휘 on 2022/10/09.
+//  Created by 류창휘 on 2022/12/23.
 //
 
 import SafariServices
